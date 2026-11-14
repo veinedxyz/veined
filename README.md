@@ -13,6 +13,8 @@ Built on NEAR:
 - Chain Signatures: a request is prepared only after Guardian allows the action
 - NEAR AI Cloud: optional TEE narration
 
+**Team:** solo project by **Coinisan** (team size 1). NEAR payout account `veined.near`; `veinedxyz.near` is a test account. AI coding assistants were used during development (allowed by the rules, Q-005); the developer reviewed, tested and is responsible for the code.
+
 Start with [HACKATHON.md](HACKATHON.md). It has run steps, a do X → see Y demo, the API and tests. Then read
 [architecture](docs/guardian/ARCHITECTURE.md) and the [submission draft](docs/guardian/SUBMISSION.md).
 
@@ -23,7 +25,7 @@ Discover wallet assets and supported DeFi positions, compare swap quotes, discov
 and explore network coverage. Coverage and execution limits remain visible in the product.
 
 The planned domain is `veined.xyz`; this is not a live-origin or ownership verification.
-`@veinedxyz` is unconfirmed. The wordmark and text icons are provisional; final assets, legal clearance,
+X: [@Veinedxyz](https://x.com/Veinedxyz). The wordmark and text icons are provisional; final assets, legal clearance,
 production origin/Privy setup, independent audit and release approval remain owner actions.
 
 Local preview: `node scripts/v118-preview.mjs build`, then `node scripts/v118-preview.mjs start`.
