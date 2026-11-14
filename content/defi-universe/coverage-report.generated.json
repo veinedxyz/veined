@@ -1,0 +1,1014 @@
+{
+ "catalogVersion": "u20261011T044714Z-d1c35a",
+ "catalogSha256": "eee4b2cc3163bd472ea2c13b1c9ff6ed1009b2a046b2f593d9efae84a64a9cab",
+ "stats": {
+  "chainsSeen": 659,
+  "chainsMapped": 487,
+  "chainsUnmapped": 172,
+  "chainCatalogRows": 468,
+  "canonicalChains": 613,
+  "protocolsSeen": 8694,
+  "protocolsMapped": 8693,
+  "protocolsUnmapped": 1,
+  "activeProtocols": 7813,
+  "deprecatedProtocols": 881,
+  "removedUpstreamProtocols": 1,
+  "categoriesSeen": 102,
+  "protocolChainRows": 14966
+ },
+ "protocolHeadline": {
+  "UNSUPPORTED": 1216,
+  "PARTIAL_POSITION": 14,
+  "CATALOG_ONLY": 6569,
+  "DEPRECATED": 881,
+  "FULL_POSITION": 13,
+  "NEEDS_REVIEW": 2
+ },
+ "protocolChainRows": {
+  "UNSUPPORTED": 2753,
+  "PARTIAL_POSITION": 71,
+  "NOT_CHECKED": 204,
+  "CATALOG_ONLY": 12040,
+  "DEPRECATED": 1344,
+  "FULL_POSITION": 43,
+  "NEEDS_REVIEW": 6
+ },
+ "tvlWeighted": {
+  "fullShare": 0.10487934031617825,
+  "partialShare": 0.047074311478988065,
+  "activeTvlUsd": 590649550208,
+  "note": "Share of DefiLlama protocol-chain TVL context with reviewed position adapters; never a wallet value."
+ },
+ "chainsByVm": {
+  "EVM": 337,
+  "Solana": 4,
+  "Tron": 1,
+  "Bitcoin": 7,
+  "Other": 104,
+  "Sui": 1,
+  "Stellar": 1,
+  "Cosmos": 59,
+  "Aptos": 1
+ },
+ "chainCapabilities": {
+  "CATALOG": 515,
+  "IDENTIFIED": 274,
+  "RPC_READ": 144,
+  "PORTFOLIO_NATIVE": 144,
+  "PORTFOLIO_FUNGIBLE": 92,
+  "DEFI_DISCOVERY": 17,
+  "DEFI_POSITION": 22,
+  "BRIDGE": 64,
+  "SWAP": 63,
+  "UNSUPPORTED_VM": 178,
+  "INDEXED": 4,
+  "NEEDS_REVIEW": 65,
+  "DEPRECATED": 8
+ },
+ "categories": [
+  {
+   "raw": "Dexs",
+   "productCategory": "dex",
+   "protocols": 2141,
+   "coverage": {
+    "PARTIAL_POSITION": 8,
+    "CATALOG_ONLY": 1570,
+    "DEPRECATED": 217,
+    "UNSUPPORTED": 345,
+    "FULL_POSITION": 1
+   }
+  },
+  {
+   "raw": "Yield",
+   "productCategory": "yield",
+   "protocols": 677,
+   "coverage": {
+    "CATALOG_ONLY": 505,
+    "DEPRECATED": 108,
+    "UNSUPPORTED": 63,
+    "PARTIAL_POSITION": 1
+   }
+  },
+  {
+   "raw": "Lending",
+   "productCategory": "lending",
+   "protocols": 653,
+   "coverage": {
+    "CATALOG_ONLY": 387,
+    "DEPRECATED": 139,
+    "UNSUPPORTED": 123,
+    "FULL_POSITION": 3,
+    "PARTIAL_POSITION": 1
+   }
+  },
+  {
+   "raw": "Derivatives",
+   "productCategory": "derivatives",
+   "protocols": 456,
+   "coverage": {
+    "CATALOG_ONLY": 370,
+    "DEPRECATED": 36,
+    "UNSUPPORTED": 50
+   }
+  },
+  {
+   "raw": "Launchpad",
+   "productCategory": "launchpad",
+   "protocols": 325,
+   "coverage": {
+    "CATALOG_ONLY": 282,
+    "DEPRECATED": 17,
+    "UNSUPPORTED": 26
+   }
+  },
+  {
+   "raw": "Interface",
+   "productCategory": "services",
+   "protocols": 320,
+   "coverage": {
+    "CATALOG_ONLY": 318,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Liquid Staking",
+   "productCategory": "liquid-staking",
+   "protocols": 298,
+   "coverage": {
+    "CATALOG_ONLY": 129,
+    "FULL_POSITION": 7,
+    "PARTIAL_POSITION": 3,
+    "DEPRECATED": 33,
+    "UNSUPPORTED": 126
+   }
+  },
+  {
+   "raw": "Farm",
+   "productCategory": "farm",
+   "protocols": 251,
+   "coverage": {
+    "CATALOG_ONLY": 205,
+    "DEPRECATED": 25,
+    "UNSUPPORTED": 21
+   }
+  },
+  {
+   "raw": "CDP",
+   "productCategory": "cdp",
+   "protocols": 232,
+   "coverage": {
+    "CATALOG_ONLY": 158,
+    "UNSUPPORTED": 40,
+    "DEPRECATED": 34
+   }
+  },
+  {
+   "raw": "Yield Aggregator",
+   "productCategory": "yield",
+   "protocols": 232,
+   "coverage": {
+    "CATALOG_ONLY": 166,
+    "DEPRECATED": 44,
+    "UNSUPPORTED": 22
+   }
+  },
+  {
+   "raw": "DEX Aggregator",
+   "productCategory": "dex-aggregator",
+   "protocols": 197,
+   "coverage": {
+    "CATALOG_ONLY": 191,
+    "UNSUPPORTED": 4,
+    "DEPRECATED": 2
+   }
+  },
+  {
+   "raw": "RWA",
+   "productCategory": "rwa",
+   "protocols": 184,
+   "coverage": {
+    "CATALOG_ONLY": 157,
+    "DEPRECATED": 11,
+    "UNSUPPORTED": 15,
+    "NEEDS_REVIEW": 2
+   }
+  },
+  {
+   "raw": "Bridge",
+   "productCategory": "bridge",
+   "protocols": 177,
+   "coverage": {
+    "UNSUPPORTED": 34,
+    "DEPRECATED": 20,
+    "CATALOG_ONLY": 123
+   }
+  },
+  {
+   "raw": "Reserve Currency",
+   "productCategory": "stablecoin",
+   "protocols": 138,
+   "coverage": {
+    "CATALOG_ONLY": 88,
+    "DEPRECATED": 48,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Prediction Market",
+   "productCategory": "prediction",
+   "protocols": 131,
+   "coverage": {
+    "CATALOG_ONLY": 109,
+    "DEPRECATED": 5,
+    "UNSUPPORTED": 17
+   }
+  },
+  {
+   "raw": "Services",
+   "productCategory": "services",
+   "protocols": 129,
+   "coverage": {
+    "CATALOG_ONLY": 109,
+    "DEPRECATED": 11,
+    "UNSUPPORTED": 9
+   }
+  },
+  {
+   "raw": "Algo-Stables",
+   "productCategory": "stablecoin",
+   "protocols": 124,
+   "coverage": {
+    "CATALOG_ONLY": 90,
+    "DEPRECATED": 28,
+    "UNSUPPORTED": 6
+   }
+  },
+  {
+   "raw": "Canonical Bridge",
+   "productCategory": "bridge",
+   "protocols": 95,
+   "coverage": {
+    "CATALOG_ONLY": 87,
+    "DEPRECATED": 5,
+    "UNSUPPORTED": 3
+   }
+  },
+  {
+   "raw": "Gaming",
+   "productCategory": "gaming",
+   "protocols": 93,
+   "coverage": {
+    "CATALOG_ONLY": 75,
+    "DEPRECATED": 8,
+    "UNSUPPORTED": 10
+   }
+  },
+  {
+   "raw": "Risk Curators",
+   "productCategory": "yield",
+   "protocols": 93,
+   "coverage": {
+    "CATALOG_ONLY": 91,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Chain",
+   "productCategory": "chain",
+   "protocols": 86,
+   "coverage": {
+    "CATALOG_ONLY": 58,
+    "UNSUPPORTED": 24,
+    "DEPRECATED": 4
+   }
+  },
+  {
+   "raw": "SoFi",
+   "productCategory": "services",
+   "protocols": 86,
+   "coverage": {
+    "DEPRECATED": 3,
+    "CATALOG_ONLY": 73,
+    "UNSUPPORTED": 10
+   }
+  },
+  {
+   "raw": "Onchain Capital Allocator",
+   "productCategory": "yield",
+   "protocols": 85,
+   "coverage": {
+    "CATALOG_ONLY": 79,
+    "UNSUPPORTED": 6
+   }
+  },
+  {
+   "raw": "Indexes",
+   "productCategory": "yield",
+   "protocols": 83,
+   "coverage": {
+    "CATALOG_ONLY": 61,
+    "DEPRECATED": 10,
+    "UNSUPPORTED": 12
+   }
+  },
+  {
+   "raw": "CEX",
+   "productCategory": "cex",
+   "protocols": 80,
+   "coverage": {
+    "UNSUPPORTED": 80
+   }
+  },
+  {
+   "raw": "Staking Pool",
+   "productCategory": "liquid-staking",
+   "protocols": 78,
+   "coverage": {
+    "CATALOG_ONLY": 57,
+    "UNSUPPORTED": 16,
+    "DEPRECATED": 5
+   }
+  },
+  {
+   "raw": "Liquidity Manager",
+   "productCategory": "yield",
+   "protocols": 76,
+   "coverage": {
+    "CATALOG_ONLY": 64,
+    "DEPRECATED": 6,
+    "UNSUPPORTED": 6
+   }
+  },
+  {
+   "raw": "Options",
+   "productCategory": "options",
+   "protocols": 75,
+   "coverage": {
+    "CATALOG_ONLY": 67,
+    "DEPRECATED": 3,
+    "UNSUPPORTED": 5
+   }
+  },
+  {
+   "raw": "NFT Marketplace",
+   "productCategory": "nft-finance",
+   "protocols": 70,
+   "coverage": {
+    "CATALOG_ONLY": 57,
+    "UNSUPPORTED": 9,
+    "DEPRECATED": 4
+   }
+  },
+  {
+   "raw": "Cross Chain Bridge",
+   "productCategory": "bridge",
+   "protocols": 59,
+   "coverage": {
+    "CATALOG_ONLY": 55,
+    "DEPRECATED": 3,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Privacy",
+   "productCategory": "services",
+   "protocols": 48,
+   "coverage": {
+    "CATALOG_ONLY": 41,
+    "UNSUPPORTED": 6,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Gamified Mining",
+   "productCategory": "farm",
+   "protocols": 46,
+   "coverage": {
+    "CATALOG_ONLY": 38,
+    "UNSUPPORTED": 7,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Leveraged Farming",
+   "productCategory": "yield",
+   "protocols": 46,
+   "coverage": {
+    "DEPRECATED": 8,
+    "CATALOG_ONLY": 34,
+    "UNSUPPORTED": 4
+   }
+  },
+  {
+   "raw": "Synthetics",
+   "productCategory": "derivatives",
+   "protocols": 44,
+   "coverage": {
+    "DEPRECATED": 8,
+    "CATALOG_ONLY": 28,
+    "UNSUPPORTED": 8
+   }
+  },
+  {
+   "raw": "Basis Trading",
+   "productCategory": "yield",
+   "protocols": 42,
+   "coverage": {
+    "CATALOG_ONLY": 32,
+    "DEPRECATED": 3,
+    "UNSUPPORTED": 7
+   }
+  },
+  {
+   "raw": "Luck Games",
+   "productCategory": "prediction",
+   "protocols": 42,
+   "coverage": {
+    "CATALOG_ONLY": 33,
+    "UNSUPPORTED": 7,
+    "DEPRECATED": 2
+   }
+  },
+  {
+   "raw": "Payments",
+   "productCategory": "services",
+   "protocols": 39,
+   "coverage": {
+    "CATALOG_ONLY": 29,
+    "UNSUPPORTED": 7,
+    "DEPRECATED": 3
+   }
+  },
+  {
+   "raw": "AI Agents",
+   "productCategory": "services",
+   "protocols": 38,
+   "coverage": {
+    "CATALOG_ONLY": 37,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Trading App",
+   "productCategory": "services",
+   "protocols": 38,
+   "coverage": {
+    "CATALOG_ONLY": 36,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "NFT Lending",
+   "productCategory": "nft-finance",
+   "protocols": 32,
+   "coverage": {
+    "CATALOG_ONLY": 26,
+    "UNSUPPORTED": 5,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Insurance",
+   "productCategory": "insurance",
+   "protocols": 31,
+   "coverage": {
+    "CATALOG_ONLY": 28,
+    "UNSUPPORTED": 3
+   }
+  },
+  {
+   "raw": "Telegram Bot",
+   "productCategory": "services",
+   "protocols": 31,
+   "coverage": {
+    "CATALOG_ONLY": 29,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Liquid Restaking",
+   "productCategory": "liquid-restaking",
+   "protocols": 29,
+   "coverage": {
+    "DEPRECATED": 2,
+    "CATALOG_ONLY": 20,
+    "FULL_POSITION": 2,
+    "UNSUPPORTED": 5
+   }
+  },
+  {
+   "raw": "Crypto Card Issuer",
+   "productCategory": "services",
+   "protocols": 28,
+   "coverage": {
+    "CATALOG_ONLY": 28
+   }
+  },
+  {
+   "raw": "Developer Tools",
+   "productCategory": "services",
+   "protocols": 27,
+   "coverage": {
+    "CATALOG_ONLY": 27
+   }
+  },
+  {
+   "raw": "Token Locker",
+   "productCategory": "launchpad",
+   "protocols": 25,
+   "coverage": {
+    "CATALOG_ONLY": 19,
+    "UNSUPPORTED": 6
+   }
+  },
+  {
+   "raw": "Options Vault",
+   "productCategory": "options",
+   "protocols": 22,
+   "coverage": {
+    "CATALOG_ONLY": 11,
+    "UNSUPPORTED": 7,
+    "DEPRECATED": 4
+   }
+  },
+  {
+   "raw": "Physical TCG",
+   "productCategory": "nft-finance",
+   "protocols": 21,
+   "coverage": {
+    "CATALOG_ONLY": 20,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Uncollateralized Lending",
+   "productCategory": "lending",
+   "protocols": 21,
+   "coverage": {
+    "CATALOG_ONLY": 18,
+    "DEPRECATED": 2,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Bridge Aggregator",
+   "productCategory": "bridge",
+   "protocols": 17,
+   "coverage": {
+    "DEPRECATED": 1,
+    "CATALOG_ONLY": 16
+   }
+  },
+  {
+   "raw": "Yield Lottery",
+   "productCategory": "yield",
+   "protocols": 16,
+   "coverage": {
+    "CATALOG_ONLY": 12,
+    "UNSUPPORTED": 4
+   }
+  },
+  {
+   "raw": "Governance Incentives",
+   "productCategory": "services",
+   "protocols": 15,
+   "coverage": {
+    "CATALOG_ONLY": 9,
+    "UNSUPPORTED": 5,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Oracle",
+   "productCategory": "services",
+   "protocols": 15,
+   "coverage": {
+    "DEPRECATED": 1,
+    "CATALOG_ONLY": 12,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Ponzi",
+   "productCategory": "other",
+   "protocols": 15,
+   "coverage": {
+    "CATALOG_ONLY": 12,
+    "DEPRECATED": 2,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Domains",
+   "productCategory": "services",
+   "protocols": 14,
+   "coverage": {
+    "CATALOG_ONLY": 14
+   }
+  },
+  {
+   "raw": "Restaking",
+   "productCategory": "restaking",
+   "protocols": 14,
+   "coverage": {
+    "PARTIAL_POSITION": 1,
+    "CATALOG_ONLY": 8,
+    "UNSUPPORTED": 4,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Liquidity Automation",
+   "productCategory": "yield",
+   "protocols": 12,
+   "coverage": {
+    "CATALOG_ONLY": 11,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "CeDeFi",
+   "productCategory": "cex",
+   "protocols": 10,
+   "coverage": {
+    "UNSUPPORTED": 7,
+    "CATALOG_ONLY": 3
+   }
+  },
+  {
+   "raw": "DePIN",
+   "productCategory": "services",
+   "protocols": 10,
+   "coverage": {
+    "CATALOG_ONLY": 9,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Wallets",
+   "productCategory": "services",
+   "protocols": 10,
+   "coverage": {
+    "CATALOG_ONLY": 10
+   }
+  },
+  {
+   "raw": "Anchor BTC",
+   "productCategory": "liquid-staking",
+   "protocols": 9,
+   "coverage": {
+    "CATALOG_ONLY": 7,
+    "UNSUPPORTED": 2
+   }
+  },
+  {
+   "raw": "Foundation",
+   "productCategory": "services",
+   "protocols": 9,
+   "coverage": {
+    "CATALOG_ONLY": 9
+   }
+  },
+  {
+   "raw": "MEV",
+   "productCategory": "services",
+   "protocols": 9,
+   "coverage": {
+    "CATALOG_ONLY": 9
+   }
+  },
+  {
+   "raw": "DAO Service Provider",
+   "productCategory": "services",
+   "protocols": 8,
+   "coverage": {
+    "DEPRECATED": 1,
+    "CATALOG_ONLY": 6,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Dual-Token Stablecoin",
+   "productCategory": "stablecoin",
+   "protocols": 8,
+   "coverage": {
+    "CATALOG_ONLY": 5,
+    "UNSUPPORTED": 2,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "OTC Marketplace",
+   "productCategory": "services",
+   "protocols": 8,
+   "coverage": {
+    "CATALOG_ONLY": 7,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Restaked BTC",
+   "productCategory": "restaking",
+   "protocols": 8,
+   "coverage": {
+    "UNSUPPORTED": 5,
+    "DEPRECATED": 1,
+    "CATALOG_ONLY": 2
+   }
+  },
+  {
+   "raw": "Bridge Aggregators",
+   "productCategory": "bridge",
+   "protocols": 7,
+   "coverage": {
+    "CATALOG_ONLY": 7
+   }
+  },
+  {
+   "raw": "DCA Tools",
+   "productCategory": "services",
+   "protocols": 7,
+   "coverage": {
+    "DEPRECATED": 1,
+    "UNSUPPORTED": 1,
+    "CATALOG_ONLY": 5
+   }
+  },
+  {
+   "raw": "Partially Algorithmic Stablecoin",
+   "productCategory": "stablecoin",
+   "protocols": 7,
+   "coverage": {
+    "UNSUPPORTED": 2,
+    "CATALOG_ONLY": 4,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Decentralized BTC",
+   "productCategory": "liquid-staking",
+   "protocols": 6,
+   "coverage": {
+    "CATALOG_ONLY": 3,
+    "UNSUPPORTED": 3
+   }
+  },
+  {
+   "raw": "Meme",
+   "productCategory": "gaming",
+   "protocols": 6,
+   "coverage": {
+    "CATALOG_ONLY": 6
+   }
+  },
+  {
+   "raw": "Stablecoin Issuer",
+   "productCategory": "stablecoin",
+   "protocols": 6,
+   "coverage": {
+    "CATALOG_ONLY": 6
+   }
+  },
+  {
+   "raw": "Stablecoin Wrapper",
+   "productCategory": "stablecoin",
+   "protocols": 6,
+   "coverage": {
+    "CATALOG_ONLY": 5,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Treasury Manager",
+   "productCategory": "yield",
+   "protocols": 6,
+   "coverage": {
+    "UNSUPPORTED": 1,
+    "CATALOG_ONLY": 5
+   }
+  },
+  {
+   "raw": "Charity Fundraising",
+   "productCategory": "services",
+   "protocols": 5,
+   "coverage": {
+    "CATALOG_ONLY": 4,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Decentralized AI",
+   "productCategory": "services",
+   "protocols": 5,
+   "coverage": {
+    "CATALOG_ONLY": 4,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "NftFi",
+   "productCategory": "nft-finance",
+   "protocols": 5,
+   "coverage": {
+    "CATALOG_ONLY": 5
+   }
+  },
+  {
+   "raw": "Block Builders",
+   "productCategory": "services",
+   "protocols": 4,
+   "coverage": {
+    "CATALOG_ONLY": 4
+   }
+  },
+  {
+   "raw": "Identity & Reputation",
+   "productCategory": "services",
+   "protocols": 4,
+   "coverage": {
+    "CATALOG_ONLY": 4
+   }
+  },
+  {
+   "raw": "Interest Rate Derivatives",
+   "productCategory": "derivatives",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 3
+   }
+  },
+  {
+   "raw": "Liquidations",
+   "productCategory": "services",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 1,
+    "DEPRECATED": 1,
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "NFT Automated Strategies",
+   "productCategory": "nft-finance",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 3
+   }
+  },
+  {
+   "raw": "Portfolio Tracker",
+   "productCategory": "services",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 2,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Security Extension",
+   "productCategory": "services",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 3
+   }
+  },
+  {
+   "raw": "Volume Boosting",
+   "productCategory": "services",
+   "protocols": 3,
+   "coverage": {
+    "CATALOG_ONLY": 3
+   }
+  },
+  {
+   "raw": "Bug Bounty",
+   "productCategory": "services",
+   "protocols": 2,
+   "coverage": {
+    "DEPRECATED": 2
+   }
+  },
+  {
+   "raw": "CDP Manager",
+   "productCategory": "cdp",
+   "protocols": 2,
+   "coverage": {
+    "CATALOG_ONLY": 1,
+    "DEPRECATED": 1
+   }
+  },
+  {
+   "raw": "Coins Tracker",
+   "productCategory": "services",
+   "protocols": 2,
+   "coverage": {
+    "CATALOG_ONLY": 2
+   }
+  },
+  {
+   "raw": "Collateral Management",
+   "productCategory": "lending",
+   "protocols": 2,
+   "coverage": {
+    "CATALOG_ONLY": 2
+   }
+  },
+  {
+   "raw": "Staking Rental",
+   "productCategory": "liquid-staking",
+   "protocols": 2,
+   "coverage": {
+    "UNSUPPORTED": 1,
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Chain Bribes",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Collateral Markets",
+   "productCategory": "lending",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "DOR",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Exotic Options",
+   "productCategory": "options",
+   "protocols": 1,
+   "coverage": {
+    "UNSUPPORTED": 1
+   }
+  },
+  {
+   "raw": "Mining Pools",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "NFT Launchpad",
+   "productCategory": "nft-finance",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Onchain Voting",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Private Investment Platform",
+   "productCategory": "rwa",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Secondary Debt Markets",
+   "productCategory": "lending",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "ve-Incentive Automator",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  },
+  {
+   "raw": "Video Infrastructure",
+   "productCategory": "services",
+   "protocols": 1,
+   "coverage": {
+    "CATALOG_ONLY": 1
+   }
+  }
+ ]
+}

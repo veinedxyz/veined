@@ -33,6 +33,8 @@ import { nativePolicy } from "../../src/adapters/native-service";
 import { nativeReadAbi } from "../../src/adapters/native-abi";
 import { bridgeAbi } from "../../src/adapters/onebridge";
 import { verifySettlement } from "../../src/core/flow";
+import { G5_ROUTE_PINS } from "../../src/g5/route-pins";
+import { keccak256 } from "viem";
 import { validateObservation } from "../../src/features/bridge/observation";
 import {
   withVerifiedIntent,
@@ -47,6 +49,63 @@ const raw = sample.sample;
 const discovery = load("discovery");
 const corrected = load("corrected-fresh");
 const now = Date.parse(sample.at);
+// V1.6: verifier/token runtimes and settlement-trust values pinned at the V1.6 evidence blocks.
+const g5Runtimes = JSON.parse(
+  readFileSync("tests/fixtures/g5/runtimes.json", "utf8"),
+);
+const roleId = (r: string) =>
+  r === "DEFAULT_ADMIN_ROLE" ? `0x${"0".repeat(64)}` : keccak256(toHex(r));
+function g5Read(chain: "one" | "bsc", method: string, params: unknown[]) {
+  const side =
+    chain === "one" ? G5_ROUTE_PINS.source : G5_ROUTE_PINS.destination;
+  const p0 = params[0] as { to?: string; data?: string } | string;
+  if (method === "eth_getCode" && typeof p0 === "string") {
+    if (p0.toLowerCase() === side.verifier)
+      return chain === "one" ? g5Runtimes.oneVerifier : g5Runtimes.bscVerifier;
+    if (chain === "bsc" && p0.toLowerCase() === CROSS.toLowerCase())
+      return g5Runtimes.crossToken;
+  }
+  if (method !== "eth_call" || typeof p0 !== "object" || !p0.data)
+    return undefined;
+  let decoded;
+  try {
+    decoded = decodeFunctionData({
+      abi: nativeReadAbi,
+      data: p0.data as `0x${string}`,
+    });
+  } catch {
+    return undefined;
+  }
+  const enc = (functionName: string, result: unknown) =>
+    encodeFunctionResult({ abi: nativeReadAbi, functionName, result } as never);
+  switch (decoded.functionName) {
+    case "threshold":
+      return enc("threshold", side.settlement.threshold);
+    case "getRoleMembers": {
+      const role = String(decoded.args[0]).toLowerCase();
+      const s = side.settlement;
+      if (role === roleId("VALIDATOR_ROLE"))
+        return enc("getRoleMembers", s.validators);
+      if (
+        role === roleId("ADMIN_ROLE") ||
+        role === roleId("DEFAULT_ADMIN_ROLE")
+      )
+        return enc("getRoleMembers", s.admins);
+      if (role === roleId("VERIFIER_ROLE"))
+        return enc("getRoleMembers", s.verifierRole);
+      return undefined;
+    }
+    case "bridgeVerifier":
+      return chain === "bsc" ? enc("bridgeVerifier", side.verifier) : undefined;
+    case "getNextInitiateIndex":
+    case "getNextFinalizeIndex":
+      // equal indices: no in-flight ONE->BSC transfer at the replayed pin
+      return enc(decoded.functionName, 98729n);
+    case "allPendingIndex":
+      return enc("allPendingIndex", []);
+  }
+  return undefined;
+}
 const claim: TransferRecord = {
   schema: 1,
   id: "public-native-replay",
@@ -92,9 +151,15 @@ beforeEach(() => {
         const name = chain === "one" ? "source" : "destination";
         if (method === "eth_chainId")
           return toHex(chain === "one" ? 612055 : 56);
+        const g5 = g5Read(chain, method, params);
+        if (g5 !== undefined) return g5;
         if (method === "eth_getBlockByNumber") {
           if (params[0] === "latest" || params[0] === "finalized")
             return raw[`${name}Finalized`];
+          // V1.6 pins reads PIN_LAG (3) blocks behind the reported head.
+          const head = raw[`${name}Finalized`];
+          if (BigInt(params[0] as string) === BigInt(head.number) - 3n)
+            return { ...head, number: params[0] };
           return raw[`${name}Block`];
         }
         if (method === "eth_getStorageAt")
@@ -488,9 +553,22 @@ it("R1/F1 changed proxy bytecode fails closed in the actual tracking API", async
   expect(response.status).toBe(422);
   expect(await response.json()).toEqual({ error: "DEPLOYMENT_CHANGED" });
 });
+it("V1.6 CBU-09: a bridge or token contract can never be quoted as account/recipient (no RPC issued)", async () => {
+  for (const account of [deployment.destination, deployment.source, CROSS]) {
+    network.rpc.mockClear();
+    const response = await POST(
+      request({ action: "quote", account, amount: "12" }),
+    );
+    expect(response.status).toBe(422);
+    expect(await response.json()).toEqual({ error: "UNSUPPORTED_ACCOUNT" });
+    expect(network.rpc).not.toHaveBeenCalled();
+  }
+});
 it("R1/F1 actual quote uses recorded pair/fee ABI reads and a funded EOA simulation transport double", async () => {
   const original = network.rpc.getMockImplementation()!;
   network.rpc.mockImplementation(async (chain, method, params) => {
+    const g5 = g5Read(chain, method, params);
+    if (g5 !== undefined) return g5;
     if (method === "eth_gasPrice") return "0xb2d05e00";
     if (method === "eth_estimateGas") return "0x1e604";
     if (method === "eth_getBalance") return toHex(100n * 10n ** 18n);
@@ -561,6 +639,8 @@ it("R1/F1 actual quote uses recorded pair/fee ABI reads and a funded EOA simulat
   const health = await POST(request({ action: "health" }));
   expect(await health.json()).toMatchObject({
     status: "blocked",
-    limits: { reserveVerified: false, paused: false },
+    // V1.6: pending set reconciled, no in-flight, pins and settlement trust unchanged.
+    reasons: ["MAINNET_WRITE_DISABLED"],
+    limits: { reserveVerified: true, paused: false },
   });
 });

@@ -1,0 +1,62 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index f9f3d4b2aaad6861c97e7e82dcc57920b018d8a9..bf18856377b5357ffe82264011a050873e0a8c48 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,7 +1,7 @@
+ export * from '@pancakeswap/swap-sdk-core';
+ export * from '@pancakeswap/v2-sdk';
+ export * from '@pancakeswap/swap-sdk-evm';
+-export * from '@pancakeswap/swap-sdk-solana';
+ export { ChainId } from '@pancakeswap/chains';
+ export * from './entities';
+-//# sourceMappingURL=index.d.ts.map
+\ No newline at end of file
++//# sourceMappingURL=index.d.ts.map
++export declare const TOKEN_WSOL: { chainId: number; address: string; programId: string; decimals: number; symbol: string; name: string; logoURI: string; tags: string[]; priority: number; type: string; extensions: {coingeckoId: string} };
+\ No newline at end of file
+diff --git a/dist/index.js b/dist/index.js
+index dd7439a033c678ecd6da4eac70e374ef72099a28..ed2d772121a831a102005a4ae785c05a30186840 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -3,7 +3,6 @@
+ var swapSdkCore = require('@pancakeswap/swap-sdk-core');
+ var v2Sdk = require('@pancakeswap/v2-sdk');
+ var swapSdkEvm = require('@pancakeswap/swap-sdk-evm');
+-var swapSdkSolana = require('@pancakeswap/swap-sdk-solana');
+ var chains = require('@pancakeswap/chains');
+ var invariant = require('tiny-invariant');
+ 
+@@ -81,9 +80,7 @@ Object.keys(swapSdkEvm).forEach(function (k) {
+     get: function () { return swapSdkEvm[k]; }
+   });
+ });
+-Object.keys(swapSdkSolana).forEach(function (k) {
+-  if (k !== 'default' && !Object.prototype.hasOwnProperty.call(exports, k)) Object.defineProperty(exports, k, {
+-    enumerable: true,
+-    get: function () { return swapSdkSolana[k]; }
+-  });
+-});
++
++// Static metadata only; no Solana SDK runtime.
++const { NonEVMChainId } = require('@pancakeswap/chains');
++exports.TOKEN_WSOL = {chainId: NonEVMChainId.SOLANA, address:'So11111111111111111111111111111111111111112', programId:'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', decimals:9, symbol:'WSOL', name:'Wrapped SOL', logoURI:'https://img-v1.raydium.io/icon/So11111111111111111111111111111111111111112.png', tags:[], priority:2, type:'raydium', extensions:{coingeckoId:'solana'}};
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 0d53a06038e818ce0760652959a8d8739564ec81..e4a27c384856c907dfd625d75bea919daabb88ea 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -2,7 +2,6 @@ import { BaseCurrency } from '@pancakeswap/swap-sdk-core';
+ export * from '@pancakeswap/swap-sdk-core';
+ export * from '@pancakeswap/v2-sdk';
+ export * from '@pancakeswap/swap-sdk-evm';
+-export * from '@pancakeswap/swap-sdk-solana';
+ export { ChainId } from '@pancakeswap/chains';
+ import invariant from 'tiny-invariant';
+ 
+@@ -54,3 +53,7 @@ var OnRampCurrency = class extends BaseCurrency {
+ };
+ 
+ export { OnRampCurrency };
++
++// Static metadata retained from swap-sdk-solana 1.1.10 for the tokens table only.
++import { NonEVMChainId } from '@pancakeswap/chains';
++export const TOKEN_WSOL = {chainId: NonEVMChainId.SOLANA, address:'So11111111111111111111111111111111111111112', programId:'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', decimals:9, symbol:'WSOL', name:'Wrapped SOL', logoURI:'https://img-v1.raydium.io/icon/So11111111111111111111111111111111111111112.png', tags:[], priority:2, type:'raydium', extensions:{coingeckoId:'solana'}};

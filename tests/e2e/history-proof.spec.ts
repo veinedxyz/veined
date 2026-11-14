@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile, mkdir } from "node:fs/promises";
 import { CROSS, type TransferRecord } from "../../src/core/model";
@@ -41,6 +41,8 @@ test("C3 reload never trusts rejection; manual hash preserves history and requir
     updatedAt: Date.now(),
   };
   await page.addInitScript((claim) => {
+    // V1.9: test setup belongs to the app document only, never to third-party/opaque subframes.
+    if (window !== window.top) return;
     localStorage.setItem("otherbridge.language", "tr");
     if (!localStorage.getItem("otherbridge.history.v1"))
       localStorage.setItem(
@@ -221,6 +223,8 @@ test("R1/F3 persisted mainnet completion needs fresh decoder proof after each re
     updatedAt: Date.now(),
   };
   await page.addInitScript((claim) => {
+    // V1.9: test setup belongs to the app document only, never to third-party/opaque subframes.
+    if (window !== window.top) return;
     localStorage.setItem("otherbridge.language", "tr");
     if (!localStorage.getItem("otherbridge.history.v1"))
       localStorage.setItem("otherbridge.history.v1", JSON.stringify([claim]));
@@ -352,7 +356,12 @@ test("R1/F3 persisted mainnet completion needs fresh decoder proof after each re
   const settledTrackCount = tracks;
   await page.waitForTimeout(1800);
   expect(tracks).toBe(settledTrackCount); // Dev StrictMode may mount twice, but fresh records must not restart polling.
-  await page.goto("/");
+  await page.goto("/bridge");
+  // V1.11: observed bounds live in the health card's Safety details disclosure.
+  await page
+    .locator(".health-card details.disclosure > summary")
+    .first()
+    .click();
   await expect(page.getByText("Gözlenen minimum")).toBeVisible();
   await expect(
     page.getByText("Gerçek gönderim kapalı", { exact: true }),

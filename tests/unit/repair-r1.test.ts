@@ -2,7 +2,10 @@ import { afterEach, expect, it, vi } from "vitest";
 import { CROSS, NATIVE, type TransferRecord } from "../../src/core/model";
 import { verifySettlement } from "../../src/core/flow";
 import { assertNoUnresolved } from "../../src/features/bridge/lifecycle";
-import { connect, requestOnce } from "../../src/features/wallet/provider";
+import {
+  bindExternalWallet,
+  requestOnce,
+} from "../../src/features/wallet/provider";
 import { validateQuote } from "../../src/adapters/onebridge";
 import { localQuote } from "../fixtures/local";
 afterEach(() => {
@@ -197,19 +200,19 @@ it("R1/F3 synthetic unresolved intent cannot lock the mainnet namespace", () => 
     }),
   ).not.toThrow();
 });
-it("R1/F4 connect times out when permission succeeded but chain read never resolves", async () => {
+it("R1/F4 binding times out when the account read succeeded but the chain read never resolves", async () => {
   vi.useFakeTimers();
   let outcome = "pending";
   const provider = {
     request: vi.fn(async ({ method }: { method: string }) =>
-      method === "eth_requestAccounts" ? [account] : new Promise(() => {}),
+      method === "eth_accounts" ? [account] : new Promise(() => {}),
     ),
   };
-  void connect(provider).then(
+  void bindExternalWallet(provider, account).then(
     () => {
       outcome = "connected";
     },
-    (e) => {
+    (e: { code: string }) => {
       outcome = e.code;
     },
   );

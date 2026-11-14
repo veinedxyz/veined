@@ -1,0 +1,408 @@
+{
+  "@img/sharp-libvips-darwin-arm64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-darwin-arm64/1.3.4",
+    "at": "2026-10-15T14:20:59.419Z",
+    "sha256": "37386f3a91996d622deb24fec04bd1d18d76e414855ece2b7e86b83b22e0395b",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-5R89nBYiRdUlSWJxPhO+GVtaXzXSxKnRu/xqMn3KTA3L9EB9Oy/P+Nn2f2vlhPuUdy/Zusb2DarbyTpGCfEDuw=="
+  },
+  "@img/sharp-darwin-arm64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-darwin-arm64/0.35.5",
+    "at": "2026-10-15T14:20:59.453Z",
+    "sha256": "1afa2c1a80c510a24ff2c54900262530e617d0e635e82f6a4013a17e6a1c1c43",
+    "license": "Apache-2.0",
+    "integrity": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg=="
+  },
+  "@img/sharp-darwin-x64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-darwin-x64/0.35.5",
+    "at": "2026-10-15T14:20:59.486Z",
+    "sha256": "7a51c10b1c6e0b6cb44be9a3251a63d04754a91715f25312aed059f768409aac",
+    "license": "Apache-2.0",
+    "integrity": "sha512-+BR255RhDlpygUpOc/Jdt1nT6DQ3XG/ERo5wbcdOf5Q320dKtPCKPLR1LJs9VGXRaMa8l1uUa0tkCNOXiAxZUw=="
+  },
+  "@img/sharp-freebsd-wasm32@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-freebsd-wasm32/0.35.5",
+    "at": "2026-10-15T14:20:59.533Z",
+    "sha256": "99bf16e5bbd3d41e544fa4e534b7d68a109277798c9b37199fe727db37827a6c",
+    "license": "Apache-2.0",
+    "integrity": "sha512-Y/z91nEZ4uIBX5X3nfTovjU9lHNKFYbL2lpHCLVNmXQK03VIZvXBBt0KxbPGp2SdGSF+2mQU4e+hQaWOt86iAw=="
+  },
+  "@img/sharp-libvips-linux-ppc64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-ppc64/1.3.4",
+    "at": "2026-10-15T14:20:59.814Z",
+    "sha256": "21de2fd0572bb7ea1ce74914c0f02dc2fb0e6a6c32c63180bc5f1ef3b96097b6",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-Le6boB8Tai0Nis+gIxIpKx68UDVVIqdR8Tin5Yf1z2LJJQLDJvCDRqRu+jC2qCoD+eIomonmOwB4smBRxfVpYQ=="
+  },
+  "@img/sharp-libvips-linux-arm64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-arm64/1.3.4",
+    "at": "2026-10-15T14:20:59.817Z",
+    "sha256": "ae6886fe1b96901cbf85c41740938dfa57dc74e1435c5ed084803086a474f9c5",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-Y3dgX/6lE2QhQb+Gxy0WZxfg9MEm/JBjamZpS2IklP7xIQoKN4hzAm7KcMVGtaVDt3neE9OKBC7vAfonA/Lr1A=="
+  },
+  "@img/sharp-libvips-linux-arm@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-arm/1.3.4",
+    "at": "2026-10-15T14:20:59.819Z",
+    "sha256": "7c456f32c9f363821d40c04ea55d68e068cf1da0d87dd723f2a42411af700cac",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-LmRtTsOHuvM2+wlO2Db37dx5MiZhB0FvSunciw48YjdOkZz9KAiRbm8ujeMOA1INqmei5NapFxYEK1D1ZSidmw=="
+  },
+  "@img/sharp-libvips-darwin-x64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-darwin-x64/1.3.4",
+    "at": "2026-10-15T14:20:59.831Z",
+    "sha256": "22d855b5746dd229baa1f04ede9397c8dd59eed611748531f5acafdc77a952a3",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-iR2OKH80yi0U+dUplyh3/xdpFvps6YkCwsXenIJxqxR1v9o+xtKTGbS9H7cps+2Vxjc8B1j96p75NmTGjIhtpQ=="
+  },
+  "@img/sharp-libvips-linux-s390x@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-s390x/1.3.4",
+    "at": "2026-10-15T14:21:00.109Z",
+    "sha256": "a1ea308ea460b724f1da6e251e0a4564415475b8e1b7a4722d4508a75269c9a5",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-ra/mB6MikESDUO7Yg+Mi95bFBb9GsObURuhnOv3OqknjGe9sZrG8tCe9q0xSIGrtLgvgw0gKnFWcK4blSgQOuQ=="
+  },
+  "@img/sharp-libvips-linux-x64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-x64/1.3.4",
+    "at": "2026-10-15T14:21:00.154Z",
+    "sha256": "f88163320513e36d7dd201d0587c95d4bb4bd4a2e77901754a20647e803e7507",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-GJ//SSXbnwSDes02umB3nDJLFcQzw8a18V8fyhqr6tV515tOEMdImjjxj1AoafMRz56F3PHgftnj1QEKSU1zkw=="
+  },
+  "@img/sharp-libvips-linuxmusl-arm64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linuxmusl-arm64/1.3.4",
+    "at": "2026-10-15T14:21:00.389Z",
+    "sha256": "4dc0d925fa4f45581f63ea6d4417d57bb58b3800cdafdc718f394ba577c96d75",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-hvulFwtjUcagsis6BBxHwGFwWoNZjgYmULGVrZcyfNbjA8hKILbRxGg15/7w5HDyXHXUos/j6baAWqnCyQ2DWA=="
+  },
+  "@img/sharp-libvips-linux-riscv64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linux-riscv64/1.3.4",
+    "at": "2026-10-15T14:21:00.596Z",
+    "sha256": "d329438abfdebab5a24992f30e2be934048920c185d351f168f04bf1130a9c65",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q=="
+  },
+  "@img/sharp-linux-ppc64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-ppc64/0.35.5",
+    "at": "2026-10-15T14:21:00.929Z",
+    "sha256": "f662290d9cf5cd2f166a4ce76ce8de6b674ab335b28a83cfeb5f553091d4c067",
+    "license": "Apache-2.0",
+    "integrity": "sha512-QVxAAq8evVRI9ia2vqgwrmWucn5Dfv+JdWzj75pD8omHLPSP7f8p20O8jxzjCcuCEQEOtYOZUmX1hkiZ0kdevA=="
+  },
+  "@img/sharp-libvips-linuxmusl-x64@1.3.4": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-libvips-linuxmusl-x64/1.3.4",
+    "at": "2026-10-15T14:21:00.939Z",
+    "sha256": "8a7977500d66633080779d6712ec24246e0485f1b0025ccfd1ac2edca0cab5ad",
+    "license": "LGPL-3.0-or-later",
+    "integrity": "sha512-6zXKeE/p39I1AmA3cJG35eyBGNqNddLnUXjhwBnsGjFPWqf5VKkDBEqaEkPDoTEtkxwi2vv8Tcr2mDyP4So7Fg=="
+  },
+  "@img/sharp-linux-arm@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-arm/0.35.5",
+    "at": "2026-10-15T14:21:00.990Z",
+    "sha256": "a43abc0feeaf57743a9dd735bc87452871556c534e6ec6e69684166399e3228f",
+    "license": "Apache-2.0",
+    "integrity": "sha512-LEaXK2WdXVK5ykcw0buWyPMsmLLL2vpHLD6yrNSW+JGEL3BZPA4tpKN6iaMc4AxTTAoaX/sU1rOL51lcIz48ZQ=="
+  },
+  "@img/sharp-linux-arm64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-arm64/0.35.5",
+    "at": "2026-10-15T14:21:01.042Z",
+    "sha256": "b93cc0f73c9f629e7a7b1afd6a824cd8a3a56d6dccdbdd1733905b2324f7763e",
+    "license": "Apache-2.0",
+    "integrity": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ=="
+  },
+  "@img/sharp-linux-s390x@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-s390x/0.35.5",
+    "at": "2026-10-15T14:21:01.321Z",
+    "sha256": "44e764e8c0b6cefca50cae543c1b94a3faf95952e92f2114ea06409ffb787297",
+    "license": "Apache-2.0",
+    "integrity": "sha512-UZasTOFiYzotTsGOCu42BfUzP6Tu6Do/947iRm1RsLKvlllxwGcn4RN27LibGWceix4Y+Pmw3jsnTcCQIgWjqA=="
+  },
+  "@img/sharp-linux-riscv64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-riscv64/0.35.5",
+    "at": "2026-10-15T14:21:01.382Z",
+    "sha256": "eb199207319d75f77c59a52b6c0b3bf39e811d80104d6caecbd72f73b5c3d95b",
+    "license": "Apache-2.0",
+    "integrity": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ=="
+  },
+  "@img/sharp-linuxmusl-arm64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linuxmusl-arm64/0.35.5",
+    "at": "2026-10-15T14:21:01.397Z",
+    "sha256": "492538e6686d32d164159bec57f88063e1aad5d069d5f1f95ca1bf8a7ad5112e",
+    "license": "Apache-2.0",
+    "integrity": "sha512-9HbMclmI1zlNkFRs3z9/eBtDjfD0sGlrX1z6b1qwmiFY5ElDLh4BC0LPBdVp7z1DXFiKlIcznf+ZlsuZzLxQqg=="
+  },
+  "@img/sharp-linux-x64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linux-x64/0.35.5",
+    "at": "2026-10-15T14:21:01.818Z",
+    "sha256": "e75ac6c6c9d9bd9a7111947f507721168f9b834ab4f762127bade2184bfb77bc",
+    "license": "Apache-2.0",
+    "integrity": "sha512-SxFtLTeJInhAA9Q836kux2vZNeOBQEx658qvbboZScr0wIARym3IcGmW7KpVD5sbVg0Ojy+udFQdayYIZyoNog=="
+  },
+  "@img/sharp-wasm32@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-wasm32/0.35.5",
+    "at": "2026-10-15T14:21:02.143Z",
+    "sha256": "b1076421e84845fc85decab2e2a40bc7f50d221b1a1431baaaf7aabb6d26dc9d",
+    "license": "Apache-2.0 AND LGPL-3.0-or-later AND MIT",
+    "integrity": "sha512-Ptsga1su4tQx+LLF1ECS9U6nz5kmrXKo6XVbtR48Ke3ZRxxgaWBu7IDtEe1quo8hiupwm6WFqxVlXaSf7IINGQ=="
+  },
+  "@img/sharp-webcontainers-wasm32@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-webcontainers-wasm32/0.35.5",
+    "at": "2026-10-15T14:21:02.160Z",
+    "sha256": "ac93692d0417f9bf5137aa4778075602b94156c73c6427a5588e79edd8b8ebc9",
+    "license": "Apache-2.0",
+    "integrity": "sha512-hfhF/FmoQyTUkA0bIKFOtw536BQSeBMe6BF6QyWlrPxT754+TFLaZ7sKKTfvvM0yJgKgaYTwnFCIZ/GuDw5SUA=="
+  },
+  "@img/sharp-linuxmusl-x64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-linuxmusl-x64/0.35.5",
+    "at": "2026-10-15T14:21:02.195Z",
+    "sha256": "6cee42e2e86d6daebcc724c23f29b267d63a066110f8afcd503a39194d5c6406",
+    "license": "Apache-2.0",
+    "integrity": "sha512-4KOphqB035HrVdqLZfCgMzzERrQkkzOwRhl4OAkRO1YCldbaFjySXMaK534Mo0V+LndnlJk+sbUyLeU0ULyD1A=="
+  },
+  "@img/sharp-win32-arm64@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-win32-arm64/0.35.5",
+    "at": "2026-10-15T14:21:02.219Z",
+    "sha256": "13b44ac7e6cb781b3f77aa3fbbd1191752f05a5d06108bb1be7a568021cfb6a6",
+    "license": "Apache-2.0 AND LGPL-3.0-or-later",
+    "integrity": "sha512-X4t7g+7ZA5DKblCBEXGjUqqemj4vczING/5viFwAL8h4N3qYeyjwdCvRLHi4EdOUI+2Z7UFlp1VM+p/AuEtm6Q=="
+  },
+  "@next/swc-linux-arm64-gnu@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-linux-arm64-gnu/16.3.8",
+    "at": "2026-10-15T14:21:02.500Z",
+    "sha256": "5e762cd2a3f8773a9c760bfc04fbbd3ca7f7d86db95f389b9f37d5d724a33c40",
+    "license": "MIT",
+    "integrity": "sha512-O659ygeQYqneJ1fBKMpFxIFqYkYswu8IAS1OCKK/4f3ZgJJm1dRz4fVJZRi/kLLWjnBKnebOePA4WNv+sV1pVA=="
+  },
+  "@next/swc-darwin-x64@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-darwin-x64/16.3.8",
+    "at": "2026-10-15T14:21:02.531Z",
+    "sha256": "91986f7ac1500135375538b76fda325a32f2823b0c2279a0196311111b9b4f59",
+    "license": "MIT",
+    "integrity": "sha512-GZtCCOBKJ4leVIT/Th0llWKhD1ca92lzbQiS5R5ON9QkoiFnilFsebDae1JU2a3HWoKMEmEZWGs1AGLavVM72Q=="
+  },
+  "@next/swc-darwin-arm64@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-darwin-arm64/16.3.8",
+    "at": "2026-10-15T14:21:02.587Z",
+    "sha256": "b9ef33a89af985c986c247b162fa45fdd5bb048c03062fcea7db6d5375f5ec8a",
+    "license": "MIT",
+    "integrity": "sha512-2JPRMh2nmQG5CiL7cXGL9AGwnPWJQ//cTtAUCT+w511QHk79SYz3LGv/pc5X643B/WEO0rvu3Yww0hqwt3kgeA=="
+  },
+  "@img/sharp-win32-ia32@0.35.5": {
+    "url": "https://registry.npmjs.org/%40img%2Fsharp-win32-ia32/0.35.5",
+    "at": "2026-10-15T14:21:02.698Z",
+    "sha256": "37cf19f335e625090d1fc2019c0a7193c3ad6988dd4314c90557f6f7d67b109c",
+    "license": "Apache-2.0 AND LGPL-3.0-or-later",
+    "integrity": "sha512-5Zm82LoBc43nhwNybZlG7Y1KO//Zhsn306fQl29ZOuStHLGTo3BWL83q3cznX0poxSAMuYL1On/BHBxkBeKr6A=="
+  },
+  "@next/swc-linux-arm64-musl@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-linux-arm64-musl/16.3.8",
+    "at": "2026-10-15T14:21:02.990Z",
+    "sha256": "47ac27790dd8b0012f24b269b275b67c247c14af40a4da4c5a641f165eee5fcd",
+    "license": "MIT",
+    "integrity": "sha512-dSjKSyWpzxoO1d3DIZZcP4XJcNaKeLmxQMFOiYl5vuBRMmweIqnAhty8tAmRsvTss779cK1FtYnDMj40e4TQlg=="
+  },
+  "@next/swc-linux-x64-gnu@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-linux-x64-gnu/16.3.8",
+    "at": "2026-10-15T14:21:03.062Z",
+    "sha256": "7e2aaceeba76cead7f25651541b08265e465619c5e74896e3a5ca89961131c88",
+    "license": "MIT",
+    "integrity": "sha512-lbqOuz3RPRcv+o9msNsJw5x4+Y1ZwPTs6vmL6DCf7i0fZfvng/F59wyeDwqHIvV0mK//RBy/jJkZ+nCKsSMXjQ=="
+  },
+  "@next/swc-win32-arm64-msvc@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-win32-arm64-msvc/16.3.8",
+    "at": "2026-10-15T14:21:03.078Z",
+    "sha256": "6c851b419ebd7f417008d86ea0dcb24be34cfaed407c827df0d25d63e9185d27",
+    "license": "MIT",
+    "integrity": "sha512-ji0gd4kMYUxO+1fJBIbiBVRCjzG/lloiyCccnlebvb1ZJ5qXCPZqYg4Jl1DrrixnWNMKylzgpmMWx0yNDYXlzw=="
+  },
+  "@next/swc-linux-x64-musl@16.3.8": {
+    "url": "https://registry.npmjs.org/%40next%2Fswc-linux-x64-musl/16.3.8",
+    "at": "2026-10-15T14:21:03.170Z",
+    "sha256": "f553e95ffda9197ef90e7c8d70b23ea4185be0c2cdf64eb0188212897b83737a",
+    "license": "MIT",
+    "integrity": "sha512-+316WswI8ScVgZeUd+1KGaXkHhaYQzCjvH/05TZSpJ8zBizb1a4G7DtO7F12jcBIqMOtsz9ji1t48fmKtzqsGA=="
+  },
+  "@napi-rs/wasm-runtime@1.2.4": {
+    "url": "https://registry.npmjs.org/%40napi-rs%2Fwasm-runtime/1.2.4",
+    "at": "2026-10-15T14:21:03.471Z",
+    "sha256": "9a185f10593b0c2e413b63f6bfd3d425cfd7639ac4d7dbdccf095b3701a5d79e",
+    "license": "MIT",
+    "integrity": "sha512-AJxoUD2/15ESHbvpcyjU274nsAPLuOtPHCk0vKJM5pj//Fg/B1FXNWjPnXTT9PymCYYiHo4zPj0ZomXBKhoy7g=="
+  },
+  "@emnapi/core@1.10.0": {
+    "url": "https://registry.npmjs.org/%40emnapi%2Fcore/1.10.0",
+    "at": "2026-10-15T14:21:03.522Z",
+    "sha256": "10d000e5696a61ee7fe35f5cbecfe66f9a56e5b96e8ed99c47866484270f7d62",
+    "license": "MIT",
+    "integrity": "sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw=="
+  },
+  "@emnapi/runtime@1.10.0": {
+    "url": "https://registry.npmjs.org/%40emnapi%2Fruntime/1.10.0",
+    "at": "2026-10-15T14:21:03.525Z",
+    "sha256": "c35099b7780b49bc85b0000931800b37f9fce63f32db772f8abbcf620f774a68",
+    "license": "MIT",
+    "integrity": "sha512-ewvYlk86xUoGI0zQRNq/mC+16R1QeDlKQy21Ki3oSYXNgLb45GV1P6A0M+/s6nyCuNDqe5VpaY84BzXGwVbwFA=="
+  },
+  "@emnapi/wasi-threads@1.2.1": {
+    "url": "https://registry.npmjs.org/%40emnapi%2Fwasi-threads/1.2.1",
+    "at": "2026-10-15T14:21:03.543Z",
+    "sha256": "00f8750542aac8643801f11ca0b6fdf5eba8906fe94003ce9e9c4dadc79acfdc",
+    "license": "MIT",
+    "integrity": "sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w=="
+  },
+  "@unrs/resolver-binding-darwin-arm64@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-darwin-arm64/1.12.2",
+    "at": "2026-10-15T14:21:03.841Z",
+    "sha256": "4b5b6765e83f312072b4153e38b5371391d8e42eb39abbcf52be27ff9500cc70",
+    "license": "MIT",
+    "integrity": "sha512-u9DiNT1auQMO20A9SyTuG3wUgQWB9Z7KjAg0uFuCDR1FsAY8A0CG2S6JpHS1xwm/w1G08bjXZDcyOCjv1WAm2w=="
+  },
+  "@unrs/resolver-binding-android-arm-eabi@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-android-arm-eabi/1.12.2",
+    "at": "2026-10-15T14:21:03.878Z",
+    "sha256": "52f2f093b64f2cb3f14bd7f7e38318befa9b014c0b540009fdf651310d761e65",
+    "license": "MIT",
+    "integrity": "sha512-g5T90pqg1bo/7mytQx6F4iBNC0Wsh9cu+z9veDbFjc7HjpesJFWD7QMS0NGStXM075+7dJPPVvBbpZlnrdpi/w=="
+  },
+  "@tybys/wasm-util@0.10.4": {
+    "url": "https://registry.npmjs.org/%40tybys%2Fwasm-util/0.10.4",
+    "at": "2026-10-15T14:21:04.059Z",
+    "sha256": "945aa199426e3d39cb2704d9dd9aada9c14ead2585b204cc919b62ca19cf45ce",
+    "license": "MIT",
+    "integrity": "sha512-W3c4gRigFS0T/Ma4qIYF3GDAc5AQdHb1yL5znJT1Zv1YaD9Kitx656wBjvr19qbiosmZT8lWDM5BEMynUqX65A=="
+  },
+  "@unrs/resolver-binding-android-arm64@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-android-arm64/1.12.2",
+    "at": "2026-10-15T14:21:04.548Z",
+    "sha256": "f68a2383038bce5d014cafddc5af601e1aae18126f5b173ab5f52fd065a9e769",
+    "license": "MIT",
+    "integrity": "sha512-YGCRZv/9GLhwmz6mYDeTsm/92BAyR28l6c2ReweVW5pWgfsitWLY8upvfRlGdoyD8HjeTHSYJWyZGD4KJA/nFQ=="
+  },
+  "@unrs/resolver-binding-linux-arm-musleabihf@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-arm-musleabihf/1.12.2",
+    "at": "2026-10-15T14:21:04.933Z",
+    "sha256": "86ad36bb2fb05298436ff061a73ee89db6c528c4e396f0711d66e1774fdeeae8",
+    "license": "MIT",
+    "integrity": "sha512-BiPI+IrIlwcW4nLLMM21+B1dFPzd55yAVgVGrdgDjNef+ch03GdxrcyaIz8X9SsQirh/kCQ7mviyWlMxdh2D7g=="
+  },
+  "@unrs/resolver-binding-darwin-x64@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-darwin-x64/1.12.2",
+    "at": "2026-10-15T14:21:04.984Z",
+    "sha256": "b6385ab7858277716b9abd34ad2462fde7d5198e0a45b58d9d8d543a9993f866",
+    "license": "MIT",
+    "integrity": "sha512-f7rPLi/T1HVKZu/u6t87lroib16n8vrSzcyxI7lg4BGO9UF26KhQL44sd9eOUgrTYhvRXtWOIZT5PejdPyJfUA=="
+  },
+  "@unrs/resolver-binding-freebsd-x64@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-freebsd-x64/1.12.2",
+    "at": "2026-10-15T14:21:04.992Z",
+    "sha256": "7371b8a4c6cf987ff95faf48bb8128f3e6de48a8f4f900f16f772b884c90aa2d",
+    "license": "MIT",
+    "integrity": "sha512-BpcOjWCJub6nRZUS2zA20pmLvjtqAtGejETaIyRLiZiQf++cbrjltLA5NN/xaXfqeOBOSlMFbemIl5/S5tljmg=="
+  },
+  "@unrs/resolver-binding-linux-arm-gnueabihf@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-arm-gnueabihf/1.12.2",
+    "at": "2026-10-15T14:21:04.998Z",
+    "sha256": "33a87be38bb811c48a5a8312e5a2eef503008c2bdd384f5857f717305faec5d3",
+    "license": "MIT",
+    "integrity": "sha512-vZTDvdSISZjJx66OzJqtsOhzifbqRjbmI1Mnu49fQDwog5GtDI4QidRiEAYbZCRj9C8YZEW+3ZjqsyS9GR4k2A=="
+  },
+  "@unrs/resolver-binding-linux-loong64-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-loong64-gnu/1.12.2",
+    "at": "2026-10-15T14:21:05.295Z",
+    "sha256": "fdc41d7d0e4dc241dbca1d07f8ee5f761eb6b21b4e5fc24cbbd0dfde95034e18",
+    "license": "MIT",
+    "integrity": "sha512-3SJGEh1DborhG6pyxvhPzCT4bbSIVihsvgJc13P1bHG7KLdNDaF9T3gsTwFc7Jw/5Y5/iWOjkEx7Zy0NvCGX3Q=="
+  },
+  "@unrs/resolver-binding-linux-arm64-musl@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-arm64-musl/1.12.2",
+    "at": "2026-10-15T14:21:05.307Z",
+    "sha256": "50ab21b94c4ec76869fb5dbc0f59199c788789ff0c6b6960771be9522e22bd34",
+    "license": "MIT",
+    "integrity": "sha512-KQ3Lki6l+Pz1k/eBipN41ES+YUK30beLGb9YqcB1O542cyLCNE6GaxrfcY3T6EezmGGk84wb5XyO9loTM9tkcA=="
+  },
+  "@unrs/resolver-binding-linux-arm64-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-arm64-gnu/1.12.2",
+    "at": "2026-10-15T14:21:05.361Z",
+    "sha256": "41277a62da69d4021a225004f285b48eb9413883d5f4dad9b44232fdec271a17",
+    "license": "MIT",
+    "integrity": "sha512-zJc0H99FEPoFfSrNpa91HYfxzfAJCr502oxNK1cfdC9hlaFI43RT+JFCann9JUgZmLzzntChHyn13Sgn9ljHNg=="
+  },
+  "@unrs/resolver-binding-linux-loong64-musl@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-loong64-musl/1.12.2",
+    "at": "2026-10-15T14:21:05.456Z",
+    "sha256": "d8724c87d3151ccd410ebd6fcfeed157f1b057590644eac464e52d894de0f349",
+    "license": "MIT",
+    "integrity": "sha512-jiuG/Obbel7uw1PwHNFfrkiKhLAF6mnyZ6aWlOAVN9WqKm8v0OFGnciJIHu8+CMvXLQ8AD51LPzAoUfT21D5Ew=="
+  },
+  "@unrs/resolver-binding-linux-riscv64-musl@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-riscv64-musl/1.12.2",
+    "at": "2026-10-15T14:21:05.771Z",
+    "sha256": "97064e147a33944e09f7b1234af8cf643971d7a91ea57d06bbb5fb45007591e8",
+    "license": "MIT",
+    "integrity": "sha512-iOwlRo9vnp6R6ohHQS11n0NnfdXx/omhkocmIfaPRpQhKZ+3BDMkkdRVh53qjkFkpPddf+FETA28NwGN7l5l+w=="
+  },
+  "@unrs/resolver-binding-linux-ppc64-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-ppc64-gnu/1.12.2",
+    "at": "2026-10-15T14:21:05.806Z",
+    "sha256": "81ededcc233f1e191fa924e75bc05e1cec0d4326a350215b4109efd00db71b72",
+    "license": "MIT",
+    "integrity": "sha512-q7xRvVpmcfeL+LlZg8Pbbo6QaTZwDU5BaGZbwfhkEsXJn3Was8xYfE0RBH266xZt0rM6B7i8xAYIvjthuUIWHg=="
+  },
+  "@unrs/resolver-binding-linux-s390x-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-s390x-gnu/1.12.2",
+    "at": "2026-10-15T14:21:05.838Z",
+    "sha256": "758156b2c240a6ed935254d1b1023a9fc9f219eeeebb35c528701349f4a1b44f",
+    "license": "MIT",
+    "integrity": "sha512-HYJtLfXq94q8iZNFT1lknx258wlkkWhZeUXJRqzKBBUJ00CvZ+N33zgbCqimLjsyw5Va6uUxhVa12mI+kaveEw=="
+  },
+  "@unrs/resolver-binding-linux-riscv64-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-riscv64-gnu/1.12.2",
+    "at": "2026-10-15T14:21:05.866Z",
+    "sha256": "2868b9644a6ed39f41dda62db263ba897bed416f7f99bcda48f83382a85a6158",
+    "license": "MIT",
+    "integrity": "sha512-0CVdx6lcnT3Q9inOH8tsMIOJ6ImndllMjqJHg8RLVdB7Vq4SfkEXl9mCSsVNuNA4MCYycRicCUxPCabVHJRr6A=="
+  },
+  "@unrs/resolver-binding-wasm32-wasi@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-wasm32-wasi/1.12.2",
+    "at": "2026-10-15T14:21:06.193Z",
+    "sha256": "2152cd93e6cc0f0bb3083640b7deb96b81d22ac0ba3d8287ac09d57c95d0bff0",
+    "license": "MIT",
+    "integrity": "sha512-tYFDIkMxSflfEc/h92ZWNsZlHSwgimbNHSO3PL2JWQHfCuC2q316jMyYU9TIWZsFK2bQwyK5VAdYgn8ygPj69A=="
+  },
+  "@unrs/resolver-binding-linux-x64-musl@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-x64-musl/1.12.2",
+    "at": "2026-10-15T14:21:06.239Z",
+    "sha256": "3934e3d6655f0b482248c7a1a0b8c6cbd672db30f1868e26ce648b1252d2b106",
+    "license": "MIT",
+    "integrity": "sha512-azrt6+5ydLd8Vt210AAFis/lZevSfPw93EJRIJG+xPu4WCJ8K0kppCTpMyLPcKT7H15M4Jnt2tMp5bOvCkRC6A=="
+  },
+  "@unrs/resolver-binding-openharmony-arm64@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-openharmony-arm64/1.12.2",
+    "at": "2026-10-15T14:21:06.244Z",
+    "sha256": "ba3d0b313fd584afee2d533e81262c7ddbdf4b24b7b5fbc84418180cbbf0fdf9",
+    "license": "MIT",
+    "integrity": "sha512-YZ9hP4O0X9PQb8eO980qmLNGH4zT3I9+SZTdt0Pr0YyuGQhYKoOZkV02VzrzyOZJ5xIJ3UFIenKkUkGg8GjgWQ=="
+  },
+  "@unrs/resolver-binding-linux-x64-gnu@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-linux-x64-gnu/1.12.2",
+    "at": "2026-10-15T14:21:06.516Z",
+    "sha256": "f8fce5a66ab2f0aedbfbaf9f5f279ff39cda6b50cb7d94e2b00bcf3448f24b07",
+    "license": "MIT",
+    "integrity": "sha512-mPsUhunKKDih5O96Y6enDQyHc1SqBPlY1E/SfMWDM3EdJ95Z9CArPeCVwCCqbP45ljvivdEk8Fxn+SIb1rDAJQ=="
+  },
+  "@unrs/resolver-binding-win32-ia32-msvc@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-win32-ia32-msvc/1.12.2",
+    "at": "2026-10-15T14:21:06.819Z",
+    "sha256": "520f36855d9827b2868e4be245d24f044286c35520fcc2b915f47f597f2abfa1",
+    "license": "MIT",
+    "integrity": "sha512-WD9sY00OfpHVGfsnHZoA8jVT+esS/Bg8z8jzxp5BnDCjjwsuKsPQrzswwpFy4J1AUJbXPRfkpcX0mXrzeXW79g=="
+  },
+  "@unrs/resolver-binding-win32-arm64-msvc@1.12.2": {
+    "url": "https://registry.npmjs.org/%40unrs%2Fresolver-binding-win32-arm64-msvc/1.12.2",
+    "at": "2026-10-15T14:21:07.233Z",
+    "sha256": "80fb46e4daeb91e4ecef1496b429108a7bb7362d4c4b597f934e1b98529a12bd",
+    "license": "MIT",
+    "integrity": "sha512-qzNyg3xL0VPQmCaUh+N5jSitce6k+uCBfMDesWRnlULOZaqUkaJ0ybdT+UqlAWJoQjuqfIU/0Ptx9bteN4D82g=="
+  }
+}

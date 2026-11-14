@@ -1,0 +1,7 @@
+# DeFi positions
+
+Portfolio includes Overview, Assets, DeFi, Debt and Rewards. Wallet balances appear independently of the DeFi scan. Reviewed position adapters read only official, pinned contract identities: Aave V3 and SparkLend, Compound III, Morpho Blue and MetaMorpho V1.1 vaults, Lido (including its withdrawal queue), reviewed liquid staking and restaking tokens, reviewed EigenLayer strategies, curated ERC4626 vaults, Uniswap V2/V3, SushiSwap, PancakeSwap V2/V3, Curve, Balancer V2 weighted pools and Aerodrome/Velodrome basic pools. Receipt, LP and vault shares are not added twice with their underlying. A wrapper that is itself another protocol's token is shown as that wrapper, not decomposed.
+
+Known net value = known priced wallet + DeFi assets − known priced debt. Unpriced assets, unpriced debt and unchecked coverage stay visible and mark the net as incomplete. There is no complete net-worth or all-protocol claim.
+
+Only rewards proven by protocol views are called Claimable, and they are shown beside the net, never inside it. Uniswap V3 uncollected fees are computed exactly at the source block and shown separately. Liquid staking values use the protocol's own conversion view or reported rate, never 1:1. A pending Lido withdrawal is listed but valued only after finalization. A derivatives notional is never counted as value. There are no Deposit/Withdraw/Borrow/Repay/Claim/Stake actions; only official protocol links.

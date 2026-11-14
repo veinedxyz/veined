@@ -1,0 +1,350 @@
+{
+ "generator": "VEINED ocean film studio (build_media.py, ux5 clarity pass)",
+ "sources": {
+  "01-landing-descent.mp4": {
+   "sha256": "3bbc276a1b1e44ce7fa19f6f07df1f30946534bd73bdcc23cca53a67879041e3",
+   "path": "design-assets/ocean-videos-v1/01-landing-descent.mp4",
+   "note": "owner original, read only"
+  },
+  "02-app-ocean-loop.mp4": {
+   "sha256": "3749fc4f8ac3f43684fb65fcff96e6faf4eb0818e2f2c461b691df344289a6c8",
+   "path": "design-assets/ocean-videos-v1/02-app-ocean-loop.mp4",
+   "note": "owner original, read only"
+  }
+ },
+ "tools": {
+  "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffmpegSha256": "3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec",
+  "opencv": "4.12.0",
+  "numpy": "2.2.6"
+ },
+ "studio": {
+  "build_media.py": "2b953fb9d89dfd5abf76bcb599808c1f78767081d5540cbe5b3ec71fa5dcfa1c",
+  "detect.py": "53640672a9b616d92aa010d8bb2ea901a84c065e71484f08e5c09628e83bb73d",
+  "far_track.py": "f0047b56765501def054b2a221e2c052d69beef5db333d9c19f5082dc3e98ee3",
+  "head_track.py": "0a6fb9bf08e276afd043fcb0c2302e70fc907ee86e4121e4ca36603d14c5471c",
+  "loop_evidence.py": "d5c37d4892e60e488e2c5d5a3c0bc926da18be6abaf4d6f204b7c535633f9247",
+  "loop_studio.py": "1e2d938125af418a3aeafa5c01d7e8bdf39d33b6b240fa4cd3dc1d622f75000f",
+  "motion_profile.py": "6f04a78c99d6df21ff5081c4c4853f18461509264242190264f4817c9e2ca0be",
+  "patch_build.py": "ab1eb537e2d44454350c1e8465df97f3647ece0c72d020583dd2d5a97b0bf681",
+  "sheet.py": "105e415914747d102446dd7805561662ff93bf19ef5ad85db189ef794830c877"
+ },
+ "outputs": {
+  "app-l1280.mp4": {
+   "sha256": "80a35ecd43effe6a827a8f8cc17c12d5ff0b64aa18903d165c25d644e50a1e8f",
+   "bytes": 1283636,
+   "recipe": {
+    "source": "02-app-ocean-loop.mp4",
+    "loop": "loop_studio.py J=48 K=48 MODE=dis DISSOLVE=28",
+    "frames": 192,
+    "encoding": "H.264 High, keyframe every 48 frames",
+    "args": [
+     "-vf",
+     "hqdn3d=1.2:1.2:0:0,cas=0.5,setsar=1,format=yuv420p,setparams=range=tv:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=smpte170m",
+     "-crf",
+     "23",
+     "-tune",
+     "film",
+     "-g",
+     "48",
+     "-keyint_min",
+     "48",
+     "-sc_threshold",
+     "0",
+     "-bf",
+     "2"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], 1280 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 192,
+   "audioStreams": 0
+  },
+  "app-l960.mp4": {
+   "sha256": "56e3d71ce4287c34686ae805cd8534adc6ee6b1ef83e1eb34fb734b2fc6b2177",
+   "bytes": 829954,
+   "recipe": {
+    "source": "02-app-ocean-loop.mp4",
+    "loop": "loop_studio.py J=48 K=48 MODE=dis DISSOLVE=28",
+    "frames": 192,
+    "encoding": "H.264 High, keyframe every 48 frames",
+    "args": [
+     "-vf",
+     "hqdn3d=1.2:1.2:0:0,scale=960:540:flags=lanczos,cas=0.45,setsar=1,format=yuv420p,setparams=range=tv:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=smpte170m",
+     "-crf",
+     "23",
+     "-tune",
+     "film",
+     "-g",
+     "48",
+     "-keyint_min",
+     "48",
+     "-sc_threshold",
+     "0",
+     "-bf",
+     "2"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 960x540 [SAR 1:1 DAR 16:9], 827 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 192,
+   "audioStreams": 0
+  },
+  "app-p456.mp4": {
+   "sha256": "77c7e3ee5fdb315b728c7dd4333f16c0beeaf8380645dd1e4497da12e080f242",
+   "bytes": 787291,
+   "recipe": {
+    "source": "02-app-ocean-loop.mp4",
+    "loop": "loop_studio.py J=48 K=48 MODE=dis DISSOLVE=28",
+    "frames": 192,
+    "encoding": "H.264 High, keyframe every 48 frames",
+    "args": [
+     "-vf",
+     "crop=456:720:796:0,hqdn3d=1.2:1.2:0:0,cas=0.5,setsar=1,format=yuv420p,setparams=range=tv:color_primaries=bt709:color_trc=iec61966-2-1:colorspace=smpte170m",
+     "-crf",
+     "23",
+     "-tune",
+     "film",
+     "-g",
+     "48",
+     "-keyint_min",
+     "48",
+     "-sc_threshold",
+     "0",
+     "-bf",
+     "2"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 456x720 [SAR 1:1 DAR 19:30], 784 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 192,
+   "audioStreams": 0
+  },
+  "app-poster-l1280.webp": {
+   "sha256": "66d5d198e7df4af5c2439f477dadf2487a275772e3d03bb91023688ec300f53e",
+   "bytes": 26388,
+   "recipe": {
+    "source": "02-app-ocean-loop.mp4",
+    "frame": "loop frame 0 (clip frame 48)",
+    "encoding": "WebP q84",
+    "filter": "hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "app-poster-p456.webp": {
+   "sha256": "c6d967920a5bf2caab0722093063488404ce9cfe50130489a57f527d53df5c02",
+   "bytes": 19434,
+   "recipe": {
+    "source": "02-app-ocean-loop.mp4",
+    "frame": "loop frame 0 (clip frame 48)",
+    "encoding": "WebP q84",
+    "filter": "crop=456:720:796:0,hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d0-l1280.webp": {
+   "sha256": "b69f287860af7a3e0b736ecc4d36725d7211e27bd3c32b2ac46024f34506d7a6",
+   "bytes": 35858,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 0,
+    "encoding": "WebP q84",
+    "filter": "hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d0-p456.webp": {
+   "sha256": "6e52f5fc192cd7e713b35ebbec2c707671487dcf16babbae4c9cb5176b38c0fc",
+   "bytes": 23298,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 0,
+    "encoding": "WebP q84",
+    "filter": "crop=456:720:680:0,hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d1-l1280.webp": {
+   "sha256": "09845ea14c231531d6f543c003d4fdab7c73786344c2e563dc4f3f41cb4603a4",
+   "bytes": 37766,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 80,
+    "encoding": "WebP q84",
+    "filter": "hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d1-p456.webp": {
+   "sha256": "53c4cc840f13cbe3ffa938a045a9e197cd9ad7b1f785b3187eb238e66da68b14",
+   "bytes": 25978,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 80,
+    "encoding": "WebP q84",
+    "filter": "crop=456:720:680:0,hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d2-l1280.webp": {
+   "sha256": "c882fd46d61d73184c1d65d3eb2e17d01548a807af3ff3654829fc2d8298405d",
+   "bytes": 37080,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 160,
+    "encoding": "WebP q84",
+    "filter": "hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d2-p456.webp": {
+   "sha256": "ead762e04ac05c99279ec7957a7ce2bb36917e2fbede23c0d708cd311ad0541a",
+   "bytes": 24850,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 160,
+    "encoding": "WebP q84",
+    "filter": "crop=456:720:680:0,hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d3-l1280.webp": {
+   "sha256": "2d6e907027d42cf829109adbe73758d629612754c36c2434cde4e93a2c8cef0a",
+   "bytes": 47332,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 239,
+    "encoding": "WebP q84",
+    "filter": "hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-d3-p456.webp": {
+   "sha256": "bee6e632ef1b2ae17de3db28b42934d36e32e647aceff8e670d7cb65edc26d56",
+   "bytes": 25668,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 239,
+    "encoding": "WebP q84",
+    "filter": "crop=456:720:680:0,hqdn3d=1.2:1.2:0:0,cas=0.5"
+   }
+  },
+  "landing-l1280.mp4": {
+   "sha256": "36386de52f27d81ff73d46320cd7f400ae3595ce491ff8750438cd6072ca2cf2",
+   "bytes": 5745723,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "encoding": "H.264 High all-intra (every frame a keyframe)",
+    "args": [
+     "-vf",
+     "hqdn3d=1.2:1.2:0:0,cas=0.5,setsar=1",
+     "-crf",
+     "24",
+     "-g",
+     "1",
+     "-keyint_min",
+     "1",
+     "-sc_threshold",
+     "0",
+     "-tune",
+     "film"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], 4595 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 240,
+   "audioStreams": 0
+  },
+  "landing-l960.mp4": {
+   "sha256": "1820e8329c6faeaf2b0d7279547cd0e8e11e379cdfa32f0cbf282cd69cf5e637",
+   "bytes": 3962212,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "encoding": "H.264 High all-intra (every frame a keyframe)",
+    "args": [
+     "-vf",
+     "hqdn3d=1.2:1.2:0:0,scale=960:540:flags=lanczos,cas=0.45,setsar=1",
+     "-crf",
+     "24",
+     "-g",
+     "1",
+     "-keyint_min",
+     "1",
+     "-sc_threshold",
+     "0",
+     "-tune",
+     "film"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 960x540 [SAR 1:1 DAR 16:9], 3168 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 240,
+   "audioStreams": 0
+  },
+  "landing-p456.mp4": {
+   "sha256": "0f5a6eefe7b85af066563e6e7bd8e6fa08b6bd3bd1f4a0ad9fde9a60aded1694",
+   "bytes": 2903415,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "encoding": "H.264 High all-intra (every frame a keyframe)",
+    "args": [
+     "-vf",
+     "crop=456:720:680:0,hqdn3d=1.2:1.2:0:0,cas=0.5,setsar=1",
+     "-crf",
+     "24",
+     "-g",
+     "1",
+     "-keyint_min",
+     "1",
+     "-sc_threshold",
+     "0",
+     "-tune",
+     "film"
+    ]
+   },
+   "stream": [
+    "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, smpte170m/bt709/iec61966-2-1, progressive), 456x720 [SAR 1:1 DAR 19:30], 2321 kb/s, 24 fps, 24 tbr, 12288 tbn (default)"
+   ],
+   "frames": 240,
+   "audioStreams": 0
+  },
+  "portfolio-water-l960.webp": {
+   "sha256": "bd4292fb4d8ea743b9334ff5d052d7d2b68cafc58296558d708b1cb9bf9d9710",
+   "bytes": 9152,
+   "recipe": {
+    "source": "01-landing-descent.mp4",
+    "frame": 0,
+    "crop": "560x315 at 0,0 (open water)",
+    "encoding": "WebP q84, 960x540, CAS 0.4"
+   }
+  }
+ },
+ "loop": {
+  "J": 48,
+  "K": 48,
+  "L": 192,
+  "mode": "dis",
+  "dissolve": 28,
+  "consecutive": null,
+  "rawConsecutive": null,
+  "sharpness": null,
+  "seamDiff": 1.4313639402389526,
+  "maxDiff": 2.6972432136535645,
+  "rawP95": 1.8182631969451903,
+  "rawMax": 1.9762192964553833,
+  "rawSeam": 8.915614128112793,
+  "headFit": {
+   "cx": [
+    0.0007766140868124962,
+    -0.06364545661072968,
+    1051.5790345132268
+   ],
+   "cy": [
+    0.001026670557705989,
+    -0.6448306897727364,
+    353.01562196176644
+   ],
+   "scale": [
+    -1.1204851378874308e-06,
+    0.001124076512159038,
+    0.8108575162421714
+   ]
+  }
+ }
+}

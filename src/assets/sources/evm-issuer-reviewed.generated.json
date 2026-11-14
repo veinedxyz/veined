@@ -1,0 +1,99 @@
+{
+ "issuer": "https://developers.circle.com/stablecoins/usdc-contract-addresses",
+ "rule": "issuer-published contract + Trust Wallet exact asset metadata + routing provider contract and decimals + CoinGecko listing (same rule as solana-reviewed.generated.json)",
+ "reviewedAt": "2026-11-11T02:16:17.997Z",
+ "assets": [
+  {
+   "chainId": "8453",
+   "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+   "native": false,
+   "symbol": "USDC",
+   "name": "USDC",
+   "decimals": 6,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "trustwallet",
+    "routing",
+    "coingecko"
+   ],
+   "logo": {
+    "src": "/assets/tokens/8453/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913-bee26115db56cfb1.png",
+    "source": "trustwallet",
+    "sha256": "bee26115db56cfb1f194126d6ab129eddbf735a34f8ea2d3c766c26aaaba3788"
+   },
+   "coingeckoId": "usd-coin",
+   "risk": [],
+   "routable": true
+  },
+  {
+   "chainId": "42161",
+   "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+   "native": false,
+   "symbol": "USDC",
+   "name": "USDC",
+   "decimals": 6,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "trustwallet",
+    "routing",
+    "coingecko"
+   ],
+   "logo": {
+    "src": "/assets/tokens/42161/0xaf88d065e77c8cc2239327c5edb3a432268e5831-bee26115db56cfb1.png",
+    "source": "trustwallet",
+    "sha256": "bee26115db56cfb1f194126d6ab129eddbf735a34f8ea2d3c766c26aaaba3788"
+   },
+   "coingeckoId": "usd-coin",
+   "risk": [],
+   "routable": true
+  },
+  {
+   "chainId": "10",
+   "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+   "native": false,
+   "symbol": "USDC",
+   "name": "USDC",
+   "decimals": 6,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "trustwallet",
+    "routing",
+    "coingecko"
+   ],
+   "logo": {
+    "src": "/assets/tokens/10/0x0b2c639c533813f4aa9d7837caf62653d097ff85-bee26115db56cfb1.png",
+    "source": "trustwallet",
+    "sha256": "bee26115db56cfb1f194126d6ab129eddbf735a34f8ea2d3c766c26aaaba3788"
+   },
+   "coingeckoId": "usd-coin",
+   "risk": [],
+   "routable": true
+  },
+  {
+   "chainId": "137",
+   "address": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+   "native": false,
+   "symbol": "USDC",
+   "name": "USDC",
+   "decimals": 6,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "trustwallet",
+    "routing",
+    "coingecko"
+   ],
+   "logo": {
+    "src": "/assets/tokens/137/0x3c499c542cef5e3811e1192ce70d8cc03d5c3359-bee26115db56cfb1.png",
+    "source": "trustwallet",
+    "sha256": "bee26115db56cfb1f194126d6ab129eddbf735a34f8ea2d3c766c26aaaba3788"
+   },
+   "coingeckoId": "usd-coin",
+   "risk": [],
+   "routable": true
+  }
+ ]
+}

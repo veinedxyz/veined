@@ -1,0 +1,10 @@
+{
+  "name": "@otherbridge/data-client",
+  "version": "0.1.4",
+  "private": true,
+  "description": "Typed server-side client for the internal-first VEINED Data API (/v1). Not published.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "license": "UNLICENSED"
+}

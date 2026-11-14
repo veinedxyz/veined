@@ -1,0 +1,16 @@
+overrides:
+  "@pancakeswap/sdk>@pancakeswap/swap-sdk-solana": "-"
+  "jayson": "5.0.0"
+  "ws@>=8.0.0 <8.21.0": "8.21.3"
+  "uuid@<11.1.1": "11.1.1"
+  "bn.js@>=5.0.0 <5.2.3": "5.2.3"
+  # V1.21.1 ZOD3: GHSA-mrhx-c7xc-m3w5; smart-router only builds its unused APISchema with zod. Scoped, not global.
+  "@pancakeswap/smart-router>zod": "4.6.6"
+  # abitype declares zod ^3.22.0 || ^4.0.0 as an optional peer; pin that peer to the same patched zod.
+  "abitype>zod": "4.6.6"
+allowBuilds:
+  bigint-buffer: false
+  bufferutil: false
+  utf-8-validate: false
+patchedDependencies:
+  "@pancakeswap/sdk@5.9.3": patches/@pancakeswap__sdk@5.9.3.patch

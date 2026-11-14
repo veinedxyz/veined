@@ -1,9 +1,6 @@
-import Image from "next/image";
-import {
-  networkIdentity,
-  networkStyle,
-  type NetworkId,
-} from "../content/networks";
+import { LogoImage } from "./logo-image";
+import { networkIdentity, type NetworkId } from "../content/networks";
+import { networkThemeClass } from "../content/network-themes";
 
 export function NetworkLogo({
   id,
@@ -15,12 +12,11 @@ export function NetworkLogo({
   const network = networkIdentity[id];
   return (
     <span
-      className={`network-mark network-mark-${size}`}
-      style={networkStyle(id)}
+      className={`network-mark network-mark-${size} ${networkThemeClass(id)}`}
       data-network-logo={id}
       aria-hidden="true"
     >
-      <Image src={network.logo} alt="" width={40} height={40} unoptimized />
+      <LogoImage src={network.logo} size={40} />
     </span>
   );
 }
@@ -33,7 +29,10 @@ export function NetworkBadge({
   compact?: boolean;
 }) {
   return (
-    <span className="network-badge" style={networkStyle(id)} data-network={id}>
+    <span
+      className={`network-badge ${networkThemeClass(id)}`}
+      data-network={id}
+    >
       <NetworkLogo id={id} size="sm" />
       <span>
         {compact ? networkIdentity[id].shortName : networkIdentity[id].name}

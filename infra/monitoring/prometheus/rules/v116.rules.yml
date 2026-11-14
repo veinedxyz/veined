@@ -1,0 +1,113 @@
+{
+  "groups": [
+    {
+      "name": "otherbridge-v116",
+      "rules": [
+        {
+          "alert": "OtherbridgeSwapProviderOutage",
+          "expr": "sum by (mode) (increase(otherbridge_swap_outcome_total{status=~\"PROVIDER_UNAVAILABLE|HTTP_5XX|PROVIDER_TIMEOUT\"}[5m])) > 4",
+          "for": "1m",
+          "labels": {
+            "severity": "high",
+            "area": "swap"
+          },
+          "annotations": {
+            "summary": "Swap provider repeatedly unavailable.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeSwapProviderRateLimited",
+          "expr": "sum by (mode) (increase(otherbridge_swap_outcome_total{status=\"RATE_LIMITED\"}[5m])) > 4",
+          "for": "1m",
+          "labels": {
+            "severity": "high",
+            "area": "swap"
+          },
+          "annotations": {
+            "summary": "Swap provider sustained rate limiting.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeSimulationFailureSpike",
+          "expr": "sum(increase(otherbridge_swap_outcome_total{phase=\"simulation\",status!=\"OK\"}[5m])) > 4",
+          "for": "1m",
+          "labels": {
+            "severity": "high",
+            "area": "swap"
+          },
+          "annotations": {
+            "summary": "Unsigned simulation failures elevated.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeFirewallRejectAnomaly",
+          "expr": "sum(increase(otherbridge_swap_outcome_total{phase=\"decode\",status!=\"OK\"}[5m])) > 4",
+          "for": "1m",
+          "labels": {
+            "severity": "critical",
+            "area": "security"
+          },
+          "annotations": {
+            "summary": "Transaction firewall rejects elevated.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeProtectedBaselineMismatch",
+          "expr": "max(otherbridge_security_protected_baseline_mismatch) > 0",
+          "for": "1m",
+          "labels": {
+            "severity": "critical",
+            "area": "security"
+          },
+          "annotations": {
+            "summary": "Protected baseline mismatch; invalidate RC.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeDependencyAuditRegression",
+          "expr": "max(otherbridge_security_dependency_audit_regression) > 0",
+          "for": "1m",
+          "labels": {
+            "severity": "critical",
+            "area": "security"
+          },
+          "annotations": {
+            "summary": "Production dependency audit failed, missing or stale.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeExecutionFlagAnomaly",
+          "expr": "max(otherbridge_security_execution_flag_anomaly) > 0",
+          "for": "1m",
+          "labels": {
+            "severity": "critical",
+            "area": "security"
+          },
+          "annotations": {
+            "summary": "Execution flag unexpectedly requested.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        },
+        {
+          "alert": "OtherbridgeDataApiUnavailable",
+          "expr": "up{job=\"otherbridge-data-api\"} == 0",
+          "for": "1m",
+          "labels": {
+            "severity": "high",
+            "area": "data-api"
+          },
+          "annotations": {
+            "summary": "Data API metrics target unavailable.",
+            "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Teklif ve gözlem yaşam döngüsü
+
+Bridge discovery yalnız farklı mainnet chain çiftleri içindir. Kullanıcı varlık/adres/miktar/slippage ve 'Tahmini alımı artır' veya süre tercihini seçer. Resmi quote endpoint seçilen metrikle tek güncel teklif döndürür; uydurma alternatifler eklenmez. Domain array/karşılaştırma yardımcısı gelecekte birden fazla gerçek alternatif için hazırdır. Exact wallet confirmation sayıları bilinmediğinden 'az onay' sonucu uydurulmaz. Cross-chain teklif içindeki exchange/bridge/protocol adımları ayrı ayrı gösterilir; standalone Swap tabı/V3 açılmaz.
+
+Quote binding: provider, source/destination chain, iki asset adresi, amount base units, iki native hesap, catalog generation, slippage, preference, wallet revision. Adres/chain/amount/asset/tercih değişikliği eski isteği abort eder, sıra numarasını artırır, review'u kapatır. Bekleyen eski yanıt binding ve sequence eşleşmeden yayınlanmaz. Global EVM duplicate account event/reconnect de revision değiştirir. Katalog refresh/eski tool/5 dakikadan eski katalog veya 30 saniyeden eski quote review'u geçersiz kılar. Eski ONE MAX/race modelini değiştirmez.
+
+Runtime quote doğrulaması source/destination/asset/amount/adres ve slippage eşleşmesini, minimum<=beklenen, pozitif çıktı ve mevcut tool/chain kimliğini denetler. Gerçek provider'ın `feeCollection` protocol'ü tek explicit internal istisnadır; adı/adımı görünür. transactionRequest/calldata/typedData çıkarılır. Review: tool/steps, asset, beklenen/minimum, tahmini maliyet/fee/gas, ETA, maliyetler dahil price impact, approval hedefleri, destination-signature bildirimi ve bilinmeyen balance/allowance/signature sayıları. Bunlar gerçekleşmiş fee/işlem kanıtı değildir.
+
+Saklama yalnız QUOTE_PREVIEW'dır. Web Locks olmadan yazılmaz, bozuk kayıt ezilmez, 40 kayıt sınırında mevcut kayıt düşürülmez. Aynı kaydın harici source hash ipucu çelişen hash ile değiştirilemez. Orijinal ONE storage key/runtime decoder/finality/recipient/token/amount kanıtları aynen kalır.
+
+Harici işlem gözlemi kullanıcı tarafından başlatılır. Server status cevabı source hash + iki chain + source amount/asset + iki adres ile context'e bağlı olmalıdır. COMPLETED ayrıca provider DONE/COMPLETED, destination tx/hash/chain/asset ve minimumu karşılayan pozitif payout ister. Partial/refund/failed ayrı normalize edilir; eksik veya uyumsuz metadata UNKNOWN'dır. Bir provider status gözlemi 30 saniye sonra geçersizleşir. Reload yalnız preview/hint okur, tamamlanmayı geri yüklemez. Bu yeni provider gözlemi, ONEbridge decoder/finality G5 kanıtının yerine geçmez.
+
+Gerçek execution lifecycle bu milestone'da uygulanmadı: AWAITING_SIGNATURE/approve/execute/retry/refund otomasyonu yok. Gönderim düğmeleri disabled ve server write action şeması yoktur.

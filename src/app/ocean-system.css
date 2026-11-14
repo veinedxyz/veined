@@ -1,0 +1,99 @@
+/* VEINED ocean layer. Loaded after abyss-system.css; the owner's films themselves are styled in ocean-film.css.
+   Ocean film candidate: the photographic cameras and tentacle rigs of the previous candidate are replaced by the
+   owner's two videos (landing descent and living application ocean); what stays here are the surfaces that keep
+   every control and every figure readable over moving water.
+   - Decorative only: aria-hidden, no pointer events, hidden in forced colours and print. */
+
+/* ---------- Surfaces over the art (independent review) ---------- */
+/* Controls in a heading band never sit on bare art. */
+.veined-app :is(.page-heading, .intro) :is(button, .file-button, .button-link) {
+  background-color: var(--surface);
+}
+/* Trust copy (how VEINED works) reads on its own surface. */
+.veined-app .help-steps {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl, 16px);
+  background: var(--surface);
+}
+/* The footer meets the water with a soft edge instead of slicing an arm. */
+.footer {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--abyss-rgb) / 0.55) 0,
+    rgb(var(--abyss-rgb) / 0.94) 44px
+  );
+}
+/* Phones and short viewports (200 % zoom): heading bands are compact, so the instrument stays near the top. */
+@media (max-width: 700px) {
+  .veined-app[data-surface="bridge"] .intro {
+    min-height: 128px;
+  }
+}
+@media (max-height: 560px) {
+  .veined-app .page-heading:not(.swap-page > .page-heading),
+  .veined-app[data-surface="bridge"] .intro {
+    min-height: 128px;
+    padding-block: 18px;
+  }
+}
+/* Bridge and Activity: the arm crosses the band, so the title block reads on a deeper scrim. */
+.veined-app[data-surface="bridge"] .intro::before,
+.veined-app[data-surface="activity"] .page-heading::before {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0.95) 0%,
+    rgb(var(--abyss-rgb) / 0.84) 44%,
+    rgb(var(--abyss-rgb) / 0) 76%
+  );
+}
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro::before,
+[dir="rtl"] .veined-app[data-surface="activity"] .page-heading::before {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--abyss-rgb) / 0.95) 0%,
+    rgb(var(--abyss-rgb) / 0.84) 44%,
+    rgb(var(--abyss-rgb) / 0) 76%
+  );
+}
+@media (max-width: 700px) {
+  .veined-app[data-surface="bridge"] .intro::before,
+  .veined-app[data-surface="activity"] .page-heading::before,
+  [dir="rtl"] .veined-app[data-surface="bridge"] .intro::before,
+  [dir="rtl"] .veined-app[data-surface="activity"] .page-heading::before {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--abyss-rgb) / 0.94) 0%,
+      rgb(var(--abyss-rgb) / 0.7) 60%,
+      rgb(var(--abyss-rgb) / 0.2) 100%
+    );
+  }
+}
+/* Activity: the import note is information, so it reads on its own surface. */
+.veined-app .toolbar-note {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+/* Daylight: cards keep a visible edge on the pale water. */
+html[data-theme="light"]
+  .veined-app
+  :is(.card, .swap-card, .overview-tool, .overview-explore, .help-steps) {
+  border-color: rgb(29 97 88 / 0.2);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 18px 40px -28px rgb(20 44 52 / 0.45);
+}
+
+/* ---------- Accessibility modes ---------- */
+@media (forced-colors: active) {
+  .ocean-stage {
+    display: none;
+  }
+}
+@media print {
+  .ocean-stage {
+    display: none;
+  }
+}

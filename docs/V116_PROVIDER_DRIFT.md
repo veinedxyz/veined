@@ -1,0 +1,6 @@
+# V1.16 provider drift checkpoint
+
+The accepted router/ABI/IDL and program pins remain frozen. Current public read-only observations are in sources/current-pins-final/current-pins.json: 35 EVM deployment roles and seven Solana program accounts were checked; 41 matched and the Whirlpool program upgrade metadata requires review. This is an upstream change, not permission to change an accepted pin. Jupiter/Titan routes involving that program remain BUILD_REVIEW_REQUIRED when the existing independent loader/header verifier sees the mismatch. No new version is auto-activated and no current Whirlpool economic execution proof is claimed. Historical simulation receipts retain their original slots and are presented as historical deterministic evidence.
+
+Official refresh receipts under sources/refresh capture URLs, HTTP status, timestamps and content hashes for current API documentation, official contract deployment files and repository revisions. A 404 remains a failed source retrieval. Source HEAD changes do not update runtime pins. Uniswap 2.1.2 remains the reviewed router generation; PCSX 1.7.2, Jupiter Swap V2 and Titan uncompressed v1 wire remain frozen. External legal/provider onboarding is not inferred from documentation or code availability.
+

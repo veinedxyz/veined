@@ -1,0 +1,4233 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-11T04:43:28.003Z",
+  "deployments": [
+    {
+      "id": "aave-v3-42161",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "42161",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "provider": "0x243aa95cac2a25651eda86e80bee66114413c43b",
+        "addressesProvider": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
+        "incentives": "0x929ec64c34a17401f460460d4b9390518e5b473e"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Arbitrum.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "DAI",
+          "underlying": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+          "receipt": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+          "debt": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+          "decimals": 18
+        },
+        {
+          "symbol": "LINK",
+          "underlying": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+          "receipt": "0x191c10aa4af7c30e871e70c95db0e4eb77237530",
+          "debt": "0x953a573793604af8d41f306feb8274190db4ae0e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+          "receipt": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+          "debt": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+          "decimals": 6
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+          "receipt": "0x078f358208685046a11c85e8ad32895ded33a249",
+          "debt": "0x92b42c66840c7ad907b4bf74879ff3ef7c529473",
+          "decimals": 8
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+          "receipt": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+          "debt": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+          "receipt": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+          "debt": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+          "decimals": 6
+        },
+        {
+          "symbol": "AAVE",
+          "underlying": "0xba5ddd1f9d7f570dc94a51479a000e3bce967196",
+          "receipt": "0xf329e36c7bf6e5e86ce2150875a84ce77f477375",
+          "debt": "0xe80761ea617f66f96274ea5e8c37f03960ecc679",
+          "decimals": 18
+        },
+        {
+          "symbol": "EURS",
+          "underlying": "0xd22a58f79e9481d1a88e00c343885a588b34b68b",
+          "receipt": "0x6d80113e533a2c0fe82eabd35f1875dcea89ea97",
+          "debt": "0x4a1c3ad6ed28a636ee1751c69071f6be75deb8b8",
+          "decimals": 2
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x5979d7b546e38e414f7e9822514be443a4800529",
+          "receipt": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff",
+          "debt": "0x77ca01483f379e58174739308945f044e1a764dc",
+          "decimals": 18
+        },
+        {
+          "symbol": "MAI",
+          "underlying": "0x3f56e0c36d275367b8c502090edf38289b3dea0d",
+          "receipt": "0xc45a479877e1e9dfe9fcd4056c699575a1045daa",
+          "debt": "0x34e2ed44ef7466d5f9e0b782b5c08b57475e7907",
+          "decimals": 18
+        },
+        {
+          "symbol": "rETH",
+          "underlying": "0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8",
+          "receipt": "0x8eb270e296023e9d92081fdf967ddd7878724424",
+          "debt": "0xce186f6cccb0c955445bb9d10c59cae488fea559",
+          "decimals": 18
+        },
+        {
+          "symbol": "LUSD",
+          "underlying": "0x93b346b6bc2548da6a1e7d98e9a421b42541425b",
+          "receipt": "0x8ffdf2de812095b1d19cb146e4c004587c0a0692",
+          "debt": "0xa8669021776bc142dfca87c21b4a52595bcbb40a",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDCn",
+          "underlying": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+          "receipt": "0x724dc807b04555b71ed48a6896b6f41593b8c637",
+          "debt": "0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6",
+          "decimals": 6
+        },
+        {
+          "symbol": "FRAX",
+          "underlying": "0x17fc002b466eec40dae837fc4be5c67993ddbd6f",
+          "receipt": "0x38d693ce1df5aadf7bc62595a37d667ad57922e5",
+          "debt": "0x5d557b07776d12967914379c71a1310e917c7555",
+          "decimals": 18
+        },
+        {
+          "symbol": "ARB",
+          "underlying": "0x912ce59144191c1204e64559fe8253a0e49e6548",
+          "receipt": "0x6533afac2e7bccb20dca161449a13a32d391fb00",
+          "debt": "0x44705f578135cc5d703b4c9c122528c73eb87145",
+          "decimals": 18
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0x35751007a407ca6feffe80b3cb397736d2cf4dbe",
+          "receipt": "0x8437d7c167dfb82ed4cb79cd44b7a32a1dd95c77",
+          "debt": "0x3ca5fa07689f266e907439afd1fbb59c44fe12f6",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0x7dff72693f6a4149b17e7c6314655f6a9f7c8b33",
+          "receipt": "0xebe517846d0f36eced99c735cbf6131e1feb775d",
+          "debt": "0x18248226c16bf76c032817854e7c83a2113b4f06",
+          "decimals": 18
+        },
+        {
+          "symbol": "ezETH",
+          "underlying": "0x2416092f143378750bb29b79ed961ab195cceea5",
+          "receipt": "0xea1132120ddcdda2f119e99fa7a27a0d036f7ac9",
+          "debt": "0x1ffd28689da7d0148ff0fcb669e9f9f0fc13a219",
+          "decimals": 18
+        },
+        {
+          "symbol": "rsETH",
+          "underlying": "0x4186bfc76e2e237523cbc30fd220fe055156b41f",
+          "receipt": "0x6b030ff3fb9956b1b69f475b77ae0d3cf2cc5afa",
+          "debt": "0x80ca0d8c38d2e2bcbab66aa1648bd1c7160500fe",
+          "decimals": 18
+        },
+        {
+          "symbol": "tBTC",
+          "underlying": "0x6c84a8f1c29108f47a79964b5fe888d4f4d0de40",
+          "receipt": "0x62fc96b27a510cf4977b59ff952dc32378cc221d",
+          "debt": "0xb5b46f918c2923fc7f26db76e8a6a6e9c4347cf9",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-43114",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "43114",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "provider": "0x243aa95cac2a25651eda86e80bee66114413c43b",
+        "addressesProvider": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
+        "incentives": "0x929ec64c34a17401f460460d4b9390518e5b473e"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Avalanche.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "DAIe",
+          "underlying": "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+          "receipt": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+          "debt": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+          "decimals": 18
+        },
+        {
+          "symbol": "LINKe",
+          "underlying": "0x5947bb275c521040051d82396192181b413227a3",
+          "receipt": "0x191c10aa4af7c30e871e70c95db0e4eb77237530",
+          "debt": "0x953a573793604af8d41f306feb8274190db4ae0e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+          "receipt": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+          "debt": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+          "decimals": 6
+        },
+        {
+          "symbol": "WBTCe",
+          "underlying": "0x50b7545627a5162f82a992c33b87adc75187b218",
+          "receipt": "0x078f358208685046a11c85e8ad32895ded33a249",
+          "debt": "0x92b42c66840c7ad907b4bf74879ff3ef7c529473",
+          "decimals": 8
+        },
+        {
+          "symbol": "WETHe",
+          "underlying": "0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab",
+          "receipt": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+          "debt": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDt",
+          "underlying": "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7",
+          "receipt": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+          "debt": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+          "decimals": 6
+        },
+        {
+          "symbol": "AAVEe",
+          "underlying": "0x63a72806098bd3d9520cc43356dd78afe5d386d9",
+          "receipt": "0xf329e36c7bf6e5e86ce2150875a84ce77f477375",
+          "debt": "0xe80761ea617f66f96274ea5e8c37f03960ecc679",
+          "decimals": 18
+        },
+        {
+          "symbol": "WAVAX",
+          "underlying": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+          "receipt": "0x6d80113e533a2c0fe82eabd35f1875dcea89ea97",
+          "debt": "0x4a1c3ad6ed28a636ee1751c69071f6be75deb8b8",
+          "decimals": 18
+        },
+        {
+          "symbol": "sAVAX",
+          "underlying": "0x2b2c81e08f1af8835a78bb2a90ae924ace0ea4be",
+          "receipt": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff",
+          "debt": "0x77ca01483f379e58174739308945f044e1a764dc",
+          "decimals": 18
+        },
+        {
+          "symbol": "FRAX",
+          "underlying": "0xd24c2ad096400b6fbcd2ad8b24e7acbc21a1da64",
+          "receipt": "0xc45a479877e1e9dfe9fcd4056c699575a1045daa",
+          "debt": "0x34e2ed44ef7466d5f9e0b782b5c08b57475e7907",
+          "decimals": 18
+        },
+        {
+          "symbol": "MAI",
+          "underlying": "0x5c49b268c9841aff1cc3b0a418ff5c3442ee3f3b",
+          "receipt": "0x8eb270e296023e9d92081fdf967ddd7878724424",
+          "debt": "0xce186f6cccb0c955445bb9d10c59cae488fea559",
+          "decimals": 18
+        },
+        {
+          "symbol": "BTCb",
+          "underlying": "0x152b9d0fdc40c096757f570a51e494bd4b943e50",
+          "receipt": "0x8ffdf2de812095b1d19cb146e4c004587c0a0692",
+          "debt": "0xa8669021776bc142dfca87c21b4a52595bcbb40a",
+          "decimals": 8
+        },
+        {
+          "symbol": "AUSD",
+          "underlying": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+          "receipt": "0x724dc807b04555b71ed48a6896b6f41593b8c637",
+          "debt": "0xdc1fad70953bb3918592b6fcc374fe05f5811b6a",
+          "decimals": 6
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0xfc421ad3c883bf9e7c4f42de845c4e4405799e73",
+          "receipt": "0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6",
+          "debt": "0x38d693ce1df5aadf7bc62595a37d667ad57922e5",
+          "decimals": 18
+        },
+        {
+          "symbol": "EURC",
+          "underlying": "0xc891eb4cbdeff6e073e859e987815ed1505c2acd",
+          "receipt": "0x8a9fde6925a839f6b1932d16b36ac026f8d3fbdb",
+          "debt": "0x5d557b07776d12967914379c71a1310e917c7555",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDe",
+          "underlying": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+          "receipt": "0x6533afac2e7bccb20dca161449a13a32d391fb00",
+          "debt": "0x6b4b37618d85db2a7b469983c888040f7f05ea3d",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSDe",
+          "underlying": "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+          "receipt": "0x44705f578135cc5d703b4c9c122528c73eb87145",
+          "debt": "0x8437d7c167dfb82ed4cb79cd44b7a32a1dd95c77",
+          "decimals": 18
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0x7bfd4ca2a6cf3a3fddd645d10b323031afe47ff0",
+          "receipt": "0x40b4baecc69b882e8804f9286b12228c27f8c9bf",
+          "debt": "0x3ca5fa07689f266e907439afd1fbb59c44fe12f6",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-56",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "56",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x6807dc923806fe8fd134338eabca509979a7e0cb",
+        "provider": "0xc90df74a7c16245c5f5c5870327ceb38fe5d5328",
+        "addressesProvider": "0xff75b6da14ffbbfd355daf7a2731456b3562ba6d",
+        "incentives": "0xc206c2764a9dbf27d599613b8f9a63acd1160ab4"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3BNB.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "Cake",
+          "underlying": "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
+          "receipt": "0x4199cc1f5ed0d796563d7ccb2e036253e2c18281",
+          "debt": "0xe20dbc7119c635b1b51462f844861258770e0699",
+          "decimals": 18
+        },
+        {
+          "symbol": "WBNB",
+          "underlying": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+          "receipt": "0x9b00a09492a626678e5a3009982191586c444df9",
+          "debt": "0x0e76414d433ddfe8004d2a7505d218874875a996",
+          "decimals": 18
+        },
+        {
+          "symbol": "BTCB",
+          "underlying": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+          "receipt": "0x56a7ddc4e848ebf43845854205ad71d5d5f72d3d",
+          "debt": "0x7b1e82f4f542fbb25d64c5523fe3e44abe4f2702",
+          "decimals": 18
+        },
+        {
+          "symbol": "ETH",
+          "underlying": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+          "receipt": "0x2e94171493fabe316b6205f1585779c887771e2f",
+          "debt": "0x8fdea7891b4d6dbdc746309245b316af691a636c",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "receipt": "0x00901a076785e0906d1028c7d6372d247bec7d61",
+          "debt": "0xcdbbed5606d9c5c98eeedd67933991dc17f0c68d",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0x55d398326f99059ff775485246999027b3197955",
+          "receipt": "0xa9251ca9de909cb71783723713b21e4233fbf1b1",
+          "debt": "0xf8bb2be50647447fb355e3a77b81be4db64107cd",
+          "decimals": 18
+        },
+        {
+          "symbol": "FDUSD",
+          "underlying": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+          "receipt": "0x75bd1a659bdc62e4c313950d44a2416fab43e785",
+          "debt": "0xe628b8a123e6037f1542e662b9f55141a16945c8",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x26c5e01524d2e6280a48f2c50ff6de7e52e9611c",
+          "receipt": "0xbdfd4e51d3c14a232135f04988a42576efb31519",
+          "debt": "0x2c391998308c56d7572a8f501d58cb56fb9fe1c5",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-8453",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "8453",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0xa238dd80c259a72e81d7e4664a9801593f98d1c5",
+        "provider": "0x0f43731eb8d45a581f4a36dd74f5f358bc90c73a",
+        "addressesProvider": "0xe20fcbdbffc4dd138ce8b2e6fbb6cb49777ad64d",
+        "incentives": "0xf9cc4f0d883f1a1eb2c253bdb46c254ca51e1f44"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Base.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0x4200000000000000000000000000000000000006",
+          "receipt": "0xd4a0e0b9149bcee3c920d2e00b5de09138fd8bb7",
+          "debt": "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e",
+          "decimals": 18
+        },
+        {
+          "symbol": "cbETH",
+          "underlying": "0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22",
+          "receipt": "0xcf3d55c10db69f28fd1a75bd73f3d8a2d9c595ad",
+          "debt": "0x1dabc36f19909425f654777249815c073e8fd79f",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDbC",
+          "underlying": "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+          "receipt": "0x0a1d576f3efef75b330424287a95a366e8281d54",
+          "debt": "0x7376b2f323dc56fcd4c191b34163ac8a84702dab",
+          "decimals": 6
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452",
+          "receipt": "0x99cbc45ea5bb7ef3a5bc08fb1b7e56bb2442ef0d",
+          "debt": "0x41a7c3f5904ad176dacbb1d99101f59ef0811dc1",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "receipt": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+          "debt": "0x59dca05b6c26dbd64b5381374aaac5cd05644c28",
+          "decimals": 6
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0x04c0599ae5a44757c0af6f9ec3b93da8976c150a",
+          "receipt": "0x7c307e128efa31f540f2e2d976c995e0b65f51f6",
+          "debt": "0x8d2e3f1f4b38aa9f1ced22ac06019c7561b03901",
+          "decimals": 18
+        },
+        {
+          "symbol": "cbBTC",
+          "underlying": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "receipt": "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6",
+          "debt": "0x05e08702028de6aad395dc6478b554a56920b9ad",
+          "decimals": 8
+        },
+        {
+          "symbol": "ezETH",
+          "underlying": "0x2416092f143378750bb29b79ed961ab195cceea5",
+          "receipt": "0xdd5745756c2de109183c6b5bb886f9207bef114d",
+          "debt": "0xbc4f5631f2843488792e4f1660d0a51ba489bdbd",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0x6bb7a212910682dcfdbd5bcbb3e28fb4e8da10ee",
+          "receipt": "0x067ae75628177fd257c2b1e500993e1a0babcbd1",
+          "debt": "0x38e59ade183bbeb94583d44213c8f3297e9933e9",
+          "decimals": 18
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0xedfa23602d0ec14714057867a78d01e94176bea0",
+          "receipt": "0x80a94c36747cf51b2fbabdff045f6d22c1930ed1",
+          "debt": "0xe9541c77a111bcaa5df56839bbc50894eba7afcb",
+          "decimals": 18
+        },
+        {
+          "symbol": "LBTC",
+          "underlying": "0xecac9c5f704e954931349da37f60e39f515c11c1",
+          "receipt": "0x90072a4aa69b5eb74984ab823efc5f91e90b3a72",
+          "debt": "0xa2525b3f058846075506903d792d58c5a0d834c9",
+          "decimals": 8
+        },
+        {
+          "symbol": "EURC",
+          "underlying": "0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42",
+          "receipt": "0x90da57e0a6c0d166bf15764e03b83745dc90025b",
+          "debt": "0x03d01595769333174036832e18fa2f17c74f8161",
+          "decimals": 6
+        },
+        {
+          "symbol": "AAVE",
+          "underlying": "0x63706e401c06ac8513145b7687a14804d17f814b",
+          "receipt": "0x67eaf2bee4384a2f84da9eb8105c661c123736ba",
+          "debt": "0xcec1ea95ddef7cfc27d3d9615e05b035af460978",
+          "decimals": 18
+        },
+        {
+          "symbol": "tBTC",
+          "underlying": "0x236aa50979d5f3de3bd1eeb40e81137f22ab794b",
+          "receipt": "0xbcffb4b3beadc989bd1458740952af6ec8fbe431",
+          "debt": "0x182cdeec1d52ccad869d621ba422f449fa5809f5",
+          "decimals": 18
+        },
+        {
+          "symbol": "syrupUSDC",
+          "underlying": "0x660975730059246a68521a3e2fbd4740173100f5",
+          "receipt": "0xd7424238ccbe7b7198ab3cfe232e0271e22da7bd",
+          "debt": "0x57b8c05ee2cd9d0143ebc21fbd9288c39b9f716c",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-42220",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "42220",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x3e59a31363e2ad014dcbc521c4a0d5757d9f3402",
+        "provider": "0x2e0f8d3b1631296cc7c56538d6eb6032601e15ed",
+        "addressesProvider": "0x9f7cf9417d5251c59fe94fb9147feee1aad9cea5",
+        "incentives": "0x4725a0fdbeb14a77964bc1c221ee3a7982263103"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Celo.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "USDC",
+          "underlying": "0xceba9300f2b948710d2653dd7b07f33a8b32118c",
+          "receipt": "0xff8309b9e99bfd2d4021bc71a362abd93dbd4785",
+          "debt": "0xdbe517c0fa6467873b684eccbed77217e471e862",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e",
+          "receipt": "0xdee98402a302e4d707fb9bf2bac66faeec31e8df",
+          "debt": "0xe15324a9887999803b931ac45aa89a94a9750052",
+          "decimals": 6
+        },
+        {
+          "symbol": "EURm",
+          "underlying": "0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73",
+          "receipt": "0x34c02571094e08e935b8cf8dc10f1ad6795f1f81",
+          "debt": "0x5c2b7eb5886b3cec5cce1019e34493da33291af5",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDm",
+          "underlying": "0x765de816845861e75a25fca122bb6898b8b1282a",
+          "receipt": "0xbba98352628b0b0c4b40583f593ffcb630935a45",
+          "debt": "0x05ee3d1fbacbdba1259946033cd7a42fdfcccf0d",
+          "decimals": 18
+        },
+        {
+          "symbol": "CELO",
+          "underlying": "0x471ece3750da237f93b8e339c536989b8978a438",
+          "receipt": "0xc3e77dc389537db1eec7c33b95cf3beeca71a209",
+          "debt": "0xaea37b42955de2ba2e4af6581e46349bcd3ea2d6",
+          "decimals": 18
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0xd221812de1bd094f35587ee8e174b07b6167d9af",
+          "receipt": "0xf385280f36e009c157697d25e0b802efabfd789c",
+          "debt": "0x6508cff7c5fba053af00a4e894500e6fa00274b7",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-1",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "1",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+        "provider": "0x0a16f2fcc0d44fae41cc54e079281d84a363becd",
+        "addressesProvider": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+        "incentives": "0x8164cc65827dcfe994ab23944cbc90e0aa80bfcb"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Ethereum.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "receipt": "0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8",
+          "debt": "0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "receipt": "0x0b925ed163218f6662a35e0f0371ac234f9e9371",
+          "debt": "0xc96113eed8cab59cd8a66813bcb0ceb29f06d2e4",
+          "decimals": 18
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "receipt": "0x5ee5bf7ae06d1be5997a1a72006fe6c607ec6de8",
+          "debt": "0x40aabef1aa8f0eec637e0e7d92fbffb2f26a8b7b",
+          "decimals": 8
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "receipt": "0x98c23e9d8f34fefb1b7bd6a91b7ff122f4e16f5c",
+          "debt": "0x72e95b8931767c79ba4eee721354d6e99a61d004",
+          "decimals": 6
+        },
+        {
+          "symbol": "DAI",
+          "underlying": "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "receipt": "0x018008bfb33d285247a21d44e50697654f754e63",
+          "debt": "0xcf8d0c70c850859266f5c338b38f9d663181c314",
+          "decimals": 18
+        },
+        {
+          "symbol": "LINK",
+          "underlying": "0x514910771af9ca656af840dff83e8264ecf986ca",
+          "receipt": "0x5e8c8a7243651db1384c0ddfdbe39761e8e7e51a",
+          "debt": "0x4228f8895c7dda20227f6a5c6751b8ebf19a6ba8",
+          "decimals": 18
+        },
+        {
+          "symbol": "AAVE",
+          "underlying": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+          "receipt": "0xa700b4eb416be35b2911fd5dee80678ff64ff6c9",
+          "debt": "0xbae535520abd9f8c85e58929e0006a2c8b372f74",
+          "decimals": 18
+        },
+        {
+          "symbol": "cbETH",
+          "underlying": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+          "receipt": "0x977b6fc5de62598b08c85ac8cf2b745874e8b78c",
+          "debt": "0x0c91bca95b5fe69164ce583a2ec9429a569798ed",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "receipt": "0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+          "debt": "0x6df1c1e379bc5a00a7b4c6e67a203333772f45a8",
+          "decimals": 6
+        },
+        {
+          "symbol": "rETH",
+          "underlying": "0xae78736cd615f374d3085123a210448e74fc6393",
+          "receipt": "0xcc9ee9483f662091a1de4795249e24ac0ac2630f",
+          "debt": "0xae8593dd575fe29a9745056aa91c4b746eee62c8",
+          "decimals": 18
+        },
+        {
+          "symbol": "LUSD",
+          "underlying": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+          "receipt": "0x3fe6a295459fae07df8a0cecc36f37160fe86aa9",
+          "debt": "0x33652e48e4b74d18520f11bfe58edd2ed2cec5a2",
+          "decimals": 18
+        },
+        {
+          "symbol": "CRV",
+          "underlying": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+          "receipt": "0x7b95ec873268a6bfc6427e7a28e396db9d0ebc65",
+          "debt": "0x1b7d3f4b3c032a5ae656e30eea4e8e1ba376068f",
+          "decimals": 18
+        },
+        {
+          "symbol": "MKR",
+          "underlying": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+          "receipt": "0x8a458a9dc9048e005d22849f470891b840296619",
+          "debt": "0x6efc73e54e41b27d2134ff9f98f15550f30df9b1",
+          "decimals": 18
+        },
+        {
+          "symbol": "SNX",
+          "underlying": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+          "receipt": "0xc7b4c17861357b8abb91f25581e7263e08dcb59c",
+          "debt": "0x8d0de040e8aad872ec3c33a3776de9152d3c34ca",
+          "decimals": 18
+        },
+        {
+          "symbol": "BAL",
+          "underlying": "0xba100000625a3754423978a60c9317c58a424e3d",
+          "receipt": "0x2516e7b3f76294e03c42aa4c5b5b4dce9c436fb8",
+          "debt": "0x3d3efceb4ff0966d34d9545d3a2fa2dcdbf451f2",
+          "decimals": 18
+        },
+        {
+          "symbol": "UNI",
+          "underlying": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+          "receipt": "0xf6d2224916ddfbbab6e6bd0d1b7034f4ae0cab18",
+          "debt": "0xf64178ebd2e2719f2b1233bcb5ef6db4bcc4d09a",
+          "decimals": 18
+        },
+        {
+          "symbol": "LDO",
+          "underlying": "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+          "receipt": "0x9a44fd41566876a39655f74971a3a6ea0a17a454",
+          "debt": "0xc30808705c01289a3d306ca9cab081ba9114ec82",
+          "decimals": 18
+        },
+        {
+          "symbol": "ENS",
+          "underlying": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+          "receipt": "0x545bd6c032efdde65a377a6719def2796c8e0f2e",
+          "debt": "0xd180d7fdd4092f07428efe801e17bc03576b3192",
+          "decimals": 18
+        },
+        {
+          "symbol": "ONE_INCH",
+          "underlying": "0x111111111117dc0aa78b770fa6a738034120c302",
+          "receipt": "0x71aef7b30728b9bb371578f36c5a1f1502a5723e",
+          "debt": "0xa38fca8c6bf9bda52e76eb78f08caa3be7c5a970",
+          "decimals": 18
+        },
+        {
+          "symbol": "FRAX",
+          "underlying": "0x853d955acef822db058eb8505911ed77f175b99e",
+          "receipt": "0xd4e245848d6e1220dbe62e155d89fa327e43cb06",
+          "debt": "0x88b8358f5bc87c2d7e116cca5b65a9eeb2c5ea3f",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+          "receipt": "0x00907f9921424583e7ffbfedf84f92b7b2be4977",
+          "debt": "0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
+          "decimals": 18
+        },
+        {
+          "symbol": "RPL",
+          "underlying": "0xd33526068d116ce69f19a9ee46f0bd304f21a51f",
+          "receipt": "0xb76cf92076adbf1d9c39294fa8e7a67579fde357",
+          "debt": "0x8988eca19d502fd8b9ccd03fa3bd20a6f599bc2a",
+          "decimals": 18
+        },
+        {
+          "symbol": "sDAI",
+          "underlying": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "receipt": "0x4c612e3b15b96ff9a6faed838f8d07d479a8dd4c",
+          "debt": "0x8db9d35e117d8b93c6ca9b644b25bad5d9908141",
+          "decimals": 18
+        },
+        {
+          "symbol": "STG",
+          "underlying": "0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6",
+          "receipt": "0x1ba9843bd4327c6c77011406de5fa8749f7e3479",
+          "debt": "0x655568bdd6168325ec7e58bf39b21a856f906dc2",
+          "decimals": 18
+        },
+        {
+          "symbol": "KNC",
+          "underlying": "0xdefa4e8a7bcba345f687a2f1456f5edd9ce97202",
+          "receipt": "0x5b502e3796385e1e9755d7043b9c945c3accec9c",
+          "debt": "0x253127ffc04981cea8932f406710661c2f2c3fd2",
+          "decimals": 18
+        },
+        {
+          "symbol": "FXS",
+          "underlying": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+          "receipt": "0x82f9c5ad306bba1ad0de49bb5fa6f01bf61085ef",
+          "debt": "0x68e9f0ad4e6f8f5db70f6923d4d6d5b225b83b16",
+          "decimals": 18
+        },
+        {
+          "symbol": "crvUSD",
+          "underlying": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+          "receipt": "0xb82fa9f31612989525992fcfbb09ab22eff5c85a",
+          "debt": "0x028f7886f3e937f8479efad64f31b3fe1119857a",
+          "decimals": 18
+        },
+        {
+          "symbol": "PYUSD",
+          "underlying": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "receipt": "0x0c0d01abf3e6adfca0989ebba9d6e85dd58eab1e",
+          "debt": "0x57b67e4de077085fd0af2174e9c14871be664546",
+          "decimals": 6
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "receipt": "0xbdfa7b7893081b35fb54027489e2bc7a38275129",
+          "debt": "0x77ad9bf13a52517ad698d65913e8d381300c8bf3",
+          "decimals": 18
+        },
+        {
+          "symbol": "osETH",
+          "underlying": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+          "receipt": "0x927709711794f3de5ddbf1d176bee2d55ba13c21",
+          "debt": "0x8838eeff2af391863e1bb8b1df563f86743a8470",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDe",
+          "underlying": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+          "receipt": "0x4f5923fc5fd4a93352581b38b7cd26943012decf",
+          "debt": "0x015396e1f286289ae23a762088e863b3ec465145",
+          "decimals": 18
+        },
+        {
+          "symbol": "ETHx",
+          "underlying": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+          "receipt": "0x1c0e06a0b1a4c160c17545ff2a951bfca57c0002",
+          "debt": "0x08a8dc81aea67f84745623ac6c72cda3967aab8b",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSDe",
+          "underlying": "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+          "receipt": "0x4579a27af00a62c0eb156349f31b345c08386419",
+          "debt": "0xeffde9bfa8ec77c14c364055a200746d6e12bed6",
+          "decimals": 18
+        },
+        {
+          "symbol": "tBTC",
+          "underlying": "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "receipt": "0x10ac93971cdb1f5c778144084242374473c350da",
+          "debt": "0xac50890a80a2731eb1ea2e9b4f29569ceb06d960",
+          "decimals": 18
+        },
+        {
+          "symbol": "cbBTC",
+          "underlying": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "receipt": "0x5c647ce0ae10658ec44fa4e11a51c96e94efd1dd",
+          "debt": "0xeb284a70557efe3591b9e6d9d720040e02c54a4d",
+          "decimals": 8
+        },
+        {
+          "symbol": "USDS",
+          "underlying": "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "receipt": "0x32a6268f9ba3642dda7892add74f1d34469a4259",
+          "debt": "0x490e0e6255bf65b43e2e02f7acb783c5e04572ff",
+          "decimals": 18
+        },
+        {
+          "symbol": "rsETH",
+          "underlying": "0xa1290d69c65a6fe4df752f95823fae25cb99e5a7",
+          "receipt": "0x2d62109243b87c4ba3ee7ba1d91b0dd0a074d7b1",
+          "debt": "0x6de3e52a1b7294a34e271a508082b1ff4a37e30e",
+          "decimals": 18
+        },
+        {
+          "symbol": "LBTC",
+          "underlying": "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "receipt": "0x65906988adee75306021c417a1a3458040239602",
+          "debt": "0x68aeb290c7727d899b47c56d1c96aeac475cd0dd",
+          "decimals": 8
+        },
+        {
+          "symbol": "eBTC",
+          "underlying": "0x657e8c867d8b37dcc18fa4caead9c45eb088c642",
+          "receipt": "0x5fefd7069a7d91d01f269dade14526ccf3487810",
+          "debt": "0x47ed0509e64615c0d5c6d39af1b38d02bc9fe58f",
+          "decimals": 8
+        },
+        {
+          "symbol": "RLUSD",
+          "underlying": "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "receipt": "0xfa82580c16a31d0c1bc632a36f82e83efef3eec0",
+          "debt": "0xbdfe7ad7976d5d7e0965ea83a81ca1bcff7e84a9",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_eUSDE_29MAY2025",
+          "underlying": "0x50d2c7992b802eef16c04feadab310f31866a545",
+          "receipt": "0x4b0821e768ed9039a70ed1e80e15e76a5be5df5f",
+          "debt": "0x3c20fbfd32243dd9899301c84bce17413eee0a0c",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_31JUL2025",
+          "underlying": "0x3b3fb9c57858ef816833dc91565efcd85d96f634",
+          "receipt": "0xde6ef6cb4abd3a473ffc2942eef5d84536f8e864",
+          "debt": "0x8c6feaf5d58ba1a6541f9c4af685f62bfcbac3b1",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDtb",
+          "underlying": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+          "receipt": "0xec4ef66d4fceeba34abb4de69db391bc5476ccc8",
+          "debt": "0xea85a065f87fe28aa8fbf0d6c7dec472b106252c",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_31JUL2025",
+          "underlying": "0x917459337caac939d41d7493b3999f571d20d667",
+          "receipt": "0x312ffc57778cefa11989733e6e08143e7e229c1c",
+          "debt": "0xd90da2df915b87fe1621a7f2201fbf4ff2cca031",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_eUSDE_14AUG2025",
+          "underlying": "0x14bdc3a3ae09f5518b923b69489cbcafb238e617",
+          "receipt": "0x2edff5af94334fbd7c38ae318edf1c40e072b73b",
+          "debt": "0x22517fe16ded08e52e7ea3423a2ea4995b1f1731",
+          "decimals": 18
+        },
+        {
+          "symbol": "eUSDe",
+          "underlying": "0x90d2af7d622ca3141efa4d8f1f24d86e5974cc8f",
+          "receipt": "0x5f9190496e0dfc831c3bd307978de4a245e2f5cd",
+          "debt": "0x48351fcc9536da440ae9471220f6dc921b0eb703",
+          "decimals": 18
+        },
+        {
+          "symbol": "FBTC",
+          "underlying": "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "receipt": "0xcca43cef272c30415866914351fdfc3e881bb7c2",
+          "debt": "0x4a35fd7f93324cc48bc12190d3f37493437b1eff",
+          "decimals": 8
+        },
+        {
+          "symbol": "EURC",
+          "underlying": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "receipt": "0xaa6e91c82942aeae040303bf96c15a6dbcb82ca0",
+          "debt": "0x6c82c66622eb360fc973d3f492f9d8e9ea538b08",
+          "decimals": 6
+        },
+        {
+          "symbol": "PT_sUSDE_25SEP2025",
+          "underlying": "0x9f56094c450763769ba0ea9fe2876070c0fd5f77",
+          "receipt": "0x5f4a0873a3a02f7c0cb0e13a1d4362a1ad90e751",
+          "debt": "0xc9ad8dd111e6384128146467aaf92b81ec422848",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_25SEP2025",
+          "underlying": "0xbc6736d346a5ebc0debc997397912cd9b8fae10a",
+          "receipt": "0x38a5357ce55c81add62abc84fb32981e2626adef",
+          "debt": "0x0d8486e1cabf3c9407b3dda0cfc4d9c3101fb683",
+          "decimals": 18
+        },
+        {
+          "symbol": "tETH",
+          "underlying": "0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8",
+          "receipt": "0x481a2acf3a72ffdc602a9541896ca1db87f86cf7",
+          "debt": "0x7ec9afe70f8fd603282ebacbc9058a83623e2899",
+          "decimals": 18
+        },
+        {
+          "symbol": "ezETH",
+          "underlying": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "receipt": "0x4e2a4d9b3df7aae73b418bd39f3af9e148e3f479",
+          "debt": "0x730318db7b830d324fc3feddb1d212ec64bd3141",
+          "decimals": 18
+        },
+        {
+          "symbol": "XAUt",
+          "underlying": "0x68749665ff8d2d112fa859aa293f07a622782f38",
+          "receipt": "0x8a2b6f94ff3a89a03e8c02ee92b55af90c9454a2",
+          "debt": "0xa665bb258d2a732c170dfd505924214c0b1ac74f",
+          "decimals": 6
+        },
+        {
+          "symbol": "PT_sUSDE_27NOV2025",
+          "underlying": "0xe6a934089bbee34f832060ce98848359883749b3",
+          "receipt": "0x285866acb0d60105b4ed350a463361c2d9afa0e2",
+          "debt": "0x690df181701c11c53ea33bbf303c25834b66bd14",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_27NOV2025",
+          "underlying": "0x62c6e813b9589c3631ba0cdb013acdb8544038b7",
+          "receipt": "0x38c503a438185cde29b5cf4dc1442fd6f074f1cc",
+          "debt": "0x2ce7e7b238985a8ad3863de03f200b245b0c1216",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_5FEB2026",
+          "underlying": "0x1f84a51296691320478c98b8d77f2bbd17d34350",
+          "receipt": "0xe728577e9a1fe7032bc309b4541f58f45443866e",
+          "debt": "0x9d244a99801dc05cbc04183769c17056b8a1ad53",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_5FEB2026",
+          "underlying": "0xe8483517077afa11a9b07f849cee2552f040d7b2",
+          "receipt": "0xbe54767735fb7acca2aa7e2d209a6f705073536d",
+          "debt": "0xa803414f84fcef00e745be7cc2a315908927f15d",
+          "decimals": 18
+        },
+        {
+          "symbol": "mUSD",
+          "underlying": "0xaca92e438df0b2401ff60da7e4337b687a2435da",
+          "receipt": "0xaa0200d169ff3ba9385c12e073c5d1d30434ae7b",
+          "debt": "0xe35e6a0d3abc28289f5d4c2d262a133df936b98d",
+          "decimals": 6
+        },
+        {
+          "symbol": "syrupUSDT",
+          "underlying": "0x356b8d89c1e1239cbbb9de4815c39a1474d5ba7d",
+          "receipt": "0x24ab03a9a5bc2c49e5523e8d915a3536ac38b91d",
+          "debt": "0xaef73b04654931b94920a3d7ae62032b79fb6d0c",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDG",
+          "underlying": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "receipt": "0x7c0477d085ecb607cf8429f3ec91ae5e1e460f4f",
+          "debt": "0x4f97b950a30321c181e974971e156e19fad184a3",
+          "decimals": 6
+        },
+        {
+          "symbol": "PT_USDe_7MAY2026",
+          "underlying": "0xaebf0bb9f57e89260d57f31af34eb58657d96ce0",
+          "receipt": "0xe036478da9a7ed89b56fe39a06e1fc1a4b38d4ea",
+          "debt": "0x04142fc546d59838852873bba5c8827601a13fc8",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_7MAY2026",
+          "underlying": "0x3de0ff76e8b528c092d47b9dac775931cef80f49",
+          "receipt": "0x81b76ff3fed28ba0b4a5d4c76bd5c13bd0641d86",
+          "debt": "0x762edb8d79b97487f82093f85059e42eeef61e9e",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_srUSDe_2APR2026",
+          "underlying": "0x9bf45ab47747f4b4dd09b3c2c73953484b4eb375",
+          "receipt": "0x1241ec22c9bdf16ba1eb636f2a8de7e28a4343cf",
+          "debt": "0xacd3d3facea0424984f662827b988f4581a3ce31",
+          "decimals": 18
+        },
+        {
+          "symbol": "BTCb",
+          "underlying": "0xb0f70c0bd6fd87dbeb7c10dc692a2a6106817072",
+          "receipt": "0x12b70410d60f926558245f769059ea3fc7a7353e",
+          "debt": "0x6c67e666bb954d4be23e9f1ce20e7e8699d29339",
+          "decimals": 8
+        },
+        {
+          "symbol": "PT_srUSDe_25JUN2026",
+          "underlying": "0x619d75e3b790ebc21c289f2805bb7177a7d732e2",
+          "receipt": "0xa78eba24d89e70a03ddb7ac195a15e53315aa5b4",
+          "debt": "0x9ba896531f878ed5f0a4f73e82d63ba7b424f910",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDG_28MAY2026",
+          "underlying": "0x9db38d74a0d29380899ad354121dfb521adb0548",
+          "receipt": "0xa9ecb0503075124cc0b786096849a331fbe9ee6d",
+          "debt": "0x1a83eca2d3b0cea2595fb11ec60cb2d428217c2e",
+          "decimals": 6
+        },
+        {
+          "symbol": "PT_srUSDe_22OCT2026",
+          "underlying": "0x59bc9fae5d62b19d4f8d07d758047acb9ee19d34",
+          "receipt": "0x01e69a58ca3ddc695820ce6f66fbdf3fa55d0545",
+          "debt": "0x4af166c6f2cf882f7b196e3625c3e8f2fe2a8083",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-100",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "100",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0xb50201558b00496a145fe76f7424749556e326d8",
+        "provider": "0xf1f5acb596568895393cb5e4d0452d6592a2fa70",
+        "addressesProvider": "0x36616cf17557639614c1cddb356b1b83fc0b2132",
+        "incentives": "0xad4f91d26254b6b0c6346b390dda2991fde2f20d"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Gnosis.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1",
+          "receipt": "0xa818f1b57c201e092c4a2017a91815034326efd1",
+          "debt": "0x0c0fce05f2314540ecb095bf4d069e5e0ed90ff8",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x6c76971f98945ae98dd7d4dfca8711ebea946ea6",
+          "receipt": "0x23e4e76d01b2002be436ce8d6044b0aa2f68b68a",
+          "debt": "0x9d881f67f20b49243c98f53d2b9e91e39d02ae09",
+          "decimals": 18
+        },
+        {
+          "symbol": "GNO",
+          "underlying": "0x9c58bacc331c9aa871afd802db6379a98e80cedb",
+          "receipt": "0xa1fa064a85266e2ca82dee5c5ccec84df445760e",
+          "debt": "0xbc59e99198dba71985a66e1713cc89ffec53f7fc",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xddafbb505ad214d7b80b1f830fccc89b60fb7a83",
+          "receipt": "0xc6b7aca6de8a6044e0e32d0c841a89244a10d284",
+          "debt": "0x5f6f7b0a87ca3cf3d0b431ae03ef3305180bff4d",
+          "decimals": 6
+        },
+        {
+          "symbol": "WXDAI",
+          "underlying": "0xe91d153e0b41518a2ce8dd3d7944fa863463a97d",
+          "receipt": "0xd0dd6cef72143e22cced4867eb0d5f2328715533",
+          "debt": "0x281963d7471ecdc3a2bd4503e24e89691cfe420d",
+          "decimals": 18
+        },
+        {
+          "symbol": "EURe",
+          "underlying": "0xcb444e90d8198415266c6a2724b7900fb12fc56e",
+          "receipt": "0xedbc7449a9b594ca4e053d9737ec5dc4cbccbfb2",
+          "debt": "0xb96404e475f337a7e98e4a541c9b71309bb66c5a",
+          "decimals": 18
+        },
+        {
+          "symbol": "sDAI",
+          "underlying": "0xaf204776c7245bf4147c2612bf6e5972ee483701",
+          "receipt": "0x7a5c3860a77a8dc1b225bd46d0fb2ac1c6d191bc",
+          "debt": "0x8fe06e1d8aff42bf6812cacf7854a2249a00bed7",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDCe",
+          "underlying": "0x2a22f9c3b484c3629090feed35f17ff8f88f76f0",
+          "receipt": "0xc0333cb85b59a788d8c7cae5e1fd6e229a3e5a65",
+          "debt": "0x37b9ad6b5dc8ad977ad716e92f49e9d200e58431",
+          "decimals": 6
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0xfc421ad3c883bf9e7c4f42de845c4e4405799e73",
+          "receipt": "0x3fdcec11b4f15c79d483aedc56f37d302837cf4d",
+          "debt": "0x2766eefe0311bf7421cc30155b03d210bce30df8",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-59144",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "59144",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0xc47b8c00b0f69a36fa203ffeac0334874574a8ac",
+        "provider": "0x47cd4b507b81cb831669c71c7077f4daf6762ff4",
+        "addressesProvider": "0x89502c3731f69ddc95b65753708a07f8cd0373f4",
+        "incentives": "0xc67bb8f2314fa0df50cba314c6509a7bdad500c0"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Linea.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f",
+          "receipt": "0x787897df92703bb3fc4d9ee98e15c0b8130bf163",
+          "debt": "0x0e7543a9da61b2e71fc880685ed2945b7426a689",
+          "decimals": 18
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x3aab2285ddcddad8edf438c1bab47e1a9d05a9b4",
+          "receipt": "0x37f7e06359f98162615e016d0008023d910bb576",
+          "debt": "0x74a1b56f5137b00aa0ada1dd964a3a361ecc32e9",
+          "decimals": 8
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x176211869ca2b568f2a7d4ee941e073a821ee1ff",
+          "receipt": "0x374d7860c4f2f604de0191298dd393703cce84f3",
+          "debt": "0x63ab166e6e1b6fb705b6ca23686fad9705eb3534",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0xa219439258ca9da29e9cc4ce5596924745e12b93",
+          "receipt": "0x88231dfec71d4ff5c1e466d08c321944a7adc673",
+          "debt": "0x4cedfa47f7d0e9036110b850ce49f4cd47b28a2f",
+          "decimals": 6
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0xb5bedd42000b71fdde22d3ee8a79bd49a568fc8f",
+          "receipt": "0x58943d20e010d9e34c4511990e232783460d0219",
+          "debt": "0x81c1a619be23050b3242b41a739e6b6cfda56687",
+          "decimals": 18
+        },
+        {
+          "symbol": "ezETH",
+          "underlying": "0x2416092f143378750bb29b79ed961ab195cceea5",
+          "receipt": "0x935efcbefc1df0541afc3fe145134f8c9a0beb89",
+          "debt": "0x1fe3452cef885724f8adf1382ee17d05d7e01cab",
+          "decimals": 18
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0x1bf74c010e6320bab11e2e5a532b5ac15e0b8aa6",
+          "receipt": "0x0c7921ab4888fd06731898b3ffffeb06781d5f4f",
+          "debt": "0x37a843725508243952950307ceace7a9f5d5c280",
+          "decimals": 18
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0xd2671165570f41bbb3b0097893300b6eb6101e6c",
+          "receipt": "0xcdd80e6211fc767352b198f827200c7e93d7bb04",
+          "debt": "0xf3c806a402e4e9101373f76c05880eeac91bb5b9",
+          "decimals": 18
+        },
+        {
+          "symbol": "mUSD",
+          "underlying": "0xaca92e438df0b2401ff60da7e4337b687a2435da",
+          "receipt": "0x61b19879f4033c2b5682a969cccc9141e022823c",
+          "debt": "0x8619b395fd96dcfe3f2711d8bf84b26338db0294",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-5000",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "5000",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x458f293454fe0d67ec0655f3672301301dd51422",
+        "provider": "0x487c5c669d9eee6057c44973207101276cf73b68",
+        "addressesProvider": "0xba50cd2a20f6da35d788639e581bca8d0b5d4d5f",
+        "incentives": "0x682482a584ee20fefc01f4575c45c5d84de6f619"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Mantle.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead1111",
+          "receipt": "0xeac30ed8609f564ae65c809c4bf42db2ff426d2c",
+          "debt": "0x0baf5974838114e7001d02782e6b1d8aee1fc626",
+          "decimals": 18
+        },
+        {
+          "symbol": "WMNT",
+          "underlying": "0x78c1b0c915c4faa5fffa6cabf0219da63d7f4cb8",
+          "receipt": "0x85d86061e94ce01d3da0f9efa289c86ff136125a",
+          "debt": "0x9c27a8ffacabdee0ac5c415e018d295bb6444f0e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT0",
+          "underlying": "0x779ded0c9e1022225f8e0630b35a9b54be713736",
+          "receipt": "0x7053bad224f0c021839f6ac645bdae5f8b585b69",
+          "debt": "0x5d9e4663d3d532179c404dbe9edf93045f89aded",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9",
+          "receipt": "0xcb8164415274515867ec43cbd284ab5d6d2b304f",
+          "debt": "0xcea474bda7ad0a8f62e938a5563edfaef7368fc0",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDe",
+          "underlying": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+          "receipt": "0xb9aca933c9c0aa854a6dbb7b12f0cc3fdac15ee7",
+          "debt": "0x0169fd279c8c656037e5d199cff8137f1e2d807c",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSDe",
+          "underlying": "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+          "receipt": "0xaf972f332ff79bd32a6cb6b54f903ea0f9b16c2a",
+          "debt": "0xc42b44c65bbe7aa8e5b02416918688c244ec7847",
+          "decimals": 18
+        },
+        {
+          "symbol": "FBTC",
+          "underlying": "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "receipt": "0xfa14c9de267b59a586043372bd98ed99e3ee0533",
+          "debt": "0x691abcd512c1cfef99442b0acd3ed98ee7f4e64e",
+          "decimals": 8
+        },
+        {
+          "symbol": "syrupUSDT",
+          "underlying": "0x051665f2455116e929b9972c36d23070f5054ce0",
+          "receipt": "0xf8400f3fa9cd9f9e84e93cd9de9f14eb7b5b59b5",
+          "debt": "0x2e20c5291cd675bfe52a533a6208588f5484999e",
+          "decimals": 6
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0x93e855643e940d025be2e529272e4dbd15a2cf74",
+          "receipt": "0x5cc6999ac46f4627309a7ce0f321a3f45d138ed5",
+          "debt": "0x7c5549de0deb930bab1e11b075151a19e400605c",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0xfc421ad3c883bf9e7c4f42de845c4e4405799e73",
+          "receipt": "0x8917d4ee4609f991b559daf8d0ad1b892c13b127",
+          "debt": "0xee1eabe23fa42028809f587b8fe1936b154d2620",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-1088",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "1088",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x90df02551bb792286e8d4f13e0e357b4bf1d6a57",
+        "provider": "0x602bef1d4c381e5a29f0c562a310416a73d8be19",
+        "addressesProvider": "0xb9fabd7500b2c6781c35dd48d54f81fc2299d7af",
+        "incentives": "0x30c1b8f0490fa0908863d6cbd2e36400b4310a6b"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Metis.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "mDAI",
+          "underlying": "0x4c078361fc9bbb78df910800a991c7c3dd2f6ce0",
+          "receipt": "0x85abaddcae06efee2cb5f75f33b6471759efde24",
+          "debt": "0x13bd89af338f3c7eae9a75852fc2f1ca28b4ddbf",
+          "decimals": 18
+        },
+        {
+          "symbol": "Metis",
+          "underlying": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead0000",
+          "receipt": "0x7314ef2ca509490f65f52cc8fc9e0675c66390b8",
+          "debt": "0x0110174183e13d5ea59d7512226c5d5a47ba2c40",
+          "decimals": 18
+        },
+        {
+          "symbol": "mUSDC",
+          "underlying": "0xea32a96608495e54156ae48931a7c20f0dcc1a21",
+          "receipt": "0x885c8aec5867571582545f894a5906971db9bf27",
+          "debt": "0x571171a7ef1e3c8c83d47ef1a50e225e9c351380",
+          "decimals": 6
+        },
+        {
+          "symbol": "mUSDT",
+          "underlying": "0xbb06dca3ae6887fabf931640f67cab3e3a16f4dc",
+          "receipt": "0xd9fa75d14c26720d5ce7ee2530793a823e8f07b9",
+          "debt": "0x6b45dce8af4fe5ab3bfcf030d8fb57718eab54e5",
+          "decimals": 6
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x420000000000000000000000000000000000000a",
+          "receipt": "0x8acae35059c9ae27709028ff6689386a44c09f3a",
+          "debt": "0x8bb19e3dd277a73d4a95ee434f14ce4b92898421",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-10",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "10",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "provider": "0x243aa95cac2a25651eda86e80bee66114413c43b",
+        "addressesProvider": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
+        "incentives": "0x929ec64c34a17401f460460d4b9390518e5b473e"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Optimism.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "DAI",
+          "underlying": "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
+          "receipt": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+          "debt": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+          "decimals": 18
+        },
+        {
+          "symbol": "LINK",
+          "underlying": "0x350a791bfc2c21f9ed5d10980dad2e2638ffa7f6",
+          "receipt": "0x191c10aa4af7c30e871e70c95db0e4eb77237530",
+          "debt": "0x953a573793604af8d41f306feb8274190db4ae0e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
+          "receipt": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+          "debt": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+          "decimals": 6
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x68f180fcce6836688e9084f035309e29bf0a2095",
+          "receipt": "0x078f358208685046a11c85e8ad32895ded33a249",
+          "debt": "0x92b42c66840c7ad907b4bf74879ff3ef7c529473",
+          "decimals": 8
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x4200000000000000000000000000000000000006",
+          "receipt": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+          "debt": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0x94b008aa00579c1307b0ef2c499ad98a8ce58e58",
+          "receipt": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+          "debt": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+          "decimals": 6
+        },
+        {
+          "symbol": "AAVE",
+          "underlying": "0x76fb31fb4af56892a25e32cfc43de717950c9278",
+          "receipt": "0xf329e36c7bf6e5e86ce2150875a84ce77f477375",
+          "debt": "0xe80761ea617f66f96274ea5e8c37f03960ecc679",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSD",
+          "underlying": "0x8c6f28f2f1a3c87f0f938b96d27520d9751ec8d9",
+          "receipt": "0x6d80113e533a2c0fe82eabd35f1875dcea89ea97",
+          "debt": "0x4a1c3ad6ed28a636ee1751c69071f6be75deb8b8",
+          "decimals": 18
+        },
+        {
+          "symbol": "OP",
+          "underlying": "0x4200000000000000000000000000000000000042",
+          "receipt": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff",
+          "debt": "0x77ca01483f379e58174739308945f044e1a764dc",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x1f32b1c2345538c0c6f582fcb022739c4a194ebb",
+          "receipt": "0xc45a479877e1e9dfe9fcd4056c699575a1045daa",
+          "debt": "0x34e2ed44ef7466d5f9e0b782b5c08b57475e7907",
+          "decimals": 18
+        },
+        {
+          "symbol": "LUSD",
+          "underlying": "0xc40f949f8a4e094d1b49a23ea9241d289b7b2819",
+          "receipt": "0x8eb270e296023e9d92081fdf967ddd7878724424",
+          "debt": "0xce186f6cccb0c955445bb9d10c59cae488fea559",
+          "decimals": 18
+        },
+        {
+          "symbol": "MAI",
+          "underlying": "0xdfa46478f9e5ea86d57387849598dbfb2e964b02",
+          "receipt": "0x8ffdf2de812095b1d19cb146e4c004587c0a0692",
+          "debt": "0xa8669021776bc142dfca87c21b4a52595bcbb40a",
+          "decimals": 18
+        },
+        {
+          "symbol": "rETH",
+          "underlying": "0x9bcef72be871e61ed4fbbc7630889bee758eb81d",
+          "receipt": "0x724dc807b04555b71ed48a6896b6f41593b8c637",
+          "debt": "0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDCn",
+          "underlying": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+          "receipt": "0x38d693ce1df5aadf7bc62595a37d667ad57922e5",
+          "debt": "0x5d557b07776d12967914379c71a1310e917c7555",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-9745",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "9745",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x925a2a7214ed92428b5b1b090f80b25700095e12",
+        "provider": "0xf2d6e38b407e31e7e7e4a16e6769728b76c7419f",
+        "addressesProvider": "0x061d8e131f26512348ee5fa42e2df1ba9d6505e9",
+        "incentives": "0x3a57eaa3ca3794d66977326af7991eb3f6dd5a5a"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Plasma.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "USDT0",
+          "underlying": "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb",
+          "receipt": "0x5d72a9d9a9510cd8cbdba12ac62593a58930a948",
+          "debt": "0xcbbc427b5658672768e11bfda00879839db4785f",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDe",
+          "underlying": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+          "receipt": "0x7519403e12111ff6b710877fcd821d0c12caf43a",
+          "debt": "0xea650893085dad858150915291645f57164a4257",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSDe",
+          "underlying": "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+          "receipt": "0xc1a318493ff07a68fe438cee60a7ad0d0dba300e",
+          "debt": "0xc7a92af2ca7b75fc608a8f0c08640de5b339bfc0",
+          "decimals": 18
+        },
+        {
+          "symbol": "XAUt0",
+          "underlying": "0x1b64b9025eebb9a6239575df9ea4b9ac46d4d193",
+          "receipt": "0x5c43d6c075c7cf95fb188fb2977eed3e3f2a92c2",
+          "debt": "0x20091c402c2933144bd9a9b1b07dbebf19c6d5a1",
+          "decimals": 6
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0xa3d68b74bf0528fdd07263c60d6488749044914b",
+          "receipt": "0xaf1a7a488c8348b41d5860c04162af7d3d38a996",
+          "debt": "0x34542b95efdf2dfbd59978c2f620fbd7275e9323",
+          "decimals": 18
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x9895d81bb462a195b4922ed7de0e3acd007c32cb",
+          "receipt": "0xf1ab7f60128924d69f6d7de25a20ef70bbd43d07",
+          "debt": "0x638d7db63cd5c902bdd9a91cf195870551c3c7b3",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_15JAN2026",
+          "underlying": "0x93b544c330f60a2aa05ced87aeeffb8d38fd8c9a",
+          "receipt": "0xea601a9fecf80bfc529f08a51bd8cb0d72fc862a",
+          "debt": "0xd73253b18124837465b0c1fcb1a947d0542a991b",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_15JAN2026",
+          "underlying": "0x02fcc4989b4c9d435b7ced3fe1ba4cf77bbb5dd8",
+          "receipt": "0x0b9a412c94f07223752031f75a20dde542d63d5c",
+          "debt": "0xb2a5ad339d9687b5606b21b37f72f350e5bbc622",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0xe48d935e6c9e735463cccf29a7f11e32bc09136e",
+          "receipt": "0x140bc58975dfba4d30fe65c4f6262a6c314683cf",
+          "debt": "0xe476310751953e3ac32bbe4fc6218748fe02c4d2",
+          "decimals": 18
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0xe561fe05c39075312aa9bc6af79ddae981461359",
+          "receipt": "0x41c7accc0fb97470bfb48014bad52e0d99447e79",
+          "debt": "0xe5a29d07f3d532cd16bd53376053c2aa5b320cb9",
+          "decimals": 18
+        },
+        {
+          "symbol": "syrupUSDT",
+          "underlying": "0xc4374775489cb9c56003bf2c9b12495fc64f0771",
+          "receipt": "0xd4ee376c40edc83832aaafc18fc0272660f5e90b",
+          "debt": "0xda5d1a9b7f515457638c01db13a18bd3514fc4a6",
+          "decimals": 6
+        },
+        {
+          "symbol": "WXPL",
+          "underlying": "0x6100e367285b01f48d07953803a2d8dca5d19873",
+          "receipt": "0x5aa4bc74811d672da5308019da4779f673e60b47",
+          "debt": "0x7ec35d7008682c33dbc6b214e01d919e8d441e48",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_9APR2026",
+          "underlying": "0xab509448ad489e2e1341e25cc500f2596464cc82",
+          "receipt": "0x53349cbed7a3f851f0722bf3fa8f1b93fa939bef",
+          "debt": "0xa4408e7c8b5d4481a2d8ad7aa89f3576a6a4a5d6",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_9APR2026",
+          "underlying": "0x54dc267be2839303ff1e323584a16e86cec4aa44",
+          "receipt": "0x9326fa5a71c93d5de313c91c3b80d74d0c3a0f5a",
+          "debt": "0xa746fed5635787e2d97da1979c714bfcdf60fa1a",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHO",
+          "underlying": "0xb77e872a68c62cfc0dfb02c067ecc3da23b4bbf3",
+          "receipt": "0xad571979b4245e163a7e2119eb4dfd94afdaebc5",
+          "debt": "0xb8a2c006202071171582c53b95942d645ed10891",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_USDe_18JUN2026",
+          "underlying": "0x23b17d3944742ace3d0c71586fcb320d1e4a1ed2",
+          "receipt": "0xdedff537fcba1169e673f78ee23d109885741016",
+          "debt": "0xf49f425d575f1505430beea036e0a318b08eb03c",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_18JUN2026",
+          "underlying": "0x30559e3d35e33ab69399a3fe9f383d32bd3c016e",
+          "receipt": "0x68ab954dc705c66506d499963dd1fbb8afa23d7d",
+          "debt": "0xd51add2ca67b8b4541eb4c1a5eafbaeb3d3b2df7",
+          "decimals": 18
+        },
+        {
+          "symbol": "PT_sUSDE_22OCT2026",
+          "underlying": "0xf7fb83435f455bd970f2d9f943f4eece1941b3e9",
+          "receipt": "0x34d33fcacc36b9a16ce1cab8d7fb1caf8b7c2d00",
+          "debt": "0x8e1d74cf7bdd9f0339f807156f557536df32a050",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-137",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "137",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "provider": "0x243aa95cac2a25651eda86e80bee66114413c43b",
+        "addressesProvider": "0xa97684ead0e402dc232d5a977953df7ecbab3cdb",
+        "incentives": "0x929ec64c34a17401f460460d4b9390518e5b473e"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Polygon.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "DAI",
+          "underlying": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+          "receipt": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+          "debt": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+          "decimals": 18
+        },
+        {
+          "symbol": "LINK",
+          "underlying": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+          "receipt": "0x191c10aa4af7c30e871e70c95db0e4eb77237530",
+          "debt": "0x953a573793604af8d41f306feb8274190db4ae0e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+          "receipt": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+          "debt": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+          "decimals": 6
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+          "receipt": "0x078f358208685046a11c85e8ad32895ded33a249",
+          "debt": "0x92b42c66840c7ad907b4bf74879ff3ef7c529473",
+          "decimals": 8
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+          "receipt": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+          "debt": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT0",
+          "underlying": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+          "receipt": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+          "debt": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+          "decimals": 6
+        },
+        {
+          "symbol": "AAVE",
+          "underlying": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+          "receipt": "0xf329e36c7bf6e5e86ce2150875a84ce77f477375",
+          "debt": "0xe80761ea617f66f96274ea5e8c37f03960ecc679",
+          "decimals": 18
+        },
+        {
+          "symbol": "WPOL",
+          "underlying": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+          "receipt": "0x6d80113e533a2c0fe82eabd35f1875dcea89ea97",
+          "debt": "0x4a1c3ad6ed28a636ee1751c69071f6be75deb8b8",
+          "decimals": 18
+        },
+        {
+          "symbol": "CRV",
+          "underlying": "0x172370d5cd63279efa6d502dab29171933a610af",
+          "receipt": "0x513c7e3a9c69ca3e22550ef58ac1c0088e918fff",
+          "debt": "0x77ca01483f379e58174739308945f044e1a764dc",
+          "decimals": 18
+        },
+        {
+          "symbol": "SUSHI",
+          "underlying": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+          "receipt": "0xc45a479877e1e9dfe9fcd4056c699575a1045daa",
+          "debt": "0x34e2ed44ef7466d5f9e0b782b5c08b57475e7907",
+          "decimals": 18
+        },
+        {
+          "symbol": "GHST",
+          "underlying": "0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7",
+          "receipt": "0x8eb270e296023e9d92081fdf967ddd7878724424",
+          "debt": "0xce186f6cccb0c955445bb9d10c59cae488fea559",
+          "decimals": 18
+        },
+        {
+          "symbol": "BAL",
+          "underlying": "0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3",
+          "receipt": "0x8ffdf2de812095b1d19cb146e4c004587c0a0692",
+          "debt": "0xa8669021776bc142dfca87c21b4a52595bcbb40a",
+          "decimals": 18
+        },
+        {
+          "symbol": "DPI",
+          "underlying": "0x85955046df4668e1dd369d2de9f3aeb98dd2a369",
+          "receipt": "0x724dc807b04555b71ed48a6896b6f41593b8c637",
+          "debt": "0xf611aeb5013fd2c0511c9cd55c7dc5c1140741a6",
+          "decimals": 18
+        },
+        {
+          "symbol": "EURS",
+          "underlying": "0xe111178a87a3bff0c8d18decba5798827539ae99",
+          "receipt": "0x38d693ce1df5aadf7bc62595a37d667ad57922e5",
+          "debt": "0x5d557b07776d12967914379c71a1310e917c7555",
+          "decimals": 2
+        },
+        {
+          "symbol": "jEUR",
+          "underlying": "0x4e3decbb3645551b8a19f0ea1678079fcb33fb4c",
+          "receipt": "0x6533afac2e7bccb20dca161449a13a32d391fb00",
+          "debt": "0x44705f578135cc5d703b4c9c122528c73eb87145",
+          "decimals": 18
+        },
+        {
+          "symbol": "EURA",
+          "underlying": "0xe0b52e49357fd4daf2c15e02058dce6bc0057db4",
+          "receipt": "0x8437d7c167dfb82ed4cb79cd44b7a32a1dd95c77",
+          "debt": "0x3ca5fa07689f266e907439afd1fbb59c44fe12f6",
+          "decimals": 18
+        },
+        {
+          "symbol": "miMATIC",
+          "underlying": "0xa3fa99a148fa48d14ed51d610c367c61876997f1",
+          "receipt": "0xebe517846d0f36eced99c735cbf6131e1feb775d",
+          "debt": "0x18248226c16bf76c032817854e7c83a2113b4f06",
+          "decimals": 18
+        },
+        {
+          "symbol": "stMATIC",
+          "underlying": "0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4",
+          "receipt": "0xea1132120ddcdda2f119e99fa7a27a0d036f7ac9",
+          "debt": "0x6b030ff3fb9956b1b69f475b77ae0d3cf2cc5afa",
+          "decimals": 18
+        },
+        {
+          "symbol": "MaticX",
+          "underlying": "0xfa68fb4628dff1028cfec22b4162fccd0d45efb6",
+          "receipt": "0x80ca0d8c38d2e2bcbab66aa1648bd1c7160500fe",
+          "debt": "0xb5b46f918c2923fc7f26db76e8a6a6e9c4347cf9",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd",
+          "receipt": "0xf59036caebea7dc4b86638dfa2e3c97da9fccd40",
+          "debt": "0x77fa66882a8854d883101fb8501bd3cad347fc32",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDCn",
+          "underlying": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+          "receipt": "0xa4d94019934d8333ef880abffbf2fdd611c762bd",
+          "debt": "0xe701126012ec0290822eea17b794454d1af8b030",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-534352",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "534352",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x11fcfe756c05ad438e312a7fd934381537d3cffe",
+        "provider": "0xbea2b648f05887ecbf1d115da8b7e4a317975a51",
+        "addressesProvider": "0x69850d0b276776781c063771b161bd8894bcdd04",
+        "incentives": "0xa3f3100c4f1d0624db9db97b40c13885ce297799"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Scroll.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0x5300000000000000000000000000000000000004",
+          "receipt": "0xf301805be1df81102c957f6d4ce29d2b8c056b2a",
+          "debt": "0xfd7344ceb1df9cf238ecd667f4a6f99c6ef44a56",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x06efdbff2a14a7c8e15944d1f4a48f9f95f663a4",
+          "receipt": "0x1d738a3436a8c49ceffbab7fbf04b660fb528cbd",
+          "debt": "0x3d2e209af5bfa79297c88d6b57f89d792f6e28ee",
+          "decimals": 6
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0xf610a9dfb7c89644979b4a0f27063e9e7d7cda32",
+          "receipt": "0x5b1322eeb46240b02e20062b8f0f9908d525b09c",
+          "debt": "0x8a035644322129800c3f747f54db0f4d3c0a2877",
+          "decimals": 18
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0x01f0a31698c4d065659b9bdc21b3610292a1c506",
+          "receipt": "0xd80a5e16dbdc52bd1c947cedfa22c562be9129c8",
+          "debt": "0x009d88c6a6b4caa240b71c98ba93732e26f2a55a",
+          "decimals": 18
+        },
+        {
+          "symbol": "SCR",
+          "underlying": "0xd29687c813d741e2f938f4ac377128810e217b1b",
+          "receipt": "0x25718130c2a8eb94e2e1fafb5f1cdd4b459acf64",
+          "debt": "0xffba405bbf25b2e6c454d18165f2fd8786858c6b",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-1868",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "1868",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0xdd3d7a7d03d9fd9ef45f3e587287922ef65ca38b",
+        "provider": "0x4a24b44b252db149b5b9bcec4dc3c2752807d626",
+        "addressesProvider": "0x82405d1a189bd6ce4667809c35b37fbe136a4c5b",
+        "incentives": "0xe9dfe1cbd5f10c56c1466f6ac88e1fb304be3780"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Soneium.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0x4200000000000000000000000000000000000006",
+          "receipt": "0x1bd45cc20ce61be344a64218e6ade01e72b08f39",
+          "debt": "0xc52375a5a04c0abe5a6ca5f3a344be2415ef54db",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDCe",
+          "underlying": "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369",
+          "receipt": "0xb2c9e934a55b58d20496a5019f8722a96d8a44d8",
+          "debt": "0xcce2594ea5bc482db9b4826ce25d0764fe56bfd8",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0x3a337a6ada9d885b6ad95ec48f9b75f197b5ae35",
+          "receipt": "0xbab0366adda6d2845c6bb5db4339a824350d24f7",
+          "debt": "0xb3b6f42ef71ddd9348136ffbdf02b545c0d2b799",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-146",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "146",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x5362dbb1e601abf3a4c14c22ffeda64042e5eaa3",
+        "provider": "0xc0a344397cfa89df1e1d3e4fb330834d789cf2cd",
+        "addressesProvider": "0x5c2e738f6e27bce0f7558051bf90605dd6176900",
+        "incentives": "0x24bd6e9ca54f1737467def82dca9702925b3aa59"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Sonic.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "WETH",
+          "underlying": "0x50c42deacd8fc9773493ed674b675be577f2634b",
+          "receipt": "0xe18ab82c81e7eecff32b8a82b1b7d2d23f1ece96",
+          "debt": "0x07b1adfb7d5795cf21bae8a77eceb222f2fafbce",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0x29219dd400f2bf60e5a23d13be72b486d4038894",
+          "receipt": "0x578ee1ca3a8e1b54554da1bf7c583506c4cd11c6",
+          "debt": "0x2273cabad63b7d247a6b107e723c803fc49953a0",
+          "decimals": 6
+        },
+        {
+          "symbol": "wS",
+          "underlying": "0x039e2fb66102314ce7b64ce5ce3e5183bc94ad38",
+          "receipt": "0x6c5e14a212c1c3e4baf6f871ac9b1a969918c131",
+          "debt": "0xf6089b790fbf8f4812a79a31cfabeb00b06ba7bd",
+          "decimals": 18
+        },
+        {
+          "symbol": "stS",
+          "underlying": "0xe5da20f15420ad15de0fa650600afc998bbe3955",
+          "receipt": "0xeaa74d7f42267eb907092af4bc700f667eed0b8b",
+          "debt": "0x333cfdcb6457c409e4f0c88f3806252bee5fe425",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "aave-v3-324",
+      "protocolId": "aave-v3",
+      "name": "Aave V3",
+      "chainId": "324",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x78e30497a3c7527d953c6b1e3541b021a98ac43c",
+        "provider": "0x9057ac7b2d35606f8ad5ae2fcbafcd94e58d9927",
+        "addressesProvider": "0x2a3948bb219d6b2fa83d64100006391a96be6cb7",
+        "incentives": "0x37c972c9ddfc2138ebe33ec19dba063ab9f8966e"
+      },
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3ZkSync.sol",
+      "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "USDC",
+          "underlying": "0x1d17cbcf0d6d143135ae902365d2e5e2a16538d4",
+          "receipt": "0xe977f9b2a5ccf0457870a67231f23be4daecfbdb",
+          "debt": "0x0049250d15a8550c5a14baa5af5b662a93a525b9",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0x493257fd37edb34451f62edf8d2a0c418852ba4c",
+          "receipt": "0xc48574bc5358c967d9447e7df70230fdb469e4e7",
+          "debt": "0x8992db58077fe8c7b80c1b3a738eae8a7bddba34",
+          "decimals": 6
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x5aea5775959fbc2557cc8789bc1bf90a239d9a91",
+          "receipt": "0xb7b93bcf82519bb757fd18b23a389245dbd8ca64",
+          "debt": "0x98dc737ea0e9bcb254c3f98510a71c5e11f74238",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x703b52f2b28febcb60e1372858af5b18849fe867",
+          "receipt": "0xd4e607633f3d984633e946aea4eb71f92564c1c9",
+          "debt": "0x6ad279f6523f6421fd5b0324a97d8f62eecd80c8",
+          "decimals": 18
+        },
+        {
+          "symbol": "ZK",
+          "underlying": "0x5a7d6b2f92c77fad6ccabd7ee0624e64907eaf3e",
+          "receipt": "0xd6cd2c0fc55936498726cacc497832052a9b2d1b",
+          "debt": "0x6450fd7f877b5bb726f7bc6bf0e6ffabd48d72ad",
+          "decimals": 18
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0xc1fa6e2e8667d9be0ca938a54c7e0285e9df924a",
+          "receipt": "0xe818a67ee5c0531afaa31aa6e20bcac36227a641",
+          "debt": "0xf31e1599b4480d07fa96a7248c4f05ca84da7fa8",
+          "decimals": 18
+        },
+        {
+          "symbol": "sUSDe",
+          "underlying": "0xad17da2f6ac76746ef261e835c50b2651ce36da8",
+          "receipt": "0xf3c9d58b76ac6ee6811520021e9a9318c49e4cfa",
+          "debt": "0xdebb4ddaaab1676775214552a7a05d6a13f905da",
+          "decimals": 18
+        },
+        {
+          "symbol": "wrsETH",
+          "underlying": "0xd4169e045bcf9a86cc00101225d9ed61d2f51af2",
+          "receipt": "0x5722921bb6c37eaeb78b993765aa5d79cc50052f",
+          "debt": "0x97dec07366be72884331be21704fd93bf35286f9",
+          "decimals": 18
+        }
+      ]
+    },
+    {
+      "id": "compound-42161-usdc-e",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "42161",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xa5edbdd9646f8dff606d7448e414884c7d905dca"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdc.e/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-42161-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "42161",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x9c4ec768c28520b50860ea7a15bd7213a9ff58bf"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-42161-usdt",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "42161",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xd98be00b5d27fc98112bde293e487f8d4ca57d07"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdt/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-42161-weth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "42161",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x6f7d514bbd4aff3bcd1140b7344b32f063dee486"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/weth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-8453-aero",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "8453",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x784efeb622244d2348d4f2522f8860b96fbece89"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/aero/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-8453-usdbc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "8453",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x9c4ec768c28520b50860ea7a15bd7213a9ff58bf"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usdbc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-8453-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "8453",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xb125e6687d4313864e53df431d5425969c15eb2f"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-8453-usds",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "8453",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x2c776041ccfe903071af44aa147368a9c8eea518"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usds/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-8453-weth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "8453",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x46e6b214b524310239732d51387075e0e70970bf"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/weth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xc3d688b66703497daa19211eedff47f25384cdc3"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-usds",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x5d409e56d886231adaf00c8775665ad0f9897b56"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usds/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-usdt",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x3afdc9bca9213a35503b077a6072f3d0d5ab0840"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usdt/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-wbtc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xe85dc543813b8c2cfeaac371517b925a166a9293"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/wbtc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-weth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xa17581a9e3356d9a858b789d68b4d866e593ae94"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/weth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-1-wsteth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "1",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x3d0bb1ccab520a66e607822fc55bc921738fafe3"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/wsteth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-10-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "10",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x2e44e174f7d53f0212823acc11c01a11d58c5bcb"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-10-usdt",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "10",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x995e394b8b2437ac8ce61ee0bc610d617962b214"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/usdt/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-10-weth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "10",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xe36a30d249f7761327fd973001a32010b521b6fd"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/weth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-137-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "137",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xf25212e676d1f7f89cd72ffee66158f541246445"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/polygon/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-137-usdt",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "137",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0xaeb318360f27748acb200ce616e389a6c9409a07"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/polygon/usdt/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-130-usdc",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "130",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x2c7118c4c88b9841fcf839074c26ae8f035f2921"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/unichain/usdc/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "compound-130-weth",
+      "protocolId": "compound-iii",
+      "name": "Compound III",
+      "chainId": "130",
+      "adapter": "compound-iii",
+      "category": "lending",
+      "contracts": {
+        "comet": "0x6c987dde50db1dcdd32cd4175778c2a291978e2a"
+      },
+      "source": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/unichain/weth/roots.json",
+      "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-1",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "1",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "manager": "0xc36442b4a4522e871399cd717abdd847ab11fe88"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/1.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-1",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "1",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/1.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-10",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "10",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "manager": "0xc36442b4a4522e871399cd717abdd847ab11fe88"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/10.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-10",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "10",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x0c3c1c532f1e39edf36be9fe0be1410313e074bf"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/10.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-137",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "137",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "manager": "0xc36442b4a4522e871399cd717abdd847ab11fe88"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/137.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-137",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "137",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x9e5a52f57b3038f1b8eee45f28b3c1967e22799c"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/137.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-42161",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "42161",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "manager": "0xc36442b4a4522e871399cd717abdd847ab11fe88"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42161.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-42161",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "42161",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xf1d7cc64fb4452f05c498126312ebe29f30fbcf9"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42161.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-42220",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "42220",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xafe208a311b21f13ef87e33a90049fc17a7acdec",
+        "manager": "0x3d79edaabc0eab6f08ed885c05fc0b014290d95a"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42220.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-42220",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "42220",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x79a530c8e2fa8748b7b40dd3629c0520c2ccf03f"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42220.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-43114",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "43114",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x740b1c1de25031c31ff4fc9a62f554a55cdc1bad",
+        "manager": "0x655c406ebfa14ee2006250925e54ec43ad184f8b"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/43114.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-43114",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "43114",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x9e5a52f57b3038f1b8eee45f28b3c1967e22799c"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/43114.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-56",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "56",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xdb1d10011ad0ff90774d0c6bb92e5c5c8b4461f7",
+        "manager": "0x7b8a01b39d58278b5de7e48c8449c9f4f5170613"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/56.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-56",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "56",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x8909dc15e40173ff4699343b6eb8132c65e18ec6"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/56.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-59144",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "59144",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x31fafd4889fa1269f7a13a66ee0fb458f27d72a9",
+        "manager": "0x4615c383f85d0a2bbed973d83ccecf5cb7121463"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/59144.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-59144",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "59144",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x114a43df6c5f54ebb8a9d70cd1951d3dd68004c7"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/59144.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v3-8453",
+      "protocolId": "uniswap-v3",
+      "name": "Uniswap V3",
+      "chainId": "8453",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd",
+        "manager": "0x03a520b32c04bf3beef7beb72e919cf822ed34f1"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/8453.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "uniswap-v2-8453",
+      "protocolId": "uniswap-v2",
+      "name": "Uniswap V2",
+      "chainId": "8453",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x8909dc15e40173ff4699343b6eb8132c65e18ec6"
+      },
+      "source": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/8453.md",
+      "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "erc4626-sdai-1",
+      "protocolId": "erc4626",
+      "name": "Sky Savings DAI",
+      "chainId": "1",
+      "adapter": "erc4626",
+      "category": "vault",
+      "contracts": {
+        "vault": "0x83f20f44975d03b1b09e64809b757c47f942beea"
+      },
+      "source": "https://raw.githubusercontent.com/sky-ecosystem/sdai/2b7acb95289a9eb3a8844206d5712eabfa206efc/README.md",
+      "revision": "2b7acb95289a9eb3a8844206d5712eabfa206efc",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "morpho-blue-1",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "1",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "irm": "0x870ac11d48b15db9a138cf899d20f13f79ba00bc",
+        "oracleFactory": "0x3a7bb36ee3f3ee32a60e9f2b33c1e5f2e83ad766"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "18883124"
+    },
+    {
+      "id": "morpho-vault-1",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "1",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x1897a8997241c1cd4bd0698647e4eb7213535c24"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "21439510"
+    },
+    {
+      "id": "morpho-blue-8453",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "8453",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "irm": "0x46415998764c29ab2a25cbea6254146d50d22687",
+        "oracleFactory": "0x2dc205f24bcb6b311e5cdf0745b0741648aebd3d"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "13977148"
+    },
+    {
+      "id": "morpho-vault-8453",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "8453",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xff62a7c278c62ed665133147129245053bbf5918"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "23928808"
+    },
+    {
+      "id": "morpho-blue-137",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "137",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x1bf0c2541f820e775182832f06c0b7fc27a25f67",
+        "irm": "0xe675a2161d4a6e2de2eed70ac98eebf257fbf0b0",
+        "oracleFactory": "0x1ff7895eb842794c5d07c4c547b6730e61295215"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "66931042"
+    },
+    {
+      "id": "morpho-vault-137",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "137",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xa9c87dab340631c34bb738625c70499e29dddc98"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "66931042"
+    },
+    {
+      "id": "morpho-blue-42161",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "42161",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x6c247b1f6182318877311737bac0844baa518f5e",
+        "irm": "0x66f30587fb8d4206918deb78eca7d5ebbafd06da",
+        "oracleFactory": "0x98ce5d183dc0c176f54d37162f87e7ed7f2e41b5"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "296446593"
+    },
+    {
+      "id": "morpho-vault-42161",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "42161",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x878988f5f561081deea117717052164ea1ef0c82"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "296447195"
+    },
+    {
+      "id": "morpho-blue-10",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "10",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xce95afbb8ea029495c66020883f87aae8864af92",
+        "irm": "0x8cd70a8f399428456b29546bc5dbe10ab6a06ef6",
+        "oracleFactory": "0x1ec408d4131686f727f3fd6245cf85bc5c9dad70"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "130770075"
+    },
+    {
+      "id": "morpho-vault-10",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "10",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x3bb6a6a0bc85b367efe0a5bac81c5e52c892839a"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "130770189"
+    },
+    {
+      "id": "morpho-blue-480",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "480",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xe741bc7c34758b4cae05062794e8ae24978af432",
+        "irm": "0x34e99d604751a72cf8d0cfdf87069292d82de472",
+        "oracleFactory": "0xd706690ba1fe26b70c4ad89e60ff62ceb3a2ed02"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9025669"
+    },
+    {
+      "id": "morpho-vault-480",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "480",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x4dbb3a642a2146d5413750cca3647086d9ba5f12"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9025733"
+    },
+    {
+      "id": "morpho-blue-252",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "252",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xa6030627d724ba78a59acf43be7550b4c5a0653b",
+        "irm": "0xa0d4d77b5d9933073572e19c172bfe866312673b",
+        "oracleFactory": "0x39d8622c607a691d7705e8842fbb12e3c38dcd41"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "15317931"
+    },
+    {
+      "id": "morpho-vault-252",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "252",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x27d4af0ac9e7fdfa6d0853236f249cc27ae79488"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "15318007"
+    },
+    {
+      "id": "morpho-blue-534352",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "534352",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x2d012edbadc37edc2bc62791b666f9193fdf5a55",
+        "irm": "0xa5ea7500a27c0079961d93366a6e93aaff18cb90",
+        "oracleFactory": "0xb5961902e60b188b1c665b7b72ef616656a9e24e"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "12842868"
+    },
+    {
+      "id": "morpho-vault-534352",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "534352",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x56b65742ade55015e6480959808229ad6dbc9295"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "12842903"
+    },
+    {
+      "id": "morpho-blue-57073",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "57073",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x857f3eefe8cbda3bc49367c996cd664a880d3042",
+        "irm": "0x9515407b1512f53388ffe699524100e7270ee57b",
+        "oracleFactory": "0x3fffe273ee348b9e1ef89533025c7f165b17b439"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "4078776"
+    },
+    {
+      "id": "morpho-vault-57073",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "57073",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xd3f39505d0c48afed3549d625982fdc38ea9904b"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "4078830"
+    },
+    {
+      "id": "morpho-blue-130",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "130",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x8f5ae9cddb9f68de460c77730b018ae7e04a140a",
+        "irm": "0x9a6061d51743b31d2c3be75d83781fa423f53f0e",
+        "oracleFactory": "0x43269546e1d586a1f7200a0ac07e26f9631f7539"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9139027"
+    },
+    {
+      "id": "morpho-vault-130",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "130",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xe9ede3929f43a7062a007c3e8652e4aca610bdc0"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9316789"
+    },
+    {
+      "id": "morpho-blue-146",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "146",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xd6c916eb7542d0ad3f18aed0fcbd50c582cfa95f",
+        "irm": "0xdefcf242226425f93d8dd0e314735c28517c473f",
+        "oracleFactory": "0x7da59fa482f1f49fadc486d8e47badc506feb86d"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9100931"
+    },
+    {
+      "id": "morpho-vault-146",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "146",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x0ce9e3512cb4df8ae7e265e62fb9258dc14f12e8"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "9101319"
+    },
+    {
+      "id": "morpho-blue-34443",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "34443",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xd85ce6bd68487e0aafb0858fde1cd18c76840564",
+        "irm": "0xe3d46ae190cb39cca3655e966dcef96b4eae1d1c",
+        "oracleFactory": "0xf9380f7898423bd7fde3c9fdd1b2671a2471f39d"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "19983370"
+    },
+    {
+      "id": "morpho-vault-34443",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "34443",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xae5b0884bfff430493d6c844b9fd052af7d79278"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "19983443"
+    },
+    {
+      "id": "morpho-blue-59144",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "59144",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x6b0d716ac0a45536172308e08fc2c40387262c9f",
+        "irm": "0x85c2ef4bd69f42d7da19fb9dcdd7fb8d0f59cdee",
+        "oracleFactory": "0x3fff726062b03bfd5bc485eeeecc92cf1d8f0105"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "25072608"
+    },
+    {
+      "id": "morpho-vault-59144",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "59144",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0xa148a8223b622a72dc36472de1492abb5c089ba7"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "25072665"
+    },
+    {
+      "id": "morpho-blue-56",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "56",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0x01b0bd309aa75547f7a37ad7b1219a898e67a83a",
+        "irm": "0x7112d95cb5f6b13bf5f5b94a373bb3b2b381f979",
+        "oracleFactory": "0xdf2035fc15919588526dbb5560863c812f135236"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "54344680"
+    },
+    {
+      "id": "morpho-vault-56",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "56",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x92983687e672ca6d96530f9dbe11a196ce905d72"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "54344985"
+    },
+    {
+      "id": "morpho-blue-42220",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "42220",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xd24ecdd8c1e0e57a4e26b1a7bbeaa3e95466a569",
+        "irm": "0x683caaaddfa2f42e24880e202676526d501a5ded",
+        "oracleFactory": "0x3a4849b5174dc6828c6dc9bbd87e61ed1ebe9ffa"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "40249329"
+    },
+    {
+      "id": "morpho-vault-42220",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "42220",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x6870aa9f66c1e5efe8dbe8730e86e9e91f688275"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "40259931"
+    },
+    {
+      "id": "morpho-blue-1868",
+      "protocolId": "morpho-blue",
+      "name": "Morpho Blue",
+      "chainId": "1868",
+      "adapter": "morpho-blue",
+      "category": "lending",
+      "contracts": {
+        "blue": "0xe75fc5ea6e74b824954349ca351eb4e671ada53a",
+        "irm": "0x68f9b666b984527a7c145db4103cc6d3171c797f",
+        "oracleFactory": "0x669f1a4ce3127740ecdb3e36adfc5df6db1ea74b"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "6440817"
+    },
+    {
+      "id": "morpho-vault-1868",
+      "protocolId": "morpho-vault",
+      "name": "Morpho Vaults V1",
+      "chainId": "1868",
+      "adapter": "morpho-vault",
+      "category": "vault",
+      "contracts": {
+        "factory": "0x7026b436f294e560b3c26e731f5cac5992ca2b33"
+      },
+      "source": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+      "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+      "status": "active",
+      "environment": "mainnet",
+      "startBlock": "6440899"
+    },
+    {
+      "id": "lido-1",
+      "protocolId": "lido",
+      "name": "Lido",
+      "chainId": "1",
+      "adapter": "lido",
+      "category": "staking",
+      "contracts": {
+        "steth": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "wsteth": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+        "withdrawalQueue": "0x889edc2edab5f40e902b864ad4d7ade8e412f9b1"
+      },
+      "source": "https://raw.githubusercontent.com/lidofinance/core/1440c830eb1d0916a436468a71cd73bc8b8deffb/contracts/0.6.12/WstETH.sol",
+      "revision": "1440c830eb1d0916a436468a71cd73bc8b8deffb",
+      "status": "active",
+      "environment": "mainnet"
+    },
+    {
+      "id": "sparklend-1",
+      "protocolId": "sparklend",
+      "name": "SparkLend",
+      "chainId": "1",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0xc13e21b648a5ee794902342038ff3adab66be987",
+        "provider": "0xfc21d6d146e6086b8359705c8b28512a983db0cb",
+        "addressesProvider": "0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee",
+        "incentives": "0x4370d3b6c9588e02ce9d22e684387859c7ff5b34"
+      },
+      "source": "https://raw.githubusercontent.com/sparkdotfi/spark-address-registry/98091964e0ef9f74bb2b6da3646f8e6d16448588/src/SparkLend.sol",
+      "revision": "98091964e0ef9f74bb2b6da3646f8e6d16448588",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "cbBTC",
+          "underlying": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "receipt": "0xb3973d459df38ae57797811f2a1fd061da1bc123",
+          "debt": "0x661fe667d2103eb52d3632a3eb2cabd123f27938",
+          "decimals": 8
+        },
+        {
+          "symbol": "DAI",
+          "underlying": "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "receipt": "0x4dedf26112b3ec8ec46e7e31ea5e123490b05b8b",
+          "debt": "0xf705d2b7e92b3f38e6ae7afadaa2fee110fe5914",
+          "decimals": 18
+        },
+        {
+          "symbol": "ezETH",
+          "underlying": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "receipt": "0xb131cd463d83782d4de33e00e35ef034f0869ba1",
+          "debt": "0xb0b14dd477e6159b4f3f210cf45f0954f57c0fab",
+          "decimals": 18
+        },
+        {
+          "symbol": "LBTC",
+          "underlying": "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "receipt": "0xa9d4ecebd48c282a70cfd3c469d6c8f178a5738e",
+          "debt": "0x096bddfee63f44a97cc6d2945539ee7c8f94637d",
+          "decimals": 8
+        },
+        {
+          "symbol": "PYUSD",
+          "underlying": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "receipt": "0x779224df1c756b4edd899854f32a53e8c2b2ce5d",
+          "debt": "0x3357d2db7763d6cd3a99f0763ebf87e0096d95f9",
+          "decimals": 6
+        },
+        {
+          "symbol": "rETH",
+          "underlying": "0xae78736cd615f374d3085123a210448e74fc6393",
+          "receipt": "0x9985df20d7e9103ecbceb16a84956434b6f06ae8",
+          "debt": "0xba2c8f2ea5b56690bfb8b709438f049e5dd76b96",
+          "decimals": 18
+        },
+        {
+          "symbol": "RLUSD",
+          "underlying": "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "receipt": "0x59275fb72c8004f44ba44432e25082932fd677f1",
+          "debt": "0x5cf1eaf763e8ce5f949bea9a0cd051e8db252d5b",
+          "decimals": 18
+        },
+        {
+          "symbol": "rsETH",
+          "underlying": "0xa1290d69c65a6fe4df752f95823fae25cb99e5a7",
+          "receipt": "0x856f1ea78361140834fdcd0db0b08079e4a45062",
+          "debt": "0xc528f0c91cfae4fd86a68f6dfd4d7284707bec68",
+          "decimals": 18
+        },
+        {
+          "symbol": "sDAI",
+          "underlying": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "receipt": "0x78f897f0fe2d3b5690ebae7f19862deacedf10a7",
+          "debt": "0xabc57081c04d921388240393ec4088aa47c6832b",
+          "decimals": 18
+        },
+        {
+          "symbol": "tBTC",
+          "underlying": "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "receipt": "0xce6ca9cdce00a2b0c0d1dac93894f4bd2c960567",
+          "debt": "0x764591dc9ba21c1b92049331b80b6e2a2acf8b17",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "receipt": "0x377c3bd93f2a2984e1e7be6a5c22c525ed4a4815",
+          "debt": "0x7b70d04099cb9cfb1db7b6820badafb4c5c70a67",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDG",
+          "underlying": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "receipt": "0x6f335538257ef440f3c51e925a5c820f722a1f9f",
+          "debt": "0x4eb8bf7d764d6b243a41c167dcf0e2a08c88ff3f",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDS",
+          "underlying": "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "receipt": "0xc02ab1a5eaa8d1b114ef786d9bde108cd4364359",
+          "debt": "0x8c147debea24fb98ade8dda4bf142992928b449e",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDT",
+          "underlying": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "receipt": "0xe7df13b8e3d6740fe17cbe928c7334243d86c92f",
+          "debt": "0x529b6158d1d2992e3129f7c69e81a7c677dc3b12",
+          "decimals": 6
+        },
+        {
+          "symbol": "WBTC",
+          "underlying": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "receipt": "0x4197ba364ae6698015ae5c1468f54087602715b2",
+          "debt": "0xf6fee3a8ac8040c3d6d81d9a4a168516ec9b51d2",
+          "decimals": 8
+        },
+        {
+          "symbol": "weETH",
+          "underlying": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "receipt": "0x3cfd5c0d4acaa8faee335842e4f31159fc76b008",
+          "debt": "0xc2bd6d2fee70a0a73a33795bdbee0368aef5c766",
+          "decimals": 18
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "receipt": "0x59cd1c87501baa753d0b5b5ab5d8416a45cd71db",
+          "debt": "0x2e7576042566f8d6990e07a1b61ad1efd86ae70d",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "receipt": "0x12b54025c112aa61face2cdb7118740875a566e9",
+          "debt": "0xd5c3e3b566a42a6110513ac7670c1a86d76e13e6",
+          "decimals": 18
+        }
+      ],
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sparklend-100",
+      "protocolId": "sparklend",
+      "name": "SparkLend",
+      "chainId": "100",
+      "adapter": "aave-v3",
+      "category": "lending",
+      "contracts": {
+        "pool": "0x2dae5307c5e3fd1cf5a72cb6f698f915860607e0",
+        "provider": "0x2a002054a06546bb5a264d57a81347e23af91d18",
+        "addressesProvider": "0xa98dacb3fc964a6a0d2ce3b77294241585eaba6d",
+        "incentives": "0x98e6bcba7d5dafbfa4a92daf08d3d7512820c30c"
+      },
+      "source": "https://raw.githubusercontent.com/sparkdotfi/spark-address-registry/98091964e0ef9f74bb2b6da3646f8e6d16448588/src/Gnosis.sol",
+      "revision": "98091964e0ef9f74bb2b6da3646f8e6d16448588",
+      "status": "active",
+      "environment": "mainnet",
+      "assets": [
+        {
+          "symbol": "GNO",
+          "underlying": "0x9c58bacc331c9aa871afd802db6379a98e80cedb",
+          "receipt": "0x5671b0b8ac13dc7813d36b99c21c53f6cd376a14",
+          "debt": "0xd4babf714964e399f95a7bb94b3deaf22d9f575d",
+          "decimals": 18
+        },
+        {
+          "symbol": "WETH",
+          "underlying": "0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1",
+          "receipt": "0x629d562e92fed431122e865cc650bc6bde6b96b0",
+          "debt": "0x0ad6ccf9a2e81d4d48ab7db791e9da492967eb84",
+          "decimals": 18
+        },
+        {
+          "symbol": "wstETH",
+          "underlying": "0x6c76971f98945ae98dd7d4dfca8711ebea946ea6",
+          "receipt": "0x9ee4271e17e3a427678344fd2ee64663cb78b4be",
+          "debt": "0x3294da2e28b29d1c08d556e2b86879d221256d31",
+          "decimals": 18
+        },
+        {
+          "symbol": "WXDAI",
+          "underlying": "0xe91d153e0b41518a2ce8dd3d7944fa863463a97d",
+          "receipt": "0xc9fe2d32e96bb364c7d29f3663ed3b27e30767bb",
+          "debt": "0x868adfdf12a86422524eab6978beae08a0008f37",
+          "decimals": 18
+        },
+        {
+          "symbol": "sDAI",
+          "underlying": "0xaf204776c7245bf4147c2612bf6e5972ee483701",
+          "receipt": "0xe877b96caf9f180916bf2b5ce7ea8069e0123182",
+          "debt": "0x1022e390e2457a78e18aeee0bbf0e96e482eee19",
+          "decimals": 18
+        },
+        {
+          "symbol": "USDC",
+          "underlying": "0xddafbb505ad214d7b80b1f830fccc89b60fb7a83",
+          "receipt": "0x5850d127a04ed0b4f1fcdfb051b3409fb9fe6b90",
+          "debt": "0xbc4f20daf4e05c17e93676d2cec39769506b8219",
+          "decimals": 6
+        },
+        {
+          "symbol": "USDCe",
+          "underlying": "0x2a22f9c3b484c3629090feed35f17ff8f88f76f0",
+          "receipt": "0xa34db0ee8f84c4b90ed268df5abbe7dcd3c277ec",
+          "debt": "0x397b97b572281d0b3e3513bd4a7b38050a75962b",
+          "decimals": 6
+        },
+        {
+          "symbol": "EURe",
+          "underlying": "0xcb444e90d8198415266c6a2724b7900fb12fc56e",
+          "receipt": "0x6dc304337bf3eb397241d1889cae7da638e6e782",
+          "debt": "0x0b33480d3fbd1e2dbe88c82aabe191d7473759d5",
+          "decimals": 18
+        }
+      ],
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-reth-1",
+      "protocolId": "rocket-pool",
+      "name": "Rocket Pool rETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "converter": "0xae78736cd615f374d3085123a210448e74fc6393"
+      },
+      "source": "https://raw.githubusercontent.com/rocket-pool/docs.rocketpool.net/ff73911625a24a6fe0e67aa1679385ca51542f44/docs/en/protocol/contracts-integrations.md",
+      "revision": "ff73911625a24a6fe0e67aa1679385ca51542f44",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "getEthValue",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-cbeth-1",
+      "protocolId": "coinbase-cbeth",
+      "name": "Coinbase cbETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+        "converter": "0xbe9895146f7af43049ca1c1ae358b0541ea49704"
+      },
+      "source": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/README.md",
+      "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "exchangeRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "identity": "ONCHAIN_DERIVED",
+      "derivation": {
+        "token": "underlyingToken() of the official EigenLayer cbETH strategy 0x54945180db7943c0ed0fee7edab2bd24620256bc (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-wbeth-1",
+      "protocolId": "binance-wbeth",
+      "name": "Binance wBETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xa2e3356610840701bdf5611a53974510ae27e2e1",
+        "converter": "0xa2e3356610840701bdf5611a53974510ae27e2e1"
+      },
+      "source": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/README.md",
+      "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "exchangeRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "identity": "ONCHAIN_DERIVED",
+      "derivation": {
+        "token": "underlyingToken() of the official EigenLayer wBETH strategy 0x7ca911e83dabf90c90dd3de5411a10f1a6112184 (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-sweth-1",
+      "protocolId": "swell-sweth",
+      "name": "Swell swETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xf951e335afb289353dc249e82926178eac7ded78",
+        "converter": "0xf951e335afb289353dc249e82926178eac7ded78"
+      },
+      "source": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/README.md",
+      "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "swETHToETHRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "identity": "ONCHAIN_DERIVED",
+      "derivation": {
+        "token": "underlyingToken() of the official EigenLayer swETH strategy 0x0fe4f44bee93503346a3ac9ee5a26b130a5796d6 (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-weeth-1",
+      "protocolId": "ether-fi",
+      "name": "ether.fi weETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+        "converter": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+        "underlying": "0x35fa164735182de50811e8e2e824cfb9b6118ac2"
+      },
+      "source": "https://raw.githubusercontent.com/etherfi-protocol/smart-contracts/15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88/deployment/WeETHWithdrawAdapter/2026-06-26-22-16-11.json",
+      "revision": "15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "getEETHByWeETH",
+        "mode": "convert",
+        "underlying": "token",
+        "rateSource": "protocol-view"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-meth-1",
+      "protocolId": "meth-protocol",
+      "name": "Mantle mETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+        "converter": "0xe3cbd06d7dadb3f4e6557bab7edd924cd1489e8f"
+      },
+      "source": "https://raw.githubusercontent.com/mantle-lsp/contracts/bbc4e8bf7d3e3b4ca0c5be07aba409ac66611c76/README.md",
+      "revision": "bbc4e8bf7d3e3b4ca0c5be07aba409ac66611c76",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "mETHToETH",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-ethx-1",
+      "protocolId": "stader",
+      "name": "Stader ETHx",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+        "converter": "0xcf5ea1b38380f6af39068375516daf40ed70d299"
+      },
+      "source": "https://raw.githubusercontent.com/stader-labs/ethx/9d4a9211431d6c0cdf014bd64d3718cba4ce96ab/README.md",
+      "revision": "9d4a9211431d6c0cdf014bd64d3718cba4ce96ab",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "convertToAssets",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-rseth-1",
+      "protocolId": "kelp",
+      "name": "Kelp rsETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "restaking",
+      "contracts": {
+        "token": "0xa1290d69c65a6fe4df752f95823fae25cb99e5a7",
+        "converter": "0x349a73444b1a310bae67ef67973022020d70020d"
+      },
+      "source": "https://raw.githubusercontent.com/Kelp-DAO/LRT-rsETH/3dded885f6f797f5959aff449c3a30c5cbb6ce23/README.md",
+      "revision": "3dded885f6f797f5959aff449c3a30c5cbb6ce23",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "rsETHPrice",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-oracle-stored-rate"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "lst-oseth-1",
+      "protocolId": "stakewise-v3",
+      "name": "StakeWise osETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+        "converter": "0x2a261e60fb14586b474c208b1b7ac6d0f5000306"
+      },
+      "source": "https://raw.githubusercontent.com/stakewise/v3-core/fc70cbe1b3d41bc5f78434830d837aa270ca33bc/deployments/mainnet.json",
+      "revision": "fc70cbe1b3d41bc5f78434830d837aa270ca33bc",
+      "status": "active",
+      "environment": "mainnet",
+      "config": {
+        "call": "convertToAssets",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "erc4626-sfrxeth-1",
+      "protocolId": "frax-ether",
+      "name": "Frax sfrxETH",
+      "chainId": "1",
+      "adapter": "erc4626",
+      "category": "staking",
+      "contracts": {
+        "vault": "0xac3e018457b222d93114458476f3e3416abbe38f"
+      },
+      "source": "https://raw.githubusercontent.com/FraxFinance/frax-solidity/30532c8cefcbf5c7efafcff4369261bd435a4859/src/types/constants.ts",
+      "revision": "30532c8cefcbf5c7efafcff4369261bd435a4859",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "erc4626-pufeth-1",
+      "protocolId": "puffer",
+      "name": "Puffer pufETH",
+      "chainId": "1",
+      "adapter": "erc4626",
+      "category": "restaking",
+      "contracts": {
+        "vault": "0xd9a442856c234a39a81a089c06451ebaa4306a72"
+      },
+      "source": "https://raw.githubusercontent.com/PufferFinance/Deployments-and-ACL/302c0270f718a7dc20c819419a7dde965e16ce56/docs/deployments/mainnet.md",
+      "revision": "302c0270f718a7dc20c819419a7dde965e16ce56",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "eigenlayer-1",
+      "protocolId": "eigenlayer",
+      "name": "EigenLayer restaking",
+      "chainId": "1",
+      "adapter": "eigenlayer",
+      "category": "restaking",
+      "contracts": {
+        "strategyManager": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+        "delegationManager": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+        "eigenPodManager": "0x91e677b07f7af907ec9a428aafa9fc14a0d3a338"
+      },
+      "source": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/README.md",
+      "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+      "status": "active",
+      "environment": "mainnet",
+      "strategies": [
+        {
+          "symbol": "stETH",
+          "strategy": "0x93c4b944d05dfe6df7645a86cd2206016c51564d",
+          "underlying": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+        },
+        {
+          "symbol": "rETH",
+          "strategy": "0x1bee69b7dfffa4e2d53c2a2df135c388ad25dcd2",
+          "underlying": "0xae78736cd615f374d3085123a210448e74fc6393"
+        },
+        {
+          "symbol": "cbETH",
+          "strategy": "0x54945180db7943c0ed0fee7edab2bd24620256bc",
+          "underlying": "0xbe9895146f7af43049ca1c1ae358b0541ea49704"
+        },
+        {
+          "symbol": "ETHx",
+          "strategy": "0x9d7ed45ee2e8fc5482fa2428f15c971e6369011d",
+          "underlying": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b"
+        },
+        {
+          "symbol": "ankrETH",
+          "strategy": "0x13760f50a9d7377e4f20cb8cf9e4c26586c658ff",
+          "underlying": "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb"
+        },
+        {
+          "symbol": "OETH",
+          "strategy": "0xa4c637e0f704745d182e4d38cab7e7485321d059",
+          "underlying": "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3"
+        },
+        {
+          "symbol": "osETH",
+          "strategy": "0x57ba429517c3473b6d34ca9acd56c0e735b94c02",
+          "underlying": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38"
+        },
+        {
+          "symbol": "swETH",
+          "strategy": "0x0fe4f44bee93503346a3ac9ee5a26b130a5796d6",
+          "underlying": "0xf951e335afb289353dc249e82926178eac7ded78"
+        },
+        {
+          "symbol": "wBETH",
+          "strategy": "0x7ca911e83dabf90c90dd3de5411a10f1a6112184",
+          "underlying": "0xa2e3356610840701bdf5611a53974510ae27e2e1"
+        },
+        {
+          "symbol": "sfrxETH",
+          "strategy": "0x8ca7a5d6f3acd3a7a8bc468a8cd0fb14b6bd28b6",
+          "underlying": "0xac3e018457b222d93114458476f3e3416abbe38f"
+        },
+        {
+          "symbol": "lsETH",
+          "strategy": "0xae60d8180437b5c34bb956822ac2710972584473",
+          "underlying": "0x8c1bed5b9a0928467c9b1341da1d7bd5e10b6549"
+        },
+        {
+          "symbol": "mETH",
+          "strategy": "0x298afb19a105d59e74658c4c334ff360bade6dd2",
+          "underlying": "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa"
+        }
+      ],
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "curve-1",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "1",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0xf98b45fa17de75fb1ad0e7afd971b0ca00e379fc"
+      },
+      "source": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/README.md",
+      "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "curve-42161",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "42161",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0x13526206545e2dc7ccfbaf28dc88f440ce7ad3e0"
+      },
+      "source": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/deployments.yaml",
+      "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "curve-10",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "10",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0xc65cb3156225380beda366610bab18d5835a1647"
+      },
+      "source": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/deployments.yaml",
+      "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "curve-137",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "137",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0x296d2b5c23833a70d07c8fcbb97d846c1ff90ddd"
+      },
+      "source": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/deployments.yaml",
+      "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "curve-8453",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "8453",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "addressProvider": "0x5ffe7fb82894076ecb99a30d6a32e969e6e35e98",
+        "metaRegistry": "0x87dd13dd25a1dbde0e1edcf5b8fa6cfff7eabcad"
+      },
+      "source": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/scripts/deploy_addressprovider_and_setup.py",
+      "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "ONCHAIN_DERIVED",
+      "derivation": {
+        "metaRegistry": "AddressProviderNG.get_address(7) on Base (AddressProviderNG is literal in the official file); verified again at read time"
+      }
+    },
+    {
+      "id": "balancer-v2-1",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "1",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x897888115ada5773e02aa29f775430bfb5f34c51"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/mainnet.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-10",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "10",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x230a59f4d9adc147480f03b0d3fffecd56c3289a"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/optimism.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-100",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "100",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x6cad2ea22bfa7f4c14aae92e47f510cd5c509bc7"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/gnosis.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-137",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "137",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0xfc8a407bba312ac761d8bfe04ce1201904842b76"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/polygon.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-8453",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "8453",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x4c32a8a8fda4e24139b51b456b42290f51d6a1c4"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/base.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-42161",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "42161",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0xc7e5ed1054a24ef31d827e6f86caa58b3bc168d7"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/arbitrum.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "balancer-v2-43114",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "43114",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x230a59f4d9adc147480f03b0d3fffecd56c3289a"
+      },
+      "source": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/avalanche.json",
+      "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "aerodrome-v2-8453",
+      "protocolId": "aerodrome",
+      "name": "Aerodrome basic pools",
+      "chainId": "8453",
+      "adapter": "solidly-v2",
+      "category": "liquidity",
+      "contracts": {
+        "poolFactory": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+        "voter": "0x16613524e02ad97edfef371bc883f2f5d6c480a5"
+      },
+      "source": "https://raw.githubusercontent.com/aerodrome-finance/contracts/1ba30815bba620f7e9faa34769ffd00c214c9b82/script/constants/output/DeployCore-Base.json",
+      "revision": "1ba30815bba620f7e9faa34769ffd00c214c9b82",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "velodrome-v2-10",
+      "protocolId": "velodrome",
+      "name": "Velodrome basic pools",
+      "chainId": "10",
+      "adapter": "solidly-v2",
+      "category": "liquidity",
+      "contracts": {
+        "poolFactory": "0xf1046053aa5682b4f9a81b5481394da16be5ff5a",
+        "voter": "0x41c914ee0c7e1a5edcd0295623e6dc557b5abf3c"
+      },
+      "source": "https://raw.githubusercontent.com/velodrome-finance/contracts/b3065d8b6702b14b094f9f6046b752cc9f78c43b/README.md",
+      "revision": "b3065d8b6702b14b094f9f6046b752cc9f78c43b",
+      "status": "active",
+      "environment": "mainnet",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sushiswap-v2-1",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "1",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac"
+      },
+      "source": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/ethereum/UniswapV2Factory.json",
+      "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee5",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sushiswap-v2-56",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "56",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/bsc/UniswapV2Factory.json",
+      "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee5",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sushiswap-v2-137",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "137",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/matic/UniswapV2Factory.json",
+      "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee5",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sushiswap-v2-8453",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "8453",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x71524b4f93c58fcbf659783284e38825f0622859"
+      },
+      "source": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/base/UniswapV2Factory.json",
+      "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee5",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "sushiswap-v2-42161",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "42161",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/arbitrum/UniswapV2Factory.json",
+      "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee5",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v2-56",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "56",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0xca143ce32fe78f1f7019d7d551a6402fc5350c73"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v2/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee3",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v2-1",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "1",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x1097053fd2ea711dad45caccc45eff7548fcb362"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v2/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee3",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v2-42161",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "42161",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v2/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee3",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v2-8453",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "8453",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v2/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "fee3",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v3-56",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "56",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-v3-contracts/986847948755cba528324d41be19480731c36c2a/deployments/bscMainnet.json",
+      "revision": "986847948755cba528324d41be19480731c36c2a",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "pancake",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v3-1",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "1",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-v3-contracts/986847948755cba528324d41be19480731c36c2a/deployments/eth.json",
+      "revision": "986847948755cba528324d41be19480731c36c2a",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "pancake",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v3-8453",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "8453",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v3/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "pancake",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    },
+    {
+      "id": "pancakeswap-v3-42161",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "42161",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v3/addresses.md",
+      "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "status": "active",
+      "environment": "mainnet",
+      "variant": "pancake",
+      "identity": "OFFICIAL_SOURCE_LITERAL"
+    }
+  ]
+}

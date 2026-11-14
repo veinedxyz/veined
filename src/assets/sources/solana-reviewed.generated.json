@@ -1,0 +1,28 @@
+{
+ "issuer": "https://developers.circle.com/stablecoins/usdc-contract-addresses",
+ "reviewedAt": "2026-10-07T11:07:08.368Z",
+ "metadataUrl": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/assets/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/info.json",
+ "metadataSha256": "5ea892a4d227f0900d14dbd2469b36117d7c569630a5c59a41599b17f4241bb8",
+ "assets": [
+  {
+   "chainId": "1151111081099710",
+   "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+   "native": false,
+   "symbol": "USDC",
+   "name": "USDC",
+   "decimals": 6,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "trustwallet"
+   ],
+   "logo": {
+    "src": "/assets/tokens/1151111081099710/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v-28a47056f7e2aeaf.png",
+    "source": "trustwallet",
+    "sha256": "28a47056f7e2aeafeac1e08341c6dcc59d287cd369748b4ff27432b6f2704000"
+   },
+   "risk": [],
+   "routable": false
+  }
+ ]
+}

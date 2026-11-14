@@ -23,5 +23,11 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".otherbridge/repro"]
+  "exclude": [
+    "node_modules",
+    ".otherbridge/repro",
+    "evidence",
+    "review-bundles",
+    "otherbridge-review-r1-evidence"
+  ]
 }

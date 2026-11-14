@@ -1,0 +1,405 @@
+{
+  "uid": "ob-overview",
+  "title": "Otherbridge — System overview",
+  "tags": [
+    "otherbridge",
+    "v1.5"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "refresh": "30s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Targets up",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "up{job=~\"otherbridge-.*\"}",
+          "legendFormat": "{{job}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Database up",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(otherbridge_db_up)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Schema version",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(otherbridge_schema_version)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Firing alerts",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "count(ALERTS{alertstate=\"firing\"}) or vector(0)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Execution gate open (expect 0)",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(otherbridge_security_execution_gate_open)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Fee collection (expect 0)",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(otherbridge_security_fee_collection_enabled)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Write registry entries (expect 0)",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max(otherbridge_security_write_registry_entries)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Global kill (expect 1)",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "min(otherbridge_security_global_kill_enabled)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Indexer lag (blocks)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_lag_blocks",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Data API requests/s by class",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (status_class) (rate(otherbridge_api_requests_total[5m]))",
+          "legendFormat": "{{status_class}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    }
+  ]
+}

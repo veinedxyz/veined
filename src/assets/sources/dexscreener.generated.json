@@ -1,0 +1,113 @@
+{
+ "generatedAt": "2026-10-06T10:11:36.119Z",
+ "source": "DEXScreener tokens/v1 (exact chain + token address); evidence only, never safety",
+ "requests": 7,
+ "evidence": {
+  "1": {
+   "0xfe3e6a25e6b192a42a44ecddcd13796471735acf": {
+    "pairs": 1,
+    "liquidityUsd": 30729.43,
+    "priceUsd": "0.00005860"
+   },
+   "0x6bba316c48b49bd1eac44573c5c871ff02958469": {
+    "pairs": 1,
+    "liquidityUsd": 177.93,
+    "priceUsd": "0.00000002649"
+   },
+   "0xceba2a8f6ec221aeb5f3a7bcd15cbc7e6a387bfb": {
+    "pairs": 1,
+    "liquidityUsd": 9809.13,
+    "priceUsd": "0.00003816"
+   }
+  },
+  "56": {
+   "0x2090c8295769791ab7a3cf1cc6e0aa19f35e441a": {
+    "pairs": 1,
+    "liquidityUsd": 157075.96,
+    "priceUsd": "12.11"
+   },
+   "0x233d91a0713155003fc4dce0afa871b508b3b715": {
+    "pairs": 1,
+    "liquidityUsd": 3443.88,
+    "priceUsd": "0.8046"
+   },
+   "0x37ac4d6140e54304d77437a5c11924f61a2d976f": {
+    "pairs": 1,
+    "liquidityUsd": 5.06,
+    "priceUsd": "0.000003554"
+   },
+   "0x3aabcf53a1930a42e18d938c019e83ebee50a849": {
+    "pairs": 1,
+    "liquidityUsd": 65.93,
+    "priceUsd": "0.03071"
+   },
+   "0x63870a18b6e42b01ef1ad8a2302ef50b7132054f": {
+    "pairs": 1,
+    "liquidityUsd": 7645.72,
+    "priceUsd": "0.001987"
+   },
+   "0x6c5fe6e99d2484db7e4bf34f365aba42d0e4dc20": {
+    "pairs": 1,
+    "liquidityUsd": 2120.23,
+    "priceUsd": "0.09197"
+   },
+   "0x790be81c3ca0e53974be2688cdb954732c9862e1": {
+    "pairs": 1,
+    "liquidityUsd": 17.07,
+    "priceUsd": "0.000001099"
+   },
+   "0x7979f6c54eba05e18ded44c4f986f49a5de551c2": {
+    "pairs": 1,
+    "liquidityUsd": 142.59,
+    "priceUsd": "0.000002908"
+   },
+   "0x88f1a5ae2a3bf98aeaf342d26b30a79438c9142e": {
+    "pairs": 1,
+    "liquidityUsd": 4643.87,
+    "priceUsd": "2502.27"
+   },
+   "0xa8c2b8eec3d368c0253ad3dae65a5f2bbb89c929": {
+    "pairs": 1,
+    "liquidityUsd": 841.02,
+    "priceUsd": "0.1298"
+   },
+   "0xad6caeb32cd2c308980a548bd0bc5aa4306c6c18": {
+    "pairs": 1,
+    "liquidityUsd": 2847.65,
+    "priceUsd": "0.2553"
+   },
+   "0xc7d8d35eba58a0935ff2d5a33df105dd9f071731": {
+    "pairs": 1,
+    "liquidityUsd": 451.07,
+    "priceUsd": "0.03304"
+   },
+   "0xe40255c5d7fa7ceec5120408c78c787cecb4cfdb": {
+    "pairs": 1,
+    "liquidityUsd": 56.86,
+    "priceUsd": "0.0002044"
+   },
+   "0xf21768ccbc73ea5b6fd3c687208a7c2def2d966e": {
+    "pairs": 1,
+    "liquidityUsd": 2090.39,
+    "priceUsd": "0.00005227"
+   },
+   "0xf79037f6f6be66832de4e7516be52826bc3cbcc4": {
+    "pairs": 1,
+    "liquidityUsd": 9362.81,
+    "priceUsd": "0.1498"
+   }
+  },
+  "146": {
+   "0xe715cba7b5ccb33790cebff1436809d36cb17e57": {
+    "pairs": 1,
+    "liquidityUsd": 4343.78,
+    "priceUsd": "1.14"
+   },
+   "0x2fb960611bdc322a9a4a994252658cae9fe2eea1": {
+    "pairs": 1,
+    "liquidityUsd": 202.91,
+    "priceUsd": "8.91"
+   }
+  }
+ }
+}

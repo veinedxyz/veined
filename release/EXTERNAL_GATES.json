@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "technicalBase": {
+    "rcId": "OTHERBRIDGE_RC_V1_16_20261015T133159055Z-16dfa3",
+    "sourceCheckpoint": "11bea158a16dc3f0528c4b6a9c24950728e1f26a3a3be86c2ca3ba5cabd5fcb9",
+    "sourceManifest": "08d5c3005ef6174e9491d0de9314d5cf53e383127a3f2ac4a5d3a901c95a3b96",
+    "buildHash": "60daa71188eb424bd1a8d84765d78bd9c2f0853b7a46cf4f3192ed60ddf0b052",
+    "protectedBaseline": "cf7025aeeedac022b8ffa08540ed88345e561d23b50f05ae794f3f5dec1991b4"
+  },
+  "auditPackageSha256": "1ca5636aa97c3bd35e7338a282ee7ec576c6a85c9527bde5ebd7c7bd33eb928e",
+  "execution": "CLOSED",
+  "internalEngineeringBlockers": 0,
+  "actions": [
+    {
+      "id": "OWNER_INPUT_UNISWAP_API_KEY",
+      "category": "OWNER_INPUT",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Owner creates dedicated Otherbridge Production API key; separate staging; stores server-only UNISWAP_API_KEY; confirms assigned quota (documented default 6 RPS/key), one process and no browser/log exposure.",
+      "website": "https://developers.uniswap.org/dashboard",
+      "secret": true,
+      "configure": "Owner creates dedicated Otherbridge Production API key; separate staging; stores server-only UNISWAP_API_KEY; confirms assigned quota (documented default 6 RPS/key), one process and no browser/log exposure.",
+      "validate": "pnpm release:credentials:check --out=<run>/Uniswap/credentials.json; authenticated GET /v1/supported_chains plus reviewed representative quote must PASS; offline UNISWAP/UNISWAPX kill check must make zero requests.",
+      "blocks": "Uniswap production authenticated quotes and provider gate closure",
+      "evidenceExpected": "Key name, production namespace, assigned quota, redacted read-only PASS and kill-check receipt; no key value",
+      "documentation": "docs/V117_PROVIDER_ONBOARDING.md",
+      "predecessorIds": [
+        "OWNER_INPUT_UNISWAP_API_KEY"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PROVIDER_ONBOARDING.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_JUPITER_API_KEY",
+      "category": "OWNER_INPUT",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Owner-controlled organisation; team Otherbridge Production with separate staging team; dedicated Swap-only key stored as JUPITER_API_KEY server-side. Deny /swap/v2/execute, /tx/v1/submit and unexpected POST for this key; set 1 RPS key firewall rule; review egress IP, organisation shared quota and analytics/logs; no broad Bypass.",
+      "website": "https://developers.jup.ag/portal",
+      "secret": true,
+      "configure": "Owner-controlled organisation; team Otherbridge Production with separate staging team; dedicated Swap-only key stored as JUPITER_API_KEY server-side. Deny /swap/v2/execute, /tx/v1/submit and unexpected POST for this key; set 1 RPS key firewall rule; review egress IP, organisation shared quota and analytics/logs; no broad Bypass.",
+      "validate": "pnpm release:credentials:check --out=<run>/Jupiter/credentials.json; reviewed GET /order and /build read-only quotes; owner permission/firewall/log review; offline Jupiter kill check. No signed execute/submit.",
+      "blocks": "Jupiter production authenticated read-only quotes and verified account restrictions",
+      "evidenceExpected": "Org/team/key name, Swap-only permissions, rule inventory, plan and static egress observations, redacted read-only/kill receipt and analytics review time; no key value",
+      "documentation": "docs/V117_PROVIDER_ONBOARDING.md",
+      "predecessorIds": [
+        "OWNER_INPUT_JUPITER_API_KEY"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PROVIDER_ONBOARDING.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_TITAN_WS_ENDPOINT",
+      "category": "PROVIDER_ONBOARDING",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Owner obtains enterprise Titan Direct entitlement from Titan/Triton/QuickNode and vendor confirmation that exact accepted wss://api.titan.exchange/api/v1/ws supports uncompressed v1.api.titan.ag, MessagePack and current reviewed request/transaction bounds. Set TITAN_WS_ENDPOINT to that exact URL without auth/query. Obtain numeric account connection/stream/start/update quotas and renewal/reconnect policy. If vendor offers only another endpoint, retain TITAN kill and attach incompatibility statement; do not change pins/allowlist.",
+      "website": "https://titan-exchange.gitbook.io/titan/developer-doc/getting-started/api-access",
+      "secret": false,
+      "configure": "Owner obtains enterprise Titan Direct entitlement from Titan/Triton/QuickNode and vendor confirmation that exact accepted wss://api.titan.exchange/api/v1/ws supports uncompressed v1.api.titan.ag, MessagePack and current reviewed request/transaction bounds. Set TITAN_WS_ENDPOINT to that exact URL without auth/query. Obtain numeric account connection/stream/start/update quotas and renewal/reconnect policy. If vendor offers only another endpoint, retain TITAN kill and attach incompatibility statement; do not change pins/allowlist.",
+      "validate": "Vendor compatibility/limits reference plus pnpm release:credentials:check read-only quote; deterministic reconnect/cancel/frame/redaction tests and offline TITAN kill. General REST plan quota is not WebSocket proof.",
+      "blocks": "Titan production quote streams",
+      "evidenceExpected": "Enterprise entitlement/reference, approved exact endpoint, protocol and numeric per-account limits; no dashboard login or token in evidence",
+      "documentation": "docs/V117_PROVIDER_ONBOARDING.md",
+      "predecessorIds": [
+        "OWNER_INPUT_TITAN_WS_ENDPOINT"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PROVIDER_ONBOARDING.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_TITAN_AUTH_TOKEN",
+      "category": "OWNER_INPUT",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Owner obtains a distributor/Titan issued JWT valid for the accepted Direct endpoint, audience api.titan.ag and compatible unbound or synthetic-test-public-key policy; stores server-only TITAN_AUTH_TOKEN with expiry/renewal/rotation procedure. Portal REST x-api-key is not interchangeable. Never mint/sign a token during this task.",
+      "website": "https://developer.titan.exchange/",
+      "secret": true,
+      "configure": "Owner obtains a distributor/Titan issued JWT valid for the accepted Direct endpoint, audience api.titan.ag and compatible unbound or synthetic-test-public-key policy; stores server-only TITAN_AUTH_TOKEN with expiry/renewal/rotation procedure. Portal REST x-api-key is not interchangeable. Never mint/sign a token during this task.",
+      "validate": "pnpm release:credentials:check --out=<run>/Titan/credentials.json and safe runtime deterministic tests; no raw SDK logs, token/query URL or signed financial request.",
+      "blocks": "Titan authenticated production read-only streams",
+      "evidenceExpected": "Redacted read-only receipt, issuer/renewal reference and vendor key-binding statement; no JWT value",
+      "documentation": "docs/V117_PROVIDER_ONBOARDING.md",
+      "predecessorIds": [
+        "OWNER_INPUT_TITAN_AUTH_TOKEN"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PROVIDER_ONBOARDING.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_PCSX_TRAFFIC_QUOTA",
+      "category": "PROVIDER_ONBOARDING",
+      "priority": "P0",
+      "status": "CONDITIONAL_OWNER_ACTION",
+      "action": "Hosting owner records one app process, expected concurrent quote users and static outbound IP/NAT tenancy; confirms aggregate other PCSX traffic plus Otherbridge <=15 RPS steady and within documented short-burst 30, with headroom. Otherbridge itself is capped at 5/rolling second. Request optional PCSX integrator key only if aggregate anonymous envelope cannot be met.",
+      "website": "https://developer.pancakeswap.finance/contracts/pcsx/overview",
+      "secret": false,
+      "configure": "Hosting owner records one app process, expected concurrent quote users and static outbound IP/NAT tenancy; confirms aggregate other PCSX traffic plus Otherbridge <=15 RPS steady and within documented short-burst 30, with headroom. Otherbridge itself is capped at 5/rolling second. Request optional PCSX integrator key only if aggregate anonymous envelope cannot be met.",
+      "validate": "Compare host/NAT process inventory and per-egress capacity policy with PCSX/quota-decision.json and production processCount=1; pnpm release:credentials:check. Credentials are not proof of commercial terms.",
+      "blocks": "Production hosting/provider quota admission, not a missing PCSX credential",
+      "evidenceExpected": "Host process count, egress tenancy/traffic budget and chosen user-demand envelope; conditional vendor quota reference only if larger capacity is actually needed",
+      "documentation": "docs/V117_PROVIDER_ONBOARDING.md",
+      "predecessorIds": [
+        "OWNER_INPUT_PCSX_TRAFFIC_QUOTA"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PROVIDER_ONBOARDING.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_DOMAIN_CONTROL",
+      "category": "DOMAIN_CONTROL",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Confirm registrar name, DNS provider name, and owner account control for otherbridge.io; supply a dated redacted domain/zone account-control reference. No password/token and no DNS challenge.",
+      "website": "https://lookup.icann.org/en/lookup?name=otherbridge.io",
+      "secret": false,
+      "configure": "Record confirmation only. DNS plan remains unapplied in docs/V117_DOMAIN_DNS_PLAN.md.",
+      "validate": "Review dated confirmation showing exact domain/zone and accountable organization; compare both consoles without retaining secrets.",
+      "blocks": "Production origin control and any future DNS/TLS activation.",
+      "evidenceExpected": "Registrar and DNS provider names/URLs; Dated redacted account-control confirmation",
+      "documentation": "docs/V117_DOMAIN_DNS_PLAN.md",
+      "predecessorIds": [
+        "OWNER_INPUT_DOMAIN_CONTROL"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_DOMAIN_DNS_PLAN.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/owner-actions/handoff-owner-actions.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/domain/domain-readonly.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_PRIVY_PRODUCTION",
+      "category": "OWNER_INPUT",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Owner selects dedicated production app, sets public NEXT_PUBLIC_PRIVY_APP_ID and exact https://otherbridge.io allowed origin; reviews app-client overrides; external Ethereum wallet connect-only; all email/social/SMS/passkey and embedded creation OFF; no delegated/session/server execution signers; exact existing CSP retained. No real wallet prompt or App Secret export.",
+      "website": "https://dashboard.privy.io/apps?page=settings&tab=basics",
+      "secret": false,
+      "configure": "Owner selects dedicated production app, sets public NEXT_PUBLIC_PRIVY_APP_ID and exact https://otherbridge.io allowed origin; reviews app-client overrides; external Ethereum wallet connect-only; all email/social/SMS/passkey and embedded creation OFF; no delegated/session/server execution signers; exact existing CSP retained. No real wallet prompt or App Secret export.",
+      "validate": "Owner redacted dashboard inventory and review receipt; pnpm release:credentials:check --offline; verify:safety, g7:safety, g7:pilot:safety and existing CSP/browser evidence. CLI cannot prove hidden dashboard settings.",
+      "blocks": "Privy production app/origin/policy verification and external gate closure",
+      "evidenceExpected": "Public app reference, reviewer/time, exact origin list and client inventory, login/embedded/signer settings and CSP review; no secret/session/wallet interaction",
+      "documentation": "docs/V117_PRIVY_PRODUCTION.md",
+      "predecessorIds": [
+        "OWNER_INPUT_PRIVY_PRODUCTION"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_PRIVY_PRODUCTION.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/provider-sources/owner-actions-final.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_HOSTING",
+      "category": "HOSTING_DECISION",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Accept recommended pattern B or document A/C tradeoff; select owner-controlled host and PostgreSQL accounts/region/budget/operator; confirm fixed egress, persistent workers/WSS, private TLS DB, roles, backups/PITR/restore and secret custody. Obtain quote; do not deploy.",
+      "website": "https://nextjs.org/docs/app/guides/self-hosting",
+      "secret": false,
+      "configure": "Complete architecture/region/budget/on-call/custodian/RPO/RTO/retention and secret-manager decisions in docs/V117_HOSTING_SECRET_CUSTODY.md.",
+      "validate": "Vendor feature confirmations and dated signed-off decision; initial 8vCPU/16GiB app-worker and 2vCPU/4GiB PG are procurement envelopes only.",
+      "blocks": "Production host configuration and secret custody readiness.",
+      "evidenceExpected": "Account portal URLs and region/budget decision; Persistent workers/WSS/static-egress/TLS/role feature confirmation; Recovery and custody access matrix",
+      "documentation": "docs/V117_HOSTING_SECRET_CUSTODY.md",
+      "predecessorIds": [
+        "OWNER_INPUT_HOSTING"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_HOSTING_SECRET_CUSTODY.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/owner-actions/handoff-owner-actions.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/hosting/resource-inventory.json"
+      ]
+    },
+    {
+      "id": "OWNER_INPUT_RPC_TERMS",
+      "category": "RPC_COMMERCIAL_TERMS",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Choose the exact production endpoint subset and counsel-reviewed operator/terms/privacy/quota references. For Arbitrum, obtain a PublicNode personal-token log entitlement or an independently operated Quicknode Paid / Alchemy PAYG witness with proven unrestricted Transfer-topic/history capacity. Avalanche official and PublicNode now match a finalized one-block log digest; retain them as technical candidates only, with contractual quota/history/privacy and independent-operator review still required. Do not purchase multiple alternatives unnecessarily.",
+      "website": "https://www.quicknode.com/chains/arbitrum",
+      "secret": false,
+      "configure": "Follow docs/V117_RPC_WITNESS.md and RPC/owner-actions.json: server-only endpoint secret references, exact chain42161/43114 identity, required historical window, range/response/RPS/CU/monthly ceilings, operator independence and legalReviewRef for each selected endpoint. No production admission or provenance flag is changed here.",
+      "validate": "Run the documented read-only exact-finalized-header, complete Transfer-topic current window and oldest-required window tests; compare normalized log digests against an independent operator. Confirm release provenance admits only owner/counsel-reviewed endpoints; current production-approved count is0.",
+      "blocks": "Production RPC profile stays blocked",
+      "evidenceExpected": "Two operator identities per indexed chain; successful log/block/canonical witness receipt; paid tier/quota support statement; agreement/privacy/legal references.",
+      "documentation": "docs/V117_RPC_WITNESS.md",
+      "predecessorIds": [
+        "OWNER_INPUT_RPC_TERMS"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_RPC_WITNESS.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/RPC/rpc-release-matrix-final.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/RPC/owner-actions-final.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/RPC/witness-history-floor.json"
+      ]
+    },
+    {
+      "id": "EXTERNAL_SECURITY_AUDIT",
+      "category": "EXTERNAL_SECURITY_AUDIT",
+      "priority": "P0",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Select independent auditor meeting the named skills matrix; record secure portal URL/lead; agree immutable V1.16 RC plus separately hashed V1.17 supplement; commission review and remediation retest using audit/AUDITOR_INTAKE.md and questions.",
+      "website": "local:audit/AUDITOR_INTAKE.md",
+      "secret": false,
+      "configure": "Transfer verified immutable package through appointed secure channel; deterministic proof requires no production key or real wallet.",
+      "validate": "Independent report and retest bind exact reviewed identity, hashes, severity/unresolved findings, reviewer and limitations; future receipt schema must pass.",
+      "blocks": "Independent security assurance and production release.",
+      "evidenceExpected": "Signed scope/intake receipt; Independent report SHA-256 and reviewed RC/checkpoint/supplement hashes; Unresolved finding counts and independent retest",
+      "documentation": "audit/AUDITOR_INTAKE.md",
+      "predecessorIds": [
+        "EXTERNAL_SECURITY_AUDIT"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "audit/AUDITOR_INTAKE.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/owner-actions/handoff-owner-actions.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/audit-handoff/base-package-verification.json"
+      ]
+    },
+    {
+      "id": "EXTERNAL_PENTEST",
+      "category": "EXTERNAL_PENTEST",
+      "priority": "P1",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Select independent tester; record secure intake portal/lead; approve completed private-target ROE with exact targets, window, traffic caps and emergency contacts; commission test and remediation retest.",
+      "website": "local:pentest/PENTEST_INTAKE.md",
+      "secret": false,
+      "configure": "Use isolated private staging and synthetic fixtures; temporary API access only via secure engagement channel; no live wallets or upstream attacks.",
+      "validate": "Signed private-target ROE, target ownership, exact candidate/build, report hash/coverage/unresolved counts and independent retest; future receipt schema must pass.",
+      "blocks": "Independent web/API assurance and production release.",
+      "evidenceExpected": "Approved private-target ROE; Independent test report SHA-256, dates, candidate and severity counts; Independent remediation retest",
+      "documentation": "pentest/PENTEST_INTAKE.md",
+      "predecessorIds": [
+        "EXTERNAL_PENTEST"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "pentest/PENTEST_INTAKE.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/owner-actions/handoff-owner-actions.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/pentest-handoff/handoff-receipt.json"
+      ]
+    },
+    {
+      "id": "LEGAL_PROVIDER_PRIVACY",
+      "category": "LEGAL_REVIEW",
+      "priority": "P1",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Appoint counsel for intended markets; record secure matter portal and accountable counsel; supply operator entity/markets/host/data-retention facts and actual provider/RPC contracts; commission product/privacy/provider/RPC/OSS review and approved documents.",
+      "website": "local:legal/COUNSEL_INTAKE.md",
+      "secret": false,
+      "configure": "Use factual inventory and question set; retain actual contract/policy versions per provider/operator; no account secrets or legal conclusions supplied by agent.",
+      "validate": "Counsel identity/reference, exact reviewed version/doc hashes, provider/RPC terms matrix, jurisdiction policy, approval conditions and future schema validation.",
+      "blocks": "Legal/privacy/provider approval and production release.",
+      "evidenceExpected": "Counsel approval reference and reviewed document hashes; Provider/RPC terms and OSS obligations matrix; Jurisdiction availability and privacy/terms decisions",
+      "documentation": "legal/COUNSEL_INTAKE.md",
+      "predecessorIds": [
+        "LEGAL_PROVIDER_PRIVACY"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "legal/COUNSEL_INTAKE.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/owner-actions/handoff-owner-actions.json",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/legal-handoff/handoff-receipt.json"
+      ]
+    },
+    {
+      "id": "OWNER_RELEASE_APPROVAL",
+      "category": "OWNER_RELEASE_APPROVAL",
+      "priority": "P2",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Decide whether to authorize the exact candidate after external gates close",
+      "website": "local:docs/V117_EXTERNAL_GATE_VALIDATION.md",
+      "secret": false,
+      "configure": "Separately reviewed future release receipt and trust-root process",
+      "validate": "Follow docs/V117_EXTERNAL_GATE_VALIDATION.md; pnpm release:external-gates must remain EXECUTION_CLOSED until independent evidence verification.",
+      "blocks": "Production execution remains CLOSED",
+      "evidenceExpected": "Dated owner/vendor/reviewer reference bound to exact RC/checkpoint, with independent verification; never a credential value.",
+      "documentation": "docs/V117_EXTERNAL_GATE_VALIDATION.md",
+      "predecessorIds": [
+        "OWNER_RELEASE_APPROVAL"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/V117_EXTERNAL_GATE_VALIDATION.md"
+      ]
+    },
+    {
+      "id": "OWNER_G7_PILOT_APPROVAL",
+      "category": "OWNER_G7_PILOT_APPROVAL",
+      "priority": "P2",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Separately approve any future real G7 pilot",
+      "website": "local:docs/G7_OWNER_RELEASE_RUNBOOK.md",
+      "secret": false,
+      "configure": "docs/G7_OWNER_RELEASE_RUNBOOK.md",
+      "validate": "Follow docs/G7_OWNER_RELEASE_RUNBOOK.md; pnpm release:external-gates must remain EXECUTION_CLOSED until independent evidence verification.",
+      "blocks": "No real G7 in V1.16",
+      "evidenceExpected": "Dated owner/vendor/reviewer reference bound to exact RC/checkpoint, with independent verification; never a credential value.",
+      "documentation": "docs/G7_OWNER_RELEASE_RUNBOOK.md",
+      "predecessorIds": [
+        "OWNER_G7_PILOT_APPROVAL"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/G7_OWNER_RELEASE_RUNBOOK.md"
+      ]
+    },
+    {
+      "id": "OWNER_SWAP_PILOT_APPROVAL",
+      "category": "OWNER_SWAP_PILOT_APPROVAL",
+      "priority": "P2",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Separately approve provider/chain/wallet/amount for any future Swap pilot",
+      "website": "local:docs/SWAP_OWNER_RELEASE_RUNBOOK.md",
+      "secret": false,
+      "configure": "docs/SWAP_OWNER_RELEASE_RUNBOOK.md",
+      "validate": "Follow docs/SWAP_OWNER_RELEASE_RUNBOOK.md; pnpm release:external-gates must remain EXECUTION_CLOSED until independent evidence verification.",
+      "blocks": "No real Swap or Bridge in V1.16",
+      "evidenceExpected": "Dated owner/vendor/reviewer reference bound to exact RC/checkpoint, with independent verification; never a credential value.",
+      "documentation": "docs/SWAP_OWNER_RELEASE_RUNBOOK.md",
+      "predecessorIds": [
+        "OWNER_SWAP_PILOT_APPROVAL"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/SWAP_OWNER_RELEASE_RUNBOOK.md"
+      ]
+    },
+    {
+      "id": "OWNER_UPSTREAM_WHIRLPOOL_REVIEW",
+      "category": "PROVIDER_ONBOARDING",
+      "priority": "P2",
+      "status": "OWNER_ACTION_REQUIRED",
+      "action": "Obtain Orca deployed-binary/source provenance and independent reviewer assessment matching the observed ProgramData/hash/upgrade slot. Affected routes stay BUILD_REVIEW_REQUIRED; any pin update is a separate reviewed candidate.",
+      "website": "https://github.com/orca-so/whirlpools",
+      "secret": false,
+      "configure": "No current pin update. Supply exact deployed artifact/build/source/IDL and independent signed compatibility assessment against docs/WHIRLPOOL_UPSTREAM_REVIEW.md.",
+      "validate": "Follow docs/WHIRLPOOL_UPSTREAM_REVIEW.md; pnpm release:external-gates must remain EXECUTION_CLOSED until independent evidence verification.",
+      "blocks": "Affected Jupiter/Titan Whirlpool economic routes remain BUILD_REVIEW_REQUIRED",
+      "evidenceExpected": "Reproducible deployed binary/source binding and reviewer report; current upstream/source metadata alone is insufficient.",
+      "documentation": "docs/WHIRLPOOL_UPSTREAM_REVIEW.md",
+      "predecessorIds": [
+        "OWNER_UPSTREAM_WHIRLPOOL_REVIEW"
+      ],
+      "evidence": [
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/preflight/v116-owner-inputs.json",
+        "docs/WHIRLPOOL_UPSTREAM_REVIEW.md",
+        "evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/Whirlpool/owner-actions.json"
+      ]
+    }
+  ],
+  "providerDecisions": {
+    "pcsx": "ANONYMOUS_QUOTA_SUFFICIENT_FOR_LAUNCH",
+    "aerodrome": "PRODUCTION_CONFIG_READY / NO_PROVIDER_CREDENTIAL_REQUIRED"
+  }
+}

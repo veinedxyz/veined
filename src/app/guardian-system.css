@@ -1,0 +1,1649 @@
+/* VEINED Guardian layer: the intelligence and defense surface of the king octopus. Loaded after the deep layer.
+   - One verdict panel everywhere (Swap, Bridge, Portfolio, the Guardian console): deep glass, a tone edge on the
+     inline start (sea-glass clear, amber caution/hold, coral block), a crowned mark, findings as instrument lines.
+   - Static: nothing here animates; tones are classes (CSP: no style attributes); RTL uses logical properties. */
+.guardian-panel {
+  --g-tone: var(--seaglass);
+  --g-tone-rgb: var(--seaglass-rgb);
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px 12px;
+  border: 1px solid var(--deep-edge);
+  border-inline-start: 3px solid var(--g-tone);
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      120% 90% at 0% 0%,
+      rgb(var(--g-tone-rgb) / 0.09),
+      transparent 60%
+    ),
+    var(--deep-card);
+  box-shadow: var(--deep-light);
+  color: var(--text);
+  min-width: 0;
+}
+.guardian-panel.is-caution {
+  --g-tone: var(--amber);
+  --g-tone-rgb: var(--amber-glow-rgb);
+}
+.guardian-panel.is-warning {
+  --g-tone: var(--amber);
+  --g-tone-rgb: var(--amber-glow-rgb);
+  border-color: rgb(var(--amber-glow-rgb) / 0.32);
+}
+.guardian-panel.is-critical {
+  --g-tone: var(--danger);
+  --g-tone-rgb: var(--coral-rgb);
+  border-color: rgb(var(--coral-rgb) / 0.36);
+}
+.guardian-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+.guardian-crest {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 26%;
+  box-shadow: 0 0 0 2px rgb(var(--g-tone-rgb) / 0.55);
+}
+.guardian-head-text {
+  min-width: 0;
+}
+.guardian-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.guardian-level {
+  margin: 1px 0 0;
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--g-tone);
+}
+.guardian-count {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.guardian-lede {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.guardian-findings,
+.guardian-steps ol,
+.guardian-passed ul,
+.guardian-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.guardian-findings {
+  display: grid;
+  gap: 8px;
+}
+.guardian-finding {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.guardian-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 0.42em;
+  border-radius: 50%;
+  background: var(--muted);
+}
+.guardian-finding.is-caution .guardian-dot,
+.guardian-finding.is-warning .guardian-dot {
+  background: var(--amber);
+}
+.guardian-finding.is-warning .guardian-dot {
+  box-shadow: 0 0 0 3px rgb(var(--amber-glow-rgb) / 0.18);
+}
+.guardian-finding.is-critical .guardian-dot {
+  background: var(--danger);
+  box-shadow: 0 0 0 3px rgb(var(--coral-rgb) / 0.2);
+}
+.guardian-finding.is-pass .guardian-dot {
+  background: var(--seaglass);
+}
+.guardian-finding-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.guardian-finding-text strong {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.guardian-finding-text span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.guardian-more {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.guardian-steps {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--deep-inset);
+  border: 1px solid var(--line-soft);
+}
+.guardian-steps-title {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.guardian-steps ol {
+  display: grid;
+  gap: 4px;
+  counter-reset: guardian-step;
+}
+.guardian-steps li {
+  counter-increment: guardian-step;
+  display: grid;
+  grid-template-columns: 1.4em minmax(0, 1fr);
+  font-size: 0.84rem;
+}
+.guardian-steps li::before {
+  content: counter(guardian-step) ".";
+  color: var(--g-tone);
+  font-weight: 600;
+}
+.guardian-passed > summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.guardian-passed ul {
+  display: grid;
+  gap: 3px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.guardian-passed li::before {
+  content: "✓ ";
+  color: var(--seaglass);
+}
+.guardian-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--faint);
+}
+.guardian-foot code {
+  font-family: var(--mono);
+  color: var(--faint);
+}
+.guardian-panel.is-compact {
+  gap: 8px;
+  padding: 12px 14px 10px;
+}
+.guardian-panel.is-compact .guardian-lede {
+  display: none;
+}
+.guardian-block-note {
+  margin: 0;
+}
+.guardian-narration {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed rgb(var(--seaglass-rgb) / 0.3);
+}
+.guardian-narration p:last-child {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.guardian-signer {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.guardian-signer span {
+  color: var(--text);
+  font-weight: 600;
+}
+.route-side .guardian-panel,
+.portfolio-aside .guardian-panel {
+  margin-bottom: 16px;
+}
+.swap-card .guardian-panel {
+  margin-block: 4px 2px;
+}
+
+/* ---------- Guardian console (/guardian) ---------- */
+.guardian-page {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.guardian-page .page-heading h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.guardian-title-mark {
+  display: inline-grid;
+  place-items: center;
+}
+.guardian-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+@media (min-width: 1180px) {
+  .guardian-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.guardian-card {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  min-width: 0;
+}
+.guardian-card h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+.guardian-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.guardian-card-lede {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.guardian-card > button.primary {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.guardian-policy {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.guardian-policy div {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--deep-inset);
+  border: 1px solid var(--line-soft);
+  min-width: 0;
+}
+.guardian-policy dt {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.guardian-policy dd {
+  margin: 2px 0 0;
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+.guardian-tally {
+  margin: 0;
+  font-weight: 600;
+}
+.guardian-timeline {
+  display: grid;
+  gap: 10px;
+}
+.guardian-step {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line-soft);
+  background: var(--deep-inset);
+}
+.guardian-decision {
+  display: grid;
+  gap: 2px;
+  align-self: start;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 650;
+  text-align: center;
+  color: var(--seaglass);
+  background: rgb(var(--seaglass-rgb) / 0.1);
+  box-shadow: inset 0 0 0 1px rgb(var(--seaglass-rgb) / 0.3);
+}
+.guardian-step.is-warn .guardian-decision,
+.guardian-step.is-escalate .guardian-decision {
+  color: var(--amber);
+  background: rgb(var(--amber-glow-rgb) / 0.1);
+  box-shadow: inset 0 0 0 1px rgb(var(--amber-glow-rgb) / 0.34);
+}
+.guardian-step.is-block {
+  border-color: rgb(var(--coral-rgb) / 0.3);
+}
+.guardian-step.is-block .guardian-decision {
+  color: var(--danger);
+  background: rgb(var(--coral-rgb) / 0.1);
+  box-shadow: inset 0 0 0 1px rgb(var(--coral-rgb) / 0.36);
+}
+.guardian-step-body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.guardian-step-body p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.guardian-agent-says span {
+  color: var(--muted);
+}
+.guardian-agent-says q {
+  font-style: italic;
+}
+.guardian-step-why {
+  color: var(--muted);
+}
+.guardian-step-why strong {
+  color: var(--text);
+}
+.guardian-step-detail > summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.guardian-step-detail .guardian-panel {
+  margin-top: 8px;
+}
+.guardian-scenarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.guardian-scenario {
+  min-height: 36px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+.guardian-input textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--deep-inset);
+  color: var(--text);
+  min-height: 7.5rem;
+  resize: vertical;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+.guardian-intents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+.guardian-intents-grid .is-wide {
+  grid-column: 1 / -1;
+}
+.guardian-intents-grid :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.guardian-quote-out {
+  margin: 0;
+  font-weight: 600;
+}
+.guardian-built ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.guardian-built li {
+  display: grid;
+  gap: 2px;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid rgb(var(--seaglass-rgb) / 0.4);
+}
+.guardian-built li span {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+@media (max-width: 560px) {
+  .guardian-step {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guardian-decision {
+    justify-self: start;
+  }
+  .guardian-card {
+    padding: 16px;
+  }
+}
+@media (forced-colors: active) {
+  .guardian-panel,
+  .guardian-step,
+  .guardian-decision {
+    border: 1px solid CanvasText;
+    forced-color-adjust: auto;
+  }
+  .guardian-dot {
+    background: CanvasText;
+  }
+}
+.guardian-authorization {
+  font-size: 0.66rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* ---------- Guardian assistant (King Octopus): page hero, Chat/Inspect modes, conversation, drafts, dock ----------
+   The King Octopus is the Guardian character (owner artwork); the brand octopus stays in the header and title. No glow
+   is added to the art; motion is limited to the dock panel's short fade and disappears under reduced motion. */
+.guardian-crest {
+  overflow: hidden;
+  background: var(--deep-inset);
+}
+.guardian-crest .king-avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.king-avatar,
+.king-hero {
+  display: block;
+  user-select: none;
+}
+.guardian-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 8px 28px;
+  padding: 20px;
+  border: 1px solid var(--deep-edge);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      60% 80% at 22% 40%,
+      rgb(var(--seaglass-rgb) / 0.08),
+      transparent 70%
+    ),
+    var(--deep-card);
+  box-shadow: var(--deep-light);
+}
+.guardian-hero-art .king-hero {
+  width: 180px;
+  height: auto;
+}
+.guardian-hero-copy {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  min-width: 0;
+  max-width: 62ch;
+}
+.guardian-hero-copy h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.2;
+}
+.guardian-hero-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+/* No text-transform: product names keep their own letters in every locale (Turkish upper-casing would dot the i). */
+.guardian-hero-copy .guardian-hero-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.guardian-hero-points {
+  display: grid;
+  gap: 6px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.guardian-hero-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.guardian-hero-points li svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--seaglass);
+}
+.guardian-hero-copy > button {
+  justify-self: start;
+}
+@media (min-width: 720px) {
+  .guardian-hero {
+    grid-template-columns: auto minmax(0, 1fr);
+    justify-items: stretch;
+    padding: 20px 28px;
+  }
+  .guardian-hero-art .king-hero {
+    width: 260px;
+  }
+}
+.guardian-modes {
+  display: inline-flex;
+  justify-self: start;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--deep-edge);
+  border-radius: 999px;
+  background: var(--deep-inset);
+}
+.guardian-mode {
+  min-height: 40px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.guardian-mode.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--accent-line);
+}
+.guardian-mode:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.guardian-mode-panel {
+  min-width: 0;
+}
+.guardian-advanced {
+  border: 1px solid var(--deep-edge);
+  border-radius: 18px;
+  background: var(--deep-card);
+}
+.guardian-advanced > summary {
+  display: grid;
+  gap: 2px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 650;
+}
+.guardian-advanced > summary small {
+  font-weight: 400;
+  color: var(--muted);
+}
+.guardian-advanced[open] > summary {
+  border-bottom: 1px solid var(--line-soft);
+}
+.guardian-advanced > .guardian-grid {
+  padding: 20px;
+}
+
+/* Conversation */
+.gchat {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+  min-width: 0;
+  border: 1px solid var(--deep-edge);
+  border-radius: 20px;
+  background: var(--deep-card);
+  box-shadow: var(--deep-light);
+}
+.gchat.is-page {
+  height: min(720px, calc(100dvh - 160px));
+  min-height: 460px;
+}
+.gchat-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.gchat-identity,
+.gchat-msg-mark {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--deep-inset);
+  box-shadow: 0 0 0 1px var(--deep-edge-strong);
+}
+.gchat-head-text {
+  min-width: 0;
+}
+.gchat-head-text h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+.gchat-head-text p {
+  margin: 1px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.gchat-new {
+  min-height: 36px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+.gchat-log {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+}
+.gchat-log:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+}
+.gchat-msg {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+.gchat-msg.is-user {
+  justify-content: flex-end;
+}
+.gchat-msg.is-user p {
+  margin: 0;
+  max-width: min(78%, 56ch);
+  padding: 9px 13px;
+  border-radius: 16px 16px 4px 16px;
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px var(--accent-line);
+  overflow-wrap: anywhere;
+}
+[dir="rtl"] .gchat-msg.is-user p {
+  border-radius: 16px 16px 16px 4px;
+}
+.gchat-msg-mark {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+}
+.gchat-msg-body {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  max-width: 64ch;
+}
+.gchat-text {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.gchat-note {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border-inline-start: 3px solid var(--seaglass);
+  background: var(--deep-inset);
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+.gchat-note.tone-warn {
+  border-inline-start-color: var(--amber);
+}
+.gchat-note.tone-danger {
+  border-inline-start-color: var(--danger);
+}
+.gchat-list {
+  margin: 0;
+  padding-inline-start: 18px;
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.gchat-facts {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--deep-inset);
+  border: 1px solid var(--line-soft);
+  font-size: 0.9rem;
+}
+.gchat-facts p {
+  margin: 0;
+}
+.gchat-levels {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.gchat-levels > div {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border-inline-start: 3px solid var(--seaglass);
+  background: var(--deep-inset);
+}
+.gchat-levels > .is-warn,
+.gchat-levels > .is-escalate {
+  border-inline-start-color: var(--amber);
+}
+.gchat-levels > .is-block {
+  border-inline-start-color: var(--danger);
+}
+.gchat-levels dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 650;
+}
+.gchat-levels code {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.gchat-levels dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.gchat-thinking {
+  margin: 0;
+  padding-inline-start: 38px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.gchat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 16px 0;
+  min-width: 0;
+}
+.gchat-chips:empty {
+  display: none;
+}
+.gchat-chip {
+  min-height: 34px;
+  max-width: 100%;
+  padding: 6px 12px;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  text-align: start;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.gchat-chip:hover {
+  background: var(--accent-soft);
+}
+.gchat-chip:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.gchat-input {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 12px 16px 6px;
+}
+.gchat-input input {
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--deep-inset);
+  color: var(--text);
+  font: inherit;
+}
+.gchat-input input:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+.gchat-input .primary {
+  min-height: 44px;
+}
+.gchat-foot {
+  margin: 0;
+  padding: 0 16px 12px;
+  font-size: 0.72rem;
+  color: var(--faint);
+}
+
+/* Draft cards */
+.gdraft {
+  --g-tone: var(--seaglass);
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--deep-edge);
+  border-inline-start: 3px solid var(--g-tone);
+  border-radius: 16px;
+  background: var(--deep-inset);
+  min-width: 0;
+}
+.gdraft.is-warn,
+.gdraft.is-escalate {
+  --g-tone: var(--amber);
+}
+.gdraft.is-block {
+  --g-tone: var(--danger);
+}
+.gdraft.is-reviewing,
+.gdraft.is-failed {
+  color: var(--muted);
+}
+.gdraft.is-reviewing p,
+.gdraft.is-failed p {
+  margin: 0;
+}
+.gdraft-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.gdraft-kind {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.gdraft-decision {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  color: var(--g-tone);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.gdraft-decision code {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.gdraft-rows {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.gdraft-rows > div {
+  display: grid;
+  grid-template-columns: minmax(84px, auto) minmax(0, 1fr);
+  gap: 10px;
+}
+.gdraft-rows dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.gdraft-rows dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.gdraft-rows dd small {
+  display: block;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+.gdraft-exec {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.gdraft-quote {
+  display: grid;
+  gap: 8px;
+}
+.gdraft-quote p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+.gdraft-ack {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+.gdraft-ack input {
+  margin-top: 3px;
+}
+.gdraft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.gdraft-actions .primary {
+  width: auto;
+  min-height: 40px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+.gdraft-budget {
+  font-size: 0.76rem;
+  color: var(--faint);
+}
+
+/* The assistant across VEINED */
+.gdock {
+  position: fixed;
+  inset-inline-end: 20px;
+  bottom: 20px;
+  z-index: 35;
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+  pointer-events: none;
+}
+.gdock > * {
+  pointer-events: auto;
+}
+.gdock-trigger {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--deep-edge-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--deep-shadow);
+  cursor: pointer;
+}
+.gdock-trigger .king-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.gdock-trigger:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+.gdock-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(400px, calc(100vw - 40px));
+  height: min(620px, calc(100dvh - 120px));
+  border-radius: 20px;
+  background: var(--bg-elevated);
+  box-shadow: var(--deep-shadow);
+  animation: gdock-in 160ms ease-out;
+}
+.gdock-panel[hidden] {
+  display: none;
+}
+.gdock-panel .gchat {
+  min-height: 0;
+  border-radius: 0 0 20px 20px;
+}
+.gdock-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  border: 1px solid var(--deep-edge);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background: var(--deep-inset);
+  font-size: 0.8rem;
+}
+.gdock-full {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--teal);
+}
+.gdock-hide {
+  flex: none;
+  white-space: nowrap;
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+.gdock-hide:hover {
+  color: var(--text);
+}
+@keyframes gdock-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gdock-panel {
+    animation: none;
+  }
+}
+/* Room below the last control so the button never sits on top of an action the user needs. */
+.app-shell:has(> .gdock) .main {
+  padding-bottom: 96px;
+}
+@media (max-width: 1023px) {
+  .gdock {
+    inset-inline-end: 12px;
+    bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 12px);
+  }
+  .gdock-trigger {
+    width: 46px;
+    height: 46px;
+  }
+  .gdock-trigger .king-avatar {
+    width: 42px;
+    height: 42px;
+  }
+  .gdock-panel {
+    position: fixed;
+    inset-inline: 8px;
+    bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 8px);
+    width: auto;
+    height: min(72dvh, 620px);
+  }
+  .app-shell:has(> .gdock) .main {
+    padding-bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 84px);
+  }
+}
+.gchat.is-dock .gchat-head-text p {
+  display: none;
+}
+
+/* gf1 G04: what Guardian sees on this page, under the assistant's title. */
+.gchat.is-dock {
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto auto;
+}
+.gchat-context {
+  margin: 0;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.gchat-context-label {
+  color: var(--text);
+  font-weight: 600;
+}
+/* Wide screens: the page keeps a column for the closed button (nothing rests under it at any scroll position), and the
+   open panel takes its own column instead of covering the page (Swap and Bridge controls stay visible and usable). */
+@media (min-width: 1024px) {
+  .app-shell:has(> .gdock) .main {
+    padding-inline-end: max(
+      36px,
+      calc(84px - max(0px, (100vw - var(--rail-w) - var(--content-max)) / 2))
+    );
+  }
+  .app-shell:has(> .gdock) .footer-inner {
+    padding-inline-end: max(
+      32px,
+      calc(84px - max(0px, (100vw - var(--rail-w) - var(--content-max)) / 2))
+    );
+  }
+}
+/* While the panel holds its column, a Bridge page narrower than its two columns (540 + 380 px) stacks them, as it does
+   below 1100 px, instead of squeezing network names. */
+@media (min-width: 1280px) and (max-width: 1887px) {
+  :root[data-gdock-open]
+    .app-shell:has(> .gdock)
+    .bridge-grid:not(.swap-layout) {
+    grid-template-columns: minmax(0, 560px);
+  }
+}
+@media (min-width: 1280px) {
+  :root[data-gdock-open] .app-shell:has(> .gdock) .main {
+    padding-inline-end: max(
+      36px,
+      calc(444px - max(0px, (100vw - var(--rail-w) - var(--content-max)) / 2))
+    );
+  }
+}
+/* Narrow screens: when a control lies under the closed button, it tucks to the screen edge as a rounded tab (the
+   visible 24 px strip is the full height of the button and all of it is a target); keyboard focus or opening brings
+   it back. Hover does not move it: a strip that slid away from the pointer would flicker. */
+@media (max-width: 1023px) {
+  .gdock-trigger {
+    transition:
+      transform 180ms var(--ease-out, ease-out),
+      border-radius 180ms var(--ease-out, ease-out);
+  }
+  .gdock[data-tucked] .gdock-trigger {
+    transform: translateX(34px);
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+  [dir="rtl"] .gdock[data-tucked] .gdock-trigger {
+    transform: translateX(-34px);
+  }
+  .gdock[data-tucked] .gdock-trigger:focus-visible {
+    transform: none;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+  .gdock-trigger {
+    transition: none;
+  }
+}
+@media (max-width: 600px) {
+  .gchat.is-page {
+    height: min(640px, calc(100dvh - 140px));
+    min-height: 420px;
+  }
+  .gchat-head {
+    padding: 12px;
+  }
+  .gchat-log {
+    padding: 12px;
+  }
+  .gchat-chips,
+  .gchat-input {
+    padding-inline: 12px;
+  }
+  .gdraft-rows > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}
+
+/* ---------- gf1 G01: Guardian-first Overview flow ---------- */
+/* One ordered flow under the status banner: connect, choose, Guardian review, the user's own next step. Steps are
+   opaque deep cards (readable over the water); the Guardian step carries the biolume edge. Decision names are a
+   neutral legend (never green, never a verdict); step states only report facts (connected, closed). */
+.overview-welcome-actions .button-link.primary-link .nav-glyph {
+  margin-inline-end: 6px;
+}
+.overview-flow {
+  margin: 4px 0 18px;
+}
+.overview-flow > h2 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.overview-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.overview-flow-steps > li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  gap: 8px 12px;
+  padding: 16px;
+  border: 1px solid var(--deep-edge);
+  border-radius: 18px;
+  background: var(--deep-card);
+  min-width: 0;
+}
+.overview-flow-steps > li.is-guardian {
+  border-color: rgb(var(--biolume-rgb) / 0.42);
+  background:
+    radial-gradient(
+      120% 90% at 0% 0%,
+      rgb(var(--biolume-rgb) / 0.1),
+      transparent 62%
+    ),
+    var(--deep-card);
+}
+.overview-flow-index {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--deep-edge-strong);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.is-guardian .overview-flow-index {
+  border-color: rgb(var(--biolume-rgb) / 0.5);
+  color: var(--biolume);
+}
+.overview-flow-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.overview-flow-copy strong {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.overview-flow-copy small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.overview-flow-decisions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.overview-flow-decisions > span {
+  padding: 2px 9px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 20px;
+}
+.overview-flow-state,
+.overview-flow-links {
+  grid-column: 2;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  font-size: 13px;
+}
+.overview-flow-state {
+  justify-self: start;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  color: var(--muted);
+}
+.overview-flow-state[data-done] {
+  color: var(--text);
+  border-color: var(--accent-line);
+}
+.overview-flow-state[data-closed] {
+  color: var(--amber);
+  border-color: var(--amber-line);
+}
+.overview-flow-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 1180px) {
+  .overview-flow-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .overview-flow-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (forced-colors: active) {
+  .overview-flow-steps > li {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ---------- gf1 G03: Guardian for first-time users ---------- */
+/* The conversation comes first: five guided starts in an empty chat, one plain sentence per decision (tone follows the
+   decision, never a green "safe"), and the technical record collapsed below it. The introduction moves under the
+   conversation. Everything is static; nothing depends on animation or video. */
+.guardian-mode-tag {
+  margin-inline-start: 4px;
+  padding: 1px 7px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  color: var(--faint);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.gchat-start {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.gchat-start h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.gchat-start > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.gchat-start ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gchat-start li {
+  min-width: 0;
+}
+.gchat-start-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid var(--deep-edge);
+  border-radius: 14px;
+  background: var(--deep-inset);
+  color: var(--text);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+.gchat-start-card:hover {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+.gchat-start-card:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.gchat-start-card .nav-glyph {
+  flex: none;
+  margin-top: 2px;
+  color: var(--seaglass);
+}
+.gchat-start-card > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.gchat-start-card strong {
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+.gchat-start-card small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.gchat-plain {
+  --g-tone: var(--seaglass);
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-inline-start: 3px solid var(--g-tone);
+  border-radius: 12px;
+  background: var(--deep-inset);
+}
+.gchat-plain.is-warn,
+.gchat-plain.is-escalate {
+  --g-tone: var(--amber);
+}
+.gchat-plain.is-block {
+  --g-tone: var(--danger);
+}
+.gchat-plain p {
+  margin: 0;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+.gchat-plain p + p {
+  color: var(--muted);
+}
+/* Inside a draft card the card itself carries the decision's edge. */
+.gdraft > .gchat-plain {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.gchat-tech {
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  font-size: 0.84rem;
+  min-width: 0;
+}
+.gchat-tech > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 6px 12px;
+  color: var(--muted);
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+.gchat-tech > summary::-webkit-details-marker {
+  display: none;
+}
+.gchat-tech > summary .icon {
+  flex: none;
+  transition: transform 0.2s ease-out;
+}
+.gchat-tech[open] > summary .icon {
+  transform: rotate(45deg);
+}
+.gchat-tech > summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.gchat-tech[open] > summary {
+  border-bottom: 1px solid var(--line-soft);
+}
+.gchat-tech dl {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 12px 0;
+}
+.gchat-tech dl > div {
+  display: grid;
+  grid-template-columns: minmax(96px, auto) minmax(0, 1fr);
+  gap: 10px;
+}
+.gchat-tech dt {
+  color: var(--muted);
+}
+.gchat-tech dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.gchat-tech code {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+}
+.gchat-tech-digest {
+  word-break: break-all;
+}
+.gchat-tech > p {
+  margin: 8px 12px 0;
+  color: var(--muted);
+}
+.gchat-tech > p:last-child {
+  margin-bottom: 10px;
+}
+.guardian-hero.is-about {
+  margin-top: 4px;
+}
+/* On a phone the guided starts take the place of the example suggestions and flow with the page (no nested scroll)
+   until the conversation starts; the page header above already states "no paid AI" and "nothing is signed". */
+@media (max-width: 600px) {
+  .gchat-tech dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .gchat.is-page.is-guided {
+    height: auto;
+  }
+  .gchat.is-guided .gchat-chips {
+    display: none;
+  }
+  .gchat.is-page .gchat-head-text p {
+    display: none;
+  }
+  .gchat-start-card {
+    padding: 10px 12px;
+  }
+}
+@media (forced-colors: active) {
+  .gchat-start-card,
+  .gchat-plain {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* G12 H03 — quote economics notice: plain ruled text under the Guardian decision, no box. */
+.app-shell .veined-app .quote-economics {
+  display: grid;
+  gap: 4px;
+  margin-block: 10px 0;
+  padding-block: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.app-shell .veined-app .quote-economics p {
+  margin: 0;
+}
+
+/* G12 H04 — percent buttons: a quiet row under the amount, no box. */
+.app-shell .veined-app .percent-buttons {
+  display: grid;
+  gap: 4px;
+  margin-block-start: 8px;
+}
+.app-shell .veined-app .percent-buttons > [role="group"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.app-shell .veined-app .percent-button {
+  min-inline-size: 48px;
+  min-block-size: 28px;
+  padding: 2px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: none;
+  color: var(--text);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.app-shell .veined-app .percent-button:hover:not(:disabled) {
+  border-color: var(--text);
+}
+.app-shell .veined-app .percent-button:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.app-shell .veined-app .percent-reason {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.app-shell .veined-app .chart-unavailable {
+  margin-block: 8px 0;
+  color: var(--muted);
+}
+.app-shell .veined-app .paused-route {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  margin-block-end: 12px;
+}
+.app-shell .veined-app .paused-route p {
+  margin: 0;
+}
+
+/* G12 H06 — VEINED Scan: ruled sections, quiet tools, no extra boxes. */
+.app-shell .veined-app .scan-view {
+  display: grid;
+  gap: 28px;
+}
+.app-shell .veined-app .scan-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-block: 12px 4px;
+}
+.app-shell .veined-app .scan-search {
+  flex: 1 1 240px;
+}
+.app-shell .veined-app .scan-search input {
+  inline-size: 100%;
+}
+.app-shell .veined-app .scan-tools [role="group"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.app-shell .veined-app .scan-tools button[aria-pressed="true"] {
+  border-color: var(--text);
+}
+.app-shell .veined-app .scan-demo {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.app-shell .veined-app .scan-demo li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding-block: 8px;
+  border-block-end: 1px solid var(--line-soft);
+}

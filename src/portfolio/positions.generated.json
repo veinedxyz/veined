@@ -1,0 +1,440 @@
+{
+  "version": 1,
+  "sourceCommit": "e5bed1f0b32279b3f3259708b0a3b0fa29c058fc",
+  "note": "Bounded receipt/debt token balances only. No underlying conversion, pool health, APY, rewards, LP or NFT discovery. Exact chain + contract identity; balanceOf only.",
+  "positions": [
+    {
+      "chainId": "1",
+      "address": "0x00907f9921424583e7ffbfedf84f92b7b2be4977",
+      "symbol": "aGHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x018008bfb33d285247a21d44e50697654f754e63",
+      "symbol": "aDAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+      "symbol": "aUSDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8",
+      "symbol": "aWETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x6df1c1e379bc5a00a7b4c6e67a203333772f45a8",
+      "symbol": "Debt USDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x72e95b8931767c79ba4eee721354d6e99a61d004",
+      "symbol": "Debt USDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
+      "symbol": "Debt GHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+      "symbol": "wstETH",
+      "decimals": 18,
+      "protocol": "Lido",
+      "category": "staking",
+      "role": "asset",
+      "source": "https://docs.lido.fi/deployed-contracts/",
+      "logo": "/assets/tokens/1/0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0-0d2042213d395b29.png"
+    },
+    {
+      "chainId": "1",
+      "address": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+      "symbol": "sDAI",
+      "decimals": 18,
+      "protocol": "Sky Savings",
+      "category": "vault",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol",
+      "logo": "/assets/tokens/1/0x83f20f44975d03b1b09e64809b757c47f942beea-284844573d65d552.png"
+    },
+    {
+      "chainId": "1",
+      "address": "0x98c23e9d8f34fefb1b7bd6a91b7ff122f4e16f5c",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+      "symbol": "stETH",
+      "decimals": 18,
+      "protocol": "Lido",
+      "category": "staking",
+      "role": "asset",
+      "source": "https://docs.lido.fi/deployed-contracts/",
+      "logo": "/assets/tokens/1/0xae7ab96520de3a18e5e111b5eaab095312d7fe84-36c2cd4d61414b39.png"
+    },
+    {
+      "chainId": "1",
+      "address": "0xcf8d0c70c850859266f5c338b38f9d663181c314",
+      "symbol": "Debt DAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "1",
+      "address": "0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe",
+      "symbol": "Debt WETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Ethereum.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+      "symbol": "Debt WETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+      "symbol": "aUSDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+      "symbol": "aDAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+      "symbol": "Debt DAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+      "symbol": "aWETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+      "symbol": "Debt USDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "10",
+      "address": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+      "symbol": "Debt USDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Optimism.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+      "symbol": "Debt WETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+      "symbol": "aDAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+      "symbol": "Debt DAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+      "symbol": "aWETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "137",
+      "address": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+      "symbol": "Debt USDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Polygon.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x0c84331e39d6658cd6e6b9ba04736cc4c4734351",
+      "symbol": "Debt WETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x18248226c16bf76c032817854e7c83a2113b4f06",
+      "symbol": "Debt GHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x625e7708f30ca75bfd92586e17077590c60eb4cd",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x6ab707aca953edaefbc4fd23ba73294241490620",
+      "symbol": "aUSDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee",
+      "symbol": "aDAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0x8619d80fb0141ba7f184cbf22fd724116d9f7ffc",
+      "symbol": "Debt DAI",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8",
+      "symbol": "aWETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0xebe517846d0f36eced99c735cbf6131e1feb775d",
+      "symbol": "aGHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0xfb00ac187a8eb5afae4eace434f493eb62672df7",
+      "symbol": "Debt USDT",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "42161",
+      "address": "0xfccf3cabbe80101232d343252614b6a3ee81c989",
+      "symbol": "Debt USDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Arbitrum.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0x067ae75628177fd257c2b1e500993e1a0babcbd1",
+      "symbol": "aGHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e",
+      "symbol": "Debt WETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0x38e59ade183bbeb94583d44213c8f3297e9933e9",
+      "symbol": "Debt GHO",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+      "symbol": "aUSDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0x59dca05b6c26dbd64b5381374aaac5cd05644c28",
+      "symbol": "Debt USDC",
+      "decimals": 6,
+      "protocol": "Aave V3",
+      "category": "borrowing",
+      "role": "debt",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    },
+    {
+      "chainId": "8453",
+      "address": "0xd4a0e0b9149bcee3c920d2e00b5de09138fd8bb7",
+      "symbol": "aWETH",
+      "decimals": 18,
+      "protocol": "Aave V3",
+      "category": "lending",
+      "role": "asset",
+      "source": "https://raw.githubusercontent.com/aave-dao/aave-address-book/e5bed1f0b32279b3f3259708b0a3b0fa29c058fc/src/AaveV3Base.sol"
+    }
+  ]
+}

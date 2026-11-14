@@ -1,0 +1,257 @@
+{
+  "uid": "ob-rpc",
+  "title": "Otherbridge — RPC health",
+  "tags": [
+    "otherbridge",
+    "v1.5"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "refresh": "30s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 18,
+      "title": "Healthy endpoints per chain",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_healthy_endpoints",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Independent witness operators per chain",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_witness_operators",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Endpoint latency (ms)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_endpoint_latency_ms{chain=~\"42161|43114|57073|480\"}",
+          "legendFormat": "{{endpoint}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Endpoint error rate",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_endpoint_error_rate{chain=~\"42161|43114|57073|480\"}",
+          "legendFormat": "{{endpoint}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Quarantined endpoints",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (reason) (otherbridge_rpc_endpoint_quarantined)",
+          "legendFormat": "{{reason}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Chain-ID / log mismatch quarantines",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_chain_id_mismatch_quarantines + otherbridge_rpc_log_mismatch_quarantines",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Admission rejections by reason",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_rpc_admission_rejected",
+          "legendFormat": "{{reason}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    }
+  ]
+}

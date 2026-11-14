@@ -1,4 +1,10 @@
-import { test, expect, type Page } from "@playwright/test";
+import type { Page } from "@playwright/test";
+import {
+  test,
+  expect,
+  connectWallet as connectThroughPrivy,
+  privyModal,
+} from "./fixtures";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir } from "node:fs/promises";
 const evidence = `${process.env.OTHERBRIDGE_EVIDENCE_ROOT ?? "evidence/otherbridge-v1"}/screenshots`;
@@ -14,11 +20,20 @@ async function fixture(
     permissionConflict?: "account" | "chain" | "disconnect";
   } = {},
 ) {
+  await page
+    .context()
+    .addCookies([
+      { name: "otherbridge.locale", value: "tr", url: "http://127.0.0.1:3100" },
+    ]);
   await page.addInitScript((opts) => {
+    // V1.9: test setup belongs to the app document only, never to third-party/opaque subframes.
+    if (window !== window.top) return;
     localStorage.setItem("otherbridge.language", "tr");
     if (!localStorage.getItem("otherbridge.theme"))
       localStorage.setItem("otherbridge.theme", "dark");
-    const account = "0x3333333333333333333333333333333333333333";
+    // V1.9: realistic extension semantics — no account before permission, eth_accounts follows account changes.
+    let account = "0x3333333333333333333333333333333333333333";
+    let permitted = false;
     const methods: string[] = [];
     const listeners: Record<string, ((v: unknown) => void)[]> = {};
     let resolvePermission: ((value: unknown) => void) | undefined;
@@ -44,7 +59,8 @@ async function fixture(
         )
           throw Error("TEST_WRITE_REJECTED");
         if (method === "eth_requestAccounts") {
-          if (opts.reject) throw { code: 4001 };
+          if (opts.reject) throw { code: 4001, message: "User rejected" };
+          permitted = true;
           if (opts.permissionAccountEvent)
             listeners.accountsChanged?.forEach((fn) => fn([account]));
           if (conflict === "account")
@@ -58,7 +74,7 @@ async function fixture(
           conflict = undefined;
           return [account];
         }
-        if (method === "eth_accounts") return [account];
+        if (method === "eth_accounts") return permitted ? [account] : [];
         if (method === "eth_chainId") return chain;
         if (method === "wallet_switchEthereumChain") {
           chain = params?.[0]?.chainId ?? chain;
@@ -77,8 +93,10 @@ async function fixture(
     Object.assign(window, {
       testWallet: {
         methods,
-        changeAccount: (address: string) =>
-          listeners.accountsChanged?.forEach((fn) => fn([address])),
+        changeAccount: (address: string) => {
+          account = address;
+          listeners.accountsChanged?.forEach((fn) => fn([address]));
+        },
         changeChain: (value: string) => {
           chain = value;
           listeners.chainChanged?.forEach((fn) => fn(value));
@@ -130,12 +148,8 @@ async function fixture(
       });
   }, options);
 }
-async function connectWallet(page: Page) {
-  await page
-    .getByRole("button", { name: "Cüzdan bağla", exact: true })
-    .first()
-    .click();
-  await page.getByRole("button", { name: "Fixture Rabby" }).click();
+async function connectWallet(page: Page, name = "Fixture Rabby") {
+  await connectThroughPrivy(page, name);
   await expect(
     page.getByText("100 ONE", { exact: false }).first(),
   ).toBeVisible();
@@ -145,29 +159,39 @@ test("C1 normal permission accountsChanged grant connects in the real component"
   page,
 }) => {
   await fixture(page, { permissionAccountEvent: true });
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
-  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await expect(privyModal(page)).toBeHidden();
+  await expect(page.locator("header .wallet-button")).toContainText(
+    "0x3333…3333",
+  );
   await page.screenshot({
     path: `${evidence}/permission-grant-connected.png`,
     fullPage: true,
   });
 });
 for (const conflict of ["account", "chain", "disconnect"] as const) {
-  test(`C1 competing permission ${conflict} is rejected and another provider recovers`, async ({
+  test(`C1 competing ${conflict} event during the Privy connection never binds an unconfirmed identity; another wallet recovers`, async ({
     page,
   }) => {
     await fixture(page, { permissionConflict: conflict });
-    await page.goto("/");
+    await page.goto("/bridge");
     await page
       .getByRole("button", { name: "Cüzdan bağla", exact: true })
       .first()
       .click();
-    await page.getByRole("button", { name: "Fixture Rabby" }).click();
-    await expect(page.getByRole("dialog").getByRole("alert")).toContainText(
-      "Hesap veya ağ değişti. Tutarı yeniden incele.",
-    );
-    await page.getByRole("button", { name: "Fixture MetaMask" }).click();
+    await privyModal(page)
+      .getByRole("button", { name: "Fixture Rabby" })
+      .click();
+    // Whatever Privy reports, the session is only ever the account the wallet itself confirms (0x3333…).
+    await page.waitForTimeout(1500);
+    const header = page.locator("header .wallet-button");
+    await expect(header).not.toContainText("0x4444");
+    if (await privyModal(page).isVisible()) await page.keyboard.press("Escape");
+    if (!(await header.innerText()).includes("0x3333")) {
+      await connectWallet(page, "Fixture MetaMask");
+    }
+    await expect(header).toContainText("0x3333…3333");
     await expect(
       page.getByText("100 ONE", { exact: false }).first(),
     ).toBeVisible();
@@ -178,7 +202,7 @@ for (const event of ["account", "chain", "disconnect"] as const) {
     page,
   }) => {
     await fixture(page);
-    await page.goto("/");
+    await page.goto("/bridge");
     await connectWallet(page);
     let release!: () => void, requested!: () => void;
     const hold = new Promise<void>((resolve) => {
@@ -312,15 +336,16 @@ test("R1/C valid read-only quote and API enable flag cannot open wallet writes",
       });
     else throw Error("UNEXPECTED_GATE_API_REQUEST");
   });
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
   await page.getByRole("textbox", { name: "Gönderilecek tutar" }).fill("12");
   await page.getByRole("button", { name: "Ücreti hesapla" }).click();
   await page.getByRole("button", { name: "Transferi incele" }).click();
   const review = page.getByRole("dialog");
+  // V1.11: no persistent "read only" label; the execution state is the disabled CTA below.
   await expect(
     review.getByText("Ana ağ · salt okunur", { exact: true }),
-  ).toBeVisible();
+  ).toHaveCount(0);
   await expect(
     review.getByRole("button", { name: "Gerçek gönderim kapalı", exact: true }),
   ).toBeDisabled();
@@ -343,24 +368,24 @@ test("R1/C valid read-only quote and API enable flag cannot open wallet writes",
     [],
   );
 });
-test("R1/F4 stalled chain read recovers and another provider connects without writes", async ({
+test("R1/F4 a stalled wallet read never becomes the session; another wallet connects without writes", async ({
   page,
 }) => {
   await fixture(page, { hangFirstChain: true });
-  await page.goto("/");
+  await page.goto("/bridge");
   await page
     .getByRole("button", { name: "Cüzdan bağla", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: "Fixture Rabby" }).click();
-  await expect(page.getByRole("dialog").getByRole("alert")).toContainText(
-    "ağ yanıtı zaman aşımına",
-    { timeout: 12000 },
+  await privyModal(page).getByRole("button", { name: "Fixture Rabby" }).click();
+  await page.waitForTimeout(3000);
+  await expect(page.locator("header .wallet-button")).not.toContainText("0x");
+  if (await privyModal(page).isVisible()) await page.keyboard.press("Escape");
+  await expect(privyModal(page)).toBeHidden();
+  await connectWallet(page, "Fixture MetaMask");
+  await expect(page.locator("header .wallet-button")).toContainText(
+    "Fixture MetaMask",
   );
-  await page.getByRole("button", { name: "Fixture MetaMask" }).click();
-  await expect(
-    page.getByText("100 ONE", { exact: false }).first(),
-  ).toBeVisible();
   const methods = await page.evaluate(
     () =>
       (window as unknown as { testWallet: { methods: string[] } }).testWallet
@@ -376,37 +401,30 @@ test("R1/F4 closed pending permission cannot reconnect after its late result", a
   page,
 }) => {
   await fixture(page, { delayFirstPermission: true });
-  await page.goto("/");
+  await page.goto("/bridge");
   await page
     .getByRole("button", { name: "Cüzdan bağla", exact: true })
     .first()
     .click();
-  await page.getByRole("button", { name: "Fixture Rabby" }).click();
-  await expect(page.getByRole("dialog").getByRole("status")).toBeVisible();
-  await page
-    .getByRole("dialog")
-    .getByRole("button", { name: "Kapat", exact: true })
-    .click();
+  await privyModal(page).getByRole("button", { name: "Fixture Rabby" }).click();
+  await expect(privyModal(page)).toContainText("Fixture Rabby");
+  await page.keyboard.press("Escape");
+  await expect(privyModal(page)).toBeHidden();
   await page.evaluate(() =>
     (
       window as unknown as { testWallet: { resolvePermission: () => void } }
     ).testWallet.resolvePermission(),
   );
-  await expect(
-    page.getByRole("button", { name: "Cüzdan bağla", exact: true }).first(),
-  ).toBeVisible();
-  await page
-    .getByRole("button", { name: "Cüzdan bağla", exact: true })
-    .first()
-    .click();
-  await page.getByRole("button", { name: "Fixture MetaMask" }).click();
-  await expect(
-    page.getByText("100 ONE", { exact: false }).first(),
-  ).toBeVisible();
+  await page.waitForTimeout(2000);
+  // The late wallet answer after the user closed the modal never becomes the session.
+  await expect(page.locator("header .wallet-button")).toHaveText(
+    "Cüzdan bağla",
+  );
+  await connectWallet(page, "Fixture MetaMask");
 });
 test("R1/F5 delayed quote A cannot survive MAX amount B", async ({ page }) => {
   await fixture(page);
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
   let release!: () => void;
   let requested!: () => void;
@@ -456,7 +474,7 @@ test("W01/W05/X03 isolated EIP-6963 choice, icons inert, no wallet writes; local
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await fixture(page);
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
   await page
     .getByLabel("Gönderilecek tutar", { exact: true })
@@ -508,23 +526,35 @@ test("W02 no wallet and rejection are visible and recoverable", async ({
   page,
 }) => {
   await fixture(page, { noWallet: true });
-  await page.goto("/");
+  await page.goto("/bridge");
   await page.getByRole("button", { name: "Cüzdan bağla" }).first().click();
-  await expect(page.getByText(/Cüzdan bulunamadı/)).toBeVisible();
-  await page.getByRole("dialog").getByRole("button", { name: "Kapat" }).click();
+  // No extension: the Privy modal offers no detected wallet and nothing connects.
+  await expect(privyModal(page)).toBeVisible({ timeout: 20000 });
+  await expect(
+    privyModal(page).getByRole("button", { name: /Fixture/ }),
+  ).toHaveCount(0);
+  await page.keyboard.press("Escape");
+  await expect(privyModal(page)).toBeHidden();
+  await expect(page.locator("header .wallet-button")).toHaveText(
+    "Cüzdan bağla",
+  );
   await fixture(page, { reject: true });
   await page.reload();
   await page.getByRole("button", { name: "Cüzdan bağla" }).first().click();
-  await page.getByRole("button", { name: "Fixture Rabby" }).click();
+  await privyModal(page).getByRole("button", { name: "Fixture Rabby" }).click();
+  // Rejection is shown by Privy with a retry; Otherbridge stays disconnected.
   await expect(
-    page.getByRole("dialog").getByText(/Cüzdan isteği reddedildi/),
+    privyModal(page).getByRole("button", { name: /Retry/ }),
   ).toBeVisible();
+  await expect(page.locator("header .wallet-button")).toHaveText(
+    "Cüzdan bağla",
+  );
 });
 test("W03 wrong chain and account changes invalidate review, never submit", async ({
   page,
 }) => {
   await fixture(page, { chain: "0x38" });
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
   await expect(page.getByText(/Cüzdan ağı farklı/)).toBeVisible();
   await page
@@ -549,7 +579,7 @@ test("Q01/U04 network failure never becomes zero balance or successful quote", a
   page,
 }) => {
   await fixture(page);
-  await page.goto("/");
+  await page.goto("/bridge");
   await connectWallet(page);
   await page.route("**/api/bridge", async (route) => {
     if (
@@ -611,6 +641,14 @@ test("P03 imported synthetic success stays unverified until actual evidence", as
     state: "COMPLETED",
     updatedAt: Date.now() - 10000,
   };
+  // VWP G10: set the file only once React has hydrated this input (its props are attached); a change event fired
+  // before hydration reaches no handler and the import is silently lost.
+  await page.waitForFunction(() => {
+    const input = document.querySelector('input[type="file"]');
+    return (
+      !!input && Object.keys(input).some((k) => k.startsWith("__reactProps$"))
+    );
+  });
   await page.getByLabel("Geçmişi içe aktar").setInputFiles({
     name: "history.json",
     mimeType: "application/json",
@@ -631,7 +669,7 @@ test("U01/U03/U04 actual responsive screenshots and overflow", async ({
   await fixture(page, { noWallet: true });
   for (const width of [360, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 1100 });
-    await page.goto("/");
+    await page.goto("/bridge");
     await expect(
       page.getByText("Yerel test · sentetik veri").first(),
     ).toBeVisible();
@@ -646,10 +684,18 @@ test("U01/U03/U04 actual responsive screenshots and overflow", async ({
     });
   }
   await page.getByRole("button", { name: "Dil", exact: true }).click();
+  await page
+    .locator(".language-picker[open]")
+    .getByRole("button", { name: "English", exact: true })
+    .click();
   await page.getByRole("button", { name: "Appearance", exact: true }).click();
   await expect(
     page.getByRole("button", { name: "Connect wallet" }).first(),
   ).toBeVisible();
+  // The theme switch animates colors (0.16 s); measure contrast on the settled theme, not a mid-transition frame.
+  await page.evaluate(() =>
+    Promise.all(document.getAnimations().map((a) => a.finished)),
+  );
   const result = await new AxeBuilder({ page }).analyze();
   expect(result.violations).toEqual([]);
   await page.screenshot({
@@ -661,20 +707,24 @@ test("U02 keyboard dialog focus, escape restoration, 200% CSS zoom and navigatio
   page,
 }) => {
   await fixture(page);
-  await page.goto("/");
+  await page.goto("/bridge");
   const trigger = page.getByRole("button", { name: "Cüzdan bağla" }).first();
   await trigger.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("dialog")).toBeVisible();
+  await expect(privyModal(page)).toBeVisible({ timeout: 20000 });
   for (let i = 0; i < 6; i++) {
     await page.keyboard.press("Tab");
     expect(
       await page.evaluate(
-        () => document.activeElement?.closest("dialog") !== null,
+        () =>
+          document.activeElement?.closest(
+            "#privy-modal-content, [role=dialog], dialog",
+          ) != null,
       ),
     ).toBe(true);
   }
   await page.keyboard.press("Escape");
+  await expect(privyModal(page)).toBeHidden();
   await expect(trigger).toBeFocused();
   await page.addStyleTag({ content: "html {zoom:2}" });
   expect(

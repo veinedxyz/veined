@@ -1,0 +1,225 @@
+[
+  {
+    "id": "1599",
+    "name": "Aave V3",
+    "slug": "aave-v3",
+    "category": "Lending",
+    "chains": ["Ethereum", "Base", "Binance", "Solana"],
+    "tvl": 17000000000,
+    "chainTvls": {
+      "Ethereum": 15000000000,
+      "Base": 1000000000,
+      "Binance": 800000000,
+      "Solana": 0,
+      "Ethereum-borrowed": 9000000000,
+      "borrowed": 9000000000
+    },
+    "parentProtocol": "parent#aave",
+    "url": "https://aave.com",
+    "module": "aave-v3/index.js",
+    "github": ["aave"],
+    "listedAt": 1650000000,
+    "forkedFromIds": []
+  },
+  {
+    "id": "2198",
+    "name": "Uniswap V3",
+    "slug": "uniswap-v3",
+    "category": "Dexs",
+    "chains": ["Ethereum", "Base", "xDai"],
+    "tvl": 1600000000,
+    "chainTvls": {
+      "Ethereum": 1000000000,
+      "Base": 500000000,
+      "xDai": 100000000
+    },
+    "parentProtocol": "parent#uniswap",
+    "url": "https://uniswap.org",
+    "module": "uniswapv3/index.js"
+  },
+  {
+    "id": "182",
+    "name": "Lido",
+    "slug": "lido",
+    "category": "Liquid Staking",
+    "chains": ["Ethereum"],
+    "tvl": 24000000000,
+    "chainTvls": {
+      "Ethereum": 24000000000
+    },
+    "url": "https://lido.fi"
+  },
+  {
+    "id": "9001",
+    "name": "Аave V3",
+    "slug": "aave-v3-clone",
+    "category": "Lending",
+    "chains": ["Ethereum"],
+    "tvl": 5,
+    "chainTvls": {
+      "Ethereum": 5
+    },
+    "url": "https://aave-v3.xyz"
+  },
+  {
+    "id": "9002",
+    "name": "Evil‮Swap",
+    "slug": "evilswap",
+    "category": "Dexs",
+    "chains": ["Base"],
+    "tvl": 10,
+    "chainTvls": {
+      "Base": 10
+    },
+    "url": "javascript:alert(1)"
+  },
+  {
+    "id": "9003",
+    "name": "Fake Aave",
+    "slug": "aave-v3",
+    "category": "Lending",
+    "chains": ["Ethereum"],
+    "tvl": 1,
+    "chainTvls": {
+      "Ethereum": 1
+    }
+  },
+  {
+    "id": "9004",
+    "name": "Binance CEX",
+    "slug": "binance-cex",
+    "category": "CEX",
+    "chains": ["Ethereum", "Bitcoin"],
+    "tvl": 100000000000,
+    "chainTvls": {
+      "Ethereum": 1,
+      "Bitcoin": 2
+    }
+  },
+  {
+    "id": "9005",
+    "name": "Dead Lending",
+    "slug": "dead-lending",
+    "category": "Lending",
+    "chains": ["Ethereum"],
+    "tvl": 0,
+    "chainTvls": {},
+    "deadFrom": "2023-01-01"
+  },
+  {
+    "id": "9006",
+    "name": "Rugged Farm",
+    "slug": "rugged-farm",
+    "category": "Farm",
+    "chains": ["BSC"],
+    "tvl": 0,
+    "chainTvls": {},
+    "rugged": true
+  },
+  {
+    "id": "9007",
+    "name": "Solana Only Lend",
+    "slug": "solana-only-lend",
+    "category": "Lending",
+    "chains": ["Solana"],
+    "tvl": 500000000,
+    "chainTvls": {
+      "Solana": 500000000
+    }
+  },
+  {
+    "id": "9008",
+    "name": "Mystery Thing",
+    "slug": "mystery-thing",
+    "category": "Brand New Category",
+    "chains": ["Story", "NoIdChain"],
+    "tvl": 3,
+    "chainTvls": {
+      "Story": 2,
+      "NoIdChain": 1
+    }
+  },
+  {
+    "id": "9009",
+    "name": "Aggregator Only",
+    "slug": "aggregator-only",
+    "category": "DEX Aggregator",
+    "chains": [],
+    "tvl": null,
+    "chainTvls": {}
+  },
+  {
+    "name": "Nameless No Id",
+    "slug": "nameless",
+    "category": "Yield",
+    "chains": ["Ethereum"]
+  },
+  "not-an-object",
+  {
+    "id": "9010",
+    "name": "JPEG'd",
+    "slug": "jpeg'd",
+    "category": "Lending",
+    "chains": ["Ethereum"],
+    "tvl": 1
+  },
+  {
+    "id": "9011",
+    "name": "Synthetix v1+v2",
+    "slug": "synthetix-v1+v2",
+    "category": "Derivatives",
+    "chains": ["Ethereum"],
+    "tvl": 2,
+    "url": "http://xn--aave-lsa.com/app?x=1"
+  },
+  {
+    "id": "9012",
+    "name": "Cosmos Staker",
+    "slug": "cosmos-staker",
+    "category": "Liquid Staking",
+    "chains": ["Cosmos", "Polkadot"],
+    "tvl": 4,
+    "chainTvls": {
+      "Cosmos": 4
+    }
+  },
+  {
+    "id": "9013",
+    "name": "Lido",
+    "slug": "lido-dup-name",
+    "category": "Liquid Staking",
+    "chains": ["Ethereum"],
+    "tvl": 1
+  },
+  {
+    "id": "9014",
+    "name": "Spark Savings",
+    "slug": "spark-savings-wrong-id",
+    "category": "Yield",
+    "chains": ["Ethereum"],
+    "tvl": 1
+  },
+  {
+    "id": "6716",
+    "name": "Spark Savings",
+    "slug": "spark-savings",
+    "category": "Yield",
+    "chains": ["Ethereum", "Base"],
+    "tvl": 1000,
+    "chainTvls": {
+      "Ethereum": 900,
+      "Base": 100
+    }
+  },
+  {
+    "id": "2088",
+    "name": "Compound V3",
+    "slug": "compound-v3-renamed",
+    "category": "Lending",
+    "chains": ["Ethereum"],
+    "tvl": 100,
+    "chainTvls": {
+      "Ethereum": 100
+    }
+  }
+]

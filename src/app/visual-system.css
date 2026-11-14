@@ -1,0 +1,552 @@
+/* VEINED V1.19. Shared material/motion tokens; data-bearing surfaces stay opaque.
+   Artwork is decorative and local. No inline styles, viewport listeners or canvas. */
+:root {
+  --visual-radius: 24px;
+  --visual-edge: rgb(199 213 197 / 0.18);
+  --visual-glass: rgb(17 21 20 / 0.93);
+  --visual-shadow: 0 20px 60px -35px rgb(0 0 0 / 0.8);
+  --visual-duration: 220ms;
+  --visual-ease: cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+html[data-theme="light"] {
+  --visual-edge: rgb(62 96 74 / 0.2);
+  --visual-glass: rgb(255 255 255 / 0.96);
+  --visual-shadow: 0 20px 60px -35px rgb(32 40 30 / 0.25);
+}
+.veined-atmosphere {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  background: #121916;
+}
+.veined-atmosphere img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.veined-route-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: #c2d3b9;
+  opacity: 0.35;
+}
+.veined-route-lines path {
+  stroke: currentColor;
+  stroke-width: 0.8;
+  stroke-dasharray: 4 10;
+}
+.veined-route-lines circle {
+  fill: currentColor;
+}
+.visual-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.veined-app {
+  max-width: 1240px;
+}
+.veined-app::before {
+  position: absolute;
+  opacity: 0.3;
+}
+.veined-app > .app-scene {
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 560px;
+  opacity: 0.32;
+  mask-image: linear-gradient(#000 0%, #0008 40%, transparent 100%);
+}
+.veined-app[data-surface="bridge"] > .app-scene img {
+  object-position: 50% 46%;
+}
+.veined-app[data-surface="swap"] > .app-scene {
+  opacity: 0.23;
+  height: 670px;
+}
+.veined-app[data-surface="networks"] > .app-scene {
+  opacity: 0.3;
+  height: 480px;
+}
+.veined-app .intro h1 {
+  font-size: clamp(32px, 4.3vw, 54px);
+  letter-spacing: -0.045em;
+}
+.veined-app .intro {
+  padding-top: 42px;
+  padding-bottom: 28px;
+}
+.veined-app .page-heading h1 {
+  font-size: clamp(30px, 3.5vw, 44px);
+  letter-spacing: -0.035em;
+}
+.veined-app .card {
+  box-shadow: var(--visual-shadow);
+  border-color: var(--visual-edge);
+}
+.veined-app .bridge-card {
+  background: var(--surface);
+  border-top-color: var(--accent-line);
+}
+.veined-app .network-box {
+  background-color: var(--inset);
+}
+.veined-app .network-select-trigger:hover {
+  border-color: var(--accent-line);
+}
+.veined-app .trade-amount-box {
+  border-color: var(--line);
+  background: var(--inset);
+}
+.veined-app .trade-amount-box:focus-within {
+  border-color: var(--teal);
+}
+.veined-app .trade-amount {
+  letter-spacing: -0.035em;
+}
+.veined-app .route-summary,
+.veined-app .route-health {
+  background: var(--surface);
+}
+.veined-app .disclosure {
+  border-color: var(--visual-edge);
+}
+.veined-app .portfolio-summary {
+  border-top: 2px solid var(--accent-line);
+  background: var(--surface);
+}
+.veined-app .portfolio-total {
+  letter-spacing: -0.045em;
+}
+.veined-app .portfolio-mode-tabs {
+  border-radius: 12px;
+  padding: 5px;
+  background: var(--inset);
+}
+.veined-app .portfolio-mode-tabs button {
+  border-radius: 8px;
+}
+.veined-app .portfolio-mode-tabs button[aria-selected="true"] {
+  background: var(--surface-3);
+}
+.veined-app .portfolio-first-scan {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 290px;
+}
+.portfolio-first-scan .veined-atmosphere {
+  z-index: -1;
+  opacity: 0.22;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+.portfolio-first-scan .empty-state {
+  min-height: 190px;
+}
+.portfolio-first-scan .empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-line);
+  background: var(--inset);
+}
+.portfolio-first-scan .empty-facts {
+  position: relative;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.veined-app[data-surface="activity"] .card.empty {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 47px,
+      var(--line-soft) 47px 48px
+    ),
+    var(--surface);
+}
+.veined-app[data-surface="activity"] .empty-state {
+  background: var(--surface);
+  margin: 12px;
+  border-radius: 14px;
+}
+.veined-app[data-surface="activity"] .activity-item {
+  border-inline-start: 2px solid var(--accent-line);
+}
+.veined-app[data-surface="help"] {
+  max-width: 1160px;
+}
+.veined-app[data-surface="help"] .page-heading {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+.overview {
+  padding-top: 28px;
+}
+.overview-welcome {
+  min-height: 330px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 40px;
+  border: 1px solid var(--visual-edge);
+  border-radius: var(--visual-radius);
+  background: #101713;
+  color: #f1f0ec;
+}
+.overview-welcome .veined-atmosphere {
+  z-index: -2;
+}
+.overview-welcome::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    #0c1211f5 0%,
+    #0c1211d9 32%,
+    #0c121110 85%
+  );
+}
+.overview-welcome-copy {
+  max-width: 570px;
+}
+.overview-welcome h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  white-space: pre-line;
+}
+.overview-welcome-copy > p:not(.visual-eyebrow) {
+  max-width: 45ch;
+  color: #c3cbc6;
+}
+.overview-welcome .visual-eyebrow {
+  color: #c2d3b9;
+  margin-top: 0;
+}
+.overview-welcome .button-link {
+  margin-top: 8px;
+  background: #c2d3b9;
+  color: #142015;
+  border-color: #c2d3b9;
+}
+.overview-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px 24px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.overview-status > .icon {
+  color: var(--amber);
+  flex: none;
+}
+.overview-status p {
+  margin: 0;
+}
+.overview-status a {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  color: var(--teal);
+}
+.overview-tools {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.overview-tool {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  overflow: hidden;
+  transition:
+    border-color var(--visual-duration) var(--visual-ease),
+    transform var(--visual-duration) var(--visual-ease);
+}
+.overview-tool:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-3px);
+}
+.overview-tool-art {
+  height: 145px;
+  position: relative;
+  background: var(--inset);
+  border-bottom: 1px solid var(--line);
+}
+.overview-tool-art img {
+  object-position: center 48%;
+}
+.overview-tool-number {
+  position: absolute;
+  inset-block-start: 15px;
+  inset-inline-start: 18px;
+  color: #e1e8dd;
+  font: 11px var(--mono);
+  padding: 4px 8px;
+  border: 1px solid #ffffff30;
+  border-radius: 20px;
+  background: #101813c7;
+}
+.overview-tool-copy {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  padding: 22px;
+  align-items: center;
+}
+.overview-tool-copy > .icon {
+  color: var(--teal);
+}
+.overview-tool h2 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.overview-tool p {
+  grid-column: 1/-1;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.overview-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+.overview-wallet {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: center;
+  gap: 12px 20px;
+}
+.overview-wallet h2 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+.overview-wallet p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+.overview-wallet .visual-eyebrow {
+  color: var(--teal);
+}
+.overview-wallet-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  background: var(--accent-soft);
+  color: var(--teal);
+  border: 1px solid var(--accent-line);
+  border-radius: 18px;
+}
+.overview-wallet > .secondary,
+.overview-wallet > .text-link {
+  grid-column: 2;
+  justify-self: start;
+}
+.overview-wallet > .text-link {
+  font-size: 12px;
+}
+.overview-explore {
+  position: relative;
+  isolation: isolate;
+  border-block: 1px solid var(--line);
+  padding: 4px 0;
+}
+.overview-explore .veined-route-lines {
+  z-index: -1;
+  opacity: 0.12;
+}
+.overview-explore > a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+}
+.overview-explore > a + a {
+  border-top: 1px solid var(--line-soft);
+}
+.overview-explore > a:hover {
+  background: var(--accent-soft);
+}
+.overview-explore strong,
+.overview-explore small {
+  display: block;
+}
+.overview-explore strong {
+  font-size: 15px;
+}
+.overview-explore small {
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.overview-explore > a > .icon {
+  flex: none;
+  color: var(--teal);
+}
+.overview-explore > a > .icon:last-child {
+  margin-inline-start: auto;
+}
+html[data-theme="light"] .app-scene {
+  opacity: 0.1;
+}
+html[data-theme="light"] .portfolio-first-scan .veined-atmosphere {
+  opacity: 0.08;
+}
+[dir="rtl"] .overview-welcome::after {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .overview-welcome .veined-atmosphere {
+  transform: scaleX(-1);
+}
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) and (pointer: fine) {
+  .veined-route-lines path {
+    animation: veined-route-trace 24s linear infinite;
+  }
+  @keyframes veined-route-trace {
+    to {
+      stroke-dashoffset: -140;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .header-inner .main-nav {
+    order: 3;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .header-inner .main-nav a {
+    flex: none;
+  }
+  .header-actions {
+    margin-inline-start: auto;
+  }
+}
+@media (max-width: 700px) {
+  .veined-app {
+    padding-inline: 16px;
+  }
+  .veined-app > .app-scene {
+    inset-inline: 0;
+    height: 400px;
+    opacity: 0.18;
+  }
+  .veined-app .intro {
+    padding-top: 30px;
+  }
+  .veined-app .page-heading {
+    padding-top: 30px;
+  }
+  .overview {
+    padding-top: 18px;
+  }
+  .overview-welcome {
+    padding: 26px 22px;
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .overview-welcome .veined-atmosphere img {
+    object-position: 72% center;
+  }
+  .overview-welcome::after {
+    background: linear-gradient(
+      0deg,
+      #0c1211 0%,
+      #0c1211d9 40%,
+      #0c121130 100%
+    );
+  }
+  .overview-welcome h1 {
+    font-size: 34px;
+  }
+  .overview-welcome-copy > p:not(.visual-eyebrow) {
+    font-size: 13px;
+  }
+  .overview-status {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 16px 22px;
+  }
+  .overview-status p {
+    flex: 1;
+  }
+  .overview-status a {
+    margin-inline-start: 24px;
+  }
+  .overview-tools {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .overview-tool {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+  .overview-tool-art {
+    height: 100%;
+    min-height: 155px;
+    border: 0;
+  }
+  .overview-tool-copy {
+    padding: 18px;
+    gap: 10px;
+  }
+  .overview-tool-copy > .icon:first-child {
+    display: none;
+  }
+  .overview-tool-copy {
+    grid-template-columns: 1fr auto;
+  }
+  .overview-tool h2 {
+    font-size: 19px;
+  }
+  .overview-tool p {
+    font-size: 12px;
+  }
+  .overview-bottom {
+    grid-template-columns: 1fr;
+  }
+  .overview-wallet {
+    padding: 22px;
+    gap: 12px;
+  }
+  .overview-wallet-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .veined-route-lines path {
+    animation: none;
+  }
+  .overview-tool {
+    transition: none;
+  }
+  .overview-tool:hover {
+    transform: none;
+  }
+}

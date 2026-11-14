@@ -1,0 +1,512 @@
+/* V1.22 weekly points. Same tokens and surfaces as the product shell (globals.css); scoped module, no inline styles. */
+.page {
+  padding-bottom: 12px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.primary,
+.side {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.live {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 100% 0%, var(--accent-soft), transparent 60%),
+    var(--surface);
+}
+.countdown {
+  display: grid;
+  gap: 10px;
+}
+.segments {
+  display: flex;
+  gap: 10px;
+}
+.segment {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 14px 8px;
+  border-radius: 14px;
+  border: 1px solid var(--line-soft);
+  background: var(--inset);
+}
+.segment strong {
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.segment small {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.zone {
+  color: var(--faint);
+}
+.hidden {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px dashed var(--accent-line);
+  background: var(--accent-soft);
+}
+.hidden > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--teal);
+}
+.hidden h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+.hidden p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.archive select {
+  min-height: 34px;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 0 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+}
+.facts > div {
+  padding: 12px 14px;
+  background: var(--surface-2);
+  min-width: 0;
+}
+.facts dt {
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 520;
+}
+.facts dd {
+  margin: 2px 0 0;
+  font-size: 16px;
+  font-weight: 620;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.yourPosition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+.tableWrap {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+}
+.table th {
+  text-align: start;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 560;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.table tr:last-child td {
+  border-bottom: 0;
+}
+.table td:nth-child(2) {
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.table .num {
+  text-align: end;
+  font-weight: 600;
+}
+.mine td {
+  background: var(--accent-soft);
+}
+.youTag {
+  margin-inline-start: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-line);
+  color: var(--teal);
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+}
+.tasks {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.task {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  min-width: 0;
+}
+.taskTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.task h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.task p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.criteria {
+  margin: 10px 0 0;
+  padding-inline-start: 18px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.criteria li {
+  margin: 2px 0;
+}
+.task .taskStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--text);
+  font-weight: 560;
+}
+.history {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.history > li {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line-soft);
+  background: var(--surface-2);
+  font-size: 13px;
+}
+.history > .liveRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  border-style: dashed;
+  background: transparent;
+}
+.historyTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.historyTop span {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 16px;
+  margin: 8px 0 0;
+  font-size: 12.5px;
+}
+.split > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.split dt {
+  color: var(--muted);
+}
+.split dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.code {
+  display: grid;
+  gap: 4px;
+  margin: 14px 0;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line-soft);
+  background: var(--inset);
+  min-width: 0;
+}
+.code strong {
+  font-family: var(--mono);
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.link {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.invited {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+.invited > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.subhead {
+  margin: 18px 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+.referrals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.referrals li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.rules {
+  margin-top: 20px;
+}
+.rules ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.rules li {
+  display: flex;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.rules li > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--teal);
+}
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .segments {
+    gap: 6px;
+  }
+  .segment {
+    padding: 10px 4px;
+    border-radius: 12px;
+  }
+  .segment strong {
+    font-size: 24px;
+  }
+  .segment small {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+  .table th,
+  .table td {
+    padding: 9px 8px;
+  }
+}
+
+/* gf1 G06: the user's own lifetime points lead the page; the weekly seasons follow as their own section. */
+.lifetime {
+  display: grid;
+  gap: 14px;
+}
+.lifetimeTotal {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: var(--inset);
+}
+.lifetimeTotal dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+.lifetimeTotal dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.lifetimeBody,
+.lifetimeConnect {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.lifetimeConnect {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+.lifetimeRulesTitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+.lifetimeRules {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lifetimeRules li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.lifetimeRules li svg {
+  margin-top: 2px;
+  color: var(--teal);
+}
+.lifetimeSample {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px dashed var(--amber-line);
+  border-radius: 14px;
+}
+.lifetimeSample h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+}
+.lifetimeSample p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.lifetimeSampleFacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.lifetimeSampleFacts div {
+  display: grid;
+  gap: 2px;
+}
+.lifetimeSampleFacts dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.lifetimeSampleFacts dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+/* gf1 G06: your lifetime points, then the weekly seasons as their own section (review-2 mn9, n2). */
+.stack,
+.weekly {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.weeklyHead {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+.weeklyHead h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.weeklyHead p {
+  margin: 0;
+}
+.weeklyPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* gf1 G06: a published season now states only its publication date; one fact takes the row (no empty cells). */
+.facts:has(> :only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}

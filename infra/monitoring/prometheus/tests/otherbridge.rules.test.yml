@@ -1,0 +1,458 @@
+# Generated synthetic fire/clear scenarios for every Otherbridge alert (promtool test rules).
+# SYNTHETIC_TEST_ONLY metric values; no live data, no notifications.
+rule_files:
+  - ../rules/otherbridge.rules.yml
+evaluation_interval: 1m
+tests:
+  - interval: 1m
+    input_series:
+      - series: otherbridge_security_execution_gate_open{job="otherbridge-ops"}
+        values: 0 0 1 1 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeExecutionGateOpen
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeExecutionGateOpen
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: security
+            exp_annotations:
+              summary: Global execution gate reports OPEN in a read-only pre-release.
+              runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - eval_time: 4m
+        alertname: OtherbridgeExecutionGateOpen
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_security_fee_collection_enabled{job="otherbridge-app"}
+        values: 0 0 1 1 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeFeeCollectionEnabled
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeFeeCollectionEnabled
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: security
+            exp_annotations:
+              summary: Fee collection reports enabled; real fee must be 0 bps.
+              runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - eval_time: 4m
+        alertname: OtherbridgeFeeCollectionEnabled
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_security_write_registry_entries{job="otherbridge-ops"}
+        values: 0 0 2 2 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeWriteRegistryPopulated
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeWriteRegistryPopulated
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: security
+            exp_annotations:
+              summary: Write/contract registry is populated in a read-only release.
+              runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - eval_time: 4m
+        alertname: OtherbridgeWriteRegistryPopulated
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_security_global_kill_enabled{job="otherbridge-ops"}
+        values: 1 1 0 0 1 1
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeGlobalKillDisabled
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeGlobalKillDisabled
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: security
+            exp_annotations:
+              summary: Global execution kill switch is not ON.
+              runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - eval_time: 4m
+        alertname: OtherbridgeGlobalKillDisabled
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_witness_records_recent{chain="57073",consensus="MATCH",failure="NONE"}
+        values: 5 5 5 5 5 5
+      - series: otherbridge_witness_records_recent{chain="57073",consensus="TIEBREAK_MATCH_PRIMARY",failure="LOG_SET_MISMATCH"}
+        values: 0 0 1 1 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeLogWitnessMismatch
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeLogWitnessMismatch
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: indexer
+              chain: '57073'
+            exp_annotations:
+              summary: RPC log-set witness disagreement on chain 57073.
+              runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - eval_time: 4m
+        alertname: OtherbridgeLogWitnessMismatch
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_indexer_halted{chain="57073"}
+        values: 0 0 1 1 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeIndexHalted
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeIndexHalted
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: indexer
+              chain: '57073'
+            exp_annotations:
+              summary: Trusted index advancement paused on chain 57073 (operator resume required).
+              runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - eval_time: 4m
+        alertname: OtherbridgeIndexHalted
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_indexer_last_error{chain="42161",code="FINALIZED_CONFLICT"}
+        values: 1x8 0x6
+      - series: otherbridge_indexer_checkpoint_age_seconds{chain="42161"}
+        values: 1000+60x15
+    alert_rule_test:
+      - eval_time: 3m
+        alertname: OtherbridgeIndexCanonicalityUnrecoverable
+        exp_alerts: []
+      - eval_time: 6m
+        alertname: OtherbridgeIndexCanonicalityUnrecoverable
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: indexer
+              chain: '42161'
+            exp_annotations:
+              summary: Chain 42161 indexer stuck on a canonicality/reorg error.
+              runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - eval_time: 10m
+        alertname: OtherbridgeIndexCanonicalityUnrecoverable
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_db_up{job="otherbridge-ops"}
+        values: 1 1 0 0 0 1 1
+    alert_rule_test:
+      - eval_time: 2m
+        alertname: OtherbridgeDatabaseDown
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: OtherbridgeDatabaseDown
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: database
+            exp_annotations:
+              summary: PostgreSQL is unreachable for the monitor role.
+              runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - eval_time: 5m
+        alertname: OtherbridgeDatabaseDown
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_db_up{job="otherbridge-ops"}
+        values: 1x30
+      - series: otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}
+        values: _x19 1200x10
+    alert_rule_test:
+      - eval_time: 10m
+        alertname: OtherbridgeBackupStale
+        exp_alerts: []
+      - eval_time: 16m
+        alertname: OtherbridgeBackupStale
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: backup
+              kind: BACKUP
+            exp_annotations:
+              summary: No successful backup within 36 h (or none recorded).
+              runbook: docs/RUNBOOK_BACKUP_RESTORE.md
+      - eval_time: 22m
+        alertname: OtherbridgeBackupStale
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}
+        values: 50x6
+      - series: otherbridge_backup_last_failure_timestamp_seconds{kind="BACKUP"}
+        values: 0 0 100 100 100 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeBackupFailing
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: OtherbridgeBackupFailing
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              area: backup
+            exp_annotations:
+              summary: The most recent backup attempt failed.
+              runbook: docs/RUNBOOK_BACKUP_RESTORE.md
+      - eval_time: 6m
+        alertname: OtherbridgeBackupFailing
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_rpc_healthy_log_endpoints{chain="57073"}
+        values: 3 0x8 3x3
+    alert_rule_test:
+      - eval_time: 4m
+        alertname: OtherbridgeTierARpcAllUnhealthy
+        exp_alerts: []
+      - eval_time: 6m
+        alertname: OtherbridgeTierARpcAllUnhealthy
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: rpc
+              chain: '57073'
+            exp_annotations:
+              summary: No healthy log-capable RPC for Tier A chain 57073.
+              runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - eval_time: 10m
+        alertname: OtherbridgeTierARpcAllUnhealthy
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_indexer_checkpoint_age_seconds{chain="57073"}
+        values: 10 700x8 10x3
+    alert_rule_test:
+      - eval_time: 4m
+        alertname: OtherbridgeIndexerStalled
+        exp_alerts: []
+      - eval_time: 6m
+        alertname: OtherbridgeIndexerStalled
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: indexer
+              chain: '57073'
+            exp_annotations:
+              summary: Indexer for chain 57073 has not advanced for more than 10 minutes.
+              runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - eval_time: 10m
+        alertname: OtherbridgeIndexerStalled
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_indexer_lag_blocks{chain="43114"}
+        values: 10 100x12 10x3
+      - series: otherbridge_indexer_lag_blocks{chain="42161"}
+        values: 100x16
+    alert_rule_test:
+      - eval_time: 9m
+        alertname: OtherbridgeIndexLagHigh
+        exp_alerts: []
+      - eval_time: 11m
+        alertname: OtherbridgeIndexLagHigh
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: indexer
+              chain: '43114'
+            exp_annotations:
+              summary: Index lag on chain 43114 exceeds its finality-derived tolerance.
+              runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - eval_time: 14m
+        alertname: OtherbridgeIndexLagHigh
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_api_requests_total{group="chains",status="200",status_class="2xx"}
+        values: 0+10x40
+      - series: otherbridge_api_requests_total{group="chains",status="500",status_class="5xx"}
+        values: 0x5 5+5x15 80x20
+    alert_rule_test:
+      - eval_time: 8m
+        alertname: OtherbridgeDataApi5xxElevated
+        exp_alerts: []
+      - eval_time: 18m
+        alertname: OtherbridgeDataApi5xxElevated
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: data-api
+            exp_annotations:
+              summary: Data API 5xx ratio above 5% for 10 minutes.
+              runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - eval_time: 32m
+        alertname: OtherbridgeDataApi5xxElevated
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_api_limiter_unavailable_total{group="portfolio"}
+        values: 0 0 1 1 1 1 1 1 1 1 1
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeDurableLimiterUnavailable
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: OtherbridgeDurableLimiterUnavailable
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: data-api
+            exp_annotations:
+              summary: Durable PostgreSQL rate limiter unavailable (requests fail closed with 503).
+              runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - eval_time: 10m
+        alertname: OtherbridgeDurableLimiterUnavailable
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_security_contract_registry_drift{job="otherbridge-ops"}
+        values: 0 0 1 1 0 0
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: OtherbridgeContractRuntimeDrift
+        exp_alerts: []
+      - eval_time: 2m
+        alertname: OtherbridgeContractRuntimeDrift
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: security
+            exp_annotations:
+              summary: Contract registry entry drifted from its reviewed runtime.
+              runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - eval_time: 4m
+        alertname: OtherbridgeContractRuntimeDrift
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: up{job="otherbridge-ops",instance="ops-exporter:3293"}
+        values: 1 0 0 0 0 1 1
+    alert_rule_test:
+      - eval_time: 2m
+        alertname: OtherbridgeMetricsTargetDown
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: OtherbridgeMetricsTargetDown
+        exp_alerts:
+          - exp_labels:
+              severity: high
+              area: monitoring
+              job: otherbridge-ops
+              instance: ops-exporter:3293
+            exp_annotations:
+              summary: Metrics target otherbridge-ops is down.
+              runbook: docs/RUNBOOK_MONITORING.md
+      - eval_time: 5m
+        alertname: OtherbridgeMetricsTargetDown
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_rpc_witness_operators{chain="57073"}
+        values: 3 1x12 3x3
+      - series: otherbridge_indexer_windows{chain="57073",consensus="MATCH"}
+        values: 235x16
+      - series: otherbridge_rpc_witness_operators{chain="42161"}
+        values: 1x16
+      - series: otherbridge_indexer_windows{chain="42161",consensus="UNWITNESSED"}
+        values: 260x16
+    alert_rule_test:
+      - eval_time: 9m
+        alertname: OtherbridgeWitnessDegraded
+        exp_alerts: []
+      - eval_time: 11m
+        alertname: OtherbridgeWitnessDegraded
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              area: rpc
+              chain: '57073'
+            exp_annotations:
+              summary: Chain 57073 has fewer than two healthy independent witness operators.
+              runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - eval_time: 14m
+        alertname: OtherbridgeWitnessDegraded
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_api_requests_total{group="chains",status="200",status_class="2xx"}
+        values: 0+10x40
+      - series: otherbridge_api_rate_limited_total{group="chains"}
+        values: 0x2 5+5x14 75x24
+    alert_rule_test:
+      - eval_time: 5m
+        alertname: OtherbridgeRateLimitSaturation
+        exp_alerts: []
+      - eval_time: 14m
+        alertname: OtherbridgeRateLimitSaturation
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              area: data-api
+            exp_annotations:
+              summary: More than 20% of Data API requests are rate limited.
+              runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - eval_time: 30m
+        alertname: OtherbridgeRateLimitSaturation
+        exp_alerts: []
+  - interval: 1m
+    input_series:
+      - series: otherbridge_portfolio_chains_failed_recent{origin="app",state="PARTIAL"}
+        values: 20x20 0x5
+      - series: otherbridge_portfolio_chains_checked_recent{origin="app",state="PARTIAL"}
+        values: 100x25
+    alert_rule_test:
+      - eval_time: 10m
+        alertname: OtherbridgePortfolioPartialFailures
+        exp_alerts: []
+      - eval_time: 16m
+        alertname: OtherbridgePortfolioPartialFailures
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              area: portfolio
+            exp_annotations:
+              summary: Portfolio per-chain failure rate above 10% in the last hour.
+              runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - eval_time: 22m
+        alertname: OtherbridgePortfolioPartialFailures
+        exp_alerts: []
+  - interval: 1h
+    input_series:
+      - series: otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}
+        values: 0x30 108000x10
+    alert_rule_test:
+      - eval_time: 25h
+        alertname: OtherbridgeBackupAgeWarning
+        exp_alerts: []
+      - eval_time: 27h
+        alertname: OtherbridgeBackupAgeWarning
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              area: backup
+            exp_annotations:
+              summary: Last successful backup is older than 26 h.
+              runbook: docs/RUNBOOK_BACKUP_RESTORE.md
+      - eval_time: 31h
+        alertname: OtherbridgeBackupAgeWarning
+        exp_alerts: []

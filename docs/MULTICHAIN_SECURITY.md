@@ -1,0 +1,13 @@
+# Multichain güvenlik sınırı
+
+SDK/API yalnız sunucu adapter'ında; integrator Otherbridge, providers boş, chain preload/version probe kapalı. HTTPS public `li.quest/v1` ve altı GET read path allowlist'i: chains/tools/connections/tokens/quote/status. Kullanıcı URL/header/API key veremez. DNS sonuçlarının hepsi public IP olmalıdır; HTTPS request o doğrulanmış IP'ye lookup ile pinlenir. Redirect/non-JSON reddi, 10 saniye deadline, 4 MB response sınırı, abort ve runtime şemalar vardır. Büyük chain ID JSON sayıları parse öncesi string'e korunur.
+
+Same-origin loopback host/origin kontrolü; 16 KB request body ve strict action şeması. Process içi 90 read request/dakika ve 60 quote/2 saat sınırı. 429 fail closed. Bir metadata 5xx için 250 ms sonra tek güvenli read retry; quote retry/poll yok. Public katalog/token cache hesap içermez; hesap bağlı quote cevapları no-store ve ortak cache'e yazılmaz. Hata cevapları enum'dur; wallet session/upstream credential/ham transaction payload client'a veya genel loga taşınmaz. Kamuya açık araştırma probe'ları yalnız public fixture adresleriyle sanitize request/hash/provenance kaydeder.
+
+Logo transport ayrı HTTPS origin/path allowlist, boyut/deadline/content type sınırı, XML parse ve script/handler/doctype/entity/foreignObject/external href/image/CSS URL reddi uygular. Tarayıcı yalnız same-origin yerel asset yükler. Bilinmeyen asset geometrik fallback'tir. Mevcut nonce CSP ve nosniff korunur; remote SVG yürütme yolu yoktur.
+
+`executionGate` frozen enabled=false; sign/approve/broadcast/deploy null. Execution çağrı arayüzü WRITE_DISABLED atar. Server hiçbir write action tanımaz. Malicious OTHERBRIDGE_MODE=local-test veya enable-mainnet=true production gate'i açamaz. Static safety scanner routing layer ve bileşenlerde wallet sign/approve/send, executeRoute/executeStep/resumeRoute ve browser SDK import arar; provider dependency/init yokluğu da denetlenir. Orijinal ONE local-test writer namespace yalnız sentetik izole test sağlayıcısıdır; gerçek ONE registry writer null kalır.
+
+ONEbridge G5 BLOCKED korunur: deployment kaynak Standard JSON/build/runtime eşdeğerliği ve harcanabilir reserve semantiği tamamlanmamıştır. Yeni API quote/catalog bunun kanıtı değildir. M11 NOT_RUN — USER_APPROVAL_REQUIRED; M12 BLOCKED — RELEASE_APPROVAL_REQUIRED. Kullanıcı sınırı nedeniyle bu milestone bunları açmaya çalışmaz. Anahtar, gerçek imza, approve, broadcast, deploy, V2 gas veya V3 standalone swap yoktur.
+
+Raw diagnostic hataları ve eski checkpoints silinmez. Review ZIP yalnız kopyada redaction yapar; gerçek .env, caches, wallet sessions, trace ZIP, dependency tree ve .git alınmaz. SHA inventory kaynak/checkpoint ilişkisini gösterir; eski kanıtlar yeni test koşusu gibi sunulmaz.

@@ -1,0 +1,1369 @@
+{
+  "observedAt": 1790974049998,
+  "chains": {
+    "chains": [
+      {
+        "id": "1",
+        "key": "eth",
+        "name": "Ethereum",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1151111081099710",
+        "key": "sol",
+        "name": "Solana",
+        "chainType": "SVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1151111081099710",
+          "address": "11111111111111111111111111111111",
+          "symbol": "SOL",
+          "name": "SOL",
+          "decimals": 9
+        }
+      },
+      {
+        "id": "42161",
+        "key": "arb",
+        "name": "Arbitrum",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "42161",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "4663",
+        "key": "out",
+        "name": "Robinhood Chain",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "4663",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "8453",
+        "key": "bas",
+        "name": "Base",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "8453",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1337",
+        "key": "hpl",
+        "name": "Hyperliquid",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1337",
+          "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "symbol": "USDC",
+          "name": "USD Coin (Perps)",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "999",
+        "key": "hyp",
+        "name": "HyperEVM",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "999",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "HYPE",
+          "name": "HYPE",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "143",
+        "key": "mon",
+        "name": "Monad",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "143",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "MON",
+          "name": "Monad",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "56",
+        "key": "bsc",
+        "name": "BSC",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "56",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "BNB",
+          "name": "BNB",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "20000000000001",
+        "key": "btc",
+        "name": "Bitcoin",
+        "chainType": "UTXO",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "20000000000001",
+          "address": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "decimals": 8
+        }
+      },
+      {
+        "id": "9270000000000000",
+        "key": "sui",
+        "name": "Sui",
+        "chainType": "MVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "9270000000000000",
+          "address": "0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI",
+          "symbol": "SUI",
+          "name": "SUI",
+          "decimals": 9
+        }
+      },
+      {
+        "id": "10",
+        "key": "opt",
+        "name": "OP Mainnet",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "10",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "137",
+        "key": "pol",
+        "name": "Polygon",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "137",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "POL",
+          "name": "Polygon Ecosystem Token",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "43114",
+        "key": "ava",
+        "name": "Avalanche",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "43114",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "AVAX",
+          "name": "AVAX",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "100",
+        "key": "dai",
+        "name": "Gnosis",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "100",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "xDAI",
+          "name": "xDAI Native Token",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1088",
+        "key": "mam",
+        "name": "Metis",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1088",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "METIS",
+          "name": "METIS",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "11155111",
+        "key": "eths",
+        "name": "Ethereum Sepolia Testnet",
+        "chainType": "EVM",
+        "mainnet": false,
+        "nativeToken": {
+          "chainId": "11155111",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "11155420",
+        "key": "opst",
+        "name": "OP Sepolia Testnet",
+        "chainType": "EVM",
+        "mainnet": false,
+        "nativeToken": {
+          "chainId": "11155420",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1135",
+        "key": "lsk",
+        "name": "Lisk",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1135",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1201081091099710",
+        "key": "xlm",
+        "name": "Stellar",
+        "chainType": "STL",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1201081091099710",
+          "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "decimals": 7
+        }
+      },
+      {
+        "id": "122",
+        "key": "fus",
+        "name": "FUSE",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "122",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "FUSE",
+          "name": "FUSE",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "130",
+        "key": "uni",
+        "name": "Unichain",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "130",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1329",
+        "key": "sei",
+        "name": "Sei",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1329",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "SEI",
+          "name": "SEI",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "13371",
+        "key": "imx",
+        "name": "Immutable zkEVM",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "13371",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "IMX",
+          "name": "IMX",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "14",
+        "key": "flr",
+        "name": "Flare",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "14",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "FLR",
+          "name": "Flare",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "146",
+        "key": "son",
+        "name": "Sonic",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "146",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "S",
+          "name": "S",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1480",
+        "key": "van",
+        "name": "Vana",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1480",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "VAN",
+          "name": "Vana",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1625",
+        "key": "gra",
+        "name": "Gravity",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1625",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "G",
+          "name": "G",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "16661",
+        "key": "zerog",
+        "name": "0G Mainnet",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "16661",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "0G",
+          "name": "0G",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1672",
+        "key": "phr",
+        "name": "Pharos Mainnet",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1672",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "PROS",
+          "name": "Pharos",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1776",
+        "key": "inj",
+        "name": "Injective",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1776",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "INJ",
+          "name": "Injective",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "1868",
+        "key": "soe",
+        "name": "Soneium",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "1868",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "196",
+        "key": "xly",
+        "name": "XLayer",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "196",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "OKB",
+          "name": "OKB",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "20000000000005",
+        "key": "zec",
+        "name": "Zcash",
+        "chainType": "UTXO",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "20000000000005",
+          "address": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "decimals": 8
+        }
+      },
+      {
+        "id": "2020",
+        "key": "ron",
+        "name": "Ronin",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "2020",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "RON",
+          "name": "Ronin",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "204",
+        "key": "opb",
+        "name": "opBNB",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "204",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "BNB",
+          "name": "BNB",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "232",
+        "key": "lns",
+        "name": "Lens",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "232",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "GHO",
+          "name": "GHO",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "25",
+        "key": "cro",
+        "name": "Cronos",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "25",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "CRO",
+          "name": "CRO",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "252",
+        "key": "fra",
+        "name": "Fraxtal",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "252",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "FRAX",
+          "name": "FRAX",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "2741",
+        "key": "abs",
+        "name": "Abstract",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "2741",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "2818",
+        "key": "mop",
+        "name": "Morph",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "2818",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "288",
+        "key": "bob",
+        "name": "Boba",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "288",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "30",
+        "key": "rsk",
+        "name": "Rootstock",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "30",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "RBTC",
+          "name": "Bitcoin on Rootstock",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "324",
+        "key": "era",
+        "name": "zkSync",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "324",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "33139",
+        "key": "ape",
+        "name": "Apechain",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "33139",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "APE",
+          "name": "APE",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "34443",
+        "key": "mod",
+        "name": "Mode",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "34443",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "3586256",
+        "key": "ltr",
+        "name": "Lighter",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "3586256",
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "name": "USD Coin (Perp)",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "40",
+        "key": "tlo",
+        "name": "Telos",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "40",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "TLOS",
+          "name": "TLOS",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "421614",
+        "key": "arbs",
+        "name": "Arbitrum Sepolia Testnet",
+        "chainType": "EVM",
+        "mainnet": false,
+        "nativeToken": {
+          "chainId": "421614",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "4217",
+        "key": "tem",
+        "name": "Tempo",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "4217",
+          "address": "0x20C0000000000000000000000000000000000000",
+          "symbol": "PathUSD",
+          "name": "PathUSD",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "42170",
+        "key": "arn",
+        "name": "Arbitrum Nova",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "42170",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "42220",
+        "key": "cel",
+        "name": "Celo",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "42220",
+          "address": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+          "symbol": "CELO",
+          "name": "Celo native asset",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "42793",
+        "key": "etl",
+        "name": "Etherlink",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "42793",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "XTZ",
+          "name": "Tezos",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "43111",
+        "key": "hmi",
+        "name": "Hemi",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "43111",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "4326",
+        "key": "meg",
+        "name": "MegaETH",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "4326",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "480",
+        "key": "wcc",
+        "name": "World Chain",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "480",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "50",
+        "key": "xdc",
+        "name": "XDC",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "50",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "XDC",
+          "name": "XDC",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "5000",
+        "key": "mnt",
+        "name": "Mantle",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "5000",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "MNT",
+          "name": "MNT",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "5031",
+        "key": "som",
+        "name": "Somnia",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "5031",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "SOMI",
+          "name": "Somnia",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "5042",
+        "key": "arc",
+        "name": "Arc",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "5042",
+          "address": "0x3600000000000000000000000000000000000000",
+          "symbol": "USDC",
+          "name": "USDC",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "5042002",
+        "key": "arct",
+        "name": "Arc Testnet",
+        "chainType": "EVM",
+        "mainnet": false,
+        "nativeToken": {
+          "chainId": "5042002",
+          "address": "0x3600000000000000000000000000000000000000",
+          "symbol": "USDC",
+          "name": "USDC",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "534352",
+        "key": "scl",
+        "name": "Scroll",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "534352",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "57073",
+        "key": "ink",
+        "name": "Ink",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "57073",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "59144",
+        "key": "lna",
+        "name": "Linea",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "59144",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "60808",
+        "key": "boc",
+        "name": "BOB",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "60808",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "728126428",
+        "key": "trn",
+        "name": "Tron",
+        "chainType": "TVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "728126428",
+          "address": "T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb",
+          "symbol": "TRX",
+          "name": "TRX",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "747",
+        "key": "flw",
+        "name": "Flow",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "747",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "FLOW",
+          "name": "Flow",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "747474",
+        "key": "kat",
+        "name": "Katana",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "747474",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "80094",
+        "key": "ber",
+        "name": "Berachain",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "80094",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "BERA",
+          "name": "BERA",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "81457",
+        "key": "bls",
+        "name": "Blast",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "81457",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "8217",
+        "key": "kai",
+        "name": "Kaia",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "8217",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "KAIA",
+          "name": "KAIA",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "84532",
+        "key": "bast",
+        "name": "Base Sepolia Testnet",
+        "chainType": "EVM",
+        "mainnet": false,
+        "nativeToken": {
+          "chainId": "84532",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "ETH",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "88",
+        "key": "vic",
+        "name": "Viction",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "88",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "VIC",
+          "name": "Viction",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "9745",
+        "key": "pla",
+        "name": "Plasma",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "9745",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "XPL",
+          "name": "Plasma",
+          "decimals": 18
+        }
+      },
+      {
+        "id": "988",
+        "key": "sta",
+        "name": "Stable",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "988",
+          "address": "0x779Ded0c9e1022225f8E0630b35a9b54bE713736",
+          "symbol": "USDT0",
+          "name": "USD\u20ae0",
+          "decimals": 6
+        }
+      },
+      {
+        "id": "98866",
+        "key": "plu",
+        "name": "Plume",
+        "chainType": "EVM",
+        "mainnet": true,
+        "nativeToken": {
+          "chainId": "98866",
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "PLUME",
+          "name": "Plume",
+          "decimals": 18
+        }
+      }
+    ]
+  },
+  "tools": {
+    "bridges": [
+      {
+        "key": "arbitrum",
+        "name": "Arbitrum Bridge"
+      },
+      {
+        "key": "across",
+        "name": "AcrossV4"
+      },
+      {
+        "key": "gnosis",
+        "name": "Gnosis Bridge"
+      },
+      {
+        "key": "omni",
+        "name": "Omni Bridge"
+      },
+      {
+        "key": "celercircle",
+        "name": "CCTP + Celer (Standard)"
+      },
+      {
+        "key": "celercirclefast",
+        "name": "CCTP + Celer (Fast)"
+      },
+      {
+        "key": "allbridge",
+        "name": "Allbridge"
+      },
+      {
+        "key": "squid",
+        "name": "Squid"
+      },
+      {
+        "key": "mayan",
+        "name": "Mayan (Swift)"
+      },
+      {
+        "key": "mayanWH",
+        "name": "Mayan (Wormhole)"
+      },
+      {
+        "key": "mayanMCTP",
+        "name": "CCTP + Mayan"
+      },
+      {
+        "key": "stargateV2",
+        "name": "StargateV2 (Fast mode)"
+      },
+      {
+        "key": "stargateV2Bus",
+        "name": "StargateV2 (Economy mode)"
+      },
+      {
+        "key": "symbiosis",
+        "name": "Symbiosis"
+      },
+      {
+        "key": "polygon",
+        "name": "Polygon Bridge (PoS)"
+      },
+      {
+        "key": "glacis",
+        "name": "Glacis"
+      },
+      {
+        "key": "chainflip",
+        "name": "Chainflip"
+      },
+      {
+        "key": "gasZipBridge",
+        "name": "GasZip"
+      },
+      {
+        "key": "relaydepository",
+        "name": "Relay"
+      },
+      {
+        "key": "mayanFastMCTP",
+        "name": "CCTPv2 + Mayan"
+      },
+      {
+        "key": "unit",
+        "name": "Unit"
+      },
+      {
+        "key": "polymer",
+        "name": "Polymer (Fast)"
+      },
+      {
+        "key": "polymerStandard",
+        "name": "Polymer (Standard)"
+      },
+      {
+        "key": "cctp",
+        "name": "Circle CCTP"
+      },
+      {
+        "key": "eco",
+        "name": "Eco"
+      },
+      {
+        "key": "near",
+        "name": "NearIntents"
+      },
+      {
+        "key": "hyperliquidSA",
+        "name": "Hyperliquid"
+      },
+      {
+        "key": "lifiIntents",
+        "name": "LI.FI Intents"
+      },
+      {
+        "key": "garden",
+        "name": "Garden"
+      },
+      {
+        "key": "megaeth",
+        "name": "MegaETH Gateway"
+      },
+      {
+        "key": "hyperliquidNative",
+        "name": "Hyperliquid Native"
+      },
+      {
+        "key": "superset",
+        "name": "Superset"
+      },
+      {
+        "key": "paxos",
+        "name": "Paxos Labs Transit"
+      },
+      {
+        "key": "smartDeposits",
+        "name": "Smart Deposits"
+      },
+      {
+        "key": "layerswap",
+        "name": "Layerswap"
+      },
+      {
+        "key": "frax",
+        "name": "Frax Bridge"
+      }
+    ],
+    "exchanges": [
+      {
+        "key": "bitget",
+        "name": "Bitget"
+      },
+      {
+        "key": "dodo",
+        "name": "DODO"
+      },
+      {
+        "key": "eisen",
+        "name": "Eisen"
+      },
+      {
+        "key": "gluex",
+        "name": "GlueX"
+      },
+      {
+        "key": "paraswap",
+        "name": "Velora"
+      },
+      {
+        "key": "enso",
+        "name": "Enso"
+      },
+      {
+        "key": "1inch",
+        "name": "1inch"
+      },
+      {
+        "key": "openocean",
+        "name": "De\u00b9"
+      },
+      {
+        "key": "kyberswap",
+        "name": "Kyberswap"
+      },
+      {
+        "key": "lifidexaggregator",
+        "name": "LI.FI DEX Aggregator"
+      },
+      {
+        "key": "jupiter",
+        "name": "Jupiter"
+      },
+      {
+        "key": "sushiswap",
+        "name": "SushiSwap Aggregator"
+      },
+      {
+        "key": "bebop",
+        "name": "Bebop"
+      },
+      {
+        "key": "okx",
+        "name": "OKX Dex Aggregator"
+      },
+      {
+        "key": "aftermath",
+        "name": "Aftermath"
+      },
+      {
+        "key": "bluefin7k",
+        "name": "Bluefin7K"
+      },
+      {
+        "key": "merkle",
+        "name": "Merkle"
+      },
+      {
+        "key": "liquidswap",
+        "name": "LiquidSwap"
+      },
+      {
+        "key": "hyperbloom",
+        "name": "Hyperbloom"
+      },
+      {
+        "key": "dflow",
+        "name": "DFlow"
+      },
+      {
+        "key": "hypertrade",
+        "name": "Hypertrade"
+      },
+      {
+        "key": "hyperflow",
+        "name": "HyperFlow"
+      },
+      {
+        "key": "fly",
+        "name": "Fly"
+      },
+      {
+        "key": "titan",
+        "name": "Titan"
+      },
+      {
+        "key": "momentum",
+        "name": "Momentum"
+      },
+      {
+        "key": "monorail",
+        "name": "Monorail"
+      },
+      {
+        "key": "kuru",
+        "name": "Kuru"
+      },
+      {
+        "key": "hyperliquidSpotDex",
+        "name": "Hyperliquid"
+      },
+      {
+        "key": "nordstern",
+        "name": "Nordstern Finance"
+      },
+      {
+        "key": "cetus",
+        "name": "Cetus"
+      },
+      {
+        "key": "kumbaya",
+        "name": "Kumbaya"
+      },
+      {
+        "key": "lifiIntentsDex",
+        "name": "LI.FI Intents"
+      },
+      {
+        "key": "supersetDex",
+        "name": "Superset"
+      },
+      {
+        "key": "smartDeposits",
+        "name": "Smart Deposits"
+      },
+      {
+        "key": "nexroute",
+        "name": "Nexroute"
+      },
+      {
+        "key": "rialto",
+        "name": "Rialto"
+      },
+      {
+        "key": "soroswap",
+        "name": "Soroswap"
+      }
+    ]
+  }
+}

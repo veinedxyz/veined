@@ -1,5 +1,3 @@
-import type { CSSProperties } from "react";
-
 // Visual identity only. Eligibility, chain IDs and write gates stay in core/adapters.
 export const networkIdentity = {
   onechain: {
@@ -27,21 +25,3 @@ export const networkIdentity = {
 } as const;
 
 export type NetworkId = keyof typeof networkIdentity;
-type ThemeStyle = CSSProperties & Record<`--${string}`, string>;
-
-export function networkStyle(id: NetworkId): ThemeStyle {
-  const identity = networkIdentity[id];
-  return {
-    "--network-primary": identity.primary,
-    "--network-accent": identity.accent,
-    "--network-glow": identity.glow,
-    "--network-badge-dark": identity.badgeDark,
-    "--network-badge-light": identity.badgeLight,
-    "--network-logo-surface": identity.logoSurface,
-  };
-}
-
-export const routeSceneStyle: ThemeStyle = {
-  "--source-glow": networkIdentity.onechain.glow,
-  "--destination-glow": networkIdentity.bsc.glow,
-};

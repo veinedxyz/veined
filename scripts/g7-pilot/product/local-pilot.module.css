@@ -1,0 +1,134 @@
+/* Local controlled-pilot additions to the normal Bridge card; product tokens only (light and dark). */
+.badge {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 55%, var(--line));
+  white-space: normal;
+  letter-spacing: 0.02em;
+}
+.mono {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.86em;
+  overflow-wrap: anywhere;
+  text-align: end;
+}
+.route {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0 6px;
+  font-weight: 600;
+}
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+.safety {
+  margin: 14px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--inset);
+}
+.safety summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.safety dl {
+  margin: 10px 0 0;
+  display: grid;
+  gap: 4px 0;
+  font-size: 0.86rem;
+}
+.safety dt {
+  color: var(--muted);
+  margin-top: 6px;
+}
+.safety dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.safety dd.mono {
+  text-align: start;
+}
+.check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 12px 0 0;
+}
+.check input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.phrase {
+  display: block;
+  margin: 14px 0 6px;
+}
+.phraseInput {
+  width: 100%;
+  max-width: 280px;
+  font: inherit;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--inset);
+  color: var(--text);
+}
+.msg {
+  margin: 10px 0 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.ok {
+  color: var(--teal);
+}
+.bad {
+  color: var(--amber);
+}
+.progress {
+  margin: 16px 0 6px;
+}
+.progress ol {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.progress li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+}
+.progress li span {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.done {
+  color: var(--text) !important;
+}
+.done span {
+  border-color: var(--teal) !important;
+  color: var(--teal);
+}
+.active {
+  color: var(--text) !important;
+  font-weight: 600;
+}
+.active span {
+  border-color: var(--amber) !important;
+  color: var(--amber);
+}
+.pending {
+  opacity: 0.75;
+}

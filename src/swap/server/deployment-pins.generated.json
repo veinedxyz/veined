@@ -1,0 +1,457 @@
+[
+  {
+    "chain": "1",
+    "role": "wrapper",
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "codehash": "0xd0a06b12ac47863b5c7be4185c2deaad1c61557033f56c7d4ea74429cbb25e23",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "uniswap",
+    "address": "0x23617e59a5925b2a4bf75d73ff6711cd0b29de85",
+    "codehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "pancake",
+    "address": "0x65b382653f7c31bc0af67f188122035461ec9c76",
+    "codehash": "0xdb8dfdb9e10400c36fae415f58c5d4a6a573b28e2bd1e25a6328623a2112d3f6",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "Uniswap",
+    "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+    "codehash": "0xc67d1657868aa5146eaf24fb879fb1fdec3d2d493b3683a61c9c2f4fb2851131",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "PancakeSwap",
+    "address": "0x31c2f6fcff4f8759b3bd5bf0e1084a055615c768",
+    "codehash": "0xb29cb67ee041882c3a6f4235375bd6e4d197f0526f0bb5479c49dd1c87d36c98",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "manager",
+    "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+    "codehash": "0x785f1014552b7ce7d5fb7d0c970ca60edee94fd00425d7ca21609acac7ce1293",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "quoter",
+    "address": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+    "codehash": "0x06de58fa119c5deaa7a667fb92d3894e25d9160e62fb82c8d86d43b47eefe441",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "1",
+    "role": "stateView",
+    "address": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+    "codehash": "0xd7947778589cf4aac9a092a4451292a2056380941635ab7006d3c691d8dfd878",
+    "block": "0x18f9fbd",
+    "blockHash": "0x121e6bd2cea2e4a56fbcd01ad989b4df231e11052bdafc4bf154a0c13166ed82",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "wrapper",
+    "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "codehash": "0xb7d84205eaaf83ce7b3940c6beaad6d22790255e34a9a2b486aa8cdfff118fe6",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "uniswap",
+    "address": "0xdc264714f68d84cf29bc605589405e78bdbe7c9f",
+    "codehash": "0xe867d0c9a826a351e9d8cefc0fa947d71a497b9ecb0395380814a064fc8465a4",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "pancake",
+    "address": "0xd9c500dff816a1da21a48a732d3498bf09dc9aeb",
+    "codehash": "0x475a0fac42fef6f5939a066498de529e7b79906eccfbb147ace899c8d21a898b",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "Uniswap",
+    "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+    "codehash": "0x48774d936722dd7002887f307f58bcddb3eeabad39149e7dcb5c08e4ebe3310f",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "PancakeSwap",
+    "address": "0x31c2f6fcff4f8759b3bd5bf0e1084a055615c768",
+    "codehash": "0xb8e27757651b074ffccdca43caff003b9f071d45ee74c379fad1a5a67ecaf9d6",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "manager",
+    "address": "0x28e2ea090877bf75740558f6bfb36a5ffee9e9df",
+    "codehash": "0x48752321ee7abf0d2a17c30679df9a1ddd14dc75d28b26e2509b76396145a005",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "quoter",
+    "address": "0x9f75dd27d6664c475b90e105573e550ff69437b0",
+    "codehash": "0xaa14bdb3b2246fb3d795e19c7ca78e8908539f593344b9ff971ce3bdf2d06d08",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "stateView",
+    "address": "0xd13dd3d6e93f276fafc9db9e6bb47c1180aee0c4",
+    "codehash": "0x5bbb9e82e49709fea04b2f873a6ad149a983ddf7eafc86f0fe79ad0a8c512d2b",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "cl",
+    "address": "0xa0ffb9c1ce1fe56963b0321b32e7a0302114058b",
+    "codehash": "0x3caf72836cb6603c6af03bba1578ec70ece8c3e5b1d0ef73667b5fbd74b02a0f",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "bin",
+    "address": "0xc697d2898e0d09264376196696c51d7abbbaa4a9",
+    "codehash": "0x9e95edb558f2fb05a0d5a96b57cd59400d39b1b7c02a4fc7a8a158b3d092835f",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "56",
+    "role": "vault",
+    "address": "0x238a358808379702088667322f80ac48bad5e6c4",
+    "codehash": "0x678bab6ace02b3fc508054b194f3f70190a0621f51bcae69be33cc5416031908",
+    "block": "0x79a8a26",
+    "blockHash": "0xc60d1743d5882b3d8274b9254a990bddb289d71fc0ceca369c716f70196c0ac9",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "wrapper",
+    "address": "0x4200000000000000000000000000000000000006",
+    "codehash": "0x8a3a1f6a9f9dce633117adee5b458245835a8645a8c8726a26382a4622508b1c",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "uniswap",
+    "address": "0xd6145b2d3f379919e8cdeda7b97e37c4b2ca9c40",
+    "codehash": "0x816c75fe7f6ccf8fe8b14825091e8dff301fe7ffd4b962f89b2981a747facc08",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "pancake",
+    "address": "0xd9c500dff816a1da21a48a732d3498bf09dc9aeb",
+    "codehash": "0xff0f54623048c027945896b2d5f07c2ed4e9ab5055f257991f5f88a71ad82822",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "Uniswap",
+    "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+    "codehash": "0xa67739abc3ede9dbdc0491636c67d6a14ac07fab9030c3f509b1eb7b11dff8ed",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "PancakeSwap",
+    "address": "0x31c2f6fcff4f8759b3bd5bf0e1084a055615c768",
+    "codehash": "0xa1d9069bd00ed3f3a4e7fa14cc96bda1ebdda625cf6e4c616b6fae4965684a6e",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "manager",
+    "address": "0x498581ff718922c3f8e6a244956af099b2652b2b",
+    "codehash": "0x83b2af6e9f3158defc2811cbcb0db71ecf8b2ba2abea39c39e370ac5c6f43eb6",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "quoter",
+    "address": "0x514c8b5f54112481e28028f1166bd78501089259",
+    "codehash": "0x4c4c43e0024343e65597f0f0a1b829aaf69e5a6c0a0148fb63d28ff5730be551",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "stateView",
+    "address": "0xa3c0c9b65bad0b08107aa264b0f3db444b867a71",
+    "codehash": "0xbbd5859677ef5491143133e8ed2b8faa0272f6fc2cbae94c53e79cc8c0538545",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "cl",
+    "address": "0xa0ffb9c1ce1fe56963b0321b32e7a0302114058b",
+    "codehash": "0x3caf72836cb6603c6af03bba1578ec70ece8c3e5b1d0ef73667b5fbd74b02a0f",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "bin",
+    "address": "0xc697d2898e0d09264376196696c51d7abbbaa4a9",
+    "codehash": "0x9e95edb558f2fb05a0d5a96b57cd59400d39b1b7c02a4fc7a8a158b3d092835f",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "vault",
+    "address": "0x238a358808379702088667322f80ac48bad5e6c4",
+    "codehash": "0x678bab6ace02b3fc508054b194f3f70190a0621f51bcae69be33cc5416031908",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "router",
+    "address": "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43",
+    "codehash": "0x8efb4345abb93beb898eb5674f03118003594d744fcb9eb0f261cf942b609146",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "factory",
+    "address": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+    "codehash": "0xe2a176e5d2bcfb214b784ec6d6733708a6376a464f203cc265c284c9f349fea3",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "registry",
+    "address": "0x5c3f18f06cc09ca1910767a34a20f771039e37c0",
+    "codehash": "0xd4a9f98ebd41e4c4e7ae646f1a1f8eaa1205100906f34299a3cd7e4ed567c929",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "slipstream",
+    "address": "0x698cb2b6dd822994581fea6ea4fc755d1363a92f",
+    "codehash": "0xfedc4e21e1097b0ec1b4f1aa901cf645c22f9e5d297727b0f37275ee1d083df4",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  },
+  {
+    "chain": "8453",
+    "role": "clFactory",
+    "address": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+    "codehash": "0x4961963494e47f363617ab9a0f3999a28b33c519e51392952db06350cce700bd",
+    "block": "0x322752a",
+    "blockHash": "0xeeeab466e2a8d0a170d5abaedc271988d71b8779d2780ca8f19fa77bf159ad2a",
+    "proxySlots": [
+      "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "source": "Official deployment/source receipts in the V1.15.1 evidence sources directory; observed code pins require review on every drift."
+  }
+]

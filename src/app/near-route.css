@@ -1,0 +1,382 @@
+/* G12 — "To NEAR" route (Swap and Bridge) and the route-kind switch, in the Almanac world: open surface, ruled rows,
+   tabular figures, no card fill, no shadow, no animation. Logical properties only (RTL). Tones come from the shared
+   Almanac tokens, so the light theme follows without overrides. */
+.route-kind {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  max-width: 560px;
+  margin: 0 auto 18px;
+  border-block-end: 1px solid var(--line);
+}
+@media (min-width: 1100px) {
+  .route-kind {
+    max-width: 940px;
+  }
+}
+.route-kind-option {
+  display: grid;
+  gap: 2px;
+  justify-items: start;
+  min-height: 52px;
+  padding: 10px 14px 12px;
+  border: 0;
+  border-block-end: 2px solid transparent;
+  margin-block-end: -1px;
+  background: none;
+  color: var(--muted);
+  text-align: start;
+  cursor: pointer;
+  border-radius: 0;
+}
+.route-kind-option strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.route-kind-option small {
+  font-size: 12.5px;
+  color: var(--faint);
+}
+.route-kind-option.is-active {
+  border-block-end-color: var(--teal);
+}
+.route-kind-option.is-active strong {
+  color: var(--teal-strong, var(--text));
+}
+.route-kind-option:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+}
+.near-route-grid {
+  grid-template-columns: minmax(0, 620px);
+  justify-content: center;
+}
+@media (min-width: 1100px) {
+  .near-route-grid {
+    grid-template-columns: minmax(0, 640px);
+  }
+}
+.near-route {
+  display: grid;
+  gap: 16px;
+}
+.near-route-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.near-route-lede,
+.near-route-scope {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.near-route-scope {
+  font-size: 12.5px;
+  color: var(--faint);
+}
+.near-route-side {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 0 0;
+  border: 0;
+  border-block-start: 1px solid var(--line-soft);
+  min-width: 0;
+}
+.near-route-side legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.near-route-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.near-route .field-stack {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.near-route .field-stack input,
+.near-route .field-stack select {
+  width: 100%;
+  min-height: 44px;
+  min-width: 0;
+}
+.near-route-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.near-route-select select {
+  flex: 1;
+}
+.near-route-chain-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.near-route-chain-mark img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.near-route-amount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-block-end: 1px solid var(--line);
+}
+.near-route-amount input {
+  flex: 1;
+  border: 0;
+  background: none;
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  padding-inline: 0;
+}
+.near-route-unit {
+  font-weight: 600;
+  color: var(--text);
+}
+.near-route-sender {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.near-route-sender bdi {
+  font-family: var(--mono, ui-monospace, monospace);
+  color: var(--text);
+}
+.near-route-connect {
+  justify-self: start;
+  min-height: 44px;
+}
+.near-route-arrow {
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--muted);
+  border-block: 1px solid var(--line-soft);
+}
+.near-route-targets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-block: 1px solid var(--line-soft);
+}
+.near-route-target {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-inline-start: 1px solid var(--line-soft);
+}
+.near-route-target:first-child {
+  border-inline-start: 0;
+}
+.near-route-target input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.near-route-target span {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+.near-route-target small {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--faint);
+}
+.near-route-target.is-selected {
+  box-shadow: inset 0 -2px 0 var(--teal);
+}
+.near-route-target.is-selected strong {
+  color: var(--teal-strong, var(--text));
+}
+.near-route-target:has(input:focus-visible) {
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+}
+.near-route-quote {
+  min-height: 48px;
+}
+.near-route-result {
+  display: grid;
+  gap: 14px;
+  padding-block-start: 6px;
+  border-block-start: 1px solid var(--line);
+}
+/* An expired quote keeps full contrast (WCAG): only its promised amounts are struck through. */
+.near-route-result.is-expired .near-route-receipt bdi.is-amount {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.near-route-receipt,
+.near-route-tech dl {
+  display: grid;
+  margin: 0;
+}
+.near-route-receipt > div,
+.near-route-tech dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-block-end: 1px solid var(--line-soft);
+}
+.near-route-receipt dt,
+.near-route-tech dt {
+  font-size: 13px;
+  color: var(--muted);
+}
+.near-route-receipt dd,
+.near-route-tech dd {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  justify-items: end;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.near-route-receipt dd small {
+  font-size: 12px;
+  color: var(--faint);
+}
+.near-route-receipt .is-key dd bdi {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+}
+.near-route-tech code {
+  font-size: 11.5px;
+}
+.near-route-decision {
+  display: grid;
+  gap: 10px;
+}
+.near-route-decision-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin: 0;
+  padding-block: 8px;
+  border-block: 2px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+.near-route-decision-head strong {
+  font-size: 17px;
+  color: var(--text);
+}
+.near-route-decision-head.is-clear {
+  border-color: var(--alm-kelp, var(--teal));
+}
+.near-route-decision-head.is-caution,
+.near-route-decision-head.is-warning {
+  border-color: var(--alm-amber, var(--line-strong));
+}
+.near-route-decision-head.is-critical {
+  border-color: var(--alm-coral, var(--line-strong));
+}
+.near-route-closed {
+  display: grid;
+  gap: 6px;
+}
+.near-route-closed button[disabled] {
+  min-height: 48px;
+  cursor: not-allowed;
+}
+.near-route-privacy,
+.near-route-decision-note {
+  margin: 0;
+  max-width: none;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--faint);
+}
+.near-route-refund {
+  display: grid;
+  gap: 10px;
+}
+.near-route-code {
+  margin-inline-start: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.near-route-closed-note {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.near-route .near-route-decision-head,
+.near-route .near-route-lede,
+.near-route .near-route-scope {
+  max-width: none;
+}
+@media (max-width: 600px) {
+  .near-route-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .near-route-targets {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .near-route-target {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--line-soft);
+  }
+  .near-route-target:first-child {
+    border-block-start: 0;
+  }
+  .near-route-receipt > div,
+  .near-route-tech dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .near-route-receipt dd,
+  .near-route-tech dd {
+    justify-items: start;
+    text-align: start;
+  }
+  .route-kind-option small {
+    display: none;
+  }
+}

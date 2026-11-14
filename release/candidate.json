@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-15T16:38:41.279Z",
+  "rcId": "OTHERBRIDGE_RC_V1_16_20261015T133159055Z-16dfa3",
+  "repository": "D:\\Projeler\\otherbridge",
+  "head": "8973a3d3cc9b796dce9e7f846fb0a06a5ed5cde5",
+  "sourceCheckpoint": "11bea158a16dc3f0528c4b6a9c24950728e1f26a3a3be86c2ca3ba5cabd5fcb9",
+  "sourceManifest": "08d5c3005ef6174e9491d0de9314d5cf53e383127a3f2ac4a5d3a901c95a3b96",
+  "buildHash": "60daa71188eb424bd1a8d84765d78bd9c2f0853b7a46cf4f3192ed60ddf0b052",
+  "buildId": "BD20oNCTL2KhBssK-7cAl",
+  "protectedBaseline": "cf7025aeeedac022b8ffa08540ed88345e561d23b50f05ae794f3f5dec1991b4",
+  "protectedMembers": 107,
+  "rootLock": "e22a5add14621ea46ec6ee1705a7174ced09bf390b634b8d341b3fc16df0b0e9",
+  "providerLock": "757e1f3b18be3772dfb3fce4c927d7b14a4360c0c55601a868ae483747eae970",
+  "migrations": {
+    "0001_data_plane.sql": "83c78cb77cb2c533eb0f9bcf6b016e213c192302f6365d66b6e1cbdbf8eb4409",
+    "0002_v15_hardening.sql": "2732665e34328bee3b3d0e3a94b4027c8fece1690096e56b2503cf3a336120f5",
+    "0003_asset_registry.sql": "07ae4ea869206d02744ebeb0276cb0bf8143d5b0f799ea6a54a3f2e5f405784f",
+    "0004_defi_positions.sql": "870f000406bc10df9590d3746b46f37717dc79a8c172ed1c78212525be989fea",
+    "0005_defi_universe.sql": "dcf5065bd20db22a4a411ec76f6cc13cb3f56e2c175b58efaf0e70b079ecef7c"
+  },
+  "routerPins": "1b8065c93eadf0c078fe340e7fdb4575173fe769d6853a58f1a42b911c4e0200",
+  "solanaPins": "6f8ba9e7cf12631e2118f75b8c8401cbde8d5574e0af9c507e838957584a6301",
+  "configRevision": "f7ebd530e95970f1d659d07eb0a1e7770f669d766ca56c7e6fd116a234315f91",
+  "providerSourceRevisions": [
+    {
+      "repository": "Uniswap/universal-router",
+      "url": "https://api.github.com/repos/Uniswap/universal-router/commits?per_page=1",
+      "at": "2026-10-15T13:42:51.686Z",
+      "sha256": "ded1143710a92fbef5a2f75715464a7e9ee3f9aa0af4aa3ba066c08534a9955f",
+      "accepted": "802fe4c18f47300e0f183e2a42e9146ec2ea9fc3",
+      "observed": "543e1a19d6e21e31ced2512eec5792b50f13a0ba",
+      "matches": false,
+      "policy": "SOURCE_DRIFT_REVIEW_REQUIRED_NO_AUTO_ACTIVATION"
+    },
+    {
+      "repository": "pancakeswap/infinity-universal-router",
+      "url": "https://api.github.com/repos/pancakeswap/infinity-universal-router/commits?per_page=1",
+      "at": "2026-10-15T13:42:52.079Z",
+      "sha256": "1f929984fb47214c1aebf71eee05061db167f093b88db91eb72c6a6c0b65b073",
+      "accepted": "1b6d479e1f76361f5950d1168d9392361e73a1e8",
+      "observed": "1b6d479e1f76361f5950d1168d9392361e73a1e8",
+      "matches": true,
+      "policy": "PINNED_SOURCE_MATCH"
+    },
+    {
+      "repository": "pancakeswap/pancake-developer",
+      "url": "https://api.github.com/repos/pancakeswap/pancake-developer/commits?per_page=1",
+      "at": "2026-10-15T13:42:52.355Z",
+      "sha256": "b5966d85c79cb7fb134a2adeaa4763bdc4a86dcf5010c34bd2e300e6f5ca46d9",
+      "accepted": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "observed": "671acffc44b705be33cef339fcf3d2a2274acb63",
+      "matches": true,
+      "policy": "PINNED_SOURCE_MATCH"
+    },
+    {
+      "repository": "aerodrome-finance/contracts",
+      "url": "https://api.github.com/repos/aerodrome-finance/contracts/commits?per_page=1",
+      "at": "2026-10-15T13:42:52.679Z",
+      "sha256": "a8c1e4c2be5121d81d80fb43dc7ee3f9c6146f39d46820812a4f55496c331aa2",
+      "accepted": "1ba30815bba620f7e9faa34769ffd00c214c9b82",
+      "observed": "1ba30815bba620f7e9faa34769ffd00c214c9b82",
+      "matches": true,
+      "policy": "PINNED_SOURCE_MATCH"
+    },
+    {
+      "repository": "aerodrome-finance/slipstream",
+      "url": "https://api.github.com/repos/aerodrome-finance/slipstream/commits?per_page=1",
+      "at": "2026-10-15T13:42:52.961Z",
+      "sha256": "3f7bd807c3dda72a81d79bb49d31f5dabd3734c64e9d008093ee51ba863d5e26",
+      "accepted": "f8717faaae6e6717db3c8e3850149c01a79c0603",
+      "observed": "f8717faaae6e6717db3c8e3850149c01a79c0603",
+      "matches": true,
+      "policy": "PINNED_SOURCE_MATCH"
+    },
+    {
+      "repository": "Titan-Pathfinder/titan-sdk-ts",
+      "url": "https://api.github.com/repos/Titan-Pathfinder/titan-sdk-ts/commits?per_page=1",
+      "at": "2026-10-15T13:42:53.252Z",
+      "sha256": "293f6c85a5e4346ccafcc3e13ffbe3a073406b07d43ccf76517e302e1086e0fe",
+      "accepted": "7588482454bee284a7437d0bd5fce6c02edfb60f",
+      "observed": "7588482454bee284a7437d0bd5fce6c02edfb60f",
+      "matches": true,
+      "policy": "PINNED_SOURCE_MATCH"
+    },
+    {
+      "repository": "jup-ag/docs",
+      "url": "https://api.github.com/repos/jup-ag/docs/commits?per_page=1",
+      "at": "2026-10-15T13:42:53.624Z",
+      "sha256": "1c472c0d6b59ec57d01a03e770ff6a3818d4f779401781ab359480f7cb104835",
+      "accepted": "1de8fd08f9ae17b38b9c4f07eb29637d6e2182a7",
+      "observed": "74418054200bedb5303865c8fd7a6b1a08b6075d",
+      "matches": false,
+      "policy": "SOURCE_DRIFT_REVIEW_REQUIRED_NO_AUTO_ACTIVATION"
+    }
+  ],
+  "toolchain": {
+    "node": "v24.18.0",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "os": "Windows_NT",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "pnpm": "11.25.0",
+    "packaging": "Python 3.11.9 with -X utf8"
+  },
+  "evidenceFiles": {
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/final/source-checkpoint.json": "08d5c3005ef6174e9491d0de9314d5cf53e383127a3f2ac4a5d3a901c95a3b96",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/final/build-manifest.json": "3fd7a1c1e137e3534c614d4ed3a5c1e8894c248944920d8f71f9f3b5628f6da2",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/final/protected-final.json": "449db645824517710dfc221c077814bfed345568859c0e7fb621d809b3e5574d",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/reproduction/final6/checks/checks.json": "7d1287a8fd702934050114654cbb903397a3df3fb3dcab11fee254d89b66530b",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/reproduction/final6/reproducibility.json": "a7620064bee074bd6695c9c64fa180df4f824244205850ce8d0caaaae0fff581",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/reproduction/final6/checks/e2e/e2e-summary.json": "0de4f9290f5662953d947d53efca3eaea3c65c4e9b6ec819e90ab26e8426026d",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/reproduction/final6/checks/ui/ui.json": "e983492ac4768ceca3661fa93df77d26c4ce5eb9b7256d9ae174483e0d51072c",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/reproduction/final6/checks/fork/results.json": "a97d719ff2a431d414a33259863f40f984653dacdc09f4ebf9ee63ec3cc23006",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/security/hostile-final5.json": "6ebe20938949397044f45e57798ca6b282f3edc820c3ff3c075b613423e53c53",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/security/canonical-final6-browser/browser-secret-and-provider-boundary.json": "1254ec34956fbaf868eb133f6e5c9a959e63b00eb4cc7b63ac0ecbecc16299bf",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/alert-final6-verification.json": "882122dbc00639f8f95636177a5f1af683e3950e2d41261e2f7648ac005e37ab",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/rehearsal-final5/staging/staging-smoke.json": "2b80da354441a7a7fadd87e17b7b5998eb8c7b658d7392eab56a9860bab3fbae",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/restore1/backup/restore-drill.json": "7f25f5df17c93f3e57cf248f6a8549bfce3166675c7e9bedb02441fc463704a7",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/rollback3/rollback.json": "f5c9dc0454d67176bf5d41d7355b04b18a0969df3762c4bdd1ea7109ce549749",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/final5-recovery-classified.json": "34f89323a6c2ff3f386c217ee534d708d9f483a653e62555d44bf3197b4040fe",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/operations/staging-image-final5.json": "22652e3a6a370c006353949d9e550ed21520466e55c5392a7beafb40b87222c5",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/dependencies/sbom-final/sbom-receipt.json": "78280b41868e3e28a0bcec4cc8be0399acf33a52bd0f86d187cfd2c070860ec8",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/ui/configured-origin-final6/ui.json": "0c93af0a3fe7d0b2fecb552d803eaad9656af527af1743775b1ae47b7c978fbc",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/ui/configured-origin-final6/receipt.json": "27820b4fe2216a39faf6143df7d401562cc0cb8d7af6f24e11c8856a176e9b8a",
+    "evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/ui/configured-origin-final6/executed-harness.mjs": "4b2787e822dc23b3a299edc140791ff2532ead569ce1ec4d7fa2c79cb2a653fb"
+  },
+  "execution": "CLOSED",
+  "validOwnerReleaseReceiptCreated": false,
+  "sourceFrozen": true
+}

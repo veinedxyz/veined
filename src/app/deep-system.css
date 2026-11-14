@@ -1,0 +1,1439 @@
+/* VEINED "Deep" refinement layer (ux5). Loaded last; refines the Ocean film candidate into one premium, ocean-first
+   product language without changing any financial behaviour.
+   - Palette: abyss blue-black and petrol water, foam-white type, sea-glass mint for the live element, amber only for
+     safety. Depth comes from layered translucency and light, never from flat gradients.
+   - Surfaces: "deep glass" cards (opaque enough for every figure; the film never shows through a number), a hairline
+     sea-glass edge and a faint surface light on the top edge.
+   - Marks: TokenMark (logo or generated sea-glass medallion, network badge) and Tide tags (glyph + quiet label) replace
+     bordered capsules and bare monograms (components/ocean-marks.tsx).
+   - Every page keeps the shared living film; each destination adds its own small, static atmosphere in its heading
+     band (nodes for Points, sonar rings for Networks, trails for Activity, calm light for Help, contours for
+     Portfolio). Nothing here animates forever; motion is off under reduced motion; decoration hides in forced colours.
+   - CSP: no inline styles; decorative SVG uses data: URLs (img-src allows data:).
+   Structure: tokens → surfaces → marks → navigation → page bands → overview → swap → bridge → portfolio → help,
+   points, activity, networks → light theme → accessibility modes. */
+
+/* ---------- Tokens ---------- */
+:root {
+  --seaglass: #a3dccf;
+  --seaglass-rgb: 163 220 207;
+  --foam-rgb: 238 245 243;
+  --amber-glow-rgb: 231 184 102;
+  --coral-rgb: 240 163 148;
+  --deep-edge: rgb(var(--seaglass-rgb) / 0.11);
+  --deep-edge-strong: rgb(var(--seaglass-rgb) / 0.22);
+  --deep-card: linear-gradient(
+    180deg,
+    rgb(10 27 34 / 0.97) 0%,
+    rgb(6 16 21 / 0.98) 100%
+  );
+  --deep-inset: rgb(3 11 15 / 0.72);
+  --deep-light: inset 0 1px 0 rgb(var(--foam-rgb) / 0.05);
+  --deep-shadow:
+    inset 0 1px 0 rgb(var(--foam-rgb) / 0.05),
+    0 42px 80px -54px rgb(0 0 0 / 0.95), 0 0 0 1px rgb(0 0 0 / 0.18);
+  --bg: #030a0e;
+  --bg-elevated: #050e13;
+  --surface: #08161c;
+  --surface-2: #0b1c23;
+  --surface-3: #10252d;
+  --inset: #051116;
+  --line: #16303a;
+  --line-soft: #10252d;
+  --line-strong: #24434e;
+  --text: #eef5f3;
+  --muted: #abbec0;
+  --faint: #91a6a9;
+  --teal: var(--seaglass);
+  --teal-strong: #c6ece2;
+  --accent-soft: rgb(var(--seaglass-rgb) / 0.1);
+  --accent-line: rgb(var(--seaglass-rgb) / 0.32);
+  --amber: #e7b866;
+  --biolume: #7fe6d5;
+  --biolume-rgb: 127 230 213;
+  --abyss-rgb: 3 10 14;
+  --abyss-base: #04121a;
+  --glass: rgb(4 13 18 / 0.9);
+  --glass-strong: rgb(4 13 18 / 0.95);
+}
+html[data-theme="light"] {
+  --seaglass: #1b6a5f;
+  --seaglass-rgb: 27 106 95;
+  --foam-rgb: 255 255 255;
+  --deep-edge: rgb(27 106 95 / 0.16);
+  --deep-edge-strong: rgb(27 106 95 / 0.3);
+  --deep-card: linear-gradient(180deg, #ffffff 0%, #f6fbfa 100%);
+  --deep-inset: rgb(236 245 244 / 0.9);
+  --deep-light: inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --deep-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.9), 0 26px 50px -36px rgb(16 52 58 / 0.42);
+  --bg: #eaf3f2;
+  --bg-elevated: #f4f9f8;
+  --surface: #fff;
+  --surface-2: #f5faf9;
+  --surface-3: #e8f1f0;
+  --inset: #f0f6f5;
+  --line: #d0dfdf;
+  --line-soft: #e0eaea;
+  --line-strong: #a9bfc1;
+  --text: #102229;
+  --muted: #475c64;
+  --faint: #52666d;
+  --teal: #1b6a5f;
+  --teal-strong: #12493f;
+  --accent-soft: rgb(27 106 95 / 0.08);
+  --accent-line: rgb(27 106 95 / 0.3);
+  --amber: #7d5c12;
+  --biolume: #1a8478;
+  --biolume-rgb: 26 132 120;
+  --abyss-rgb: 234 243 242;
+  --abyss-base: #e0eeee;
+  --glass: rgb(244 249 248 / 0.9);
+  --glass-strong: rgb(244 249 248 / 0.96);
+}
+
+/* ---------- Surfaces: deep glass ---------- */
+.veined-app :is(.card, .overview-tool, .overview-explore, .swap-card),
+.veined-app .help-steps {
+  background: var(--deep-card);
+  /* An explicit opaque colour under the gradient: figures never sit on see-through glass (AB9). */
+  background-color: var(--surface);
+  border-color: var(--deep-edge);
+  box-shadow: var(--deep-shadow);
+}
+.veined-app .card {
+  border-radius: 22px;
+}
+/* Inner wells (amount boxes, receipts, quote facts) sit one step deeper than their card. */
+.veined-app
+  :is(
+    .trade-amount-box,
+    .amount-field .amount-input,
+    .bridge-receipt,
+    .swap-facts,
+    .quote-summary,
+    .summary-facts
+  ) {
+  border-color: var(--line-soft);
+}
+.veined-app .disclosure {
+  border-color: var(--line-soft);
+}
+.veined-app .disclosure > summary {
+  color: var(--muted);
+}
+.veined-app .disclosure > summary:hover {
+  color: var(--text);
+}
+.veined-app .disclosure[open] > summary {
+  color: var(--text);
+}
+/* Notices read as instrument messages: a tinted edge, no heavy box. */
+.veined-app .notice {
+  border-width: 0;
+  border-inline-start: 2px solid currentColor;
+  border-radius: 10px;
+  background: rgb(var(--seaglass-rgb) / 0.05);
+}
+.veined-app .notice.tone-warn {
+  background: rgb(var(--amber-glow-rgb) / 0.07);
+}
+.veined-app .notice.tone-danger {
+  background: rgb(var(--coral-rgb) / 0.08);
+}
+
+/* Primary actions: sea-glass with a little light in the water. */
+.veined-app button.primary,
+.veined-app .button-link.primary-link {
+  background: linear-gradient(180deg, #b8e8dc 0%, #98d6c7 100%);
+  border-color: transparent;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.45),
+    0 10px 28px -14px rgb(var(--biolume-rgb) / 0.6);
+}
+.veined-app button.primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #c8efe5 0%, #a6dfd1 100%);
+}
+.veined-app button.primary:disabled {
+  background: var(--surface-3);
+  box-shadow: none;
+}
+html[data-theme="light"] .veined-app button.primary,
+html[data-theme="light"] .veined-app .button-link.primary-link {
+  background: linear-gradient(180deg, #227a6e 0%, #1b6a5f 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    0 10px 24px -14px rgb(27 106 95 / 0.55);
+}
+html[data-theme="light"] .veined-app button.primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #1d6f63 0%, #155a50 100%);
+}
+html[data-theme="light"] .veined-app button.primary:disabled {
+  background: var(--surface-3);
+}
+
+/* ---------- Tide tags (information marks) ---------- */
+/* Every capsule in the product becomes a quiet tag: no border, a soft tint and, where the markup carries one, a
+   marine glyph. Tone keeps its meaning (ok = sea-glass, warn = amber, danger = coral). */
+.pill,
+.state-pill {
+  border-color: transparent;
+  background: rgb(var(--seaglass-rgb) / 0.07);
+  border-radius: 8px;
+  min-height: 24px;
+  padding: 2px 9px;
+  font-size: 11.5px;
+  letter-spacing: 0.005em;
+}
+.pill.tone-ok,
+.pill.tone-accent {
+  background: rgb(var(--seaglass-rgb) / 0.1);
+}
+.pill.tone-warn {
+  background: rgb(var(--amber-glow-rgb) / 0.1);
+}
+.pill.tone-danger {
+  background: rgb(var(--coral-rgb) / 0.11);
+}
+.pill.tone-info {
+  background: rgb(150 190 230 / 0.1);
+}
+.pill .pill-dot {
+  width: 5px;
+  height: 5px;
+  box-shadow: 0 0 8px currentColor;
+}
+.tide {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 22px;
+  padding: 1px 8px 1px 6px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 580;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.tide-glyph {
+  flex: none;
+}
+.tide-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tide-calm {
+  color: #bcd6e8;
+  background: rgb(150 190 230 / 0.09);
+}
+.tide-glow {
+  color: var(--seaglass);
+  background: rgb(var(--seaglass-rgb) / 0.1);
+}
+.tide-glow .tide-glyph {
+  filter: drop-shadow(0 0 4px rgb(var(--biolume-rgb) / 0.55));
+}
+.tide-amber {
+  color: var(--amber);
+  background: rgb(var(--amber-glow-rgb) / 0.1);
+}
+.tide-coral {
+  color: #f4b3a6;
+  background: rgb(var(--coral-rgb) / 0.12);
+}
+.tide-mute {
+  color: var(--faint);
+  background: rgb(var(--foam-rgb) / 0.045);
+}
+html[data-theme="light"] .tide-calm {
+  color: #2c557d;
+  background: rgb(44 85 125 / 0.08);
+}
+html[data-theme="light"] .tide-coral {
+  color: #9b3327;
+  background: rgb(155 51 39 / 0.08);
+}
+html[data-theme="light"] .tide-mute {
+  color: var(--faint);
+  background: rgb(16 34 41 / 0.05);
+}
+
+/* ---------- Token marks ---------- */
+.tmark {
+  --tm: 32px;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--tm);
+  height: var(--tm);
+}
+.tmark-xs {
+  --tm: 18px;
+}
+.tmark-sm {
+  --tm: 24px;
+}
+.tmark-md {
+  --tm: 30px;
+}
+.tmark-lg {
+  --tm: 36px;
+}
+.tmark-face {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.tmark-face.is-logo {
+  background: rgb(var(--foam-rgb) / 0.06);
+  box-shadow: 0 0 0 1px rgb(var(--foam-rgb) / 0.08);
+}
+.tmark-face.is-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Generated medallion: a sea-glass pebble with a lit rim, the initials engraved in foam white. */
+.tmark-face.is-medallion {
+  --h1: #1d4a55;
+  --h2: #0b232b;
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.22),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, var(--h1), var(--h2));
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.14),
+    inset 0 -4px 10px rgb(0 0 0 / 0.28);
+  color: #f2faf8;
+}
+.tmark-initials {
+  font-size: calc(var(--tm) * 0.36);
+  font-weight: 720;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
+  font-variant-numeric: tabular-nums;
+}
+.tm-n3 .tmark-initials {
+  font-size: calc(var(--tm) * 0.3);
+}
+.tm-n4 .tmark-initials {
+  font-size: calc(var(--tm) * 0.25);
+  letter-spacing: -0.04em;
+}
+.tmark-xs .tmark-initials {
+  font-size: 7px;
+}
+.tm-h0 {
+  --h1: #1f5a63;
+  --h2: #0b2329;
+}
+.tm-h1 {
+  --h1: #24516e;
+  --h2: #0c1e2c;
+}
+.tm-h2 {
+  --h1: #2e4d79;
+  --h2: #101b33;
+}
+.tm-h3 {
+  --h1: #3f4a7c;
+  --h2: #151833;
+}
+.tm-h4 {
+  --h1: #4d3f6e;
+  --h2: #1b142b;
+}
+.tm-h5 {
+  --h1: #5c3f5e;
+  --h2: #241426;
+}
+.tm-h6 {
+  --h1: #6a4a3f;
+  --h2: #28170f;
+}
+.tm-h7 {
+  --h1: #6b5a2f;
+  --h2: #29200c;
+}
+.tm-h8 {
+  --h1: #4a6234;
+  --h2: #18240f;
+}
+.tm-h9 {
+  --h1: #2f6650;
+  --h2: #0d261c;
+}
+.tm-h10 {
+  --h1: #226b66;
+  --h2: #0a2826;
+}
+.tm-h11 {
+  --h1: #365c6e;
+  --h2: #10222b;
+}
+.tmark-badge {
+  position: absolute;
+  inset-inline-end: -3px;
+  bottom: -2px;
+  width: max(12px, calc(var(--tm) * 0.44));
+  height: max(12px, calc(var(--tm) * 0.44));
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 0 0 2px var(--surface);
+}
+.tmark-badge img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+/* The legacy monogram (TokenAvatar) adopts the same medallion language wherever it is still used. */
+.token-avatar {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #24516e, #0c1e2c);
+  color: #f2faf8;
+  border: 0;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.14),
+    inset 0 -4px 10px rgb(0 0 0 / 0.28);
+}
+.token-avatar.tk-1 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #1f5a63, #0b2329);
+}
+.token-avatar.tk-2 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #3f4a7c, #151833);
+}
+.token-avatar.tk-3 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #5c3f5e, #241426);
+}
+.token-avatar.tk-4 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #6b5a2f, #29200c);
+}
+.token-avatar.tk-5 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #2f6650, #0d261c);
+}
+.token-avatar.tk-6 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #226b66, #0a2826);
+}
+.token-avatar.tk-7 {
+  background:
+    radial-gradient(
+      120% 90% at 30% 18%,
+      rgb(255 255 255 / 0.2),
+      rgb(255 255 255 / 0) 46%
+    ),
+    linear-gradient(160deg, #4d3f6e, #1b142b);
+}
+
+/* ---------- Navigation ---------- */
+/* The current destination is held by a short arm tip cradling its glyph and a lit filament at the rail edge; the long
+   reach across the rail is gone (it crossed the brand space and read as a stray line). */
+.nav-arm-reach {
+  display: none;
+}
+.nav-arm {
+  color: rgb(var(--biolume-rgb) / 0.62);
+}
+.nav-arm path {
+  stroke-width: 1.25;
+}
+.nav-link.active .nav-glyph {
+  filter: drop-shadow(0 0 6px rgb(var(--biolume-rgb) / 0.55));
+}
+@media (min-width: 1024px) {
+  .header::before {
+    background:
+      radial-gradient(
+        140% 50% at 0% 0%,
+        rgb(var(--seaglass-rgb) / 0.06),
+        rgb(var(--seaglass-rgb) / 0) 60%
+      ),
+      linear-gradient(180deg, var(--glass-strong) 0%, var(--glass) 100%);
+  }
+  .main-nav::before {
+    inset-inline-start: -14px;
+    background: linear-gradient(
+      180deg,
+      rgb(var(--biolume-rgb) / 0),
+      rgb(var(--biolume-rgb) / 0.12) 12%,
+      rgb(var(--biolume-rgb) / 0.12) 88%,
+      rgb(var(--biolume-rgb) / 0)
+    );
+  }
+  .main-nav .nav-link {
+    border-radius: 12px;
+    transition:
+      color 160ms ease-out,
+      background-color 160ms ease-out;
+  }
+  .main-nav .nav-link:hover:not(.active) {
+    background: rgb(var(--seaglass-rgb) / 0.045);
+  }
+  .main-nav .nav-link.active {
+    background:
+      radial-gradient(
+        90% 140% at 0% 50%,
+        rgb(var(--biolume-rgb) / 0.14),
+        rgb(var(--biolume-rgb) / 0) 70%
+      ),
+      rgb(var(--seaglass-rgb) / 0.035);
+    box-shadow: inset 0 0 0 1px rgb(var(--seaglass-rgb) / 0.1);
+  }
+  [dir="rtl"] .main-nav .nav-link.active {
+    background:
+      radial-gradient(
+        90% 140% at 100% 50%,
+        rgb(var(--biolume-rgb) / 0.14),
+        rgb(var(--biolume-rgb) / 0) 70%
+      ),
+      rgb(var(--seaglass-rgb) / 0.035);
+  }
+  .main-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    inset-block: 10px;
+    inset-inline-start: -15px;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--biolume);
+    box-shadow:
+      0 0 10px rgb(var(--biolume-rgb) / 0.75),
+      0 0 22px rgb(var(--biolume-rgb) / 0.35);
+  }
+}
+
+/* ---------- Page bands: one window per destination, each with its own small atmosphere ---------- */
+.veined-app .page-heading,
+.veined-app[data-surface="bridge"] .intro {
+  border-color: var(--deep-edge);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--deep-light);
+}
+.veined-app .page-heading h1 {
+  letter-spacing: -0.035em;
+}
+.veined-app .page-heading .page-lede {
+  max-width: 52ch;
+}
+/* The band's own light: a hairline of surface light along the top edge. */
+.veined-app .page-heading::after,
+.veined-app[data-surface="bridge"] .intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+/* Points: luminous nodes drifting in the water column, joined by faint currents. */
+.veined-app[data-surface="points"] .page-heading::after {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='220' viewBox='0 0 520 220'%3E%3Cg fill='none' stroke='%237fe6d5' stroke-opacity='.22' stroke-width='1'%3E%3Cpath d='M40 170 C120 120 160 150 230 96 S360 40 470 70'/%3E%3Cpath d='M90 60 C170 90 250 60 300 120 S420 180 500 150' stroke-opacity='.12'/%3E%3C/g%3E%3Cg fill='%237fe6d5'%3E%3Ccircle cx='230' cy='96' r='3.2' fill-opacity='.85'/%3E%3Ccircle cx='470' cy='70' r='2.4' fill-opacity='.7'/%3E%3Ccircle cx='40' cy='170' r='2' fill-opacity='.5'/%3E%3Ccircle cx='300' cy='120' r='2.2' fill-opacity='.55'/%3E%3Ccircle cx='160' cy='138' r='1.6' fill-opacity='.5'/%3E%3Ccircle cx='380' cy='56' r='1.8' fill-opacity='.6'/%3E%3Ccircle cx='500' cy='150' r='1.6' fill-opacity='.45'/%3E%3C/g%3E%3Cg fill='%237fe6d5' fill-opacity='.18'%3E%3Ccircle cx='230' cy='96' r='14'/%3E%3Ccircle cx='470' cy='70' r='10'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(
+      40% 70% at 74% 40%,
+      rgb(var(--biolume-rgb) / 0.12),
+      rgb(var(--biolume-rgb) / 0) 70%
+    );
+  background-position:
+    right 4% center,
+    0 0;
+  background-size:
+    min(560px, 62%) auto,
+    100% 100%;
+}
+/* Networks: a sonar sweep — concentric rings around one origin, read as reach between networks. */
+.veined-app[data-surface="networks"] .page-heading::after {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23a3dccf'%3E%3Ccircle cx='210' cy='210' r='40' stroke-opacity='.3'/%3E%3Ccircle cx='210' cy='210' r='80' stroke-opacity='.22'/%3E%3Ccircle cx='210' cy='210' r='120' stroke-opacity='.15'/%3E%3Ccircle cx='210' cy='210' r='160' stroke-opacity='.1'/%3E%3Ccircle cx='210' cy='210' r='200' stroke-opacity='.06'/%3E%3Cpath d='M210 210 L380 120' stroke-opacity='.35'/%3E%3C/g%3E%3Cg fill='%237fe6d5'%3E%3Ccircle cx='210' cy='210' r='3.5'/%3E%3Ccircle cx='318' cy='153' r='2.6' fill-opacity='.8'/%3E%3Ccircle cx='128' cy='292' r='2.2' fill-opacity='.6'/%3E%3Ccircle cx='300' cy='320' r='1.8' fill-opacity='.5'/%3E%3Ccircle cx='96' cy='130' r='1.8' fill-opacity='.45'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(
+      36% 80% at 78% 50%,
+      rgb(var(--seaglass-rgb) / 0.08),
+      rgb(var(--seaglass-rgb) / 0) 70%
+    );
+  background-position:
+    right -40px center,
+    0 0;
+  background-size:
+    auto 150%,
+    100% 100%;
+}
+/* Activity: trails left in the water by past transfers. */
+.veined-app[data-surface="activity"] .page-heading::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='220' viewBox='0 0 600 220'%3E%3Cg fill='none' stroke='%237fe6d5' stroke-linecap='round'%3E%3Cpath d='M0 150 C100 150 140 90 240 90 S420 130 600 60' stroke-opacity='.28' stroke-dasharray='1 7' stroke-width='2'/%3E%3Cpath d='M0 180 C120 170 200 130 300 140 S480 170 600 120' stroke-opacity='.16' stroke-width='1'/%3E%3Cpath d='M60 60 C160 70 260 40 360 60 S520 100 600 90' stroke-opacity='.1' stroke-width='1'/%3E%3C/g%3E%3Cg fill='%237fe6d5'%3E%3Ccircle cx='240' cy='90' r='3' fill-opacity='.8'/%3E%3Ccircle cx='600' cy='60' r='3' fill-opacity='.7'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: right center;
+  background-size: min(620px, 70%) auto;
+}
+/* Help: calm, sunlit water — soft light patches, nothing moving. */
+.veined-app[data-surface="help"] .page-heading::after,
+.veined-app[data-surface="about"] .page-heading::after,
+.veined-app[data-surface="settings"] .page-heading::after {
+  background:
+    radial-gradient(
+      30% 60% at 70% 20%,
+      rgb(var(--foam-rgb) / 0.07),
+      rgb(var(--foam-rgb) / 0) 70%
+    ),
+    radial-gradient(
+      26% 50% at 86% 70%,
+      rgb(var(--seaglass-rgb) / 0.08),
+      rgb(var(--seaglass-rgb) / 0) 70%
+    );
+}
+/* Portfolio: depth contours, as on a bathymetric chart. */
+.veined-app[data-surface="portfolio"] .page-heading::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='240' viewBox='0 0 560 240'%3E%3Cg fill='none' stroke='%23a3dccf'%3E%3Cpath d='M20 200 C120 150 220 210 320 160 S500 90 560 120' stroke-opacity='.2'/%3E%3Cpath d='M40 170 C140 120 230 180 330 130 S490 60 560 88' stroke-opacity='.16'/%3E%3Cpath d='M60 140 C160 92 240 150 340 100 S480 34 560 58' stroke-opacity='.12'/%3E%3Cpath d='M80 110 C180 66 250 120 350 72 S470 10 560 28' stroke-opacity='.09'/%3E%3Cpath d='M100 80 C200 40 260 90 360 46 S460 -12 560 0' stroke-opacity='.06'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: right center;
+  background-size: min(620px, 72%) auto;
+}
+/* Bridge: two lights joined by one current. */
+.veined-app[data-surface="bridge"] .intro::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='200' viewBox='0 0 520 200'%3E%3Cpath d='M60 140 C180 140 220 60 340 60 S440 90 480 70' fill='none' stroke='%237fe6d5' stroke-opacity='.3' stroke-width='1.2' stroke-dasharray='2 6' stroke-linecap='round'/%3E%3Ccircle cx='60' cy='140' r='5' fill='%237fe6d5' fill-opacity='.55'/%3E%3Ccircle cx='480' cy='70' r='5' fill='%237fe6d5' fill-opacity='.55'/%3E%3Ccircle cx='60' cy='140' r='18' fill='%237fe6d5' fill-opacity='.08'/%3E%3Ccircle cx='480' cy='70' r='18' fill='%237fe6d5' fill-opacity='.08'/%3E%3C/svg%3E");
+  background-position: right 5% center;
+  background-size: min(540px, 60%) auto;
+}
+[dir="rtl"] .veined-app .page-heading::after,
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro::after {
+  scale: -1 1;
+}
+@media (max-width: 700px) {
+  .veined-app .page-heading::after,
+  .veined-app[data-surface="bridge"] .intro::after {
+    background-position: right -60px top 10%;
+    opacity: 0.6;
+  }
+  .veined-app .page-heading,
+  .veined-app[data-surface="bridge"] .intro {
+    border-radius: 20px;
+  }
+}
+
+/* ---------- Living film framing per destination ---------- */
+/* The same persistent film, framed for each page: the animal moves to the edge where forms live and comes forward
+   where the page is calm. A transform transition (finite) carries the camera between scenes. */
+.abyss-film,
+.abyss-still {
+  transition:
+    opacity 700ms var(--ease-out, ease-out),
+    transform 1400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform-origin: 70% 50%;
+}
+@media (min-aspect-ratio: 1/1) {
+  .abyss[data-scene="swap"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(6%, 2%, 0) scale(1.08);
+  }
+  .abyss[data-scene="bridge"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(9%, 6%, 0) scale(1.14);
+  }
+  .abyss[data-scene="portfolio"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(12%, -4%, 0) scale(1.18);
+  }
+  .abyss[data-scene="points"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(4%, -2%, 0) scale(1.06);
+  }
+  .abyss[data-scene="networks"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(10%, 0, 0) scale(1.12);
+  }
+  .abyss[data-scene="activity"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(14%, 4%, 0) scale(1.2);
+  }
+  .abyss[data-scene="help"] :is(.abyss-film, .abyss-still) {
+    transform: translate3d(16%, -6%, 0) scale(1.16);
+  }
+}
+/* Depth: a soft vignette and a darker floor keep every page's lower half calm and readable. */
+.abyss-veil {
+  background:
+    radial-gradient(
+      120% 90% at 70% 40%,
+      rgb(var(--abyss-rgb) / 0) 40%,
+      rgb(var(--abyss-rgb) / 0.55) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--abyss-rgb) / 0.45) 0,
+      rgb(var(--abyss-rgb) / 0) 16%,
+      rgb(var(--abyss-rgb) / 0) 58%,
+      rgb(var(--abyss-rgb) / 0.7) 100%
+    );
+}
+.abyss[data-scene="portfolio"] .abyss-veil,
+.abyss[data-scene="activity"] .abyss-veil,
+.abyss[data-scene="networks"] .abyss-veil {
+  background:
+    radial-gradient(
+      120% 90% at 76% 36%,
+      rgb(var(--abyss-rgb) / 0.1) 30%,
+      rgb(var(--abyss-rgb) / 0.68) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--abyss-rgb) / 0.45) 0,
+      rgb(var(--abyss-rgb) / 0.1) 18%,
+      rgb(var(--abyss-rgb) / 0.2) 58%,
+      rgb(var(--abyss-rgb) / 0.82) 100%
+    );
+}
+html[data-theme="light"] .abyss-veil {
+  background: none;
+}
+/* Phones: one framing (the portrait crop already centres the animal). */
+@media (max-aspect-ratio: 1/1) {
+  .abyss :is(.abyss-film, .abyss-still) {
+    transform: none;
+  }
+}
+
+/* ---------- Overview ---------- */
+.veined-app .overview-welcome {
+  border-radius: 28px;
+  border-color: var(--deep-edge);
+  box-shadow: var(--deep-light);
+}
+.veined-app .overview-welcome h1 {
+  font-size: clamp(36px, 4vw, 60px);
+  letter-spacing: -0.05em;
+}
+.veined-app .overview-status {
+  border-radius: 14px;
+  border-color: rgb(var(--amber-glow-rgb) / 0.2);
+  background: #0f1712;
+  background: color-mix(in srgb, var(--surface) 86%, #3a2a0c);
+}
+html[data-theme="light"] .veined-app .overview-status {
+  background: #fbf6ea;
+}
+.veined-app .overview-tool {
+  border-radius: 22px;
+  min-height: 0;
+  padding: 22px 22px 20px;
+  transition:
+    border-color 180ms ease-out,
+    transform 180ms ease-out;
+}
+.veined-app .overview-tool:hover {
+  border-color: var(--deep-edge-strong);
+  transform: translateY(-2px);
+}
+.veined-app .overview-tool h2 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.veined-app .overview-tool p {
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.veined-app .overview-tool-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      100% 100% at 30% 20%,
+      rgb(var(--biolume-rgb) / 0.2),
+      rgb(var(--biolume-rgb) / 0.04) 70%
+    ),
+    var(--surface-2);
+  border: 1px solid rgb(var(--biolume-rgb) / 0.2);
+}
+.veined-app .overview-explore small {
+  color: var(--faint);
+}
+
+/* ---------- Swap ---------- */
+.veined-app .swap-card {
+  border-radius: 28px;
+  border-top-color: rgb(var(--seaglass-rgb) / 0.22);
+}
+.veined-app .swap-card-top h2 {
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+.veined-app .trade-amount-box {
+  border-radius: 20px;
+  background: var(--deep-inset);
+}
+.veined-app .trade-amount-box.is-editable:focus-within {
+  border-color: rgb(var(--seaglass-rgb) / 0.32);
+  box-shadow: 0 0 0 3px rgb(var(--seaglass-rgb) / 0.06);
+}
+.veined-app .token-select-trigger {
+  gap: 8px;
+  padding-inline: 6px 12px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: rgb(var(--foam-rgb) / 0.05);
+  border: 1px solid rgb(var(--foam-rgb) / 0.08);
+}
+.veined-app .token-select-trigger:hover:not(:disabled) {
+  border-color: var(--deep-edge-strong);
+  background: rgb(var(--seaglass-rgb) / 0.08);
+}
+.veined-app .token-select-trigger.is-empty {
+  padding-inline: 16px 12px;
+  background: linear-gradient(180deg, #b8e8dc 0%, #98d6c7 100%);
+  border-color: transparent;
+  color: #06201b;
+}
+.veined-app .token-select-trigger.is-empty strong {
+  color: #06201b;
+}
+html[data-theme="light"] .veined-app .token-select-trigger.is-empty {
+  background: linear-gradient(180deg, #227a6e 0%, #1b6a5f 100%);
+  color: #fff;
+}
+html[data-theme="light"] .veined-app .token-select-trigger.is-empty strong {
+  color: #fff;
+}
+.veined-app .held-chips button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 4px 10px;
+}
+/* The read-only address waits behind one quiet line until it is wanted. */
+.veined-app .swap-read-disclosure {
+  border: 0;
+  background: transparent;
+}
+.veined-app .swap-read-disclosure > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 560;
+  color: var(--muted);
+  list-style: none;
+}
+.veined-app .swap-read-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.veined-app .swap-read-disclosure > summary::after {
+  content: none;
+}
+.veined-app .swap-read-disclosure > summary:hover {
+  color: var(--teal);
+}
+.veined-app .swap-read-disclosure[open] > summary {
+  color: var(--text);
+}
+.veined-app .swap-read-disclosure .swap-read-address {
+  margin-top: 6px;
+}
+.veined-app .trade-settings-disclosure > summary {
+  font-size: 13px;
+}
+.veined-app .swap-facts {
+  border-radius: 16px;
+  background: var(--deep-inset);
+}
+.veined-app .swap-facts dt {
+  color: var(--faint);
+}
+.veined-app .route-choice {
+  border-radius: 16px;
+}
+.veined-app .route-choice[aria-pressed="true"] {
+  border-color: rgb(var(--seaglass-rgb) / 0.5);
+  background:
+    radial-gradient(
+      80% 120% at 0% 0%,
+      rgb(var(--biolume-rgb) / 0.1),
+      rgb(var(--biolume-rgb) / 0) 70%
+    ),
+    var(--surface-2);
+}
+.veined-app .execution-status {
+  justify-content: center;
+  border-radius: 14px;
+  background: rgb(var(--amber-glow-rgb) / 0.06);
+  border: 1px solid rgb(var(--amber-glow-rgb) / 0.18);
+  color: var(--amber);
+  font-size: 12.5px;
+}
+.veined-app .trade-hint {
+  text-align: center;
+  color: var(--faint);
+  font-size: 12.5px;
+}
+
+/* ---------- Token picker ---------- */
+.token-picker {
+  border-radius: 26px;
+  border-color: var(--deep-edge);
+  background: var(--deep-card);
+  box-shadow:
+    var(--deep-shadow),
+    0 40px 120px -30px rgb(0 0 0 / 0.85);
+}
+.token-picker .picker-search {
+  border-radius: 16px;
+  background: var(--deep-inset);
+}
+.token-picker .picker-group {
+  margin-top: 14px;
+  color: var(--faint);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.token-picker .token-option {
+  gap: 12px;
+  min-height: 60px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  align-items: center;
+}
+.token-picker .token-option:hover:not(:disabled),
+.token-picker .token-option.active {
+  background: rgb(var(--seaglass-rgb) / 0.06);
+}
+.token-picker .token-option[aria-selected="true"] {
+  box-shadow: inset 0 0 0 1px rgb(var(--seaglass-rgb) / 0.3);
+}
+.token-picker .token-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+.token-picker .token-title strong {
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.token-picker .token-meta small {
+  color: var(--faint);
+}
+.token-picker .token-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+}
+.token-picker .token-badges .level-badge {
+  margin: 0;
+}
+.token-picker .import-head {
+  align-items: center;
+}
+
+/* ---------- Bridge ---------- */
+/* Delivery, fee and the breakdown read as one receipt. */
+.veined-app .bridge-receipt {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  background: var(--deep-inset);
+  overflow: hidden;
+}
+.veined-app .bridge-receipt > * {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.veined-app .bridge-receipt > * + * {
+  border-top: 1px solid var(--line-soft);
+}
+.veined-app .bridge-receipt .bridge-receive {
+  padding-block: 4px;
+}
+/* The fee total sits on the receipt's inline padding like the delivery row and the breakdown summary. */
+.veined-app .bridge-receipt .bridge-fee-total {
+  padding-inline: 14px;
+}
+.veined-app .bridge-receipt details.fees > summary {
+  padding-inline: 16px;
+}
+/* Route, health and "you stay in control" form one quiet column. */
+.veined-app .route-side {
+  gap: 0;
+}
+.veined-app .route-side > .card.route-card {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+.veined-app .route-side > .card.health-card {
+  margin-top: -1px;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+.veined-app .route-side > .safety-learn {
+  margin-top: 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  background: rgb(var(--abyss-rgb) / 0.72);
+}
+.veined-app .route-side > .safety-learn > summary {
+  padding-inline: 14px;
+  font-size: 12.5px;
+}
+.veined-app .route-card .route-line {
+  border-radius: 14px;
+  background: var(--deep-inset);
+}
+.veined-app .amount-help > summary {
+  font-size: 12px;
+  color: var(--faint);
+}
+.veined-app .under-button {
+  color: var(--amber);
+  opacity: 0.9;
+}
+
+/* ---------- Portfolio ---------- */
+.veined-app .portfolio-summary {
+  border-radius: 26px;
+  background:
+    radial-gradient(
+      70% 120% at 100% 0%,
+      rgb(var(--biolume-rgb) / 0.08),
+      rgb(var(--biolume-rgb) / 0) 60%
+    ),
+    var(--deep-card);
+  background-color: var(--surface);
+}
+.veined-app .portfolio-summary .summary-value {
+  font-size: clamp(36px, 4.2vw, 54px);
+  letter-spacing: -0.045em;
+  font-weight: 640;
+}
+.veined-app .portfolio-summary .alloc-bar {
+  height: 6px;
+  border-radius: 6px;
+  gap: 2px;
+}
+/* The unpriced count is one token: it never breaks inside a word or shrinks below its text. */
+.veined-app .portfolio-summary .summary-note .pill {
+  flex: none;
+  white-space: nowrap;
+}
+/* Network atlas: every network with value, as a grid of marks (the legend grows into the map). */
+.veined-app .alloc-legend.chain-atlas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.veined-app .chain-atlas > li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgb(var(--foam-rgb) / 0.025);
+  border: 1px solid rgb(var(--foam-rgb) / 0.04);
+  font-size: 12.5px;
+  color: var(--muted);
+  min-width: 0;
+}
+.veined-app .chain-atlas > li > .atlas-mark {
+  grid-row: span 2;
+}
+.veined-app .chain-atlas > li > button.atlas-hit {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  border-radius: inherit;
+}
+.veined-app .chain-atlas > li {
+  position: relative;
+}
+.veined-app .chain-atlas > li:has(> button.atlas-hit:hover) {
+  border-color: var(--deep-edge-strong);
+  background: rgb(var(--seaglass-rgb) / 0.05);
+}
+.veined-app .chain-atlas > li > button.atlas-hit:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.veined-app .chain-atlas .atlas-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.veined-app .chain-atlas .atlas-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--text);
+  font-weight: 640;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.veined-app .chain-atlas .atlas-value strong {
+  color: var(--faint);
+  font-weight: 560;
+  font-size: 11.5px;
+}
+.veined-app .chain-atlas > li.atlas-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--line);
+}
+.veined-app .chain-atlas > li.atlas-more button {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--teal);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.veined-app .chain-atlas .legend-dot {
+  display: none;
+}
+.veined-app .summary-facts {
+  border-radius: 18px;
+  background: var(--deep-inset);
+}
+.veined-app .summary-facts dd {
+  font-variant-numeric: tabular-nums;
+}
+/* Asset table: marks with network badges, aligned figures, quiet unknowns. */
+.veined-app .portfolio-assets-card .asset-row {
+  border-radius: 14px;
+  transition: background-color 140ms ease-out;
+}
+.veined-app .portfolio-assets-card .asset-row:hover {
+  background: rgb(var(--seaglass-rgb) / 0.035);
+}
+.veined-app .asset-row .asset-mark {
+  display: inline-grid;
+  place-items: center;
+}
+.veined-app .asset-row :is(.asset-amount, .asset-price, .asset-value) {
+  font-variant-numeric: tabular-nums;
+}
+.veined-app .asset-row .asset-value .is-unknown {
+  color: var(--faint);
+  font-weight: 560;
+}
+.veined-app .asset-row .asset-actions .tide {
+  white-space: normal;
+}
+.veined-app .portfolio-toggles label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: rgb(var(--foam-rgb) / 0.03);
+  border: 1px solid var(--line-soft);
+  font-size: 12.5px;
+}
+.veined-app .portfolio-toggles label:has(input:checked) {
+  border-color: var(--accent-line);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+.veined-app .attention-list li {
+  align-items: center;
+}
+/* DeFi: sources as cards (wallet first), positions grouped by protocol. */
+.veined-app .defi-allocation {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 8px;
+}
+.veined-app .defi-allocation > h3 {
+  grid-column: 1 / -1;
+}
+.veined-app .defi-allocation > :is(button, .defi-source) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: center;
+  justify-items: start;
+  min-height: 58px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  background: rgb(var(--foam-rgb) / 0.025);
+  text-align: start;
+}
+.veined-app .defi-allocation > :is(button, .defi-source) > .tmark {
+  grid-row: span 2;
+}
+.veined-app .defi-allocation > :is(button, .defi-source) > span {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 560;
+}
+.veined-app .defi-allocation > :is(button, .defi-source) > bdi {
+  font-size: 15px;
+  font-weight: 660;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.veined-app .defi-allocation > :is(button, .defi-source) > :is(span, bdi) {
+  justify-self: start;
+  margin: 0;
+  text-align: start;
+}
+.veined-app .defi-allocation > button:hover {
+  border-color: var(--deep-edge-strong);
+}
+.veined-app .defi-protocol-group {
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  background: rgb(var(--foam-rgb) / 0.018);
+  overflow: hidden;
+}
+.veined-app .defi-protocol-group + .defi-protocol-group {
+  margin-top: 10px;
+}
+.veined-app .defi-protocol-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.veined-app .defi-protocol-head h4 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.veined-app .defi-protocol-head .defi-protocol-total {
+  margin-inline-start: auto;
+  font-weight: 660;
+  font-variant-numeric: tabular-nums;
+}
+.veined-app .defi-protocol-group .defi-position-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.veined-app .defi-protocol-group .defi-position-card + .defi-position-card {
+  border-top: 1px solid var(--line-soft);
+}
+.veined-app .defi-position-header .tide {
+  margin-inline-start: 2px;
+}
+.veined-app .portfolio-first-scan {
+  border-radius: 26px;
+}
+/* "Find assets across networks": a sonar console — rings behind the title, the wallet line in one inset well. */
+.veined-app .portfolio-connect {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.veined-app .portfolio-connect::before {
+  content: "";
+  position: absolute;
+  inset: -40% -8% auto auto;
+  width: 420px;
+  height: 420px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23a3dccf'%3E%3Ccircle cx='210' cy='210' r='50' stroke-opacity='.22'/%3E%3Ccircle cx='210' cy='210' r='100' stroke-opacity='.15'/%3E%3Ccircle cx='210' cy='210' r='150' stroke-opacity='.09'/%3E%3Ccircle cx='210' cy='210' r='200' stroke-opacity='.05'/%3E%3C/g%3E%3Ccircle cx='210' cy='210' r='3' fill='%237fe6d5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+[dir="rtl"] .veined-app .portfolio-connect::before {
+  inset: -40% auto auto -8%;
+}
+.veined-app .portfolio-connect .scan-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  letter-spacing: -0.015em;
+}
+.veined-app .portfolio-connect .scan-head h2::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 10px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237fe6d5' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='1.6' fill='%237fe6d5' stroke='none'/%3E%3Cpath d='M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14'/%3E%3C/svg%3E")
+      center / 18px no-repeat,
+    rgb(var(--biolume-rgb) / 0.1);
+  box-shadow: inset 0 0 0 1px rgb(var(--biolume-rgb) / 0.2);
+}
+.veined-app .portfolio-connect .scan-head p {
+  max-width: 52ch;
+  color: var(--faint);
+  font-size: 12.5px;
+}
+.veined-app .portfolio-connect .scan-primary {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--deep-inset);
+  border: 1px solid var(--line-soft);
+}
+html[data-theme="light"] .veined-app .portfolio-connect::before {
+  opacity: 0.45;
+  filter: brightness(0.5);
+}
+/* Empty states read as a quiet sonar contact, not a grey box. */
+.veined-app .empty-icon {
+  border-radius: 16px;
+  color: var(--biolume);
+  background:
+    radial-gradient(
+      100% 100% at 30% 20%,
+      rgb(var(--biolume-rgb) / 0.18),
+      rgb(var(--biolume-rgb) / 0.03) 70%
+    ),
+    var(--surface-2);
+  border-color: rgb(var(--biolume-rgb) / 0.22);
+  box-shadow: 0 0 24px -6px rgb(var(--biolume-rgb) / 0.35);
+}
+.veined-app .empty-facts li {
+  border-radius: 12px;
+  background: rgb(var(--foam-rgb) / 0.03);
+}
+
+/* ---------- Help, Points, Activity, Networks ---------- */
+.veined-app .help-steps {
+  border-radius: 24px;
+}
+.veined-app .help-steps .step-icon {
+  background:
+    radial-gradient(
+      100% 100% at 30% 20%,
+      rgb(var(--biolume-rgb) / 0.18),
+      rgb(var(--biolume-rgb) / 0.03) 70%
+    ),
+    var(--surface-2);
+  border-color: rgb(var(--biolume-rgb) / 0.2);
+  color: var(--biolume);
+}
+.veined-app .help-topics a {
+  border-radius: 16px;
+  background: var(--deep-card);
+  border-color: var(--deep-edge);
+}
+.veined-app .help-topics a:hover {
+  border-color: var(--deep-edge-strong);
+}
+.veined-app .help-topics a .icon:first-child {
+  color: var(--biolume);
+}
+.veined-app .faq details {
+  border-color: var(--line-soft);
+}
+.veined-app .catalog-caps .pill {
+  min-height: 22px;
+}
+
+/* ---------- Light theme ---------- */
+html[data-theme="light"] .veined-app :is(.trade-amount-box, .swap-facts) {
+  background: var(--inset);
+}
+html[data-theme="light"] .tmark-face.is-logo {
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(16 34 41 / 0.08);
+}
+html[data-theme="light"] .veined-app .chain-atlas > li {
+  background: #fff;
+  border-color: var(--line-soft);
+}
+html[data-theme="light"] .veined-app .page-heading::after,
+html[data-theme="light"] .veined-app[data-surface="bridge"] .intro::after {
+  opacity: 0.55;
+  filter: saturate(0.4) brightness(0.55);
+}
+
+/* ---------- Accessibility modes ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .abyss-film,
+  .abyss-still,
+  .veined-app .overview-tool {
+    transition: none;
+  }
+  .veined-app .overview-tool:hover {
+    transform: none;
+  }
+}
+@media (forced-colors: active) {
+  .veined-app .page-heading::after,
+  .veined-app[data-surface="bridge"] .intro::after,
+  .veined-app .main-nav .nav-link.active::after {
+    display: none;
+  }
+  .tmark-face.is-medallion,
+  .tide {
+    forced-color-adjust: auto;
+    border: 1px solid CanvasText;
+  }
+}
+@media print {
+  .veined-app .page-heading::after {
+    display: none;
+  }
+}

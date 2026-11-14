@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rcId": {
+      "type": "string",
+      "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+    },
+    "sourceCheckpoint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceManifest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "buildHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protectedBaseline": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "environment": {
+      "type": "string",
+      "const": "production"
+    },
+    "domain": {
+      "type": "string",
+      "const": "veined.xyz"
+    },
+    "externalAuditHashes": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "legalApprovalReferences": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 300
+      }
+    },
+    "ownerApproval": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 300
+        },
+        "signerKeyId": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 100
+        },
+        "signature": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{128}$"
+        }
+      },
+      "required": [
+        "reference",
+        "signerKeyId",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "surface": {
+      "type": "string",
+      "enum": [
+        "G7",
+        "SWAP",
+        "BRIDGE"
+      ]
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "revocation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 100
+        },
+        "revoked": {
+          "type": "boolean",
+          "const": false
+        }
+      },
+      "required": [
+        "id",
+        "revoked"
+      ],
+      "additionalProperties": false
+    },
+    "feeBps": {
+      "type": "number",
+      "const": 0
+    },
+    "globalKill": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "required": [
+    "rcId",
+    "sourceCheckpoint",
+    "sourceManifest",
+    "buildHash",
+    "protectedBaseline",
+    "schemaVersion",
+    "environment",
+    "domain",
+    "externalAuditHashes",
+    "legalApprovalReferences",
+    "ownerApproval",
+    "surface",
+    "issuedAt",
+    "expiresAt",
+    "revocation",
+    "feeBps",
+    "globalKill"
+  ],
+  "additionalProperties": false
+}

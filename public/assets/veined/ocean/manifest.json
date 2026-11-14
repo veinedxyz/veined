@@ -1,0 +1,573 @@
+{
+ "version": "ocean-1",
+ "origin": "Owner-supplied cinematic artwork (D:/Projeler/veined/design-assets/octopus-ocean-v1), processed by the VEINED ocean studio. Originals are unchanged; every runtime file here is a derivative.",
+ "operations": {
+  "plates": "WebP re-encode at 1672 (native) and 960 px wide; phone crop 760x941 at native resolution.",
+  "clean plates": "for scenes with a rig, the arm's swept area is removed and refilled by multi-scale diffusion with matched grain (rig.py).",
+  "rigs": "hand-traced centreline masks split into overlapping photographic segments (rig.py, rigs.py); rest pose recomposes the original exactly.",
+  "light": "monotonic daylight regrade (light.py), never an inversion.",
+  "networks": "activity plate without its arm + high-pass seabed node lights of 05-points, screen-blended below y=430."
+ },
+ "ownerSources": {
+  "01-hero.png": "92f1aed239d012d6a5b2cd5c3177d7edb14073cbf6c3a440ecf031150a75cb5c",
+  "02-swap.png": "d60cee776f6418e2df033426ec5fed7bd2b13fb75f9fd6f232e9f61a43397ace",
+  "03-bridge.png": "742be8c6a5d215027f044a24f0fa97862395a43b1605894ca3173ab7707f6e4e",
+  "04-portfolio.png": "67c3645d812e2ab5028f9112e65f5f82dba351ef8cf66b625d3cebbda59184e4",
+  "05-points.png": "44198449379f7774f7ce4b913bcf9191d5ea659134aaa3e6f77c0c476a8aa946",
+  "06-activity.png": "9e217f10f78dbc5cd9e242e01ca93d3da6d173ef15b938467e5fce1f382d25e2",
+  "07-help.png": "d4179686e14d59c7fb3dfacd124003053ff366944d7a3ab94dd161b44e33cfe0"
+ },
+ "sceneSource": {
+  "hero": "01-hero.png",
+  "swap": "02-swap.png",
+  "bridge": "03-bridge.png",
+  "portfolio": "04-portfolio.png",
+  "points": "05-points.png",
+  "activity": "06-activity.png",
+  "help": "07-help.png",
+  "networks": "06-activity.png + 05-points.png"
+ },
+ "frame": {
+  "hero": {
+   "px": 1180,
+   "fx": 0.56,
+   "fy": 0.42,
+   "px0": 800
+  },
+  "swap": {
+   "px": 540,
+   "fx": 0.5,
+   "fy": 0.55,
+   "px0": 160
+  },
+  "bridge": {
+   "px": 560,
+   "fx": 0.5,
+   "fy": 0.5,
+   "px0": 180
+  },
+  "portfolio": {
+   "px": 1100,
+   "fx": 0.55,
+   "fy": 0.4,
+   "px0": 720
+  },
+  "points": {
+   "px": 1220,
+   "fx": 0.55,
+   "fy": 0.55,
+   "px0": 840
+  },
+  "activity": {
+   "px": 700,
+   "fx": 0.5,
+   "fy": 0.35,
+   "px0": 320
+  },
+  "networks": {
+   "px": 1000,
+   "fx": 0.5,
+   "fy": 0.5,
+   "px0": 620
+  },
+  "help": {
+   "px": 1250,
+   "fx": 0.56,
+   "fy": 0.45,
+   "px0": 870
+  }
+ },
+ "studio": {
+  "build.py": "4b5f37e85a0459fc71e9df76ee9a34ea1fb3bbba47cab231f31504d404afa16a",
+  "gen_code.py": "79ed83c4c6037080a595398f1d182b054c36c09b75e0d441cb4058e3dc6be13a",
+  "grid.py": "ae5aed4eb27c758854147e7917ea959cc5d0256a8d0a481b928aa36f046d51ab",
+  "inspect_rig.py": "61e566b8c21a0e585204c11b04c85c75ef72b751bc865eb4666d6f2660e01406",
+  "light.py": "3286c131c2569b78d7a77c155bb810ffd3ba9c0c7eb406683fe58dd5ab55096c",
+  "motion.py": "8067e08d4906c6e6289d4a4d88461bb4d3c249b6bd0780c89926e56c9ff786c9",
+  "preview_motion.py": "6121017c640220ea7246f9e7d10b410a6a7c35395f441deee4eddb246749ef97",
+  "rig.py": "0d7dfac2e83fadcc7476940b0ead49aa1bbc91c0aed14ce208906a5aef1310f5",
+  "rigs.py": "04620935eb8649600adbf33d0a7f58b25e625d9ccaaaa5a301df162e7868f65e"
+ },
+ "files": {
+  "rig-hero-dark.webp": {
+   "sha256": "cc8f7060453dd1e347226b01317f02fbdaec870ca4fca8e653d30561e1152b61",
+   "bytes": 14734,
+   "size": [
+    790,
+    169
+   ]
+  },
+  "rig-hero-light.webp": {
+   "sha256": "8dc7df8685652edbe659308d7fe9383c34796aa5756140e0f2c18092ffd2a121",
+   "bytes": 13718,
+   "size": [
+    790,
+    169
+   ]
+  },
+  "rig-swap-dark.webp": {
+   "sha256": "ccdaead397a1571c0a0b691f338f38107111adfc6b5285078c27bf72ff3e30ef",
+   "bytes": 17242,
+   "size": [
+    950,
+    121
+   ]
+  },
+  "rig-swap-light.webp": {
+   "sha256": "b423a6df07e0480184d1a5634262984c5fd35587c64a45121d5df76aef07f86b",
+   "bytes": 15850,
+   "size": [
+    950,
+    121
+   ]
+  },
+  "rig-bridge-dark.webp": {
+   "sha256": "5c871c02086cb2b0b8b6bcf85870cf6bee16b360442dd8e9f7eda87793ce9c0d",
+   "bytes": 32492,
+   "size": [
+    994,
+    285
+   ]
+  },
+  "rig-bridge-light.webp": {
+   "sha256": "3902d5a862d803d6758aedbb3524b0351a2d95e536a7e3ef11b6d20a08fb1cc9",
+   "bytes": 24544,
+   "size": [
+    994,
+    285
+   ]
+  },
+  "rig-portfolio-dark.webp": {
+   "sha256": "72bc093211580e4a77af204758dee4739d3bb763e372880bce7abec9811a1439",
+   "bytes": 14442,
+   "size": [
+    853,
+    123
+   ]
+  },
+  "rig-portfolio-light.webp": {
+   "sha256": "91150d0cc716666ae4c4ff767ad9594a6510768b094f573957feb50128985f18",
+   "bytes": 12220,
+   "size": [
+    853,
+    123
+   ]
+  },
+  "rig-points-dark.webp": {
+   "sha256": "d6cc65edf0cce18ffea14c827c951a8d51d859408582219906d29e0eaa82d48e",
+   "bytes": 17646,
+   "size": [
+    716,
+    126
+   ]
+  },
+  "rig-points-light.webp": {
+   "sha256": "8696f0d0ce4a8e461242dd3e799caac3472a9859e68b60cef0ea291a98666bff",
+   "bytes": 14538,
+   "size": [
+    716,
+    126
+   ]
+  },
+  "rig-activity-dark.webp": {
+   "sha256": "b84bf4967c98fc4312baa0d2b68cd78f0949b7503e3fb2421f59dd28cc432ec2",
+   "bytes": 19650,
+   "size": [
+    1012,
+    124
+   ]
+  },
+  "rig-activity-light.webp": {
+   "sha256": "ba55a3a9e7ebdcf61c7a5a3b78c78caf5a459029a2c7bedf394885538ebf1c1e",
+   "bytes": 17632,
+   "size": [
+    1012,
+    124
+   ]
+  },
+  "hero-l1672-dark.webp": {
+   "sha256": "ea9018081a51b1eb29f5013e22de9b69fd3dfe9adaed657fb05279432504e050",
+   "bytes": 135472,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "hero-l960-dark.webp": {
+   "sha256": "23de3964d3fd32805153be1473721f6b6d58ac0a8c2e83cab4647840fa378787",
+   "bytes": 47196,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "hero-p760-dark.webp": {
+   "sha256": "f4b253dc17d151aa34db159e7b2db2c6d7e315e4836ed39818f0090ee8d3a7a0",
+   "bytes": 87520,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "hero-l1672-light.webp": {
+   "sha256": "e21818b5885fcfc02e3a73f7fc5418b6d2cc55ecbca6d1fd0a292b5810d3f6e2",
+   "bytes": 89194,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "hero-l960-light.webp": {
+   "sha256": "755657da180bbd1ada548bf8d79e15796d997083ac6c82b2266fd041f1a93051",
+   "bytes": 35288,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "hero-p760-light.webp": {
+   "sha256": "3049a26e56c1a42d86d37dde1833c09f182fbd093b4f838b713c3c7847c63377",
+   "bytes": 51442,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "swap-l1672-dark.webp": {
+   "sha256": "df0e9c27ebea18579521a7253452a1e76756069ecf48105b1b05320fd6238369",
+   "bytes": 107898,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "swap-l960-dark.webp": {
+   "sha256": "2d5a6560e20e4c33e42a0ff5f2e92582fd4d974475dfc8a4df0c69ffb49f8d90",
+   "bytes": 38970,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "swap-p760-dark.webp": {
+   "sha256": "ddec3dcfc2c66042a2009cc5a49c01549c1d22779e22edfe1d0383d77952a153",
+   "bytes": 31914,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "swap-l1672-light.webp": {
+   "sha256": "692b964cd4dbd5926559ac5e4f71fdcdff08e8a6c7246e493f515485c742f1a5",
+   "bytes": 75328,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "swap-l960-light.webp": {
+   "sha256": "c83d70fd70eeee32097a1dae50512f524458107d87f416b7322240a470767c87",
+   "bytes": 30828,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "swap-p760-light.webp": {
+   "sha256": "cb09a8457b387d7b1f08645af514cc1fd69fb0512502982531792676b715e979",
+   "bytes": 22856,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "bridge-l1672-dark.webp": {
+   "sha256": "0ad4a1d285d471a84ef19432e5c354c1e5cbbdf0e74ee9fec97f972aa5388333",
+   "bytes": 119010,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "bridge-l960-dark.webp": {
+   "sha256": "75aa0ab2436d1bf8476bc5b3a311a59cedd759871663cd09fb327961a3a445eb",
+   "bytes": 42028,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "bridge-p760-dark.webp": {
+   "sha256": "6c5af7e1584e865fbe3da4644a816421b115806de9f60a5fc9f65a8484a482f7",
+   "bytes": 36716,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "bridge-l1672-light.webp": {
+   "sha256": "c4d6a8569eb88fbc4ef5cb2f8531d3e6068fe59c34f0bbadb40844ec4245e4bd",
+   "bytes": 80140,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "bridge-l960-light.webp": {
+   "sha256": "43a5545a9ff4fca373c564869cf2ea8e90f9f587391f138d9cdf3eeb81bb6008",
+   "bytes": 32808,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "bridge-p760-light.webp": {
+   "sha256": "65d982f6d6cd186de012433284c90384a639be12a053778049a7af04258dd128",
+   "bytes": 22166,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "portfolio-l1672-dark.webp": {
+   "sha256": "d8e22f9b773779018af58fa361b82aa664923f611cf6d6c02d1fd77897984a9f",
+   "bytes": 131804,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "portfolio-l960-dark.webp": {
+   "sha256": "37becc85d10c43e703faafed48d82fbebdd3c14fa6dd534295a0788f1be479f6",
+   "bytes": 47086,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "portfolio-p760-dark.webp": {
+   "sha256": "a05d4913a4acc65f409725ca52210afbc23af043bbc5cd805c863ed4af3ad0ed",
+   "bytes": 65530,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "portfolio-l1672-light.webp": {
+   "sha256": "64fadf6fb78c6831e6f8f208e2ab2211ac4fea66852d7be8d49518cdc5ef90c6",
+   "bytes": 92426,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "portfolio-l960-light.webp": {
+   "sha256": "127c3f6a096fe6848934ca573bfba475584bcb300a89ccedf9213b81c232327f",
+   "bytes": 37208,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "portfolio-p760-light.webp": {
+   "sha256": "e0e3bd0b66ebc5cf045bf9af0d0c2119a5bea2b374459c8166b31a470e2c5b1c",
+   "bytes": 38280,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "points-l1672-dark.webp": {
+   "sha256": "45dcf4eb688be82e54f91e762f88aa36c0a36efd3dc90eba627ab35fe84be726",
+   "bytes": 133774,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "points-l960-dark.webp": {
+   "sha256": "a95b16594fff1b16e7c48fec9aca33ab69b2b07c5850e593bc3a88eef83f1c4c",
+   "bytes": 47822,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "points-p760-dark.webp": {
+   "sha256": "c2203be8410b31b51c5ef21faebe3e589314b5c32cbc5e28b312d8009ad06f1c",
+   "bytes": 75430,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "points-l1672-light.webp": {
+   "sha256": "7a17fe980714337d4289aaaeb08e98cca8486dc32dcf2b98fcd50246ede2cbe3",
+   "bytes": 90268,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "points-l960-light.webp": {
+   "sha256": "6f880a1f99e3cb2a663c842f3e9984b995631fbb3ce83df7461dec96ec7a782b",
+   "bytes": 37234,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "points-p760-light.webp": {
+   "sha256": "970263bc0301927eeffc61259f4cae46202635ffdaf263fbf97a50ddc63f42be",
+   "bytes": 40954,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "activity-l1672-dark.webp": {
+   "sha256": "68cca9c51c5f04ba3c337ddd5bac6bc5c709a5f4d7881c0ab6d471ad780eede9",
+   "bytes": 102804,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "activity-l960-dark.webp": {
+   "sha256": "d3d5c6606f71e0bf8097c82fd036eedbb9040832824496c5c6da96fbe75f0024",
+   "bytes": 37212,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "activity-p760-dark.webp": {
+   "sha256": "dd61365363c1f9be4e992e5631746b5b5818a29c8d08a363f76332193398255a",
+   "bytes": 33768,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "activity-l1672-light.webp": {
+   "sha256": "22ae7e4d1b25a773ebce5372abfbb490eb6b177c3e15e1b08340f688a2166fab",
+   "bytes": 92838,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "activity-l960-light.webp": {
+   "sha256": "a76d5806def2096ed0e95513c574cebf1f55270c173326368df7080193db9035",
+   "bytes": 38258,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "activity-p760-light.webp": {
+   "sha256": "3654cf45ebcb78c83fd395620f7a812ec6db1db7e78b2d227c37e059b1c26ca8",
+   "bytes": 29318,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "networks-l1672-dark.webp": {
+   "sha256": "40251ee8a70a6c1c6496929615c2e1215e8ca643888f80bcca4e95235c222b05",
+   "bytes": 137944,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "networks-l960-dark.webp": {
+   "sha256": "febfadcf161225b5e8def6e929f83c5a24eff2debccf7faa1242906d21567d65",
+   "bytes": 49780,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "networks-p760-dark.webp": {
+   "sha256": "7043224cfd80aaa1ac4f8809e2ccff3434b467a53e34bbc3af3b1980ff11eeb9",
+   "bytes": 57592,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "networks-l1672-light.webp": {
+   "sha256": "dd79f54c578bcacbf51aa2fb3503f96659f72fdc2b8b37ca5bf253f4672933d2",
+   "bytes": 128538,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "networks-l960-light.webp": {
+   "sha256": "eefb3dfbbba0162e74e534058de052127e3e38c950867b18ff783486d5d95f10",
+   "bytes": 53322,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "networks-p760-light.webp": {
+   "sha256": "cf4dbe5c50947cf50e84cf06f6e5169f507516bc213373a358df544315b1e2a2",
+   "bytes": 48172,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "help-l1672-dark.webp": {
+   "sha256": "61c0cd7b1a1bccc9e5a382fabde04cc017502f08da96581ae8be20a4964e88fc",
+   "bytes": 114262,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "help-l960-dark.webp": {
+   "sha256": "0dceb81a88d5cf2afe3d086905fdbb0f227e866cde0fdc5553210829513b6652",
+   "bytes": 39148,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "help-p760-dark.webp": {
+   "sha256": "2167e456e0bf7b00cee913d200ed90683713108a3c64a6fc941d5e85d4615aa9",
+   "bytes": 68468,
+   "size": [
+    760,
+    941
+   ]
+  },
+  "help-l1672-light.webp": {
+   "sha256": "fd25a83045368f443634da3d1406301f69ee5dc41c32f61c27d647ae4cdd1dcb",
+   "bytes": 78772,
+   "size": [
+    1672,
+    941
+   ]
+  },
+  "help-l960-light.webp": {
+   "sha256": "ab7bf5cdd4f41710f9a25895d184bc52d9032274fa919308f2901f562d433f2d",
+   "bytes": 29726,
+   "size": [
+    960,
+    540
+   ]
+  },
+  "help-p760-light.webp": {
+   "sha256": "7c0c7483cfbc285221262304bfe64fb75411fb49422bf32fd620f54173a46f4f",
+   "bytes": 48158,
+   "size": [
+    760,
+    941
+   ]
+  }
+ }
+}

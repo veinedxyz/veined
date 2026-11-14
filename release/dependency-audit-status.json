@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-09T11:30:14.437Z",
+  "root": {
+    "info": 0,
+    "low": 1,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "provider": {
+    "info": 0,
+    "low": 1,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "bindings": {
+    "root": {
+      "lock": "pnpm-lock.yaml",
+      "lockSha256": "28e844da6361d3085fb469a7d33546227e44680b85e9d01f94babad9c8f36bb7",
+      "file": "release/dependency-audits/root-production.json",
+      "sha256": "5a8c7f231e978acdbf9b51711077a8967856da0c342a067e90fc1dfeaa9069bd"
+    },
+    "provider": {
+      "lock": "swap-providers/pnpm-lock.yaml",
+      "lockSha256": "2d861ffdff380a7e7817ede62de1302d09bf5d628c336dc8b6e7886e42ed5fbf",
+      "file": "release/dependency-audits/provider-production.json",
+      "sha256": "1f7b00170bad8fc3960c5948fea44e593dd3db4a122d27c9b9b170646c16b4ca"
+    }
+  }
+}

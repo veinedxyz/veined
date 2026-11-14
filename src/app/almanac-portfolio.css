@@ -1,0 +1,653 @@
+/* ==========================================================================================================
+   VWP G10 — Portfolio ledger: DeBank-level information order in the Almanac world (no visual clone).
+   Order on the page: the account band (total KNOWN value, the address being read, honest state) -> network allocation
+   (a ruled grid of chain marks with value, share and a share line) -> wallet holdings as a dense ruled table (token mark
+   with its network badge, price with its source, amount, value with share; optional grouping by network) -> spam and
+   suspicious tokens kept apart -> protocol positions (supplied, borrowed, rewards) grouped by protocol -> coverage and
+   attention as a ruled side column. Values are the product's own (no reference data); unknown stays
+   "Unknown"/"Unpriced". Logical properties throughout (RTL); no animation; no card fills or shadows.
+   ========================================================================================================== */
+
+/* ---------- Account band ---------- */
+.app-shell .veined-app .portfolio-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+.app-shell .veined-app .portfolio-summary .summary-account {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 0;
+  color: var(--alm-brine);
+  font-size: 13px;
+}
+.app-shell .veined-app .portfolio-summary .summary-account code {
+  color: var(--alm-ink);
+  font-size: 14px;
+  background: none;
+  padding: 0;
+}
+/* The copy control keeps its small mark but gets a 44px hit area. */
+.app-shell .veined-app .portfolio-summary .summary-account .icon-button {
+  position: relative;
+}
+.app-shell
+  .veined-app
+  .portfolio-summary
+  .summary-account
+  .icon-button::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+}
+.app-shell .veined-app .portfolio-summary .summary-label {
+  margin: 0;
+  color: var(--alm-brine);
+  font-size: 13px;
+  font-weight: 600;
+}
+.app-shell .veined-app .portfolio-summary .summary-value {
+  display: block;
+  font-size: clamp(40px, 2.4vw + 22px, 64px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.app-shell .veined-app .portfolio-summary .summary-note,
+.app-shell .veined-app .portfolio-summary .input-hint {
+  margin: 0;
+  color: var(--alm-brine);
+}
+/* Facts of the read: one ruled row of four readings (two by two on a phone). */
+.app-shell .veined-app .portfolio-summary .summary-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-block: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .portfolio-summary .summary-facts > div {
+  padding-block: 12px;
+  padding-inline: 0 16px;
+  border: 0;
+  background: none;
+}
+.app-shell .veined-app .portfolio-summary .summary-facts > div + div {
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .portfolio-summary .summary-facts dt {
+  color: var(--alm-brine);
+  font-size: 12px;
+}
+.app-shell .veined-app .portfolio-summary .summary-facts dd {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---------- Network allocation: a ruled grid of chain marks ---------- */
+.app-shell .veined-app .alloc-title {
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .portfolio-summary .alloc-bar {
+  height: 4px;
+  border-radius: 0;
+  gap: 2px;
+}
+.app-shell .veined-app .chain-atlas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 0 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--alm-rule-2);
+}
+.app-shell .veined-app .chain-atlas > li,
+html[data-theme="light"] .app-shell .veined-app .chain-atlas > li,
+.app-shell .veined-app .chain-atlas > li:has(> button.atlas-hit:hover) {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+}
+.app-shell .veined-app .chain-atlas > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 12px;
+  padding: 12px 0 14px;
+}
+.app-shell .veined-app .chain-atlas .atlas-mark {
+  grid-row: span 2;
+}
+.app-shell .veined-app .chain-atlas .legend-dot {
+  display: none;
+}
+.app-shell .veined-app .chain-atlas .atlas-name {
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-shell .veined-app .chain-atlas .atlas-value {
+  grid-column: 2 / 4;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--alm-brine);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.app-shell .veined-app .chain-atlas .atlas-value strong {
+  color: var(--alm-ink);
+  font-weight: 600;
+}
+.app-shell .veined-app .chain-atlas .atlas-share {
+  position: absolute;
+  inset-inline-start: 44px;
+  bottom: -1px;
+  height: 2px;
+  width: calc((100% - 44px) * var(--fill, 0));
+  background: var(--alm-act);
+}
+.app-shell .veined-app .chain-atlas .atlas-hit {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.app-shell .veined-app .chain-atlas .atlas-hit:focus-visible {
+  outline: 2px solid var(--alm-act);
+  outline-offset: -2px;
+}
+/* Pointer feedback without dimming the other readings (their contrast stays as at rest). */
+.app-shell
+  .veined-app
+  .chain-atlas
+  > li:has(> button.atlas-hit:hover)
+  .atlas-name {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.app-shell .veined-app .chain-atlas .atlas-more {
+  grid-template-columns: 1fr;
+}
+.app-shell .veined-app .chain-atlas .atlas-more button {
+  justify-self: start;
+  border: 0;
+  background: none;
+  color: var(--alm-act);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+/* ---------- Wallet holdings: a dense ruled table ---------- */
+.app-shell .veined-app .portfolio-assets-card .asset-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--alm-rule-2);
+}
+/* The action column has a fixed width so the head and every row share one grid. */
+.app-shell .veined-app .portfolio-assets-card .asset-head,
+.app-shell .veined-app .portfolio-assets-card .asset-row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2.2fr) minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr)
+    140px;
+  align-items: center;
+  gap: 12px;
+}
+/* The head stays readable while rows scroll beneath it, so it keeps the ground colour. */
+.app-shell .veined-app .portfolio-assets-card .asset-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  background: var(--alm-abyss);
+  color: var(--alm-brine);
+  font-size: 12px;
+  font-weight: 600;
+}
+.app-shell
+  .veined-app
+  .portfolio-assets-card
+  .asset-head
+  > span:nth-child(n + 2),
+.app-shell
+  .veined-app
+  .portfolio-assets-card
+  .asset-row
+  > :is(.asset-amount, .asset-price, .asset-value) {
+  text-align: end;
+  justify-self: end;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-row {
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-row:hover {
+  background: color-mix(in srgb, var(--alm-abyss) 96%, var(--alm-ink));
+}
+.app-shell
+  .veined-app
+  .portfolio-assets-card
+  .asset-row
+  :is(.asset-amount, .asset-price, .asset-value) {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-actions {
+  justify-content: flex-end;
+}
+.app-shell .veined-app .portfolio-assets-card .price-source {
+  display: block;
+  color: var(--alm-faint);
+  font-size: 11.5px;
+}
+/* The column head names the price on wide screens; on a phone the row names it. */
+.app-shell .veined-app .portfolio-assets-card .asset-price-label {
+  display: none;
+}
+/* Network group heads: name at the start, the known value of the shown rows at the end with its caveats. */
+.app-shell .veined-app .portfolio-assets-card .asset-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0;
+  padding: 18px 0 8px;
+  border-bottom: 1px solid var(--alm-rule-2);
+  font-size: 14px;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-group-figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin-inline-start: auto;
+  font-weight: 500;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-group-figure small {
+  color: var(--alm-brine);
+  font-size: 11.5px;
+}
+.app-shell .veined-app .portfolio-assets-card .asset-group-total {
+  color: var(--alm-ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+/* The caveats keep the warning colour over the caption colour above (higher specificity on purpose). */
+.app-shell
+  .veined-app
+  .portfolio-assets-card
+  .asset-group-figure
+  .asset-group-note {
+  color: var(--alm-amber);
+}
+@media (max-width: 760px) {
+  .app-shell .veined-app .portfolio-assets-card .asset-head {
+    display: none;
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "id value" "id amount" "price price" "actions actions";
+    row-gap: 4px;
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-row > .asset-id {
+    grid-area: id;
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-row > .asset-value {
+    grid-area: value;
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-row > .asset-amount {
+    grid-area: amount;
+  }
+  /* The unit price and its provenance stay readable on a phone, named and aligned under the token name
+     (28px mark + 12px gap). */
+  .app-shell .veined-app .portfolio-assets-card .asset-row > .asset-price {
+    grid-area: price;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 8px;
+    justify-self: stretch;
+    padding-inline-start: 40px;
+    text-align: start;
+    color: var(--alm-brine);
+    font-size: 12.5px;
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-price-label {
+    display: inline;
+    color: var(--alm-faint);
+  }
+  .app-shell .veined-app .portfolio-assets-card .asset-row > .asset-actions {
+    grid-area: actions;
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- Spam and suspicious tokens: kept apart, never mixed with the counted wallet ---------- */
+.app-shell .veined-app .portfolio-flagged {
+  margin-top: 18px;
+  border-top: 2px solid var(--alm-coral);
+}
+.app-shell .veined-app .portfolio-flagged > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.app-shell .veined-app .portfolio-flagged > p {
+  max-width: 72ch;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .portfolio-flagged ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* One set of column tracks for every row, so addresses and amounts line up. */
+.app-shell .veined-app .portfolio-flagged li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .portfolio-flagged li small {
+  display: block;
+  color: var(--alm-coral);
+}
+.app-shell .veined-app .portfolio-flagged li code {
+  color: var(--alm-brine);
+  background: none;
+}
+/* Spam balances can be absurdly long: the figure wraps inside its column instead of running past the edge. */
+.app-shell .veined-app .portfolio-flagged .flagged-amount {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  justify-self: end;
+  text-align: end;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--alm-brine);
+}
+@media (max-width: 760px) {
+  .app-shell .veined-app .portfolio-flagged li {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+  .app-shell .veined-app .portfolio-flagged li > :nth-child(n + 3) {
+    grid-column: 2;
+    justify-self: start;
+    text-align: start;
+  }
+}
+
+/* ---------- Protocol positions ---------- */
+/* The protocol section is chart plane, not a framed panel. */
+.app-shell .veined-app .defi-intelligence {
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+/* Mode tabs: a ruled strip (no filled box), each tab a 44px target. */
+.app-shell .veined-app .portfolio-mode-tabs {
+  display: flex;
+  gap: 22px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  overflow-x: auto;
+}
+.app-shell .veined-app .portfolio-mode-tabs > button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: var(--alm-brine);
+  margin-bottom: -1px;
+}
+.app-shell .veined-app .portfolio-mode-tabs > button[aria-selected="true"] {
+  background: none;
+  color: var(--alm-ink);
+  border-bottom-color: var(--alm-act);
+}
+.app-shell .veined-app .defi-summary-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .defi-summary-facts > div {
+  padding-block: 12px;
+  padding-inline: 0 16px;
+  border: 0;
+  background: none;
+}
+.app-shell .veined-app .defi-summary-facts > div + div {
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .defi-summary-facts strong {
+  display: block;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.app-shell .veined-app .defi-protocol-group {
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  padding: 14px 0 6px;
+}
+.app-shell .veined-app .defi-protocol-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+.app-shell .veined-app .defi-protocol-head h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.app-shell .veined-app .defi-protocol-total {
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.app-shell .veined-app .defi-position-card {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .defi-position-header {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  width: 100%;
+  text-align: start;
+}
+/* Protocol allocation: a ruled list of protocols with their known value. */
+.app-shell .veined-app .defi-allocation {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0 24px;
+}
+.app-shell .veined-app .defi-allocation > h3 {
+  grid-column: 1 / -1;
+  margin: 8px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .defi-allocation > button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  text-align: start;
+}
+.app-shell .veined-app .defi-allocation > button bdi {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600;
+}
+/* DeFi attention list: ruled rows that read from the start, protocol and network first, the reason after. */
+.app-shell .veined-app .defi-attention {
+  display: grid;
+  gap: 0;
+}
+.app-shell .veined-app .defi-attention > h3 {
+  margin: 14px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .defi-attention > button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 12px;
+  min-height: 44px;
+  padding: 10px 0;
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  text-align: start;
+  font-weight: 600;
+}
+.app-shell .veined-app .defi-attention > button > span {
+  color: var(--alm-amber);
+  font-weight: 500;
+}
+
+/* ---------- Coverage and attention: a ruled side column ---------- */
+.app-shell .veined-app .portfolio-aside > .card {
+  padding-top: 16px;
+}
+.app-shell .veined-app .portfolio-coverage .coverage-bar {
+  height: 4px;
+  border-radius: 0;
+}
+.app-shell .veined-app .portfolio-coverage-details > summary {
+  min-height: 44px;
+}
+
+/* ---------- Phone: facts two by two, money never broken inside a figure ---------- */
+@media (max-width: 600px) {
+  .app-shell .veined-app .portfolio-summary .summary-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app-shell
+    .veined-app
+    .portfolio-summary
+    .summary-facts
+    > div:nth-child(odd) {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+  .app-shell
+    .veined-app
+    .portfolio-summary
+    .summary-facts
+    > div:nth-child(n + 3) {
+    border-top: 1px solid var(--alm-rule);
+  }
+  .app-shell .veined-app .portfolio-summary .summary-facts dd {
+    font-size: 17px;
+  }
+  /* DeFi facts become ruled reading lines: label at the start, the figure whole at the end. */
+  .app-shell .veined-app .defi-summary-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .app-shell .veined-app .defi-summary-facts > div,
+  .app-shell .veined-app .defi-summary-facts > div + div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 12px;
+    padding-block: 10px;
+    padding-inline: 0;
+    border-inline-start: 0;
+  }
+  .app-shell .veined-app .defi-summary-facts > div + div {
+    border-top: 1px solid var(--alm-rule);
+  }
+  .app-shell .veined-app .defi-summary-facts strong {
+    margin-top: 0;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+}
+
+/* G12 H01 — the three kinds of coverage: ruled rows, no box. */
+.app-shell .veined-app .coverage-tiers {
+  display: grid;
+  margin: 12px 0 0;
+  border-block-start: 1px solid var(--line-soft);
+}
+.app-shell .veined-app .coverage-tiers > div {
+  display: grid;
+  gap: 2px;
+  padding: 8px 0;
+  border-block-end: 1px solid var(--line-soft);
+}
+.app-shell .veined-app .coverage-tiers dt {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.app-shell .veined-app .coverage-tiers dd {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.app-shell .veined-app .coverage-tiers dd small {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--faint);
+}

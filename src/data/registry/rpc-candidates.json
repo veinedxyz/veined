@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "note": "Curated public endpoint candidates (no keys). Inclusion is not approval: every URL must pass URL policy, public-DNS, chain-ID and read-only probes in pnpm data:rpc:sync. Unverified candidates are recorded as REJECTED with a reason.",
+  "evm": {
+    "1": [
+      "https://ethereum-rpc.publicnode.com",
+      "https://cloudflare-eth.com",
+      "https://rpc.flashbots.net"
+    ],
+    "10": [
+      "https://optimism-rpc.publicnode.com",
+      "https://mainnet.optimism.io"
+    ],
+    "25": ["https://cronos-evm-rpc.publicnode.com", "https://evm.cronos.org"],
+    "56": [
+      "https://bsc-dataseed.bnbchain.org",
+      "https://bsc-rpc.publicnode.com"
+    ],
+    "100": ["https://gnosis-rpc.publicnode.com", "https://rpc.gnosischain.com"],
+    "130": [
+      "https://unichain-rpc.publicnode.com",
+      "https://mainnet.unichain.org"
+    ],
+    "137": [
+      "https://polygon-bor-rpc.publicnode.com",
+      "https://polygon-rpc.com"
+    ],
+    "146": ["https://sonic-rpc.publicnode.com", "https://rpc.soniclabs.com"],
+    "250": ["https://fantom-rpc.publicnode.com"],
+    "324": ["https://mainnet.era.zksync.io"],
+    "480": [
+      "https://worldchain-mainnet.g.alchemy.com/public",
+      "https://worldchain-mainnet.gateway.tenderly.co"
+    ],
+    "1284": ["https://moonbeam-rpc.publicnode.com"],
+    "5000": ["https://mantle-rpc.publicnode.com", "https://rpc.mantle.xyz"],
+    "8453": ["https://base-rpc.publicnode.com", "https://mainnet.base.org"],
+    "34443": ["https://mainnet.mode.network"],
+    "42161": [
+      "https://arbitrum-one-rpc.publicnode.com",
+      "https://arb1.arbitrum.io/rpc"
+    ],
+    "42220": ["https://celo-rpc.publicnode.com", "https://forno.celo.org"],
+    "43114": [
+      "https://avalanche-c-chain-rpc.publicnode.com",
+      "https://api.avax.network/ext/bc/C/rpc"
+    ],
+    "57073": [
+      "https://rpc-gel.inkonchain.com",
+      "https://rpc-qnd.inkonchain.com",
+      "https://rpc-ten.inkonchain.com"
+    ],
+    "59144": ["https://linea-rpc.publicnode.com", "https://rpc.linea.build"],
+    "80094": [
+      "https://berachain-rpc.publicnode.com",
+      "https://rpc.berachain.com"
+    ],
+    "81457": ["https://blast-rpc.publicnode.com", "https://rpc.blast.io"],
+    "534352": ["https://scroll-rpc.publicnode.com", "https://rpc.scroll.io"],
+    "7777777": ["https://rpc.zora.energy"]
+  },
+  "svm": {
+    "1151111081099710": [
+      "https://solana-rpc.publicnode.com",
+      "https://api.mainnet-beta.solana.com"
+    ]
+  }
+}

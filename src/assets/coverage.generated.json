@@ -1,0 +1,34 @@
+{
+ "generatedAt": "2026-11-11T02:16:17.997Z",
+ "chains": {
+  "total": 343,
+  "mainnets": 335,
+  "testnets": 6,
+  "devnets": 0,
+  "local": 2,
+  "unknown": 0,
+  "logos": {
+   "official": 2,
+   "localVerified": 75,
+   "trustwallet": 18,
+   "curated": 244,
+   "monogram": 4
+  },
+  "realLogo": 339,
+  "coveragePercent": 98.8,
+  "mainnetCoveragePercent": 99.4,
+  "withChainId": 200,
+  "withExplorer": 184
+ },
+ "assets": {
+  "total": 422,
+  "canonical": 75,
+  "curated": 345,
+  "marketListedInRegistry": 2,
+  "withLogo": 421,
+  "logoPercent": 99.8,
+  "chains": 72,
+  "coingeckoExactListings": 7673,
+  "coingeckoChains": 59
+ }
+}

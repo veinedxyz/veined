@@ -4,36 +4,6 @@ export interface Provider {
   on?(event: string, fn: (value: unknown) => void): void;
   removeListener?(event: string, fn: (value: unknown) => void): void;
 }
-export interface Wallet {
-  id: string;
-  name: string;
-  provider: Provider;
-}
-export function discover(onWallet: (wallet: Wallet) => void): () => void {
-  const seen = new Set<Provider>();
-  const handle = (event: Event) => {
-    const detail = (event as CustomEvent).detail;
-    if (
-      !detail?.provider?.request ||
-      typeof detail.info?.uuid !== "string" ||
-      typeof detail.info?.name !== "string" ||
-      seen.has(detail.provider)
-    )
-      return;
-    seen.add(detail.provider);
-    onWallet({
-      id: detail.info.uuid.slice(0, 100),
-      name: detail.info.name.slice(0, 60),
-      provider: detail.provider,
-    });
-  };
-  window.addEventListener("eip6963:announceProvider", handle);
-  window.dispatchEvent(new Event("eip6963:requestProvider"));
-  const legacy = (window as Window & { ethereum?: Provider }).ethereum;
-  if (legacy && !seen.has(legacy))
-    onWallet({ id: "legacy", name: "Injected wallet", provider: legacy });
-  return () => window.removeEventListener("eip6963:announceProvider", handle);
-}
 const pending = new WeakSet<Provider>();
 async function boundedWalletResult(
   operation: Promise<unknown>,
@@ -90,16 +60,25 @@ export async function requestOnce(
     signal,
   );
 }
-export async function connect(provider: Provider, signal?: AbortSignal) {
+// V1.9: wallets are discovered and connected only by the Privy external-wallet layer (connect-only). After Privy
+// reports the user's explicitly chosen wallet, its identity is bound to bounded live reads; a competing account
+// event, a chain change or a disconnect during the bind aborts it (the C1 permission-grant ordering, kept).
+// There is no raw injected-provider discovery and no account-permission request anywhere in the application.
+export async function bindExternalWallet(
+  provider: Provider,
+  expected: string,
+  signal?: AbortSignal,
+) {
   const controller = new AbortController();
   const abort = () => controller.abort();
-  const announced: string[] = [];
-  let account: string | undefined;
   const changed = (value: unknown) => {
     const first = Array.isArray(value) && addressSchema.safeParse(value[0]);
-    if (!first || !first.success) return abort();
-    announced.push(first.data.toLowerCase());
-    if (account && first.data.toLowerCase() !== account.toLowerCase()) abort();
+    if (
+      !first ||
+      !first.success ||
+      first.data.toLowerCase() !== expected.toLowerCase()
+    )
+      abort();
   };
   if (signal?.aborted) abort();
   else signal?.addEventListener("abort", abort, { once: true });
@@ -107,19 +86,8 @@ export async function connect(provider: Provider, signal?: AbortSignal) {
   provider.on?.("chainChanged", abort);
   provider.on?.("disconnect", abort);
   try {
-    const accounts = await requestOnce(
-      provider,
-      "eth_requestAccounts",
-      undefined,
-      20000,
-      controller.signal,
-    );
-    if (!Array.isArray(accounts) || !accounts[0])
-      throw new BridgeError("WALLET_LOCKED");
-    account = addressSchema.parse(accounts[0]);
-    if (announced.some((value) => value !== account!.toLowerCase())) abort();
-    // A matching permission-grant event is expected. Bind the granted account to
-    // bounded current reads; a competing event, chain change or disconnect aborts.
+    if (!addressSchema.safeParse(expected).success)
+      throw new BridgeError("WALLET_NOT_EVM");
     const [current, chain] = await Promise.all([
       readWallet(provider, "eth_accounts", controller.signal),
       readWallet(provider, "eth_chainId", controller.signal),
@@ -128,10 +96,10 @@ export async function connect(provider: Provider, signal?: AbortSignal) {
       controller.signal.aborted ||
       !Array.isArray(current) ||
       !addressSchema.safeParse(current[0]).success ||
-      current[0].toLowerCase() !== account.toLowerCase()
+      current[0].toLowerCase() !== expected.toLowerCase()
     )
       throw new BridgeError("IDENTITY_CHANGED");
-    return { account, chain: parseChain(chain) };
+    return { account: current[0] as string, chain: parseChain(chain) };
   } finally {
     signal?.removeEventListener("abort", abort);
     provider.removeListener?.("accountsChanged", changed);

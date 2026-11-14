@@ -1,0 +1,14 @@
+# DeFi protocol coverage — V1.13
+
+Generated from the reviewed deployment registry; 91 deployment candidates on 22 chains. This is configured breadth, not a live checked count. Runtime coverage reports actual reads. Non-EVM DeFi: NOT_CHECKED. No paid portfolio/indexer dependency.
+
+| Adapter | Chains | Discovery | Accounting | Debt / risk | Rewards / limits |
+|---|---|---|---|---|---|
+| aave-v3 (17) | 42161, 43114, 56, 8453, 42220, 1, 100, 59144, 5000, 1088, 10, 9745, 137, 534352, 1868, 146, 324 | Official pool/provider; all registry reserves; exact reserve identities | FULL_POSITION for checked reserves; collateral is a supplied subset | Positive stable + variable debt; native HF from account data | getAllUserRewards protocol view; failed rewards remain FAILED; newly unreviewed reserves partial |
+| compound-iii (22) | 42161, 8453, 1, 10, 137, 130 | Official Comet current balance and collateral views | FULL_POSITION; deposited collateral + current indexed base balances | borrowBalanceOf; isBorrowCollateralized/isLiquidatable | NOT_CHECKED (getRewardOwed accrues state; excluded) |
+| morpho-blue (16) | 1, 8453, 137, 42161, 10, 480, 252, 534352, 57073, 130, 146, 34443, 59144, 56, 42220, 1868 | Self-hosted CreateMarket + wallet activity index; max 64 refs | PARTIAL until complete reviewed deployment history; virtual shares and accrued interest incl fee shares | Borrow shares round UP; LTV only reviewed oracle semantics | NOT_CHECKED; unreviewed IRM/oracle fails closed; optional API not required |
+| morpho-vault (16) | 1, 8453, 137, 42161, 10, 480, 252, 534352, 57073, 130, 146, 34443, 59144, 56, 42220, 1868 | Official V1 factory events + isMetaMorpho; max 64 refs | PARTIAL discovery; ERC4626 convertToAssets | No protocol debt; no generic HF | V2 factories not covered; rewards NOT_CHECKED |
+| lido (1) | 1 | Exact Ethereum stETH / wstETH contracts | Token exposure; wstETH conversion via official view | No debt or HF | Withdrawal queue/direct validator positions NOT_CHECKED; no separate invented rewards |
+| erc4626 (1) | 1 | Curated exact sDAI contract | FULL_POSITION share conversion; bounded curated nesting depth 3 | No debt; recursive cycles rejected | Rewards/APY NOT_CHECKED; arbitrary vaults rejected |
+| uniswap-v2 (9) | 1, 10, 137, 42161, 42220, 43114, 56, 59144, 8453 | Self-hosted official factory PairCreated; token-held refs prioritized | PARTIAL discovery; balance/totalSupply × reserves; pair factory verification | No debt/HF; spot reserves not an oracle | Nested LP, fee-on-transfer exact redemption semantics NOT_CHECKED |
+| uniswap-v3 (9) | 1, 10, 137, 42161, 42220, 43114, 56, 59144, 8453 | Official enumerable NFT manager + self-hosted approved ERC721 index | PARTIAL_POSITION; fresh ownerOf, pool identity, official integer liquidity math | In/out of range; no HF | tokensOwed lower bound outside gross/rewards; uncheckpointed fees NOT_CHECKED; max 100 NFTs |

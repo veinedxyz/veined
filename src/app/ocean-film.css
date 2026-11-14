@@ -1,0 +1,112 @@
+/* VEINED ocean film: the application field (abyss.tsx). Loaded after ocean-system.css. The landing descent has its
+   own stage rules in (marketing)/ocean-landing.css.
+   - One persistent film behind every application surface; the still (its first frame) holds the place until the
+     film plays, and stays for reduced motion, data saving and failures. Only the still and film of this viewport's
+     orientation are requested; both themes use the same film (a theme change never downloads anything).
+   - The film is cropped to cover, keeping the octopus (right of centre in the frame) in view; RTL mirrors it with the
+     rest of the stage (abyss-system.css).
+   - Decorative only: the field is aria-hidden and never a pointer target (abyss-system.css). */
+
+.abyss-still,
+.abyss-film {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.abyss-film {
+  object-fit: cover;
+  object-position: 78% 50%;
+  /* The still holds the place until the first frame plays (never an empty or black box). */
+  opacity: 0;
+  transition: opacity 700ms var(--ease-out, ease-out);
+}
+.abyss[data-film="playing"] .abyss-film {
+  opacity: 1;
+}
+.abyss-still {
+  background: #03080a url("/assets/veined/ocean-film/app-poster-l1280.webp") 78%
+    50% / cover no-repeat;
+}
+@media (max-aspect-ratio: 4/5) {
+  .abyss-still {
+    background-image: url("/assets/veined/ocean-film/app-poster-p456.webp");
+    background-position: 50% 50%;
+  }
+  .abyss-film {
+    object-position: 50% 50%;
+  }
+}
+/* Once the film runs, the still underneath is not painted (one full-screen layer less to composite). */
+.abyss[data-film="playing"] .abyss-still {
+  visibility: hidden;
+}
+
+/* Bridge: the source network's light low in the water, the destination's beside the octopus (live colours). Plain
+   alpha over the film (no blend mode, so the compositor does no extra per-frame work). */
+.abyss-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 900ms var(--ease-out, ease-out);
+  background:
+    radial-gradient(
+      38% 46% at 10% 88%,
+      rgb(var(--source-glow, var(--biolume-rgb)) / 0.2),
+      rgb(var(--source-glow, var(--biolume-rgb)) / 0) 70%
+    ),
+    radial-gradient(
+      34% 42% at 80% 40%,
+      rgb(var(--destination-glow, var(--biolume-rgb)) / 0.16),
+      rgb(var(--destination-glow, var(--biolume-rgb)) / 0) 70%
+    );
+}
+.abyss[data-scene="bridge"] .abyss-glow {
+  opacity: 1;
+}
+[dir="rtl"] .abyss-glow {
+  scale: -1 1;
+}
+
+/* Wide screens: the octopus grows with the viewport; a little deeper water keeps it from pulling the eye away from
+   the instruments (review A6). */
+@media (min-width: 1600px) {
+  html:not([data-theme="light"]) .abyss-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(3 8 10 / 0.16);
+  }
+}
+
+/* Daylight: the same film under one even haze of sunlit sea-glass water (natural footage, never inverted; a theme
+   change never downloads anything). Financial surfaces keep their own opaque cards above it. */
+html[data-theme="light"] .abyss-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(226 242 239 / 0.64);
+}
+html[data-theme="light"] .abyss[data-scene="bridge"] .abyss-glow {
+  opacity: 0.45;
+}
+
+/* Section headings and meta lines that sit on the water rather than on a card (Networks catalogue, Activity)
+   keep a soft shadow of deep water behind their letters (review A4). */
+.veined-app .section-head :is(h2, p, small, strong) {
+  text-shadow: 0 1px 12px rgb(var(--abyss-rgb) / 0.9);
+}
+
+/* Portfolio first-scan card: its texture is open water from the owner's film; in daylight it stays a faint ripple
+   under the light card surface. */
+html[data-theme="light"] .portfolio-first-scan .veined-atmosphere {
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abyss-film,
+  .abyss-glow {
+    transition: none;
+  }
+}

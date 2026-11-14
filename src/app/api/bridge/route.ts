@@ -9,6 +9,9 @@ import {
 } from "../../../adapters/native-service";
 import { currentMode, localAllowed } from "../../../server/config";
 import { boundedBody } from "../../../server/body";
+import { checkOrigin } from "../../../server/origin-policy";
+import { rateGuard } from "../../../server/api-guard";
+import { RoutingError } from "../../../routing/model";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 const input = z.discriminatedUnion("action", [
@@ -23,38 +26,34 @@ const input = z.discriminatedUnion("action", [
     .strict(),
   z.object({ action: z.literal("track"), record: recordSchema }).strict(),
 ]);
-let requests = 0;
-let windowStart = 0;
 export async function GET() {
   return NextResponse.json(
     { mode: currentMode(), submission: false, version: "1" },
     { headers: { "Cache-Control": "no-store" } },
   );
 }
+// Every bridge response (balances, records, errors) is private and never cached.
 export async function POST(req: NextRequest) {
+  const response = await handlePost(req);
+  response.headers.set("Cache-Control", "private, no-store");
+  return response;
+}
+async function handlePost(req: NextRequest): Promise<Response> {
   let validatedInput = false;
   try {
-    const origin = new URL(
-      req.headers.get("origin") ?? "https://invalid.example",
-    );
-    const host = req.headers.get("host");
-    if (
-      ![
-        "127.0.0.1:3100",
-        "localhost:3100",
-        "127.0.0.1:3101",
-        "localhost:3101",
-      ].includes(host ?? "") ||
-      origin.host !== host ||
-      origin.protocol !== "http:"
-    )
-      throw new BridgeError("ORIGIN_REJECTED");
-    if (Date.now() - windowStart > 60000) {
-      windowStart = Date.now();
-      requests = 0;
+    // Shared exact-origin policy; this route keeps its accepted 422 envelope for rejections.
+    const verdict = checkOrigin(req);
+    if (verdict !== "OK") throw new BridgeError(verdict);
+    try {
+      await rateGuard(req, "bridge", 120);
+    } catch (e) {
+      const code =
+        e instanceof RoutingError ? e.code : "RATE_LIMIT_UNAVAILABLE";
+      return NextResponse.json(
+        { error: code },
+        { status: code === "RATE_LIMITED" ? 429 : 503 },
+      );
     }
-    if (++requests > 120)
-      return NextResponse.json({ error: "RATE_LIMITED" }, { status: 429 });
     const raw = await boundedBody(req);
     const data = input.parse(JSON.parse(raw));
     validatedInput = true;

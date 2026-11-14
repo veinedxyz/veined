@@ -1,0 +1,492 @@
+/* VEINED ocean landing: one continuous underwater descent behind the whole page (owner video 01).
+   Layers: 1 the film (or its depth stills) · 2 a veil of deeper water on the copy side · 3 the readable page.
+   The film's frame follows scroll position (ocean-stage.tsx): the surface at the hero, the ocean floor at the closing
+   call; reversible, exact after fast scrolls and jumps, never behind input (no animation timelines, no listeners
+   that block). Scoped to .ocean-landing (and :has() for the shell around it) so client navigation to /docs is
+   unaffected. */
+
+/* ---------- Shell around the stage ---------- */
+.mk:has(.ocean-landing) {
+  background: #03080a;
+}
+.ocean-landing {
+  position: relative;
+  isolation: isolate;
+  /* Copy scrims may bleed past the gutter; never into a horizontal scroll (clip keeps sticky and fixed intact). */
+  overflow-x: clip;
+}
+.mk:has(.ocean-landing) .mk-footer {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgb(3 8 10 / 0) 0,
+    rgb(3 8 10 / 0.9) 200px
+  );
+  border-top: 0;
+}
+.mk:has(.ocean-landing) .mk-header {
+  background: rgb(3 8 10 / 0.72);
+  border-bottom-color: rgb(var(--biolume-rgb) / 0.1);
+}
+
+/* ---------- Stage ---------- */
+.ocean-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #03080a;
+}
+.ocean-still,
+.ocean-still img,
+.ocean-depth,
+.ocean-film {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* The octopus swims right of centre (~0.71 of the frame): covering crops keep it in view. */
+.ocean-still img,
+.ocean-film {
+  object-fit: cover;
+  object-position: 71% 50%;
+}
+.ocean-depth {
+  background: center / cover no-repeat;
+  background-position: 71% 50%;
+  visibility: hidden;
+}
+/* Still ocean (and the first moments of a visit restored deep in the page): the depth still nearest the visitor.
+   Each still is requested only when its depth is reached. */
+.ocean-stage[data-depth="1"] .ocean-depth {
+  visibility: visible;
+  background-image: url("/assets/veined/ocean-film/landing-d1-l1280.webp");
+}
+.ocean-stage[data-depth="2"] .ocean-depth {
+  visibility: visible;
+  background-image: url("/assets/veined/ocean-film/landing-d2-l1280.webp");
+}
+.ocean-stage[data-depth="3"] .ocean-depth {
+  visibility: visible;
+  background-image: url("/assets/veined/ocean-film/landing-d3-l1280.webp");
+}
+@media (max-aspect-ratio: 4/5) {
+  .ocean-still img,
+  .ocean-film,
+  .ocean-depth {
+    object-position: 50% 50%;
+    background-position: 50% 50%;
+  }
+  .ocean-stage[data-depth="1"] .ocean-depth {
+    background-image: url("/assets/veined/ocean-film/landing-d1-p456.webp");
+  }
+  .ocean-stage[data-depth="2"] .ocean-depth {
+    background-image: url("/assets/veined/ocean-film/landing-d2-p456.webp");
+  }
+  .ocean-stage[data-depth="3"] .ocean-depth {
+    background-image: url("/assets/veined/ocean-film/landing-d3-p456.webp");
+  }
+}
+/* The film shows once a real frame is on screen; the stills beneath it are then not painted. */
+.ocean-film {
+  opacity: 0;
+}
+.ocean-stage[data-film="film"] .ocean-film {
+  opacity: 1;
+}
+.ocean-stage[data-film="film"] :is(.ocean-still, .ocean-depth) {
+  visibility: hidden;
+}
+/* Readability: a quiet column of deeper water where the copy lives, open water everywhere else. */
+.ocean-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(3 8 10 / 0.74) 0%,
+      rgb(3 8 10 / 0.5) 30%,
+      rgb(3 8 10 / 0.08) 56%,
+      rgb(3 8 10 / 0) 70%
+    ),
+    linear-gradient(180deg, rgb(3 8 10 / 0.35) 0, rgb(3 8 10 / 0) 22%);
+}
+[dir="rtl"] .ocean-veil {
+  scale: -1 1;
+}
+/* RTL mirrors the world: the organism lives on the side opposite the copy. */
+[dir="rtl"] .ocean-stage :is(.ocean-still, .ocean-depth, .ocean-film) {
+  scale: -1 1;
+}
+
+/* ---------- The page over the water ---------- */
+.ocean-landing .mk-hero {
+  background: transparent;
+  min-height: min(calc(100svh - 80px), 860px);
+  /* The film runs on behind the hero: nothing here may draw the hero's box over the water. */
+  overflow: visible;
+}
+/* The hero's scrim hangs on its copy and fades to nothing on every side (a box-shaped scrim would draw a hard edge
+   across the continuous film where the hero ends). */
+.ocean-landing .mk-hero::after {
+  display: none;
+}
+.ocean-landing .mk-hero-copy {
+  position: relative;
+  isolation: isolate;
+}
+.ocean-landing .mk-hero-copy::before {
+  content: "";
+  position: absolute;
+  inset: -150px -220px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    closest-side,
+    rgb(3 8 10 / 0.62),
+    rgb(3 8 10 / 0.4) 58%,
+    rgb(3 8 10 / 0)
+  );
+}
+.ocean-landing .mk-hero h1 {
+  text-shadow: 0 2px 30px rgb(3 8 10 / 0.8);
+}
+.ocean-landing .mk-hero .mk-lede,
+.ocean-landing .mk-hero .mk-trust,
+.ocean-landing .mk-hero-status {
+  text-shadow: 0 1px 14px rgb(3 8 10 / 0.95);
+}
+.ocean-landing .mk-hero-caption {
+  text-shadow: 0 1px 10px rgb(3 8 10 / 0.9);
+}
+.ocean-landing .mk-product-strip {
+  background: rgb(3 8 10 / 0.7);
+  border-color: rgb(var(--biolume-rgb) / 0.12);
+}
+.ocean-landing .mk-product-strip a + a {
+  border-color: rgb(var(--biolume-rgb) / 0.1);
+}
+/* Open water between destinations: the scene changes while nothing covers it. */
+.ocean-landing .mk-section {
+  position: relative;
+  border-top: 0;
+  padding-block: clamp(72px, 11vh, 132px);
+}
+.ocean-landing .mk-section-head {
+  position: relative;
+  isolation: isolate;
+}
+.ocean-landing .mk-section-head::before {
+  content: "";
+  position: absolute;
+  inset: -48px -64px;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgb(3 8 10 / 0.8),
+    rgb(3 8 10 / 0.56) 62%,
+    rgb(3 8 10 / 0)
+  );
+  pointer-events: none;
+}
+.ocean-landing .mk-section-head h2 {
+  text-shadow: 0 2px 26px rgb(3 8 10 / 0.85);
+}
+.ocean-landing .mk-section-head > p,
+.ocean-landing .mk-checks {
+  text-shadow: 0 1px 12px rgb(3 8 10 / 0.9);
+}
+.ocean-landing .mk-split .mk-section-head {
+  max-width: 520px;
+}
+/* Art direction: on Swap and Bridge the arm tips (the curl that rises toward the instrument, the hook that links two
+   networks) land in the left third of the frame. On wide screens their copy starts past the tips, so the arm reaches
+   toward the words and the instrument instead of hiding beneath them. */
+@media (min-width: 1100px) {
+  .ocean-landing :is(#swap, #bridge).mk-split {
+    padding-inline-start: max(
+      var(--mk-gutter),
+      calc(var(--mk-gutter) + clamp(150px, 16vw, 250px))
+    );
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.85fr);
+  }
+}
+/* Illustrations are opaque instruments the arms present, never the water itself. */
+.ocean-landing .mk-scene {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+.ocean-landing .mk-scene::after {
+  display: none;
+}
+.ocean-landing .mk-scene .mk-panel,
+.ocean-landing .mk-visual .mk-panel {
+  background: rgb(6 13 16 / 0.9);
+  border: 1px solid rgb(var(--biolume-rgb) / 0.16);
+  box-shadow:
+    inset 0 1px 0 rgb(201 213 216 / 0.06),
+    0 30px 80px -30px rgb(0 0 0 / 0.9);
+}
+.ocean-landing .mk-scene figcaption,
+.ocean-landing .mk-visual figcaption {
+  color: var(--muted);
+  text-shadow: 0 1px 10px rgb(3 8 10 / 0.9);
+}
+.ocean-landing .mk-cards li,
+.ocean-landing .mk-logo-cloud li,
+.ocean-landing .mk-code {
+  background: rgb(6 13 16 / 0.86);
+  border-color: rgb(var(--biolume-rgb) / 0.12);
+}
+.ocean-landing .mk-stats {
+  background: rgb(6 13 16 / 0.82);
+  border-color: rgb(var(--biolume-rgb) / 0.12);
+}
+.ocean-landing .mk-steps li,
+.ocean-landing .mk-safety .mk-cards li {
+  background: rgb(3 8 10 / 0.55);
+  padding: 22px 20px 20px;
+  border-radius: 12px;
+  border-top-color: rgb(var(--biolume-rgb) / 0.16);
+}
+.ocean-landing #faq .mk-faq {
+  background: rgb(6 13 16 / 0.82);
+  border-radius: 14px;
+  padding-inline: 22px;
+}
+.ocean-landing .mk-faq details {
+  border-color: rgb(var(--biolume-rgb) / 0.1);
+}
+.ocean-landing .mk-final {
+  background: rgb(3 8 10 / 0.5);
+  border: 1px solid rgb(var(--biolume-rgb) / 0.12);
+}
+.ocean-landing .mk-final::after {
+  display: none;
+}
+/* Safety: the calm, protective octopus keeps its side of the frame; the four guarantees sit beside it. */
+.ocean-landing .mk-safety {
+  grid-template-columns: minmax(0, 760px);
+}
+.ocean-landing .mk-safety > .mk-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 500px) {
+  .ocean-landing .mk-safety > .mk-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  .ocean-landing .mk-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Coda: the closing call sits on the copy side; the returning eye stays in open water beside it. */
+@media (min-width: 1100px) {
+  .ocean-landing .mk-final {
+    max-width: 720px;
+    margin-inline: max(
+        var(--mk-gutter),
+        calc((100% - var(--mk-max)) / 2 + var(--mk-gutter))
+      )
+      auto;
+  }
+}
+
+/* Points: the weekly pool as a quiet instrument; live results stay private (no figures but the fixed rules). */
+.mk-points-pool {
+  margin: 6px 0 14px;
+  font: 500 clamp(34px, 4vw, 52px) / 1 var(--font-sans, inherit);
+  letter-spacing: -0.04em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.mk-points-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid rgb(var(--biolume-rgb) / 0.22);
+  border-radius: 99px;
+  font-size: 12px;
+  color: var(--text);
+}
+.mk-points-private > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--biolume);
+  box-shadow: 0 0 10px rgb(var(--biolume-rgb) / 0.8);
+}
+.mk-points-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .ocean-veil {
+    background:
+      linear-gradient(180deg, rgb(3 8 10 / 0.42) 0, rgb(3 8 10 / 0.12) 30%),
+      linear-gradient(0deg, rgb(3 8 10 / 0.62) 0, rgb(3 8 10 / 0) 55%);
+  }
+  .ocean-landing .mk-section {
+    padding-block: clamp(60px, 9vh, 96px);
+  }
+  .ocean-landing .mk-section-head::before {
+    inset: -28px -18px;
+    border-radius: 28px;
+  }
+  /* Phones: the copy covers most of the frame, so its scrim is closer and deeper. */
+  .ocean-landing .mk-hero-copy::before {
+    inset: -70px -48px;
+    background: radial-gradient(
+      closest-side,
+      rgb(3 8 10 / 0.74),
+      rgb(3 8 10 / 0.56) 62%,
+      rgb(3 8 10 / 0)
+    );
+  }
+  /* Step and guarantee cards read on their own surface where the octopus swims behind them (review L5). */
+  .ocean-landing .mk-steps li,
+  .ocean-landing .mk-safety .mk-cards li {
+    background: rgb(3 8 10 / 0.84);
+  }
+}
+
+/* ---------- Daylight ---------- */
+html[data-theme="light"] .mk:has(.ocean-landing),
+html[data-theme="light"] .ocean-stage {
+  background: #e3eeee;
+}
+/* The same film in daylight: one even haze of sunlit water over it (natural footage, never inverted; nothing new is
+   downloaded when the theme changes). The scrims below then read as part of the same water. */
+html[data-theme="light"] .ocean-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(226 242 239 / 0.58);
+}
+html[data-theme="light"] .mk:has(.ocean-landing) .mk-footer {
+  background: linear-gradient(
+    180deg,
+    rgb(244 248 248 / 0) 0,
+    rgb(244 248 248 / 0.9) 200px
+  );
+}
+html[data-theme="light"] .mk:has(.ocean-landing) .mk-header {
+  background: rgb(244 248 248 / 0.82);
+}
+html[data-theme="light"] .ocean-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(240 246 246 / 0.84) 0%,
+      rgb(240 246 246 / 0.6) 30%,
+      rgb(240 246 246 / 0.12) 56%,
+      rgb(240 246 246 / 0) 70%
+    ),
+    linear-gradient(180deg, rgb(240 246 246 / 0.4) 0, rgb(240 246 246 / 0) 22%);
+}
+html[data-theme="light"] .ocean-landing .mk-hero-copy::before {
+  background: radial-gradient(
+    closest-side,
+    rgb(240 246 246 / 0.72),
+    rgb(240 246 246 / 0.44) 58%,
+    rgb(240 246 246 / 0)
+  );
+}
+html[data-theme="light"] .ocean-landing :is(.mk-hero h1, .mk-section-head h2) {
+  text-shadow: 0 1px 24px rgb(240 246 246 / 0.95);
+}
+html[data-theme="light"]
+  .ocean-landing
+  :is(
+    .mk-hero .mk-lede,
+    .mk-hero .mk-trust,
+    .mk-hero-status,
+    .mk-hero-caption,
+    .mk-section-head > p,
+    .mk-checks,
+    .mk-scene figcaption,
+    .mk-visual figcaption
+  ) {
+  text-shadow: 0 1px 12px rgb(240 246 246 / 0.95);
+}
+html[data-theme="light"] .ocean-landing .mk-section-head::before {
+  inset: -72px -110px;
+  background: radial-gradient(
+    closest-side,
+    rgb(240 246 246 / 0.66),
+    rgb(240 246 246 / 0.4) 60%,
+    rgb(240 246 246 / 0)
+  );
+}
+html[data-theme="light"] .ocean-landing .mk-product-strip,
+html[data-theme="light"] .ocean-landing .mk-final {
+  background: rgb(244 248 248 / 0.8);
+}
+html[data-theme="light"]
+  .ocean-landing
+  :is(
+    .mk-scene .mk-panel,
+    .mk-visual .mk-panel,
+    .mk-cards li,
+    .mk-logo-cloud li,
+    .mk-code,
+    .mk-stats,
+    #faq .mk-faq
+  ) {
+  background: rgb(255 255 255 / 0.92);
+  border-color: rgb(29 97 88 / 0.16);
+  box-shadow: 0 24px 60px -36px rgb(20 44 52 / 0.4);
+}
+html[data-theme="light"]
+  .ocean-landing
+  :is(.mk-steps li, .mk-safety .mk-cards li) {
+  background: rgb(250 252 252 / 0.78);
+}
+html[data-theme="light"]
+  .ocean-landing
+  :is(.mk-scene figcaption, .mk-visual figcaption, .mk-hero-caption) {
+  color: var(--text);
+}
+@media (max-width: 800px) {
+  html[data-theme="light"] .ocean-veil {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(240 246 246 / 0.5) 0,
+        rgb(240 246 246 / 0.15) 30%
+      ),
+      linear-gradient(0deg, rgb(240 246 246 / 0.7) 0, rgb(240 246 246 / 0) 55%);
+  }
+  html[data-theme="light"] .ocean-landing .mk-hero-copy::before {
+    background: radial-gradient(
+      closest-side,
+      rgb(240 246 246 / 0.82),
+      rgb(240 246 246 / 0.6) 62%,
+      rgb(240 246 246 / 0)
+    );
+  }
+  html[data-theme="light"] .ocean-landing .mk-section-head::before {
+    inset: -32px -22px;
+  }
+  html[data-theme="light"]
+    .ocean-landing
+    :is(.mk-steps li, .mk-safety .mk-cards li) {
+    background: rgb(250 252 252 / 0.92);
+  }
+}

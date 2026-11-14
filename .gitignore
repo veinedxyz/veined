@@ -1,5 +1,9 @@
 node_modules/
 .next/
+# Local-only G7 pilot artifacts (separate from the public .next build) and launcher runtime records.
+.next-g7-pilot/
+.next-g7-pilot-test/
+.otherbridge/g7-pilot-runtime-*.json
 .env*
 !.env.example
 *.tsbuildinfo
@@ -7,3 +11,5 @@ playwright-report/
 test-results/
 .otherbridge/repro/
 .otherbridge/research-r1/
+infra/staging/secrets/
+infra/monitoring/secrets/

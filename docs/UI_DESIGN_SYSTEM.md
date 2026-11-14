@@ -1,0 +1,11 @@
+# V1.12 UI design system
+
+Preserve Otherbridge's charcoal surfaces, sage accent, established display headings, restrained network color and existing icon family. Use tabular numerals for money and amounts; 22/24/28/32px containment for token marks; logical inline spacing and bidi isolation for addresses. Images have fixed dimensions and no inline styles under the strict CSP.
+
+Landing keeps its brand, hierarchy and server-only boundary, with richer exact-token preview imagery and balanced mobile copy. Bridge promotes received amount before its expandable fees; the full fee rows remain available. Swap centers a single 660px trade panel before a quote and renders its route panel only when useful. Quote refresh has a distinct localized label. Public route states use compact Verified / Review required labels and preserve disabled sending and advanced safety detail. The pilot's availability message is 'Safety check needs another attempt' and its button is 'Try again'; hash/malformed-event faults remain strict stops.
+
+Portfolio preserves valuation, coverage, scan state and unpriced/unchecked semantics while fixing logos across holdings and expanded lists. Activity keeps saved quote previews distinct from transfers and preserves empty/loading/error/filter behavior. Networks keep environment-scoped discovery and exact network marks. Help adds seven topic destinations with existing FAQ and troubleshooting. Docs keeps safe Markdown, language fallback, table/code overflow and server content, adds Ctrl/Cmd+K, arrow selection, Enter and Escape, with native collapsed mobile navigation.
+
+Retain the established dialog focus trap, Escape handling, backdrop close, scroll lock and trigger focus restoration. The wallet provider stays lazy and connect-only. No new modal engine or icon dependency is introduced. Reduced-motion progress disables transitions. Keyboard focus and disabled state stay visible in both themes.
+
+Visual QA matrix: Landing, Bridge, Swap, Portfolio, Activity, Networks, Help and Docs at 360/390/768/1440 pixels, dark and light (64 primary captures), plus quoted/connected/picker/wallet/empty/error/scan fixtures, 24 locales and ar/fa/he/ur RTL. WCAG 2 A/AA and 2.1 AA axe reports are saved. Synthetic connected-state QA is clearly distinct from live read-only RPC evidence.

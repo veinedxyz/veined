@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "rcId": {
+          "type": "string",
+          "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+        },
+        "sourceCheckpoint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceManifest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "buildHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protectedBaseline": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "rcId",
+        "sourceCheckpoint",
+        "sourceManifest",
+        "buildHash",
+        "protectedBaseline"
+      ],
+      "additionalProperties": false
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "domain": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "const": "otherbridge.io"
+        },
+        "registrar": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "dnsProvider": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "controlReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "domain",
+        "registrar",
+        "dnsProvider",
+        "controlReference"
+      ],
+      "additionalProperties": false
+    },
+    "privy": {
+      "type": "object",
+      "properties": {
+        "appId": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "origin": {
+          "type": "string",
+          "const": "https://otherbridge.io"
+        },
+        "externalWalletOnly": {
+          "type": "boolean",
+          "const": true
+        },
+        "embeddedWallets": {
+          "type": "boolean",
+          "const": false
+        },
+        "emailSocial": {
+          "type": "boolean",
+          "const": false
+        },
+        "delegatedSigner": {
+          "type": "boolean",
+          "const": false
+        },
+        "sessionSigner": {
+          "type": "boolean",
+          "const": false
+        },
+        "serverWalletExecution": {
+          "type": "boolean",
+          "const": false
+        },
+        "reviewReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "appId",
+        "origin",
+        "externalWalletOnly",
+        "embeddedWallets",
+        "emailSocial",
+        "delegatedSigner",
+        "sessionSigner",
+        "serverWalletExecution",
+        "reviewReference"
+      ],
+      "additionalProperties": false
+    },
+    "hosting": {
+      "type": "object",
+      "properties": {
+        "decisionReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "secretCustodyReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "processCount": {
+          "type": "number",
+          "const": 1
+        },
+        "sharedEgressQuotaReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "decisionReference",
+        "secretCustodyReference",
+        "processCount",
+        "sharedEgressQuotaReference"
+      ],
+      "additionalProperties": false
+    },
+    "rpc": {
+      "type": "object",
+      "properties": {
+        "reviewReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "operators": {
+          "minItems": 2,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          }
+        },
+        "arbitrumWitnessReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        },
+        "avalancheWitnessReference": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "reviewReference",
+        "operators",
+        "arbitrumWitnessReference",
+        "avalancheWitnessReference"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "identity",
+    "issuedAt",
+    "expiresAt"
+  ],
+  "additionalProperties": false
+}

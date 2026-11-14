@@ -1,0 +1,352 @@
+[
+  {
+    "chain": "8453",
+    "scenario": "native-exact-out",
+    "provider": "AERODROME_SLIPSTREAM",
+    "family": "SLIPSTREAM",
+    "block": "0x3227d40",
+    "pool": [
+      "0x4e392fBfE4D0557C82D2F97F02ec39daA31516dd"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "10000",
+    "minOut": "10000",
+    "input": "4003214747399",
+    "amountIn": "4003214747399",
+    "gas": "197051",
+    "transactionDigest": "765b3a328ed96ade9521bb9a4352f5be0c7a8ad87f79576eb4dd71052b3ce381",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "8453",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "8453",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "8453",
+        "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_OUT",
+      "amount": "10000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973517837
+    },
+    "intentDigest": "5c4afae503e802e07d82bda91a161ebe8df8d6674e71b1dd1e562b1d5b5759a0",
+    "routerCodehash": "0xfedc4e21e1097b0ec1b4f1aa901cf645c22f9e5d297727b0f37275ee1d083df4",
+    "quote": {
+      "id": "d43797c4128bbe94698a452c1756e84e6c9811ce2a888fe058e553e21cf2facc",
+      "intentDigest": "5c4afae503e802e07d82bda91a161ebe8df8d6674e71b1dd1e562b1d5b5759a0",
+      "provider": "Aerodrome",
+      "mode": "AERODROME_SLIPSTREAM",
+      "chain": "8453",
+      "ecosystem": "EVM",
+      "amountIn": "4003214747399",
+      "amountOut": "10000",
+      "minAmountOut": "10000",
+      "maxAmountIn": "4023230821136",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Aerodrome",
+          "poolType": "SLIPSTREAM",
+          "pool": "0x4e392fBfE4D0557C82D2F97F02ec39daA31516dd",
+          "tokenIn": "0x4200000000000000000000000000000000000006",
+          "tokenOut": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "shareBps": 10000,
+          "fee": 1,
+          "factory": "0xf8f2eB4940CFE7d13603DDDD87f123820Fc061Ef"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973218230,
+      "expiresAt": 1791973238230,
+      "sourceBlock": "52591936",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "8453",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x698Cb2b6dd822994581fEa6eA4Fc755d1363A92F",
+      "value": "4023230821136",
+      "data": "0xac9650d800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000000000000000000000000000000000000000124f28c0498000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000000000006acf57760000000000000000000000000000000000000000000000000000000000002710000000000000000000000000000000000000000000000000000003a8bb3e7310000000000000000000000000000000000000000000000000000000000000002b833589fcd6edb6e08f4c7c32d4f71b54bda02913000001420000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000412210e8a00000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000004e392fbfe4d0557c82d2f97f02ec39daa31516dd",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000002710"
+      },
+      {
+        "address": "0x4200000000000000000000000000000000000006",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a412316707"
+      },
+      {
+        "address": "0x4200000000000000000000000000000000000006",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f",
+          "0x0000000000000000000000004e392fbfe4d0557c82d2f97f02ec39daa31516dd"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a412316707"
+      },
+      {
+        "address": "0x4e392fbfe4d0557c82d2f97f02ec39daa31516dd",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a412316707ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffd8f000000000000000000000000000000000000000000003468eb54f0a104119918700000000000000000000000000000000000000000000000000ea7e73317c5a12fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfa39"
+      }
+    ],
+    "returnData": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000003a4123167070000000000000000000000000000000000000000000000000000000000000000",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x7682fdacc82693d241beef6366800d618fbc7b44f56602cf3e4a69d158cf434d",
+    "simulationTimestamp": 1791973218230
+  },
+  {
+    "chain": "8453",
+    "scenario": "native-exact-out",
+    "provider": "AERODROME_SLIPSTREAM",
+    "family": "SLIPSTREAM",
+    "block": "0x3227d40",
+    "pool": [
+      "0x3FE04A59Ebd38cF06080a6F60a98D124eb59392A"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "10000",
+    "minOut": "10000",
+    "input": "4003076777382",
+    "amountIn": "4004779319355",
+    "gas": "192834",
+    "transactionDigest": "e687e7b870493021af76f5b18f4a6221bbda719870f63be0eb5ab76e73976fcf",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "8453",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "8453",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "8453",
+        "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_OUT",
+      "amount": "10000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973517837
+    },
+    "intentDigest": "5c4afae503e802e07d82bda91a161ebe8df8d6674e71b1dd1e562b1d5b5759a0",
+    "routerCodehash": "0xfedc4e21e1097b0ec1b4f1aa901cf645c22f9e5d297727b0f37275ee1d083df4",
+    "quote": {
+      "id": "d38d2dbc97f5a0a0e016c968038fbbb55a8ae486b5c493ac59a12631999d2966",
+      "intentDigest": "5c4afae503e802e07d82bda91a161ebe8df8d6674e71b1dd1e562b1d5b5759a0",
+      "provider": "Aerodrome",
+      "mode": "AERODROME_SLIPSTREAM",
+      "chain": "8453",
+      "ecosystem": "EVM",
+      "amountIn": "4004779319355",
+      "amountOut": "10000",
+      "minAmountOut": "10000",
+      "maxAmountIn": "4024803215952",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Aerodrome",
+          "poolType": "SLIPSTREAM",
+          "pool": "0x3FE04A59Ebd38cF06080a6F60a98D124eb59392A",
+          "tokenIn": "0x4200000000000000000000000000000000000006",
+          "tokenOut": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "shareBps": 10000,
+          "fee": 50,
+          "factory": "0xf8f2eB4940CFE7d13603DDDD87f123820Fc061Ef"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973218317,
+      "expiresAt": 1791973238317,
+      "sourceBlock": "52591936",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "8453",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x698Cb2b6dd822994581fEa6eA4Fc755d1363A92F",
+      "value": "4024803215952",
+      "data": "0xac9650d800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000000000000000000000000000000000000000124f28c0498000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000000000006acf57760000000000000000000000000000000000000000000000000000000000002710000000000000000000000000000000000000000000000000000003a918f74a50000000000000000000000000000000000000000000000000000000000000002b833589fcd6edb6e08f4c7c32d4f71b54bda02913000032420000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000412210e8a00000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000003fe04a59ebd38cf06080a6f60a98d124eb59392a",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000002710"
+      },
+      {
+        "address": "0x4200000000000000000000000000000000000006",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a409f825a6"
+      },
+      {
+        "address": "0x4200000000000000000000000000000000000006",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f",
+          "0x0000000000000000000000003fe04a59ebd38cf06080a6f60a98d124eb59392a"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a409f825a6"
+      },
+      {
+        "address": "0x3fe04a59ebd38cf06080a6f60a98d124eb59392a",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x000000000000000000000000698cb2b6dd822994581fea6ea4fc755d1363a92f",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000003a409f825a6ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffd8f00000000000000000000000000000000000000000000346aa0725d8eb6975fbc60000000000000000000000000000000000000000000000013a2d872e52c39788fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfa3b"
+      }
+    ],
+    "returnData": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000003a409f825a60000000000000000000000000000000000000000000000000000000000000000",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x7682fdacc82693d241beef6366800d618fbc7b44f56602cf3e4a69d158cf434d",
+    "simulationTimestamp": 1791973218317
+  }
+]

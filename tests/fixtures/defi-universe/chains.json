@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Ethereum",
+    "chainId": 1,
+    "tvl": 60000000000,
+    "tokenSymbol": "ETH",
+    "gecko_id": "ethereum"
+  },
+  {
+    "name": "BSC",
+    "chainId": 56,
+    "tvl": 5000000000,
+    "tokenSymbol": "BNB",
+    "gecko_id": "binancecoin"
+  },
+  {
+    "name": "Binance",
+    "chainId": 56,
+    "tvl": 0,
+    "tokenSymbol": "BNB",
+    "gecko_id": "binancecoin"
+  },
+  {
+    "name": "Base",
+    "chainId": 8453,
+    "tvl": 4000000000,
+    "tokenSymbol": null,
+    "gecko_id": null
+  },
+  {
+    "name": "Gnosis",
+    "chainId": 100,
+    "tvl": 300000000,
+    "tokenSymbol": "XDAI",
+    "gecko_id": "xdai"
+  },
+  {
+    "name": "Solana",
+    "chainId": null,
+    "tvl": 9000000000,
+    "tokenSymbol": "SOL",
+    "gecko_id": "solana"
+  },
+  {
+    "name": "Tron",
+    "chainId": null,
+    "tvl": 4000000000,
+    "tokenSymbol": "TRX",
+    "gecko_id": "tron"
+  },
+  {
+    "name": "CosmosHub",
+    "chainId": null,
+    "tvl": 10000000,
+    "tokenSymbol": "ATOM",
+    "gecko_id": "cosmos"
+  },
+  {
+    "name": "Bitcoin",
+    "chainId": null,
+    "tvl": 7000000000,
+    "tokenSymbol": "BTC",
+    "gecko_id": "bitcoin"
+  },
+  {
+    "name": "Data Network",
+    "chainId": 1514,
+    "tvl": 30000,
+    "tokenSymbol": "DATA",
+    "gecko_id": "story-2"
+  },
+  {
+    "name": "NoIdChain",
+    "chainId": null,
+    "tvl": 1000,
+    "tokenSymbol": null,
+    "gecko_id": null
+  },
+  {
+    "name": "Canto",
+    "chainId": null,
+    "tvl": 1000,
+    "tokenSymbol": "CANTO",
+    "gecko_id": "canto"
+  },
+  { "chainId": 999999, "tvl": 1 }
+]

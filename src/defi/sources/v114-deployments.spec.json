@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "note": "V1.14 reviewed deployments. Every contract must appear literally in its pinned official source file unless listed under 'derived' with the on-chain derivation; scripts/defi-registry.mjs enforces this.",
+  "deployments": [
+    {
+      "id": "lst-reth-1",
+      "protocolId": "rocket-pool",
+      "name": "Rocket Pool rETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "converter": "0xae78736cd615f374d3085123a210448e74fc6393"
+      },
+      "config": {
+        "call": "getEthValue",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "source": "rocket-pool-docs.rocketpool.net--docs__en__protocol__contracts-integrations.md"
+    },
+    {
+      "id": "lst-cbeth-1",
+      "protocolId": "coinbase-cbeth",
+      "name": "Coinbase cbETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+        "converter": "0xbe9895146f7af43049ca1c1ae358b0541ea49704"
+      },
+      "config": {
+        "call": "exchangeRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "source": "Layr-Labs-eigenlayer-contracts--README.md",
+      "derived": {
+        "token": "underlyingToken() of the official EigenLayer cbETH strategy 0x54945180db7943c0ed0fee7edab2bd24620256bc (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-wbeth-1",
+      "protocolId": "binance-wbeth",
+      "name": "Binance wBETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xa2e3356610840701bdf5611a53974510ae27e2e1",
+        "converter": "0xa2e3356610840701bdf5611a53974510ae27e2e1"
+      },
+      "config": {
+        "call": "exchangeRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "source": "Layr-Labs-eigenlayer-contracts--README.md",
+      "derived": {
+        "token": "underlyingToken() of the official EigenLayer wBETH strategy 0x7ca911e83dabf90c90dd3de5411a10f1a6112184 (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-sweth-1",
+      "protocolId": "swell-sweth",
+      "name": "Swell swETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xf951e335afb289353dc249e82926178eac7ded78",
+        "converter": "0xf951e335afb289353dc249e82926178eac7ded78"
+      },
+      "config": {
+        "call": "swETHToETHRate",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-reported-rate"
+      },
+      "source": "Layr-Labs-eigenlayer-contracts--README.md",
+      "derived": {
+        "token": "underlyingToken() of the official EigenLayer swETH strategy 0x0fe4f44bee93503346a3ac9ee5a26b130a5796d6 (README literal); the issuer publishes no repository address file",
+        "converter": "same contract as token (rate view on the token itself)"
+      }
+    },
+    {
+      "id": "lst-weeth-1",
+      "protocolId": "ether-fi",
+      "name": "ether.fi weETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+        "converter": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+        "underlying": "0x35fa164735182de50811e8e2e824cfb9b6118ac2"
+      },
+      "config": {
+        "call": "getEETHByWeETH",
+        "mode": "convert",
+        "underlying": "token",
+        "rateSource": "protocol-view"
+      },
+      "source": "etherfi-protocol-smart-contracts--deployment__WeETHWithdrawAdapter__2026-06-26-22-16-11.json"
+    },
+    {
+      "id": "lst-meth-1",
+      "protocolId": "meth-protocol",
+      "name": "Mantle mETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+        "converter": "0xe3cbd06d7dadb3f4e6557bab7edd924cd1489e8f"
+      },
+      "config": {
+        "call": "mETHToETH",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "source": "mantle-lsp-contracts--README.md"
+    },
+    {
+      "id": "lst-ethx-1",
+      "protocolId": "stader",
+      "name": "Stader ETHx",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+        "converter": "0xcf5ea1b38380f6af39068375516daf40ed70d299"
+      },
+      "config": {
+        "call": "convertToAssets",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "source": "stader-labs-ethx--README.md"
+    },
+    {
+      "id": "lst-rseth-1",
+      "protocolId": "kelp",
+      "name": "Kelp rsETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "restaking",
+      "contracts": {
+        "token": "0xa1290d69c65a6fe4df752f95823fae25cb99e5a7",
+        "converter": "0x349a73444b1a310bae67ef67973022020d70020d"
+      },
+      "config": {
+        "call": "rsETHPrice",
+        "mode": "rate",
+        "underlying": "native",
+        "rateSource": "protocol-oracle-stored-rate"
+      },
+      "source": "Kelp-DAO-LRT-rsETH--README.md"
+    },
+    {
+      "id": "lst-oseth-1",
+      "protocolId": "stakewise-v3",
+      "name": "StakeWise osETH",
+      "chainId": "1",
+      "adapter": "lst-rate",
+      "category": "staking",
+      "contracts": {
+        "token": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+        "converter": "0x2a261e60fb14586b474c208b1b7ac6d0f5000306"
+      },
+      "config": {
+        "call": "convertToAssets",
+        "mode": "convert",
+        "underlying": "native",
+        "rateSource": "protocol-view"
+      },
+      "source": "stakewise-v3-core--deployments__mainnet.json"
+    },
+    {
+      "id": "erc4626-sfrxeth-1",
+      "protocolId": "frax-ether",
+      "name": "Frax sfrxETH",
+      "chainId": "1",
+      "adapter": "erc4626",
+      "category": "staking",
+      "contracts": {
+        "vault": "0xac3e018457b222d93114458476f3e3416abbe38f"
+      },
+      "source": "FraxFinance-frax-solidity--src__types__constants.ts.txt"
+    },
+    {
+      "id": "erc4626-pufeth-1",
+      "protocolId": "puffer",
+      "name": "Puffer pufETH",
+      "chainId": "1",
+      "adapter": "erc4626",
+      "category": "restaking",
+      "contracts": {
+        "vault": "0xd9a442856c234a39a81a089c06451ebaa4306a72"
+      },
+      "source": "PufferFinance-Deployments-and-ACL--docs__deployments__mainnet.md"
+    },
+    {
+      "id": "eigenlayer-1",
+      "protocolId": "eigenlayer",
+      "name": "EigenLayer restaking",
+      "chainId": "1",
+      "adapter": "eigenlayer",
+      "category": "restaking",
+      "contracts": {
+        "strategyManager": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+        "delegationManager": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+        "eigenPodManager": "0x91e677b07f7af907ec9a428aafa9fc14a0d3a338"
+      },
+      "strategies": [
+        {
+          "symbol": "stETH",
+          "strategy": "0x93c4b944d05dfe6df7645a86cd2206016c51564d",
+          "underlying": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84"
+        },
+        {
+          "symbol": "rETH",
+          "strategy": "0x1bee69b7dfffa4e2d53c2a2df135c388ad25dcd2",
+          "underlying": "0xae78736cd615f374d3085123a210448e74fc6393"
+        },
+        {
+          "symbol": "cbETH",
+          "strategy": "0x54945180db7943c0ed0fee7edab2bd24620256bc",
+          "underlying": "0xbe9895146f7af43049ca1c1ae358b0541ea49704"
+        },
+        {
+          "symbol": "ETHx",
+          "strategy": "0x9d7ed45ee2e8fc5482fa2428f15c971e6369011d",
+          "underlying": "0xa35b1b31ce002fbf2058d22f30f95d405200a15b"
+        },
+        {
+          "symbol": "ankrETH",
+          "strategy": "0x13760f50a9d7377e4f20cb8cf9e4c26586c658ff",
+          "underlying": "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb"
+        },
+        {
+          "symbol": "OETH",
+          "strategy": "0xa4c637e0f704745d182e4d38cab7e7485321d059",
+          "underlying": "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3"
+        },
+        {
+          "symbol": "osETH",
+          "strategy": "0x57ba429517c3473b6d34ca9acd56c0e735b94c02",
+          "underlying": "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38"
+        },
+        {
+          "symbol": "swETH",
+          "strategy": "0x0fe4f44bee93503346a3ac9ee5a26b130a5796d6",
+          "underlying": "0xf951e335afb289353dc249e82926178eac7ded78"
+        },
+        {
+          "symbol": "wBETH",
+          "strategy": "0x7ca911e83dabf90c90dd3de5411a10f1a6112184",
+          "underlying": "0xa2e3356610840701bdf5611a53974510ae27e2e1"
+        },
+        {
+          "symbol": "sfrxETH",
+          "strategy": "0x8ca7a5d6f3acd3a7a8bc468a8cd0fb14b6bd28b6",
+          "underlying": "0xac3e018457b222d93114458476f3e3416abbe38f"
+        },
+        {
+          "symbol": "lsETH",
+          "strategy": "0xae60d8180437b5c34bb956822ac2710972584473",
+          "underlying": "0x8c1bed5b9a0928467c9b1341da1d7bd5e10b6549"
+        },
+        {
+          "symbol": "mETH",
+          "strategy": "0x298afb19a105d59e74658c4c334ff360bade6dd2",
+          "underlying": "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa"
+        }
+      ],
+      "source": "Layr-Labs-eigenlayer-contracts--README.md"
+    },
+    {
+      "id": "curve-1",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "1",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0xf98b45fa17de75fb1ad0e7afd971b0ca00e379fc"
+      },
+      "source": "curvefi-metaregistry--README.md"
+    },
+    {
+      "id": "curve-42161",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "42161",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0x13526206545e2dc7ccfbaf28dc88f440ce7ad3e0"
+      },
+      "source": "curvefi-metaregistry--deployments.yaml"
+    },
+    {
+      "id": "curve-10",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "10",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0xc65cb3156225380beda366610bab18d5835a1647"
+      },
+      "source": "curvefi-metaregistry--deployments.yaml"
+    },
+    {
+      "id": "curve-137",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "137",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "metaRegistry": "0x296d2b5c23833a70d07c8fcbb97d846c1ff90ddd"
+      },
+      "source": "curvefi-metaregistry--deployments.yaml"
+    },
+    {
+      "id": "curve-8453",
+      "protocolId": "curve",
+      "name": "Curve pools",
+      "chainId": "8453",
+      "adapter": "curve",
+      "category": "liquidity",
+      "contracts": {
+        "addressProvider": "0x5ffe7fb82894076ecb99a30d6a32e969e6e35e98",
+        "metaRegistry": "0x87dd13dd25a1dbde0e1edcf5b8fa6cfff7eabcad"
+      },
+      "source": "curvefi-metaregistry--scripts__deploy_addressprovider_and_setup.py",
+      "derived": {
+        "metaRegistry": "AddressProviderNG.get_address(7) on Base (AddressProviderNG is literal in the official file); verified again at read time"
+      }
+    },
+    {
+      "id": "balancer-v2-1",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "1",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x897888115ada5773e02aa29f775430bfb5f34c51"
+      },
+      "source": "balancer-balancer-deployments--addresses__mainnet.json"
+    },
+    {
+      "id": "balancer-v2-10",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "10",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x230a59f4d9adc147480f03b0d3fffecd56c3289a"
+      },
+      "source": "balancer-balancer-deployments--addresses__optimism.json"
+    },
+    {
+      "id": "balancer-v2-100",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "100",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x6cad2ea22bfa7f4c14aae92e47f510cd5c509bc7"
+      },
+      "source": "balancer-balancer-deployments--addresses__gnosis.json"
+    },
+    {
+      "id": "balancer-v2-137",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "137",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0xfc8a407bba312ac761d8bfe04ce1201904842b76"
+      },
+      "source": "balancer-balancer-deployments--addresses__polygon.json"
+    },
+    {
+      "id": "balancer-v2-8453",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "8453",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x4c32a8a8fda4e24139b51b456b42290f51d6a1c4"
+      },
+      "source": "balancer-balancer-deployments--addresses__base.json"
+    },
+    {
+      "id": "balancer-v2-42161",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "42161",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0xc7e5ed1054a24ef31d827e6f86caa58b3bc168d7"
+      },
+      "source": "balancer-balancer-deployments--addresses__arbitrum.json"
+    },
+    {
+      "id": "balancer-v2-43114",
+      "protocolId": "balancer-v2",
+      "name": "Balancer V2 weighted pools",
+      "chainId": "43114",
+      "adapter": "balancer-v2",
+      "category": "liquidity",
+      "contracts": {
+        "vault": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "weightedPoolFactory": "0x230a59f4d9adc147480f03b0d3fffecd56c3289a"
+      },
+      "source": "balancer-balancer-deployments--addresses__avalanche.json"
+    },
+    {
+      "id": "aerodrome-v2-8453",
+      "protocolId": "aerodrome",
+      "name": "Aerodrome basic pools",
+      "chainId": "8453",
+      "adapter": "solidly-v2",
+      "category": "liquidity",
+      "contracts": {
+        "poolFactory": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+        "voter": "0x16613524e02ad97edfef371bc883f2f5d6c480a5"
+      },
+      "source": "aerodrome-finance-contracts--script__constants__output__DeployCore-Base.json"
+    },
+    {
+      "id": "velodrome-v2-10",
+      "protocolId": "velodrome",
+      "name": "Velodrome basic pools",
+      "chainId": "10",
+      "adapter": "solidly-v2",
+      "category": "liquidity",
+      "contracts": {
+        "poolFactory": "0xf1046053aa5682b4f9a81b5481394da16be5ff5a",
+        "voter": "0x41c914ee0c7e1a5edcd0295623e6dc557b5abf3c"
+      },
+      "source": "velodrome-finance-contracts--README.md"
+    },
+    {
+      "id": "sushiswap-v2-1",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "1",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee5",
+      "contracts": {
+        "factory": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac"
+      },
+      "source": "sushiswap-v2-core--deployments__ethereum__UniswapV2Factory.json"
+    },
+    {
+      "id": "sushiswap-v2-56",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "56",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee5",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "sushiswap-v2-core--deployments__bsc__UniswapV2Factory.json"
+    },
+    {
+      "id": "sushiswap-v2-137",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "137",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee5",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "sushiswap-v2-core--deployments__matic__UniswapV2Factory.json"
+    },
+    {
+      "id": "sushiswap-v2-8453",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "8453",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee5",
+      "contracts": {
+        "factory": "0x71524b4f93c58fcbf659783284e38825f0622859"
+      },
+      "source": "sushiswap-v2-core--deployments__base__UniswapV2Factory.json"
+    },
+    {
+      "id": "sushiswap-v2-42161",
+      "protocolId": "sushiswap",
+      "name": "SushiSwap V2",
+      "chainId": "42161",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee5",
+      "contracts": {
+        "factory": "0xc35dadb65012ec5796536bd9864ed8773abc74c4"
+      },
+      "source": "sushiswap-v2-core--deployments__arbitrum__UniswapV2Factory.json"
+    },
+    {
+      "id": "pancakeswap-v2-56",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "56",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee3",
+      "contracts": {
+        "factory": "0xca143ce32fe78f1f7019d7d551a6402fc5350c73"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v2__addresses.md"
+    },
+    {
+      "id": "pancakeswap-v2-1",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "1",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee3",
+      "contracts": {
+        "factory": "0x1097053fd2ea711dad45caccc45eff7548fcb362"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v2__addresses.md"
+    },
+    {
+      "id": "pancakeswap-v2-42161",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "42161",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee3",
+      "contracts": {
+        "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v2__addresses.md"
+    },
+    {
+      "id": "pancakeswap-v2-8453",
+      "protocolId": "pancakeswap",
+      "name": "PancakeSwap V2",
+      "chainId": "8453",
+      "adapter": "uniswap-v2",
+      "category": "liquidity",
+      "variant": "fee3",
+      "contracts": {
+        "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v2__addresses.md"
+    },
+    {
+      "id": "pancakeswap-v3-56",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "56",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "variant": "pancake",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "pancakeswap-pancake-v3-contracts--deployments__bscMainnet.json"
+    },
+    {
+      "id": "pancakeswap-v3-1",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "1",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "variant": "pancake",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "pancakeswap-pancake-v3-contracts--deployments__eth.json"
+    },
+    {
+      "id": "pancakeswap-v3-8453",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "8453",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "variant": "pancake",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v3__addresses.md"
+    },
+    {
+      "id": "pancakeswap-v3-42161",
+      "protocolId": "pancakeswap-v3",
+      "name": "PancakeSwap V3",
+      "chainId": "42161",
+      "adapter": "uniswap-v3",
+      "category": "liquidity",
+      "variant": "pancake",
+      "contracts": {
+        "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "manager": "0x46a15b0b27311cedf172ab29e4f4766fbe7f4364",
+        "deployer": "0x41ff9aa7e16b8b1a8a8dc4f0efacd93d02d071c9"
+      },
+      "source": "pancakeswap-pancake-developer--docs__pages__contracts__v3__addresses.md"
+    }
+  ]
+}

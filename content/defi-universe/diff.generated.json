@@ -1,0 +1,55 @@
+{
+ "from": "u20261010T232842Z-1d6312",
+ "to": "u20261011T044714Z-d1c35a",
+ "protocols": {
+  "added": [
+   {
+    "id": "llama:unidentified-e30fd35deca31889",
+    "name": "OpenTrade",
+    "slug": "opentrade",
+    "category": "RWA"
+   }
+  ],
+  "removed": [
+   {
+    "id": "llama:unidentified-961c09bfdac012ee",
+    "name": "OpenTrade",
+    "slug": "opentrade"
+   }
+  ],
+  "renamed": [],
+  "slugChanged": [],
+  "categoryChanged": [],
+  "statusChanged": [],
+  "chainsChanged": []
+ },
+ "chains": {
+  "added": [],
+  "removed": [],
+  "aliasesChanged": [],
+  "chainIdChanged": [],
+  "vmChanged": [],
+  "mappingChanged": []
+ },
+ "categories": {
+  "added": [],
+  "removed": []
+ },
+ "counts": {
+  "protocols.added": 1,
+  "protocols.removed": 1,
+  "protocols.renamed": 0,
+  "protocols.slugChanged": 0,
+  "protocols.categoryChanged": 0,
+  "protocols.statusChanged": 0,
+  "protocols.chainsChanged": 0,
+  "chains.added": 0,
+  "chains.removed": 0,
+  "chains.aliasesChanged": 0,
+  "chains.chainIdChanged": 0,
+  "chains.vmChanged": 0,
+  "chains.mappingChanged": 0,
+  "categories.added": 0,
+  "categories.removed": 0
+ }
+}

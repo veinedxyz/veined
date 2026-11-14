@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-12T09:30:20.753Z",
+  "pinSet": "g14-canary-pins.2026-11-12.2",
+  "transport": "src/swap/server/transport.ts rpc('8453') (protected, unchanged)",
+  "reads": {
+    "origin": "https://base-rpc.publicnode.com",
+    "chainId": "8453",
+    "block": {
+      "number": "56427247",
+      "hash": "0xa6917dcac4337fb3dca699edad373a94046c1ff343d34b572af65f56853d40da"
+    },
+    "selector": "0x1794958f",
+    "diamondCodehash": "0x5efa2ebe1ed041ce83c069f1cedc04945f1438680dacf5f88068ef6c7d94110a",
+    "facetForSelector": "0xAd3f1634a917924cBb54A0F76e43ca035D2B6BCd",
+    "facetCodehash": "0x0d049cb64bfcb713b3fe8fa4727ae763cc1efe1e741ea5c43d41d07add0fb1f8",
+    "facetSpokePool": "0x09aea4b2242abC8bb4BB78D537A67a245A7bEC64",
+    "feeCollectorCodehash": "0x99a76627aece8903612e0246c10f13a46e511a0a074d9a4e68987a28c78ebd52",
+    "sourceSpokePool": {
+      "codehash": "0x932cddc50793da935ccf915651ad67f6b746e9936fcc5614f0ff492563782c75",
+      "implementation": "0xf23c6c04a2b88e8651fe99bbdccbb5c9d306e6b0",
+      "implementationCodehash": "0xb36f3bbdffcc931890a4354aa13c9756f032cf6f968d1d1a9604cb3ece9eb480"
+    },
+    "sourceUsdc": {
+      "codehash": "0xa6705a10bb756b5dea144591118be77d7af0c3eee3bf2dfe2583dcb0364fefab",
+      "implementation": "0x2ce6311ddae708829bc0784c967b7d77d19fd779",
+      "implementationCodehash": "0x11b75a237997ab8328f65b2d5a55c10f0346d0a175741ed42ddf4f2c66b9e873",
+      "decimals": 6,
+      "symbol": "USDC"
+    }
+  },
+  "problems": []
+}

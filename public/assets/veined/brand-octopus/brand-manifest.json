@@ -1,0 +1,199 @@
+{
+ "source": {
+  "path": "D:/Projeler/veined/design-assets/brand-candidates/veined-octopus-v1.png",
+  "sha256": "7ec4859a5c6dbe3b682423d5b7bd0a38b087e988e76bf9c55ffcd3f87aac0274",
+  "bytes": 194282,
+  "declaredExtension": ".png",
+  "actualFormat": "JPEG",
+  "size": [
+   1408,
+   1408
+  ],
+  "mode": "RGB",
+  "alpha": false
+ },
+ "measured": {
+  "background": [
+   2.0,
+   66.0,
+   112.0
+  ],
+  "foreground": [
+   246.0,
+   245.0,
+   241.0
+  ]
+ },
+ "method": "Lanczos resampling and masking of the source pixels only; no redrawing, tracing or recolouring of the artwork (the cutout recolours the alpha-unmixed octopus to the measured pearl foreground).",
+ "vector": "NOT_PRODUCED: no faithful vector exists yet; icon.svg embeds the raster. A designer-made vector is an owner action.",
+ "outputs": {
+  "tile-16.png": {
+   "sha256": "7babb9064057071d4d5d7795e485396c006d1db5a7d453ab0fd6e752c07bbe52",
+   "bytes": 778,
+   "size": [
+    16,
+    16
+   ]
+  },
+  "tile-32.png": {
+   "sha256": "259f12da9c8bedddef9fd1e9f8ef1433523d992a251bda74dbf546fab8207a65",
+   "bytes": 2225,
+   "size": [
+    32,
+    32
+   ]
+  },
+  "tile-48.png": {
+   "sha256": "156d427b4a49606a0ef4960274bb6b026e59d1a7a350602752e798eccb598f9d",
+   "bytes": 4246,
+   "size": [
+    48,
+    48
+   ]
+  },
+  "tile-64.png": {
+   "sha256": "0d06ce9682bb7ca0d94ad77e08a81c7ebfffc8f025a323a3fa8daedff8f4338d",
+   "bytes": 6880,
+   "size": [
+    64,
+    64
+   ]
+  },
+  "tile-128.png": {
+   "sha256": "ff7df93cf33754e9a52dd50a053e1c9bac70251da3ca85669b43917f44630b58",
+   "bytes": 21940,
+   "size": [
+    128,
+    128
+   ]
+  },
+  "tile-192.png": {
+   "sha256": "1846cb9d7d05d26b2e7dda2b7a8ed6a84a45fbdee0968b6953ac07ef7a43fd83",
+   "bytes": 41407,
+   "size": [
+    192,
+    192
+   ]
+  },
+  "tile-256.png": {
+   "sha256": "0c7d3e2ee4501ae02a334e2d28f4d35086fbda602aa54736ba957fe5ccd2262b",
+   "bytes": 64506,
+   "size": [
+    256,
+    256
+   ]
+  },
+  "tile-512.png": {
+   "sha256": "f0cde4c0b52aad6bebecfd4b76b638077e8aa3c2f596ffcfd119863a006e13b4",
+   "bytes": 181252,
+   "size": [
+    512,
+    512
+   ]
+  },
+  "apple-icon-180.png": {
+   "sha256": "658d881b1b9a8fb99b7f040b03904c298722edf60d028ecb4db51304458b230c",
+   "bytes": 32751,
+   "size": [
+    180,
+    180
+   ]
+  },
+  "maskable-512.png": {
+   "sha256": "8e73c24f05f4db434f0cfa4847975b25728e656535b0455c3e60a3bfe9358d00",
+   "bytes": 118766,
+   "size": [
+    512,
+    512
+   ]
+  },
+  "cutout-256.png": {
+   "sha256": "c89a269f4ba8d235244ddbf826a993ec3b78bac58431d43e498e2be5399d31c2",
+   "bytes": 20400,
+   "size": [
+    256,
+    256
+   ]
+  },
+  "cutout-512.png": {
+   "sha256": "99240b3434c4f30447c29533f63bf6fafa0c7e340db21c90bf00304564f62e64",
+   "bytes": 46484,
+   "size": [
+    512,
+    512
+   ]
+  },
+  "cutout-1024.png": {
+   "sha256": "803741964eb150296ccc2fbba5f40cea612688caa623e32e750eff95ef5dc034",
+   "bytes": 108772,
+   "size": [
+    1024,
+    1024
+   ]
+  },
+  "favicon.ico": {
+   "sha256": "460c518a67dc5e13eabae5cc7bafe0138b5f4b4344a02e09ee3e1f39b7a00f29",
+   "bytes": 14409,
+   "size": [
+    64,
+    64
+   ]
+  },
+  "icon.svg": {
+   "sha256": "a802f65e52c8445427ecec2de2a06f8dcd91d2c02957e4924e37a04db8c96710",
+   "bytes": 29548,
+   "size": [
+    128,
+    128
+   ]
+  },
+  "sheet-dark.png": {
+   "sha256": "980a70159c509a53fde8886a4af59cb579735ea1c0d2203ed96f2ec2b31d6aca",
+   "bytes": 124792,
+   "size": [
+    640,
+    584
+   ]
+  },
+  "sheet-light.png": {
+   "sha256": "8f2a4aaf2db8aaaec37b74c139f12e4926c34b2fb538c9b0569a97301258a117",
+   "bytes": 113205,
+   "size": [
+    640,
+    584
+   ]
+  },
+  "sheet-checker.png": {
+   "sha256": "0e777db172035c76df5475a3db387b9391527c44cdf96ce7eb3c256607adb298",
+   "bytes": 118056,
+   "size": [
+    640,
+    584
+   ]
+  },
+  "og-image.png": {
+   "sha256": "82f5ccff50dcb7ad4397a58c6daea4f907429f70a1cc887fbae87668cbf0c6ee",
+   "bytes": 282949,
+   "size": [
+    1200,
+    630
+   ],
+   "method": "Chromium render of social.html: cutout-1024 + existing VEINED wordmark (wordmark-light.svg, unchanged) on a deep-ocean gradient; no slogan."
+  }
+ },
+ "published": {
+  "cutout-512.png": "99240b3434c4f30447c29533f63bf6fafa0c7e340db21c90bf00304564f62e64",
+  "maskable-512.png": "8e73c24f05f4db434f0cfa4847975b25728e656535b0455c3e60a3bfe9358d00",
+  "og-image.png": "82f5ccff50dcb7ad4397a58c6daea4f907429f70a1cc887fbae87668cbf0c6ee",
+  "tile-128.png": "ff7df93cf33754e9a52dd50a053e1c9bac70251da3ca85669b43917f44630b58",
+  "tile-192.png": "1846cb9d7d05d26b2e7dda2b7a8ed6a84a45fbdee0968b6953ac07ef7a43fd83",
+  "tile-32.png": "259f12da9c8bedddef9fd1e9f8ef1433523d992a251bda74dbf546fab8207a65",
+  "tile-512.png": "f0cde4c0b52aad6bebecfd4b76b638077e8aa3c2f596ffcfd119863a006e13b4",
+  "tile-64.png": "0d06ce9682bb7ca0d94ad77e08a81c7ebfffc8f025a323a3fa8daedff8f4338d"
+ },
+ "appIcons": {
+  "favicon.ico": "460c518a67dc5e13eabae5cc7bafe0138b5f4b4344a02e09ee3e1f39b7a00f29",
+  "icon.svg": "a802f65e52c8445427ecec2de2a06f8dcd91d2c02957e4924e37a04db8c96710",
+  "apple-icon.png": "658d881b1b9a8fb99b7f040b03904c298722edf60d028ecb4db51304458b230c"
+ }
+}

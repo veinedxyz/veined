@@ -28,3 +28,11 @@ Tam sürümler `package.json`, çözüm `pnpm-lock.yaml`. SDK kurulu değil; met
 İlk audit: solc→tmp 0.2.6 için GHSA-7c78-jf6q-g5cm high. Hedefli `solc>tmp: 0.2.7` override ve tekrar test ile düzeltildi; force audit fix/ignore yapılmadı. Son audit 0 bulgu. ESLint 9.39.5 dev-only ve upstream deprecated; Next lint plugin peer aralığı ESLint 10’u henüz kabul etmediği için uyumlu sürüm korundu. Bu bilgi saklanmadı; upgrade sonrası peer/type/lint yeniden kontrol edilmeli.
 
 Style CSP inline CSS’e izin verir, script CSP nonce kullanır. Browser localStorage şifreli veya attacker-proof değildir; private key/session/signature saklanmaz. Analytics kapalı. Public RPC servisleri query bilgilerini görebilir. Emergency write lock tracking/okuma ekranlarını kapatmaz. Public release için bağımsız kod/protokol incelemesi gerekir.
+
+## V1.2 locale and reserve boundaries
+
+All 24 shipped dictionaries must match the canonical schema and interpolation placeholders; rich HTML is rejected and translations remain local assets. Unknown provider/status codes produce safe localized messages. Locale selection persists only the supported locale ID. Technical addresses, hashes and chain IDs remain unchanged LTR isolates.
+
+Localized amount input is normalized before BigInt conversion. Grouping, whitespace/NBSP, bidi controls, exponent/sign syntax, mixed separators, ambiguous comma grouping and excessive precision fail closed. Displayed grouped amounts never feed financial state or MAX. UI fee labels are localized without changing provider financial amounts or mandatory protocol names.
+
+The explicit ReserveEvidence model remains verified=false because exact deployment builds and a complete spendable-ledger reconciliation are unavailable. A custody/accounting bound cannot authorize a transfer. Mainnet submission registry and production false/null write gate remain closed. No G7, funds, signing, approval, broadcast, deployment or V2/V3 scope was authorized.

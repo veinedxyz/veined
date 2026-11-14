@@ -1,0 +1,133 @@
+/* gf1 G02: RainbowKit theme as a static same-origin stylesheet. RainbowKitProvider runs with theme={null}, so it never
+   injects a <style> block (the production CSP has no 'unsafe-inline'); its modal portal carries [data-rk] and reads
+   these variables. Values are VEINED's deep-sea tokens (dark default, light under html[data-theme="light"]), generated
+   once with RainbowKit's own cssStringFromTheme(darkTheme/lightTheme) and pinned here. */
+[data-rk] {
+  --rk-blurs-modalOverlay: blur(4px);
+  --rk-fonts-body: inherit;
+  --rk-radii-actionButton: 10px;
+  --rk-radii-connectButton: 8px;
+  --rk-radii-menuButton: 8px;
+  --rk-radii-modal: 16px;
+  --rk-radii-modalMobile: 18px;
+  --rk-colors-accentColor: #a3dccf;
+  --rk-colors-accentColorForeground: #06201b;
+  --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.04);
+  --rk-colors-actionButtonBorderMobile: rgba(255, 255, 255, 0.08);
+  --rk-colors-actionButtonSecondaryBackground: #0b1c23;
+  --rk-colors-closeButton: #abbec0;
+  --rk-colors-closeButtonBackground: #0b1c23;
+  --rk-colors-connectButtonBackground: #1a1b1f;
+  --rk-colors-connectButtonBackgroundError: #ff494a;
+  --rk-colors-connectButtonInnerBackground: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.15)
+  );
+  --rk-colors-connectButtonText: #fff;
+  --rk-colors-connectButtonTextError: #fff;
+  --rk-colors-connectionIndicator: #30e000;
+  --rk-colors-downloadBottomCardBackground:
+    linear-gradient(
+      126deg,
+      rgba(0, 0, 0, 0) 9.49%,
+      rgba(120, 120, 120, 0.2) 71.04%
+    ),
+    #1a1b1f;
+  --rk-colors-downloadTopCardBackground:
+    linear-gradient(
+      126deg,
+      rgba(120, 120, 120, 0.2) 9.49%,
+      rgba(0, 0, 0, 0) 71.04%
+    ),
+    #1a1b1f;
+  --rk-colors-error: #ff8f7a;
+  --rk-colors-generalBorder: #16303a;
+  --rk-colors-generalBorderDim: #10252d;
+  --rk-colors-menuItemBackground: #10252d;
+  --rk-colors-modalBackdrop: rgba(3, 10, 14, 0.72);
+  --rk-colors-modalBackground: #08161c;
+  --rk-colors-modalBorder: #16303a;
+  --rk-colors-modalText: #eef5f3;
+  --rk-colors-modalTextDim: #91a6a9;
+  --rk-colors-modalTextSecondary: #abbec0;
+  --rk-colors-profileAction: rgba(224, 232, 255, 0.1);
+  --rk-colors-profileActionHover: rgba(224, 232, 255, 0.2);
+  --rk-colors-profileForeground: #0b1c23;
+  --rk-colors-selectedOptionBorder: rgba(224, 232, 255, 0.1);
+  --rk-colors-standby: #e7b866;
+  --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+  --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+  --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+  --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.24);
+  --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+}
+html[data-theme="light"] [data-rk] {
+  --rk-blurs-modalOverlay: blur(4px);
+  --rk-fonts-body: inherit;
+  --rk-radii-actionButton: 10px;
+  --rk-radii-connectButton: 8px;
+  --rk-radii-menuButton: 8px;
+  --rk-radii-modal: 16px;
+  --rk-radii-modalMobile: 18px;
+  --rk-colors-accentColor: #1b6a5f;
+  --rk-colors-accentColorForeground: #ffffff;
+  --rk-colors-actionButtonBorder: rgba(0, 0, 0, 0.04);
+  --rk-colors-actionButtonBorderMobile: rgba(0, 0, 0, 0.06);
+  --rk-colors-actionButtonSecondaryBackground: #f5faf9;
+  --rk-colors-closeButton: #475c64;
+  --rk-colors-closeButtonBackground: #f5faf9;
+  --rk-colors-connectButtonBackground: #fff;
+  --rk-colors-connectButtonBackgroundError: #ff494a;
+  --rk-colors-connectButtonInnerBackground: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.06)
+  );
+  --rk-colors-connectButtonText: #25292e;
+  --rk-colors-connectButtonTextError: #fff;
+  --rk-colors-connectionIndicator: #30e000;
+  --rk-colors-downloadBottomCardBackground:
+    linear-gradient(
+      126deg,
+      rgba(255, 255, 255, 0) 9.49%,
+      rgba(171, 171, 171, 0.04) 71.04%
+    ),
+    #ffffff;
+  --rk-colors-downloadTopCardBackground:
+    linear-gradient(
+      126deg,
+      rgba(171, 171, 171, 0.2) 9.49%,
+      rgba(255, 255, 255, 0) 71.04%
+    ),
+    #ffffff;
+  --rk-colors-error: #b3261e;
+  --rk-colors-generalBorder: #d0dfdf;
+  --rk-colors-generalBorderDim: #e0eaea;
+  --rk-colors-menuItemBackground: #e8f1f0;
+  --rk-colors-modalBackdrop: rgba(16, 34, 41, 0.42);
+  --rk-colors-modalBackground: #ffffff;
+  --rk-colors-modalBorder: #d0dfdf;
+  --rk-colors-modalText: #102229;
+  --rk-colors-modalTextDim: #52666d;
+  --rk-colors-modalTextSecondary: #475c64;
+  --rk-colors-profileAction: #fff;
+  --rk-colors-profileActionHover: rgba(255, 255, 255, 0.5);
+  --rk-colors-profileForeground: #f5faf9;
+  --rk-colors-selectedOptionBorder: rgba(60, 66, 66, 0.1);
+  --rk-colors-standby: #7d5c12;
+  --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+  --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+  --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+  --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.12);
+  --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+}
+/* RainbowKit 2.2.10 offsets its absolutely positioned wallet icons one icon-width outside their frame under
+   dir="rtl" (measured at 390 px: frame x=226, image x=198, left:-28px/right:28px). Pin every image to its frame
+   (with a fixed width, "left" is ignored in RTL, so right:0 aligns it exactly as in LTR). */
+html[dir="rtl"] [data-rk] img {
+  left: 0;
+  right: 0;
+}

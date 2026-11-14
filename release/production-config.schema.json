@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "rcId": {
+          "type": "string",
+          "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+        },
+        "sourceCheckpoint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceManifest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "buildHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protectedBaseline": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "rcId",
+        "sourceCheckpoint",
+        "sourceManifest",
+        "buildHash",
+        "protectedBaseline"
+      ],
+      "additionalProperties": false
+    },
+    "origin": {
+      "type": "string",
+      "const": "https://veined.xyz"
+    },
+    "apiOrigin": {
+      "type": "string",
+      "const": "https://veined.xyz"
+    },
+    "processCount": {
+      "type": "number",
+      "const": 1
+    },
+    "providerEndpoints": {
+      "type": "object",
+      "properties": {
+        "uniswap": {
+          "type": "string",
+          "const": "https://trade-api.gateway.uniswap.org/v1/quote"
+        },
+        "pcsx": {
+          "type": "string",
+          "const": "https://x.pancakeswap.com/order-price/get-price"
+        },
+        "jupiterOrder": {
+          "type": "string",
+          "const": "https://api.jup.ag/swap/v2/order"
+        },
+        "jupiterBuild": {
+          "type": "string",
+          "const": "https://api.jup.ag/swap/v2/build"
+        },
+        "titan": {
+          "type": "string",
+          "const": "wss://api.titan.exchange/api/v1/ws"
+        }
+      },
+      "required": [
+        "uniswap",
+        "pcsx",
+        "jupiterOrder",
+        "jupiterBuild",
+        "titan"
+      ],
+      "additionalProperties": false
+    },
+    "rpcOrigins": {
+      "minItems": 1,
+      "maxItems": 300,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "routerPinsSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "solanaPinsSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "evidenceManifest": {
+      "type": "string",
+      "pattern": "^release\\/[A-Za-z0-9_./-]+\\.json$"
+    },
+    "evidenceManifestSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "privyAppId": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 100
+    },
+    "privyDashboardReviewRef": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 300
+    },
+    "secretEnvironment": {
+      "type": "string",
+      "const": "production"
+    },
+    "execution": {
+      "type": "string",
+      "const": "CLOSED"
+    },
+    "globalKill": {
+      "type": "boolean",
+      "const": true
+    },
+    "feeBps": {
+      "type": "number",
+      "const": 0
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "identity",
+    "origin",
+    "apiOrigin",
+    "processCount",
+    "providerEndpoints",
+    "rpcOrigins",
+    "routerPinsSha256",
+    "solanaPinsSha256",
+    "evidenceManifest",
+    "evidenceManifestSha256",
+    "privyAppId",
+    "privyDashboardReviewRef",
+    "secretEnvironment",
+    "execution",
+    "globalKill",
+    "feeBps"
+  ],
+  "additionalProperties": false
+}

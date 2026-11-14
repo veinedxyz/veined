@@ -1,0 +1,34 @@
+# Otherbridge V1.5 staging ingress (local only). TLS with Caddy's internal CA; this proxy is the single
+# trusted hop (OTHERBRIDGE_TRUST_PROXY_HOPS=1). Incoming client X-Forwarded-* values are not trusted:
+# Caddy replaces them, so the application reads exactly one proxy-written value.
+{
+	admin off
+	skip_install_trust
+	auto_https disable_redirects
+	servers {
+		max_header_size 32KB
+	}
+}
+app.otherbridge.localhost:8443 {
+	tls internal
+	encode zstd gzip
+	request_body {
+		max_size 64KB
+	}
+	reverse_proxy app:3101 {
+		header_up X-Forwarded-Host {hostport}
+		header_up X-Forwarded-Proto https
+	}
+	header -Server
+}
+api.otherbridge.localhost:8443 {
+	tls internal
+	request_body {
+		max_size 8KB
+	}
+	reverse_proxy data-api:3200 {
+		header_up X-Forwarded-Host {hostport}
+		header_up X-Forwarded-Proto https
+	}
+	header -Server
+}

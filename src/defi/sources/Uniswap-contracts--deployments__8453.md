@@ -1,0 +1,1720 @@
+# contracts
+
+
+### Table of Contents
+- [Summary](#summary)
+- [Contracts](#contracts)
+	- [Priority Order Reactor](#priority-order-reactor)
+	- [Fee On Transfer Detector](#fee-on-transfer-detector)
+	- [Fee Collector](#fee-collector)
+	- [Quoter](#quoter)
+	- [Mixed Route Quoter V1](#mixed-route-quoter-v1)
+	- [Uniswap V2 Router02](#uniswap-v2-router02)
+	- [Universal Router (v2.2)](#universal-router-v2.2)
+	- [Universal Router (v2.1)](#universal-router-v2.1)
+	- [Universal Router (v2.0)](#universal-router-v2.0)
+	- [Universal Router (v1.2)](#universal-router-v1.2)
+	- [Universal Router](#universal-router)
+	- [Universal Router (v2.1.2)](#universal-router-v2.1.2)
+	- [Uniswap V2 Factory](#uniswap-v2-factory)
+	- [Permit2](#permit2)
+	- [Swap Router02](#swap-router02)
+	- [Quoter V2](#quoter-v2)
+	- [V3 Migrator](#v3-migrator)
+	- [Nonfungible Position Manager](#nonfungible-position-manager)
+	- [N F T Descriptor](#n-f-t-descriptor)
+	- [Tick Lens](#tick-lens)
+	- [Uniswap Interface Multicall](#uniswap-interface-multicall)
+	- [Uniswap V3 Factory](#uniswap-v3-factory)
+	- [Pool Manager](#pool-manager)
+	- [Position Descriptor](#position-descriptor)
+	- [Position Manager](#position-manager)
+	- [V4 Quoter](#v4-quoter)
+	- [State View](#state-view)
+	- [Permissions Adapter Factory](#permissions-adapter-factory)
+	- [Permissioned Position Manager](#permissioned-position-manager)
+	- [Permissioned Hooks](#permissioned-hooks)
+	- [Calibur Entry](#calibur-entry)
+	- [W E T H Hook](#w-e-t-h-hook)
+	- [E R C7914 Detector](#e-r-c7914-detector)
+	- [Nonfungible Token Position Descriptor](#nonfungible-token-position-descriptor)
+	- [Unsupported Protocol](#unsupported-protocol)
+	- [Order Quoter](#order-quoter)
+- [Deployment History](#deployment-history)
+	- [Thu Sep 24 2026](#thu-sep-24-2026)
+	- [Wed Sep 23 2026](#wed-sep-23-2026)
+	- [Thu Nov 20 2025](#thu-nov-20-2025)
+	- [Wed Aug 27 2025](#wed-aug-27-2025)
+	- [Fri May 23 2025](#fri-may-23-2025)
+	- [Fri May 02 2025](#fri-may-02-2025)
+	- [Tue Jan 21 2025](#tue-jan-21-2025)
+	- [Mon Aug 05 2024](#mon-aug-05-2024)
+	- [Tue Jul 09 2024](#tue-jul-09-2024)
+	- [Fri May 10 2024](#fri-may-10-2024)
+	- [Fri Apr 19 2024](#fri-apr-19-2024)
+	- [Tue Apr 09 2024](#tue-apr-09-2024)
+	- [Thu Feb 08 2024](#thu-feb-08-2024)
+	- [Thu Jan 11 2024](#thu-jan-11-2024)
+	- [Tue Nov 14 2023](#tue-nov-14-2023)
+	- [Mon Aug 28 2023](#mon-aug-28-2023)
+	- [Tue Jul 18 2023](#tue-jul-18-2023)
+	- [Mon Jul 17 2023](#mon-jul-17-2023)
+	- [Sun Jul 16 2023](#sun-jul-16-2023)
+
+## Summary
+<table>
+<tr>
+    <th>Contract</th>
+    <th>Address</th>
+    <th>Version</th>
+</tr><tr>
+    <td>PriorityOrderReactor</td>
+    <td><a href="https://basescan.org/address/0x000000001Ec5656dcdB24D90DFa42742738De729" target="_blank">0x000000001Ec5656dcdB24D90DFa42742738De729</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>FeeOnTransferDetector</td>
+    <td><a href="https://basescan.org/address/0xCF6220e4496B091a6b391D48e770f1FbaC63E740" target="_blank">0xCF6220e4496B091a6b391D48e770f1FbaC63E740</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>FeeCollector</td>
+    <td><a href="https://basescan.org/address/0x5d64D14D2CF4fe5fe4e65B1c7E3D11e18D493091" target="_blank">0x5d64D14D2CF4fe5fe4e65B1c7E3D11e18D493091</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>Quoter</td>
+    <td><a href="https://basescan.org/address/0x222cA98F00eD15B1faE10B61c277703a194cf5d2" target="_blank">0x222cA98F00eD15B1faE10B61c277703a194cf5d2</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>MixedRouteQuoterV1</td>
+    <td><a href="https://basescan.org/address/0xE544EfAE946F0008aE9a8d64493EFA7886b73776" target="_blank">0xE544EfAE946F0008aE9a8d64493EFA7886b73776</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV2Router02</td>
+    <td><a href="https://basescan.org/address/0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24" target="_blank">0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.2</td>
+    <td><a href="https://basescan.org/address/0xbe2257d1aafbe6b73f67a9ac971c2f0b344bb3c5" target="_blank">0xbe2257d1aafbe6b73f67a9ac971c2f0b344bb3c5</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.1</td>
+    <td><a href="https://basescan.org/address/0xf3a4f4094bd2c6c06ca2f61789d8727b8d1e7259" target="_blank">0xf3a4f4094bd2c6c06ca2f61789d8727b8d1e7259</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.0</td>
+    <td><a href="https://basescan.org/address/0x6ff5693b99212da76ad316178a184ab56d299b43" target="_blank">0x6ff5693b99212da76ad316178a184ab56d299b43</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v1.2</td>
+    <td><a href="https://basescan.org/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD" target="_blank">0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter</td>
+    <td><a href="https://basescan.org/address/0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40" target="_blank">0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.1.2</td>
+    <td><a href="https://basescan.org/address/0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40" target="_blank">0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV2Factory</td>
+    <td><a href="https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6" target="_blank">0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>Permit2</td>
+    <td><a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>SwapRouter02</td>
+    <td><a href="https://basescan.org/address/0x2626664c2603336E57B271c5C0b26F421741e481" target="_blank">0x2626664c2603336E57B271c5C0b26F421741e481</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>QuoterV2</td>
+    <td><a href="https://basescan.org/address/0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a" target="_blank">0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V3Migrator</td>
+    <td><a href="https://basescan.org/address/0x23cF10b1ee3AdfCA73B0eF17C07F7577e7ACd2d7" target="_blank">0x23cF10b1ee3AdfCA73B0eF17C07F7577e7ACd2d7</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungiblePositionManager</td>
+    <td><a href="https://basescan.org/address/0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1" target="_blank">0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NFTDescriptor</td>
+    <td><a href="https://basescan.org/address/0xF9d1077fd35670d4ACbD27af82652a8d84577d9F" target="_blank">0xF9d1077fd35670d4ACbD27af82652a8d84577d9F</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>TickLens</td>
+    <td><a href="https://basescan.org/address/0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d" target="_blank">0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapInterfaceMulticall</td>
+    <td><a href="https://basescan.org/address/0x091e99cb1C49331a94dD62755D168E941AbD0693" target="_blank">0x091e99cb1C49331a94dD62755D168E941AbD0693</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV3Factory</td>
+    <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PoolManager</td>
+    <td><a href="https://basescan.org/address/0x498581ff718922c3f8e6a244956af099b2652b2b" target="_blank">0x498581ff718922c3f8e6a244956af099b2652b2b</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionDescriptor</td>
+    <td><a href="https://basescan.org/address/0x25d093633990dc94bedeed76c8f3cdaa75f3e7d5" target="_blank">0x25d093633990dc94bedeed76c8f3cdaa75f3e7d5</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionManager</td>
+    <td><a href="https://basescan.org/address/0x7c5f5a4bbd8fd63184577525326123b519429bdc" target="_blank">0x7c5f5a4bbd8fd63184577525326123b519429bdc</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V4Quoter</td>
+    <td><a href="https://basescan.org/address/0x0d5e0f971ed27fbff6c2837bf31316121532048d" target="_blank">0x0d5e0f971ed27fbff6c2837bf31316121532048d</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>StateView</td>
+    <td><a href="https://basescan.org/address/0xa3c0c9b65bad0b08107aa264b0f3db444b867a71" target="_blank">0xa3c0c9b65bad0b08107aa264b0f3db444b867a71</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionsAdapterFactory</td>
+    <td><a href="https://basescan.org/address/0xdc264714f68d84cf29bc605589405e78bdbe7c9f" target="_blank">0xdc264714f68d84cf29bc605589405e78bdbe7c9f</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionedPositionManager</td>
+    <td><a href="https://basescan.org/address/0xc09255d86db563cbc11c2fcf4a0c512e160111b4" target="_blank">0xc09255d86db563cbc11c2fcf4a0c512e160111b4</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionedHooks</td>
+    <td><a href="https://basescan.org/address/0x5750be78fedfb2fa48faa6c6623400ba4538a8c0" target="_blank">0x5750be78fedfb2fa48faa6c6623400ba4538a8c0</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>CaliburEntry</td>
+    <td><a href="https://basescan.org/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00" target="_blank">0x000000009b1d0af20d8c6d0a44e162d11f9b8f00</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>WETHHook</td>
+    <td><a href="https://basescan.org/address/0xb08211d57032dd10b1974d4b876851a7f7596888" target="_blank">0xb08211d57032dd10b1974d4b876851a7f7596888</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>ERC7914Detector</td>
+    <td><a href="https://basescan.org/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e" target="_blank">0xc470458fc6a7e43471b31e6a2eb2612215a7102e</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungibleTokenPositionDescriptor</td>
+    <td><a href="https://basescan.org/address/0x4615C383F85D0a2BbED973d83ccecf5CB7121463" target="_blank">0x4615C383F85D0a2BbED973d83ccecf5CB7121463</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UnsupportedProtocol</td>
+    <td><a href="https://basescan.org/address/0x9E18Efb3BE848940b0C92D300504Fb08C287FE85" target="_blank">0x9E18Efb3BE848940b0C92D300504Fb08C287FE85</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>OrderQuoter</td>
+    <td><a href="https://basescan.org/address/0x88440407634f89873c5d9439987ac4be9725fea8" target="_blank">0x88440407634f89873c5d9439987ac4be9725fea8</a></td>
+    <td>N/A</td>
+    </tr></table>
+
+## Contracts
+
+### Priority Order Reactor
+
+Address: [0x000000001Ec5656dcdB24D90DFa42742738De729](https://basescan.org/address/0x000000001Ec5656dcdB24D90DFa42742738De729)
+
+Deployment Transaction: [0xa22133bf4c95a74d2fd815d662c37d9aeae508a4d1b1457ddd01c36c707946a3](https://basescan.org/tx/0xa22133bf4c95a74d2fd815d662c37d9aeae508a4d1b1457ddd01c36c707946a3)
+
+
+
+
+
+Mon, 05 Aug 2024 16:09:35 UTC
+
+
+
+---
+
+### Fee On Transfer Detector
+
+Address: [0xCF6220e4496B091a6b391D48e770f1FbaC63E740](https://basescan.org/address/0xCF6220e4496B091a6b391D48e770f1FbaC63E740)
+
+Deployment Transaction: [0xa09b83cb375e1eccb4ff8bb094dd82445b62d3c5c016a30bcd48cc2ee12a4f0f](https://basescan.org/tx/0xa09b83cb375e1eccb4ff8bb094dd82445b62d3c5c016a30bcd48cc2ee12a4f0f)
+
+
+
+
+
+Tue, 09 Jul 2024 14:57:01 UTC
+
+
+
+---
+
+### Fee Collector
+
+Address: [0x5d64D14D2CF4fe5fe4e65B1c7E3D11e18D493091](https://basescan.org/address/0x5d64D14D2CF4fe5fe4e65B1c7E3D11e18D493091)
+
+Deployment Transaction: [0x6bb18120dfccb3d30fbf1ffc3db82efecbe332e43f59f3644ee5fe087770bb24](https://basescan.org/tx/0x6bb18120dfccb3d30fbf1ffc3db82efecbe332e43f59f3644ee5fe087770bb24)
+
+
+
+
+
+Thu, 09 May 2024 22:47:55 UTC
+
+
+
+---
+
+### Quoter
+
+Address: [0x222cA98F00eD15B1faE10B61c277703a194cf5d2](https://basescan.org/address/0x222cA98F00eD15B1faE10B61c277703a194cf5d2)
+
+Deployment Transaction: [0x4ac748f2966e432ac3d9cad1063df135646b19d6b1302e9bf6ac38a31adbbd3d](https://basescan.org/tx/0x4ac748f2966e432ac3d9cad1063df135646b19d6b1302e9bf6ac38a31adbbd3d)
+
+
+
+
+
+Fri, 19 Apr 2024 03:30:59 UTC
+
+
+
+---
+
+### Mixed Route Quoter V1
+
+Address: [0xE544EfAE946F0008aE9a8d64493EFA7886b73776](https://basescan.org/address/0xE544EfAE946F0008aE9a8d64493EFA7886b73776)
+
+Deployment Transaction: [0x1e526bb2099f3569c387c3a67175aec65207c5858bcaf8c8371e9c9e612387fd](https://basescan.org/tx/0x1e526bb2099f3569c387c3a67175aec65207c5858bcaf8c8371e9c9e612387fd)
+
+
+
+
+
+Tue, 09 Apr 2024 20:21:07 UTC
+
+
+
+---
+
+### Uniswap V2 Router02
+
+Address: [0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24](https://basescan.org/address/0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24)
+
+Deployment Transaction: [0x039224ce16ebe5574f51da761acbdfbd21099d6230c39fcd8ff566bbfd6a50a9](https://basescan.org/tx/0x039224ce16ebe5574f51da761acbdfbd21099d6230c39fcd8ff566bbfd6a50a9)
+
+
+
+
+
+Thu, 08 Feb 2024 17:31:41 UTC
+
+
+
+---
+
+### Universal Router (v2.1)
+
+Address: [0xf3a4f4094bd2c6c06ca2f61789d8727b8d1e7259](https://basescan.org/address/0xf3a4f4094bd2c6c06ca2f61789d8727b8d1e7259)
+
+Deployment Transaction: [0x5011641b1bee40f6357a6d23563d9ef1e6eb765d5f9d2908f59e8d087713091a](https://basescan.org/tx/0x5011641b1bee40f6357a6d23563d9ef1e6eb765d5f9d2908f59e8d087713091a)
+
+
+
+Commit Hash: [1f66908](https://github.com/Uniswap/contracts/commit/1f66908)
+
+Thu, 20 Nov 2025 00:16:24 UTC
+
+
+
+---
+
+### Universal Router (v2.0)
+
+Address: [0x6ff5693b99212da76ad316178a184ab56d299b43](https://basescan.org/address/0x6ff5693b99212da76ad316178a184ab56d299b43)
+
+Deployment Transaction: [0x0efe6f4f59683fd326dcefe5c07f7b072740ae02fcbe81dbc1755e4aba5fe1f2](https://basescan.org/tx/0x0efe6f4f59683fd326dcefe5c07f7b072740ae02fcbe81dbc1755e4aba5fe1f2)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+---
+
+### Universal Router (v1.2)
+
+Address: [0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD](https://basescan.org/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD)
+
+Deployment Transaction: [0x07554308e2650c4a0da846426322d62c2afc2ec05eacd0f383ab1a8524e1b8db](https://basescan.org/tx/0x07554308e2650c4a0da846426322d62c2afc2ec05eacd0f383ab1a8524e1b8db)
+
+
+
+
+
+Thu, 11 Jan 2024 20:11:23 UTC
+
+
+
+---
+
+### Universal Router
+
+Address: [0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40](https://basescan.org/address/0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40)
+
+Deployment Transaction: [0x04d762023e68dd561a90af779bc4e4cd19c152f6f722977137024b9509f5e613](https://basescan.org/tx/0x04d762023e68dd561a90af779bc4e4cd19c152f6f722977137024b9509f5e613)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 22:13:28 UTC
+
+
+
+---
+
+### Universal Router (v2.2)
+
+Address: [0xbe2257d1aafbe6b73f67a9ac971c2f0b344bb3c5](https://basescan.org/address/0xbe2257d1aafbe6b73f67a9ac971c2f0b344bb3c5)
+
+Deployment Transaction: [0x4fea4ed6fa037c3edd81ca9f080d53ea631217140b3edc5c53b3795d238df98f](https://basescan.org/tx/0x4fea4ed6fa037c3edd81ca9f080d53ea631217140b3edc5c53b3795d238df98f)
+
+
+
+Commit Hash: [64027f3](https://github.com/Uniswap/universal-router/commit/64027f3)
+
+Thu, 24 Sep 2026 17:28:13 UTC
+
+
+
+---
+
+### Universal Router (v2.1.2)
+
+Address: [0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40](https://basescan.org/address/0xd6145b2D3F379919E8CdEda7B97e37c4b2Ca9c40)
+
+Deployment Transaction: [0x04d762023e68dd561a90af779bc4e4cd19c152f6f722977137024b9509f5e613](https://basescan.org/tx/0x04d762023e68dd561a90af779bc4e4cd19c152f6f722977137024b9509f5e613)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 22:13:28 UTC
+
+
+
+---
+
+### Uniswap V2 Factory
+
+Address: [0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6](https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6)
+
+Deployment Transaction: [0x3c94031f81d9afe3beeb8fbcf4dcf1bd5b5688b86081d94e3d0231514dc00d31](https://basescan.org/tx/0x3c94031f81d9afe3beeb8fbcf4dcf1bd5b5688b86081d94e3d0231514dc00d31)
+
+
+
+
+
+Tue, 14 Nov 2023 20:19:37 UTC
+
+
+
+---
+
+### Permit2
+
+Address: [0x000000000022D473030F116dDEE9F6B43aC78BA3](https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3)
+
+Deployment Transaction: [0x26fbdea9a47ba8e21676bc6b6a72a19dded1a0c270e96d5236886ca9c5000d3f](https://basescan.org/tx/0x26fbdea9a47ba8e21676bc6b6a72a19dded1a0c270e96d5236886ca9c5000d3f)
+
+
+
+
+
+Tue, 18 Jul 2023 00:21:47 UTC
+
+
+
+---
+
+### Swap Router02
+
+Address: [0x2626664c2603336E57B271c5C0b26F421741e481](https://basescan.org/address/0x2626664c2603336E57B271c5C0b26F421741e481)
+
+Deployment Transaction: [0x7b983c25dbf2e48cf06366ce23a75a9dcf048c1c464a979812bfd5b287b281ed](https://basescan.org/tx/0x7b983c25dbf2e48cf06366ce23a75a9dcf048c1c464a979812bfd5b287b281ed)
+
+
+
+
+
+Sun, 16 Jul 2023 18:47:21 UTC
+
+
+
+---
+
+### Quoter V2
+
+Address: [0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a](https://basescan.org/address/0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a)
+
+Deployment Transaction: [0x083ce62f709890afe2dcab2620ef1cdac19fedcd422d10f17d2d5402aa5a9f2b](https://basescan.org/tx/0x083ce62f709890afe2dcab2620ef1cdac19fedcd422d10f17d2d5402aa5a9f2b)
+
+
+
+
+
+Sun, 16 Jul 2023 18:40:15 UTC
+
+
+
+---
+
+### V3 Migrator
+
+Address: [0x23cF10b1ee3AdfCA73B0eF17C07F7577e7ACd2d7](https://basescan.org/address/0x23cF10b1ee3AdfCA73B0eF17C07F7577e7ACd2d7)
+
+Deployment Transaction: [0x86cf238ec5ed19e692d449c3e092bfb741ad09f83cda7d66c8139b4b9f5c262c](https://basescan.org/tx/0x86cf238ec5ed19e692d449c3e092bfb741ad09f83cda7d66c8139b4b9f5c262c)
+
+
+
+
+
+Sun, 16 Jul 2023 18:39:45 UTC
+
+
+
+---
+
+### Nonfungible Position Manager
+
+Address: [0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1](https://basescan.org/address/0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1)
+
+Deployment Transaction: [0xeae91b4babc87902b6d1ac992a8cf7463a2c5b105907237bfdecad8136471fb3](https://basescan.org/tx/0xeae91b4babc87902b6d1ac992a8cf7463a2c5b105907237bfdecad8136471fb3)
+
+
+
+
+
+Sun, 16 Jul 2023 18:39:35 UTC
+
+
+
+---
+
+### N F T Descriptor
+
+Address: [0xF9d1077fd35670d4ACbD27af82652a8d84577d9F](https://basescan.org/address/0xF9d1077fd35670d4ACbD27af82652a8d84577d9F)
+
+Deployment Transaction: [0x8c780ca0452ab9cf66b45796b0016bd8faabc65b681136a5e5282e89fdf2595b](https://basescan.org/tx/0x8c780ca0452ab9cf66b45796b0016bd8faabc65b681136a5e5282e89fdf2595b)
+
+
+
+
+
+Sun, 16 Jul 2023 18:39:05 UTC
+
+
+
+---
+
+### Tick Lens
+
+Address: [0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d](https://basescan.org/address/0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d)
+
+Deployment Transaction: [0xaf5099a877cb219ede3c0e464519e5294390dd8c7088e15b32f6556349463456](https://basescan.org/tx/0xaf5099a877cb219ede3c0e464519e5294390dd8c7088e15b32f6556349463456)
+
+
+
+
+
+Sun, 16 Jul 2023 18:38:55 UTC
+
+
+
+---
+
+### Uniswap Interface Multicall
+
+Address: [0x091e99cb1C49331a94dD62755D168E941AbD0693](https://basescan.org/address/0x091e99cb1C49331a94dD62755D168E941AbD0693)
+
+Deployment Transaction: [0xdd57a32a547858c290ca01d19c4288165ad3c2801f318c26422d3364411f7548](https://basescan.org/tx/0xdd57a32a547858c290ca01d19c4288165ad3c2801f318c26422d3364411f7548)
+
+
+
+
+
+Sun, 16 Jul 2023 18:38:43 UTC
+
+
+
+---
+
+### Uniswap V3 Factory
+
+Address: [0x33128a8fC17869897dcE68Ed026d694621f6FDfD](https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD)
+
+Deployment Transaction: [0xedb18fb5d0bc873e137e19663251b3d1a3a9e276b095ca8bcf1ef4480c016f65](https://basescan.org/tx/0xedb18fb5d0bc873e137e19663251b3d1a3a9e276b095ca8bcf1ef4480c016f65)
+
+
+
+
+
+Sun, 16 Jul 2023 18:38:27 UTC
+
+
+
+---
+
+### Pool Manager
+
+Address: [0x498581ff718922c3f8e6a244956af099b2652b2b](https://basescan.org/address/0x498581ff718922c3f8e6a244956af099b2652b2b)
+
+Deployment Transaction: [0x25f482fbd94cdea11b018732e455b8e9a940b933cabde3c0c5dd63ea65e85349](https://basescan.org/tx/0x25f482fbd94cdea11b018732e455b8e9a940b933cabde3c0c5dd63ea65e85349)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+---
+
+### Position Descriptor
+
+Address: [0x25d093633990dc94bedeed76c8f3cdaa75f3e7d5](https://basescan.org/address/0x25d093633990dc94bedeed76c8f3cdaa75f3e7d5)
+
+Deployment Transaction: [0x2ee0c3ba9f65f2103b8505f45859b7aed6dfecc2455f4559f18172625d72e63f](https://basescan.org/tx/0x2ee0c3ba9f65f2103b8505f45859b7aed6dfecc2455f4559f18172625d72e63f)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0x176690c5819a05123b3cd80bd4aa2846cd347489](https://basescan.org/address/0x176690c5819a05123b3cd80bd4aa2846cd347489)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://basescan.org/address/0x176690c5819a05123b3cd80bd4aa2846cd347489" target="_blank">0x176690c5819a05123b3cd80bd4aa2846cd347489</a></td>
+          <td><a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### Position Manager
+
+Address: [0x7c5f5a4bbd8fd63184577525326123b519429bdc](https://basescan.org/address/0x7c5f5a4bbd8fd63184577525326123b519429bdc)
+
+Deployment Transaction: [0x196b53faaa7d832aea618af5b74c183b1bc7432bb2c4caf2d884f9ea1ef3391e](https://basescan.org/tx/0x196b53faaa7d832aea618af5b74c183b1bc7432bb2c4caf2d884f9ea1ef3391e)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+---
+
+### V4 Quoter
+
+Address: [0x0d5e0f971ed27fbff6c2837bf31316121532048d](https://basescan.org/address/0x0d5e0f971ed27fbff6c2837bf31316121532048d)
+
+Deployment Transaction: [0x898bf06540ee4fdf8a8e59b4e84abcb36de7023fbd299299327d54a9c1569052](https://basescan.org/tx/0x898bf06540ee4fdf8a8e59b4e84abcb36de7023fbd299299327d54a9c1569052)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+---
+
+### State View
+
+Address: [0xa3c0c9b65bad0b08107aa264b0f3db444b867a71](https://basescan.org/address/0xa3c0c9b65bad0b08107aa264b0f3db444b867a71)
+
+Deployment Transaction: [0x2578cb3e19cc28c1ce565215790de6cdf8d39fa773dbec2047c43ebee6269aeb](https://basescan.org/tx/0x2578cb3e19cc28c1ce565215790de6cdf8d39fa773dbec2047c43ebee6269aeb)
+
+
+
+Commit Hash: [a60641e](https://github.com/Uniswap/contracts/commit/a60641e)
+
+Tue, 21 Jan 2025 20:31:25 UTC
+
+
+
+---
+
+### Permissions Adapter Factory
+
+Address: [0xdc264714f68d84cf29bc605589405e78bdbe7c9f](https://basescan.org/address/0xdc264714f68d84cf29bc605589405e78bdbe7c9f)
+
+Deployment Transaction: [0xd45c114f860c727d0aef94ee312d83e0d31a0d279369236533e81c22f0a2c3cd](https://basescan.org/tx/0xd45c114f860c727d0aef94ee312d83e0d31a0d279369236533e81c22f0a2c3cd)
+
+
+
+Commit Hash: [9969eec](https://github.com/Uniswap/v4-periphery/commit/9969eec)
+
+Wed, 23 Sep 2026 18:53:11 UTC
+
+
+
+---
+
+### Permissioned Position Manager
+
+Address: [0xc09255d86db563cbc11c2fcf4a0c512e160111b4](https://basescan.org/address/0xc09255d86db563cbc11c2fcf4a0c512e160111b4)
+
+Deployment Transaction: [0x9e9b4c65c9f2a4a670467a3c848f9e896319ae34836375159910cf4e04480267](https://basescan.org/tx/0x9e9b4c65c9f2a4a670467a3c848f9e896319ae34836375159910cf4e04480267)
+
+
+
+Commit Hash: [9969eec](https://github.com/Uniswap/v4-periphery/commit/9969eec)
+
+Wed, 23 Sep 2026 18:53:45 UTC
+
+
+
+---
+
+### Permissioned Hooks
+
+Address: [0x5750be78fedfb2fa48faa6c6623400ba4538a8c0](https://basescan.org/address/0x5750be78fedfb2fa48faa6c6623400ba4538a8c0)
+
+Deployment Transaction: [0x29ebdf6033449213cee5c68813dd4dd182caf0c7818af87c7e9fe06790b2588f](https://basescan.org/tx/0x29ebdf6033449213cee5c68813dd4dd182caf0c7818af87c7e9fe06790b2588f)
+
+
+
+Commit Hash: [f2aa843](https://github.com/Uniswap/v4-hooks-public/commit/f2aa843)
+
+Thu, 24 Sep 2026 18:38:21 UTC
+
+
+
+---
+
+### Calibur Entry
+
+Address: [0x000000009b1d0af20d8c6d0a44e162d11f9b8f00](https://basescan.org/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00)
+
+Deployment Transaction: [0xc0e0f110d8ead21412392a136fa7d88063fee0e195063a8a4c5901a5fed8a523](https://basescan.org/tx/0xc0e0f110d8ead21412392a136fa7d88063fee0e195063a8a4c5901a5fed8a523)
+
+
+
+Commit Hash: [0a52cd5](https://github.com/Uniswap/contracts/commit/0a52cd5)
+
+Fri, 23 May 2025 19:36:24 UTC
+
+
+
+---
+
+### W E T H Hook
+
+Address: [0xb08211d57032dd10b1974d4b876851a7f7596888](https://basescan.org/address/0xb08211d57032dd10b1974d4b876851a7f7596888)
+
+Deployment Transaction: [0x50ebe27c1678e70df5aef6d3041dfef93385bf19110daa173a81d2ba9d857d7a](https://basescan.org/tx/0x50ebe27c1678e70df5aef6d3041dfef93385bf19110daa173a81d2ba9d857d7a)
+
+
+
+Commit Hash: [c797b9e](https://github.com/Uniswap/contracts/commit/c797b9e)
+
+Fri, 02 May 2025 19:28:19 UTC
+
+
+
+---
+
+### E R C7914 Detector
+
+Address: [0xc470458fc6a7e43471b31e6a2eb2612215a7102e](https://basescan.org/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e)
+
+Deployment Transaction: [0x18eaf38c7be1c336bea3fde5638af076232c9d3c537203b8c9671e0962e3baac](https://basescan.org/tx/0x18eaf38c7be1c336bea3fde5638af076232c9d3c537203b8c9671e0962e3baac)
+
+
+
+Commit Hash: [320811c](https://github.com/Uniswap/contracts/commit/320811c)
+
+Wed, 27 Aug 2025 20:35:06 UTC
+
+
+
+---
+
+### Nonfungible Token Position Descriptor
+
+Address: [0x4615C383F85D0a2BbED973d83ccecf5CB7121463](https://basescan.org/address/0x4615C383F85D0a2BbED973d83ccecf5CB7121463)
+
+Deployment Transaction: [0xb8c713d81dc3a8deea0ced18ddfbd7e0557192dc5a1aa191f5f82dd52d10a928](https://basescan.org/tx/0xb8c713d81dc3a8deea0ced18ddfbd7e0557192dc5a1aa191f5f82dd52d10a928)
+
+
+
+
+
+Sun, 16 Jul 2023 18:39:25 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0x4f225937EDc33EFD6109c4ceF7b560B2D6401009](https://basescan.org/address/0x4f225937EDc33EFD6109c4ceF7b560B2D6401009)
+
+
+
+Proxy Admin: [0x3334d83e224aF5ef9C2E7DDA7c7C98Efd9621fA9](https://basescan.org/address/0x3334d83e224aF5ef9C2E7DDA7c7C98Efd9621fA9)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://basescan.org/address/0x4f225937EDc33EFD6109c4ceF7b560B2D6401009" target="_blank">0x4f225937EDc33EFD6109c4ceF7b560B2D6401009</a></td>
+          <td>N/A</td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### Unsupported Protocol
+
+Address: [0x9E18Efb3BE848940b0C92D300504Fb08C287FE85](https://basescan.org/address/0x9E18Efb3BE848940b0C92D300504Fb08C287FE85)
+
+Deployment Transaction: [0x9f580586d774aff6baba5c535065b9835a248df840e6d6fddd6dc1541bbde8dd](https://basescan.org/tx/0x9f580586d774aff6baba5c535065b9835a248df840e6d6fddd6dc1541bbde8dd)
+
+
+
+
+
+Tue, 18 Jul 2023 15:28:19 UTC
+
+
+
+---
+
+### Order Quoter
+
+Address: [0x88440407634f89873c5d9439987ac4be9725fea8](https://basescan.org/address/0x88440407634f89873c5d9439987ac4be9725fea8)
+
+Deployment Transaction: [0xbd1d9b1a36c659e0bb69e51cc6f7941c34fa9cce4fbfde0f7881e4d3b1cbf105](https://basescan.org/tx/0xbd1d9b1a36c659e0bb69e51cc6f7941c34fa9cce4fbfde0f7881e4d3b1cbf105)
+
+
+
+
+
+Mon, 05 Aug 2024 16:09:35 UTC
+
+
+
+## Deployment History
+
+
+### Thu Sep 24 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xbe2257d1aafbe6b73f67a9ac971c2f0b344bb3c5">Universal Router (v2.2)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/universal-router/commit/64027f3" target="_blank">64027f3</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","v2Factory":"0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x498581fF718922c3f8e6A244956aF099B2652b2b","permissionsAdapterFactory":"0xDc264714F68d84CF29BC605589405E78bDBE7C9f","v3NFTPositionManager":"0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1","v4PositionManager":"0x7C5f5A4bBd8fD63184577525326123B519429bDc","spokePool":"0x09aea4b2242abC8bb4BB78D537A67a245A7bEC64"}</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x5750be78fedfb2fa48faa6c6623400ba4538a8c0">Permissioned Hooks (ccac45e1)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/v4-hooks-public/commit/f2aa843" target="_blank">f2aa843</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>manager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+    <tr>
+      <td>permissionsAdapterFactory</td>
+      <td><a href="https://basescan.org/address/0xDc264714F68d84CF29BC605589405E78bDBE7C9f" target="_blank">0xDc264714F68d84CF29BC605589405E78bDBE7C9f</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Sep 23 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xdc264714f68d84cf29bc605589405e78bdbe7c9f">Permissions Adapter Factory (0a530a31)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/v4-periphery/commit/9969eec" target="_blank">9969eec</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xc09255d86db563cbc11c2fcf4a0c512e160111b4">Permissioned Position Manager (c3368822)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/v4-periphery/commit/9969eec" target="_blank">9969eec</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://basescan.org/address/0x25D093633990DC94BeDEeD76C8F3CDaa75f3E7D5" target="_blank">0x25D093633990DC94BeDEeD76C8F3CDaa75f3E7D5</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_permissionsAdapterFactory</td>
+      <td><a href="https://basescan.org/address/0xDc264714F68d84CF29BC605589405E78bDBE7C9f" target="_blank">0xDc264714F68d84CF29BC605589405E78bDBE7C9f</a></td>
+    </tr>
+    <tr>
+      <td>_deliveryGasLimit</td>
+      <td>500000</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu Nov 20 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xf3a4f4094bd2c6c06ca2f61789d8727b8d1e7259">Universal Router (v2.1)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/1f66908" target="_blank">1f66908</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","v2Factory":"0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x498581fF718922c3f8e6A244956aF099B2652b2b","v3NFTPositionManager":"0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1","v4PositionManager":"0x7C5f5A4bBd8fD63184577525326123B519429bDc","spokePool":"0x09aea4b2242abC8bb4BB78D537A67a245A7bEC6"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Aug 27 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e">E R C7914 Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_caliburAddress</td>
+      <td><a href="https://basescan.org/address/0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00" target="_blank">0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 23 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00">Calibur Entry</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/0a52cd5" target="_blank">0a52cd5</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 02 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xb08211d57032dd10b1974d4b876851a7f7596888">W E T H Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/c797b9e" target="_blank">c797b9e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_manager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+    <tr>
+      <td>_weth</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Jan 21 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x498581ff718922c3f8e6a244956af099b2652b2b">Pool Manager</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>initialOwner</td>
+      <td><a href="https://basescan.org/address/0x31FAfd4889FA1269F7a13A66eE0fB458f27D72A9" target="_blank">0x31FAfd4889FA1269F7a13A66eE0fB458f27D72A9</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x25d093633990dc94bedeed76c8f3cdaa75f3e7d5">Position Descriptor</a> (<a href="https://basescan.org/address/0x176690c5819a05123b3cd80bd4aa2846cd347489">Implementation</a>)
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+    <tr>
+      <td>_wrappedNative</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_nativeCurrencyLabelBytes</td>
+      <td><a href="https://basescan.org/tx/0x4554480000000000000000000000000000000000000000000000000000000000" target="_blank">0x4554480000000000000000000000000000000000000000000000000000000000</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x7c5f5a4bbd8fd63184577525326123b519429bdc">Position Manager</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://basescan.org/address/0x25D093633990DC94BeDEeD76C8F3CDaa75f3E7D5" target="_blank">0x25D093633990DC94BeDEeD76C8F3CDaa75f3E7D5</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x0d5e0f971ed27fbff6c2837bf31316121532048d">V4 Quoter</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xa3c0c9b65bad0b08107aa264b0f3db444b867a71">State View</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://basescan.org/address/0x498581fF718922c3f8e6A244956aF099B2652b2b" target="_blank">0x498581fF718922c3f8e6A244956aF099B2652b2b</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x6ff5693b99212da76ad316178a184ab56d299b43">Universal Router (v2.0)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/a60641e" target="_blank">a60641e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","v2Factory":"0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x498581fF718922c3f8e6A244956aF099B2652b2b","v3NFTPositionManager":"0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1","v4PositionManager":"0x7C5f5A4bBd8fD63184577525326123B519429bD"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Aug 05 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x000000001Ec5656dcdB24D90DFa42742738De729">Priority Order Reactor</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_protocolFeeOwner</td>
+      <td><a href="https://basescan.org/address/0x31FAfd4889FA1269F7a13A66eE0fB458f27D72A9" target="_blank">0x31FAfd4889FA1269F7a13A66eE0fB458f27D72A9</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x88440407634f89873c5d9439987ac4be9725fea8">Order Quoter</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  
+
+
+### Tue Jul 09 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xCF6220e4496B091a6b391D48e770f1FbaC63E740">Fee On Transfer Detector</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6" target="_blank">0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 10 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x5d64D14D2CF4fe5fe4e65B1c7E3D11e18D493091">Fee Collector</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_owner</td>
+      <td><a href="https://basescan.org/address/0xbE84D31B2eE049DCb1d8E7c798511632b44d1b55" target="_blank">0xbE84D31B2eE049DCb1d8E7c798511632b44d1b55</a></td>
+    </tr>
+    <tr>
+      <td>_universalRouter</td>
+      <td><a href="https://basescan.org/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD" target="_blank">0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_feeToken</td>
+      <td><a href="https://basescan.org/address/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" target="_blank">0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri Apr 19 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x222cA98F00eD15B1faE10B61c277703a194cf5d2">Quoter</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Apr 09 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xE544EfAE946F0008aE9a8d64493EFA7886b73776">Mixed Route Quoter V1</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6" target="_blank">0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu Feb 08 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24">Uniswap V2 Router02</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6" target="_blank">0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6</a></td>
+    </tr>
+    <tr>
+      <td>_WETH</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu Jan 11 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD">Universal Router (v1.2)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","seaportV1_5":"0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC","seaportV1_4":"0x00000000000001ad428e4906aE43D8F9852d0dD6","openseaConduit":"0x1E0049783F008A0085193E00003D00cd54003c71","nftxZap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","x2y2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","foundation":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","sudoswap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","elementMarket":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","nft20Zap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","cryptopunks":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareV2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","routerRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareToken":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","v2Factory":"0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Nov 14 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6">Uniswap V2 Factory</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_feeToSetter</td>
+      <td><a href="https://basescan.org/address/0xD40846A19fdC9c8255DCcD18BcBB261BDBF5e4db" target="_blank">0xD40846A19fdC9c8255DCcD18BcBB261BDBF5e4db</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Aug 28 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xeC8B0F7Ffe3ae75d7FfAb09429e3675bb63503e4">Universal Router (v1.2)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","seaportV1_5":"0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC","seaportV1_4":"0x00000000000001ad428e4906aE43D8F9852d0dD6","openseaConduit":"0x1E0049783F008A0085193E00003D00cd54003c71","nftxZap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","x2y2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","foundation":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","sudoswap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","elementMarket":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","nft20Zap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","cryptopunks":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareV2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","routerRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareToken":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","v2Factory":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x0000000000000000000000000000000000000000000000000000000000000000","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Jul 18 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x198EF79F1F515F02dFE9e3115eD9fC07183f02fC">Universal Router (v1.2)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","seaportV1_5":"0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC","seaportV1_4":"0x00000000000001ad428e4906aE43D8F9852d0dD6","openseaConduit":"0x1E0049783F008A0085193E00003D00cd54003c71","nftxZap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","x2y2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","foundation":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","sudoswap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","elementMarket":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","nft20Zap":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","cryptopunks":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareV2":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","routerRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareRewardsDistributor":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","looksRareToken":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","v2Factory":"0x9E18Efb3BE848940b0C92D300504Fb08C287FE85","v3Factory":"0x33128a8fC17869897dcE68Ed026d694621f6FDfD","pairInitCodeHash":"0x0000000000000000000000000000000000000000000000000000000000000000","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54"}</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x9E18Efb3BE848940b0C92D300504Fb08C287FE85">Unsupported Protocol</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  
+
+
+### Mon Jul 17 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x000000000022D473030F116dDEE9F6B43aC78BA3">Permit2</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  
+
+
+### Sun Jul 16 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x2626664c2603336E57B271c5C0b26F421741e481">Swap Router02</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://basescan.org/address/0x0000000000000000000000000000000000000000" target="_blank">0x0000000000000000000000000000000000000000</a></td>
+    </tr>
+    <tr>
+      <td>factoryV3</td>
+      <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    </tr>
+    <tr>
+      <td>_positionManager</td>
+      <td><a href="https://basescan.org/address/0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1" target="_blank">0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a">Quoter V2</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x9DAaA9041E84025aF8b8d941B302B22204f0a267" target="_blank">0x9DAaA9041E84025aF8b8d941B302B22204f0a267</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x23cF10b1ee3AdfCA73B0eF17C07F7577e7ACd2d7">V3 Migrator</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_nonfungiblePositionManager</td>
+      <td><a href="https://basescan.org/address/0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1" target="_blank">0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1">Nonfungible Position Manager</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD" target="_blank">0x33128a8fC17869897dcE68Ed026d694621f6FDfD</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://basescan.org/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor_</td>
+      <td><a href="https://basescan.org/address/0x4615C383F85D0a2BbED973d83ccecf5CB7121463" target="_blank">0x4615C383F85D0a2BbED973d83ccecf5CB7121463</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x4615C383F85D0a2BbED973d83ccecf5CB7121463">Nonfungible Token Position Descriptor</a> (<a href="https://basescan.org/address/0x4f225937EDc33EFD6109c4ceF7b560B2D6401009">Implementation</a>)
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_implementation</td>
+      <td><a href="https://basescan.org/address/0x4f225937EDc33EFD6109c4ceF7b560B2D6401009" target="_blank">0x4f225937EDc33EFD6109c4ceF7b560B2D6401009</a></td>
+    </tr>
+    <tr>
+      <td>_admin</td>
+      <td><a href="https://basescan.org/address/0x3334d83e224aF5ef9C2E7DDA7c7C98Efd9621fA9" target="_blank">0x3334d83e224aF5ef9C2E7DDA7c7C98Efd9621fA9</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0xF9d1077fd35670d4ACbD27af82652a8d84577d9F">N F T Descriptor</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x0CdeE061c75D43c82520eD998C23ac2991c9ac6d">Tick Lens</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x091e99cb1C49331a94dD62755D168E941AbD0693">Uniswap Interface Multicall</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://basescan.org/address/0x33128a8fC17869897dcE68Ed026d694621f6FDfD">Uniswap V3 Factory</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  

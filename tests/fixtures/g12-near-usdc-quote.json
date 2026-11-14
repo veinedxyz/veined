@@ -1,0 +1,66 @@
+{
+  "note": "A real NEAR Intents 1Click DRY quote (Base native USDC -> wNEAR to veinedxyz.near), recorded verbatim by the G11 read-only proof (evidence/g11/g11-readonly-proof.json, results[12]). Public data; no deposit address was created; nothing was sent.",
+  "capturedAt": "2026-11-10T22:24:23.690Z",
+  "endpoint": "POST https://1click.chaindefuser.com/v0/quote",
+  "request": {
+    "dry": true,
+    "swapType": "EXACT_INPUT",
+    "slippageTolerance": 100,
+    "originAsset": "nep141:base-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913.omft.near",
+    "depositType": "ORIGIN_CHAIN",
+    "destinationAsset": "nep141:wrap.near",
+    "amount": "5000000",
+    "refundTo": "0xb6Ded1B18464aED61DB794dFC5cb031B45a7cA2c",
+    "refundType": "ORIGIN_CHAIN",
+    "recipient": "veinedxyz.near",
+    "recipientType": "DESTINATION_CHAIN",
+    "deadline": "2026-11-10T22:34:20.141Z",
+    "quoteWaitingTimeMs": 3000
+  },
+  "response": {
+    "quote": {
+      "amountIn": "5000000",
+      "amountInFormatted": "5.0",
+      "amountInUsd": "4.997845000000",
+      "minAmountIn": "5000000",
+      "amountOut": "1390682321253991151351740",
+      "amountOutFormatted": "1.39068232125399115135174",
+      "amountOutUsd": "4.992549533302",
+      "minAmountOut": "1376775498041451239838222",
+      "timeEstimate": 35,
+      "refundFee": "2400",
+      "withdrawFee": "0"
+    },
+    "quoteRequest": {
+      "dry": true,
+      "depositMode": "SIMPLE",
+      "swapType": "EXACT_INPUT",
+      "slippageTolerance": 100,
+      "originAsset": "nep141:base-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913.omft.near",
+      "depositType": "ORIGIN_CHAIN",
+      "destinationAsset": "nep141:wrap.near",
+      "amount": "5000000",
+      "refundTo": "0xb6Ded1B18464aED61DB794dFC5cb031B45a7cA2c",
+      "refundType": "ORIGIN_CHAIN",
+      "recipient": "veinedxyz.near",
+      "recipientType": "DESTINATION_CHAIN",
+      "deadline": "2026-11-10T22:34:20.141Z",
+      "confidentiality": "public",
+      "quoteWaitingTimeMs": 3000,
+      "insured": false,
+      "appFees": [
+        {
+          "recipient": "5880ad2b362620fadf759cbceb1cd5737ce8c6ed7fb8e9942881e6731f9247dd",
+          "fee": 20
+        }
+      ]
+    },
+    "signature": "ed25519:4af4kcwevcwoVECd4CAVuQL1LtadDxUFgccaxCKgKwJGiSWHMsNEFYrYtc9sbYhT1uaCH5bZdskpYRLxm6FwfAid",
+    "timestamp": "2026-11-10T22:24:20.158Z",
+    "correlationId": "9712ef16-85a6-4e14-9dbb-6ee7c0a3c53b"
+  },
+  "guardianAtCapture": {
+    "level": "CLEAR",
+    "signature": "VALID"
+  }
+}

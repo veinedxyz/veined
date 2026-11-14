@@ -1,0 +1,2257 @@
+# 
+
+
+### Table of Contents
+- [Summary](#summary)
+- [Contracts](#contracts)
+	- [E R C7914 Detector](#e-r-c7914-detector)
+	- [Wst E T H Hook](#wst-e-t-h-hook)
+	- [Wst E T H Routing Hook](#wst-e-t-h-routing-hook)
+	- [W E T H Hook](#w-e-t-h-hook)
+	- [Mixed Route Quoter V2](#mixed-route-quoter-v2)
+	- [Position Descriptor](#position-descriptor)
+	- [Position Manager](#position-manager)
+	- [V4 Quoter](#v4-quoter)
+	- [State View](#state-view)
+	- [Universal Router (v2.2)](#universal-router-v2.2)
+	- [Universal Router (v2.1.1)](#universal-router-v2.1.1)
+	- [Universal Router](#universal-router)
+	- [Universal Router (v2.1.2)](#universal-router-v2.1.2)
+	- [Pool Manager](#pool-manager)
+	- [Fee On Transfer Detector](#fee-on-transfer-detector)
+	- [Fee Collector](#fee-collector)
+	- [V2 Dutch Order Reactor](#v2-dutch-order-reactor)
+	- [Quoter](#quoter)
+	- [Order Quoter](#order-quoter)
+	- [Exclusive Dutch Order Reactor](#exclusive-dutch-order-reactor)
+	- [Permit2](#permit2)
+	- [Mixed Route Quoter V1](#mixed-route-quoter-v1)
+	- [Swap Router02](#swap-router02)
+	- [Quoter V2](#quoter-v2)
+	- [V3 Migrator](#v3-migrator)
+	- [Nonfungible Position Manager](#nonfungible-position-manager)
+	- [Nonfungible Token Position Descriptor](#nonfungible-token-position-descriptor)
+	- [N F T Descriptor](#n-f-t-descriptor)
+	- [Swap Router](#swap-router)
+	- [Tick Lens](#tick-lens)
+	- [Uniswap V3 Factory](#uniswap-v3-factory)
+	- [Uniswap V2 Router02](#uniswap-v2-router02)
+	- [Uniswap V2 Factory](#uniswap-v2-factory)
+	- [Calibur Entry](#calibur-entry)
+	- [Permissions Adapter Factory](#permissions-adapter-factory)
+	- [Permissioned Position Manager](#permissioned-position-manager)
+	- [Permissioned Hooks](#permissioned-hooks)
+	- [Swap Proxy](#swap-proxy)
+	- [Reserves Lens](#reserves-lens)
+- [Deployment History](#deployment-history)
+	- [Fri Sep 18 2026](#fri-sep-18-2026)
+	- [Thu Sep 17 2026](#thu-sep-17-2026)
+	- [Tue Aug 11 2026](#tue-aug-11-2026)
+	- [Mon Jul 13 2026](#mon-jul-13-2026)
+	- [Mon Jun 29 2026](#mon-jun-29-2026)
+	- [Wed Jun 03 2026](#wed-jun-03-2026)
+	- [Thu May 28 2026](#thu-may-28-2026)
+	- [Tue Mar 17 2026](#tue-mar-17-2026)
+	- [Wed Nov 19 2025](#wed-nov-19-2025)
+	- [Wed Aug 27 2025](#wed-aug-27-2025)
+	- [Fri May 23 2025](#fri-may-23-2025)
+	- [Fri May 02 2025](#fri-may-02-2025)
+	- [Wed Jan 29 2025](#wed-jan-29-2025)
+	- [Thu Jan 23 2025](#thu-jan-23-2025)
+	- [Tue Jul 09 2024](#tue-jul-09-2024)
+	- [Thu May 09 2024](#thu-may-09-2024)
+	- [Mon May 06 2024](#mon-may-06-2024)
+	- [Mon Apr 15 2024](#mon-apr-15-2024)
+	- [Fri Jan 26 2024](#fri-jan-26-2024)
+	- [Wed Jul 26 2023](#wed-jul-26-2023)
+	- [Fri Apr 28 2023](#fri-apr-28-2023)
+	- [Tue Nov 29 2022](#tue-nov-29-2022)
+	- [Wed Nov 16 2022](#wed-nov-16-2022)
+	- [Fri Jul 22 2022](#fri-jul-22-2022)
+	- [Tue Dec 14 2021](#tue-dec-14-2021)
+	- [Wed Dec 01 2021](#wed-dec-01-2021)
+	- [Tue May 04 2021](#tue-may-04-2021)
+	- [Fri Jun 05 2020](#fri-jun-05-2020)
+	- [Mon May 04 2020](#mon-may-04-2020)
+
+## Summary
+<table>
+<tr>
+    <th>Contract</th>
+    <th>Address</th>
+    <th>Version</th>
+</tr><tr>
+    <td>ERC7914Detector</td>
+    <td><a href="https://etherscan.io/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e" target="_blank">0xc470458fc6a7e43471b31e6a2eb2612215a7102e</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>WstETHHook</td>
+    <td><a href="https://etherscan.io/address/0xcdde8f9c3414a00f804e5c565eed9949ad17e888" target="_blank">0xcdde8f9c3414a00f804e5c565eed9949ad17e888</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>WstETHRoutingHook</td>
+    <td><a href="https://etherscan.io/address/0x3ac6e14a142251eb3fe739399e0a8da81ed06888" target="_blank">0x3ac6e14a142251eb3fe739399e0a8da81ed06888</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>WETHHook</td>
+    <td><a href="https://etherscan.io/address/0x57991106cb7aa27e2771beda0d6522f68524a888" target="_blank">0x57991106cb7aa27e2771beda0d6522f68524a888</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>MixedRouteQuoterV2</td>
+    <td><a href="https://etherscan.io/address/0xE63C5F5005909E96b5aA9CE10744CCE70eC16CC3" target="_blank">0xE63C5F5005909E96b5aA9CE10744CCE70eC16CC3</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionDescriptor</td>
+    <td><a href="https://etherscan.io/address/0xd1428ba554f4c8450b763a0b2040a4935c63f06c" target="_blank">0xd1428ba554f4c8450b763a0b2040a4935c63f06c</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionManager</td>
+    <td><a href="https://etherscan.io/address/0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e" target="_blank">0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V4Quoter</td>
+    <td><a href="https://etherscan.io/address/0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203" target="_blank">0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>StateView</td>
+    <td><a href="https://etherscan.io/address/0x7ffe42c4a5deea5b0fec41c94c136cf115597227" target="_blank">0x7ffe42c4a5deea5b0fec41c94c136cf115597227</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.2</td>
+    <td><a href="https://etherscan.io/address/0xab863e752bf67d8dcdd929eaae9be9dc83fb3bbb" target="_blank">0xab863e752bf67d8dcdd929eaae9be9dc83fb3bbb</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.1.1</td>
+    <td><a href="https://etherscan.io/address/0x4C82D1fBFe28C977cBB58D8C7FF8FCF9F70a2cCA" target="_blank">0x4C82D1fBFe28C977cBB58D8C7FF8FCF9F70a2cCA</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter</td>
+    <td><a href="https://etherscan.io/address/0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85" target="_blank">0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.1.2</td>
+    <td><a href="https://etherscan.io/address/0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85" target="_blank">0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PoolManager</td>
+    <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>FeeOnTransferDetector</td>
+    <td><a href="https://etherscan.io/address/0xbc708B192552e19A088b4C4B8772aEeA83bCf760" target="_blank">0xbc708B192552e19A088b4C4B8772aEeA83bCf760</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>FeeCollector</td>
+    <td><a href="https://etherscan.io/address/0x000000fee13a103A10D593b9AE06b3e05F2E7E1c" target="_blank">0x000000fee13a103A10D593b9AE06b3e05F2E7E1c</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V2DutchOrderReactor</td>
+    <td><a href="https://etherscan.io/address/0x00000011F84B9aa48e5f8aA8B9897600006289Be" target="_blank">0x00000011F84B9aa48e5f8aA8B9897600006289Be</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>Quoter</td>
+    <td><a href="https://etherscan.io/address/0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3" target="_blank">0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>OrderQuoter</td>
+    <td><a href="https://etherscan.io/address/0x54539967a06Fc0E3C3ED0ee320Eb67362D13C5fF" target="_blank">0x54539967a06Fc0E3C3ED0ee320Eb67362D13C5fF</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>ExclusiveDutchOrderReactor</td>
+    <td><a href="https://etherscan.io/address/0x6000da47483062A0D734Ba3dc7576Ce6A0B645C4" target="_blank">0x6000da47483062A0D734Ba3dc7576Ce6A0B645C4</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>Permit2</td>
+    <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>MixedRouteQuoterV1</td>
+    <td><a href="https://etherscan.io/address/0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E" target="_blank">0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>SwapRouter02</td>
+    <td><a href="https://etherscan.io/address/0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45" target="_blank">0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>QuoterV2</td>
+    <td><a href="https://etherscan.io/address/0x61fFE014bA17989E743c5F6cB21bF9697530B21e" target="_blank">0x61fFE014bA17989E743c5F6cB21bF9697530B21e</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V3Migrator</td>
+    <td><a href="https://etherscan.io/address/0xA5644E29708357803b5A882D272c41cC0dF92B34" target="_blank">0xA5644E29708357803b5A882D272c41cC0dF92B34</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungiblePositionManager</td>
+    <td><a href="https://etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88" target="_blank">0xC36442b4a4522E871399CD717aBDD847Ab11FE88</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungibleTokenPositionDescriptor</td>
+    <td><a href="https://etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785" target="_blank">0xEe6A57eC80ea46401049E92587E52f5Ec1c24785</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NFTDescriptor</td>
+    <td><a href="https://etherscan.io/address/0x42B24A95702b9986e82d421cC3568932790A48Ec" target="_blank">0x42B24A95702b9986e82d421cC3568932790A48Ec</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>SwapRouter</td>
+    <td><a href="https://etherscan.io/address/0xE592427A0AEce92De3Edee1F18E0157C05861564" target="_blank">0xE592427A0AEce92De3Edee1F18E0157C05861564</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>TickLens</td>
+    <td><a href="https://etherscan.io/address/0xbfd8137f7d1516D3ea5cA83523914859ec47F573" target="_blank">0xbfd8137f7d1516D3ea5cA83523914859ec47F573</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV3Factory</td>
+    <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV2Router02</td>
+    <td><a href="https://etherscan.io/address/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D" target="_blank">0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV2Factory</td>
+    <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>CaliburEntry</td>
+    <td><a href="https://etherscan.io/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00" target="_blank">0x000000009b1d0af20d8c6d0a44e162d11f9b8f00</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionsAdapterFactory</td>
+    <td><a href="https://etherscan.io/address/0x7da911490ca4663e572ea9c8154f3cdebce16452" target="_blank">0x7da911490ca4663e572ea9c8154f3cdebce16452</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionedPositionManager</td>
+    <td><a href="https://etherscan.io/address/0xd7be746b6b29f6185a01013e944313e1704c971f" target="_blank">0xd7be746b6b29f6185a01013e944313e1704c971f</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PermissionedHooks</td>
+    <td><a href="https://etherscan.io/address/0x499a724ab630549f14c995ec41a8e04fa3fd28c0" target="_blank">0x499a724ab630549f14c995ec41a8e04fa3fd28c0</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>SwapProxy</td>
+    <td><a href="https://etherscan.io/address/0x0000000085E102724e78eCd2F45DC9cA239Affad" target="_blank">0x0000000085E102724e78eCd2F45DC9cA239Affad</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>ReservesLens</td>
+    <td><a href="https://etherscan.io/address/0x0000001b173C3bbF3984D417d8614E3eed34865B" target="_blank">0x0000001b173C3bbF3984D417d8614E3eed34865B</a></td>
+    <td>N/A</td>
+    </tr></table>
+
+## Contracts
+
+### E R C7914 Detector
+
+Address: [0xc470458fc6a7e43471b31e6a2eb2612215a7102e](https://etherscan.io/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e)
+
+Deployment Transaction: [0xdf55d820307711320819d4fb080902214d130d4d0c4e3321341a8eea11980a6c](https://etherscan.io/tx/0xdf55d820307711320819d4fb080902214d130d4d0c4e3321341a8eea11980a6c)
+
+
+
+Commit Hash: [320811c](git@github.com:Uniswap/contracts/commit/320811c)
+
+Wed, 27 Aug 2025 20:25:51 UTC
+
+
+
+---
+
+### Wst E T H Hook
+
+Address: [0xcdde8f9c3414a00f804e5c565eed9949ad17e888](https://etherscan.io/address/0xcdde8f9c3414a00f804e5c565eed9949ad17e888)
+
+Deployment Transaction: [0x8c5526a3239bd3994144bae9d762efa945485ac9da9c51f53734a02ff9c62da2](https://etherscan.io/tx/0x8c5526a3239bd3994144bae9d762efa945485ac9da9c51f53734a02ff9c62da2)
+
+
+
+Commit Hash: [320811c](git@github.com:Uniswap/contracts/commit/320811c)
+
+Wed, 27 Aug 2025 20:25:51 UTC
+
+
+
+---
+
+### Wst E T H Routing Hook
+
+Address: [0x3ac6e14a142251eb3fe739399e0a8da81ed06888](https://etherscan.io/address/0x3ac6e14a142251eb3fe739399e0a8da81ed06888)
+
+Deployment Transaction: [0xbe0998cacc36d9689aaa6ada9975df5bf480b486cdd568a50b8140007f8fca81](https://etherscan.io/tx/0xbe0998cacc36d9689aaa6ada9975df5bf480b486cdd568a50b8140007f8fca81)
+
+
+
+Commit Hash: [320811c](git@github.com:Uniswap/contracts/commit/320811c)
+
+Wed, 27 Aug 2025 20:25:51 UTC
+
+
+
+---
+
+### W E T H Hook
+
+Address: [0x57991106cb7aa27e2771beda0d6522f68524a888](https://etherscan.io/address/0x57991106cb7aa27e2771beda0d6522f68524a888)
+
+Deployment Transaction: [0x4d0a27817e26b192727a0d22086852f0394b788264de01ccf0293cfc63b25e99](https://etherscan.io/tx/0x4d0a27817e26b192727a0d22086852f0394b788264de01ccf0293cfc63b25e99)
+
+
+
+Commit Hash: [c797b9e](git@github.com:Uniswap/contracts/commit/c797b9e)
+
+Fri, 02 May 2025 19:22:43 UTC
+
+
+
+---
+
+### Mixed Route Quoter V2
+
+Address: [0xE63C5F5005909E96b5aA9CE10744CCE70eC16CC3](https://etherscan.io/address/0xE63C5F5005909E96b5aA9CE10744CCE70eC16CC3)
+
+Deployment Transaction: [0xa066fbaed2170a828193d09be87073fc7ba003fa14214a2e08d41b07156f81f9](https://etherscan.io/tx/0xa066fbaed2170a828193d09be87073fc7ba003fa14214a2e08d41b07156f81f9)
+
+
+
+
+
+Wed, 29 Jan 2025 23:51:23 UTC
+
+
+
+---
+
+### Position Descriptor
+
+Address: [0xd1428ba554f4c8450b763a0b2040a4935c63f06c](https://etherscan.io/address/0xd1428ba554f4c8450b763a0b2040a4935c63f06c)
+
+Deployment Transaction: [0xf1670f6207b57912bacf5dd33045fa2ae7f3754f4933c11e5d8f892bf27d8977](https://etherscan.io/tx/0xf1670f6207b57912bacf5dd33045fa2ae7f3754f4933c11e5d8f892bf27d8977)
+
+
+
+Commit Hash: [2656054](git@github.com:Uniswap/contracts/commit/2656054)
+
+Thu, 23 Jan 2025 18:52:35 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0xb5b6d1ba9d3c85d3e94331341c1c880b22e3f144](https://etherscan.io/address/0xb5b6d1ba9d3c85d3e94331341c1c880b22e3f144)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://etherscan.io/address/0xb5b6d1ba9d3c85d3e94331341c1c880b22e3f144" target="_blank">0xb5b6d1ba9d3c85d3e94331341c1c880b22e3f144</a></td>
+          <td><a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### Position Manager
+
+Address: [0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e](https://etherscan.io/address/0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e)
+
+Deployment Transaction: [0x9b4fa07bf2fb896e4d09479402eb587e89195dd3a33ceacfc95ce3e410f7fd4c](https://etherscan.io/tx/0x9b4fa07bf2fb896e4d09479402eb587e89195dd3a33ceacfc95ce3e410f7fd4c)
+
+
+
+Commit Hash: [2656054](git@github.com:Uniswap/contracts/commit/2656054)
+
+Thu, 23 Jan 2025 18:52:35 UTC
+
+
+
+---
+
+### V4 Quoter
+
+Address: [0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203](https://etherscan.io/address/0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203)
+
+Deployment Transaction: [0xc56194b3e8eb020eefcd6aafa6e445d331f0f174adf504ec831ce6a0ebf9a059](https://etherscan.io/tx/0xc56194b3e8eb020eefcd6aafa6e445d331f0f174adf504ec831ce6a0ebf9a059)
+
+
+
+Commit Hash: [2656054](git@github.com:Uniswap/contracts/commit/2656054)
+
+Thu, 23 Jan 2025 18:52:35 UTC
+
+
+
+---
+
+### State View
+
+Address: [0x7ffe42c4a5deea5b0fec41c94c136cf115597227](https://etherscan.io/address/0x7ffe42c4a5deea5b0fec41c94c136cf115597227)
+
+Deployment Transaction: [0x3d71d82b2c02425520a1296de1513ab45c4fc6e4768582673ae68aff4bb1b3f0](https://etherscan.io/tx/0x3d71d82b2c02425520a1296de1513ab45c4fc6e4768582673ae68aff4bb1b3f0)
+
+
+
+Commit Hash: [2656054](git@github.com:Uniswap/contracts/commit/2656054)
+
+Thu, 23 Jan 2025 18:52:35 UTC
+
+
+
+---
+
+### Universal Router (v2.2)
+
+Address: [0xab863e752bf67d8dcdd929eaae9be9dc83fb3bbb](https://etherscan.io/address/0xab863e752bf67d8dcdd929eaae9be9dc83fb3bbb)
+
+Deployment Transaction: [0x205624ca1d3e852c37b5f00f86208ec62a2576e4b94d58dd52ef6294bc306a06](https://etherscan.io/tx/0x205624ca1d3e852c37b5f00f86208ec62a2576e4b94d58dd52ef6294bc306a06)
+
+
+
+Commit Hash: [e34ba78](git@github.com:Uniswap/contracts/commit/e34ba78)
+
+Fri, 18 Sep 2026 19:05:27 UTC
+
+
+
+---
+
+### Universal Router (v2.1.1)
+
+Address: [0x4C82D1fBFe28C977cBB58D8C7FF8FCF9F70a2cCA](https://etherscan.io/address/0x4C82D1fBFe28C977cBB58D8C7FF8FCF9F70a2cCA)
+
+Deployment Transaction: [0xbf12638984e1df26675d23c12e935897f207d079cb9df1b01604a1a08c39c2a2](https://etherscan.io/tx/0xbf12638984e1df26675d23c12e935897f207d079cb9df1b01604a1a08c39c2a2)
+
+
+
+Commit Hash: [999d561](git@github.com:Uniswap/contracts/commit/999d561)
+
+Tue, 17 Mar 2026 23:44:11 UTC
+
+
+
+---
+
+### Universal Router
+
+Address: [0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85](https://etherscan.io/address/0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85)
+
+Deployment Transaction: [0x350510f7398242ffc778c086ae6bbe9cc744c33a04468f1a7978e54164638257](https://etherscan.io/tx/0x350510f7398242ffc778c086ae6bbe9cc744c33a04468f1a7978e54164638257)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 21:46:11 UTC
+
+
+
+---
+
+### Universal Router (v2.1.2)
+
+Address: [0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85](https://etherscan.io/address/0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85)
+
+Deployment Transaction: [0x350510f7398242ffc778c086ae6bbe9cc744c33a04468f1a7978e54164638257](https://etherscan.io/tx/0x350510f7398242ffc778c086ae6bbe9cc744c33a04468f1a7978e54164638257)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 21:46:11 UTC
+
+
+
+---
+
+### Pool Manager
+
+Address: [0x000000000004444c5dc75cB358380D2e3dE08A90](https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90)
+
+Deployment Transaction: [0x747e0e02b7590eed32cface28e83260884e0b80675f5ae223c6888053aa68528](https://etherscan.io/tx/0x747e0e02b7590eed32cface28e83260884e0b80675f5ae223c6888053aa68528)
+
+
+
+
+
+Thu, 23 Jan 2025 16:16:47 UTC
+
+
+
+---
+
+### Fee On Transfer Detector
+
+Address: [0xbc708B192552e19A088b4C4B8772aEeA83bCf760](https://etherscan.io/address/0xbc708B192552e19A088b4C4B8772aEeA83bCf760)
+
+Deployment Transaction: [0xc184f784fc37c08b91117b799e93bf45afd6007dc5ad8deff5820ef14497e4b3](https://etherscan.io/tx/0xc184f784fc37c08b91117b799e93bf45afd6007dc5ad8deff5820ef14497e4b3)
+
+
+
+
+
+Tue, 09 Jul 2024 14:45:11 UTC
+
+
+
+---
+
+### Fee Collector
+
+Address: [0x000000fee13a103A10D593b9AE06b3e05F2E7E1c](https://etherscan.io/address/0x000000fee13a103A10D593b9AE06b3e05F2E7E1c)
+
+Deployment Transaction: [0xb43e27f11f83fdcf42fee9d18e14fa6dce19a6dd0dc229677ca31c943be4c447](https://etherscan.io/tx/0xb43e27f11f83fdcf42fee9d18e14fa6dce19a6dd0dc229677ca31c943be4c447)
+
+
+
+
+
+Thu, 09 May 2024 22:44:59 UTC
+
+
+
+---
+
+### V2 Dutch Order Reactor
+
+Address: [0x00000011F84B9aa48e5f8aA8B9897600006289Be](https://etherscan.io/address/0x00000011F84B9aa48e5f8aA8B9897600006289Be)
+
+Deployment Transaction: [0x5d80bc56d21ac5cb858a1445dfc8ec7fe2edfec5366a945f6ace185b0ff4315d](https://etherscan.io/tx/0x5d80bc56d21ac5cb858a1445dfc8ec7fe2edfec5366a945f6ace185b0ff4315d)
+
+
+
+
+
+Tue, 07 May 2024 00:11:11 UTC
+
+
+
+---
+
+### Quoter
+
+Address: [0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3](https://etherscan.io/address/0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3)
+
+Deployment Transaction: [0x987a4ebc41d0713ffa5ffa7de5e5de8c243face6c92318272eeef3f78f3fe32c](https://etherscan.io/tx/0x987a4ebc41d0713ffa5ffa7de5e5de8c243face6c92318272eeef3f78f3fe32c)
+
+
+
+
+
+Mon, 15 Apr 2024 18:21:35 UTC
+
+
+
+---
+
+### Order Quoter
+
+Address: [0x54539967a06Fc0E3C3ED0ee320Eb67362D13C5fF](https://etherscan.io/address/0x54539967a06Fc0E3C3ED0ee320Eb67362D13C5fF)
+
+Deployment Transaction: [0x7743c23afeca03c875e3664159eb71381d981a0e689ed7e8adceea6db769f107](https://etherscan.io/tx/0x7743c23afeca03c875e3664159eb71381d981a0e689ed7e8adceea6db769f107)
+
+
+
+
+
+Wed, 26 Jul 2023 14:56:35 UTC
+
+
+
+---
+
+### Exclusive Dutch Order Reactor
+
+Address: [0x6000da47483062A0D734Ba3dc7576Ce6A0B645C4](https://etherscan.io/address/0x6000da47483062A0D734Ba3dc7576Ce6A0B645C4)
+
+Deployment Transaction: [0xa86efffcc790c0c65c83b0aab4c8cbfff1c6195a8276ef9f5dbe99f50e48d9f2](https://etherscan.io/tx/0xa86efffcc790c0c65c83b0aab4c8cbfff1c6195a8276ef9f5dbe99f50e48d9f2)
+
+
+
+
+
+Wed, 26 Jul 2023 14:56:35 UTC
+
+
+
+---
+
+### Permit2
+
+Address: [0x000000000022D473030F116dDEE9F6B43aC78BA3](https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3)
+
+Deployment Transaction: [0xf2f1fe96c16ee674bb7fcee166be52465a418927d124f5f1d231b36eae65d377](https://etherscan.io/tx/0xf2f1fe96c16ee674bb7fcee166be52465a418927d124f5f1d231b36eae65d377)
+
+
+
+
+
+Thu, 17 Nov 2022 01:17:59 UTC
+
+
+
+---
+
+### Mixed Route Quoter V1
+
+Address: [0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E](https://etherscan.io/address/0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E)
+
+Deployment Transaction: [0x6290f7b4024dd5fcc9c482e981bfc0a241dc1ae78e68d407d929c867bbcdb80f](https://etherscan.io/tx/0x6290f7b4024dd5fcc9c482e981bfc0a241dc1ae78e68d407d929c867bbcdb80f)
+
+
+
+
+
+Fri, 22 Jul 2022 17:23:00 UTC
+
+
+
+---
+
+### Swap Router02
+
+Address: [0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45](https://etherscan.io/address/0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45)
+
+Deployment Transaction: [0x7299cca7203f60a831756e043f4c2ccb0ee6cb7cf8aed8420f0ae99a16883a2b](https://etherscan.io/tx/0x7299cca7203f60a831756e043f4c2ccb0ee6cb7cf8aed8420f0ae99a16883a2b)
+
+
+
+
+
+Tue, 14 Dec 2021 17:37:26 UTC
+
+
+
+---
+
+### Quoter V2
+
+Address: [0x61fFE014bA17989E743c5F6cB21bF9697530B21e](https://etherscan.io/address/0x61fFE014bA17989E743c5F6cB21bF9697530B21e)
+
+Deployment Transaction: [0xff27d2945a7ce3e3682ad077f29b2bfdc819931a1e7fd4507fb9114a8861084e](https://etherscan.io/tx/0xff27d2945a7ce3e3682ad077f29b2bfdc819931a1e7fd4507fb9114a8861084e)
+
+
+
+
+
+Wed, 01 Dec 2021 23:35:44 UTC
+
+
+
+---
+
+### V3 Migrator
+
+Address: [0xA5644E29708357803b5A882D272c41cC0dF92B34](https://etherscan.io/address/0xA5644E29708357803b5A882D272c41cC0dF92B34)
+
+Deployment Transaction: [0x399fa9a469d5bdf41130b35298ce25f0be3601dbce0629725f0dba7d37bcd699](https://etherscan.io/tx/0x399fa9a469d5bdf41130b35298ce25f0be3601dbce0629725f0dba7d37bcd699)
+
+
+
+
+
+Tue, 04 May 2021 19:35:26 UTC
+
+
+
+---
+
+### Nonfungible Position Manager
+
+Address: [0xC36442b4a4522E871399CD717aBDD847Ab11FE88](https://etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88)
+
+Deployment Transaction: [0xc5eabeff36dc4593e58ede208838105815106e5a11aa725638d72b43f88e5fb2](https://etherscan.io/tx/0xc5eabeff36dc4593e58ede208838105815106e5a11aa725638d72b43f88e5fb2)
+
+
+
+
+
+Tue, 04 May 2021 19:35:13 UTC
+
+
+
+---
+
+### Nonfungible Token Position Descriptor
+
+Address: [0xEe6A57eC80ea46401049E92587E52f5Ec1c24785](https://etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785)
+
+Deployment Transaction: [0x453325d71464a4c932f1367a3b67d76265051e160dc59027e8242b1857aad880](https://etherscan.io/tx/0x453325d71464a4c932f1367a3b67d76265051e160dc59027e8242b1857aad880)
+
+
+
+
+
+Tue, 04 May 2021 19:33:33 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0x91ae842A5Ffd8d12023116943e72A606179294f3](https://etherscan.io/address/0x91ae842A5Ffd8d12023116943e72A606179294f3)
+
+
+
+Proxy Admin: [0xB753548F6E010e7e680BA186F9Ca1BdAB2E90cf2](https://etherscan.io/address/0xB753548F6E010e7e680BA186F9Ca1BdAB2E90cf2)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://etherscan.io/address/0x91ae842A5Ffd8d12023116943e72A606179294f3" target="_blank">0x91ae842A5Ffd8d12023116943e72A606179294f3</a></td>
+          <td>N/A</td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### N F T Descriptor
+
+Address: [0x42B24A95702b9986e82d421cC3568932790A48Ec](https://etherscan.io/address/0x42B24A95702b9986e82d421cC3568932790A48Ec)
+
+Deployment Transaction: [0xb722fce9e757d6a005678267984e86f2ee220edcc8405e60e5ccdcc1a1238e45](https://etherscan.io/tx/0xb722fce9e757d6a005678267984e86f2ee220edcc8405e60e5ccdcc1a1238e45)
+
+
+
+
+
+Tue, 04 May 2021 19:32:14 UTC
+
+
+
+---
+
+### Swap Router
+
+Address: [0xE592427A0AEce92De3Edee1F18E0157C05861564](https://etherscan.io/address/0xE592427A0AEce92De3Edee1F18E0157C05861564)
+
+Deployment Transaction: [0xe881c43cd88063e84a1d0283f41ee5348239b259c0d17a7e2e4552da3f4b2bc7](https://etherscan.io/tx/0xe881c43cd88063e84a1d0283f41ee5348239b259c0d17a7e2e4552da3f4b2bc7)
+
+
+
+
+
+Tue, 04 May 2021 19:30:41 UTC
+
+
+
+---
+
+### Tick Lens
+
+Address: [0xbfd8137f7d1516D3ea5cA83523914859ec47F573](https://etherscan.io/address/0xbfd8137f7d1516D3ea5cA83523914859ec47F573)
+
+Deployment Transaction: [0x73ae3fbc5d17ade6ca9bd0fdb9014dcc0b540e3b9bc5db89d0103889b930b215](https://etherscan.io/tx/0x73ae3fbc5d17ade6ca9bd0fdb9014dcc0b540e3b9bc5db89d0103889b930b215)
+
+
+
+
+
+Tue, 04 May 2021 19:29:02 UTC
+
+
+
+---
+
+### Uniswap V3 Factory
+
+Address: [0x1F98431c8aD98523631AE4a59f267346ea31F984](https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984)
+
+Deployment Transaction: [0x1e20cd6d47d7021ae7e437792823517eeadd835df09dde17ab45afd7a5df4603](https://etherscan.io/tx/0x1e20cd6d47d7021ae7e437792823517eeadd835df09dde17ab45afd7a5df4603)
+
+
+
+
+
+Tue, 04 May 2021 19:27:00 UTC
+
+
+
+---
+
+### Uniswap V2 Router02
+
+Address: [0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D](https://etherscan.io/address/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D)
+
+Deployment Transaction: [0x4fc1580e7f66c58b7c26881cce0aab9c3509afe6e507527f30566fbf8039bcd0](https://etherscan.io/tx/0x4fc1580e7f66c58b7c26881cce0aab9c3509afe6e507527f30566fbf8039bcd0)
+
+
+
+
+
+Fri, 05 Jun 2020 20:17:21 UTC
+
+
+
+---
+
+### Uniswap V2 Factory
+
+Address: [0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f)
+
+Deployment Transaction: [0xc31d7e7e85cab1d38ce1b8ac17e821ccd47dbde00f9d57f2bd8613bff9428396](https://etherscan.io/tx/0xc31d7e7e85cab1d38ce1b8ac17e821ccd47dbde00f9d57f2bd8613bff9428396)
+
+
+
+
+
+Mon, 04 May 2020 16:34:02 UTC
+
+
+
+---
+
+### Calibur Entry
+
+Address: [0x000000009b1d0af20d8c6d0a44e162d11f9b8f00](https://etherscan.io/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00)
+
+Deployment Transaction: [0xf7d094c82512c971d821190e914eada76eec34da638736f09fa2fe1a9456d894](https://etherscan.io/tx/0xf7d094c82512c971d821190e914eada76eec34da638736f09fa2fe1a9456d894)
+
+
+
+Commit Hash: [0a52cd5](git@github.com:Uniswap/contracts/commit/0a52cd5)
+
+Fri, 23 May 2025 19:33:25 UTC
+
+
+
+---
+
+### Permissions Adapter Factory
+
+Address: [0x7da911490ca4663e572ea9c8154f3cdebce16452](https://etherscan.io/address/0x7da911490ca4663e572ea9c8154f3cdebce16452)
+
+Deployment Transaction: [0x01cddeeabe529dd559b363610ca343279c50b7cfee92d6eb838b83b9da2e0e06](https://etherscan.io/tx/0x01cddeeabe529dd559b363610ca343279c50b7cfee92d6eb838b83b9da2e0e06)
+
+
+
+
+
+Tue, 11 Aug 2026 18:51:35 UTC
+
+
+
+---
+
+### Permissioned Position Manager
+
+Address: [0xd7be746b6b29f6185a01013e944313e1704c971f](https://etherscan.io/address/0xd7be746b6b29f6185a01013e944313e1704c971f)
+
+Deployment Transaction: [0xb09b30b817e5e6cba3deaf76bcf2f95fe3c01009f11e316ed564e04895e5a21b](https://etherscan.io/tx/0xb09b30b817e5e6cba3deaf76bcf2f95fe3c01009f11e316ed564e04895e5a21b)
+
+
+
+
+
+Fri, 18 Sep 2026 19:47:11 UTC
+
+
+
+---
+
+### Permissioned Hooks
+
+Address: [0x499a724ab630549f14c995ec41a8e04fa3fd28c0](https://etherscan.io/address/0x499a724ab630549f14c995ec41a8e04fa3fd28c0)
+
+Deployment Transaction: [0xa340e7803f290abeaf6c7fc14ffc6e195a3d2c8223f549d4df220734899f08c0](https://etherscan.io/tx/0xa340e7803f290abeaf6c7fc14ffc6e195a3d2c8223f549d4df220734899f08c0)
+
+
+
+
+
+Tue, 11 Aug 2026 23:19:11 UTC
+
+
+
+---
+
+### Swap Proxy
+
+Address: [0x0000000085E102724e78eCd2F45DC9cA239Affad](https://etherscan.io/address/0x0000000085E102724e78eCd2F45DC9cA239Affad)
+
+Deployment Transaction: [0xc5a5d5d0d8d88c2bf201e910adf85481693d97a2a4e9b36eba8a18aa3a359f7e](https://etherscan.io/tx/0xc5a5d5d0d8d88c2bf201e910adf85481693d97a2a4e9b36eba8a18aa3a359f7e)
+
+
+
+Commit Hash: [484b405](git@github.com:Uniswap/contracts/commit/484b405)
+
+Wed, 03 Jun 2026 18:32:47 UTC
+
+
+
+---
+
+### Reserves Lens
+
+Address: [0x0000001b173C3bbF3984D417d8614E3eed34865B](https://etherscan.io/address/0x0000001b173C3bbF3984D417d8614E3eed34865B)
+
+Deployment Transaction: [0x7194e67256decab2de16282766e2d8188bad9d67d910ab73cb475632f3aa033b](https://etherscan.io/tx/0x7194e67256decab2de16282766e2d8188bad9d67d910ab73cb475632f3aa033b)
+
+
+
+Commit Hash: [b08eb66](git@github.com:Uniswap/contracts/commit/b08eb66)
+
+Mon, 13 Jul 2026 22:33:23 UTC
+
+
+
+## Deployment History
+
+
+### Fri Sep 18 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xd7be746b6b29f6185a01013e944313e1704c971f">Permissioned Position Manager (cb38eb1a)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>150000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://etherscan.io/address/0xd1428Ba554F4C8450b763a0B2040A4935c63f06C" target="_blank">0xd1428Ba554F4C8450b763a0B2040A4935c63f06C</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452" target="_blank">0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452</a></td>
+    </tr>
+    <tr>
+      <td>_deliveryGasLimit</td>
+      <td>500000</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Aug 11 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xab863e752bf67d8dcdd929eaae9be9dc83fb3bbb">Universal Router (v2.2)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/e34ba78" target="_blank">e34ba78</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","permissionsAdapterFactory":"0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e","spokePool":"0x5c7BCd6E7De5423a257D81B442095A1a6ced35C"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu Sep 17 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85">Universal Router (v2.1.2)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e","spokePool":"0x5c7BCd6E7De5423a257D81B442095A1a6ced35C5"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Aug 11 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x499a724ab630549f14c995ec41a8e04fa3fd28c0">Permissioned Hooks (2973a7de)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452" target="_blank">0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x63bd7e5d4ecfaa74d82ae1de98f476c935a81973">Permissioned Position Manager (0147c732)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>150000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://etherscan.io/address/0xd1428Ba554F4C8450b763a0B2040A4935c63f06C" target="_blank">0xd1428Ba554F4C8450b763a0B2040A4935c63f06C</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452" target="_blank">0x7DA911490Ca4663E572eA9C8154f3CdEbCE16452</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x7da911490ca4663e572ea9c8154f3cdebce16452">Permissions Adapter Factory (ec9d2512)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Jul 13 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x0000001b173C3bbF3984D417d8614E3eed34865B">Reserves Lens</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/b08eb66" target="_blank">b08eb66</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Jun 29 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x69603ab16110eb0bb5f5e9c8019749ee41a128c0">Permissioned Hooks (58dc2d9e)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/48fe9af" target="_blank">48fe9af</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961" target="_blank">0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Jun 03 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x0000000085E102724e78eCd2F45DC9cA239Affad">Swap Proxy</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/484b405" target="_blank">484b405</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu May 28 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xcb640a86855f1a828c27241ba364348de28abe66">Universal Router (v2.2)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/f684acb" target="_blank">f684acb</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","permissionsAdapterFactory":"0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e","spokePool":"0x5c7BCd6E7De5423a257D81B442095A1a6ced35C"}</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x378e20c54e0e5db2c134a779ae0c65f0f14fa880">Permissioned Hooks (bb25c343)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/f684acb" target="_blank">f684acb</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961" target="_blank">0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x89628c9b4ce81951a9bc1f36f0688fad6a6ee248">Permissioned Position Manager (61aabf28)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/f684acb" target="_blank">f684acb</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>150000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://etherscan.io/address/0xd1428Ba554F4C8450b763a0B2040A4935c63f06C" target="_blank">0xd1428Ba554F4C8450b763a0B2040A4935c63f06C</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_permissionsAdapterFactory</td>
+      <td><a href="https://etherscan.io/address/0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961" target="_blank">0x38f9Ab57FBE2704EbB727cB20e33201aF0E5F961</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x38f9ab57fbe2704ebb727cb20e33201af0e5f961">Permissions Adapter Factory (b45e50e7)</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/f684acb" target="_blank">f684acb</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Mar 17 2026
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x4C82D1fBFe28C977cBB58D8C7FF8FCF9F70a2cCA">Universal Router (v2.1.1)</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e","spokePool":"0x5c7BCd6E7De5423a257D81B442095A1a6ced35C5"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Nov 19 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xd92a36b0000531ef3063ded4de20a0783308446c">Universal Router</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/d2d9c4a" target="_blank">d2d9c4a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e","spokePool":"0x5c7BCd6E7De5423a257D81B442095A1a6ced35C"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Aug 27 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e">E R C7914 Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_caliburAddress</td>
+      <td><a href="https://etherscan.io/address/0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00" target="_blank">0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xcdde8f9c3414a00f804e5c565eed9949ad17e888">Wst E T H Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_wsteth</td>
+      <td><a href="https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0" target="_blank">0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x3ac6e14a142251eb3fe739399e0a8da81ed06888">Wst E T H Routing Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_wstETH</td>
+      <td><a href="https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0" target="_blank">0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x9466235afff51af9e285614a21eff5d7aac2c802">E R C7914 Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_caliburAddress</td>
+      <td><a href="https://etherscan.io/address/0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00" target="_blank">0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 23 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00">Calibur Entry</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/0a52cd5" target="_blank">0a52cd5</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 02 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x57991106cb7aa27e2771beda0d6522f68524a888">W E T H Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/c797b9e" target="_blank">c797b9e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_weth</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xa88aacf73df2bccfabcfd1e7b597185cac9f2888">Wst E T H Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/c797b9e" target="_blank">c797b9e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_manager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_wsteth</td>
+      <td><a href="https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0" target="_blank">0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Jan 29 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xE63C5F5005909E96b5aA9CE10744CCE70eC16CC3">Mixed Route Quoter V2</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_uniswapV4PoolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_uniswapV3Poolfactory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_uniswapV2Poolfactory</td>
+      <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu Jan 23 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xd1428ba554f4c8450b763a0b2040a4935c63f06c">Position Descriptor</a> (<a href="https://etherscan.io/address/0xb5b6d1ba9d3c85d3e94331341c1c880b22e3f144">Implementation</a>)
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_wrappedNative</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_nativeCurrencyLabelBytes</td>
+      <td><a href="https://etherscan.io/tx/0x4554480000000000000000000000000000000000000000000000000000000000" target="_blank">0x4554480000000000000000000000000000000000000000000000000000000000</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e">Position Manager</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>150000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://etherscan.io/address/0xd1428Ba554F4C8450b763a0B2040A4935c63f06C" target="_blank">0xd1428Ba554F4C8450b763a0B2040A4935c63f06C</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203">V4 Quoter</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x7ffe42c4a5deea5b0fec41c94c136cf115597227">State View</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90" target="_blank">0x000000000004444c5dc75cB358380D2e3dE08A90</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x66a9893cc07d91d95644aedd05d03f95e1dba8af">Universal Router</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="git@github.com:Uniswap/contracts/commit/2656054" target="_blank">2656054</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x000000000004444c5dc75cB358380D2e3dE08A90","v3NFTPositionManager":"0xC36442b4a4522E871399CD717aBDD847Ab11FE88","v4PositionManager":"0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9"}</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x000000000004444c5dc75cB358380D2e3dE08A90">Pool Manager</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>initialOwner</td>
+      <td><a href="https://etherscan.io/address/0x1a9C8182C09F50C8318d769245beA52c32BE35BC" target="_blank">0x1a9C8182C09F50C8318d769245beA52c32BE35BC</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Jul 09 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xbc708B192552e19A088b4C4B8772aEeA83bCf760">Fee On Transfer Detector</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Thu May 09 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x000000fee13a103A10D593b9AE06b3e05F2E7E1c">Fee Collector</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_owner</td>
+      <td><a href="https://etherscan.io/address/0xbE84D31B2eE049DCb1d8E7c798511632b44d1b55" target="_blank">0xbE84D31B2eE049DCb1d8E7c798511632b44d1b55</a></td>
+    </tr>
+    <tr>
+      <td>_universalRouter</td>
+      <td><a href="https://etherscan.io/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD" target="_blank">0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_feeToken</td>
+      <td><a href="https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" target="_blank">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon May 06 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x00000011F84B9aa48e5f8aA8B9897600006289Be">V2 Dutch Order Reactor</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_protocolFeeOwner</td>
+      <td><a href="https://etherscan.io/address/0x1a9C8182C09F50C8318d769245beA52c32BE35BC" target="_blank">0x1a9C8182C09F50C8318d769245beA52c32BE35BC</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Apr 15 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3">Quoter</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri Jan 26 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24">Quoter</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Jul 26 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x54539967a06Fc0E3C3ED0ee320Eb67362D13C5fF">Order Quoter</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x6000da47483062A0D734Ba3dc7576Ce6A0B645C4">Exclusive Dutch Order Reactor</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_protocolFeeOwner</td>
+      <td><a href="https://etherscan.io/address/0x1a9C8182C09F50C8318d769245beA52c32BE35BC" target="_blank">0x1a9C8182C09F50C8318d769245beA52c32BE35BC</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri Apr 28 2023
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD">Universal Router</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","seaportV1_5":"0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC","seaportV1_4":"0x00000000000001ad428e4906aE43D8F9852d0dD6","openseaConduit":"0x1E0049783F008A0085193E00003D00cd54003c71","nftxZap":"0x941A6d105802CCCaa06DE58a13a6F49ebDCD481C","x2y2":"0x74312363e45DCaBA76c59ec49a7Aa8A65a67EeD3","foundation":"0xcDA72070E455bb31C7690a170224Ce43623d0B6f","sudoswap":"0x2B2e8cDA09bBA9660dCA5cB6233787738Ad68329","elementMarket":"0x20F780A973856B93f63670377900C1d2a50a77c4","nft20Zap":"0xA42f6cADa809Bcf417DeefbdD69C5C5A909249C0","cryptopunks":"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB","looksRareV2":"0x0000000000E655fAe4d56241588680F86E3b2377","routerRewardsDistributor":"0xea37093ce161f090e443f304e1bF3a8f14D7bb40","looksRareRewardsDistributor":"0x0554f068365eD43dcC98dcd7Fd7A8208a5638C72","looksRareToken":"0xf4d2888d29D722226FafA5d9B24F9164c092421E","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Nov 29 2022
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xEf1c6E67703c7BD7107eed8303Fbe6EC2554BF6B">Universal Router</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","seaport":"0x00000000006c3852cbEf3e08E8dF289169EdE581","nftxZap":"0x0fc584529a2AEfA997697FAfAcbA5831faC0c22d","x2y2":"0x74312363e45DCaBA76c59ec49a7Aa8A65a67EeD3","foundation":"0xcDA72070E455bb31C7690a170224Ce43623d0B6f","sudoswap":"0x2B2e8cDA09bBA9660dCA5cB6233787738Ad68329","nft20Zap":"0xA42f6cADa809Bcf417DeefbdD69C5C5A909249C0","cryptopunks":"0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB","looksRare":"0x59728544B08AB483533076417FbBB2fD0B17CE3a","routerRewardsDistributor":"0xea37093ce161f090e443f304e1bF3a8f14D7bb40","looksRareRewardsDistributor":"0x0554f068365eD43dcC98dcd7Fd7A8208a5638C72","looksRareToken":"0xf4d2888d29D722226FafA5d9B24F9164c092421E","v2Factory":"0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f","v3Factory":"0x1F98431c8aD98523631AE4a59f267346ea31F984","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Nov 16 2022
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x000000000022D473030F116dDEE9F6B43aC78BA3">Permit2</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  
+
+
+### Fri Jul 22 2022
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x84E44095eeBfEC7793Cd7d5b57B7e401D7f1cA2E">Mixed Route Quoter V1</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue Dec 14 2021
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45">Swap Router02</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    </tr>
+    <tr>
+      <td>factoryV3</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_positionManager</td>
+      <td><a href="https://etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88" target="_blank">0xC36442b4a4522E871399CD717aBDD847Ab11FE88</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Dec 01 2021
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x61fFE014bA17989E743c5F6cB21bF9697530B21e">Quoter V2</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Tue May 04 2021
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xA5644E29708357803b5A882D272c41cC0dF92B34">V3 Migrator</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_nonfungiblePositionManager</td>
+      <td><a href="https://etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88" target="_blank">0xC36442b4a4522E871399CD717aBDD847Ab11FE88</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xC36442b4a4522E871399CD717aBDD847Ab11FE88">Nonfungible Position Manager</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor_</td>
+      <td><a href="https://etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785" target="_blank">0xEe6A57eC80ea46401049E92587E52f5Ec1c24785</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xEe6A57eC80ea46401049E92587E52f5Ec1c24785">Nonfungible Token Position Descriptor</a> (<a href="https://etherscan.io/address/0x91ae842A5Ffd8d12023116943e72A606179294f3">Implementation</a>)
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x42B24A95702b9986e82d421cC3568932790A48Ec">N F T Descriptor</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xE592427A0AEce92De3Edee1F18E0157C05861564">Swap Router</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6">Quoter</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984" target="_blank">0x1F98431c8aD98523631AE4a59f267346ea31F984</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0xbfd8137f7d1516D3ea5cA83523914859ec47F573">Tick Lens</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x1F98431c8aD98523631AE4a59f267346ea31F984">Uniswap V3 Factory</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  
+
+
+### Fri Jun 05 2020
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D">Uniswap V2 Router02</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f" target="_blank">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</a></td>
+    </tr>
+    <tr>
+      <td>_WETH</td>
+      <td><a href="https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon May 04 2020
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f">Uniswap V2 Factory</a>
+  </summary>
+  <table>
+    
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_feeToSetter</td>
+      <td><a href="https://etherscan.io/address/0xc0a4272bb5df52134178Df25d77561CfB17ce407" target="_blank">0xc0a4272bb5df52134178Df25d77561CfB17ce407</a></td>
+    </tr>
+  </table>
+</details>
+  

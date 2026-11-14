@@ -1,0 +1,264 @@
+{
+  "uid": "ob-security",
+  "title": "Otherbridge — Security events",
+  "tags": [
+    "otherbridge",
+    "v1.5"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "refresh": "30s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 32,
+      "title": "Security invariants",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "{__name__=~\"otherbridge_security_.*\"}",
+          "legendFormat": "{{__name__}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Firewall rejections by reason",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (reason) (increase(otherbridge_security_firewall_rejections_total[1h]))",
+          "legendFormat": "{{reason}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Kill-switch blocks",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (code) (increase(otherbridge_security_kill_switch_blocks_total[1h]))",
+          "legendFormat": "{{code}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Origin rejections",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(otherbridge_app_origin_rejections_total[1h]))",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "App API errors by code",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (code) (increase(otherbridge_app_api_errors_total[1h]))",
+          "legendFormat": "{{code}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Suspicious / spam tokens",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 24
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(otherbridge_tokens_suspicious) or vector(0)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "RPC admission rejections (SSRF/DNS/URL)",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 24
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(otherbridge_rpc_admission_rejected)",
+          "legendFormat": "",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    }
+  ]
+}

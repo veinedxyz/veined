@@ -1,0 +1,67 @@
+{
+  "syncId": "u20261011T044714Z-d1c35a",
+  "sources": [
+    {
+      "id": "defillama-protocols",
+      "url": "https://api.llama.fi/protocols",
+      "sha256": "11fb0c1c52f457b5fa9131aae35719db5447d943267dde9337879eb56d2c7125",
+      "bytes": 9262446,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 8694
+    },
+    {
+      "id": "defillama-chains",
+      "url": "https://api.llama.fi/v2/chains",
+      "sha256": "6166466c6b1be973429e94a60a02932f60f9f1498a411dabbf52c5576903ec6b",
+      "bytes": 64231,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 468
+    },
+    {
+      "id": "defillama-config",
+      "url": "https://api.llama.fi/config",
+      "sha256": "d3453837403adc4912e8a7c0787da2b6af9860a8b364ad06121adbb4b89dc928",
+      "bytes": 8086549,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 659
+    },
+    {
+      "id": "defillama-chainlist-chainids",
+      "url": "https://raw.githubusercontent.com/DefiLlama/chainlist/92968204cb15c546a559af0fe96655ee7ce50d85/constants/chainIds.js",
+      "sha256": "0633608bf56e38c33519ee71fd4005e341d3c89524313716a9ef73e1dbaadade",
+      "bytes": 7218,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 341
+    }
+  ],
+  "pinnedRepositories": [
+    {
+      "repo": "DefiLlama/chainlist",
+      "revision": "92968204cb15c546a559af0fe96655ee7ce50d85",
+      "committedAt": "2026-10-09T10:13:33Z",
+      "license": "GPL-3.0 (detected; LEGAL_REVIEW_REQUIRED)",
+      "use": "chain identity cross-check (constants/chainIds.js parsed as text)"
+    },
+    {
+      "repo": "DefiLlama/DefiLlama-Adapters",
+      "revision": "3b0779f2e0cd5db6158565e57405dbc2392fc0a1",
+      "committedAt": "2026-10-10T13:54:18Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "TVL methodology and deployment clues (module paths at the pinned revision); never executed"
+    },
+    {
+      "repo": "DefiLlama/dimension-adapters",
+      "revision": "701a3a8a6d5dc99dc1342b37737ca1d545bfa28a",
+      "committedAt": "2026-10-10T17:52:26Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "optional volume/fees/revenue context only; never wallet value; never executed"
+    },
+    {
+      "repo": "DefiLlama/icons",
+      "revision": "ab2c83020ea384025e2fee41b785f2a042e8c857",
+      "committedAt": "2026-10-10T17:37:13Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "logo provenance reference only; logos are never fetched or rendered"
+    }
+  ]
+}

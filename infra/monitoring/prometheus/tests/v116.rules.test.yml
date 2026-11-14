@@ -1,0 +1,307 @@
+{
+  "rule_files": [
+    "../rules/v116.rules.yml"
+  ],
+  "evaluation_interval": "1m",
+  "tests": [
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_swap_outcome_total{mode=\"UNISWAP\",status=\"PROVIDER_UNAVAILABLE\"}",
+          "values": "0+2x10 20+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeSwapProviderOutage",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeSwapProviderOutage",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "mode": "UNISWAP",
+                "severity": "high",
+                "area": "swap"
+              },
+              "exp_annotations": {
+                "summary": "Swap provider repeatedly unavailable.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeSwapProviderOutage",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_swap_outcome_total{mode=\"JUPITER_META\",status=\"RATE_LIMITED\"}",
+          "values": "0+2x10 20+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeSwapProviderRateLimited",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeSwapProviderRateLimited",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "mode": "JUPITER_META",
+                "severity": "high",
+                "area": "swap"
+              },
+              "exp_annotations": {
+                "summary": "Swap provider sustained rate limiting.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeSwapProviderRateLimited",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_swap_outcome_total{phase=\"simulation\",status=\"SIMULATION_FAILED\"}",
+          "values": "0+2x10 20+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeSimulationFailureSpike",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeSimulationFailureSpike",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "severity": "high",
+                "area": "swap"
+              },
+              "exp_annotations": {
+                "summary": "Unsigned simulation failures elevated.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeSimulationFailureSpike",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_swap_outcome_total{phase=\"decode\",status=\"REVIEW_REQUIRED\"}",
+          "values": "0+2x10 20+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeFirewallRejectAnomaly",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeFirewallRejectAnomaly",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "severity": "critical",
+                "area": "security"
+              },
+              "exp_annotations": {
+                "summary": "Transaction firewall rejects elevated.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeFirewallRejectAnomaly",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_security_protected_baseline_mismatch",
+          "values": "0 1+0x9 0+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeProtectedBaselineMismatch",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeProtectedBaselineMismatch",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "severity": "critical",
+                "area": "security"
+              },
+              "exp_annotations": {
+                "summary": "Protected baseline mismatch; invalidate RC.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeProtectedBaselineMismatch",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_security_dependency_audit_regression",
+          "values": "0 1+0x9 0+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeDependencyAuditRegression",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeDependencyAuditRegression",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "severity": "critical",
+                "area": "security"
+              },
+              "exp_annotations": {
+                "summary": "Production dependency audit failed, missing or stale.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeDependencyAuditRegression",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "otherbridge_security_execution_flag_anomaly",
+          "values": "0 1+0x9 0+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeExecutionFlagAnomaly",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeExecutionFlagAnomaly",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "severity": "critical",
+                "area": "security"
+              },
+              "exp_annotations": {
+                "summary": "Execution flag unexpectedly requested.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeExecutionFlagAnomaly",
+          "exp_alerts": []
+        }
+      ]
+    },
+    {
+      "interval": "1m",
+      "input_series": [
+        {
+          "series": "up{job=\"otherbridge-data-api\"}",
+          "values": "1 0+0x9 1+0x15"
+        }
+      ],
+      "alert_rule_test": [
+        {
+          "eval_time": "0m",
+          "alertname": "OtherbridgeDataApiUnavailable",
+          "exp_alerts": []
+        },
+        {
+          "eval_time": "8m",
+          "alertname": "OtherbridgeDataApiUnavailable",
+          "exp_alerts": [
+            {
+              "exp_labels": {
+                "job": "otherbridge-data-api",
+                "severity": "high",
+                "area": "data-api"
+              },
+              "exp_annotations": {
+                "summary": "Data API metrics target unavailable.",
+                "runbook": "docs/V116_INCIDENT_RESPONSE.md"
+              }
+            }
+          ]
+        },
+        {
+          "eval_time": "20m",
+          "alertname": "OtherbridgeDataApiUnavailable",
+          "exp_alerts": []
+        }
+      ]
+    }
+  ]
+}

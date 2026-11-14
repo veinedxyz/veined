@@ -1,0 +1,291 @@
+{
+  "syncId": "u20261011T044714Z-d1c35a",
+  "mode": "live",
+  "dryRun": false,
+  "accepted": true,
+  "startedAt": "2026-10-11T04:47:14.104Z",
+  "finishedAt": "2026-10-11T04:47:19.309Z",
+  "durationMs": 5205,
+  "previous": {
+    "syncId": "u20261010T232842Z-1d6312",
+    "stats": {
+      "chainsSeen": 659,
+      "chainsMapped": 487,
+      "chainsUnmapped": 172,
+      "chainCatalogRows": 468,
+      "canonicalChains": 613,
+      "protocolsSeen": 8694,
+      "protocolsMapped": 8693,
+      "protocolsUnmapped": 1,
+      "activeProtocols": 7813,
+      "deprecatedProtocols": 881,
+      "removedUpstreamProtocols": 0,
+      "categoriesSeen": 102,
+      "protocolChainRows": 14966
+    }
+  },
+  "sources": [
+    {
+      "id": "defillama-protocols",
+      "url": "https://api.llama.fi/protocols",
+      "sha256": "11fb0c1c52f457b5fa9131aae35719db5447d943267dde9337879eb56d2c7125",
+      "bytes": 9262446,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 8694
+    },
+    {
+      "id": "defillama-chains",
+      "url": "https://api.llama.fi/v2/chains",
+      "sha256": "6166466c6b1be973429e94a60a02932f60f9f1498a411dabbf52c5576903ec6b",
+      "bytes": 64231,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 468
+    },
+    {
+      "id": "defillama-config",
+      "url": "https://api.llama.fi/config",
+      "sha256": "d3453837403adc4912e8a7c0787da2b6af9860a8b364ad06121adbb4b89dc928",
+      "bytes": 8086549,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 659
+    },
+    {
+      "id": "defillama-chainlist-chainids",
+      "url": "https://raw.githubusercontent.com/DefiLlama/chainlist/92968204cb15c546a559af0fe96655ee7ce50d85/constants/chainIds.js",
+      "sha256": "0633608bf56e38c33519ee71fd4005e341d3c89524313716a9ef73e1dbaadade",
+      "bytes": 7218,
+      "fetchedAt": "2026-10-11T04:47:17.935Z",
+      "rows": 341
+    }
+  ],
+  "pinnedRepositories": [
+    {
+      "repo": "DefiLlama/chainlist",
+      "revision": "92968204cb15c546a559af0fe96655ee7ce50d85",
+      "committedAt": "2026-10-09T10:13:33Z",
+      "license": "GPL-3.0 (detected; LEGAL_REVIEW_REQUIRED)",
+      "use": "chain identity cross-check (constants/chainIds.js parsed as text)"
+    },
+    {
+      "repo": "DefiLlama/DefiLlama-Adapters",
+      "revision": "3b0779f2e0cd5db6158565e57405dbc2392fc0a1",
+      "committedAt": "2026-10-10T13:54:18Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "TVL methodology and deployment clues (module paths at the pinned revision); never executed"
+    },
+    {
+      "repo": "DefiLlama/dimension-adapters",
+      "revision": "701a3a8a6d5dc99dc1342b37737ca1d545bfa28a",
+      "committedAt": "2026-10-10T17:52:26Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "optional volume/fees/revenue context only; never wallet value; never executed"
+    },
+    {
+      "repo": "DefiLlama/icons",
+      "revision": "ab2c83020ea384025e2fee41b785f2a042e8c857",
+      "committedAt": "2026-10-10T17:37:13Z",
+      "license": "LEGAL_REVIEW_REQUIRED",
+      "use": "logo provenance reference only; logos are never fetched or rendered"
+    }
+  ],
+  "stats": {
+    "chainsSeen": 659,
+    "chainsMapped": 487,
+    "chainsUnmapped": 172,
+    "chainCatalogRows": 468,
+    "canonicalChains": 613,
+    "protocolsSeen": 8694,
+    "protocolsMapped": 8693,
+    "protocolsUnmapped": 1,
+    "activeProtocols": 7813,
+    "deprecatedProtocols": 881,
+    "removedUpstreamProtocols": 1,
+    "categoriesSeen": 102,
+    "protocolChainRows": 14966
+  },
+  "parity": {
+    "upstreamChainNames": 659,
+    "upstreamChainCatalogRows": 468,
+    "malformedChainRows": 0,
+    "upstreamProtocols": 8694,
+    "missingChains": [],
+    "missingProtocols": [],
+    "pass": true
+  },
+  "anomalyChecks": [
+    {
+      "code": "SILENT_OMISSION",
+      "pass": true,
+      "blocking": true,
+      "overridable": false,
+      "detail": "missingChains=0 missingProtocols=0"
+    },
+    {
+      "code": "NONEMPTY_SOURCES",
+      "pass": true,
+      "blocking": true,
+      "overridable": false,
+      "detail": "protocols=8694 chainRows=468"
+    },
+    {
+      "code": "PROTOCOL_COUNT_DROP",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "8694 -> 8694"
+    },
+    {
+      "code": "CHAIN_CATALOG_DROP",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "468 -> 468"
+    },
+    {
+      "code": "MASS_REMOVAL",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "removed=1"
+    },
+    {
+      "code": "MASS_RENAME",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "renamed=0 slugChanged=0"
+    },
+    {
+      "code": "CHAIN_IDENTITY_CHANGE",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "chainIdChanged=0 vmChanged=0"
+    },
+    {
+      "code": "UNMAPPED_SPIKE",
+      "pass": true,
+      "blocking": true,
+      "overridable": true,
+      "detail": "1 -> 1"
+    }
+  ],
+  "acceptedReviewCodes": [],
+  "diffCounts": {
+    "protocols.added": 1,
+    "protocols.removed": 1,
+    "protocols.renamed": 0,
+    "protocols.slugChanged": 0,
+    "protocols.categoryChanged": 0,
+    "protocols.statusChanged": 0,
+    "protocols.chainsChanged": 0,
+    "chains.added": 0,
+    "chains.removed": 0,
+    "chains.aliasesChanged": 0,
+    "chains.chainIdChanged": 0,
+    "chains.vmChanged": 0,
+    "chains.mappingChanged": 0,
+    "categories.added": 0,
+    "categories.removed": 0
+  },
+  "unmappedChainReasons": {
+    "AMBIGUOUS_ALIAS": 2,
+    "METADATA_ONLY": 82,
+    "UNKNOWN_CHAIN_ID": 88
+  },
+  "unmappedProtocolReasons": {
+    "MALFORMED_ROW": 1
+  },
+  "aliasReview": [
+    {
+      "name": "Binance",
+      "canonical": "BSC",
+      "method": "SHARED_CHAIN_ID",
+      "detail": "SAME_GECKO_ID_DISSIMILAR_NAME"
+    },
+    {
+      "name": "Reya Network",
+      "canonical": "ReyaChain",
+      "method": "SHARED_CHAIN_ID",
+      "detail": "SAME_GECKO_ID_DISSIMILAR_NAME"
+    },
+    {
+      "name": "Kucoin",
+      "canonical": "KCC",
+      "method": "SHARED_CHAIN_ID",
+      "detail": "SAME_GECKO_ID_DISSIMILAR_NAME"
+    },
+    {
+      "name": "Story",
+      "canonical": "Data Network",
+      "method": "SHARED_CHAIN_ID",
+      "detail": "SAME_GECKO_ID_DISSIMILAR_NAME"
+    },
+    {
+      "name": "Lyra Chain",
+      "canonical": "Derive Chain",
+      "method": "SHARED_CHAIN_ID",
+      "detail": "SAME_GECKO_ID_DISSIMILAR_NAME"
+    }
+  ],
+  "newCategories": [],
+  "coverage": {
+    "protocolHeadline": {
+      "UNSUPPORTED": 1216,
+      "PARTIAL_POSITION": 14,
+      "CATALOG_ONLY": 6569,
+      "DEPRECATED": 881,
+      "FULL_POSITION": 13,
+      "NEEDS_REVIEW": 2
+    },
+    "protocolChainRows": {
+      "UNSUPPORTED": 2753,
+      "PARTIAL_POSITION": 71,
+      "NOT_CHECKED": 204,
+      "CATALOG_ONLY": 12040,
+      "DEPRECATED": 1344,
+      "FULL_POSITION": 43,
+      "NEEDS_REVIEW": 6
+    },
+    "tvlWeighted": {
+      "fullShare": 0.10487934031617825,
+      "partialShare": 0.047074311478988065,
+      "activeTvlUsd": 590649550208,
+      "note": "Share of DefiLlama protocol-chain TVL context with reviewed position adapters; never a wallet value."
+    },
+    "chainsByVm": {
+      "EVM": 337,
+      "Solana": 4,
+      "Tron": 1,
+      "Bitcoin": 7,
+      "Other": 104,
+      "Sui": 1,
+      "Stellar": 1,
+      "Cosmos": 59,
+      "Aptos": 1
+    },
+    "chainCapabilities": {
+      "CATALOG": 515,
+      "IDENTIFIED": 274,
+      "RPC_READ": 144,
+      "PORTFOLIO_NATIVE": 144,
+      "PORTFOLIO_FUNGIBLE": 92,
+      "DEFI_DISCOVERY": 17,
+      "DEFI_POSITION": 22,
+      "BRIDGE": 64,
+      "SWAP": 63,
+      "UNSUPPORTED_VM": 178,
+      "INDEXED": 4,
+      "NEEDS_REVIEW": 65,
+      "DEPRECATED": 8
+    }
+  },
+  "financialLogicChanged": false,
+  "outputs": {
+    "universe.generated.json": "eee4b2cc3163bd472ea2c13b1c9ff6ed1009b2a046b2f593d9efae84a64a9cab",
+    "unmapped-chains.json": "a8ef98c81de6877fc830a9a72e84ce24a2649f215a78d60379d358ab17c8d013",
+    "unmapped-protocols.json": "4ddf5c71aee9e7ae8ec67b43aa11b75dfa6f782ebe8ca2796c59ddc7471655af",
+    "diff.generated.json": "8811daf32acc796a9b80daa9bcf65ee84c2485c28b09f55af37e4ccd7e2da211",
+    "sources.json": "da16d0f2716a9d1ffd92a9921117ab07a6ab2e6cf599deb4d0cde8a1d3bd2caa"
+  }
+}

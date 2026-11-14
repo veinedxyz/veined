@@ -1,3 +1,13 @@
+# Multichain ağ kimliği — güncel ek
+
+3 Ekim 2026. Önceki resmi ONE/BNB kimliği aşağıdaki tarihsel bölümle korunur. Yeni dinamik katalog 76 provider-metadata logosu + ONE özel kaydını kullanır. Asset adları içerik hash'li ve same-origin'dir; `src/routing/generated-assets.json` her ağın logo/primary/accent/glow/badgeDark/badgeLight/logoSurface/provenance tokenlarını taşır. Ağların listesi görsel manifestten oluşturulmaz; gerçek chain/tools API'sinden gelir. Yeni ve asset'i incelenmemiş ağ metin + güvenli geometrik simge alır.
+
+Güncel kaynak/pipeline: [MULTICHAIN_NETWORK_CATALOG.md](MULTICHAIN_NETWORK_CATALOG.md), [MULTICHAIN_ROUTING_RESEARCH.md](MULTICHAIN_ROUTING_RESEARCH.md). 76 cached logo hash'i `asset-sync-b/asset-sync.json` dosyasında; ambient renkler SVG paletinden türetilir ve resmi brand color sayılmaz. Resmi logolar boyanmadı. Siyah/beyaz simgeler uygun mat plaka alır. Dinamik Bridge/Networks/Activity/review aynı `ChainLogo`/`ChainBadge` tokenlarını kullanır; eski ONE detayları eski ortak bileşenlerini korur.
+
+Koyu opak merkez ve düşük yoğunluklu radial/ambient ışık korunur. Yeni seçici virtual list, arama, son ağlar, klavye ve gerçek logo içerir; emoji yoktur. `contrast-multichain.json` 76 ağ × iki tema için küçük metinde en düşük **4,846:1** hesapladı; 21 ışık yoğunluğu örneği ve badge karışımı denetlendi. Browser axe ham incomplete sonuçları da saklanır, sıfır violations tek başına kontrast kanıtı sayılmaz. Son doğru modal ekran görüntüleri `ui-final/screenshots/` ve production kanıtlarındadır. Önceki erken width-selector yakalamaları modal mount'unu beklemediğinden final görsel kanıt olarak kullanılmaz.
+
+---
+
 # V1 ağ görsel kimliği
 
 2 Ekim 2026. Bu değişiklik mevcut ONEchain → BNB Smart Chain rotasının sunumudur. Finansal route registry, eligibility, kontratlar, RPC, quote/observer, wallet veya gönderim kapısı değişmez. G5 BLOCKED; gerçek imza, broadcast, deploy ve V2/V3 yok.
@@ -37,3 +47,6 @@ Bridge giriş kartları, rota özeti ve inceleme dialog'u; Networks ağ kartlar�
 Gerçek component E2E'leri iki tema × 360/768/1440px × Bridge/Networks/Activity/detail ekranlarını kontrol eder. Testler açıkça mocked read-only health + hashless kayıt kullanır; gerçek ağ testi veya teslimat kanıtı sayılmaz. Yerel SVG URL/load/minimum boyut, doğru source/destination isim/chain ID, taşma, kapalı gönderim ve wallet erişimi yokluğu denetlenir. İnceleme dialog'undaki iki logo mevcut sentetik akış testine eklendi.
 
 Axe ham violations ve incomplete sonuçları saklanır. Gradient zeminler otomatik color-contrast ölçümünde incomplete olabilir; bu metinler tarayıcıda çözülen gerçek foreground/inset/glow değerleriyle 0–maksimum ışık yoğunluğu arasında 21 noktada WCAG kontrast hesabına tabi tutulur (tüm metin için en az 4.5:1). Logoların özgün geometri/renkleri ve desktop/mobile kompozisyon ayrıca PNG üzerinden gözle incelenir. Son gerçek komut sonuçları güncel handoff ve evidence summary'dedir.
+# V1.3 discovery and holdings
+
+The active TVL catalog is independent of executable routes. Unknown identities use the existing local neutral SVG and ambient tokens; external image URLs cannot load. Existing curated icons and colors remain intact. Virtual selectors render at most ten rows, preserve keyboard/search/recent behavior and add favorites stored only as chain IDs. User holdings sort first, followed by route infrastructure and remaining TVL catalog entries. Holdings never silently change a selected chain or asset. No emoji logos are introduced.

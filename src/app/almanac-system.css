@@ -1,0 +1,1764 @@
+/* ==========================================================================================================
+   VWP G08 — Almanac: the VEINED deep-water almanac, loaded last.
+   Readings, predictions and warnings are printed straight onto open water in ruled columns, divided by tide lines and
+   depth instead of being boxed into cards. Three planes only, and the plane is the only rank:
+     water ........ open text on the ocean (headings, ledes, explanations)
+     chart ........ ruled readings with no fill (flows, facts, lists, tables, catalog rows)
+     instrument ... the one opaque, framed object per page where a value is typed (Swap, Bridge, Guardian composer,
+                    the Portfolio scan). Figures never sit on see-through glass (accepted AB9).
+   One bioluminescent action colour, reserved for what can be pressed and for focus. Status is a printed mark, not a
+   capsule. Every money figure is set in tabular lining numerals. Signature: "focus lift" — in a ruled set the member
+   under the pointer or focus lifts and its siblings ebb; one authored motion: the tide line under each page title
+   draws in once (static under reduced motion).
+   Reference measurements (no colour, font, copy, artwork or markup copied): see G08 reference matrix.
+   ========================================================================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  /* VEINED's own abyss base (deep-system --abyss-base), not a reference colour. */
+  --alm-abyss: #04121a;
+  --alm-abyss-rgb: 4 18 26;
+  --alm-ink: #e4efed;
+  --alm-ink-rgb: 228 239 237;
+  --alm-brine: #a3b9ba;
+  --alm-faint: #8aa2a4;
+  --alm-rule: rgb(var(--alm-ink-rgb) / 0.11);
+  --alm-rule-2: rgb(var(--alm-ink-rgb) / 0.2);
+  --alm-rule-3: rgb(var(--alm-ink-rgb) / 0.34);
+  /* The brand's own sage, lifted for the water: an ink colour, not a neon. */
+  --alm-act: #c6dcc1;
+  --alm-act-rgb: 198 220 193;
+  --alm-on-act: #0b1a12;
+  --alm-instrument: #061820;
+  --alm-well: #041219;
+  --alm-kelp: #93d7a4;
+  --alm-amber: #e9bd6c;
+  --alm-sand: #e7c99b;
+  --alm-coral: #f2a596;
+  --alm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --alm-tide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 24' preserveAspectRatio='none'%3E%3Cpath d='M0 12C30 3 60 3 90 12S150 21 180 12 232 5 262 12 312 18 342 12 384 8 414 12 456 15 486 12 546 11 600 12' fill='none' stroke='%23000' stroke-width='1.4' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+  /* Re-tone the shared tokens every earlier layer reads, so nothing keeps the old card world by inheritance. */
+  --bg: var(--alm-abyss);
+  --text: var(--alm-ink);
+  --muted: var(--alm-brine);
+  --faint: var(--alm-faint);
+  --teal: var(--alm-act);
+  --teal-strong: #dfeedb;
+  --biolume: var(--alm-act);
+  --biolume-rgb: var(--alm-act-rgb);
+  --accent-soft: rgb(var(--alm-act-rgb) / 0.1);
+  --accent-line: rgb(var(--alm-act-rgb) / 0.38);
+  --line: var(--alm-rule-2);
+  --line-soft: var(--alm-rule);
+  --line-strong: var(--alm-rule-3);
+  --deep-edge: var(--alm-rule);
+  --deep-edge-strong: var(--alm-rule-2);
+  --button-text: var(--alm-on-act);
+}
+html[data-theme="light"] {
+  --alm-abyss: #edf4f1;
+  --alm-abyss-rgb: 237 244 241;
+  --alm-ink: #0c2730;
+  --alm-ink-rgb: 12 39 48;
+  --alm-brine: #3c5960;
+  --alm-faint: #4f6a70;
+  --alm-rule: rgb(var(--alm-ink-rgb) / 0.13);
+  --alm-rule-2: rgb(var(--alm-ink-rgb) / 0.22);
+  --alm-rule-3: rgb(var(--alm-ink-rgb) / 0.4);
+  --alm-act: #2f5a45;
+  --alm-act-rgb: 47 90 69;
+  --alm-on-act: #ffffff;
+  --alm-instrument: #ffffff;
+  --alm-well: #f4f9f7;
+  --alm-kelp: #1e6b3a;
+  --alm-amber: #7d5a0e;
+  --alm-sand: #7a5418;
+  --alm-coral: #a3362b;
+  --teal-strong: #1f4232;
+}
+
+/* ---------- Ground, ink and the parts of the browser nobody draws ---------- */
+body {
+  background: var(--alm-abyss);
+  color: var(--alm-ink);
+}
+::selection {
+  background: rgb(var(--alm-act-rgb) / 0.3);
+  color: var(--alm-ink);
+}
+html {
+  scrollbar-color: rgb(var(--alm-ink-rgb) / 0.26) transparent;
+}
+:focus-visible {
+  outline-color: var(--alm-act);
+}
+.veined-app a:not([class]),
+.veined-app .text-link,
+.mk a.mk-link {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+/* Tabular lining figures wherever a quantity is read. */
+.veined-app
+  :is(
+    input,
+    output,
+    dd,
+    td,
+    th,
+    .data-row strong,
+    .amount-row,
+    .catalog-figures,
+    .segment-count,
+    .count,
+    .catalog-count,
+    .network-id,
+    .overview-flow-index
+  ),
+.mk :is(.mk-stats dd, .mk-facts dd, .mk-descent-depth) {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---------- Type: titles on the water ---------- */
+.veined-app h1,
+.veined-app .overview-welcome h1 {
+  font-weight: 640;
+  letter-spacing: -0.034em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.veined-app .page-heading h1,
+.veined-app[data-surface="bridge"] .intro h1 {
+  font-size: clamp(34px, 1.6vw + 22px, 52px);
+}
+.veined-app h2 {
+  letter-spacing: -0.016em;
+}
+.veined-app .page-lede {
+  max-width: 62ch;
+}
+
+/* ---------- The tide line: one authored motion per page ---------- */
+.veined-app .page-heading-text::after,
+.veined-app .overview-welcome-copy::after,
+.veined-app[data-surface="bridge"] .intro > p::after {
+  content: "";
+  display: block;
+  width: min(100%, 460px);
+  height: 18px;
+  margin-top: 14px;
+  background: rgb(var(--alm-act-rgb) / 0.72);
+  -webkit-mask: var(--alm-tide) no-repeat 0 50% / 100% 100%;
+  mask: var(--alm-tide) no-repeat 0 50% / 100% 100%;
+  pointer-events: none;
+  animation: alm-tide 1100ms var(--alm-ease) 120ms both;
+}
+[dir="rtl"] .veined-app .page-heading-text::after,
+[dir="rtl"] .veined-app .overview-welcome-copy::after,
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro > p::after {
+  scale: -1 1;
+}
+@keyframes alm-tide {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.2;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+/* The page meta row reads as printed marks under the title, so the tide line comes after it. */
+.veined-app .page-heading-text {
+  display: flex;
+  flex-direction: column;
+}
+.veined-app .page-heading-text > .page-meta {
+  order: 3;
+}
+.veined-app .page-heading-text::after {
+  order: 2;
+}
+
+/* ---------- Status marks instead of capsules ---------- */
+.veined-app :is(.pill, .badge, .shell-status),
+.veined-app .page-meta > .pill-button {
+  gap: 7px;
+  padding: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--alm-ink);
+  font-weight: 560;
+}
+.veined-app :is(.pill, .badge)::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  color: var(--alm-brine);
+}
+.veined-app .pill .pill-dot {
+  display: none;
+}
+.veined-app :is(.pill, .badge).tone-ok::before {
+  color: var(--alm-kelp);
+}
+.veined-app :is(.pill, .badge).tone-accent::before {
+  color: var(--alm-act);
+}
+.veined-app :is(.pill, .badge).tone-info::before {
+  color: #9cc4e6;
+}
+.veined-app
+  :is(.pill, .badge):is(.tone-warn, .tone-amber, .tone-caution)::before {
+  color: var(--alm-amber);
+}
+.veined-app
+  :is(.pill, .badge):is(.tone-danger, .tone-bad, .tone-error)::before {
+  color: var(--alm-coral);
+}
+html[data-theme="light"] .veined-app .pill.tone-info::before {
+  color: #2f5a87;
+}
+.veined-app .page-meta {
+  gap: 8px 22px;
+}
+/* Light theme: the marks over the film keep their own pale backing for contrast (G05 m-B), now as a flat strip. */
+html[data-theme="light"]
+  .veined-app
+  .page-heading
+  .page-meta
+  > :is(.pill, .badge) {
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ---------- Actions: one colour for what can be pressed ---------- */
+.veined-app
+  :is(
+    button.primary,
+    a.primary-link,
+    .button-link.primary-link,
+    .wallet-button
+  ),
+.mk .mk-button.is-primary {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--alm-act);
+  color: var(--alm-on-act);
+  box-shadow: none;
+  font-weight: 620;
+}
+.veined-app
+  :is(
+    button.primary,
+    a.primary-link,
+    .button-link.primary-link,
+    .wallet-button
+  ):hover:not(:disabled),
+.mk .mk-button.is-primary:hover {
+  background: color-mix(in srgb, var(--alm-act) 86%, var(--alm-ink));
+}
+.veined-app
+  :is(
+    button.secondary,
+    .button-link:not(.primary-link),
+    .file-button,
+    button.small,
+    .pill-button
+  ),
+.mk .mk-button.is-quiet {
+  border: 1px solid var(--alm-rule-3);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--alm-ink);
+}
+.veined-app
+  :is(
+    button.secondary,
+    .button-link:not(.primary-link),
+    .file-button,
+    button.small
+  ):hover:not(:disabled),
+.mk .mk-button.is-quiet:hover {
+  border-color: var(--alm-act);
+  background: rgb(var(--alm-act-rgb) / 0.07);
+}
+.veined-app .page-meta > .pill-button {
+  border: 0;
+  color: var(--alm-act);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.veined-app button.primary:disabled {
+  background: rgb(var(--alm-ink-rgb) / 0.1);
+  color: rgb(var(--alm-ink-rgb) / 0.58);
+}
+
+/* ---------- Shell: the water column ---------- */
+@media (min-width: 1024px) {
+  .header {
+    border-inline-end: 1px solid var(--alm-rule);
+  }
+  .header::before {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.96) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.985) 100%
+    );
+  }
+  .header-actions {
+    border-bottom: 1px solid var(--alm-rule);
+  }
+  .header-actions::before {
+    background: rgb(var(--alm-abyss-rgb) / 0.9);
+  }
+  /* Stations hang from the cord like an almanac index: no pill around the current one; the arm holds it. */
+  .main-nav::before {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--alm-ink-rgb) / 0),
+      rgb(var(--alm-ink-rgb) / 0.16) 10%,
+      rgb(var(--alm-ink-rgb) / 0.16) 90%,
+      rgb(var(--alm-ink-rgb) / 0)
+    );
+  }
+  .main-nav .nav-link,
+  .main-nav .nav-link:hover:not(.active),
+  .main-nav .nav-link.active,
+  [dir="rtl"] .main-nav .nav-link.active {
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .main-nav .nav-link {
+    color: var(--alm-brine);
+    font-weight: 520;
+  }
+  .main-nav .nav-link:hover:not(.active) {
+    color: var(--alm-ink);
+  }
+  .main-nav .nav-link.active {
+    color: var(--alm-ink);
+    font-weight: 640;
+  }
+  .main-nav .nav-link.active::after {
+    inset-block: 9px;
+    width: 2px;
+    background: var(--alm-act);
+    box-shadow: none;
+  }
+  .nav-group.nav-secondary {
+    border-top-color: var(--alm-rule);
+  }
+}
+.nav-link.active .nav-glyph {
+  filter: none;
+}
+.nav-arm {
+  color: rgb(var(--alm-act-rgb) / 0.78);
+}
+/* Focus lift in the rail: the hovered station lifts, the others ebb. */
+@media (hover: hover) and (min-width: 1024px) {
+  .main-nav
+    .nav-group:has(> .nav-link:hover)
+    > .nav-link:not(:hover):not(.active) {
+    opacity: 0.66;
+  }
+}
+.veined-app ~ .footer,
+.app-shell .footer {
+  border-top: 1px solid var(--alm-rule);
+  background: none;
+}
+.app-shell .shell-status {
+  color: var(--alm-amber);
+  font-size: 13px;
+}
+.app-shell .shell-status::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+}
+.app-shell .shell-status :is(svg, .icon) {
+  display: none;
+}
+.app-shell .wallet-button {
+  min-height: 40px;
+}
+
+/* ---------- Chart plane: the cards are taken off the water ---------- */
+.app-shell
+  .veined-app
+  :is(
+    .card,
+    .overview-tool,
+    .overview-explore,
+    .help-steps,
+    .help-topics,
+    .overview-flow-steps,
+    .guardian-hero,
+    .empty-facts
+  ):not(.swap-card):not(.bridge-card):not(.portfolio-connect) {
+  border: 0;
+  /* A ruled set opts into its own shore line with --alm-top (this selector is deliberately strong). */
+  border-top: var(--alm-top, 0px) solid var(--alm-top-color, var(--alm-rule-2));
+  border-radius: 0;
+  background: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.app-shell
+  .veined-app
+  .card:not(.swap-card):not(.bridge-card):not(.portfolio-connect):not(
+    .virtual-row
+  ) {
+  padding-inline: 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--alm-rule-2);
+}
+/* A ruled block inside another ruled block keeps only the outer rule. */
+.app-shell .veined-app .card .card:not(.virtual-row) {
+  border-top-color: var(--alm-rule);
+}
+.app-shell .veined-app .card-top {
+  padding-inline: 0;
+}
+.app-shell .veined-app .card::before,
+.app-shell .veined-app .card::after {
+  display: none;
+}
+
+/* ---------- Instrument plane: one opaque object, no frames inside it ---------- */
+.app-shell
+  .veined-app
+  :is(.swap-card, .bridge-grid > .bridge-card, .portfolio-connect) {
+  border: 1px solid var(--alm-rule-2);
+  border-radius: 20px;
+  background: var(--alm-instrument);
+  background-color: var(--alm-instrument);
+}
+.app-shell .veined-app .swap-card,
+.app-shell .veined-app .bridge-grid > .bridge-card {
+  box-shadow:
+    0 1px 0 rgb(var(--alm-ink-rgb) / 0.06) inset,
+    0 40px 80px -50px rgb(0 0 0 / 0.9);
+}
+html[data-theme="light"] .app-shell .veined-app .swap-card,
+html[data-theme="light"] .app-shell .veined-app .bridge-grid > .bridge-card {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 24px 48px -32px rgb(12 39 48 / 0.4);
+}
+.app-shell .veined-app .portfolio-connect {
+  box-shadow: none;
+}
+/* Wells inside the instrument become ruled lines; the value is written on its line. */
+.app-shell
+  .veined-app
+  :is(
+    .trade-amount-box,
+    .bridge-receipt,
+    .swap-facts,
+    .quote-summary,
+    .summary-facts,
+    .scan-primary
+  ) {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .trade-amount-box {
+  padding: 14px 2px 16px;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .trade-amount-box.is-destination {
+  border-bottom: 0;
+}
+.app-shell .veined-app .amount-field .amount-input {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-3);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .amount-field .amount-input:focus-within {
+  border-bottom-color: var(--alm-act);
+}
+.app-shell .veined-app .bridge-receipt {
+  border-top: 1px solid var(--alm-rule);
+  padding-inline: 0;
+}
+.app-shell .veined-app .bridge-receipt .data-row + .data-row,
+.app-shell .veined-app .bridge-receipt > * + * {
+  border-top: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .swap-reverse {
+  background: var(--alm-instrument);
+  border-color: var(--alm-rule-3);
+}
+/* Network choices inside an instrument: a ruled choice, not a tile. */
+.app-shell .veined-app :is(.swap-card, .bridge-card) .network-box {
+  border: 1px solid var(--alm-rule-2);
+  border-radius: 12px;
+  background: var(--alm-well);
+  box-shadow: none;
+}
+.app-shell .veined-app :is(.swap-card, .bridge-card) .network-box::before,
+.app-shell .veined-app :is(.swap-card, .bridge-card) .network-box::after {
+  display: none;
+}
+.app-shell
+  .veined-app
+  :is(
+    .token-select-trigger,
+    .amount-token,
+    .max-button,
+    .network-select-trigger
+  ) {
+  border-radius: 10px;
+}
+.app-shell
+  .veined-app
+  :is(
+    .disclosure,
+    details.fees,
+    .trade-settings-disclosure,
+    .swap-read-disclosure
+  ) {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app :is(.disclosure, details.fees) > summary {
+  padding-inline: 0;
+}
+.app-shell .veined-app .under-button,
+.app-shell .veined-app .execution-closed,
+.app-shell .veined-app [data-closed] {
+  border-radius: 10px;
+}
+/* Inputs everywhere: a written line on calm ground. */
+.app-shell
+  .veined-app
+  :is(
+    input[type="text"],
+    input[type="search"],
+    input:not([type]),
+    textarea,
+    select
+  ):not(#meta-amount):not(#amount) {
+  border-radius: 10px;
+  border-color: var(--alm-rule-3);
+  background: var(--alm-well);
+}
+
+/* ---------- Ruled sets and the focus lift ---------- */
+.veined-app
+  :is(
+    .overview-flow-steps,
+    .help-topics,
+    .empty-facts,
+    .guardian-hero-points,
+    .status-list
+  )
+  > * {
+  transition: opacity 200ms var(--alm-ease);
+}
+@media (hover: hover) {
+  .veined-app
+    :is(
+      .overview-flow-steps,
+      .help-topics,
+      .empty-facts,
+      .guardian-hero-points,
+      .gchat-levels,
+      .overview-tools,
+      .overview-explore
+    ):has(> :hover)
+    > :not(:hover) {
+    opacity: 0.7;
+  }
+  .veined-app .gchat-start ul:has(> li:hover) > li:not(:hover) {
+    opacity: 0.7;
+  }
+}
+.veined-app
+  :is(
+    .overview-flow-steps,
+    .help-topics,
+    .overview-tools,
+    .overview-explore
+  ):has(> :focus-visible, > :focus-within)
+  > :not(:focus-within):not(:focus-visible) {
+  opacity: 0.7;
+}
+.veined-app .gchat-start ul:has(> li:focus-within) > li:not(:focus-within) {
+  opacity: 0.7;
+}
+@media (prefers-reduced-motion: reduce) {
+  .veined-app .page-heading-text::after,
+  .veined-app .overview-welcome-copy::after,
+  .veined-app[data-surface="bridge"] .intro > p::after {
+    animation: none;
+  }
+  .veined-app
+    :is(
+      .overview-flow-steps,
+      .help-topics,
+      .empty-facts,
+      .guardian-hero-points,
+      .status-list
+    )
+    > * {
+    transition: none;
+  }
+}
+
+/* ---------- Overview: an almanac page ---------- */
+.app-shell .veined-app .overview-welcome {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding-inline: 0;
+}
+.app-shell .veined-app .overview-welcome::before,
+.app-shell .veined-app .overview-welcome::after {
+  border-radius: 0;
+}
+.app-shell .veined-app .overview-welcome h1 {
+  font-size: clamp(40px, 2.6vw + 22px, 68px);
+}
+.app-shell .veined-app .overview-status {
+  border: 0;
+  border-block: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background-color: var(--alm-abyss);
+  box-shadow: none;
+}
+html[data-theme="light"] .app-shell .veined-app .overview-status {
+  background-color: #f7efd9;
+}
+.app-shell .veined-app .overview-flow h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .overview-flow-steps {
+  border-top: 1px solid var(--alm-rule-2);
+  background: none;
+  background-color: transparent;
+}
+.app-shell .veined-app .overview-flow-steps > li,
+.app-shell .veined-app .overview-flow-steps > li + li,
+.app-shell .veined-app .overview-flow-steps > li.is-guardian {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  padding: 20px 22px 18px 0;
+}
+.app-shell .veined-app .overview-flow-steps > li + li {
+  border-inline-start: 1px solid var(--alm-rule);
+  padding-inline-start: 22px;
+}
+.app-shell .veined-app .overview-flow-index {
+  border: 0;
+  background: none;
+  width: auto;
+  height: auto;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--alm-brine);
+}
+.app-shell
+  .veined-app
+  .overview-flow-steps
+  > li.is-guardian
+  .overview-flow-index {
+  color: var(--alm-act);
+}
+.app-shell .veined-app .overview-flow-decisions > span {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+}
+.app-shell .veined-app .overview-flow-decisions {
+  display: grid;
+  gap: 4px;
+}
+.app-shell .veined-app .overview-flow-decisions > span::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  margin-inline-end: 8px;
+  vertical-align: middle;
+  background: currentColor;
+}
+/* The Overview legend stays neutral (accepted G01 rule: no green "safe" signal): one ink, one dash. */
+.app-shell .veined-app .overview-flow-decisions > span {
+  color: var(--alm-ink);
+}
+.app-shell .veined-app .overview-flow-decisions > span::before {
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .overview-flow-state {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .overview-tools {
+  gap: 0;
+  border-top: 1px solid var(--alm-rule-2);
+}
+.app-shell .veined-app .overview-tool {
+  padding: 20px 22px 20px 0;
+}
+.app-shell .veined-app .overview-tool + .overview-tool {
+  border-inline-start: 1px solid var(--alm-rule);
+  padding-inline-start: 22px;
+}
+.app-shell .veined-app .overview-tool-mark {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .overview-tool:hover h2,
+.app-shell .veined-app .overview-tool:focus-visible h2 {
+  color: var(--alm-act);
+}
+.app-shell .veined-app .overview-explore {
+  border-top: 1px solid var(--alm-rule-2);
+}
+.app-shell .veined-app .overview-explore a {
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.app-shell .veined-app .overview-explore a + a {
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .overview-wallet-icon,
+.app-shell .veined-app .empty-icon {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+@media (max-width: 1180px) {
+  .app-shell .veined-app .overview-flow-steps > li:nth-child(odd) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+  .app-shell .veined-app .overview-flow-steps > li:nth-child(n + 3) {
+    border-top: 1px solid var(--alm-rule);
+  }
+}
+@media (max-width: 640px) {
+  .app-shell .veined-app .overview-flow-steps > li,
+  .app-shell .veined-app .overview-flow-steps > li + li {
+    border-inline-start: 0;
+    padding-inline: 0;
+  }
+  .app-shell .veined-app .overview-flow-steps > li + li {
+    border-top: 1px solid var(--alm-rule);
+  }
+  .app-shell .veined-app .overview-tool,
+  .app-shell .veined-app .overview-tool + .overview-tool {
+    border-inline-start: 0;
+    padding-inline: 0;
+  }
+  .app-shell .veined-app .overview-tool + .overview-tool {
+    border-top: 1px solid var(--alm-rule);
+  }
+}
+
+/* ---------- Guardian ---------- */
+.app-shell .veined-app .guardian-modes {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  gap: 18px;
+}
+.app-shell .veined-app .guardian-mode {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding: 10px 0 12px;
+  color: var(--alm-brine);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.app-shell .veined-app .guardian-mode.is-active {
+  color: var(--alm-ink);
+  border-bottom-color: var(--alm-act);
+}
+.app-shell .veined-app .guardian-mode-tag {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--alm-faint);
+}
+/* The conversation is the Guardian page's instrument. */
+.app-shell .veined-app .gchat.is-page {
+  border: 1px solid var(--alm-rule-2);
+  border-radius: 20px;
+  background: var(--alm-instrument);
+  box-shadow: none;
+}
+.app-shell .veined-app .gchat-head {
+  border-bottom: 1px solid var(--alm-rule);
+  background: none;
+}
+.app-shell .veined-app .gchat-start-card {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding-inline: 0;
+}
+.app-shell .veined-app .gchat-start ul {
+  column-gap: 26px;
+}
+.app-shell .veined-app .gchat-start-card:hover strong,
+.app-shell .veined-app .gchat-start-card:focus-visible strong {
+  color: var(--alm-act);
+}
+.app-shell .veined-app .gchat-chip {
+  border-color: var(--alm-rule-2);
+  border-radius: 10px;
+  background: none;
+}
+.app-shell .veined-app .gchat-levels > div {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+}
+.app-shell .veined-app .gchat-levels code {
+  border: 0;
+  background: none;
+  padding: 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.app-shell .veined-app .gchat-levels .is-allow code {
+  color: var(--alm-kelp);
+}
+.app-shell .veined-app .gchat-levels .is-warn code {
+  color: var(--alm-amber);
+}
+.app-shell .veined-app .gchat-levels .is-escalate code {
+  color: var(--alm-sand);
+}
+.app-shell .veined-app .gchat-levels .is-block code {
+  color: var(--alm-coral);
+}
+.app-shell .veined-app .guardian-hero {
+  border-top: 1px solid var(--alm-rule-2);
+}
+.app-shell .veined-app .guardian-advanced {
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+}
+.app-shell .veined-app :is(.guardian-scenario, .guardian-policy > div) {
+  border-radius: 10px;
+}
+
+/* ---------- Bridge: the route reads beside the instrument as a ruled column ---------- */
+.app-shell .veined-app .route-side {
+  gap: 0;
+}
+.app-shell .veined-app .route-side > .card + .card {
+  margin-top: 6px;
+}
+.app-shell .veined-app :is(.route-identity .network-badge, .network-badge) {
+  border: 0;
+  background: none;
+  padding-inline: 0;
+}
+.app-shell .veined-app .route-line {
+  border: 0;
+  border-block: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+.app-shell .veined-app .safety-learn {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+}
+
+/* ---------- Networks ---------- */
+.app-shell .veined-app .route-overview .network-card {
+  padding-top: 22px;
+}
+.app-shell .veined-app .route-connector {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .notice {
+  border: 0;
+  border-inline-start: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+.app-shell .veined-app .active-catalog-row {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .active-catalog-row::before,
+.app-shell .veined-app .active-catalog-row::after {
+  display: none;
+}
+.app-shell .veined-app .active-catalog-row:hover {
+  background-color: color-mix(in srgb, var(--alm-abyss) 96%, var(--alm-ink));
+}
+/* Network readings sit on calm, opaque water (the page's own colour, no frame): their text is measured against it. */
+.app-shell
+  .veined-app
+  .network-tinted:not(.network-box):not(.swap-card):not(.bridge-card):not(
+    .portfolio-connect
+  ) {
+  background-image: none;
+  background-color: var(--alm-abyss);
+}
+.app-shell .veined-app .segmented {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  gap: 16px;
+}
+.app-shell .veined-app .segmented > button {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  padding-inline: 0;
+  color: var(--alm-brine);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.app-shell
+  .veined-app
+  .segmented
+  > button:is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    .active,
+    .is-active
+  ) {
+  color: var(--alm-ink);
+  border-bottom-color: var(--alm-act);
+}
+.app-shell .veined-app .chip {
+  border-radius: 10px;
+  background: none;
+}
+.app-shell .veined-app .chip:is([aria-pressed="true"], .active, .is-active) {
+  border-color: var(--alm-act);
+  color: var(--alm-ink);
+}
+
+/* ---------- Help ---------- */
+.app-shell .veined-app .help-topics {
+  border-top: 1px solid var(--alm-rule-2);
+}
+.app-shell .veined-app .help-topics a {
+  border-inline-end: 1px solid var(--alm-rule);
+  border-block-end: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .help-topics a:hover,
+.app-shell .veined-app .help-topics a:focus-visible {
+  background: none;
+  color: var(--alm-act);
+}
+.app-shell .veined-app .help-steps .step-icon {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .help-steps .step-index {
+  border: 0;
+  background: none;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app .faq details {
+  border-color: var(--alm-rule);
+}
+.app-shell .veined-app .faq-icon {
+  border-color: var(--alm-rule-2);
+  background: none;
+}
+
+/* ---------- Empty states: open water, not a framed tile ---------- */
+.app-shell .veined-app .empty-facts {
+  border-top: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .empty-facts > li {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .empty-facts > li + li {
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .portfolio-first-scan .veined-atmosphere {
+  opacity: 0.4;
+}
+
+/* ---------- Dialogs and the assistant stay instruments ---------- */
+.wallet-dialog,
+.review-dialog,
+.language-picker {
+  border-color: var(--alm-rule-2);
+  border-radius: 18px;
+  background: var(--alm-instrument);
+}
+.gdock .gdock-trigger {
+  box-shadow: 0 0 0 1px var(--alm-rule-2);
+}
+
+/* ---------- Forced colours: every plane keeps a real edge ---------- */
+@media (forced-colors: active) {
+  .app-shell .veined-app .card:not(.virtual-row),
+  .app-shell
+    .veined-app
+    :is(.swap-card, .bridge-card, .portfolio-connect, .gchat.is-page) {
+    border: 1px solid CanvasText;
+  }
+  .veined-app :is(.pill, .badge)::before,
+  .app-shell .shell-status::before {
+    background: CanvasText;
+  }
+  .veined-app .page-heading-text::after,
+  .veined-app .overview-welcome-copy::after,
+  .veined-app[data-surface="bridge"] .intro > p::after {
+    background: CanvasText;
+  }
+}
+
+/* ---------- Depth: the water deepens behind the readings ---------- */
+/* The film stays the owner's living ocean. A veil weighted towards the reading side keeps text on calm water
+   (static: motion stays finite, nothing waits on a scroll timeline). */
+.app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(var(--alm-abyss-rgb) / 0.74) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.58) 40%,
+      rgb(var(--alm-abyss-rgb) / 0.24) 72%,
+      rgb(var(--alm-abyss-rgb) / 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 14%,
+      rgb(var(--alm-abyss-rgb) / 0) 42%,
+      rgb(var(--alm-abyss-rgb) / 0.72) 100%
+    );
+}
+[dir="rtl"] .app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(var(--alm-abyss-rgb) / 0.74) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.58) 40%,
+      rgb(var(--alm-abyss-rgb) / 0.24) 72%,
+      rgb(var(--alm-abyss-rgb) / 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 14%,
+      rgb(var(--alm-abyss-rgb) / 0) 42%,
+      rgb(var(--alm-abyss-rgb) / 0.72) 100%
+    );
+}
+html[data-theme="light"] .app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(var(--alm-abyss-rgb) / 0.9) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.8) 44%,
+      rgb(var(--alm-abyss-rgb) / 0.5) 74%,
+      rgb(var(--alm-abyss-rgb) / 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.3) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.82) 100%
+    );
+}
+[dir="rtl"] html[data-theme="light"] .app-shell .abyss-veil,
+html[data-theme="light"][dir="rtl"] .app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(var(--alm-abyss-rgb) / 0.9) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.8) 44%,
+      rgb(var(--alm-abyss-rgb) / 0.5) 74%,
+      rgb(var(--alm-abyss-rgb) / 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.3) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.82) 100%
+    );
+}
+/* Titles read on the veil itself now; the old boxed scrims go (their hard edges read as cards). */
+.app-shell .veined-app .page-heading::before,
+.app-shell .veined-app[data-surface="bridge"] .intro::before,
+.app-shell .veined-app[data-surface="activity"] .page-heading::before {
+  background: radial-gradient(
+    80% 70% at 18% 50%,
+    rgb(var(--alm-abyss-rgb) / 0.55),
+    rgb(var(--alm-abyss-rgb) / 0) 72%
+  );
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+[dir="rtl"] .app-shell .veined-app .page-heading::before,
+[dir="rtl"] .app-shell .veined-app[data-surface="bridge"] .intro::before,
+[dir="rtl"]
+  .app-shell
+  .veined-app[data-surface="activity"]
+  .page-heading::before {
+  background: radial-gradient(
+    80% 70% at 82% 50%,
+    rgb(var(--alm-abyss-rgb) / 0.55),
+    rgb(var(--alm-abyss-rgb) / 0) 72%
+  );
+}
+.app-shell .veined-app .overview-welcome::after {
+  background: radial-gradient(
+    70% 80% at 16% 52%,
+    rgb(var(--alm-abyss-rgb) / 0.62),
+    rgb(var(--alm-abyss-rgb) / 0) 74%
+  );
+}
+[dir="rtl"] .app-shell .veined-app .overview-welcome::after {
+  background: radial-gradient(
+    70% 80% at 84% 52%,
+    rgb(var(--alm-abyss-rgb) / 0.62),
+    rgb(var(--alm-abyss-rgb) / 0) 74%
+  );
+}
+@media (max-width: 700px) {
+  .app-shell .veined-app .overview-welcome::after {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--alm-abyss-rgb) / 0.86) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.5) 52%,
+      rgb(var(--alm-abyss-rgb) / 0) 82%
+    );
+  }
+}
+/* Readings that carry route or money facts sit on calm, opaque water: a ruled column, not a card. */
+.app-shell .veined-app .route-side {
+  align-self: start;
+  padding: 4px 22px 14px;
+  border-inline-start: 1px solid var(--alm-rule-2);
+  background: var(--alm-abyss);
+}
+.app-shell .veined-app .route-side > .card:first-child {
+  border-top: 0;
+  padding-top: 8px;
+}
+.app-shell .veined-app .notice {
+  padding-inline-start: 28px;
+}
+.app-shell .veined-app .notice > :is(svg, .icon):first-child {
+  inset-inline-start: 0;
+}
+/* The header status is a printed line, not a capsule. */
+.app-shell .header .shell-status {
+  gap: 8px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+/* Points: the total is a reading on the rule, and long rules keep a readable measure. */
+.app-shell .veined-app [class*="lifetimeTotal"] {
+  border: 0;
+  border-block: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+.app-shell
+  .veined-app
+  :is(
+    [class*="lifetimeRules"],
+    [class*="lifetimeBody"],
+    [class*="lifetimeConnect"]
+  ),
+.app-shell .veined-app [class*="__rules"] ul {
+  max-width: 78ch;
+}
+.app-shell .veined-app [class*="__segment"] {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+}
+.app-shell .veined-app [class*="__hidden"] {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+}
+
+/* ---------- Inspection round 1 fixes ---------- */
+/* Activity: the empty ledger is open water; the import note is a printed line; records carry a hairline, not a bar. */
+.app-shell .veined-app[data-surface="activity"] .card.empty,
+.app-shell .veined-app[data-surface="activity"] .empty-state,
+.app-shell .veined-app .portfolio-first-scan .empty-state {
+  margin: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.app-shell .veined-app .toolbar-note {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--alm-brine);
+}
+.app-shell .veined-app[data-surface="activity"] .activity-item {
+  border-inline-start: 0;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.app-shell .veined-app .portfolio-first-scan .empty-icon {
+  border: 0;
+  background: none;
+}
+/* The decorative water inside the first-scan block fades out at every edge instead of ending in a box. */
+.app-shell .veined-app .portfolio-first-scan .veined-atmosphere {
+  -webkit-mask-image: radial-gradient(
+    60% 70% at 50% 45%,
+    #000 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(60% 70% at 50% 45%, #000 0%, transparent 100%);
+}
+/* Points: the location line under the title is plain brine text, not a tracked label. */
+.app-shell .veined-app .page-meta .visual-eyebrow {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--alm-brine);
+}
+/* The assistant: suggestion chips are controls on the instrument, not capsules. */
+.gdock :is(.gchat-chip, .gdock-chip),
+.app-shell .veined-app .gchat-chips .gchat-chip {
+  border-radius: 10px;
+  background: none;
+}
+.gdock .gchat {
+  background: var(--alm-instrument);
+}
+
+/* ---------- Docs (Read): the reading room. Root layer, so the selectors carry `html .mk` to outrank marketing.css. ---------- */
+/* The current page is marked by ink and a hairline, notes are ruled, not boxed. */
+html .mk .dk-side nav a[aria-current="page"] {
+  background: none;
+  box-shadow: none;
+  color: var(--alm-ink);
+  font-weight: 640;
+  text-decoration: underline;
+  text-decoration-color: var(--alm-act);
+  text-underline-offset: 0.35em;
+}
+html .mk .dk-side nav a:hover {
+  background: none;
+  color: var(--alm-ink);
+}
+html .mk .dk-article blockquote {
+  border: 0;
+  border-block: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+html .mk .dk-article h1 {
+  font-weight: 640;
+  letter-spacing: -0.034em;
+}
+html .mk .dk-article :is(td, th) {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+html .mk .dk-article {
+  max-width: 76ch;
+}
+html .mk .dk-article blockquote::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 12px 0 8px;
+  background: var(--alm-amber);
+}
+
+/* ---------- Inspection round 1 fixes (2) ---------- */
+/* Daylight wells inside the instrument stay ruled lines too. */
+html[data-theme="light"]
+  .app-shell
+  .veined-app
+  :is(.trade-amount-box, .swap-facts) {
+  background: none;
+}
+html[data-theme="light"] .app-shell .veined-app button.primary:disabled {
+  box-shadow: none;
+}
+/* Networks: the catalog is a ruled table under a shore line, not a framed scroller. */
+.app-shell .veined-app .active-catalog-list {
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+/* Phones: the More sheet is an index of stations on one instrument, not a grid of tiles. */
+@media (max-width: 1023px) {
+  .nav-secondary[data-open="true"] {
+    gap: 0;
+    padding: 6px 14px;
+    border-color: var(--alm-rule-2);
+    border-radius: 16px;
+    background: var(--alm-instrument);
+  }
+  .nav-secondary[data-open="true"] .nav-link {
+    border-radius: 0;
+    background: none;
+    border-bottom: 1px solid var(--alm-rule);
+  }
+  .nav-secondary[data-open="true"] .nav-link:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+  .nav-secondary[data-open="true"] .nav-link.active {
+    box-shadow: none;
+    color: var(--alm-ink);
+    font-weight: 640;
+  }
+}
+/* Guardian: the Agent Gate policy is a ruled definition list. */
+.app-shell .veined-app .guardian-policy > div {
+  border: 0;
+  border-top: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+
+/* ---------- Detector round fixes ---------- */
+/* No decorative network spotlight behind the water (the film and the network marks already carry identity). */
+.app-shell .abyss .abyss-glow {
+  visibility: hidden;
+}
+/* The system's own text faces: the reading face of the visitor's platform, no borrowed default. */
+:root {
+  --font:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text",
+    "Segoe UI", "Noto Sans", "Noto Sans Arabic", "Noto Sans Hebrew",
+    "Noto Sans CJK JP", sans-serif;
+}
+.app-shell .brand .version {
+  font-size: 11px;
+}
+.veined-app p,
+.mk .ocean-landing :is(.mk-lede, .mk-section-head > p, .mk-note) {
+  max-width: 72ch;
+}
+.app-shell .veined-app :is(.overview-status p, .notice, .toolbar-note) {
+  max-width: none;
+}
+/* Glows become plain marks. */
+.app-shell .veined-app :is(.pill-dot, .status-dot, .live-dot),
+.mk .ocean-landing .mk-hero-status-dot {
+  box-shadow: none;
+}
+/* Primary actions in daylight too: one flat ink-green fill, no glow. */
+html[data-theme="light"] .veined-app button.primary,
+html[data-theme="light"] .veined-app .button-link.primary-link {
+  background: var(--alm-act);
+  box-shadow: none;
+}
+html[data-theme="light"] .veined-app button.primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--alm-act) 86%, #000);
+}
+html[data-theme="light"] .veined-app button.primary:disabled {
+  background: rgb(var(--alm-ink-rgb) / 0.08);
+  color: rgb(var(--alm-ink-rgb) / 0.6);
+}
+
+/* ---------- E2E round 1 repairs ---------- */
+/* The closed-execution line under an instrument's action is full-strength amber ink (AA in daylight). */
+.app-shell .veined-app .under-button {
+  opacity: 1;
+  color: var(--alm-amber);
+}
+/* Narrow screens: the tucked assistant tab keeps its 24 px lane at the inline end, so ruled blocks end before it
+   (no control sits under the tab, accepted G04 D5). */
+@media (max-width: 1023px) {
+  .app-shell
+    .veined-app
+    .card:not(.swap-card):not(.bridge-card):not(.portfolio-connect):not(
+      .virtual-row
+    ) {
+    padding-inline-end: 30px;
+  }
+}
+
+/* Ruled sets that open with their own shore line. */
+.app-shell
+  .veined-app
+  :is(
+    .overview-flow-steps,
+    .help-topics,
+    .overview-tools,
+    .overview-explore,
+    .guardian-hero
+  ) {
+  --alm-top: 1px;
+}
+.app-shell .veined-app .empty-facts {
+  --alm-top: 1px;
+  --alm-top-color: var(--alm-rule);
+}
+/* The heading's text action keeps a real target size (WCAG 2.5.8). */
+.veined-app .page-meta > .pill-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+}
+.app-shell .abyss .abyss-glow {
+  background: none;
+}
+
+/* ---------- Finish review round 1 (fix batch) ---------- */
+/* Headings: the lede belongs to its title, the tide line follows the group. */
+.veined-app :is(.page-heading, .overview-welcome, .intro) h1 {
+  margin-block-end: 0.32em;
+}
+/* Overview step 3 keeps its figure; the Guardian mark sits beside it at text size. */
+.app-shell
+  .veined-app
+  .overview-flow-steps
+  > li.is-guardian
+  .overview-flow-index {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.app-shell .veined-app .overview-flow-index .nav-glyph {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+/* One action colour: the token chooser uses the sage fill like every other primary. */
+.app-shell .veined-app .token-select-trigger.is-empty,
+.gdock .token-select-trigger.is-empty {
+  border-color: transparent;
+  background: var(--alm-act);
+  color: var(--alm-on-act);
+  box-shadow: none;
+}
+/* Notes: the info mark sits in its own column, never touching the sentence. */
+.app-shell .veined-app .notice {
+  padding-inline-start: 26px;
+}
+.app-shell .veined-app .notice::before {
+  inset-inline-start: 0;
+  top: 15px;
+}
+/* Network roles are labels, not verdicts: brine ink, not coral or amber. */
+.app-shell .veined-app .network-role,
+html[data-theme="light"] .app-shell .veined-app .network-role {
+  color: var(--alm-brine);
+}
+/* The floating assistant: the panel is the instrument; its header is plain text links, suggestions are an index. */
+.gdock .gdock-bar {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 20px 20px 0 0;
+  background: none;
+}
+.gdock .gdock-panel {
+  border: 1px solid var(--alm-rule-2);
+  background: var(--alm-instrument);
+}
+.gdock .gdock-full {
+  color: var(--alm-act);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.gchat-chips {
+  column-gap: 18px;
+  row-gap: 2px;
+}
+.gchat-chips .gchat-chip,
+.gdock .gchat-chips .gchat-chip,
+.app-shell .veined-app .gchat-chips .gchat-chip {
+  min-height: 34px;
+  padding: 6px 0;
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  color: var(--alm-ink);
+}
+.gchat-chips .gchat-chip:hover,
+.gchat-chips .gchat-chip:focus-visible {
+  border-bottom-color: var(--alm-act);
+}
+@media (hover: hover) {
+  .gchat-chips:has(> .gchat-chip:hover) > .gchat-chip:not(:hover) {
+    opacity: 0.7;
+  }
+}
+.gchat-chips:has(> .gchat-chip:focus-visible)
+  > .gchat-chip:not(:focus-visible) {
+  opacity: 0.7;
+}
+/* Daylight: hero points are bare marks; the heading scrims fade at every edge; the water reads as sea-foam paper. */
+html[data-theme="light"]
+  .app-shell
+  .veined-app
+  :is(.guardian-hero-points, .page-meta)
+  > * {
+  box-shadow: none;
+  border: 0;
+}
+html[data-theme="light"] .app-shell .veined-app .guardian-hero-points > * {
+  background: none;
+}
+.app-shell .veined-app :is(.page-heading, .overview-welcome)::before,
+.app-shell .veined-app :is(.page-heading, .overview-welcome)::after,
+.app-shell .veined-app[data-surface="bridge"] .intro::before {
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 55%, transparent 100%);
+}
+html[data-theme="light"] .app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(var(--alm-abyss-rgb) / 0.94) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.88) 50%,
+      rgb(var(--alm-abyss-rgb) / 0.64) 78%,
+      rgb(var(--alm-abyss-rgb) / 0.5) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.3) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.86) 100%
+    );
+}
+html[data-theme="light"][dir="rtl"] .app-shell .abyss-veil {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(var(--alm-abyss-rgb) / 0.94) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.88) 50%,
+      rgb(var(--alm-abyss-rgb) / 0.64) 78%,
+      rgb(var(--alm-abyss-rgb) / 0.5) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.3) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.86) 100%
+    );
+}
+/* Phone layout (also 200 % zoom): the closed-execution strip keeps the assistant tab's lane free, so the tab never
+   covers its Safety link (accepted rule: the tab never sits over a control). */
+@media (max-width: 1023px) and (max-height: 560px) {
+  .app-shell .veined-app .overview-status {
+    padding-inline-end: 64px;
+  }
+}
+
+/* ---------- Finish review round 2 (verdict fixes) ---------- */
+/* The almanac veil wins over the older per-scene veils too (they were more specific), in both themes. */
+html .app-shell .abyss[data-scene] .abyss-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(var(--alm-abyss-rgb) / 0.74) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.58) 40%,
+      rgb(var(--alm-abyss-rgb) / 0.24) 72%,
+      rgb(var(--alm-abyss-rgb) / 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 14%,
+      rgb(var(--alm-abyss-rgb) / 0) 42%,
+      rgb(var(--alm-abyss-rgb) / 0.72) 100%
+    );
+}
+html[dir="rtl"] .app-shell .abyss[data-scene] .abyss-veil {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(var(--alm-abyss-rgb) / 0.74) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.58) 40%,
+      rgb(var(--alm-abyss-rgb) / 0.24) 72%,
+      rgb(var(--alm-abyss-rgb) / 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0) 14%,
+      rgb(var(--alm-abyss-rgb) / 0) 42%,
+      rgb(var(--alm-abyss-rgb) / 0.72) 100%
+    );
+}
+/* Daylight: sea-foam paper with the film as a faint watermark. */
+html[data-theme="light"] .app-shell .abyss[data-scene] .abyss-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(var(--alm-abyss-rgb) / 0.95) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.9) 50%,
+      rgb(var(--alm-abyss-rgb) / 0.7) 78%,
+      rgb(var(--alm-abyss-rgb) / 0.56) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0.1) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.88) 100%
+    );
+}
+html[data-theme="light"][dir="rtl"] .app-shell .abyss[data-scene] .abyss-veil {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(var(--alm-abyss-rgb) / 0.95) 0%,
+      rgb(var(--alm-abyss-rgb) / 0.9) 50%,
+      rgb(var(--alm-abyss-rgb) / 0.7) 78%,
+      rgb(var(--alm-abyss-rgb) / 0.56) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(var(--alm-abyss-rgb) / 0.4) 0,
+      rgb(var(--alm-abyss-rgb) / 0.1) 20%,
+      rgb(var(--alm-abyss-rgb) / 0.88) 100%
+    );
+}
+/* With paper underneath, the heading marks need no pale backing: bare marks in daylight too. */
+html[data-theme="light"]
+  .app-shell
+  .veined-app
+  .page-heading
+  .page-meta
+  > :is(.pill, .badge) {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* ---------- Guardian verdicts are printed, not carded (documenter finding) ---------- */
+/* One verdict mark everywhere: a 2 px rule in the verdict's tone above the reading, opaque calm water underneath for
+   the text, no frame, no coloured side stripe, no glow. */
+.guardian-panel,
+.app-shell .veined-app .guardian-panel {
+  border: 0;
+  border-top: 2px solid var(--g-tone);
+  border-radius: 0;
+  background: var(--alm-abyss);
+  box-shadow: none;
+  padding-inline: 2px;
+}
+.app-shell .veined-app :is(.swap-card, .bridge-card, .gchat) .guardian-panel {
+  background: transparent;
+}
+:is(.gdraft, .gchat-plain, .gchat-note) {
+  border: 0;
+  border-top: 2px solid var(--g-tone, var(--alm-rule-3));
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.gchat-note {
+  border-top-color: var(--alm-rule-3);
+}
+.guardian-built li {
+  border-inline-start: 0;
+  border-top: 1px solid var(--alm-rule);
+}
+.guardian-panel .guardian-steps {
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+.guardian-panel :is(.guardian-kicker, .guardian-steps-title) {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+  color: var(--alm-brine);
+}
+/* The sticky top bar is opaque enough that scrolled content never reads through it. */
+@media (min-width: 1024px) {
+  .header-actions::before {
+    background: rgb(var(--alm-abyss-rgb) / 0.97);
+  }
+}
+
+/* ---------- Accessibility probe repair: the Swap amount line shows focus ---------- */
+/* The amount is typed on its ruled line; when the field has keyboard focus that line becomes a 2 px sage rule (the old
+   framed well, which carried the focus ring, is gone). */
+.app-shell .veined-app .trade-amount-box:focus-within {
+  border-bottom-color: var(--alm-act);
+  box-shadow: inset 0 -2px 0 var(--alm-act);
+}
+.app-shell .veined-app .trade-amount-box.is-destination:focus-within {
+  border-bottom: 1px solid var(--alm-act);
+}
+.app-shell .veined-app .amount-field .amount-input:focus-within {
+  box-shadow: inset 0 -2px 0 var(--alm-act);
+}

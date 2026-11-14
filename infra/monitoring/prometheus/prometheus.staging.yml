@@ -1,0 +1,25 @@
+# Otherbridge staging-equivalent Prometheus (internal network only). Targets expose metrics on
+# dedicated internal listeners that require the bearer token mounted from a git-ignored file.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    environment: staging-local
+rule_files:
+  - /etc/prometheus/rules/*.yml
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["alertmanager:9093"]
+scrape_configs:
+  - job_name: otherbridge-app
+    authorization: { type: Bearer, credentials_file: /etc/prometheus/secrets/metrics_token }
+    static_configs: [{ targets: ["app:3291"] }]
+  - job_name: otherbridge-data-api
+    authorization: { type: Bearer, credentials_file: /etc/prometheus/secrets/metrics_token }
+    static_configs: [{ targets: ["data-api:3292"] }]
+  - job_name: otherbridge-ops
+    authorization: { type: Bearer, credentials_file: /etc/prometheus/secrets/metrics_token }
+    static_configs: [{ targets: ["ops-exporter:3293"] }]
+  - job_name: prometheus
+    static_configs: [{ targets: ["localhost:9090"] }]

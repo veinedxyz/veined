@@ -1,0 +1,762 @@
+{
+  "1": {
+    "logo": "/networks/catalog/1-bd61892db3cff958.svg",
+    "primary": "#40477A",
+    "accent": "#40477A",
+    "glow": "64 71 122",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; bd61892db3cff958d30764558b28cc0e77bc2bdfbcf38402505188f5c4fa8b73"
+  },
+  "10": {
+    "logo": "/networks/catalog/10-31521544221c055c.svg",
+    "primary": "#FF0420",
+    "accent": "#FF0420",
+    "glow": "255 4 32",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 31521544221c055c7c80136bd47367560724b0f411bd5066a22f34a685c949b2"
+  },
+  "14": {
+    "logo": "/networks/catalog/14-d1bc8bf23c50d234.svg",
+    "primary": "#E62058",
+    "accent": "#E62058",
+    "glow": "230 32 88",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; d1bc8bf23c50d23426cc90321d712470815629e28250af329e7af4e67e655436"
+  },
+  "25": {
+    "logo": "/networks/catalog/25-07bde3c6531bfa13.svg",
+    "primary": "#061121",
+    "accent": "#061121",
+    "glow": "6 17 33",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 07bde3c6531bfa137f31317cefc5c7aadc233d59639eb1ce0b66836721fd81fb"
+  },
+  "30": {
+    "logo": "/networks/catalog/30-f4edfe9c8aa5232c.svg",
+    "primary": "#FF931E",
+    "accent": "#FF931E",
+    "glow": "255 147 30",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; f4edfe9c8aa5232c9e79e47f55ff47cf06f45c1c7d74679f714bc230c6cfb6b5"
+  },
+  "40": {
+    "logo": "/networks/catalog/40-6ef7b77c076abc58.svg",
+    "primary": "#00F2FE",
+    "accent": "#00F2FE",
+    "glow": "0 242 254",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 6ef7b77c076abc587fe1228ae518b14d0414eccef64713a5b01c6797bb3dba32"
+  },
+  "50": {
+    "logo": "/networks/catalog/50-b2ed7cefc3e17853.svg",
+    "primary": "#254C82",
+    "accent": "#254C82",
+    "glow": "37 76 130",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; b2ed7cefc3e17853e9b7a2f7477dd8afa5c88b86cf06d94fb5de4dabd609d1b5"
+  },
+  "56": {
+    "logo": "/networks/catalog/56-8a253298c617d227.svg",
+    "primary": "#F0B90B",
+    "accent": "#F0B90B",
+    "glow": "240 185 11",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 8a253298c617d2273b126157275c6f8d9207cd9c09f6d4b50ee97e05ce9aef8f"
+  },
+  "88": {
+    "logo": "/networks/catalog/88-c9aa477700e453ee.svg",
+    "primary": "#F8F6D7",
+    "accent": "#F8F6D7",
+    "glow": "248 246 215",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; c9aa477700e453ee608bc9d3c7fd4a2ee9e3ce3e9eecfd51f1289c925e343666"
+  },
+  "100": {
+    "logo": "/networks/catalog/100-dfdde637dc73a757.svg",
+    "primary": "#F0EBDE",
+    "accent": "#F0EBDE",
+    "glow": "240 235 222",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; dfdde637dc73a7571a6afbd979983102dfe02aa783e8a6250355fde09b59a849"
+  },
+  "122": {
+    "logo": "/networks/catalog/122-c736b1946fc11bae.svg",
+    "primary": "#B4F9BA",
+    "accent": "#B4F9BA",
+    "glow": "180 249 186",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; c736b1946fc11baeb68443236bb40274587e17715dbde70a59f52f088dbcabec"
+  },
+  "130": {
+    "logo": "/networks/catalog/130-669e1e5bd1f17e50.svg",
+    "primary": "#F50FB4",
+    "accent": "#F50FB4",
+    "glow": "245 15 180",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 669e1e5bd1f17e50db6cec4edc58094cd99dc86ada5f20ad127fc3a3e57bdaed"
+  },
+  "137": {
+    "logo": "/networks/catalog/137-342be777ec4567ce.svg",
+    "primary": "#A229C5",
+    "accent": "#A229C5",
+    "glow": "162 41 197",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 342be777ec4567ce262804391ce6e8ba387b1ddbe158bcb2557cc5e23d4de247"
+  },
+  "143": {
+    "logo": "/networks/catalog/143-395b0ace091fd18f.svg",
+    "primary": "#836EF9",
+    "accent": "#836EF9",
+    "glow": "131 110 249",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 395b0ace091fd18fa00056eed4ae744b8dceca833e411bc1584f02138d9eccbc"
+  },
+  "146": {
+    "logo": "/networks/catalog/146-6bd08858e81e4b12.svg",
+    "primary": "#F5F5F5",
+    "accent": "#F5F5F5",
+    "glow": "245 245 245",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 6bd08858e81e4b129a83461e11d291bc6a5b92692d0710256593e0302488bdc2"
+  },
+  "196": {
+    "logo": "/networks/catalog/196-1cce9d06730bd7ee.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "#e8e9e5",
+    "provenance": "Catalog repository; 1cce9d06730bd7ee98a2705718fc219b141d765f203bdab1905c48312b1bf6f0"
+  },
+  "204": {
+    "logo": "/networks/catalog/204-8a253298c617d227.svg",
+    "primary": "#F0B90B",
+    "accent": "#F0B90B",
+    "glow": "240 185 11",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 8a253298c617d2273b126157275c6f8d9207cd9c09f6d4b50ee97e05ce9aef8f"
+  },
+  "232": {
+    "logo": "/networks/catalog/232-1be915f78639fc21.svg",
+    "primary": "#2C2D30",
+    "accent": "#2C2D30",
+    "glow": "44 45 48",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 1be915f78639fc219506277c33d028bbbed4baea67358b51e94f6ad423ea76d1"
+  },
+  "252": {
+    "logo": "/networks/catalog/252-6593ec8b260188c0.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 6593ec8b260188c0a50ef6f3c7cbbc60c59140549ff1ee64f46ba5461685704a"
+  },
+  "288": {
+    "logo": "/networks/catalog/288-1a042c9e6dab39a2.svg",
+    "primary": "#C9FF00",
+    "accent": "#C9FF00",
+    "glow": "201 255 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 1a042c9e6dab39a25fc541da194d7231bd36ae059513c87742b86452b6214191"
+  },
+  "324": {
+    "logo": "/networks/catalog/324-1e29d1153a41a6bd.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 1e29d1153a41a6bd8f6774292754e3dba302393287b70d79446dc196745b695c"
+  },
+  "480": {
+    "logo": "/networks/catalog/480-cf73618cff6c3418.svg",
+    "primary": "#2C2C2C",
+    "accent": "#2C2C2C",
+    "glow": "44 44 44",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; cf73618cff6c34187f589f3793f3e6fe3b496c6b3524e7dc903a82ef898594db"
+  },
+  "747": {
+    "logo": "/networks/catalog/747-5bcf57bd730f5299.svg",
+    "primary": "#00EF8B",
+    "accent": "#00EF8B",
+    "glow": "0 239 139",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 5bcf57bd730f529968484e53ae4fd124fc16296c210194163919f43c2d40c232"
+  },
+  "988": {
+    "logo": "/networks/catalog/988-da831639dc6671ae.svg",
+    "primary": "#E8FBF7",
+    "accent": "#E8FBF7",
+    "glow": "232 251 247",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; da831639dc6671ae0fdb48b336bd71bcc700ee05b4a0dcb43e19a39adee386dd"
+  },
+  "999": {
+    "logo": "/networks/catalog/999-8724be0d4c4020a0.svg",
+    "primary": "#072723",
+    "accent": "#072723",
+    "glow": "7 39 35",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 8724be0d4c4020a0b9266765e27c2e96570d263bc97ed23f3c921ce24b8b2625"
+  },
+  "1088": {
+    "logo": "/networks/catalog/1088-ab3a84616a2861a6.svg",
+    "primary": "#00CFFF",
+    "accent": "#00CFFF",
+    "glow": "0 207 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; ab3a84616a2861a688254a46f5bc53dcd33a575f3a427b240291769fb6b69e6f"
+  },
+  "1135": {
+    "logo": "/networks/catalog/1135-2f215812d47b756b.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 2f215812d47b756bcbf275c83365e36e5de4af438ae78f135facaf2258350220"
+  },
+  "1329": {
+    "logo": "/networks/catalog/1329-88464578c4287c32.svg",
+    "primary": "#B52A2A",
+    "accent": "#B52A2A",
+    "glow": "181 42 42",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 88464578c4287c326113c14681ef816cf19c7ecf130afb514a6a8c55139014fb"
+  },
+  "1337": {
+    "logo": "/networks/catalog/1337-d84ac225e8466abf.svg",
+    "primary": "#072723",
+    "accent": "#072723",
+    "glow": "7 39 35",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; d84ac225e8466abf0c0e6a1c87b916d4e0152bfbb13c65cb49460e6a10ebfc06"
+  },
+  "1480": {
+    "logo": "/networks/catalog/1480-7c9263bf219f54de.svg",
+    "primary": "#4141FC",
+    "accent": "#4141FC",
+    "glow": "65 65 252",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 7c9263bf219f54de9f53ef241efd99e12304dee1dfe79dff3f05661d3ca8a403"
+  },
+  "1625": {
+    "logo": "/networks/catalog/1625-5bc345cb46db1ac3.svg",
+    "primary": "#010101",
+    "accent": "#010101",
+    "glow": "1 1 1",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 5bc345cb46db1ac3c99b0aecc8dd04eeda3948ef5f6a313334762b3763ca72d8"
+  },
+  "1672": {
+    "logo": "/networks/catalog/1672-ca1ad214f9472d73.svg",
+    "primary": "#0113B7",
+    "accent": "#0113B7",
+    "glow": "1 19 183",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; ca1ad214f9472d73bcfce4c7e3d45d574e78f5bb1e20d35545f688dd7f78743e"
+  },
+  "1776": {
+    "logo": "/networks/catalog/1776-eb503dcc77b35caf.svg",
+    "primary": "#4D3DFF",
+    "accent": "#4D3DFF",
+    "glow": "77 61 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; eb503dcc77b35caf8b908aea68a0688df9cb0d58363eb0481054ee6a84d765f1"
+  },
+  "1868": {
+    "logo": "/networks/catalog/1868-bd7645232b4a682a.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; bd7645232b4a682a89891291012a3e3ea675697ae35203b20294a69b552e4725"
+  },
+  "2020": {
+    "logo": "/networks/catalog/2020-c01e65eadc7c610b.svg",
+    "primary": "#004DE5",
+    "accent": "#004DE5",
+    "glow": "0 77 229",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; c01e65eadc7c610b04ef6b02145d2fd30dda8ec77588e862dfe0183f2d6c4af2"
+  },
+  "2741": {
+    "logo": "/networks/catalog/2741-e9e7cb7018fa9791.svg",
+    "primary": "#00DE73",
+    "accent": "#00DE73",
+    "glow": "0 222 115",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; e9e7cb7018fa97916b6de8c2669e8881f50ca476107923544b9b9fc066468ac6"
+  },
+  "2818": {
+    "logo": "/networks/catalog/2818-0a0b5451cc12ba72.svg",
+    "primary": "#1BE500",
+    "accent": "#1BE500",
+    "glow": "27 229 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 0a0b5451cc12ba72ba17cb888433f1a22305a81625207c2553cfe8dc1b0911eb"
+  },
+  "4217": {
+    "logo": "/networks/catalog/4217-26c56bb71c968e58.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 26c56bb71c968e58ad5f02981603f659ecce9bdc08df93e7dcb872dafd826ae2"
+  },
+  "4326": {
+    "logo": "/networks/catalog/4326-702fa89c35f998fa.svg",
+    "primary": "#ECE8E8",
+    "accent": "#ECE8E8",
+    "glow": "236 232 232",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 702fa89c35f998fa86bd0a289d98b11585c8fe06b2129e6195a93f31cf5fbfb9"
+  },
+  "4663": {
+    "logo": "/networks/catalog/4663-0424c0da8b7f4373.svg",
+    "primary": "#CCFF00",
+    "accent": "#CCFF00",
+    "glow": "204 255 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 0424c0da8b7f4373b660da8119e5aca62f2593ea638b11f1d39deec97b3318a8"
+  },
+  "5000": {
+    "logo": "/networks/catalog/5000-b751db6394b8f7ee.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; b751db6394b8f7ee7fbdccb5257e8bfc9854d8beebf851584680f3981d338593"
+  },
+  "5031": {
+    "logo": "/networks/catalog/5031-2b0b22187a2fd150.svg",
+    "primary": "#F0F0F0",
+    "accent": "#F0F0F0",
+    "glow": "240 240 240",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 2b0b22187a2fd150a5952d0da1ef1226e8583571f7a0b9436b24dadef69393c1"
+  },
+  "5042": {
+    "logo": "/networks/catalog/5042-9c21da1fc2993729.svg",
+    "primary": "#011330",
+    "accent": "#011330",
+    "glow": "1 19 48",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 9c21da1fc29937290370e229fe7c106a67986417dc8637f48204991a13bcd783"
+  },
+  "8217": {
+    "logo": "/networks/catalog/8217-38154b408cc6584a.svg",
+    "primary": "#BFF009",
+    "accent": "#BFF009",
+    "glow": "191 240 9",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 38154b408cc6584ab2d0fce63f0cf6692e3659ef49a972471bc94b86ed9fd9a7"
+  },
+  "8453": {
+    "logo": "/networks/catalog/8453-de343bd68771b135.svg",
+    "primary": "#0000FF",
+    "accent": "#0000FF",
+    "glow": "0 0 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; de343bd68771b13591b632ccb006bd6a69aa2032c1a573ce9a091c1c67c859d3"
+  },
+  "9745": {
+    "logo": "/networks/catalog/9745-29d1b5431193025b.svg",
+    "primary": "#162F29",
+    "accent": "#162F29",
+    "glow": "22 47 41",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 29d1b5431193025bdb80d5a20add934444e153fcf135c58bd9df5cf8484d6886"
+  },
+  "13371": {
+    "logo": "/networks/catalog/13371-2b2e334de1a4bb9a.svg",
+    "primary": "#131313",
+    "accent": "#131313",
+    "glow": "19 19 19",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 2b2e334de1a4bb9a14ef344a7098096909f4136803bd4b948954db70a8692da2"
+  },
+  "16661": {
+    "logo": "/networks/catalog/16661-64da9a9394eb6a69.svg",
+    "primary": "#B75FFF",
+    "accent": "#B75FFF",
+    "glow": "183 95 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 64da9a9394eb6a6976e62bc74a6d808f93e0194b3d364a5295054364d350d1bf"
+  },
+  "33139": {
+    "logo": "/networks/catalog/33139-facdc9690c4570b3.svg",
+    "primary": "#0054FA",
+    "accent": "#0054FA",
+    "glow": "0 84 250",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; facdc9690c4570b38b4a0aa9bf3b88fc0e4e088bb862b688ca1fe9309f6eda70"
+  },
+  "34443": {
+    "logo": "/networks/catalog/34443-522fd4b81704f7cb.svg",
+    "primary": "#DFFE00",
+    "accent": "#DFFE00",
+    "glow": "223 254 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 522fd4b81704f7cb44ca573629891fda29f9341c51d07725d0ac6bf736b9d5a8"
+  },
+  "42161": {
+    "logo": "/networks/catalog/42161-35cebc7f281a5f68.svg",
+    "primary": "#2C374B",
+    "accent": "#2C374B",
+    "glow": "44 55 75",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 35cebc7f281a5f6882ef28a32d4343d67eb42a757f814f75098c9e3f26806cc7"
+  },
+  "42170": {
+    "logo": "/networks/catalog/42170-814099365f66dfbf.svg",
+    "primary": "#E57310",
+    "accent": "#E57310",
+    "glow": "229 115 16",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 814099365f66dfbfc172a342dcc0a0ce0d6f91de239adc1077d92ca1f4a383c2"
+  },
+  "42220": {
+    "logo": "/networks/catalog/42220-8595d5fd319d553a.svg",
+    "primary": "#FCFF52",
+    "accent": "#FCFF52",
+    "glow": "252 255 82",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 8595d5fd319d553a70196e87f6f6789fcc2aba59dfebe559656941e14b701b99"
+  },
+  "42793": {
+    "logo": "/networks/catalog/42793-5d413bad053e4f32.svg",
+    "primary": "#171717",
+    "accent": "#171717",
+    "glow": "23 23 23",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 5d413bad053e4f32afa077d5bb04c327a3034b73652f13fad738612f3fda56b4"
+  },
+  "43111": {
+    "logo": "/networks/catalog/43111-9cb89d54a531dcf1.svg",
+    "primary": "#FF6A00",
+    "accent": "#FF6A00",
+    "glow": "255 106 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 9cb89d54a531dcf14e02ba3faf1045f5a3be46616686ae955cbf5bea431ae16e"
+  },
+  "43114": {
+    "logo": "/networks/catalog/43114-8da7dbe3aa9e897e.svg",
+    "primary": "#E84142",
+    "accent": "#E84142",
+    "glow": "232 65 66",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 8da7dbe3aa9e897ee6d0dace01b27e24304c930403786fab414c887a02eeecaa"
+  },
+  "57073": {
+    "logo": "/networks/catalog/57073-76898117420fa7e3.svg",
+    "primary": "#7132F5",
+    "accent": "#7132F5",
+    "glow": "113 50 245",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 76898117420fa7e392a274891a60c9b37571e9d63207428db7a3cf6c34da3b72"
+  },
+  "59144": {
+    "logo": "/networks/catalog/59144-20888c6a13c25b33.svg",
+    "primary": "#61DFFF",
+    "accent": "#61DFFF",
+    "glow": "97 223 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 20888c6a13c25b33e10b0266db148ea54d026eedcbdd46cb3e07dcbebae13f7a"
+  },
+  "60808": {
+    "logo": "/networks/catalog/60808-3c4da9a3091c8336.svg",
+    "primary": "#F25D00",
+    "accent": "#F25D00",
+    "glow": "242 93 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 3c4da9a3091c83366efe294272133b701c02a40d1161f36a1cf514ff041ef581"
+  },
+  "80094": {
+    "logo": "/networks/catalog/80094-efdb3bbfafaa9792.svg",
+    "primary": "#814625",
+    "accent": "#814625",
+    "glow": "129 70 37",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; efdb3bbfafaa97925778e5b89627cf425e49ef4c95daa204dd583ad6aa3fa5de"
+  },
+  "81457": {
+    "logo": "/networks/catalog/81457-acab32c6de520809.svg",
+    "primary": "#FCFC03",
+    "accent": "#FCFC03",
+    "glow": "252 252 3",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; acab32c6de520809855e432757886586d121c21bd561cba28cb2ff03b60ed6da"
+  },
+  "84532": {
+    "logo": "/networks/catalog/84532-de343bd68771b135.svg",
+    "primary": "#0000FF",
+    "accent": "#0000FF",
+    "glow": "0 0 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; de343bd68771b13591b632ccb006bd6a69aa2032c1a573ce9a091c1c67c859d3"
+  },
+  "98866": {
+    "logo": "/networks/catalog/98866-a8b4655c6d272e3e.svg",
+    "primary": "#FF3D00",
+    "accent": "#FF3D00",
+    "glow": "255 61 0",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; a8b4655c6d272e3eb76f22548e5ec9e6c6970924814613ea77279488f01f7c3b"
+  },
+  "421614": {
+    "logo": "/networks/catalog/421614-35cebc7f281a5f68.svg",
+    "primary": "#2C374B",
+    "accent": "#2C374B",
+    "glow": "44 55 75",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 35cebc7f281a5f6882ef28a32d4343d67eb42a757f814f75098c9e3f26806cc7"
+  },
+  "534352": {
+    "logo": "/networks/catalog/534352-41701f1fab4d98f6.svg",
+    "primary": "#FFEEDA",
+    "accent": "#FFEEDA",
+    "glow": "255 238 218",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 41701f1fab4d98f604c2b98b45af5ec4b925e20aa0014d8af62065dd911f4200"
+  },
+  "747474": {
+    "logo": "/networks/catalog/747474-4c325ec3e7757385.svg",
+    "primary": "#F6FF0D",
+    "accent": "#F6FF0D",
+    "glow": "246 255 13",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 4c325ec3e7757385bf028280b7ce7d7ceb274c6fe6fc95354e7b898ffef3daad"
+  },
+  "3586256": {
+    "logo": "/networks/catalog/3586256-bd5c00cdbafbb8b0.svg",
+    "primary": "#070707",
+    "accent": "#070707",
+    "glow": "7 7 7",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; bd5c00cdbafbb8b08eb7fbc6a0740ffae66126174bc950a701c721a636464764"
+  },
+  "5042002": {
+    "logo": "/networks/catalog/5042002-9c21da1fc2993729.svg",
+    "primary": "#011330",
+    "accent": "#011330",
+    "glow": "1 19 48",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 9c21da1fc29937290370e229fe7c106a67986417dc8637f48204991a13bcd783"
+  },
+  "11155111": {
+    "logo": "/networks/catalog/11155111-bd61892db3cff958.svg",
+    "primary": "#40477A",
+    "accent": "#40477A",
+    "glow": "64 71 122",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; bd61892db3cff958d30764558b28cc0e77bc2bdfbcf38402505188f5c4fa8b73"
+  },
+  "11155420": {
+    "logo": "/networks/catalog/11155420-31521544221c055c.svg",
+    "primary": "#FF0420",
+    "accent": "#FF0420",
+    "glow": "255 4 32",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 31521544221c055c7c80136bd47367560724b0f411bd5066a22f34a685c949b2"
+  },
+  "728126428": {
+    "logo": "/networks/catalog/728126428-3756950b9e923e01.svg",
+    "primary": "#EB0029",
+    "accent": "#EB0029",
+    "glow": "235 0 41",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 3756950b9e923e0123a878fd5ffe4f736212433ecaefd2a57e1c5ac068f1d947"
+  },
+  "1151111081099710": {
+    "logo": "/networks/catalog/1151111081099710-26b1c40fab6f6947.svg",
+    "primary": "#9945FF",
+    "accent": "#9945FF",
+    "glow": "153 69 255",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 26b1c40fab6f6947a86d4da9185e190c1a1b771c06f6038788c09d4f44916fff"
+  },
+  "20000000000001": {
+    "logo": "/networks/catalog/20000000000001-ffb016338ded87c7.svg",
+    "primary": "#F7931A",
+    "accent": "#F7931A",
+    "glow": "247 147 26",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; ffb016338ded87c728b742ad7d7729299a680562b50d3622223a98a1e9a2761e"
+  },
+  "9270000000000000": {
+    "logo": "/networks/catalog/9270000000000000-7dc6fa5a43aa3db7.svg",
+    "primary": "#011829",
+    "accent": "#011829",
+    "glow": "1 24 41",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 7dc6fa5a43aa3db7ffc1c5fa8baeb53177b78781e35f9110cbb45723a9db096a"
+  },
+  "1201081091099710": {
+    "logo": "/networks/catalog/1201081091099710-1945280ccd386085.svg",
+    "primary": "#90938d",
+    "accent": "#90938d",
+    "glow": "144 147 141",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; 1945280ccd3860850e70ac61b855a2005c236513f140616c0e0b7f3a18c02ac4"
+  },
+  "20000000000005": {
+    "logo": "/networks/catalog/20000000000005-dd934d4108291005.svg",
+    "primary": "#F4B728",
+    "accent": "#F4B728",
+    "glow": "244 183 40",
+    "badgeDark": "#d0d1cc",
+    "badgeLight": "#43453f",
+    "logoSurface": "transparent",
+    "provenance": "Catalog repository; dd934d4108291005937e709785caaa2f90b0ffa76183dc6a9c0238a14df3cb49"
+  }
+}

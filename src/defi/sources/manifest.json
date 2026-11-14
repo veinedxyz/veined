@@ -1,0 +1,1212 @@
+[
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Arbitrum.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Arbitrum.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Arbitrum.sol",
+    "sha256": "f76682d960fdfda5247677b9228916db3c9a6e51fe78c51582ae09b0c7a009a5",
+    "fetchedAt": "2026-10-08T04:57:22.085Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Avalanche.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Avalanche.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Avalanche.sol",
+    "sha256": "f9be6a10102dfc8fe1fc30970359327174c0436a26c47ef3e6179db7257e7c9b",
+    "fetchedAt": "2026-10-08T04:57:22.431Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3BNB.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3BNB.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3BNB.sol",
+    "sha256": "190523aa7f4bd0654e4155eed60a88852b374f3bc28855750a497b45f2efd36b",
+    "fetchedAt": "2026-10-08T04:57:22.672Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Base.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Base.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Base.sol",
+    "sha256": "135e2f325b53140c5a82895cf40debc80323fed77bd3ebb240a8d00248ba02ae",
+    "fetchedAt": "2026-10-08T04:57:23.014Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Celo.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Celo.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Celo.sol",
+    "sha256": "c98cdacab18f7debe66da79e28bbd3c2fb0ef325d3837579f7fc649b4b850bea",
+    "fetchedAt": "2026-10-08T04:57:23.263Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Ethereum.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Ethereum.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Ethereum.sol",
+    "sha256": "bfffd1a5148baa79875cacfd9ea340811be16415ddb9222bd35fc942d6c0a18b",
+    "fetchedAt": "2026-10-08T04:57:23.524Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Gnosis.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Gnosis.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Gnosis.sol",
+    "sha256": "975fdf6a76b87aca7c0cd723230f166e5bb02474ed47e6405506bb05547aec72",
+    "fetchedAt": "2026-10-08T04:57:23.773Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Linea.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Linea.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Linea.sol",
+    "sha256": "90501934e89e3d7f589bc05d7e1720829caf78b47fc593c3a90f5f879c2c2e43",
+    "fetchedAt": "2026-10-08T04:57:24.041Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Mantle.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Mantle.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Mantle.sol",
+    "sha256": "fbf41c6e043391d807294d9e1ad931570f8b5c2cae17613957a37056339edb8c",
+    "fetchedAt": "2026-10-08T04:57:24.271Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Metis.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Metis.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Metis.sol",
+    "sha256": "aef84dc7fc743a75ec673e700f203287c63f5c388e84fcebb9f9318d7079e2cc",
+    "fetchedAt": "2026-10-08T04:57:24.574Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Optimism.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Optimism.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Optimism.sol",
+    "sha256": "20787870753044bca65faf1e09042f54136553af13ef79abda68b5bcaf614071",
+    "fetchedAt": "2026-10-08T04:57:24.816Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Plasma.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Plasma.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Plasma.sol",
+    "sha256": "67856538996d0f987d9ad3ae03c5aaf88e3168864a3422f02b7b017e413d3d1a",
+    "fetchedAt": "2026-10-08T04:57:25.057Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Polygon.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Polygon.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Polygon.sol",
+    "sha256": "2f9e6db655ed067b37aa8ccc2582d374ca50dcaf86f01e8e6d4626b72c3b8afa",
+    "fetchedAt": "2026-10-08T04:57:25.414Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Scroll.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Scroll.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Scroll.sol",
+    "sha256": "1740f6f33cd5b70f8d06486ba0c7d61e5e256b95682a204d32a3da7a101cfbfb",
+    "fetchedAt": "2026-10-08T04:57:25.654Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Soneium.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Soneium.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Soneium.sol",
+    "sha256": "bfcd85ae7b9ffeade61ce3b9f603b09a6656b4fe43aba248cd08f0571ab45d10",
+    "fetchedAt": "2026-10-08T04:57:25.957Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3Sonic.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3Sonic.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3Sonic.sol",
+    "sha256": "2d066d5e0748cb6c703813f12be1658dfbefe128f9fd227c762b497a702d98cd",
+    "fetchedAt": "2026-10-08T04:57:26.174Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aave-dao/aave-address-book",
+    "revision": "6b869334c3715b6657d78c4d3306aaf33cd0c0c8",
+    "path": "src/AaveV3ZkSync.sol",
+    "url": "https://raw.githubusercontent.com/aave-dao/aave-address-book/6b869334c3715b6657d78c4d3306aaf33cd0c0c8/src/AaveV3ZkSync.sol",
+    "local": "aave-dao-aave-address-book--src__AaveV3ZkSync.sol",
+    "sha256": "e101ae029acb1589725bc628f5a1568ee7153c3071019aac4a03affc852e7e4b",
+    "fetchedAt": "2026-10-08T04:57:26.413Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "contracts/CometMainInterface.sol",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/contracts/CometMainInterface.sol",
+    "local": "compound-finance-comet--contracts__CometMainInterface.sol",
+    "sha256": "8dab837c9ef1d3805413b2d5c948d8c1f5b009da4e4f9505795b2a1535ec0d1b",
+    "fetchedAt": "2026-10-08T04:57:27.104Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "contracts/CometRewards.sol",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/contracts/CometRewards.sol",
+    "local": "compound-finance-comet--contracts__CometRewards.sol",
+    "sha256": "ba7a859d2936926943613a2add8e651da02b9a38535ac3c3440f6484cf6e9e3c",
+    "fetchedAt": "2026-10-08T04:57:27.438Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/arbitrum/usdc.e/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdc.e/roots.json",
+    "local": "compound-finance-comet--deployments__arbitrum__usdc.e__roots.json",
+    "sha256": "0fa8a90f1a79b12a88ef8aae440c28419cd2f8d82eb295cc81b5711ef3693ad9",
+    "fetchedAt": "2026-10-08T04:57:27.667Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/arbitrum/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__arbitrum__usdc__roots.json",
+    "sha256": "4e2ab5d14c7b649ed12cbb5d816dbf76737cbc7efaa882a072a14f0904259656",
+    "fetchedAt": "2026-10-08T04:57:27.897Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/arbitrum/usdt/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/usdt/roots.json",
+    "local": "compound-finance-comet--deployments__arbitrum__usdt__roots.json",
+    "sha256": "157c8ce98076968dd352e98d6ad6cc921d1c7938cf269bbe928bc8a5ae95cac5",
+    "fetchedAt": "2026-10-08T04:57:28.127Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/arbitrum/weth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/arbitrum/weth/roots.json",
+    "local": "compound-finance-comet--deployments__arbitrum__weth__roots.json",
+    "sha256": "796ce8d5395e7898d18db2d758d27d0df0d94043cbd90676ba2433cf4a1a7351",
+    "fetchedAt": "2026-10-08T04:57:28.347Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/base/aero/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/aero/roots.json",
+    "local": "compound-finance-comet--deployments__base__aero__roots.json",
+    "sha256": "d6411ede7324771b4868bbc077462b98019c47c425ffa7f40a68568c6c162428",
+    "fetchedAt": "2026-10-08T04:57:28.585Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/base/usdbc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usdbc/roots.json",
+    "local": "compound-finance-comet--deployments__base__usdbc__roots.json",
+    "sha256": "889667fab248fa07a5e44c2d9b21d3cb65085f8e976627471169469e89215570",
+    "fetchedAt": "2026-10-08T04:57:28.824Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/base/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__base__usdc__roots.json",
+    "sha256": "82dc618227b7f05016612be9fc3ce7227cfd8745ee9cb4e495b7f8672860acdd",
+    "fetchedAt": "2026-10-08T04:57:29.053Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/base/usds/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/usds/roots.json",
+    "local": "compound-finance-comet--deployments__base__usds__roots.json",
+    "sha256": "8ed6e839e357fca228649c55743a04b09769ffd3bc1aa1ef61e9e5b29c2d990e",
+    "fetchedAt": "2026-10-08T04:57:29.280Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/base/weth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/base/weth/roots.json",
+    "local": "compound-finance-comet--deployments__base__weth__roots.json",
+    "sha256": "9302589dc529ed9e17ff4c7e3cd7dcda3ce6a483356c766c4943002123ce6000",
+    "fetchedAt": "2026-10-08T04:57:29.500Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__usdc__roots.json",
+    "sha256": "689cf0e940bfdc440eba854201d8ed738be5a442802ee5723a05a4b2d16f6c57",
+    "fetchedAt": "2026-10-08T04:57:29.731Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/usds/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usds/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__usds__roots.json",
+    "sha256": "a6964f5b9b1869cea0a7d41379df9d20366ad02004fb38b51427650e33beec21",
+    "fetchedAt": "2026-10-08T04:57:29.966Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/usdt/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/usdt/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__usdt__roots.json",
+    "sha256": "f9bdf169737ca52454101128f6f637779e89564ef78b0ac8b7384cf4494c3dde",
+    "fetchedAt": "2026-10-08T04:57:30.214Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/wbtc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/wbtc/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__wbtc__roots.json",
+    "sha256": "d57988e6bcd6c638c7f7fa47389ddde20ee6d88434ba17d23363f2e64fa08fd4",
+    "fetchedAt": "2026-10-08T04:57:30.436Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/weth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/weth/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__weth__roots.json",
+    "sha256": "9ddf2ad2ad3b50683aa4f5017eaf26f50f257f7b9fa80d27da892585a8a1e5d6",
+    "fetchedAt": "2026-10-08T04:57:30.905Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/mainnet/wsteth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/mainnet/wsteth/roots.json",
+    "local": "compound-finance-comet--deployments__mainnet__wsteth__roots.json",
+    "sha256": "96feabf84423687a0b50ceaf29c2ecd2d3dc80972906110bb89e57d748569631",
+    "fetchedAt": "2026-10-08T04:57:31.235Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/optimism/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__optimism__usdc__roots.json",
+    "sha256": "bb3a67484ca3b5e49c3e3c4beb29b2fe3a59cf558a9c0be93dd1b0693f562b3a",
+    "fetchedAt": "2026-10-08T04:57:31.455Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/optimism/usdt/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/usdt/roots.json",
+    "local": "compound-finance-comet--deployments__optimism__usdt__roots.json",
+    "sha256": "df0439e4483bd74d60c224e6a63cc7b7b18c481733adfd4fe89bb46e3ea15554",
+    "fetchedAt": "2026-10-08T04:57:31.683Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/optimism/weth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/optimism/weth/roots.json",
+    "local": "compound-finance-comet--deployments__optimism__weth__roots.json",
+    "sha256": "c96d3ddbeb16e7531d1e84115baa1b31854081048686de1a605efb8c5849901a",
+    "fetchedAt": "2026-10-08T04:57:31.916Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/polygon/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/polygon/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__polygon__usdc__roots.json",
+    "sha256": "7ad397213a90c62ea641e9f48acfb0b0535ffabd697bdcdd0f1e41f1b21e2703",
+    "fetchedAt": "2026-10-08T04:57:32.244Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/polygon/usdt/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/polygon/usdt/roots.json",
+    "local": "compound-finance-comet--deployments__polygon__usdt__roots.json",
+    "sha256": "e5a4c5f8114e8901b2d61565140e140255cd7d5fe2974dc5bb956d3408fbbfee",
+    "fetchedAt": "2026-10-08T04:57:32.474Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/unichain/usdc/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/unichain/usdc/roots.json",
+    "local": "compound-finance-comet--deployments__unichain__usdc__roots.json",
+    "sha256": "c24e8ed9df6e612480e7f6e04b91aa31ee6a1c247d878ef9027786127cc46607",
+    "fetchedAt": "2026-10-08T04:57:32.783Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "deployments/unichain/weth/roots.json",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/deployments/unichain/weth/roots.json",
+    "local": "compound-finance-comet--deployments__unichain__weth__roots.json",
+    "sha256": "d4f8249367ebbdc4868bc485b275649acf3d405cfeae21361e91befed3d03394",
+    "fetchedAt": "2026-10-08T04:57:33.022Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/morpho-blue",
+    "revision": "8e26ca6a8dbc5089edcd67fb576248810fd2870a",
+    "path": "src/Morpho.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/8e26ca6a8dbc5089edcd67fb576248810fd2870a/src/Morpho.sol",
+    "local": "morpho-org-morpho-blue--src__Morpho.sol",
+    "sha256": "bc0f0e49d54ccc94557b20b1a1d962f6b64bb3cd7c57c1e74f76e51a47ffa0f6",
+    "fetchedAt": "2026-10-08T04:57:33.590Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/morpho-blue",
+    "revision": "8e26ca6a8dbc5089edcd67fb576248810fd2870a",
+    "path": "src/libraries/SharesMathLib.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/8e26ca6a8dbc5089edcd67fb576248810fd2870a/src/libraries/SharesMathLib.sol",
+    "local": "morpho-org-morpho-blue--src__libraries__SharesMathLib.sol",
+    "sha256": "4580deb1b1a3f2ea0b60f2305708428975613d1e94d404d647bcc573a7b2a2f0",
+    "fetchedAt": "2026-10-08T04:57:33.928Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/morpho-blue",
+    "revision": "8e26ca6a8dbc5089edcd67fb576248810fd2870a",
+    "path": "src/libraries/MathLib.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/8e26ca6a8dbc5089edcd67fb576248810fd2870a/src/libraries/MathLib.sol",
+    "local": "morpho-org-morpho-blue--src__libraries__MathLib.sol",
+    "sha256": "2c6728d1bc8f5db81f2a7946f226c3c4a8cffe4134c55450ca445b05727011bc",
+    "fetchedAt": "2026-10-08T04:57:34.204Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/morpho-blue",
+    "revision": "8e26ca6a8dbc5089edcd67fb576248810fd2870a",
+    "path": "src/interfaces/IMorpho.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/8e26ca6a8dbc5089edcd67fb576248810fd2870a/src/interfaces/IMorpho.sol",
+    "local": "morpho-org-morpho-blue--src__interfaces__IMorpho.sol",
+    "sha256": "1d5ff96761bf41bdba188860dcc12d53260bbdfd5fa7b3b5adf1624e801f7535",
+    "fetchedAt": "2026-10-08T04:57:34.435Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/morpho-blue",
+    "revision": "8e26ca6a8dbc5089edcd67fb576248810fd2870a",
+    "path": "src/libraries/periphery/MorphoBalancesLib.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/8e26ca6a8dbc5089edcd67fb576248810fd2870a/src/libraries/periphery/MorphoBalancesLib.sol",
+    "local": "morpho-org-morpho-blue--src__libraries__periphery__MorphoBalancesLib.sol",
+    "sha256": "253162df6e547158a7391c706cca8fc62f8e8415744455076517fef07b99f005",
+    "fetchedAt": "2026-10-08T04:57:34.720Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/metamorpho",
+    "revision": "ded84e59668155b34d3c24906c4f7461c12828af",
+    "path": "src/MetaMorphoFactory.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/metamorpho/ded84e59668155b34d3c24906c4f7461c12828af/src/MetaMorphoFactory.sol",
+    "local": "morpho-org-metamorpho--src__MetaMorphoFactory.sol",
+    "sha256": "8e6f20f33c5dc6b7f92ad8507e5858d8ee209f3a1f7cb7fe5856cfdcf8618ef2",
+    "fetchedAt": "2026-10-08T04:57:35.191Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/metamorpho",
+    "revision": "ded84e59668155b34d3c24906c4f7461c12828af",
+    "path": "src/MetaMorpho.sol",
+    "url": "https://raw.githubusercontent.com/morpho-org/metamorpho/ded84e59668155b34d3c24906c4f7461c12828af/src/MetaMorpho.sol",
+    "local": "morpho-org-metamorpho--src__MetaMorpho.sol",
+    "sha256": "c218f3f26e8186399327b793c2f96312c7a2e118467a54dc99e5a16b079979f7",
+    "fetchedAt": "2026-10-08T04:57:35.564Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/sdks",
+    "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+    "path": "packages/blue-sdk/src/addresses.ts",
+    "url": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/blue-sdk/src/addresses.ts",
+    "local": "morpho-org-sdks--packages__blue-sdk__src__addresses.ts.txt",
+    "sha256": "d75180744a09bb6bf30c66a67840dd4a3bb0eebdaf203705b7e38a5c634a91b1",
+    "fetchedAt": "2026-10-08T04:57:36.811Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/1.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/1.md",
+    "local": "Uniswap-contracts--deployments__1.md",
+    "sha256": "4862687b388084b680e0923f47eef99e2a8afdfd3d33cd15c10d73b07c5432f6",
+    "fetchedAt": "2026-10-08T04:57:37.294Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/10.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/10.md",
+    "local": "Uniswap-contracts--deployments__10.md",
+    "sha256": "b4adc9426d5d81dabae98d59fb333e47aa9ba9cb6802995c4a1f516ac04f9df1",
+    "fetchedAt": "2026-10-08T04:57:37.541Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/130.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/130.md",
+    "local": "Uniswap-contracts--deployments__130.md",
+    "sha256": "6c23035f7bd6773a66e99b9bcb566a32ec7df27f7e3097ac082903276c0de4a2",
+    "fetchedAt": "2026-10-08T04:57:37.786Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/137.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/137.md",
+    "local": "Uniswap-contracts--deployments__137.md",
+    "sha256": "cc9400cf9fbc2ee40c5c30c230d351a15b8a9d087e67b6714661b74447dc8f27",
+    "fetchedAt": "2026-10-08T04:57:38.041Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/42161.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42161.md",
+    "local": "Uniswap-contracts--deployments__42161.md",
+    "sha256": "1a54eb4f2dc3cbe51347e1cfab76f2473b808eadad8cbe2bca92b00fb397517d",
+    "fetchedAt": "2026-10-08T04:57:38.284Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/42220.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/42220.md",
+    "local": "Uniswap-contracts--deployments__42220.md",
+    "sha256": "0bcf29390448ceb26e9a229dad7bdb042ec5806def9e4857f64f3e39a01eec73",
+    "fetchedAt": "2026-10-08T04:57:38.583Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/43114.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/43114.md",
+    "local": "Uniswap-contracts--deployments__43114.md",
+    "sha256": "1edc6819ee88710321b33e2e1f6ff0487de1b77518e0a3a0deb85d542a72c0a8",
+    "fetchedAt": "2026-10-08T04:57:38.826Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/56.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/56.md",
+    "local": "Uniswap-contracts--deployments__56.md",
+    "sha256": "14a694376d198d596767093ae32f407902525f26f0f22b0b233c746cd3eb85c4",
+    "fetchedAt": "2026-10-08T04:57:39.116Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/59144.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/59144.md",
+    "local": "Uniswap-contracts--deployments__59144.md",
+    "sha256": "5d9fd0fc751b39c4e368e64560a44745639308645a29686a25fd0f9dabed9e62",
+    "fetchedAt": "2026-10-08T04:57:39.358Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/contracts",
+    "revision": "047d585853f89726c0fdef46bbf633bab8fc9051",
+    "path": "deployments/8453.md",
+    "url": "https://raw.githubusercontent.com/Uniswap/contracts/047d585853f89726c0fdef46bbf633bab8fc9051/deployments/8453.md",
+    "local": "Uniswap-contracts--deployments__8453.md",
+    "sha256": "8e3662c0cdf4d5ad191ced4cdf4a69e86ae8facca4bdda3d9c0d369ab0aa391b",
+    "fetchedAt": "2026-10-08T04:57:39.728Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-core",
+    "revision": "d0831dc6b8a318df3872b6d68f6de135c9f3ec29",
+    "path": "contracts/libraries/TickMath.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-core/d0831dc6b8a318df3872b6d68f6de135c9f3ec29/contracts/libraries/TickMath.sol",
+    "local": "Uniswap-v3-core--contracts__libraries__TickMath.sol",
+    "sha256": "e68d3c6c8c847d16c287c1f17f684d11cf0f6267a8d8dc29e81656bccf68f062",
+    "fetchedAt": "2026-10-08T04:57:40.157Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-core",
+    "revision": "d0831dc6b8a318df3872b6d68f6de135c9f3ec29",
+    "path": "contracts/libraries/SqrtPriceMath.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-core/d0831dc6b8a318df3872b6d68f6de135c9f3ec29/contracts/libraries/SqrtPriceMath.sol",
+    "local": "Uniswap-v3-core--contracts__libraries__SqrtPriceMath.sol",
+    "sha256": "ddd62e3a94346248677f30f1ab009ef015e71e4b8696dcca890eeabc9dc6c149",
+    "fetchedAt": "2026-10-08T04:57:40.416Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-core",
+    "revision": "d0831dc6b8a318df3872b6d68f6de135c9f3ec29",
+    "path": "contracts/interfaces/IUniswapV3Pool.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-core/d0831dc6b8a318df3872b6d68f6de135c9f3ec29/contracts/interfaces/IUniswapV3Pool.sol",
+    "local": "Uniswap-v3-core--contracts__interfaces__IUniswapV3Pool.sol",
+    "sha256": "b0f97121de74f3c916503f6ec37fa1ba196affd1cc02157e47ab00125dde91fe",
+    "fetchedAt": "2026-10-08T04:57:40.664Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-periphery",
+    "revision": "0682387198a24c7cd63566a2c58398533860a5d1",
+    "path": "contracts/NonfungiblePositionManager.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-periphery/0682387198a24c7cd63566a2c58398533860a5d1/contracts/NonfungiblePositionManager.sol",
+    "local": "Uniswap-v3-periphery--contracts__NonfungiblePositionManager.sol",
+    "sha256": "d66525ca236d3495779c247c4b4417657181c2932c9af126a086444e3142a64b",
+    "fetchedAt": "2026-10-08T04:57:41.077Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-periphery",
+    "revision": "0682387198a24c7cd63566a2c58398533860a5d1",
+    "path": "contracts/libraries/LiquidityAmounts.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-periphery/0682387198a24c7cd63566a2c58398533860a5d1/contracts/libraries/LiquidityAmounts.sol",
+    "local": "Uniswap-v3-periphery--contracts__libraries__LiquidityAmounts.sol",
+    "sha256": "04dd1854d44a1cfa34d6eb14bb8ef2b0bfb59924028ee2de796f5826fe92ed5e",
+    "fetchedAt": "2026-10-08T04:57:41.321Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "lidofinance/core",
+    "revision": "1440c830eb1d0916a436468a71cd73bc8b8deffb",
+    "path": "contracts/0.6.12/WstETH.sol",
+    "url": "https://raw.githubusercontent.com/lidofinance/core/1440c830eb1d0916a436468a71cd73bc8b8deffb/contracts/0.6.12/WstETH.sol",
+    "local": "lidofinance-core--contracts__0.6.12__WstETH.sol",
+    "sha256": "254a8bfab14c30ac30d36fbe0174fe424798a67276abb1c52e139af28899cae0",
+    "fetchedAt": "2026-10-08T04:57:41.791Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "lidofinance/core",
+    "revision": "1440c830eb1d0916a436468a71cd73bc8b8deffb",
+    "path": "deployed-mainnet.json",
+    "url": "https://raw.githubusercontent.com/lidofinance/core/1440c830eb1d0916a436468a71cd73bc8b8deffb/deployed-mainnet.json",
+    "local": "lidofinance-core--deployed-mainnet.json",
+    "sha256": "3c05a183c69feded90e6a16fa50a6084e76f050a32ef59e5434809914def8851",
+    "fetchedAt": "2026-10-08T04:57:42.038Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "lidofinance/core",
+    "revision": "1440c830eb1d0916a436468a71cd73bc8b8deffb",
+    "path": "test/0.6.12/contracts/StETH__HarnessForWstETH.sol",
+    "url": "https://raw.githubusercontent.com/lidofinance/core/1440c830eb1d0916a436468a71cd73bc8b8deffb/test/0.6.12/contracts/StETH__HarnessForWstETH.sol",
+    "local": "lidofinance-core--test__0.6.12__contracts__StETH__HarnessForWstETH.sol",
+    "sha256": "48b40563161813049f2fdd17a26115358f16e8af95b7cfc35f06682b1be70577",
+    "fetchedAt": "2026-10-08T04:57:42.270Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sky-ecosystem/sdai",
+    "revision": "2b7acb95289a9eb3a8844206d5712eabfa206efc",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/sky-ecosystem/sdai/2b7acb95289a9eb3a8844206d5712eabfa206efc/README.md",
+    "local": "sky-ecosystem-sdai--README.md",
+    "sha256": "0a0956012536833e6147c7f453843338c2b2b9ba75f493d861ce798707ab01c4",
+    "fetchedAt": "2026-10-08T04:57:42.716Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sky-ecosystem/sdai",
+    "revision": "2b7acb95289a9eb3a8844206d5712eabfa206efc",
+    "path": "src/ISavingsDai.sol",
+    "url": "https://raw.githubusercontent.com/sky-ecosystem/sdai/2b7acb95289a9eb3a8844206d5712eabfa206efc/src/ISavingsDai.sol",
+    "local": "sky-ecosystem-sdai--src__ISavingsDai.sol",
+    "sha256": "c847030e57a4f7f49108c3fbaca3bee64c01aa7b8fd725641ff6aa175bf9471a",
+    "fetchedAt": "2026-10-08T04:57:42.980Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sky-ecosystem/sdai",
+    "revision": "2b7acb95289a9eb3a8844206d5712eabfa206efc",
+    "path": "src/SavingsDai.sol",
+    "url": "https://raw.githubusercontent.com/sky-ecosystem/sdai/2b7acb95289a9eb3a8844206d5712eabfa206efc/src/SavingsDai.sol",
+    "local": "sky-ecosystem-sdai--src__SavingsDai.sol",
+    "sha256": "b18b9c563c6f0dbd6794e4355dbb0cf10f26be2396172add1e9f19c1f2b5c813",
+    "fetchedAt": "2026-10-08T04:57:43.218Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "morpho-org/sdks",
+    "revision": "163e8c52695245ba86818a4cbf7db4ec4178c860",
+    "path": "packages/morpho-ts/src/addresses.ts",
+    "url": "https://raw.githubusercontent.com/morpho-org/sdks/163e8c52695245ba86818a4cbf7db4ec4178c860/packages/morpho-ts/src/addresses.ts",
+    "local": "morpho-org-sdks--packages__morpho-ts__src__addresses.ts.txt",
+    "sha256": "f8b9968327e52808d6787a0a636bb6a3bf8102c4bf836d9a350cb6e11c7df20c",
+    "fetchedAt": "2026-10-08T04:59:02.864Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "contracts/CometCore.sol",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/contracts/CometCore.sol",
+    "local": "compound-finance-comet--contracts__CometCore.sol",
+    "sha256": "1d80f0d12c101d01c2e1f38e8662cfcf350299b1c78188f8c501bb1c51b5ec78",
+    "fetchedAt": "2026-10-08T04:59:03.333Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "compound-finance/comet",
+    "revision": "f766f51583c23acc33b2a7824654ef2029a96804",
+    "path": "contracts/CometExt.sol",
+    "url": "https://raw.githubusercontent.com/compound-finance/comet/f766f51583c23acc33b2a7824654ef2029a96804/contracts/CometExt.sol",
+    "local": "compound-finance-comet--contracts__CometExt.sol",
+    "sha256": "16b3cd08e5f9a1e6d82f4cfba20ab95d1cf4f246908641234d9e71e370fbfb59",
+    "fetchedAt": "2026-10-08T04:59:03.703Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "rocket-pool/docs.rocketpool.net",
+    "revision": "ff73911625a24a6fe0e67aa1679385ca51542f44",
+    "path": "docs/en/protocol/contracts-integrations.md",
+    "url": "https://raw.githubusercontent.com/rocket-pool/docs.rocketpool.net/ff73911625a24a6fe0e67aa1679385ca51542f44/docs/en/protocol/contracts-integrations.md",
+    "local": "rocket-pool-docs.rocketpool.net--docs__en__protocol__contracts-integrations.md",
+    "sha256": "a1dde6ebe040cb5414bfc0d5022a7a98695af05a471318989da7b74545a51a4c",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "coinbase/wrapped-tokens-os",
+    "revision": "5697a90f4c47e8d801cedce81444a8464019fe08",
+    "path": "contracts/wrapped-tokens/staking/StakedTokenV1.sol",
+    "url": "https://raw.githubusercontent.com/coinbase/wrapped-tokens-os/5697a90f4c47e8d801cedce81444a8464019fe08/contracts/wrapped-tokens/staking/StakedTokenV1.sol",
+    "local": "coinbase-wrapped-tokens-os--contracts__wrapped-tokens__staking__StakedTokenV1.sol",
+    "sha256": "8156884dc570a442cf6655df8b64167c8706c623d3022b28d3cdc0cfb0124be1",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Layr-Labs/eigenlayer-contracts",
+    "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/README.md",
+    "local": "Layr-Labs-eigenlayer-contracts--README.md",
+    "sha256": "7ec52982ec1ae80506cd0d874431307a87cfb59b8d66ee0e0b856d794d224c0d",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Layr-Labs/eigenlayer-contracts",
+    "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+    "path": "src/contracts/interfaces/IStrategy.sol",
+    "url": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/src/contracts/interfaces/IStrategy.sol",
+    "local": "Layr-Labs-eigenlayer-contracts--src__contracts__interfaces__IStrategy.sol",
+    "sha256": "6de6dc41fd0d445fb4996400695b48ead26f31f17de30d0828bf496748e1ae35",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Layr-Labs/eigenlayer-contracts",
+    "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+    "path": "src/contracts/interfaces/IStrategyManager.sol",
+    "url": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/src/contracts/interfaces/IStrategyManager.sol",
+    "local": "Layr-Labs-eigenlayer-contracts--src__contracts__interfaces__IStrategyManager.sol",
+    "sha256": "ff2a3dbe32134d8f850b19602cc4b363dfe664ba0b193a601413f828b3206b3c",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Layr-Labs/eigenlayer-contracts",
+    "revision": "ef8f97992241338cb88335b9d74295e33321b780",
+    "path": "src/contracts/interfaces/IDelegationManager.sol",
+    "url": "https://raw.githubusercontent.com/Layr-Labs/eigenlayer-contracts/ef8f97992241338cb88335b9d74295e33321b780/src/contracts/interfaces/IDelegationManager.sol",
+    "local": "Layr-Labs-eigenlayer-contracts--src__contracts__interfaces__IDelegationManager.sol",
+    "sha256": "77bda2f27f717730e3d001c3eebf75c4f71c0feb8e1e1f7422a4568354e31eab",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "etherfi-protocol/smart-contracts",
+    "revision": "15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88",
+    "path": "deployment/WeETH/2026-06-26-22-16-11.json",
+    "url": "https://raw.githubusercontent.com/etherfi-protocol/smart-contracts/15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88/deployment/WeETH/2026-06-26-22-16-11.json",
+    "local": "etherfi-protocol-smart-contracts--deployment__WeETH__2026-06-26-22-16-11.json",
+    "sha256": "e8685dfd371d4c099fff9453a2a838621b061d82f254ddda8502d73e4059f71b",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "etherfi-protocol/smart-contracts",
+    "revision": "15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88",
+    "path": "deployment/EETH/2026-06-26-22-16-11.json",
+    "url": "https://raw.githubusercontent.com/etherfi-protocol/smart-contracts/15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88/deployment/EETH/2026-06-26-22-16-11.json",
+    "local": "etherfi-protocol-smart-contracts--deployment__EETH__2026-06-26-22-16-11.json",
+    "sha256": "424fada48ad94e8eebf2fff438bb9cc7ff6ed6552121528c83bdc69db97c8bd2",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "etherfi-protocol/smart-contracts",
+    "revision": "15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88",
+    "path": "src/core/WeETH.sol",
+    "url": "https://raw.githubusercontent.com/etherfi-protocol/smart-contracts/15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88/src/core/WeETH.sol",
+    "local": "etherfi-protocol-smart-contracts--src__core__WeETH.sol",
+    "sha256": "762e395a600c4be26e7ed75319ac1d808d243eb4826d8414652aa447fd8776d5",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "FraxFinance/frax-solidity",
+    "revision": "30532c8cefcbf5c7efafcff4369261bd435a4859",
+    "path": "src/types/constants.ts",
+    "url": "https://raw.githubusercontent.com/FraxFinance/frax-solidity/30532c8cefcbf5c7efafcff4369261bd435a4859/src/types/constants.ts",
+    "local": "FraxFinance-frax-solidity--src__types__constants.ts.txt",
+    "sha256": "64a0671119326fd728593604c3f7c9466260496c5e2153f2bdb55f8d44b309ed",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "mantle-lsp/contracts",
+    "revision": "bbc4e8bf7d3e3b4ca0c5be07aba409ac66611c76",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/mantle-lsp/contracts/bbc4e8bf7d3e3b4ca0c5be07aba409ac66611c76/README.md",
+    "local": "mantle-lsp-contracts--README.md",
+    "sha256": "7f40fe9000881fc642f97a4d768326ea3cd9ade4b9766f71f525020c0dc96b45",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "stader-labs/ethx",
+    "revision": "9d4a9211431d6c0cdf014bd64d3718cba4ce96ab",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/stader-labs/ethx/9d4a9211431d6c0cdf014bd64d3718cba4ce96ab/README.md",
+    "local": "stader-labs-ethx--README.md",
+    "sha256": "403ce7541f095b781825d282b62d8ecb9629fa6dbb748fa77b5c89e495bd0163",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "SwellNetwork/v3-core-public",
+    "revision": "5827c4f1294b00f2939e582b1d3ac448f87fa218",
+    "path": "contracts/lst/contracts/implementations/swETH.sol",
+    "url": "https://raw.githubusercontent.com/SwellNetwork/v3-core-public/5827c4f1294b00f2939e582b1d3ac448f87fa218/contracts/lst/contracts/implementations/swETH.sol",
+    "local": "SwellNetwork-v3-core-public--contracts__lst__contracts__implementations__swETH.sol",
+    "sha256": "6d36ddd65b0b9ab19fafa8d6734cb5892a7b2809989abced7d96a73097d49a10",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Kelp-DAO/LRT-rsETH",
+    "revision": "3dded885f6f797f5959aff449c3a30c5cbb6ce23",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/Kelp-DAO/LRT-rsETH/3dded885f6f797f5959aff449c3a30c5cbb6ce23/README.md",
+    "local": "Kelp-DAO-LRT-rsETH--README.md",
+    "sha256": "a64f44a6b7f7a019abb7ce32c3c4b9d24fd478b73243c00d42e1620141e729a8",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Kelp-DAO/LRT-rsETH",
+    "revision": "3dded885f6f797f5959aff449c3a30c5cbb6ce23",
+    "path": "contracts/interfaces/ILRTOracle.sol",
+    "url": "https://raw.githubusercontent.com/Kelp-DAO/LRT-rsETH/3dded885f6f797f5959aff449c3a30c5cbb6ce23/contracts/interfaces/ILRTOracle.sol",
+    "local": "Kelp-DAO-LRT-rsETH--contracts__interfaces__ILRTOracle.sol",
+    "sha256": "c6085e9c920013533dc20d8cadca9574262188af65a1cee400042669c0afc89c",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "PufferFinance/Deployments-and-ACL",
+    "revision": "302c0270f718a7dc20c819419a7dde965e16ce56",
+    "path": "docs/deployments/mainnet.md",
+    "url": "https://raw.githubusercontent.com/PufferFinance/Deployments-and-ACL/302c0270f718a7dc20c819419a7dde965e16ce56/docs/deployments/mainnet.md",
+    "local": "PufferFinance-Deployments-and-ACL--docs__deployments__mainnet.md",
+    "sha256": "e10f58dd500b7b64acec99b1fc7e692034c8fbeaf826d9a3bdd8a99c02d8c59f",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "stakewise/v3-core",
+    "revision": "fc70cbe1b3d41bc5f78434830d837aa270ca33bc",
+    "path": "deployments/mainnet.json",
+    "url": "https://raw.githubusercontent.com/stakewise/v3-core/fc70cbe1b3d41bc5f78434830d837aa270ca33bc/deployments/mainnet.json",
+    "local": "stakewise-v3-core--deployments__mainnet.json",
+    "sha256": "26d7d2c05663244426b2416d2374d3c485982d019dd1e232ecf5e8ed8e1b5697",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "lidofinance/core",
+    "revision": "1440c830eb1d0916a436468a71cd73bc8b8deffb",
+    "path": "contracts/0.8.9/WithdrawalQueue.sol",
+    "url": "https://raw.githubusercontent.com/lidofinance/core/1440c830eb1d0916a436468a71cd73bc8b8deffb/contracts/0.8.9/WithdrawalQueue.sol",
+    "local": "lidofinance-core--contracts__0.8.9__WithdrawalQueue.sol",
+    "sha256": "efa5a32fbc99cafdb16a38d96a9bb5b29a62e60b5610e7c317711cc58402b131",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "curvefi/curve-pool-registry",
+    "revision": "0bdb116024ccacda39295bb3949c3e6dd0a8e2d9",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/curvefi/curve-pool-registry/0bdb116024ccacda39295bb3949c3e6dd0a8e2d9/README.md",
+    "local": "curvefi-curve-pool-registry--README.md",
+    "sha256": "b6826720b9ab1c0c310f0a39dce2aa852deeac9df91b7f6d20728a53ff42da2d",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "curvefi/metaregistry",
+    "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+    "path": "deployments.yaml",
+    "url": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/deployments.yaml",
+    "local": "curvefi-metaregistry--deployments.yaml",
+    "sha256": "ecb621e1cbdd2c44d8ba14a3fd8ac605203760171df4f1bb4df964eb20c0dad1",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/mainnet.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/mainnet.json",
+    "local": "balancer-balancer-deployments--addresses__mainnet.json",
+    "sha256": "78f74e1f7ea79fd36fba02c965928a0b27b1fdc8883503fa39b5b9eda3a5d91e",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/optimism.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/optimism.json",
+    "local": "balancer-balancer-deployments--addresses__optimism.json",
+    "sha256": "064ed65f12a3eecd58bca64df54f5a58bd749487ce4659c71cbf4bbd0123b9de",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/gnosis.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/gnosis.json",
+    "local": "balancer-balancer-deployments--addresses__gnosis.json",
+    "sha256": "f042d3ba4e400af92a062cd3fcd026ee95b90d09a85507fee36b76ad732d0867",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/polygon.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/polygon.json",
+    "local": "balancer-balancer-deployments--addresses__polygon.json",
+    "sha256": "e070bfe18108b474f5d570e7f39cda1086b9d984e04489e8d9aeed94094b52e2",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/base.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/base.json",
+    "local": "balancer-balancer-deployments--addresses__base.json",
+    "sha256": "09a8cb4f3ce949a45ed7473f6c5832502e79065a0cfb7251a77bd3135748d1a6",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/arbitrum.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/arbitrum.json",
+    "local": "balancer-balancer-deployments--addresses__arbitrum.json",
+    "sha256": "126b4fd52a66675f9334993c2d93d4cc187ef1738018a6b58a323329ea3ab7c1",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "balancer/balancer-deployments",
+    "revision": "b55dc2b8a46bce8f27aed5a3b03f719f662f860a",
+    "path": "addresses/avalanche.json",
+    "url": "https://raw.githubusercontent.com/balancer/balancer-deployments/b55dc2b8a46bce8f27aed5a3b03f719f662f860a/addresses/avalanche.json",
+    "local": "balancer-balancer-deployments--addresses__avalanche.json",
+    "sha256": "b8c6ce44cfeaa8eb21772e8220427bc6ef211a766c57f9bb9d84895ce698e33a",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aerodrome-finance/contracts",
+    "revision": "1ba30815bba620f7e9faa34769ffd00c214c9b82",
+    "path": "script/constants/output/DeployCore-Base.json",
+    "url": "https://raw.githubusercontent.com/aerodrome-finance/contracts/1ba30815bba620f7e9faa34769ffd00c214c9b82/script/constants/output/DeployCore-Base.json",
+    "local": "aerodrome-finance-contracts--script__constants__output__DeployCore-Base.json",
+    "sha256": "f13a203a3ba87d1316d9f5933476780e557c63890b7bd01089a5201c9b559dd5",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "aerodrome-finance/slipstream",
+    "revision": "f8717faaae6e6717db3c8e3850149c01a79c0603",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/aerodrome-finance/slipstream/f8717faaae6e6717db3c8e3850149c01a79c0603/README.md",
+    "local": "aerodrome-finance-slipstream--README.md",
+    "sha256": "308bdcb5dc4981340ea899bfe6ff225874346473a815809a3ab0f361c92bfd5b",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "velodrome-finance/contracts",
+    "revision": "b3065d8b6702b14b094f9f6046b752cc9f78c43b",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/velodrome-finance/contracts/b3065d8b6702b14b094f9f6046b752cc9f78c43b/README.md",
+    "local": "velodrome-finance-contracts--README.md",
+    "sha256": "8fd34ecdceb342ff88523c2661361780a74a3443a1d556a245fdedf5631b912c",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "velodrome-finance/slipstream",
+    "revision": "193a6b85f836a229b76a8df3541a284a2368427b",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/velodrome-finance/slipstream/193a6b85f836a229b76a8df3541a284a2368427b/README.md",
+    "local": "velodrome-finance-slipstream--README.md",
+    "sha256": "cf3b2ece9c1b9073820e2e835b4d6b44cc34fe248065b11c3fb71dc720f176e9",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sushiswap/v2-core",
+    "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+    "path": "deployments/ethereum/UniswapV2Factory.json",
+    "url": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/ethereum/UniswapV2Factory.json",
+    "local": "sushiswap-v2-core--deployments__ethereum__UniswapV2Factory.json",
+    "sha256": "d05889fd2eb14366fdf88c74babaadb2f7c9313517aa39389ce675600147cf4d",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sushiswap/v2-core",
+    "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+    "path": "deployments/bsc/UniswapV2Factory.json",
+    "url": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/bsc/UniswapV2Factory.json",
+    "local": "sushiswap-v2-core--deployments__bsc__UniswapV2Factory.json",
+    "sha256": "7800c518f878e3927b59b777f42654fef588e750482e8e6515e66f4122036b9a",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sushiswap/v2-core",
+    "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+    "path": "deployments/matic/UniswapV2Factory.json",
+    "url": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/matic/UniswapV2Factory.json",
+    "local": "sushiswap-v2-core--deployments__matic__UniswapV2Factory.json",
+    "sha256": "564fff53ae1a08c863c2d938559209cfd355168ad4316ab6a4b6e00cc0d02deb",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sushiswap/v2-core",
+    "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+    "path": "deployments/base/UniswapV2Factory.json",
+    "url": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/base/UniswapV2Factory.json",
+    "local": "sushiswap-v2-core--deployments__base__UniswapV2Factory.json",
+    "sha256": "fc958b33e34663927f7098a8a97d225c034d90446a3ca757258bfaf8166eb5c5",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sushiswap/v2-core",
+    "revision": "a349882c918c752d0363e4c6e02dedcbc48b734e",
+    "path": "deployments/arbitrum/UniswapV2Factory.json",
+    "url": "https://raw.githubusercontent.com/sushiswap/v2-core/a349882c918c752d0363e4c6e02dedcbc48b734e/deployments/arbitrum/UniswapV2Factory.json",
+    "local": "sushiswap-v2-core--deployments__arbitrum__UniswapV2Factory.json",
+    "sha256": "7106a26328fe5392eb1d7846af5e5927e8cf2bbccd54c8c0190d7cef363386c5",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "pancakeswap/pancake-developer",
+    "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+    "path": "docs/pages/contracts/v2/addresses.md",
+    "url": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v2/addresses.md",
+    "local": "pancakeswap-pancake-developer--docs__pages__contracts__v2__addresses.md",
+    "sha256": "cf84d8c2a0aac50300f7fb18118b5159a3206244714125e8a75d8c2f6248408f",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "pancakeswap/pancake-developer",
+    "revision": "671acffc44b705be33cef339fcf3d2a2274acb63",
+    "path": "docs/pages/contracts/v3/addresses.md",
+    "url": "https://raw.githubusercontent.com/pancakeswap/pancake-developer/671acffc44b705be33cef339fcf3d2a2274acb63/docs/pages/contracts/v3/addresses.md",
+    "local": "pancakeswap-pancake-developer--docs__pages__contracts__v3__addresses.md",
+    "sha256": "e49ee8f71e7cdcf13ed07f38c5b4d39b1fc3e34d83ccd08f910b65d015dae459",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "pancakeswap/pancake-v3-contracts",
+    "revision": "986847948755cba528324d41be19480731c36c2a",
+    "path": "deployments/bscMainnet.json",
+    "url": "https://raw.githubusercontent.com/pancakeswap/pancake-v3-contracts/986847948755cba528324d41be19480731c36c2a/deployments/bscMainnet.json",
+    "local": "pancakeswap-pancake-v3-contracts--deployments__bscMainnet.json",
+    "sha256": "cd72575c75643cc55e500963b2a94451e64166a84ce15a57412ce9737d48ad05",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "pancakeswap/pancake-v3-contracts",
+    "revision": "986847948755cba528324d41be19480731c36c2a",
+    "path": "deployments/eth.json",
+    "url": "https://raw.githubusercontent.com/pancakeswap/pancake-v3-contracts/986847948755cba528324d41be19480731c36c2a/deployments/eth.json",
+    "local": "pancakeswap-pancake-v3-contracts--deployments__eth.json",
+    "sha256": "cd72575c75643cc55e500963b2a94451e64166a84ce15a57412ce9737d48ad05",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-core",
+    "revision": "d0831dc6b8a318df3872b6d68f6de135c9f3ec29",
+    "path": "contracts/libraries/Tick.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-core/d0831dc6b8a318df3872b6d68f6de135c9f3ec29/contracts/libraries/Tick.sol",
+    "local": "Uniswap-v3-core--contracts__libraries__Tick.sol",
+    "sha256": "804f435e2c745d8db1ce8a19450dee83f61c98910a24920ae3e20cd439dea725",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "Uniswap/v3-core",
+    "revision": "d0831dc6b8a318df3872b6d68f6de135c9f3ec29",
+    "path": "contracts/libraries/Position.sol",
+    "url": "https://raw.githubusercontent.com/Uniswap/v3-core/d0831dc6b8a318df3872b6d68f6de135c9f3ec29/contracts/libraries/Position.sol",
+    "local": "Uniswap-v3-core--contracts__libraries__Position.sol",
+    "sha256": "cc3b4baf0fb1329887fa04d5d5666edaa7c552dc606f4700ce6ee394cc9c34fd",
+    "fetchedAt": "2026-10-11T03:42:08.483220Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "etherfi-protocol/smart-contracts",
+    "revision": "15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88",
+    "path": "deployment/WeETHWithdrawAdapter/2026-06-26-22-16-11.json",
+    "url": "https://raw.githubusercontent.com/etherfi-protocol/smart-contracts/15ff96d4d5e8e6a19a472cd40a7bcb858c9e7a88/deployment/WeETHWithdrawAdapter/2026-06-26-22-16-11.json",
+    "local": "etherfi-protocol-smart-contracts--deployment__WeETHWithdrawAdapter__2026-06-26-22-16-11.json",
+    "sha256": "8738dec3397e83a318e8e4414110b391486d930ba9a647568b46e1149d6cdab1",
+    "fetchedAt": "2026-10-11T03:44:31.286599Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "curvefi/metaregistry",
+    "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/README.md",
+    "local": "curvefi-metaregistry--README.md",
+    "sha256": "4f11faeeaf279e3fd78cd40404b76f8cd427e7be7692c5589068cab3668d34dd",
+    "fetchedAt": "2026-10-11T03:44:45.572817Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "curvefi/metaregistry",
+    "revision": "b18e83e08bee8660a5d59f53757fae85b6d25599",
+    "path": "scripts/deploy_addressprovider_and_setup.py",
+    "url": "https://raw.githubusercontent.com/curvefi/metaregistry/b18e83e08bee8660a5d59f53757fae85b6d25599/scripts/deploy_addressprovider_and_setup.py",
+    "local": "curvefi-metaregistry--scripts__deploy_addressprovider_and_setup.py",
+    "sha256": "c6a366b106b782da822089292c86b222b97459c1b61e36afbb91cd432a116a62",
+    "fetchedAt": "2026-10-11T03:45:27.452786Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sparkdotfi/spark-address-registry",
+    "revision": "98091964e0ef9f74bb2b6da3646f8e6d16448588",
+    "path": "src/SparkLend.sol",
+    "url": "https://raw.githubusercontent.com/sparkdotfi/spark-address-registry/98091964e0ef9f74bb2b6da3646f8e6d16448588/src/SparkLend.sol",
+    "local": "sparkdotfi-spark-address-registry--src__SparkLend.sol",
+    "sha256": "3b33b7cd9c71f51652309cbc2777d0b5dffcd1f89b6b0cbd14f80c73994d63bb",
+    "fetchedAt": "2026-10-11T04:43:28.002Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sparkdotfi/spark-address-registry",
+    "revision": "98091964e0ef9f74bb2b6da3646f8e6d16448588",
+    "path": "src/Ethereum.sol",
+    "url": "https://raw.githubusercontent.com/sparkdotfi/spark-address-registry/98091964e0ef9f74bb2b6da3646f8e6d16448588/src/Ethereum.sol",
+    "local": "sparkdotfi-spark-address-registry--src__Ethereum.sol",
+    "sha256": "0bfaf7710a79d131d2cfe90e2ce8eb636fff3dfe646484e720428bd759dd83ca",
+    "fetchedAt": "2026-10-11T04:43:28.003Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "repo": "sparkdotfi/spark-address-registry",
+    "revision": "98091964e0ef9f74bb2b6da3646f8e6d16448588",
+    "path": "src/Gnosis.sol",
+    "url": "https://raw.githubusercontent.com/sparkdotfi/spark-address-registry/98091964e0ef9f74bb2b6da3646f8e6d16448588/src/Gnosis.sol",
+    "local": "sparkdotfi-spark-address-registry--src__Gnosis.sol",
+    "sha256": "65482d6a0123ff5d483aed451353233dd4be3efbc6b666a5a0cd68c828566101",
+    "fetchedAt": "2026-10-11T04:43:28.003Z",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  }
+]

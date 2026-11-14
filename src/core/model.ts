@@ -125,7 +125,7 @@ export interface Health {
     minimum: string;
     maximumBound: string;
     conservativeReserveBound: string;
-    reserveVerified: false;
+    reserveVerified: boolean;
     paused: boolean;
     sourceBlockHash: string;
     destinationBlockHash: string;

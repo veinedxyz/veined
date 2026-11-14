@@ -1,0 +1,720 @@
+/* VEINED "Abyssal Intelligence" layer. Loaded after ux-system.css; refines the accepted system into one underwater
+   world: the ocean is the environment, the octopus the intelligence, the eight destinations its arms.
+   - One shared, fixed, decorative field (abyss.tsx): only the art matching scene × theme × orientation is requested.
+   - Black / off-white / graphite stay primary; ocean accents (abyssal blue, submerged teal, cold silver) are
+     restrained; bioluminescence marks only the active arm and focus.
+   - Financial surfaces stay opaque; text ≥ 4.5:1 on every surface (measured), control edges ≥ 3:1.
+   - CSP: no inline styles, no remote fonts, no canvas/WebGL. Motion is compositor-only and off under reduced motion.
+   Structure: tokens → field → shell glass → navigation arms → page frame → overview → instrument → light theme →
+   accessibility modes. */
+
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #05090c;
+  --bg-elevated: #070c10;
+  --surface: #0c1318;
+  --surface-2: #111a20;
+  --surface-3: #17222a;
+  --inset: #091015;
+  --line: #1d2a32;
+  --line-soft: #142028;
+  --line-strong: #2f414c;
+  --field-line: #2a3a44;
+  --control-line: #5f737c;
+  --text: #eef2f1;
+  --muted: #a8b6ba;
+  --faint: #8a9a9f;
+  --teal: #a9d6cc;
+  --teal-strong: #c8e8e0;
+  --accent-soft: rgb(169 214 204 / 0.1);
+  --accent-line: rgb(169 214 204 / 0.34);
+  --button-text: #06201b;
+  --visual-edge: rgb(169 214 204 / 0.14);
+  --shadow-pop: 0 30px 90px -20px rgb(0 0 0 / 0.8);
+  /* ocean accents */
+  --abyss-rgb: 5 9 12;
+  --abyss-base: #06121a;
+  --biolume: #6fe3d1;
+  --biolume-rgb: 111 227 209;
+  --silver: #c9d5d8;
+  --glass: rgb(7 12 16 / 0.9);
+  --glass-strong: rgb(7 12 16 / 0.95);
+  --card-sheen: inset 0 1px 0 rgb(201 213 216 / 0.045);
+  --card-depth: 0 28px 60px -44px rgb(0 0 0 / 0.9);
+}
+html[data-theme="light"] {
+  --bg: #eef4f4;
+  --bg-elevated: #f6f9f9;
+  --surface: #fff;
+  --surface-2: #f7fafa;
+  --surface-3: #eaf0f0;
+  --inset: #f1f6f6;
+  --line: #d5e0e1;
+  --line-soft: #e3ebec;
+  --line-strong: #aebfc2;
+  --field-line: #c9d6d8;
+  --control-line: #7a8d94;
+  --text: #14212a;
+  --muted: #4c5d66;
+  --faint: #556770;
+  --teal: #1d6158;
+  --teal-strong: #144a43;
+  --accent-soft: rgb(29 97 88 / 0.08);
+  --accent-line: rgb(29 97 88 / 0.3);
+  --button-text: #fff;
+  --visual-edge: rgb(29 97 88 / 0.16);
+  --shadow-pop: 0 30px 80px -24px rgb(20 44 52 / 0.3);
+  --abyss-rgb: 238 246 246;
+  --abyss-base: #e2edee;
+  --biolume: #1f8a80;
+  --biolume-rgb: 31 138 128;
+  --silver: #4c5d66;
+  --glass: rgb(246 250 250 / 0.9);
+  --glass-strong: rgb(246 250 250 / 0.95);
+  --card-sheen: inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --card-depth: 0 24px 50px -40px rgb(20 44 52 / 0.35);
+}
+
+/* ---------- The shared field ---------- */
+.abyss {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--abyss-base);
+  contain: strict;
+}
+/* The stage holds the art and its nerve overlay as one registered layer. Motion is finite by design: a scene
+   arrives (0.9 s cross-fade, one 2.4 s nerve draw) and then rests — no infinite loop on any surface. */
+.abyss-stage {
+  position: absolute;
+  inset: 0;
+}
+[dir="rtl"] .abyss-stage {
+  scale: -1 1;
+}
+
+/* Art is requested only after the shell applied the stored theme (html[data-ready]), so a light-theme visitor never
+   downloads the server-default dark render first. */
+
+.abyss-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--abyss-rgb) / 0.5) 0,
+    rgb(var(--abyss-rgb) / 0) 18%,
+    rgb(var(--abyss-rgb) / 0) 68%,
+    rgb(var(--abyss-rgb) / 0.55) 100%
+  );
+}
+/* Bridge: the arm reaches from the source network's light to the destination's (live network colours). */
+
+@keyframes abyss-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes abyss-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes abyss-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------- Shell: glass over the water ---------- */
+/* Near-opaque water-tinted surfaces on pseudo-elements, without blur: glass is reserved for dialog backdrops
+   (distilled rule 37) and nothing re-blurs on scroll. */
+body {
+  background: var(--bg);
+}
+.header,
+.header-actions {
+  background: transparent;
+}
+.header::before,
+.header-actions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--glass);
+}
+@media (min-width: 1024px) {
+  .header::before {
+    background: linear-gradient(
+      180deg,
+      var(--glass-strong) 0%,
+      var(--glass) 100%
+    );
+  }
+  .header {
+    border-inline-end: 1px solid rgb(var(--biolume-rgb) / 0.08);
+  }
+  .header-actions {
+    border-bottom: 1px solid rgb(var(--biolume-rgb) / 0.07);
+  }
+  /* The nerve cord: every destination branches from one line at the rail edge. */
+  .main-nav {
+    position: relative;
+  }
+  .main-nav::before {
+    content: "";
+    position: absolute;
+    inset-block: 2px;
+    inset-inline-start: -14px;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      rgb(var(--biolume-rgb) / 0),
+      rgb(var(--biolume-rgb) / 0.16) 12%,
+      rgb(var(--biolume-rgb) / 0.16) 88%,
+      rgb(var(--biolume-rgb) / 0)
+    );
+  }
+  .main-nav .nav-link.active::before {
+    display: none;
+  }
+  .main-nav .nav-link.active {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--biolume-rgb) / 0.075),
+      rgb(var(--biolume-rgb) / 0.02)
+    );
+    box-shadow: inset 0 0 0 1px rgb(var(--biolume-rgb) / 0.12);
+  }
+  [dir="rtl"] .main-nav .nav-link.active {
+    background: linear-gradient(
+      270deg,
+      rgb(var(--biolume-rgb) / 0.075),
+      rgb(var(--biolume-rgb) / 0.02)
+    );
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .main-nav::before {
+    inset-inline-start: -8px;
+  }
+  .main-nav .nav-link {
+    gap: 8px;
+  }
+}
+@media (max-width: 1023px) {
+  /* The top bar is part of the sticky header here; one glass layer is enough. */
+  .header-actions::before {
+    display: none;
+  }
+  .header {
+    border-bottom: 1px solid rgb(var(--biolume-rgb) / 0.08);
+  }
+  .main-nav {
+    background: transparent;
+    border-top-color: rgb(var(--biolume-rgb) / 0.1);
+  }
+  .main-nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--glass-strong);
+  }
+  .main-nav .nav-primary .nav-link.active::before,
+  .main-nav .nav-more.active::before {
+    display: none;
+  }
+  .main-nav .nav-link {
+    gap: 6px;
+  }
+}
+
+/* ---------- Navigation arms ---------- */
+.nav-glyph-wrap {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+.nav-arm {
+  position: absolute;
+  left: -86px;
+  top: -12px;
+  width: 120px;
+  height: 38px;
+  overflow: visible;
+  pointer-events: none;
+  color: var(--biolume);
+}
+[dir="rtl"] .nav-arm {
+  left: auto;
+  right: -86px;
+  scale: -1 1;
+}
+.nav-arm path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition:
+    stroke-dashoffset 520ms var(--ease-out),
+    opacity 200ms ease-out;
+}
+.nav-arm-reach {
+  stroke-width: 2;
+}
+.nav-arm-tip {
+  stroke-width: 1.4;
+}
+.nav-link.active .nav-arm path {
+  stroke-dashoffset: 0;
+  opacity: 0.9;
+}
+.nav-link.active .nav-arm-tip {
+  transition-delay: 220ms, 0ms;
+}
+.nav-link:not(.active):is(:hover, :focus-visible) .nav-arm-tip {
+  stroke-dashoffset: 0.5;
+  opacity: 0.5;
+}
+/* gf1 G04: pressing a destination reaches for it at once (feedback before the page changes); the arm that holds the
+   selected destination shows its suckers after it has curled. Decorative only: same colour as the arm, never a state. */
+.nav-link:not(.active):not(.nav-more):active .nav-arm-tip {
+  stroke-dashoffset: 0.15;
+  opacity: 0.7;
+  transition-duration: 160ms;
+}
+.nav-arm-suckers {
+  fill: currentColor;
+  opacity: 0;
+  transition: opacity 240ms ease-out;
+}
+.nav-link.active .nav-arm-suckers {
+  opacity: 0.6;
+  transition-delay: 560ms;
+}
+.nav-link.active .nav-glyph,
+.nav-link.active .nav-glyph-wrap {
+  color: var(--biolume);
+}
+/* Phones: the tab bar keeps only the coiled tip; the "More" sheet keeps its plain rows. */
+@media (max-width: 1023px) {
+  .main-nav .nav-arm-reach {
+    display: none;
+  }
+  .nav-secondary .nav-arm {
+    display: none;
+  }
+}
+
+/* ---------- Page frame over the water ---------- */
+.veined-app .card,
+.veined-app .overview-tool,
+.veined-app .overview-explore,
+.veined-app .swap-card {
+  box-shadow: var(--card-sheen), var(--card-depth);
+}
+.veined-app .page-heading h1,
+.veined-app .intro h1,
+.veined-app .page-heading .page-lede,
+.veined-app .intro > p {
+  text-shadow: 0 1px 18px rgb(var(--abyss-rgb) / 0.9);
+}
+.footer {
+  border-top-color: rgb(var(--biolume-rgb) / 0.08);
+}
+.footer-inner {
+  text-shadow: 0 1px 12px rgb(var(--abyss-rgb) / 0.9);
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline-color: var(--teal);
+}
+
+/* ---------- Overview: a window onto the core ---------- */
+.overview-welcome {
+  min-height: clamp(340px, 46vh, 460px);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-color: rgb(var(--biolume-rgb) / 0.12);
+  color: var(--text);
+}
+.overview-welcome::after {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0.82) 0%,
+    rgb(var(--abyss-rgb) / 0.5) 38%,
+    rgb(var(--abyss-rgb) / 0) 66%
+  );
+}
+.overview-welcome h1 {
+  font-size: clamp(34px, 3.8vw, 56px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+.overview-welcome-copy > p:not(.visual-eyebrow) {
+  color: var(--muted);
+  font-size: 15px;
+}
+.overview-welcome .overview-welcome-actions .button-link {
+  color: var(--text);
+  border-color: rgb(var(--biolume-rgb) / 0.28);
+  background: rgb(var(--abyss-rgb) / 0.35);
+}
+.overview-welcome .overview-welcome-actions .button-link.primary-link {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--button-text);
+}
+.overview-welcome .overview-welcome-actions .button-link:hover {
+  border-color: var(--teal);
+}
+@media (max-width: 700px) {
+  .overview-welcome {
+    min-height: 420px;
+    align-items: flex-end;
+  }
+  .overview-welcome::after {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--abyss-rgb) / 0.9) 0%,
+      rgb(var(--abyss-rgb) / 0.62) 46%,
+      rgb(var(--abyss-rgb) / 0) 78%
+    );
+  }
+}
+/* Tool tiles are held by arms that reach in from the tile edge on hover and focus. */
+.overview-tool {
+  position: relative;
+  overflow: hidden;
+}
+.overview-tool-mark {
+  position: relative;
+  background: rgb(var(--biolume-rgb) / 0.07);
+  border-color: rgb(var(--biolume-rgb) / 0.22);
+  color: var(--biolume);
+}
+.nav-arm.is-tile {
+  left: -75px;
+  top: -1px;
+}
+[dir="rtl"] .nav-arm.is-tile {
+  left: auto;
+  right: -75px;
+}
+.overview-tool:is(:hover, :focus-visible) .nav-arm path {
+  stroke-dashoffset: 0;
+  opacity: 0.85;
+}
+.overview-tool:is(:hover, :focus-visible) .nav-arm-tip {
+  transition-delay: 200ms, 0ms;
+}
+.overview-tool:hover > .icon {
+  color: var(--biolume);
+}
+.overview-explore > a > .nav-glyph {
+  color: var(--biolume);
+}
+
+/* ---------- Instrument ---------- */
+.veined-app .swap-card {
+  border-top-color: rgb(var(--biolume-rgb) / 0.2);
+}
+/* The reverse control is a sucker: a ring within a ring on the seam between the two legs. */
+.swap-legs > .swap-reverse {
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5px var(--surface),
+    inset 0 0 0 4px var(--surface-2),
+    inset 0 0 0 5px rgb(var(--biolume-rgb) / 0.22);
+}
+.swap-legs > .swap-reverse:hover:not(:disabled) {
+  color: var(--biolume);
+}
+.direction-arrow {
+  border-radius: 50%;
+}
+
+/* ---------- Landing (marketing bundle loads after this layer: one extra type selector) ---------- */
+.veined-atmosphere img.is-light {
+  display: none;
+}
+html[data-theme="light"] .veined-atmosphere img.is-dark {
+  display: none;
+}
+html[data-theme="light"] .veined-atmosphere img.is-light {
+  display: block;
+}
+body .mk-hero .mk-earth img {
+  object-position: 62% center;
+}
+body .mk-hero::after {
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg) 0%,
+      color-mix(in srgb, var(--bg) 88%, transparent) 26%,
+      color-mix(in srgb, var(--bg) 22%, transparent) 58%,
+      transparent 100%
+    ),
+    linear-gradient(0deg, var(--bg), transparent 22%);
+}
+html[data-theme="light"] body .mk-hero .mk-earth,
+html[data-theme="light"] body .mk-network-scene,
+html[data-theme="light"] body .mk-final .veined-atmosphere {
+  opacity: 1;
+}
+body .mk-hero-orbit > span {
+  border-color: rgb(var(--biolume-rgb) / 0.22);
+  background: var(--glass-strong);
+  color: var(--text);
+}
+@media (max-width: 800px) {
+  body .mk-hero .mk-earth img {
+    object-position: 82% center;
+  }
+}
+
+/* ---------- Independent-review repairs ---------- */
+/* F01/F02 — every destination opens with a window onto its own part of the organism: the page heading becomes a framed
+   band over the field; each scene's motif is composed for this band, so nothing has to show through card gutters. */
+.veined-app .page-heading,
+.veined-app[data-surface="bridge"] .intro {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(176px, 22vh, 224px);
+  margin-top: 14px;
+  margin-bottom: 22px;
+  padding: 28px 32px;
+  border: 1px solid rgb(var(--biolume-rgb) / 0.12);
+  border-radius: var(--r-xl);
+  display: flex;
+  align-items: flex-end;
+}
+.veined-app[data-surface="bridge"] .intro {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.veined-app[data-surface="help"] .page-heading {
+  border-bottom: 1px solid rgb(var(--biolume-rgb) / 0.12);
+}
+.veined-app .page-heading::before,
+.veined-app[data-surface="bridge"] .intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0.86) 0%,
+    rgb(var(--abyss-rgb) / 0.58) 34%,
+    rgb(var(--abyss-rgb) / 0) 62%
+  );
+}
+[dir="rtl"] .veined-app .page-heading::before,
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro::before {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--abyss-rgb) / 0.86) 0%,
+    rgb(var(--abyss-rgb) / 0.58) 34%,
+    rgb(var(--abyss-rgb) / 0) 62%
+  );
+}
+/* Swap keeps its accessible heading visually hidden: the instrument is the first thing on the page. */
+/* (0,3,0): must also beat the phone band rule below, which shares the band selector's specificity. */
+.veined-app .swap-page > .page-heading {
+  position: absolute;
+  min-height: 0;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+@media (max-width: 700px) {
+  .veined-app .page-heading,
+  .veined-app[data-surface="bridge"] .intro {
+    min-height: 196px;
+    margin-top: 10px;
+    padding: 20px 18px;
+    border-radius: var(--r-lg);
+  }
+  .veined-app .page-heading::before,
+  .veined-app[data-surface="bridge"] .intro::before,
+  [dir="rtl"] .veined-app .page-heading::before,
+  [dir="rtl"] .veined-app[data-surface="bridge"] .intro::before {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--abyss-rgb) / 0.88) 0%,
+      rgb(var(--abyss-rgb) / 0.5) 55%,
+      rgb(var(--abyss-rgb) / 0) 100%
+    );
+  }
+}
+/* Phones: a slim band above the instrument shows the arm that links the two legs of the trade. */
+@media (max-width: 600px) {
+  .swap-page {
+    padding-top: 74px;
+  }
+}
+
+/* F04 — the Overview hero no longer pushes the execution-closed banner out of the first viewport. */
+.overview-welcome {
+  min-height: clamp(280px, 40vh, 420px);
+}
+@media (max-width: 700px) {
+  .overview-welcome {
+    min-height: min(300px, 56vh);
+  }
+}
+
+/* F03 — the status banner is an opaque caution surface in both themes (never decoration showing through). */
+.overview-status {
+  background: color-mix(in srgb, var(--amber) 9%, var(--surface));
+  border-color: var(--amber-line);
+}
+html[data-theme="light"] .overview-status {
+  background: #fbf4e4;
+}
+.overview-status a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* F06 — bars that content scrolls under are opaque; only the rail (nothing scrolls beneath it) keeps the water tint. */
+@media (min-width: 1024px) {
+  .header-actions::before {
+    background: var(--bg-elevated);
+  }
+}
+@media (max-width: 1023px) {
+  .header::before,
+  .main-nav::after {
+    background: var(--bg-elevated);
+  }
+}
+
+/* F01 regression — the Portfolio first-scan card keeps its illustrated depth (now the same organism holding lights). */
+.portfolio-first-scan .veined-atmosphere {
+  opacity: 0.55;
+}
+.portfolio-first-scan .veined-atmosphere img {
+  object-position: right top;
+}
+html[data-theme="light"] .portfolio-first-scan .veined-atmosphere {
+  opacity: 0.6;
+}
+
+/* F07 — CJK headlines break between phrases, never inside a word. */
+:lang(ja) :is(.overview-welcome h1, .mk-hero h1, .veined-app .page-heading h1),
+:lang(zh-CN)
+  :is(.overview-welcome h1, .mk-hero h1, .veined-app .page-heading h1),
+:lang(zh-TW)
+  :is(.overview-welcome h1, .mk-hero h1, .veined-app .page-heading h1) {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+}
+:lang(ja) .overview-welcome h1 {
+  font-size: clamp(28px, 3.2vw, 46px);
+}
+@media (max-width: 1023px) {
+  .main-nav .nav-label:lang(ja) {
+    font-size: 10px;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* F10 — decoration never runs behind footer text. */
+.footer {
+  background: rgb(var(--abyss-rgb) / 0.92);
+}
+
+/* F09 — landing: the organism reads at first glance; the network chips are contact points with a faint glow. */
+body .mk-hero .mk-earth img.is-dark {
+  filter: brightness(1.22);
+}
+body .mk-hero-orbit > span {
+  box-shadow:
+    0 0 0 1px rgb(var(--biolume-rgb) / 0.12),
+    0 0 22px -6px rgb(var(--biolume-rgb) / 0.45);
+}
+
+/* ---------- Verification-review repairs ---------- */
+/* F04 — short viewports (200% zoom, landscape phones): the hero shrinks to its copy so the execution-closed banner is
+   inside the first viewport. */
+@media (max-height: 560px) {
+  .overview-welcome {
+    min-height: 0;
+    padding-block: 20px;
+  }
+  .overview {
+    padding-top: 12px;
+  }
+}
+/* N03 — light Overview: the daylight art stays out from under the headline and fades beneath the cards. */
+html[data-theme="light"] .overview-welcome::after {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0.96) 0%,
+    rgb(var(--abyss-rgb) / 0.84) 42%,
+    rgb(var(--abyss-rgb) / 0) 72%
+  );
+}
+html[data-theme="light"] .abyss[data-scene="overview"] .abyss-veil {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--abyss-rgb) / 0.4) 0,
+    rgb(var(--abyss-rgb) / 0) 16%,
+    rgb(var(--abyss-rgb) / 0) 46%,
+    rgb(var(--abyss-rgb) / 0.82) 66%,
+    rgb(var(--abyss-rgb) / 0.9) 100%
+  );
+}
+@media (max-width: 700px) {
+  html[data-theme="light"] .overview-welcome::after {
+    background: linear-gradient(
+      0deg,
+      rgb(var(--abyss-rgb) / 0.97) 0%,
+      rgb(var(--abyss-rgb) / 0.86) 52%,
+      rgb(var(--abyss-rgb) / 0.2) 88%
+    );
+  }
+}
+
+/* ---------- Accessibility modes ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .nav-arm path,
+  .nav-arm-suckers,
+  .nav-link.active .nav-arm-suckers {
+    transition: none;
+  }
+}
+@media (forced-colors: active) {
+  .abyss,
+  .nav-arm {
+    display: none;
+  }
+}
+@media print {
+  .abyss {
+    display: none;
+  }
+}

@@ -1,9 +1,13 @@
 import { randomUUID } from "node:crypto";
 import {
+  decodeEventLog,
   decodeFunctionResult,
   encodeFunctionData,
   erc20Abi,
   keccak256,
+  pad,
+  toEventSelector,
+  toHex,
   type Abi,
   type Hex,
 } from "viem";
@@ -22,6 +26,12 @@ import {
   type TransferRecord,
 } from "../core/model";
 import { parseAmount } from "../core/amounts";
+import {
+  currentReserveEvidence,
+  type ReserveEvidence,
+} from "./reserve-evidence";
+import { evaluateRouteDrift, isBridgeContract } from "../g5/route-pins";
+import { deriveSpendableReserve } from "../g5/reserve";
 import {
   verifySettlement,
   type DestinationEvidence,
@@ -65,6 +75,7 @@ export const nativePolicy: SettlementPolicy & { finality: "node-finalized" } = {
   destinationConfirmations: 1,
   finality: "node-finalized",
 };
+const PIN_LAG = 3n;
 async function head(chain: Chain) {
   const chainId = chain === "one" ? 612055 : 56;
   if (
@@ -72,8 +83,16 @@ async function head(chain: Chain) {
     BigInt(chainId)
   )
     throw new BridgeError("CHAIN_MISMATCH");
-  const block = blockSchema.parse(
+  const latest = blockSchema.parse(
     await rpc(chain, "eth_getBlockByNumber", ["latest", false]),
+  );
+  // Load-balanced public endpoints can lag the head by a block ("header not found" on a pinned read,
+  // observed on ONE in V1.6); pin every read a few blocks behind the reported head instead.
+  const block = blockSchema.parse(
+    await rpc(chain, "eth_getBlockByNumber", [
+      toHex(BigInt(latest.number) - PIN_LAG),
+      false,
+    ]),
   );
   const age = Date.now() / 1000 - Number(BigInt(block.timestamp));
   if (!Number.isFinite(age) || age > 180 || age < -30)
@@ -135,6 +154,63 @@ async function view(
       await rpc(chain, "eth_call", [{ to, data }, block]),
     ) as Hex,
   });
+}
+const MAX_PENDING_READS = 64;
+const DEFAULT_ADMIN = `0x${"0".repeat(64)}` as const;
+const MAX_IN_FLIGHT = 8;
+const pendingSchema = z.object({
+  args: z.object({ toToken: addressSchema, value: uint }),
+});
+const initiatedSelector = toEventSelector(
+  "BridgeInitiated(uint256,uint256,address,address,address,address,uint256,uint256,uint256,bytes,uint256)",
+);
+// Source initiations to BSC not yet finalized on BSC are obligations paid before any new transfer
+// (strict index order). They are enumerated by index within the last 1000 ONE blocks; anything outside
+// that bound or above MAX_IN_FLIGHT fails closed (enumerated=false -> reserve unverified).
+async function enumerateInFlight(
+  nextFinalize: bigint,
+  nextInitiate: bigint,
+  sourceBlock: bigint,
+) {
+  const count =
+    nextInitiate > nextFinalize ? Number(nextInitiate - nextFinalize) : 0;
+  const values: bigint[] = [];
+  if (count === 0) return { enumerated: true, expectedCount: 0, values };
+  if (count > MAX_IN_FLIGHT)
+    return { enumerated: false, expectedCount: count, values };
+  const from = sourceBlock > 999n ? sourceBlock - 999n : 0n;
+  for (let index = nextFinalize; index < nextInitiate; index++) {
+    const logs = z
+      .array(
+        z.object({
+          address: addressSchema,
+          topics: z.array(hashSchema),
+          data: z.string().regex(/^0x[0-9a-f]*$/i),
+        }),
+      )
+      .parse(
+        await rpc("one", "eth_getLogs", [
+          {
+            address: deployment.source,
+            fromBlock: toHex(from),
+            toBlock: toHex(sourceBlock),
+            topics: [initiatedSelector, pad(toHex(56n)), pad(toHex(index))],
+          },
+        ]),
+      );
+    if (logs.length !== 1 || !sameAddress(logs[0].address, deployment.source))
+      return { enumerated: false, expectedCount: count, values };
+    const event = decodeEventLog({
+      abi: nativeReadAbi,
+      eventName: "BridgeInitiated",
+      data: logs[0].data as Hex,
+      topics: logs[0].topics as [Hex, ...Hex[]],
+    });
+    if (!sameAddress(event.args.toToken, CROSS))
+      return { enumerated: false, expectedCount: count, values };
+    values.push(event.args.value);
+  }
+  return { enumerated: true, expectedCount: count, values };
 }
 export async function nativeSnapshot() {
   const [sourceHead, destinationHead] = await Promise.all([
@@ -227,10 +303,153 @@ export async function nativeSnapshot() {
     accounting > destinationPair.pendingAmount
       ? accounting - destinationPair.pendingAmount
       : 0n;
-  const maximum =
-    sourcePair.minted < conservativeReserveBound
-      ? sourcePair.minted
-      : conservativeReserveBound;
+  // V1.6 G5: verifier/token code pins, complete pending set, bounded in-flight enumeration.
+  const [
+    destinationVerifier,
+    sourceVerifierCode,
+    destinationVerifierCode,
+    tokenCode,
+    sourceNextInitiate,
+    destinationNextFinalize,
+    pendingIndexRaw,
+  ] = await Promise.all([
+    view("bsc", deployment.destination, "bridgeVerifier", [], destinationBlock),
+    rpc("one", "eth_getCode", [deployment.sourceVerifier, sourceBlock]),
+    rpc("bsc", "eth_getCode", [
+      deployment.destinationVerifier,
+      destinationBlock,
+    ]),
+    rpc("bsc", "eth_getCode", [CROSS, destinationBlock]),
+    view("one", deployment.source, "getNextInitiateIndex", [56n], sourceBlock),
+    view(
+      "bsc",
+      deployment.destination,
+      "getNextFinalizeIndex",
+      [612055n],
+      destinationBlock,
+    ),
+    view(
+      "bsc",
+      deployment.destination,
+      "allPendingIndex",
+      [612055n],
+      destinationBlock,
+    ),
+  ]);
+  const pendingIndices = z.array(uint).parse(pendingIndexRaw);
+  const pendingComplete = pendingIndices.length <= MAX_PENDING_READS;
+  const pending = pendingComplete
+    ? await Promise.all(
+        pendingIndices.map(async (index) => {
+          const p = pendingSchema.parse(
+            await view(
+              "bsc",
+              deployment.destination,
+              "getPendingArguments",
+              [612055n, index],
+              destinationBlock,
+            ),
+          );
+          return { index, toToken: p.args.toToken, value: p.args.value };
+        }),
+      )
+    : [];
+  const inFlight = await enumerateInFlight(
+    uint.parse(destinationNextFinalize),
+    uint.parse(sourceNextInitiate),
+    BigInt(quantitySchema.parse(sourceBlock)),
+  );
+  const trust = async (chain: Chain, proxy: string, block: string) => {
+    const role = (r: string) =>
+      view(
+        chain,
+        proxy,
+        "getRoleMembers",
+        [r === "DEFAULT_ADMIN_ROLE" ? DEFAULT_ADMIN : keccak256(toHex(r))],
+        block,
+      );
+    const [threshold, validators, admins, defaultAdmins, verifierRole] =
+      await Promise.all([
+        view(chain, proxy, "threshold", [], block),
+        role("VALIDATOR_ROLE"),
+        role("ADMIN_ROLE"),
+        role("DEFAULT_ADMIN_ROLE"),
+        role("VERIFIER_ROLE"),
+      ]);
+    const list = z.array(addressSchema);
+    return {
+      threshold: z.number().int().parse(threshold),
+      validators: list.parse(validators),
+      admins: [
+        ...new Set(
+          [...list.parse(admins), ...list.parse(defaultAdmins)].map((a) =>
+            a.toLowerCase(),
+          ),
+        ),
+      ],
+      verifierRole: list.parse(verifierRole),
+    };
+  };
+  const [sourceTrust, destinationTrust] = await Promise.all([
+    trust("one", deployment.source, sourceBlock),
+    trust("bsc", deployment.destination, destinationBlock),
+  ]);
+  const routeDrift = evaluateRouteDrift({
+    source: {
+      chainId: 612055,
+      trust: sourceTrust,
+      proxyCodeHash: sourcePin.proxyCodeHash,
+      implementation: sourcePin.implementation,
+      implementationCodeHash: sourcePin.implementationCodeHash,
+      verifier: addressSchema.parse(verifier),
+      verifierCodeHash: keccak256(codeSchema.parse(sourceVerifierCode) as Hex),
+      pair: sourcePair,
+      paused: z.boolean().parse(sourcePaused),
+      // The ONE-side finalize pause governs BSC->ONE only; not part of this direction.
+      finalizePaused: false,
+    },
+    destination: {
+      chainId: 56,
+      trust: destinationTrust,
+      proxyCodeHash: destinationPin.proxyCodeHash,
+      implementation: destinationPin.implementation,
+      implementationCodeHash: destinationPin.implementationCodeHash,
+      verifier: addressSchema.parse(destinationVerifier),
+      verifierCodeHash: keccak256(
+        codeSchema.parse(destinationVerifierCode) as Hex,
+      ),
+      pair: destinationPair,
+      paused: z.boolean().parse(destinationPaused),
+      finalizePaused: z.boolean().parse(finalizePaused),
+      tokenCodeHash: keccak256(codeSchema.parse(tokenCode) as Hex),
+    },
+  });
+  const reserve = deriveSpendableReserve({
+    token: CROSS,
+    balance: tokenBalance,
+    deposited: destinationPair.deposited,
+    pendingAmount: destinationPair.pendingAmount,
+    pending,
+    pendingComplete,
+    inFlight,
+    sourceMinted: sourcePair.minted,
+    minimum: z.tuple([uint, uint, uint]).parse(tokenConfig)[0],
+    driftState: routeDrift.state,
+  });
+  const maximum = reserve.effectiveMaximum;
+  const reserveAssessment: ReserveEvidence = reserve.verified
+    ? {
+        verified: true,
+        spendableBaseUnits: reserve.spendable,
+        observedAtBlock: BigInt(quantitySchema.parse(destinationBlock)),
+        method:
+          "min(balanceOf(bridge), deposited) - pendingAmount - in-flight; exact BSCBridgeV2@6da2fb2 semantics",
+        evidence: [
+          "V1.6 exact build reproduction of both implementations",
+          "complete pending set and in-flight enumeration at the pinned blocks",
+        ],
+      }
+    : currentReserveEvidence(reserve.reasons);
   const paused =
     z.boolean().parse(sourcePaused) ||
     z.boolean().parse(destinationPaused) ||
@@ -253,8 +472,15 @@ export async function nativeSnapshot() {
     feeRate,
     feeDenominator,
     paused,
-    deploymentEvidence: "RUNTIME_PINNED_SOURCE_BUILD_UNVERIFIED",
-    reserveEvidence: "ACCOUNTING_BOUND_SOURCE_BUILD_UNVERIFIED",
+    deploymentEvidence: "RUNTIME_PINNED_EXACT_BUILD_REPRODUCED",
+    reserveEvidence: reserve.verified
+      ? "EXACT_SEMANTICS_RECONCILED_AT_PINNED_BLOCK"
+      : "EXACT_SEMANTICS_UNRECONCILED",
+    routeDrift,
+    reserve,
+    inFlight,
+    pending,
+    reserveAssessment,
   };
 }
 export async function nativeHealth(): Promise<Health> {
@@ -262,11 +488,8 @@ export async function nativeHealth(): Promise<Health> {
     mode: "mainnet-readonly",
     observedAt: Date.now(),
     status: "blocked",
-    reasons: [
-      "MAINNET_WRITE_DISABLED",
-      "SOURCE_BUILD_MATCH_UNVERIFIED",
-      "DESTINATION_BUILD_MATCH_UNVERIFIED",
-    ],
+    // Both implementations are reproduced byte-for-byte (V1.6); writes stay disabled regardless.
+    reasons: ["MAINNET_WRITE_DISABLED"],
   };
   try {
     const snapshot = await nativeSnapshot();
@@ -286,11 +509,14 @@ export async function nativeHealth(): Promise<Health> {
       minimum: snapshot.minimum.toString(),
       maximumBound: snapshot.maximum.toString(),
       conservativeReserveBound: snapshot.conservativeReserveBound.toString(),
-      reserveVerified: false,
+      reserveVerified: snapshot.reserve.verified,
       paused: snapshot.paused,
       sourceBlockHash: snapshot.sourceHead.block.hash,
       destinationBlockHash: snapshot.destinationHead.block.hash,
     };
+    if (snapshot.routeDrift.state === "REVIEW_REQUIRED")
+      health.reasons.push("DEPLOYMENT_CHANGED");
+    if (!snapshot.reserve.verified) health.reasons.push("RESERVE_UNKNOWN");
     if (snapshot.paused) health.reasons.push("ROUTE_PAUSED");
   } catch (e) {
     health.reasons.push(e instanceof BridgeError ? e.code : "INVALID_RESPONSE");
@@ -302,8 +528,13 @@ export async function liveQuote(
   rawAmount: string,
 ): Promise<Quote> {
   addressSchema.parse(account);
+  // CBU-09 (fixed upstream only after the live builds): a payout to a bridge/token contract strands the
+  // credit. Server-side only, so the guard adds nothing to the client bundle.
+  if (isBridgeContract(account)) throw new BridgeError("UNSUPPORTED_ACCOUNT");
   const amount = parseAmount(rawAmount);
   const snapshot = await nativeSnapshot();
+  if (snapshot.routeDrift.state === "REVIEW_REQUIRED")
+    throw new BridgeError("DEPLOYMENT_CHANGED");
   if (snapshot.paused || amount < snapshot.minimum || amount > snapshot.maximum)
     throw new BridgeError("ROUTE_LIMIT_OR_PAUSE");
   const [minimum, networkFee, serviceFee] = z

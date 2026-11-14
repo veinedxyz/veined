@@ -12,7 +12,8 @@ import {
   sameAddress,
   type Quote,
 } from "../core/model";
-// Generic documented API, NOT a verified native ONE mainnet deployment ABI.
+// bridgeToken selector/ABI of the exact live ONE build (CrossBridge @ b3b0258, reproduced byte-for-byte in V1.6).
+// Writes remain disabled: matching the ABI is not an execution approval.
 export const bridgeAbi = parseAbi([
   "function bridgeToken(uint256 toChainID,address fromToken,address to,uint256 value,uint256 networkFee,uint256 exFee,bytes extraData) payable returns (bool)",
 ]);

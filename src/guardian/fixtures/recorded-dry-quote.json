@@ -1,0 +1,63 @@
+{
+  "note": "A real NEAR Intents 1Click DRY quote, recorded verbatim for Guardian's offline review demo. Public data; no deposit address was created; nothing was sent.",
+  "capturedAt": "2026-11-08T15:50:52.711Z",
+  "endpoint": "POST https://1click.chaindefuser.com/v0/quote",
+  "managerKey": "ed25519:reYaWhvwu8Jzo3WUM3zhn6VrhuMEF4eADL17qtRVifc",
+  "request": {
+    "dry": true,
+    "swapType": "EXACT_INPUT",
+    "slippageTolerance": 100,
+    "originAsset": "nep141:base.omft.near",
+    "depositType": "ORIGIN_CHAIN",
+    "destinationAsset": "nep141:wrap.near",
+    "amount": "10000000000000000",
+    "refundTo": "0x8a1f3c9b2d4e5f60718293a4b5c6d7e8f9a0b1c2",
+    "refundType": "ORIGIN_CHAIN",
+    "recipient": "alice.near",
+    "recipientType": "DESTINATION_CHAIN",
+    "deadline": "2026-11-08T16:00:49.329Z",
+    "quoteWaitingTimeMs": 3000
+  },
+  "response": {
+    "quote": {
+      "amountIn": "10000000000000000",
+      "amountInFormatted": "0.01",
+      "amountInUsd": "22.386800000000",
+      "minAmountIn": "10000000000000000",
+      "amountOut": "6035644285983182366496000",
+      "amountOutFormatted": "6.035644285983182366496",
+      "amountOutUsd": "22.271527415278",
+      "minAmountOut": "5975287843123350542831040",
+      "timeEstimate": 35,
+      "refundFee": "560000000000",
+      "withdrawFee": "0"
+    },
+    "quoteRequest": {
+      "dry": true,
+      "depositMode": "SIMPLE",
+      "swapType": "EXACT_INPUT",
+      "slippageTolerance": 100,
+      "originAsset": "nep141:base.omft.near",
+      "depositType": "ORIGIN_CHAIN",
+      "destinationAsset": "nep141:wrap.near",
+      "amount": "10000000000000000",
+      "refundTo": "0x8a1f3c9b2d4e5f60718293a4b5c6d7e8f9a0b1c2",
+      "refundType": "ORIGIN_CHAIN",
+      "recipient": "alice.near",
+      "recipientType": "DESTINATION_CHAIN",
+      "deadline": "2026-11-08T16:00:49.329Z",
+      "confidentiality": "public",
+      "quoteWaitingTimeMs": 3000,
+      "insured": false,
+      "appFees": [
+        {
+          "recipient": "5880ad2b362620fadf759cbceb1cd5737ce8c6ed7fb8e9942881e6731f9247dd",
+          "fee": 20
+        }
+      ]
+    },
+    "signature": "ed25519:2JioGM3ya5s6X5zU4vuY22X9xBAUTTmvDQiVpifQyvg2tjgsE5f6PNH8aoDQqShXVDj7hYrGZs77ryhr2CHUmZ43",
+    "timestamp": "2026-11-08T15:50:49.522Z",
+    "correlationId": "f24603b5-a88a-4dec-9052-5281e19754d5"
+  }
+}

@@ -1,0 +1,11 @@
+Copyright (c) 2026 Coinisan. All rights reserved.
+
+This repository is published for the NEAR Hackathon (https://nearhackathon.com) so that judges and the public can
+read it, build it and run it locally to evaluate it. No other licence is granted: copying, modifying,
+redistributing or otherwise using this code, in whole or in part, beyond that evaluation requires the written
+permission of the copyright holder.
+
+Third-party components keep their own licences. The dependencies declared in package.json, pnpm-lock.yaml and
+swap-providers/ are installed from their registries under their own licences, and any third-party notice in this
+repository applies to the files it names. Network, token and protocol names and logos belong to their owners and
+are used only to identify them.

@@ -1,0 +1,250 @@
+{
+  "uid": "ob-indexer",
+  "title": "Otherbridge — Indexer and coverage",
+  "tags": [
+    "otherbridge",
+    "v1.5"
+  ],
+  "timezone": "utc",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "refresh": "30s",
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 25,
+      "title": "Indexed head",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_indexed_head_block",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Checkpoint age (s)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_checkpoint_age_seconds",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Windows by witness consensus",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_windows",
+          "legendFormat": "{{chain}} {{consensus}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Witness records (last hour)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_witness_records_recent",
+          "legendFormat": "{{chain}} {{consensus}} {{failure}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Halted chains",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_halted",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Historical lane: oldest indexed block",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_historical_from_block",
+          "legendFormat": "{{chain}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Active leases",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "otherbridge-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {},
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "otherbridge_indexer_lease_active",
+          "legendFormat": "{{chain}} {{lane}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "otherbridge-prometheus"
+          }
+        }
+      ]
+    }
+  ]
+}

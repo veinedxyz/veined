@@ -1,0 +1,38 @@
+# Otherbridge local monitoring profile (developer host). Isolated project/volume names; UIs on
+# loopback only; scrapes host metrics listeners (loopback + bearer token) via the Docker host gateway.
+# Pinned images (tag + digest). No external receivers: alerts are visible locally only.
+name: otherbridge-monitoring
+x-hardening: &hardening
+  read_only: true
+  security_opt: ["no-new-privileges:true"]
+  cap_drop: ["ALL"]
+  restart: "no"
+services:
+  prometheus:
+    <<: *hardening
+    image: prom/prometheus:v3.5.0@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996
+    container_name: otherbridge-monitoring-prometheus
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus", "--storage.tsdb.retention.time=3d"]
+    ports: ["127.0.0.1:59190:9090"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    volumes:
+      - ./prometheus/prometheus.local.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/rules:/etc/prometheus/rules:ro
+      - ./secrets:/etc/prometheus/secrets:ro
+      - otherbridge-monitoring-prometheus:/prometheus
+    mem_limit: 512m
+  alertmanager:
+    <<: *hardening
+    image: prom/alertmanager:v0.28.1@sha256:27c475db5fb156cab31d5c18a4251ac7ed567746a2483ff264516437a39b15ba
+    container_name: otherbridge-monitoring-alertmanager
+    command: ["--config.file=/etc/alertmanager/alertmanager.yml", "--storage.path=/alertmanager", "--cluster.listen-address="]
+    ports: ["127.0.0.1:59193:9093"]
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - otherbridge-monitoring-alertmanager:/alertmanager
+    mem_limit: 128m
+volumes:
+  otherbridge-monitoring-prometheus:
+    name: otherbridge-monitoring-prometheus
+  otherbridge-monitoring-alertmanager:
+    name: otherbridge-monitoring-alertmanager

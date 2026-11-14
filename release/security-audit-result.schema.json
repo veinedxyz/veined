@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rcId": {
+      "type": "string",
+      "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+    },
+    "sourceCheckpoint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceManifest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "buildHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protectedBaseline": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "reportSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reportReference": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "independentReviewer": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "scopeCheckpoint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "verificationReference": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "kind": {
+      "type": "string",
+      "const": "SECURITY_AUDIT"
+    },
+    "auditor": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "scope": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 4000
+      }
+    },
+    "severityCounts": {
+      "type": "object",
+      "properties": {
+        "critical": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "high": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "medium": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "low": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "informational": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "informational"
+      ],
+      "additionalProperties": false
+    },
+    "unresolvedFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "informational"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "id",
+          "severity",
+          "disposition"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "retest": {
+      "type": "object",
+      "properties": {
+        "performed": {
+          "type": "boolean"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reportSha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "remainingFindings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          }
+        }
+      },
+      "required": [
+        "performed",
+        "date",
+        "reportSha256",
+        "remainingFindings"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "rcId",
+    "sourceCheckpoint",
+    "sourceManifest",
+    "buildHash",
+    "protectedBaseline",
+    "schemaVersion",
+    "issuedAt",
+    "expiresAt",
+    "reportSha256",
+    "reportReference",
+    "independentReviewer",
+    "scopeCheckpoint",
+    "verificationReference",
+    "kind",
+    "auditor",
+    "scope",
+    "severityCounts",
+    "unresolvedFindings",
+    "retest"
+  ],
+  "additionalProperties": false
+}

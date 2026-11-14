@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "technicalBase": {
+      "type": "object",
+      "properties": {
+        "rcId": {
+          "type": "string",
+          "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+        },
+        "sourceCheckpoint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceManifest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "buildHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protectedBaseline": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "rcId",
+        "sourceCheckpoint",
+        "sourceManifest",
+        "buildHash",
+        "protectedBaseline"
+      ],
+      "additionalProperties": false
+    },
+    "auditPackageSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "execution": {
+      "type": "string",
+      "const": "CLOSED"
+    },
+    "internalEngineeringBlockers": {
+      "type": "number",
+      "const": 0
+    },
+    "actions": {
+      "minItems": 16,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "OWNER_INPUT",
+              "PROVIDER_ONBOARDING",
+              "DOMAIN_CONTROL",
+              "HOSTING_DECISION",
+              "RPC_COMMERCIAL_TERMS",
+              "EXTERNAL_SECURITY_AUDIT",
+              "EXTERNAL_PENTEST",
+              "LEGAL_REVIEW",
+              "OWNER_RELEASE_APPROVAL",
+              "OWNER_G7_PILOT_APPROVAL",
+              "OWNER_SWAP_PILOT_APPROVAL"
+            ]
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OWNER_ACTION_REQUIRED",
+              "CONDITIONAL_OWNER_ACTION",
+              "SATISFIED_WITH_EVIDENCE"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "website": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "string",
+                "pattern": "^local:[A-Za-z0-9_./-]+$"
+              }
+            ]
+          },
+          "secret": {
+            "type": "boolean"
+          },
+          "configure": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "validate": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "blocks": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "evidenceExpected": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "documentation": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "predecessorIds": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "OWNER_INPUT_UNISWAP_API_KEY",
+                "OWNER_INPUT_JUPITER_API_KEY",
+                "OWNER_INPUT_TITAN_WS_ENDPOINT",
+                "OWNER_INPUT_TITAN_AUTH_TOKEN",
+                "OWNER_INPUT_PCSX_TRAFFIC_QUOTA",
+                "OWNER_INPUT_DOMAIN_CONTROL",
+                "OWNER_INPUT_PRIVY_PRODUCTION",
+                "OWNER_INPUT_HOSTING",
+                "OWNER_INPUT_RPC_TERMS",
+                "EXTERNAL_SECURITY_AUDIT",
+                "EXTERNAL_PENTEST",
+                "LEGAL_PROVIDER_PRIVACY",
+                "OWNER_RELEASE_APPROVAL",
+                "OWNER_G7_PILOT_APPROVAL",
+                "OWNER_SWAP_PILOT_APPROVAL",
+                "OWNER_UPSTREAM_WHIRLPOOL_REVIEW"
+              ]
+            }
+          },
+          "evidence": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 8
+            }
+          }
+        },
+        "required": [
+          "id",
+          "category",
+          "priority",
+          "status",
+          "action",
+          "website",
+          "secret",
+          "configure",
+          "validate",
+          "blocks",
+          "evidenceExpected",
+          "documentation",
+          "predecessorIds",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "providerDecisions": {
+      "type": "object",
+      "properties": {
+        "pcsx": {
+          "type": "string",
+          "enum": [
+            "ANONYMOUS_QUOTA_SUFFICIENT_FOR_LAUNCH",
+            "INTEGRATOR_KEY_REQUIRED"
+          ]
+        },
+        "aerodrome": {
+          "type": "string",
+          "const": "PRODUCTION_CONFIG_READY / NO_PROVIDER_CREDENTIAL_REQUIRED"
+        }
+      },
+      "required": [
+        "pcsx",
+        "aerodrome"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "technicalBase",
+    "auditPackageSha256",
+    "execution",
+    "internalEngineeringBlockers",
+    "actions",
+    "providerDecisions"
+  ],
+  "additionalProperties": false
+}

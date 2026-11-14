@@ -1,0 +1,2231 @@
+[
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V2",
+    "block": "0x18fa124",
+    "pool": [
+      "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24855995",
+    "minOut": "24731715",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "107747",
+    "transactionDigest": "87be8c28d47828545993ea9d40638a911fd6f9465ff3c931a9fe66da334e590f",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "656fc30bafaac99198d6cd3252428e4a23aea236249f097a49db3ba79e44cc6e",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24855995",
+      "minAmountOut": "24731715",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V2",
+          "pool": "0xB4e16d0168e52d35CaCD2c6185b44281Ec28C9Dc",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "factory": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973378277,
+      "expiresAt": 1791973398277,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581600000000000000000000000000000000000000000000000000000000000000020b080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001400000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000179604300000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017b45bb"
+      },
+      {
+        "address": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "topics": [
+          "0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000092db163025e0000000000000000000000000000000000000000000000db70b4f55686dcc879"
+      },
+      {
+        "address": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+        "topics": [
+          "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000017b45bb0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973378277
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V3",
+    "block": "0x18fa124",
+    "pool": [
+      "0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24856075",
+    "minOut": "24731794",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "109231",
+    "transactionDigest": "c19a3c7e10a8420fe2293176b1f9b16ba3ce638955d86f3f390665ef3beaf227",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "460afa546bb7a14af1e5a4d8b2a1906507a3712480ffdbc0a2a15c95ae1ee34c",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24856075",
+      "minAmountOut": "24731794",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V3",
+          "pool": "0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "fee": 3000,
+          "shareBps": 10000,
+          "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973378456,
+      "expiresAt": 1791973398456,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581600000000000000000000000000000000000000000000000000000000000000020b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001400000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000179609200000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000002bc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000bb8a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000008ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017b460b"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000008ad599c3a0ff1de082011efddc58f1908eb6e6d8"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffe84b9f5000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000004e3bb6146c44c6971fa422b35326000000000000000000000000000000000000000000000000449fbdd46a76c0b100000000000000000000000000000000000000000000000000000000000305db"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973378456
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V3",
+    "block": "0x18fa124",
+    "pool": [
+      "0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24975349",
+    "minOut": "24850472",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "109217",
+    "transactionDigest": "0abb842f920b47fc077eac013e398c460c00f188286ea96e1aed456b09561016",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "6192ac6fc8f8fd3563ed168e52d6db588c4bd12fc9c29a7d212d4815ad35dd13",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24975349",
+      "minAmountOut": "24850472",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V3",
+          "pool": "0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "fee": 500,
+          "shareBps": 10000,
+          "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973378466,
+      "expiresAt": 1791973398466,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581600000000000000000000000000000000000000000000000000000000000000020b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001400000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000017b302800000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000002bc02aaa39b223fe8d0a0e5c4f27ead9083c756cc20001f4a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000088e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017d17f5"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x00000000000000000000000088e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffe82e80b000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000004e24ddb8a286ad60d5d4d3367ec40000000000000000000000000000000000000000000000002521288a9cd89e4600000000000000000000000000000000000000000000000000000000000305c4"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973378466
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V3",
+    "block": "0x18fa124",
+    "pool": [
+      "0xE0554a476A092703abdB3Ef35c80e0D76d32939F"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24982094",
+    "minOut": "24857183",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "109233",
+    "transactionDigest": "a3b75a063f356948f1c2b67c6253106d992ead2a1250c77e504625fa574782dc",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "efe2094c307a73c0cabcb70692ff89b7557477819156705cf8aed139afe35c05",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24982094",
+      "minAmountOut": "24857183",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V3",
+          "pool": "0xE0554a476A092703abdB3Ef35c80e0D76d32939F",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "fee": 100,
+          "shareBps": 10000,
+          "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973378629,
+      "expiresAt": 1791973398629,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581600000000000000000000000000000000000000000000000000000000000000020b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001400000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000017b4a5f00000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000002bc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000064a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000e0554a476a092703abdb3ef35c80e0d76d32939f",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017d324e"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x000000000000000000000000e0554a476a092703abdb3ef35c80e0d76d32939f"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xe0554a476a092703abdb3ef35c80e0d76d32939f",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffe82cdb2000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000004e262bb4d4661401cf6f6009ede30000000000000000000000000000000000000000000000000e283988a625274800000000000000000000000000000000000000000000000000000000000305c5"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973378629
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V3",
+    "block": "0x18fa124",
+    "pool": [
+      "0x7BeA39867e4169DBe237d55C8242a8f2fcDcc387"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24818764",
+    "minOut": "24694670",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "117867",
+    "transactionDigest": "ebbe44f4e4f9bae6ebb7365ab571b4b497fdb4c7672666c5ee4e399cf3eaa18a",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "25c7c323442539fca207b315a48c8ad5496c3b715aeb466e914e32c5687d7506",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24818764",
+      "minAmountOut": "24694670",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V3",
+          "pool": "0x7BeA39867e4169DBe237d55C8242a8f2fcDcc387",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "fee": 10000,
+          "shareBps": 10000,
+          "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379005,
+      "expiresAt": 1791973399005,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581700000000000000000000000000000000000000000000000000000000000000020b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001400000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000178cf8e00000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000120000000000000000000000000000000000000000000000000000000000000002bc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2002710a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000007bea39867e4169dbe237d55c8242a8f2fcdcc387",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017ab44c"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000007bea39867e4169dbe237d55c8242a8f2fcdcc387"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x7bea39867e4169dbe237d55c8242a8f2fcdcc387",
+        "topics": [
+          "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffe854bb4000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000004e049bf000ab17e4aec6636a24310000000000000000000000000000000000000000000000000034791a4deb3dec00000000000000000000000000000000000000000000000000000000000305a4"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379005
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24977829",
+    "minOut": "24852939",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "79735",
+    "transactionDigest": "1924d85d285231255fe7561dc3bc783c0a5cc95fa3f6c00bd8e0eda0fea6eaf5",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "df35cf3ee74db07b08ac6d576a049dc04773294d839424c49f428aedd6adfafc",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24977829",
+      "minAmountOut": "24852939",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+          "tokenIn": "0x0000000000000000000000000000000000000000",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 100,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 1
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379186,
+      "expiresAt": 1791973399186,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf5817000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000064000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017b39cb0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f000000000000000000000000000000000000000000000000000000000000017d21a5000000000000000000000000000000000000000000034688feb7f96ec9f60f00000000000000000000000000000000000000000000000000007b8e00e1faf1ccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfa38000000000000000000000000000000000000000000000000000000000000007d"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017d21a5"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379186
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0x21c67e77068de97969ba93d4aab21826d33ca12bb9f565d8496e8fda8a82ca27"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24973888",
+    "minOut": "24849018",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "79289",
+    "transactionDigest": "9d49a6590f06afd62d1667f1dc0c393515fbf8ab6490d22c95d23522370b01fe",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "fe402717b2354f43400ffc06764c740edfa3980f293924f7bb8e2cd4e11eabeb",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24973888",
+      "minAmountOut": "24849018",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0x21c67e77068de97969ba93d4aab21826d33ca12bb9f565d8496e8fda8a82ca27",
+          "tokenIn": "0x0000000000000000000000000000000000000000",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 500,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 10
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379192,
+      "expiresAt": 1791973399192,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf5817000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000000000000000000000000000000000000000001f4000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017b2a7a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0x21c67e77068de97969ba93d4aab21826d33ca12bb9f565d8496e8fda8a82ca27",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f000000000000000000000000000000000000000000000000000000000000017d12400000000000000000000000000000000000000000000346aefd2702805c86904a00000000000000000000000000000000000000000000000002771f77cc7ee3d6fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfa3c0000000000000000000000000000000000000000000000000000000000000271"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017d1240"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379192
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0xd934712639fede326a3ff8d2a9c2f73749bac510c23fb33443cea7f3c9aca6f3"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "23814950",
+    "minOut": "23695875",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "80058",
+    "transactionDigest": "e67ce99c60983c6f842f249df197be567ae8b2db09f1fa5f1e4e172899bea02b",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "43779334e5368fe3348fd0cece0d3362e8c0f6590b9ccf411bacaeb802b7f954",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "23814950",
+      "minAmountOut": "23695875",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0xd934712639fede326a3ff8d2a9c2f73749bac510c23fb33443cea7f3c9aca6f3",
+          "tokenIn": "0x0000000000000000000000000000000000000000",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 10000,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 200
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379206,
+      "expiresAt": 1791973399206,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf5817000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000000000000000000000000000000000000000271000000000000000000000000000000000000000000000000000000000000000c800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016992030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0xd934712639fede326a3ff8d2a9c2f73749bac510c23fb33443cea7f3c9aca6f3",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f000000000000000000000000000000000000000000000000000000000000016b63260000000000000000000000000000000000000000000326ac94f75693eb2cfce800000000000000000000000000000000000000000000000000000ad5836783cdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcf7310000000000000000000000000000000000000000000000000000000000002aee"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000016b6326"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379206
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0xdce6394339af00981949f5f3baf27e3610c76326a700af57e4b3e3ae4977f78d"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24831143",
+    "minOut": "24706987",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "80058",
+    "transactionDigest": "f178203bee7d69fa2cc598a2d5d09859f8b2ad07829bf808bc94c65320216b3b",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "32fa5fd571c078cb19dd1017f188f205043ca5d70bde8e9470dc15c92573d2e1",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24831143",
+      "minAmountOut": "24706987",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0xdce6394339af00981949f5f3baf27e3610c76326a700af57e4b3e3ae4977f78d",
+          "tokenIn": "0x0000000000000000000000000000000000000000",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 3000,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 60
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379256,
+      "expiresAt": 1791973399256,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf5817000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000bb8000000000000000000000000000000000000000000000000000000000000003c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000178ffab0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0xdce6394339af00981949f5f3baf27e3610c76326a700af57e4b3e3ae4977f78d",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0xffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f000000000000000000000000000000000000000000000000000000000000017ae4a700000000000000000000000000000000000000000003457d4d179f7771acfe2e00000000000000000000000000000000000000000000000024b55d9666c2aef9fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfa1f0000000000000000000000000000000000000000000000000000000000000dab"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017ae4a7"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379256
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0x4f88f7c99022eace4740c6898f59ce6a2e798a1e64ce54589720b7153eb224a7"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24962580",
+    "minOut": "24837767",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "118481",
+    "transactionDigest": "050545f76f3419ee74290568be2ec898f2f39b9c92a69487f20465e7133247e7",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "3867f014b08107ed657ee5eb7c0c90606b6aebe7cbc50655860384b8cfaeb14b",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24962580",
+      "minAmountOut": "24837767",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0x4f88f7c99022eace4740c6898f59ce6a2e798a1e64ce54589720b7153eb224a7",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 500,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 10
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379351,
+      "expiresAt": 1791973399351,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581700000000000000000000000000000000000000000000000000000000000000020b100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000002800000000000000000000000000000000000000000000000000000000000000060000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001800000000000000000000000000000000000000000000000000000000000000020000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc200000000000000000000000000000000000000000000000000000000000001f4000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017afe870000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0x4f88f7c99022eace4740c6898f59ce6a2e798a1e64ce54589720b7153eb224a7",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017ce614ffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f00000000000000000000000000000000000000004e2a897d806d282b5d58ab02a9ed0000000000000000000000000000000000000000000000000009d1646da4c4f500000000000000000000000000000000000000000000000000000000000305ca0000000000000000000000000000000000000000000000000000000000000271"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017ce614"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379351
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "UNISWAP",
+    "family": "V4",
+    "block": "0x18fa124",
+    "pool": [
+      "0xb9fd8b8b6580b80432037a379071b6fb22bbceff6bafbd57390889c01d8757b9"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "1244512",
+    "minOut": "1238289",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "291888",
+    "transactionDigest": "e65e82bee1c90a052eaee2a99a63ebeb6c9c7be8f9ccbdc6791c3fc36d21056d",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0x55e6b334152096d60367d7ab24241948b31e8d0e66adc8b81cba049a19f9d2ac",
+    "quote": {
+      "id": "b3fd7b80bfbfd632e49327257933847d2dfd9b82d6abee36e8ca0e4bd7b18e83",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "Uniswap",
+      "mode": "UNISWAP",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "1244512",
+      "minAmountOut": "1238289",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": null,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "Uniswap",
+          "poolType": "V4",
+          "pool": "0xb9fd8b8b6580b80432037a379071b6fb22bbceff6bafbd57390889c01d8757b9",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "shareBps": 10000,
+          "fee": 3000,
+          "hook": "0x0000000000000000000000000000000000000000",
+          "tickSpacing": 60
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973379352,
+      "expiresAt": 1791973399352,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x23617e59A5925b2A4Bf75d73ff6711cD0b29De85",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf581700000000000000000000000000000000000000000000000000000000000000020b100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000003a00000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000030b060e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000002800000000000000000000000000000000000000000000000000000000000000060000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001800000000000000000000000000000000000000000000000000000000000000020000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000000000000000000000000000000000000000000bb8000000000000000000000000000000000000000000000000000000000000003c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012e5110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb4800000000000000000000000033333333333333333333333333333333333333330000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "topics": [
+          "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+          "0xb9fd8b8b6580b80432037a379071b6fb22bbceff6bafbd57390889c01d8757b9",
+          "0x00000000000000000000000023617e59a5925b2a4bf75d73ff6711cd0b29de85"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000000000012fd60ffffffffffffffffffffffffffffffffffffffffffffffffffdc790d903f00000000000000000000000000000000057c57663c0075afba58766f7c8a4e12403500000000000000000000000000000000000000000000000000000000000004f5000000000000000000000000000000000000000000000000000000000008fb2e0000000000000000000000000000000000000000000000000000000000000dab"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000000000012fd60"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973379352
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "PANCAKESWAP_SMART",
+    "family": "V2",
+    "block": "0x18fa124",
+    "pool": [
+      "0x2E8135bE71230c6B1B4045696d41C09Db0414226"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24874620",
+    "minOut": "24750246",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "112063",
+    "transactionDigest": "9e4d52dd5cacb3703ac05c513038b11b27799454c62d3f6a14c0227494fa19ed",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0xdb8dfdb9e10400c36fae415f58c5d4a6a573b28e2bd1e25a6328623a2112d3f6",
+    "quote": {
+      "id": "76229ba87169daba05ef6e2edf04613c85243027e0e02b88219e7e549c84d5cc",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "PancakeSwap",
+      "mode": "PANCAKESWAP_SMART",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24874620",
+      "minAmountOut": "24750246",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": 26.68,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "PancakeSwap",
+          "poolType": "V2",
+          "pool": "0x2E8135bE71230c6B1B4045696d41C09Db0414226",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "shareBps": 10000,
+          "branch": 0,
+          "amountIn": "10000000000000000",
+          "amountOut": "24874620"
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973390712,
+      "expiresAt": 1791973410712,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x65b382653f7C31bC0Af67f188122035461ec9C76",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf582200000000000000000000000000000000000000000000000000000000000000020b080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc10000000000000000000000000000000000000000000000000000000000000179a8a600000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76",
+          "0x0000000000000000000000002e8135be71230c6b1b4045696d41c09db0414226"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000002e8135be71230c6b1b4045696d41c09db0414226",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017b8e7c"
+      },
+      {
+        "address": "0x2e8135be71230c6b1b4045696d41c09db0414226",
+        "topics": [
+          "0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000000000225c8b92ce0000000000000000000000000000000000000000000000033573aa592fd7b042"
+      },
+      {
+        "address": "0x2e8135be71230c6b1b4045696d41c09db0414226",
+        "topics": [
+          "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000017b8e7c0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973390712
+  },
+  {
+    "chain": "1",
+    "scenario": "standard",
+    "provider": "PANCAKESWAP_SMART",
+    "family": "V3",
+    "block": "0x18fa124",
+    "pool": [
+      "0x1445F32D1A74872bA41f3D8cF4022E9996120b31"
+    ],
+    "status": "PASS",
+    "hiddenTokenDebits": 0,
+    "unexpectedNativeMovement": false,
+    "localFundingSteps": [],
+    "output": "24976805",
+    "minOut": "24851920",
+    "input": "10000000000000000",
+    "amountIn": "10000000000000000",
+    "gas": "153801",
+    "transactionDigest": "a7acbc523200cebeb1d0fff81dd1175a7821a0728307fc3f0a1fa19739a58a64",
+    "intent": {
+      "ecosystem": "EVM",
+      "chain": "1",
+      "taker": "0x3333333333333333333333333333333333333333",
+      "recipient": "0x3333333333333333333333333333333333333333",
+      "tokenIn": {
+        "chain": "1",
+        "address": "0x0000000000000000000000000000000000000000",
+        "native": true,
+        "decimals": 18,
+        "symbol": "ETH"
+      },
+      "tokenOut": {
+        "chain": "1",
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "native": false,
+        "decimals": 6,
+        "symbol": "USDC"
+      },
+      "kind": "EXACT_IN",
+      "amount": "10000000000000000",
+      "slippage": {
+        "mode": "AUTO",
+        "bps": 50
+      },
+      "preference": "RECOMMENDED",
+      "walletEpoch": 2,
+      "portfolioRevision": "fixture",
+      "expiresAt": 1791973677854
+    },
+    "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+    "routerCodehash": "0xdb8dfdb9e10400c36fae415f58c5d4a6a573b28e2bd1e25a6328623a2112d3f6",
+    "quote": {
+      "id": "70c3a8bad8c092f206b1f87088a5e32fc4a98e0c3f79a998a7ea2ca00ad760e7",
+      "intentDigest": "d52fcdf5bc1a6f2bf59a3bb414c6c75833c022e80e46b349e368481f790e9659",
+      "provider": "PancakeSwap",
+      "mode": "PANCAKESWAP_SMART",
+      "chain": "1",
+      "ecosystem": "EVM",
+      "amountIn": "10000000000000000",
+      "amountOut": "24976805",
+      "minAmountOut": "24851920",
+      "maxAmountIn": "10000000000000000",
+      "costs": [
+        {
+          "kind": "PLATFORM",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "INDEPENDENT"
+        },
+        {
+          "kind": "PROVIDER",
+          "amount": "0",
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": "0",
+          "evidence": "PROVIDER"
+        },
+        {
+          "kind": "PROTOCOL",
+          "amount": null,
+          "token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "included": true,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        },
+        {
+          "kind": "NETWORK",
+          "amount": null,
+          "token": "native",
+          "included": false,
+          "usdMicros": null,
+          "evidence": "UNKNOWN"
+        }
+      ],
+      "priceImpactBps": 1.2,
+      "slippageBps": 50,
+      "route": [
+        {
+          "venue": "PancakeSwap",
+          "poolType": "V3",
+          "pool": "0x1445F32D1A74872bA41f3D8cF4022E9996120b31",
+          "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "shareBps": 10000,
+          "branch": 0,
+          "amountIn": "10000000000000000",
+          "amountOut": "24976805",
+          "fee": 100
+        }
+      ],
+      "hops": 1,
+      "splitCount": 1,
+      "quotedAt": 1791973390999,
+      "expiresAt": 1791973410999,
+      "sourceBlock": "26190116",
+      "latencyMs": 0,
+      "simulation": "NOT_RUN",
+      "build": "UNSIGNED_BUILD",
+      "review": "BUILD_REVIEW_REQUIRED",
+      "outputUsdMicros": null,
+      "inputUsdMicros": null,
+      "valuation": "UNKNOWN"
+    },
+    "transaction": {
+      "ecosystem": "EVM",
+      "chainId": "1",
+      "from": "0x3333333333333333333333333333333333333333",
+      "to": "0x65b382653f7C31bC0Af67f188122035461ec9C76",
+      "value": "10000000000000000",
+      "data": "0x3593564c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000006acf582200000000000000000000000000000000000000000000000000000000000000020b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000003333333333333333333333333333333333333333000000000000000000000000000000000000000000000000002386f26fc1000000000000000000000000000000000000000000000000000000000000017b35d000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002bc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2000064a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000000000000000000000"
+    },
+    "logs": [
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x0000000000000000000000001445f32d1a74872ba41f3d8cf4022e9996120b31",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000000000017d1da5"
+      },
+      {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "topics": [
+          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76",
+          "0x0000000000000000000000001445f32d1a74872ba41f3d8cf4022e9996120b31"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000"
+      },
+      {
+        "address": "0x1445f32d1a74872ba41f3d8cf4022e9996120b31",
+        "topics": [
+          "0x19b47279256b2a23a1665c810c8d55a1758940ee09377d4f8d26497a3577dc83",
+          "0x00000000000000000000000065b382653f7c31bc0af67f188122035461ec9c76",
+          "0x0000000000000000000000003333333333333333333333333333333333333333"
+        ],
+        "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffe82e25b000000000000000000000000000000000000000000000000002386f26fc100000000000000000000000000000000000000004e287ae99c7ac050f9240bdb4118000000000000000000000000000000000000000000000000005a6e930724c70400000000000000000000000000000000000000000000000000000000000305c800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004cd5886400"
+      }
+    ],
+    "returnData": "0x",
+    "simulation": "UNSIGNED_LOCAL_EVM_CALL",
+    "funding": "IN_MEMORY_ONLY",
+    "broadcasts": 0,
+    "sourceBlockHash": "0x5750573618bc69d65e1779a9d527aa720f1de06a687ea67c879ea2ad4c844923",
+    "simulationTimestamp": 1791973390999
+  }
+]

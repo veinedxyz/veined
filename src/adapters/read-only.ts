@@ -7,6 +7,8 @@ import {
   encodeFunctionData,
   erc20Abi,
   toEventSelector,
+  keccak256,
+  toHex,
 } from "viem";
 import { z } from "zod";
 import {
@@ -53,7 +55,11 @@ export function publicIp(ip: string): boolean {
     );
   }
   return (
-    isIP(ip) === 6 && /^2[0-9a-f]{3}:/i.test(ip) && !/^2001:(db8|0):/i.test(ip)
+    isIP(ip) === 6 &&
+    /^2[0-9a-f]{3}:/i.test(ip) &&
+    // Documentation, Teredo and 6to4 (which can embed private IPv4) are not public targets.
+    !/^2001:(db8|0):/i.test(ip) &&
+    !/^2002:/i.test(ip)
   );
 }
 export async function boundedRequest(
@@ -168,6 +174,12 @@ export async function boundedRequest(
   });
 }
 const hex = z.string().regex(/^0x[0-9a-f]*$/i);
+const TRUST_ROLES = new Set([
+  "0x0000000000000000000000000000000000000000000000000000000000000000",
+  keccak256(toHex("ADMIN_ROLE")),
+  keccak256(toHex("VALIDATOR_ROLE")),
+  keccak256(toHex("VERIFIER_ROLE")),
+]);
 export function validateRpc(method: string, params: unknown[]) {
   const zero = ["eth_chainId", "eth_blockNumber", "eth_gasPrice"];
   if (zero.includes(method) && params.length === 0) return;
@@ -300,6 +312,22 @@ export function validateRpc(method: string, params: unknown[]) {
             abi: nativeReadAbi,
             data: view.data.data as `0x${string}`,
           });
+          // Settlement-trust reads: only the pinned role sets may be enumerated.
+          if (decoded.functionName === "getRoleMembers") {
+            if (TRUST_ROLES.has(String(decoded.args[0]).toLowerCase())) return;
+            throw new BridgeError("RPC_NOT_ALLOWED");
+          }
+          // Pending records are addressed by (route chain, uint index), not (chain, token).
+          if (decoded.functionName === "getPendingArguments") {
+            if (
+              ([56n, 612055n] as readonly unknown[]).includes(
+                decoded.args[0],
+              ) &&
+              typeof decoded.args[1] === "bigint"
+            )
+              return;
+            throw new BridgeError("RPC_NOT_ALLOWED");
+          }
           if (
             decoded.args?.length &&
             (!([56n, 612055n] as readonly unknown[]).includes(

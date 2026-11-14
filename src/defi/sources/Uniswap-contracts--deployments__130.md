@@ -1,0 +1,1032 @@
+# contracts
+
+
+### Table of Contents
+- [Summary](#summary)
+- [Contracts](#contracts)
+	- [E R C7914 Detector](#e-r-c7914-detector)
+	- [Calibur Entry](#calibur-entry)
+	- [W E T H Hook](#w-e-t-h-hook)
+	- [Position Descriptor](#position-descriptor)
+	- [Position Manager](#position-manager)
+	- [V4 Quoter](#v4-quoter)
+	- [State View](#state-view)
+	- [Universal Router](#universal-router)
+	- [Universal Router (v2.1.2)](#universal-router-v2.1.2)
+	- [Uniswap V2 Router02](#uniswap-v2-router02)
+	- [Uniswap Interface Multicall](#uniswap-interface-multicall)
+	- [Quoter V2](#quoter-v2)
+	- [Tick Lens](#tick-lens)
+	- [N F T Descriptor](#n-f-t-descriptor)
+	- [Nonfungible Token Position Descriptor](#nonfungible-token-position-descriptor)
+	- [Nonfungible Position Manager](#nonfungible-position-manager)
+	- [V3 Migrator](#v3-migrator)
+	- [Quoter](#quoter)
+	- [Swap Router02](#swap-router02)
+	- [Fee On Transfer Detector](#fee-on-transfer-detector)
+	- [Pool Manager](#pool-manager)
+- [Deployment History](#deployment-history)
+	- [Thu Nov 20 2025](#thu-nov-20-2025)
+	- [Wed Aug 27 2025](#wed-aug-27-2025)
+	- [Fri May 23 2025](#fri-may-23-2025)
+	- [Fri May 02 2025](#fri-may-02-2025)
+	- [Wed Jan 22 2025](#wed-jan-22-2025)
+	- [Fri Nov 08 2024](#fri-nov-08-2024)
+	- [Mon Nov 04 2024](#mon-nov-04-2024)
+
+## Summary
+<table>
+<tr>
+    <th>Contract</th>
+    <th>Address</th>
+    <th>Version</th>
+</tr><tr>
+    <td>ERC7914Detector</td>
+    <td><a href="https://uniscan.xyz/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e" target="_blank">0xc470458fc6a7e43471b31e6a2eb2612215a7102e</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>CaliburEntry</td>
+    <td><a href="https://uniscan.xyz/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00" target="_blank">0x000000009b1d0af20d8c6d0a44e162d11f9b8f00</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>WETHHook</td>
+    <td><a href="https://uniscan.xyz/address/0x730b109bad65152c67ecc94eb8b0968603dba888" target="_blank">0x730b109bad65152c67ecc94eb8b0968603dba888</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionDescriptor</td>
+    <td><a href="https://uniscan.xyz/address/0x9fb28449a191cd8c03a1b7abfb0f5996ecf7f722" target="_blank">0x9fb28449a191cd8c03a1b7abfb0f5996ecf7f722</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PositionManager</td>
+    <td><a href="https://uniscan.xyz/address/0x4529a01c7a0410167c5740c487a8de60232617bf" target="_blank">0x4529a01c7a0410167c5740c487a8de60232617bf</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V4Quoter</td>
+    <td><a href="https://uniscan.xyz/address/0x333e3c607b141b18ff6de9f258db6e77fe7491e0" target="_blank">0x333e3c607b141b18ff6de9f258db6e77fe7491e0</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>StateView</td>
+    <td><a href="https://uniscan.xyz/address/0x86e8631a016f9068c3f085faf484ee3f5fdee8f2" target="_blank">0x86e8631a016f9068c3f085faf484ee3f5fdee8f2</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter</td>
+    <td><a href="https://uniscan.xyz/address/0xD1b797D92d87B688193A2B976eFc8D577D204343" target="_blank">0xD1b797D92d87B688193A2B976eFc8D577D204343</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniversalRouter#v2.1.2</td>
+    <td><a href="https://uniscan.xyz/address/0xD1b797D92d87B688193A2B976eFc8D577D204343" target="_blank">0xD1b797D92d87B688193A2B976eFc8D577D204343</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapV2Router02</td>
+    <td><a href="https://uniscan.xyz/address/0x284f11109359a7e1306c3e447ef14d38400063ff" target="_blank">0x284f11109359a7e1306c3e447ef14d38400063ff</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>UniswapInterfaceMulticall</td>
+    <td><a href="https://uniscan.xyz/address/0xb7610f9b733e7d45184be3a1bc966960ccc54f0b" target="_blank">0xb7610f9b733e7d45184be3a1bc966960ccc54f0b</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>QuoterV2</td>
+    <td><a href="https://uniscan.xyz/address/0x385a5cf5f83e99f7bb2852b6a19c3538b9fa7658" target="_blank">0x385a5cf5f83e99f7bb2852b6a19c3538b9fa7658</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>TickLens</td>
+    <td><a href="https://uniscan.xyz/address/0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443" target="_blank">0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NFTDescriptor</td>
+    <td><a href="https://uniscan.xyz/address/0x2f6182205bc7f3864169cef4af3128055f79ab2f" target="_blank">0x2f6182205bc7f3864169cef4af3128055f79ab2f</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungibleTokenPositionDescriptor</td>
+    <td><a href="https://uniscan.xyz/address/0x0dfa04b28ab68ffd0e6e17fac6ec16d4846a2004" target="_blank">0x0dfa04b28ab68ffd0e6e17fac6ec16d4846a2004</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>NonfungiblePositionManager</td>
+    <td><a href="https://uniscan.xyz/address/0x943e6e07a7e8e791dafc44083e54041d743c46e9" target="_blank">0x943e6e07a7e8e791dafc44083e54041d743c46e9</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>V3Migrator</td>
+    <td><a href="https://uniscan.xyz/address/0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc" target="_blank">0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>Quoter</td>
+    <td><a href="https://uniscan.xyz/address/0x565ac8c7863d9bb16d07e809ff49fe5cd467634c" target="_blank">0x565ac8c7863d9bb16d07e809ff49fe5cd467634c</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>SwapRouter02</td>
+    <td><a href="https://uniscan.xyz/address/0x73855d06de49d0fe4a9c42636ba96c62da12ff9c" target="_blank">0x73855d06de49d0fe4a9c42636ba96c62da12ff9c</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>FeeOnTransferDetector</td>
+    <td><a href="https://uniscan.xyz/address/0x55e74a5c3310bbccdd0b655ade2309e0d0d25826" target="_blank">0x55e74a5c3310bbccdd0b655ade2309e0d0d25826</a></td>
+    <td>N/A</td>
+    </tr>
+<tr>
+    <td>PoolManager</td>
+    <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    <td>N/A</td>
+    </tr></table>
+
+## Contracts
+
+### E R C7914 Detector
+
+Address: [0xc470458fc6a7e43471b31e6a2eb2612215a7102e](https://uniscan.xyz/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e)
+
+Deployment Transaction: [0xbec3c59bc540a2816c38d59072d375bb94ab3eb64d3377f6194e19928e5055b4](https://uniscan.xyz/tx/0xbec3c59bc540a2816c38d59072d375bb94ab3eb64d3377f6194e19928e5055b4)
+
+
+
+Commit Hash: [320811c](https://github.com/Uniswap/contracts/commit/320811c)
+
+Wed, 27 Aug 2025 20:28:39 UTC
+
+
+
+---
+
+### Calibur Entry
+
+Address: [0x000000009b1d0af20d8c6d0a44e162d11f9b8f00](https://uniscan.xyz/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00)
+
+Deployment Transaction: [0x3c7fe24fc0319f1597d783bfd792aa4a4051847234eb26ba5f3bb1d6f14fdbf7](https://uniscan.xyz/tx/0x3c7fe24fc0319f1597d783bfd792aa4a4051847234eb26ba5f3bb1d6f14fdbf7)
+
+
+
+Commit Hash: [0a52cd5](https://github.com/Uniswap/contracts/commit/0a52cd5)
+
+Fri, 23 May 2025 19:35:20 UTC
+
+
+
+---
+
+### W E T H Hook
+
+Address: [0x730b109bad65152c67ecc94eb8b0968603dba888](https://uniscan.xyz/address/0x730b109bad65152c67ecc94eb8b0968603dba888)
+
+Deployment Transaction: [0xd1bd2428515d7d82628d89949978f517fec75f3f41b38b59434dfa5ac5dac90f](https://uniscan.xyz/tx/0xd1bd2428515d7d82628d89949978f517fec75f3f41b38b59434dfa5ac5dac90f)
+
+
+
+Commit Hash: [c797b9e](https://github.com/Uniswap/contracts/commit/c797b9e)
+
+Fri, 02 May 2025 19:35:21 UTC
+
+
+
+---
+
+### Position Descriptor
+
+Address: [0x9fb28449a191cd8c03a1b7abfb0f5996ecf7f722](https://uniscan.xyz/address/0x9fb28449a191cd8c03a1b7abfb0f5996ecf7f722)
+
+Deployment Transaction: [0x86f8f6510d17aaafa452e052fe0a50479145abe63373bf6f60d49a2790c55288](https://uniscan.xyz/tx/0x86f8f6510d17aaafa452e052fe0a50479145abe63373bf6f60d49a2790c55288)
+
+
+
+Commit Hash: [417770f](https://github.com/Uniswap/contracts/commit/417770f)
+
+Wed, 22 Jan 2025 17:49:16 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0x8be6f6785b71c16ca238abbcdd3f33271969c305](https://uniscan.xyz/address/0x8be6f6785b71c16ca238abbcdd3f33271969c305)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://uniscan.xyz/address/0x8be6f6785b71c16ca238abbcdd3f33271969c305" target="_blank">0x8be6f6785b71c16ca238abbcdd3f33271969c305</a></td>
+          <td><a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### Position Manager
+
+Address: [0x4529a01c7a0410167c5740c487a8de60232617bf](https://uniscan.xyz/address/0x4529a01c7a0410167c5740c487a8de60232617bf)
+
+Deployment Transaction: [0x51161eb65e19fabceb5de42cf48b3d4d283fa9d455c755d2f2fbf7b91b77d9ee](https://uniscan.xyz/tx/0x51161eb65e19fabceb5de42cf48b3d4d283fa9d455c755d2f2fbf7b91b77d9ee)
+
+
+
+Commit Hash: [417770f](https://github.com/Uniswap/contracts/commit/417770f)
+
+Wed, 22 Jan 2025 17:49:16 UTC
+
+
+
+---
+
+### V4 Quoter
+
+Address: [0x333e3c607b141b18ff6de9f258db6e77fe7491e0](https://uniscan.xyz/address/0x333e3c607b141b18ff6de9f258db6e77fe7491e0)
+
+Deployment Transaction: [0xd017255a7c984031cc1577095b26f3eb71de25fcc8ce5fe0e330c8539dcfe073](https://uniscan.xyz/tx/0xd017255a7c984031cc1577095b26f3eb71de25fcc8ce5fe0e330c8539dcfe073)
+
+
+
+Commit Hash: [417770f](https://github.com/Uniswap/contracts/commit/417770f)
+
+Wed, 22 Jan 2025 17:49:16 UTC
+
+
+
+---
+
+### State View
+
+Address: [0x86e8631a016f9068c3f085faf484ee3f5fdee8f2](https://uniscan.xyz/address/0x86e8631a016f9068c3f085faf484ee3f5fdee8f2)
+
+Deployment Transaction: [0xa661aabf0b39113be264ffa38d73be6a71c259a00c217741e26c883761d906f4](https://uniscan.xyz/tx/0xa661aabf0b39113be264ffa38d73be6a71c259a00c217741e26c883761d906f4)
+
+
+
+Commit Hash: [417770f](https://github.com/Uniswap/contracts/commit/417770f)
+
+Wed, 22 Jan 2025 17:49:16 UTC
+
+
+
+---
+
+### Universal Router
+
+Address: [0xD1b797D92d87B688193A2B976eFc8D577D204343](https://uniscan.xyz/address/0xD1b797D92d87B688193A2B976eFc8D577D204343)
+
+Deployment Transaction: [0x581066492fbe222dd12498d2b4653561aac0e0f08c9813b8a0237891541bd895](https://uniscan.xyz/tx/0x581066492fbe222dd12498d2b4653561aac0e0f08c9813b8a0237891541bd895)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 22:07:25 UTC
+
+
+
+---
+
+### Universal Router (v2.1.2)
+
+Address: [0xD1b797D92d87B688193A2B976eFc8D577D204343](https://uniscan.xyz/address/0xD1b797D92d87B688193A2B976eFc8D577D204343)
+
+Deployment Transaction: [0x581066492fbe222dd12498d2b4653561aac0e0f08c9813b8a0237891541bd895](https://uniscan.xyz/tx/0x581066492fbe222dd12498d2b4653561aac0e0f08c9813b8a0237891541bd895)
+
+
+
+Commit Hash: [802fe4c](https://github.com/Uniswap/universal-router/commit/802fe4c)
+
+Thu, 17 Sep 2026 22:07:25 UTC
+
+
+
+---
+
+### Uniswap V2 Router02
+
+Address: [0x284f11109359a7e1306c3e447ef14d38400063ff](https://uniscan.xyz/address/0x284f11109359a7e1306c3e447ef14d38400063ff)
+
+Deployment Transaction: [0x875c8ceb1eb2e79d6641db6d3c0f8bca2c5bd51cb0966c75d27b7fa8be80ab02](https://uniscan.xyz/tx/0x875c8ceb1eb2e79d6641db6d3c0f8bca2c5bd51cb0966c75d27b7fa8be80ab02)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Uniswap Interface Multicall
+
+Address: [0xb7610f9b733e7d45184be3a1bc966960ccc54f0b](https://uniscan.xyz/address/0xb7610f9b733e7d45184be3a1bc966960ccc54f0b)
+
+Deployment Transaction: [0xc271a787c2ef97c21e58012f2e72b470933c068c86eca28d56240aacfda33a2f](https://uniscan.xyz/tx/0xc271a787c2ef97c21e58012f2e72b470933c068c86eca28d56240aacfda33a2f)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Quoter V2
+
+Address: [0x385a5cf5f83e99f7bb2852b6a19c3538b9fa7658](https://uniscan.xyz/address/0x385a5cf5f83e99f7bb2852b6a19c3538b9fa7658)
+
+Deployment Transaction: [0x376cb78b158d6731f95d34b2bfbefb9396bf49b84a89987db8d2e0cd731557a9](https://uniscan.xyz/tx/0x376cb78b158d6731f95d34b2bfbefb9396bf49b84a89987db8d2e0cd731557a9)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Tick Lens
+
+Address: [0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443](https://uniscan.xyz/address/0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443)
+
+Deployment Transaction: [0xd8be4256aee637152874cf89e6d7f365b7ce4af9f0879fa4996f081b095bc2b7](https://uniscan.xyz/tx/0xd8be4256aee637152874cf89e6d7f365b7ce4af9f0879fa4996f081b095bc2b7)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### N F T Descriptor
+
+Address: [0x2f6182205bc7f3864169cef4af3128055f79ab2f](https://uniscan.xyz/address/0x2f6182205bc7f3864169cef4af3128055f79ab2f)
+
+Deployment Transaction: [0xda1397d41f1cde4d9469d5a7a7734ba32f717072a7b682795713be5c3e5b21db](https://uniscan.xyz/tx/0xda1397d41f1cde4d9469d5a7a7734ba32f717072a7b682795713be5c3e5b21db)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Nonfungible Token Position Descriptor
+
+Address: [0x0dfa04b28ab68ffd0e6e17fac6ec16d4846a2004](https://uniscan.xyz/address/0x0dfa04b28ab68ffd0e6e17fac6ec16d4846a2004)
+
+Deployment Transaction: [0xc04b531f3ff842dffd44b697e0c3200174a309cf735b8c0b33c6226f1bc7813f](https://uniscan.xyz/tx/0xc04b531f3ff842dffd44b697e0c3200174a309cf735b8c0b33c6226f1bc7813f)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+_Proxy Information_
+
+
+
+Proxy Type: TransparentUpgradeableProxy
+
+
+
+Implementation: [0x477d03877c1a8afddc4b7945cceb01f4ff907429](https://uniscan.xyz/address/0x477d03877c1a8afddc4b7945cceb01f4ff907429)
+
+
+
+Proxy Admin: [0x96df89210cdd66997472aec13242934d30ed8de8](https://uniscan.xyz/address/0x96df89210cdd66997472aec13242934d30ed8de8)
+
+
+
+  <details>
+  <summary>Implementation History</summary>
+  <table>
+      <tr>
+          <th>Version</th>
+          <th>Address</th>
+          <th>Commit Hash</th>
+      </tr>
+      <tr>
+          <td>N/A</td>
+          <td><a href="https://uniscan.xyz/address/0x477d03877c1a8afddc4b7945cceb01f4ff907429" target="_blank">0x477d03877c1a8afddc4b7945cceb01f4ff907429</a></td>
+          <td><a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+      </tr>
+  </table>
+  </details>
+    
+
+---
+
+### Nonfungible Position Manager
+
+Address: [0x943e6e07a7e8e791dafc44083e54041d743c46e9](https://uniscan.xyz/address/0x943e6e07a7e8e791dafc44083e54041d743c46e9)
+
+Deployment Transaction: [0x3432429d30f964476512a0b1db6ca587694a492669907e59972386ba8f7cc69b](https://uniscan.xyz/tx/0x3432429d30f964476512a0b1db6ca587694a492669907e59972386ba8f7cc69b)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### V3 Migrator
+
+Address: [0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc](https://uniscan.xyz/address/0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc)
+
+Deployment Transaction: [0xa3ab7a1cca6ee96f948c048c65113a6bf9684bfdf4da922b4ce5eff1658c2de0](https://uniscan.xyz/tx/0xa3ab7a1cca6ee96f948c048c65113a6bf9684bfdf4da922b4ce5eff1658c2de0)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Quoter
+
+Address: [0x565ac8c7863d9bb16d07e809ff49fe5cd467634c](https://uniscan.xyz/address/0x565ac8c7863d9bb16d07e809ff49fe5cd467634c)
+
+Deployment Transaction: [0x1fc40ce3574d9fcf3768075bbcdda628dcdcd24be29bee022b27ddc6ccc12ec9](https://uniscan.xyz/tx/0x1fc40ce3574d9fcf3768075bbcdda628dcdcd24be29bee022b27ddc6ccc12ec9)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Swap Router02
+
+Address: [0x73855d06de49d0fe4a9c42636ba96c62da12ff9c](https://uniscan.xyz/address/0x73855d06de49d0fe4a9c42636ba96c62da12ff9c)
+
+Deployment Transaction: [0x632b122010b65269964201edab41a9e4a8f91d6d71b986945e89c5e98e3a1c1e](https://uniscan.xyz/tx/0x632b122010b65269964201edab41a9e4a8f91d6d71b986945e89c5e98e3a1c1e)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Fee On Transfer Detector
+
+Address: [0x55e74a5c3310bbccdd0b655ade2309e0d0d25826](https://uniscan.xyz/address/0x55e74a5c3310bbccdd0b655ade2309e0d0d25826)
+
+Deployment Transaction: [0x49bcd22f916527fdc918f7e0442494cd92dbaebaa1b0d9746d9c4a051ed71b2e](https://uniscan.xyz/tx/0x49bcd22f916527fdc918f7e0442494cd92dbaebaa1b0d9746d9c4a051ed71b2e)
+
+
+
+Commit Hash: [941946a](https://github.com/Uniswap/contracts/commit/941946a)
+
+Fri, 08 Nov 2024 05:08:34 UTC
+
+
+
+---
+
+### Pool Manager
+
+Address: [0x1F98400000000000000000000000000000000004](https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004)
+
+Deployment Transaction: [GENESIS_1f98400000000000000000000000000000000004](https://uniscan.xyz/tx/GENESIS_1f98400000000000000000000000000000000004)
+
+
+
+
+
+Mon, 04 Nov 2024 19:26:00 UTC
+
+
+
+## Deployment History
+
+
+### Thu Nov 20 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xe6039ae5b44f90d56c6b029354fb22999861a9a0">Universal Router</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/c0b6b96" target="_blank">c0b6b96</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","v2Factory":"0x1F98400000000000000000000000000000000002","v3Factory":"0x1F98400000000000000000000000000000000003","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x1F98400000000000000000000000000000000004","v3NFTPositionManager":"0x943e6e07a7E8E791dAFC44083e54041D743C46E9","v4PositionManager":"0x4529A01c7A0410167c5740C487A8DE60232617bf","spokePool":"0x09aea4b2242abC8bb4BB78D537A67a245A7bEC6"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Aug 27 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xc470458fc6a7e43471b31e6a2eb2612215a7102e">E R C7914 Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_caliburAddress</td>
+      <td><a href="https://uniscan.xyz/address/0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00" target="_blank">0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xbb4ea619b4f348e8955cd85934d9705efebd3b12">E R C7914 Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/320811c" target="_blank">320811c</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_caliburAddress</td>
+      <td><a href="https://uniscan.xyz/address/0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00" target="_blank">0x000000009B1D0aF20D8C6d0A44e162d11F9b8f00</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 23 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x000000009b1d0af20d8c6d0a44e162d11f9b8f00">Calibur Entry</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/0a52cd5" target="_blank">0a52cd5</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri May 02 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x730b109bad65152c67ecc94eb8b0968603dba888">W E T H Hook</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/c797b9e" target="_blank">c797b9e</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_manager</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    </tr>
+    <tr>
+      <td>_weth</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Wed Jan 22 2025
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x9fb28449a191cd8c03a1b7abfb0f5996ecf7f722">Position Descriptor</a> (<a href="https://uniscan.xyz/address/0x8be6f6785b71c16ca238abbcdd3f33271969c305">Implementation</a>)
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    </tr>
+    <tr>
+      <td>_wrappedNative</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_nativeCurrencyLabelBytes</td>
+      <td><a href="https://uniscan.xyz/tx/0x4554480000000000000000000000000000000000000000000000000000000000" target="_blank">0x4554480000000000000000000000000000000000000000000000000000000000</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x4529a01c7a0410167c5740c487a8de60232617bf">Position Manager</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    </tr>
+    <tr>
+      <td>_permit2</td>
+      <td><a href="https://uniscan.xyz/address/0x000000000022D473030F116dDEE9F6B43aC78BA3" target="_blank">0x000000000022D473030F116dDEE9F6B43aC78BA3</a></td>
+    </tr>
+    <tr>
+      <td>_unsubscribeGasLimit</td>
+      <td>300000</td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor</td>
+      <td><a href="https://uniscan.xyz/address/0x9fb28449a191CD8C03a1B7abfb0F5996ECf7f722" target="_blank">0x9fb28449a191CD8C03a1B7abfb0F5996ECf7f722</a></td>
+    </tr>
+    <tr>
+      <td>_weth9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x333e3c607b141b18ff6de9f258db6e77fe7491e0">V4 Quoter</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x86e8631a016f9068c3f085faf484ee3f5fdee8f2">State View</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_poolManager</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004" target="_blank">0x1F98400000000000000000000000000000000004</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xef740bf23acae26f6492b10de645d6b98dc8eaf3">Universal Router</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/417770f" target="_blank">417770f</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>params</td>
+      <td>{"permit2":"0x000000000022D473030F116dDEE9F6B43aC78BA3","weth9":"0x4200000000000000000000000000000000000006","v2Factory":"0x1F98400000000000000000000000000000000002","v3Factory":"0x1F98400000000000000000000000000000000003","pairInitCodeHash":"0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f","poolInitCodeHash":"0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54","v4PoolManager":"0x1F98400000000000000000000000000000000004","v3NFTPositionManager":"0x943e6e07a7E8E791dAFC44083e54041D743C46E9","v4PositionManager":"0x4529A01c7A0410167c5740C487A8DE60232617b"}</td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Fri Nov 08 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x284f11109359a7e1306c3e447ef14d38400063ff">Uniswap V2 Router02</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000002" target="_blank">0x1F98400000000000000000000000000000000002</a></td>
+    </tr>
+    <tr>
+      <td>_WETH</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xb7610f9b733e7d45184be3a1bc966960ccc54f0b">Uniswap Interface Multicall</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x385a5cf5f83e99f7bb2852b6a19c3538b9fa7658">Quoter V2</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://uniscan.xyz/address/0x1f98400000000000000000000000000000000003" target="_blank">0x1f98400000000000000000000000000000000003</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xd5d76fa166ab8d8ad4c9f61aaa81457b66cbe443">Tick Lens</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x2f6182205bc7f3864169cef4af3128055f79ab2f">N F T Descriptor</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x0dfa04b28ab68ffd0e6e17fac6ec16d4846a2004">Nonfungible Token Position Descriptor</a> (<a href="https://uniscan.xyz/address/0x477d03877c1a8afddc4b7945cceb01f4ff907429">Implementation</a>)
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_nativeCurrencyLabelBytes</td>
+      <td>4554480000000000000000000000000000000000000000000000000000000000</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x943e6e07a7e8e791dafc44083e54041d743c46e9">Nonfungible Position Manager</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000003" target="_blank">0x1F98400000000000000000000000000000000003</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_tokenDescriptor_</td>
+      <td><a href="https://uniscan.xyz/address/0x0Dfa04B28ab68fFD0e6e17FaC6ec16D4846a2004" target="_blank">0x0Dfa04B28ab68fFD0e6e17FaC6ec16D4846a2004</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0xb9d0c246f306b1aaf02ae6ba112d5ef25e5b60dc">V3 Migrator</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000003" target="_blank">0x1F98400000000000000000000000000000000003</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+    <tr>
+      <td>_nonfungiblePositionManager</td>
+      <td><a href="https://uniscan.xyz/address/0x943e6e07a7E8E791dAFC44083e54041D743C46E9" target="_blank">0x943e6e07a7E8E791dAFC44083e54041D743C46E9</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x565ac8c7863d9bb16d07e809ff49fe5cd467634c">Quoter</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factory</td>
+      <td><a href="https://uniscan.xyz/address/0x1f98400000000000000000000000000000000003" target="_blank">0x1f98400000000000000000000000000000000003</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x73855d06de49d0fe4a9c42636ba96c62da12ff9c">Swap Router02</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000002" target="_blank">0x1F98400000000000000000000000000000000002</a></td>
+    </tr>
+    <tr>
+      <td>factoryV3</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000003" target="_blank">0x1F98400000000000000000000000000000000003</a></td>
+    </tr>
+    <tr>
+      <td>_positionManager</td>
+      <td><a href="https://uniscan.xyz/address/0x943e6e07a7E8E791dAFC44083e54041D743C46E9" target="_blank">0x943e6e07a7E8E791dAFC44083e54041D743C46E9</a></td>
+    </tr>
+    <tr>
+      <td>_WETH9</td>
+      <td><a href="https://uniscan.xyz/address/0x4200000000000000000000000000000000000006" target="_blank">0x4200000000000000000000000000000000000006</a></td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x55e74a5c3310bbccdd0b655ade2309e0d0d25826">Fee On Transfer Detector</a>
+  </summary>
+  <table>
+    <tr>
+      <td>Commit hash: <a href="https://github.com/Uniswap/contracts/commit/941946a" target="_blank">941946a</a></td>
+    </tr>
+<tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>_factoryV2</td>
+      <td><a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000002" target="_blank">0x1F98400000000000000000000000000000000002</a></td>
+    </tr>
+  </table>
+</details>
+  
+
+
+### Mon Nov 04 2024
+
+  
+
+Deployed contracts:
+
+<details>
+  <summary>
+    <a href="https://uniscan.xyz/address/0x1F98400000000000000000000000000000000004">Pool Manager</a>
+  </summary>
+  <table>
+    
+  </table>
+</details>
+  

@@ -1,0 +1,453 @@
+/* ==========================================================================================================
+   VWP G08 — Almanac, landing: the descent is printed, not boxed.
+   The hero keeps the owner's film and the scroll-driven ocean stage. Below it every section is a shore line: a tide
+   line divides one depth from the next, readings are ruled on open water, and the illustrative figures are set like
+   almanac tables (still labelled "Illustrative preview"). No panel frames, no section numbers, no kicker labels.
+   ========================================================================================================== */
+
+.mk {
+  --alm-shore: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath d='M0 12C60 4 120 4 180 12S300 20 360 12 460 6 520 12 620 17 680 12 760 8 820 12 900 15 960 12 1080 10 1200 12' fill='none' stroke='%23000' stroke-width='1.2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+}
+.mk .mk-button {
+  border-radius: 10px;
+}
+
+/* ---------- Hero ---------- */
+.mk .ocean-landing .mk-hero h1 {
+  font-size: clamp(46px, 4.6vw + 12px, 96px);
+  font-weight: 640;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.mk .ocean-landing .mk-hero .mk-lede {
+  max-width: 40rem;
+}
+.mk .ocean-landing .mk-hero-copy::after {
+  content: "";
+  display: block;
+  width: min(100%, 520px);
+  height: 20px;
+  margin-top: 26px;
+  background: rgb(var(--alm-act-rgb) / 0.7);
+  -webkit-mask: var(--alm-tide) no-repeat 0 50% / 100% 100%;
+  mask: var(--alm-tide) no-repeat 0 50% / 100% 100%;
+  animation: alm-tide 1200ms var(--alm-ease) 200ms both;
+}
+[dir="rtl"] .mk .ocean-landing .mk-hero-copy::after {
+  scale: -1 1;
+}
+.mk .ocean-landing .mk-assure {
+  gap: 10px 22px;
+}
+
+/* ---------- The product sill: an index line, not three tiles ---------- */
+.mk .ocean-landing .mk-product-strip {
+  border: 0;
+  border-block: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: rgb(var(--alm-abyss-rgb) / 0.72);
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-product-strip a {
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.mk .ocean-landing .mk-product-strip a + a {
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-product-strip a:hover strong,
+.mk .ocean-landing .mk-product-strip a:focus-visible strong {
+  color: var(--alm-act);
+}
+
+/* ---------- Every section begins at a shore line ---------- */
+.mk .ocean-landing .mk-section {
+  position: relative;
+}
+.mk .ocean-landing .mk-section::before {
+  content: "";
+  position: absolute;
+  inset-inline: var(--mk-gutter, 24px);
+  top: 0;
+  height: 24px;
+  background: var(--alm-rule-3);
+  -webkit-mask: var(--alm-shore) no-repeat 0 50% / 100% 100%;
+  mask: var(--alm-shore) no-repeat 0 50% / 100% 100%;
+  pointer-events: none;
+}
+.mk .ocean-landing .mk-section:nth-of-type(even)::before {
+  scale: -1 1;
+}
+.mk .ocean-landing .mk-section-head h2,
+.mk .ocean-landing .mk-final h2 {
+  font-weight: 640;
+  letter-spacing: -0.036em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+/* ---------- Illustrative figures: ruled readings on open water ---------- */
+.mk .ocean-landing .mk-scene .mk-panel.mk-deep-panel,
+.mk .ocean-landing .mk-visual .mk-panel.mk-deep-panel {
+  padding: 18px 0 6px;
+  border: 0;
+  border-top: 1px solid var(--alm-rule-3);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-deep-panel .mk-panel-label {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--alm-brine);
+}
+.mk .ocean-landing .mk-token-rows {
+  gap: 0;
+}
+.mk .ocean-landing .mk-token-rows li {
+  padding: 12px 0;
+  border-radius: 0;
+  background: none;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-token-rows li.is-hazard,
+[dir="rtl"] .mk .ocean-landing .mk-token-rows li.is-hazard {
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-token-rows li.is-hazard strong {
+  color: var(--alm-coral);
+}
+.mk .ocean-landing .mk-token-id code {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.mk .ocean-landing .mk-current {
+  padding: 14px 0;
+  border-radius: 0;
+  background: none;
+  border-bottom: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-current-line {
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-deep-panel .mk-facts > div {
+  border-color: var(--alm-rule);
+}
+.mk .ocean-landing .mk-visual figcaption {
+  color: var(--alm-faint);
+}
+/* Tags in the figures are printed marks. */
+.mk .ocean-landing .tide {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  padding-inline: 0;
+}
+.mk .ocean-landing .mk-code {
+  border: 0;
+  border-inline-start: 2px solid var(--alm-act);
+  border-radius: 0;
+  background: rgb(var(--alm-abyss-rgb) / 0.86);
+  box-shadow: none;
+}
+
+/* ---------- Find: three layers of the scan, stepping down like depth soundings ---------- */
+.mk .ocean-landing .mk-layers {
+  gap: 0;
+  border-top: 1px solid var(--alm-rule-2);
+}
+.mk .ocean-landing .mk-layers li {
+  padding: 22px 24px 24px 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-layers li + li {
+  padding-inline-start: 24px;
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-layer-mark {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+@media (max-width: 860px) {
+  .mk .ocean-landing .mk-layers li + li {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+    border-top: 1px solid var(--alm-rule);
+  }
+}
+
+/* ---------- Points, safety, stats, questions: ruled, never tiled ---------- */
+.mk .ocean-landing .mk-points-pool {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.mk .ocean-landing .mk-cards {
+  gap: 0;
+  border-top: 1px solid var(--alm-rule-2);
+}
+.mk .ocean-landing .mk-cards li,
+.mk .ocean-landing .mk-safety .mk-cards li {
+  padding: 22px 24px 24px 0;
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-safety .mk-cards li:nth-child(even) {
+  padding-inline-start: 24px;
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-trust-mark {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--alm-act);
+}
+.mk .ocean-landing .mk-stats {
+  gap: 0;
+  border-block: 1px solid var(--alm-rule-2);
+}
+.mk .ocean-landing .mk-stats > div {
+  padding: 18px 22px 20px 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-stats > div + div {
+  padding-inline-start: 22px;
+  border-inline-start: 1px solid var(--alm-rule);
+}
+.mk .ocean-landing .mk-stats dd {
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+.mk .ocean-landing .mk-logo-cloud li {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-faq details,
+.mk #faq .mk-faq details {
+  border: 0;
+  border-bottom: 1px solid var(--alm-rule);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-faq {
+  border-top: 1px solid var(--alm-rule-2);
+}
+.mk .ocean-landing .mk-descent li {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+@media (max-width: 760px) {
+  .mk .ocean-landing .mk-safety .mk-cards li:nth-child(even) {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+  .mk .ocean-landing .mk-stats > div + div {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+  .mk .ocean-landing .mk-stats > div:nth-child(even) {
+    padding-inline-start: 18px;
+    border-inline-start: 1px solid var(--alm-rule);
+  }
+  .mk .ocean-landing .mk-stats > div:nth-child(n + 3) {
+    border-top: 1px solid var(--alm-rule);
+  }
+}
+
+/* ---------- The close: open water and one action ---------- */
+.mk .ocean-landing .mk-final {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* ---------- Focus lift on the landing's ruled sets ---------- */
+@media (hover: hover) {
+  .mk
+    .ocean-landing
+    :is(.mk-layers, .mk-cards, .mk-product-strip, .mk-stats):has(> :hover)
+    > :not(:hover) {
+    opacity: 0.7;
+  }
+}
+.mk
+  .ocean-landing
+  :is(.mk-layers, .mk-cards, .mk-product-strip, .mk-stats)
+  > * {
+  transition: opacity 200ms var(--alm-ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mk .ocean-landing .mk-hero-copy::after {
+    animation: none;
+  }
+  .mk
+    .ocean-landing
+    :is(.mk-layers, .mk-cards, .mk-product-strip, .mk-stats)
+    > * {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .mk .ocean-landing .mk-section::before,
+  .mk .ocean-landing .mk-hero-copy::after {
+    background: CanvasText;
+  }
+}
+
+/* ---------- Inspection round 1 fixes ---------- */
+.mk .ocean-landing .mk-stats {
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing #faq .mk-faq {
+  padding-inline: 0;
+  border: 0;
+  border-top: 1px solid var(--alm-rule-2);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-trust-grid li .mk-trust-mark,
+.mk .ocean-landing .mk-trust-grid li:nth-child(1) .mk-trust-mark {
+  width: auto;
+  height: auto;
+  place-items: start;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-trust-grid li:nth-child(1) .mk-trust-mark {
+  color: var(--alm-amber);
+}
+/* Daylight: the same open water; the earlier pale-card rule (same selector, loaded earlier) is replaced. */
+html[data-theme="light"]
+  .ocean-landing
+  :is(
+    .mk-scene .mk-panel.mk-deep-panel,
+    .mk-visual .mk-panel.mk-deep-panel,
+    .mk-layers li,
+    .mk-trust-grid li,
+    .mk-stats,
+    #faq .mk-faq,
+    .mk-product-strip
+  ) {
+  background: none;
+  border-color: var(--alm-rule-2);
+  box-shadow: none;
+}
+html[data-theme="light"] .ocean-landing .mk-token-rows li,
+html[data-theme="light"] .ocean-landing .mk-current {
+  background: none;
+}
+
+/* ---------- Detector round: the landing speaks the same sage ink, no neon, no glow ---------- */
+.mk .ocean-landing .mk-assure .tide-glyph,
+.mk .ocean-landing .mk-layer-mark,
+.mk .ocean-landing .mk-trust-mark,
+.mk .ocean-landing .mk-descent-node,
+.mk .ocean-landing .mk-descent li:nth-child(n + 3) .mk-descent-node {
+  color: var(--alm-act);
+  filter: none;
+}
+.mk .ocean-landing .mk-descent-depth {
+  color: var(--alm-brine);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+.mk .ocean-landing .mk-descent-node,
+.mk .ocean-landing .mk-descent li:nth-child(n + 3) .mk-descent-node {
+  background: var(--alm-abyss);
+  box-shadow: 0 0 0 1px var(--alm-rule-3);
+}
+.mk .ocean-landing .mk-descent::before {
+  background: var(--alm-rule-2);
+}
+.mk .ocean-landing .mk-current-line {
+  background:
+    radial-gradient(circle, var(--alm-act) 0 2px, transparent 3px) 0 50% / 14px
+      2px repeat-x,
+    linear-gradient(90deg, rgb(236 18 114 / 0.5), rgb(240 185 11 / 0.6));
+  box-shadow: none;
+}
+.mk .ocean-gauge-mark::before,
+.mk .ocean-landing .mk-hero-status-dot {
+  background: var(--alm-act);
+  box-shadow: none;
+}
+.mk .ocean-landing .mk-hero-status-dot {
+  background: var(--alm-amber);
+}
+.mk .ocean-landing .mk-final {
+  background: none;
+}
+.mk .ocean-landing .mk-visual figcaption {
+  font-size: 12px;
+}
+.mk .ocean-landing .mk-token-id code {
+  font-size: 12px;
+}
+.mk .ocean-landing .mk-section-head > p,
+.mk .ocean-landing .mk-layers p,
+.mk .ocean-landing .mk-cards p,
+.mk .ocean-landing .mk-faq details p {
+  max-width: 64ch;
+}
+
+/* ---------- Finish review round 1 (fix batch) ---------- */
+/* No ghosted halos under section headings and ledes; the hero keeps its own scrim over the bright film. */
+.mk
+  .ocean-landing
+  :is(
+    .mk-section-head h2,
+    .mk-section-head > p,
+    .mk-checks,
+    .mk-descent h3,
+    .mk-descent p,
+    .mk-scene figcaption,
+    .mk-visual figcaption,
+    .mk-note
+  ),
+html[data-theme="light"]
+  .mk
+  .ocean-landing
+  :is(
+    .mk-section-head h2,
+    .mk-section-head > p,
+    .mk-checks,
+    .mk-scene figcaption,
+    .mk-visual figcaption
+  ) {
+  text-shadow: none;
+}
+/* The shore line is drawn once, under the hero; sections are divided by a quiet hairline. */
+.mk .ocean-landing .mk-section::before {
+  height: 1px;
+  background: var(--alm-rule);
+  -webkit-mask: none;
+  mask: none;
+}
+/* The quick-link sill keeps the content column's edges. */
+.mk .ocean-landing .mk-product-strip {
+  background: none;
+}

@@ -1,0 +1,7 @@
+# Canonical DeFi position model
+
+JSON schema and TypeScript source: src/defi/model.ts. Exact chain + address identities, adapter version 1.0.0, pinned source block/hash and timestamp, evidence, supplied/collateral/positive borrowed amounts, economic underlying, representations, typed protocol-native risk, rewards status and warning codes. Raw amounts are bounded uint256 decimal strings at the API boundary and bigint internally. USD fixed point is string-based; negative values are permitted only for net/margin. No symbol establishes protocol identity.
+
+FULL_POSITION / PARTIAL_POSITION / BALANCE_ONLY / DISCOVERY_ONLY / NOT_CHECKED / FAILED / PENDING / UNSUPPORTED are separate from NONZERO / ZERO / UNKNOWN. Complete exact zero closes a previous position; a failure cannot become zero. Field evidence is retained. Scan replacementOwners records representation ownership per deployment, including verified zero-result wrappers, so a rescan can remove an older ownership claim precisely. Opt-in database scan records are PARTIAL if any coverage is incomplete or continuation remains.
+
+Aave supplied/collateral overlap is intentional detail; valuation counts supplied once. Compound/Morpho collateral is separate deposited value. Liquidity/vault/Lido use economic underlying as the counted representation. Rewards only protocol-view can say Claimable; rewards are kept outside known net to avoid accrual double counting. No final whitepaper or execution integration.

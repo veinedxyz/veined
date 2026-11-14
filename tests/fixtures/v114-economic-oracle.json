@@ -1,0 +1,2511 @@
+{
+  "generatedBy": "accepted V1.14 code (checkpoint 5b519a34...) on the deterministic simulator; RpcPool health side effects disabled",
+  "chains": ["1", "8453", "10"],
+  "held": "world.held(wallet) (exact ERC20 holdings; native excluded)",
+  "result": {
+    "production": {
+      "aave-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "aave-v3-1": {
+        "positions": [
+          {
+            "id": "aave-v3-1:account",
+            "deploymentId": "aave-v3-1",
+            "positionKey": "account",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [
+              [
+                "1:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "10000000000000000000",
+                18,
+                "WETH",
+                "supplied",
+                "2000",
+                "20000.000000"
+              ],
+              [
+                "1:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "25000000000",
+                6,
+                "USDC",
+                "supplied",
+                "1",
+                "25000.000000"
+              ]
+            ],
+            "collateral": [
+              [
+                "1:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "10000000000000000000",
+                18,
+                "WETH",
+                "collateral",
+                "2000",
+                "20000.000000"
+              ],
+              [
+                "1:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "25000000000",
+                6,
+                "USDC",
+                "collateral",
+                "1",
+                "25000.000000"
+              ]
+            ],
+            "borrowed": [
+              [
+                "1:0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "8000000000",
+                6,
+                "USDT",
+                "borrowed",
+                "1",
+                "8000.000000"
+              ]
+            ],
+            "underlying": [],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "CHECKED",
+            "representations": [
+              "1:0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8",
+              "1:0xea51d7853eefb32b6ee06b1c12e6dcca88be0ffe",
+              "1:0x0b925ed163218f6662a35e0f0371ac234f9e9371",
+              "1:0xc96113eed8cab59cd8a66813bcb0ceb29f06d2e4",
+              "1:0x5ee5bf7ae06d1be5997a1a72006fe6c607ec6de8",
+              "1:0x40aabef1aa8f0eec637e0e7d92fbffb2f26a8b7b",
+              "1:0x98c23e9d8f34fefb1b7bd6a91b7ff122f4e16f5c",
+              "1:0x72e95b8931767c79ba4eee721354d6e99a61d004",
+              "1:0x018008bfb33d285247a21d44e50697654f754e63",
+              "1:0xcf8d0c70c850859266f5c338b38f9d663181c314",
+              "1:0x5e8c8a7243651db1384c0ddfdbe39761e8e7e51a",
+              "1:0x4228f8895c7dda20227f6a5c6751b8ebf19a6ba8",
+              "1:0xa700b4eb416be35b2911fd5dee80678ff64ff6c9",
+              "1:0xbae535520abd9f8c85e58929e0006a2c8b372f74",
+              "1:0x977b6fc5de62598b08c85ac8cf2b745874e8b78c",
+              "1:0x0c91bca95b5fe69164ce583a2ec9429a569798ed",
+              "1:0x23878914efe38d27c4d67ab83ed1b93a74d4086a",
+              "1:0x6df1c1e379bc5a00a7b4c6e67a203333772f45a8",
+              "1:0xcc9ee9483f662091a1de4795249e24ac0ac2630f",
+              "1:0xae8593dd575fe29a9745056aa91c4b746eee62c8",
+              "1:0x3fe6a295459fae07df8a0cecc36f37160fe86aa9",
+              "1:0x33652e48e4b74d18520f11bfe58edd2ed2cec5a2",
+              "1:0x7b95ec873268a6bfc6427e7a28e396db9d0ebc65",
+              "1:0x1b7d3f4b3c032a5ae656e30eea4e8e1ba376068f",
+              "1:0x8a458a9dc9048e005d22849f470891b840296619",
+              "1:0x6efc73e54e41b27d2134ff9f98f15550f30df9b1",
+              "1:0xc7b4c17861357b8abb91f25581e7263e08dcb59c",
+              "1:0x8d0de040e8aad872ec3c33a3776de9152d3c34ca",
+              "1:0x2516e7b3f76294e03c42aa4c5b5b4dce9c436fb8",
+              "1:0x3d3efceb4ff0966d34d9545d3a2fa2dcdbf451f2",
+              "1:0xf6d2224916ddfbbab6e6bd0d1b7034f4ae0cab18",
+              "1:0xf64178ebd2e2719f2b1233bcb5ef6db4bcc4d09a",
+              "1:0x9a44fd41566876a39655f74971a3a6ea0a17a454",
+              "1:0xc30808705c01289a3d306ca9cab081ba9114ec82",
+              "1:0x545bd6c032efdde65a377a6719def2796c8e0f2e",
+              "1:0xd180d7fdd4092f07428efe801e17bc03576b3192",
+              "1:0x71aef7b30728b9bb371578f36c5a1f1502a5723e",
+              "1:0xa38fca8c6bf9bda52e76eb78f08caa3be7c5a970",
+              "1:0xd4e245848d6e1220dbe62e155d89fa327e43cb06",
+              "1:0x88b8358f5bc87c2d7e116cca5b65a9eeb2c5ea3f",
+              "1:0x00907f9921424583e7ffbfedf84f92b7b2be4977",
+              "1:0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
+              "1:0xb76cf92076adbf1d9c39294fa8e7a67579fde357",
+              "1:0x8988eca19d502fd8b9ccd03fa3bd20a6f599bc2a",
+              "1:0x4c612e3b15b96ff9a6faed838f8d07d479a8dd4c",
+              "1:0x8db9d35e117d8b93c6ca9b644b25bad5d9908141",
+              "1:0x1ba9843bd4327c6c77011406de5fa8749f7e3479",
+              "1:0x655568bdd6168325ec7e58bf39b21a856f906dc2",
+              "1:0x5b502e3796385e1e9755d7043b9c945c3accec9c",
+              "1:0x253127ffc04981cea8932f406710661c2f2c3fd2",
+              "1:0x82f9c5ad306bba1ad0de49bb5fa6f01bf61085ef",
+              "1:0x68e9f0ad4e6f8f5db70f6923d4d6d5b225b83b16",
+              "1:0xb82fa9f31612989525992fcfbb09ab22eff5c85a",
+              "1:0x028f7886f3e937f8479efad64f31b3fe1119857a",
+              "1:0x0c0d01abf3e6adfca0989ebba9d6e85dd58eab1e",
+              "1:0x57b67e4de077085fd0af2174e9c14871be664546",
+              "1:0xbdfa7b7893081b35fb54027489e2bc7a38275129",
+              "1:0x77ad9bf13a52517ad698d65913e8d381300c8bf3",
+              "1:0x927709711794f3de5ddbf1d176bee2d55ba13c21",
+              "1:0x8838eeff2af391863e1bb8b1df563f86743a8470",
+              "1:0x4f5923fc5fd4a93352581b38b7cd26943012decf",
+              "1:0x015396e1f286289ae23a762088e863b3ec465145",
+              "1:0x1c0e06a0b1a4c160c17545ff2a951bfca57c0002",
+              "1:0x08a8dc81aea67f84745623ac6c72cda3967aab8b",
+              "1:0x4579a27af00a62c0eb156349f31b345c08386419",
+              "1:0xeffde9bfa8ec77c14c364055a200746d6e12bed6",
+              "1:0x10ac93971cdb1f5c778144084242374473c350da",
+              "1:0xac50890a80a2731eb1ea2e9b4f29569ceb06d960",
+              "1:0x5c647ce0ae10658ec44fa4e11a51c96e94efd1dd",
+              "1:0xeb284a70557efe3591b9e6d9d720040e02c54a4d",
+              "1:0x32a6268f9ba3642dda7892add74f1d34469a4259",
+              "1:0x490e0e6255bf65b43e2e02f7acb783c5e04572ff",
+              "1:0x2d62109243b87c4ba3ee7ba1d91b0dd0a074d7b1",
+              "1:0x6de3e52a1b7294a34e271a508082b1ff4a37e30e",
+              "1:0x65906988adee75306021c417a1a3458040239602",
+              "1:0x68aeb290c7727d899b47c56d1c96aeac475cd0dd",
+              "1:0x5fefd7069a7d91d01f269dade14526ccf3487810",
+              "1:0x47ed0509e64615c0d5c6d39af1b38d02bc9fe58f",
+              "1:0xfa82580c16a31d0c1bc632a36f82e83efef3eec0",
+              "1:0xbdfe7ad7976d5d7e0965ea83a81ca1bcff7e84a9",
+              "1:0x4b0821e768ed9039a70ed1e80e15e76a5be5df5f",
+              "1:0x3c20fbfd32243dd9899301c84bce17413eee0a0c",
+              "1:0xde6ef6cb4abd3a473ffc2942eef5d84536f8e864",
+              "1:0x8c6feaf5d58ba1a6541f9c4af685f62bfcbac3b1",
+              "1:0xec4ef66d4fceeba34abb4de69db391bc5476ccc8",
+              "1:0xea85a065f87fe28aa8fbf0d6c7dec472b106252c",
+              "1:0x312ffc57778cefa11989733e6e08143e7e229c1c",
+              "1:0xd90da2df915b87fe1621a7f2201fbf4ff2cca031",
+              "1:0x2edff5af94334fbd7c38ae318edf1c40e072b73b",
+              "1:0x22517fe16ded08e52e7ea3423a2ea4995b1f1731",
+              "1:0x5f9190496e0dfc831c3bd307978de4a245e2f5cd",
+              "1:0x48351fcc9536da440ae9471220f6dc921b0eb703",
+              "1:0xcca43cef272c30415866914351fdfc3e881bb7c2",
+              "1:0x4a35fd7f93324cc48bc12190d3f37493437b1eff",
+              "1:0xaa6e91c82942aeae040303bf96c15a6dbcb82ca0",
+              "1:0x6c82c66622eb360fc973d3f492f9d8e9ea538b08",
+              "1:0x5f4a0873a3a02f7c0cb0e13a1d4362a1ad90e751",
+              "1:0xc9ad8dd111e6384128146467aaf92b81ec422848",
+              "1:0x38a5357ce55c81add62abc84fb32981e2626adef",
+              "1:0x0d8486e1cabf3c9407b3dda0cfc4d9c3101fb683",
+              "1:0x481a2acf3a72ffdc602a9541896ca1db87f86cf7",
+              "1:0x7ec9afe70f8fd603282ebacbc9058a83623e2899",
+              "1:0x4e2a4d9b3df7aae73b418bd39f3af9e148e3f479",
+              "1:0x730318db7b830d324fc3feddb1d212ec64bd3141",
+              "1:0x8a2b6f94ff3a89a03e8c02ee92b55af90c9454a2",
+              "1:0xa665bb258d2a732c170dfd505924214c0b1ac74f",
+              "1:0x285866acb0d60105b4ed350a463361c2d9afa0e2",
+              "1:0x690df181701c11c53ea33bbf303c25834b66bd14",
+              "1:0x38c503a438185cde29b5cf4dc1442fd6f074f1cc",
+              "1:0x2ce7e7b238985a8ad3863de03f200b245b0c1216",
+              "1:0xe728577e9a1fe7032bc309b4541f58f45443866e",
+              "1:0x9d244a99801dc05cbc04183769c17056b8a1ad53",
+              "1:0xbe54767735fb7acca2aa7e2d209a6f705073536d",
+              "1:0xa803414f84fcef00e745be7cc2a315908927f15d",
+              "1:0xaa0200d169ff3ba9385c12e073c5d1d30434ae7b",
+              "1:0xe35e6a0d3abc28289f5d4c2d262a133df936b98d",
+              "1:0x24ab03a9a5bc2c49e5523e8d915a3536ac38b91d",
+              "1:0xaef73b04654931b94920a3d7ae62032b79fb6d0c",
+              "1:0x7c0477d085ecb607cf8429f3ec91ae5e1e460f4f",
+              "1:0x4f97b950a30321c181e974971e156e19fad184a3",
+              "1:0xe036478da9a7ed89b56fe39a06e1fc1a4b38d4ea",
+              "1:0x04142fc546d59838852873bba5c8827601a13fc8",
+              "1:0x81b76ff3fed28ba0b4a5d4c76bd5c13bd0641d86",
+              "1:0x762edb8d79b97487f82093f85059e42eeef61e9e",
+              "1:0x1241ec22c9bdf16ba1eb636f2a8de7e28a4343cf",
+              "1:0xacd3d3facea0424984f662827b988f4581a3ce31",
+              "1:0x12b70410d60f926558245f769059ea3fc7a7353e",
+              "1:0x6c67e666bb954d4be23e9f1ce20e7e8699d29339",
+              "1:0xa78eba24d89e70a03ddb7ac195a15e53315aa5b4",
+              "1:0x9ba896531f878ed5f0a4f73e82d63ba7b424f910",
+              "1:0xa9ecb0503075124cc0b786096849a331fbe9ee6d",
+              "1:0x1a83eca2d3b0cea2595fb11ec60cb2d428217c2e",
+              "1:0x01e69a58ca3ddc695820ce6f66fbdf3fa55d0545",
+              "1:0x4af166c6f2cf882f7b196e3625c3e8f2fe2a8083"
+            ],
+            "risk": {
+              "kind": "health-factor",
+              "value": "4.500000000000000000",
+              "ltvBps": "7500",
+              "liquidationThresholdBps": "8000",
+              "source": "protocol-view",
+              "attention": "none"
+            },
+            "grossAssetsUsd": "45000.000000",
+            "debtUsd": "8000.000000",
+            "knownNetUsd": "37000.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {}
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "aave-v3-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-10",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-aero": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-aero",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usdbc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usdbc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usdc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usds": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usds",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usdc": {
+        "positions": [
+          {
+            "id": "compound-1-usdc:0xc3d688b66703497daa19211eedff47f25384cdc3",
+            "deploymentId": "compound-1-usdc",
+            "positionKey": "0xc3d688b66703497daa19211eedff47f25384cdc3",
+            "adapterVersion": "1.0.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [
+              [
+                "1:0x353e36e41be7abe2149f7ba40b9f8c72feb06fd0",
+                "5000000000",
+                6,
+                "USDC",
+                "supplied",
+                "1",
+                "5000.000000"
+              ]
+            ],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0xc3d688b66703497daa19211eedff47f25384cdc3"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "5000.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "5000.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {}
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usds": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usds",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usdt": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usdt",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-wbtc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-wbtc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-wsteth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-wsteth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-usdc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-usdt": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-usdt",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-1": {
+        "positions": [
+          {
+            "id": "uniswap-v3-1:777",
+            "deploymentId": "uniswap-v3-1",
+            "positionKey": "777",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x8159d3b10b3e6e00c59085b0bdf1556a8211b247",
+                "29553010879137",
+                18,
+                "WETH",
+                "lp-component",
+                "2000",
+                "0.059106"
+              ],
+              [
+                "1:0xbe885bfac15d19884952bcc7c3ab5b7aa8c12fd8",
+                "29553010879137",
+                6,
+                "USDC",
+                "lp-component",
+                "1",
+                "29553010.879137"
+              ]
+            ],
+            "fees": [
+              [
+                "1:0x8159d3b10b3e6e00c59085b0bdf1556a8211b247",
+                "1102032",
+                18,
+                "WETH",
+                "fee",
+                "2000",
+                "0.000000"
+              ],
+              [
+                "1:0xbe885bfac15d19884952bcc7c3ab5b7aa8c12fd8",
+                "2204060",
+                6,
+                "USDC",
+                "fee",
+                "1",
+                "2.204060"
+              ]
+            ],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": [],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "29553010.938243",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "29553010.938243",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "tokenId": "777",
+              "pool": "0x1cc414e43721526aaefd4e4f8e9cd73f7c71e4a5",
+              "fee": "3000",
+              "lower": "-600",
+              "upper": "600",
+              "range": "IN_RANGE",
+              "liquidity": "1000000000000000",
+              "tokensOwed0": "1102032",
+              "tokensOwed1": "2204060",
+              "fees": "UNCOLLECTED_EXACT_AT_SOURCE_BLOCK"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-1": {
+        "positions": [
+          {
+            "id": "uniswap-v2-1:0x9cefca0c80d8f02830dd2e99400ca5357b34f1b4",
+            "deploymentId": "uniswap-v2-1",
+            "positionKey": "0x9cefca0c80d8f02830dd2e99400ca5357b34f1b4",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x3d5793bd31253db33856ab61cf93b4c160328aaa",
+                "5000000000000000000",
+                18,
+                "WETH",
+                "lp-component",
+                "2000",
+                "10000.000000"
+              ],
+              [
+                "1:0x5937b057d5c7f326e79794b335bc9229cb6a9d4d",
+                "10000000000",
+                6,
+                "USDC",
+                "lp-component",
+                "1",
+                "10000.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0x9cefca0c80d8f02830dd2e99400ca5357b34f1b4"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "20000.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "20000.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "shares": "5000000000000000000",
+              "pair": "0x9cefca0c80d8f02830dd2e99400ca5357b34f1b4",
+              "pendingProtocolFeeLiquidity": "0",
+              "accounting": "burn share of pair token balances after the protocol-fee mint"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "NONZERO",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-10",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-sdai-1": {
+        "positions": [
+          {
+            "id": "erc4626-sdai-1:0x83f20f44975d03b1b09e64809b757c47f942beea",
+            "deploymentId": "erc4626-sdai-1",
+            "positionKey": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+            "adapterVersion": "1.0.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0xc76de4da17b4e403f9df10019f4dfbfe91cdde8f",
+                "1050000000000000000000",
+                18,
+                "DAI",
+                "vault-underlying",
+                "1",
+                "1050.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0x83f20f44975d03b1b09e64809b757c47f942beea"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "1050.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "1050.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "shares": "1000000000000000000000",
+              "shareDecimals": "18",
+              "shareSymbol": "sDAI",
+              "shareContract": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+              "underlyingContract": "0xc76de4da17b4e403f9df10019f4dfbfe91cdde8f"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-sdai-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-1": {
+        "positions": [
+          {
+            "id": "morpho-blue-1:0x19b79c194d34733aceb239eb5baab12c6f25262bf07fbce516ee5b30ec8d1b4a",
+            "deploymentId": "morpho-blue-1",
+            "positionKey": "0x19b79c194d34733aceb239eb5baab12c6f25262bf07fbce516ee5b30ec8d1b4a",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [
+              [
+                "1:0x574531914333b3701341b62190539e3f7721cc59",
+                "1000000079274",
+                18,
+                "DAI",
+                "supplied",
+                "1",
+                "0.000001"
+              ]
+            ],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": [],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "0.000001",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "0.000001",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "marketId": "0x19b79c194d34733aceb239eb5baab12c6f25262bf07fbce516ee5b30ec8d1b4a",
+              "supplyShares": "1000000000000000000",
+              "borrowShares": "0",
+              "lltv": "0.940000000000000907"
+            }
+          },
+          {
+            "id": "morpho-blue-1:0x52c8180ac8be311020e9684772850b35a1a6ec6f0bf4b8b3e6ef4b341b2cbb7f",
+            "deploymentId": "morpho-blue-1",
+            "positionKey": "0x52c8180ac8be311020e9684772850b35a1a6ec6f0bf4b8b3e6ef4b341b2cbb7f",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [
+              [
+                "1:0x9a4acca5e16a52e37ad4bc30dc674070d9c66e8d",
+                "10000000000000000000",
+                18,
+                "wstETH",
+                "collateral",
+                "2000",
+                "20000.000000"
+              ]
+            ],
+            "borrowed": [
+              [
+                "1:0x2a2565c79be95f55058cd4e65a3e543ab45147cb",
+                "100000015854897247",
+                6,
+                "USDC",
+                "borrowed",
+                "1",
+                "100000015854.897247"
+              ]
+            ],
+            "underlying": [],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": [],
+            "risk": {
+              "kind": "ltv",
+              "ltv": "5000000.792744862350000000",
+              "liquidationLtv": "0.860000000000000000",
+              "margin": "-4999999.932744862350000000",
+              "oracle": "0xa7e27bdd6749b1e0883acd636baa4df9b9273c07",
+              "source": "protocol-state",
+              "attention": "attention"
+            },
+            "grossAssetsUsd": "20000.000000",
+            "debtUsd": "100000015854.897247",
+            "knownNetUsd": "-99999995854.897247",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "marketId": "0x52c8180ac8be311020e9684772850b35a1a6ec6f0bf4b8b3e6ef4b341b2cbb7f",
+              "supplyShares": "0",
+              "borrowShares": "100000000000000000000000",
+              "lltv": "0.860000000000000000"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-1": {
+        "positions": [
+          {
+            "id": "morpho-vault-1:0xcb30f4c59fbebb89e455c56a0db93e56b3b0e5dc",
+            "deploymentId": "morpho-vault-1",
+            "positionKey": "0xcb30f4c59fbebb89e455c56a0db93e56b3b0e5dc",
+            "adapterVersion": "1.0.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x7d5c254c3436239a003328971b76be2cbe584197",
+                "2500000000",
+                6,
+                "USDC",
+                "vault-underlying",
+                "1",
+                "2500.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0xcb30f4c59fbebb89e455c56a0db93e56b3b0e5dc"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "2500.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "2500.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "shares": "2500000000000000000000",
+              "shareDecimals": "18",
+              "shareSymbol": "mmUSDC375",
+              "shareContract": "0xcb30f4c59fbebb89e455c56a0db93e56b3b0e5dc",
+              "underlyingContract": "0x7d5c254c3436239a003328971b76be2cbe584197"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-8453",
+            "adapterVersion": "1.0.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-10",
+            "adapterVersion": "1.0.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lido-1": {
+        "positions": [
+          {
+            "id": "lido-1:0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+            "deploymentId": "lido-1",
+            "positionKey": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+                "3540000000000000000",
+                18,
+                "stETH",
+                "underlying",
+                "2000",
+                "7080.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "7080.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "7080.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "positionToken": "wstETH",
+              "rawShares": "3000000000000000000",
+              "exposure": "stETH",
+              "rateRaw": "1180000000000000000",
+              "withdrawalQueue": "CHECKED_SEPARATELY"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "lido-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "sparklend-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sparklend-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-reth-1": {
+        "positions": [
+          {
+            "id": "lst-reth-1:0xae78736cd615f374d3085123a210448e74fc6393",
+            "deploymentId": "lst-reth-1",
+            "positionKey": "0xae78736cd615f374d3085123a210448e74fc6393",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x0000000000000000000000000000000000000000",
+                "2100000000000000000",
+                18,
+                "ETH",
+                "underlying",
+                "2000",
+                "4200.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0xae78736cd615f374d3085123a210448e74fc6393"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "4200.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "4200.000000",
+            "confidence": "EXACT_WITH_PRICE",
+            "coverage": "FULL_POSITION",
+            "warnings": [],
+            "details": {
+              "positionToken": "rETH",
+              "rawShares": "2000000000000000000",
+              "shareDecimals": "18",
+              "conversion": "getEthValue",
+              "rateSource": "protocol-view",
+              "rateRaw": "1050000000000000000",
+              "identity": "OFFICIAL_SOURCE_LITERAL"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "lst-reth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "NONZERO",
+            "reason": "CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-cbeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-cbeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-wbeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-wbeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-sweth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-sweth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-weeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-weeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-meth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-meth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-ethx-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-ethx-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-rseth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-rseth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-oseth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-oseth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-sfrxeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-sfrxeth-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-pufeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-pufeth-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "eigenlayer-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "eigenlayer-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "curve-1": {
+        "positions": [
+          {
+            "id": "curve-1:0x646e8f9190004f192e2a9a16bb5b962cb3f3e8c8",
+            "deploymentId": "curve-1",
+            "positionKey": "0x646e8f9190004f192e2a9a16bb5b962cb3f3e8c8",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x6d69540e7b5ba69f42294f11307f7ba7c6c2db87",
+                "99999999900000000",
+                18,
+                "DAI",
+                "lp-component",
+                "1",
+                "0.099999"
+              ],
+              [
+                "1:0xab0d25639e46e25e33a91ab2e261e0b291d05f3f",
+                "99999",
+                6,
+                "USDC",
+                "lp-component",
+                "1",
+                "0.099999"
+              ],
+              [
+                "1:0xdd5fb1514c456d438c0d1396e9e292d010572277",
+                "99999",
+                6,
+                "USDT",
+                "lp-component",
+                "1",
+                "0.099999"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0x646e8f9190004f192e2a9a16bb5b962cb3f3e8c8"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "0.299997",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "0.299997",
+            "confidence": "PARTIAL",
+            "coverage": "PARTIAL_POSITION",
+            "warnings": ["CURVE_REWARDS_NOT_EXACT"],
+            "details": {
+              "pool": "0xd6529521f85f1e9d3f2457870091ffcaf7edc1fd",
+              "lpToken": "0x646e8f9190004f192e2a9a16bb5b962cb3f3e8c8",
+              "shares": "1000000000000000000000",
+              "shareDecimals": "18",
+              "shareSymbol": "3Crv",
+              "accounting": "proportional withdrawal share of registry balances"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "curve-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "NONZERO",
+            "reason": "CURVE_REWARDS_NOT_EXACT",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "curve-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "curve-10",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "CURVE_REWARDS_NOT_EXACT",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "curve-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "curve-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "CURVE_REWARDS_NOT_EXACT",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "balancer-v2-1": {
+        "positions": [
+          {
+            "id": "balancer-v2-1:0x98a4d03fc6afaa8aaf1d278c6b85e4bbd1db1cda",
+            "deploymentId": "balancer-v2-1",
+            "positionKey": "0x98a4d03fc6afaa8aaf1d278c6b85e4bbd1db1cda",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0xda534998556de7bc258bf0f15e9e4695a87610017e764601804f7fd17035737b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "1:0x20bac50093b4f8feaf6dfcfd0073b25871a3e969",
+                "100000000000000000000",
+                18,
+                "WETH",
+                "lp-component",
+                "2000",
+                "200000.000000"
+              ],
+              [
+                "1:0xf43922f0d8c4531e1756e44b1b3e01e3d5723661",
+                "400000000000000000000",
+                18,
+                "BAL",
+                "lp-component",
+                "20",
+                "8000.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": ["1:0x98a4d03fc6afaa8aaf1d278c6b85e4bbd1db1cda"],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "208000.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "208000.000000",
+            "confidence": "PARTIAL",
+            "coverage": "PARTIAL_POSITION",
+            "warnings": ["STAKED_BPT_NOT_CHECKED"],
+            "details": {
+              "pool": "0x98a4d03fc6afaa8aaf1d278c6b85e4bbd1db1cda",
+              "poolId": "0x98a4d03fc6afaa8aaf1d278c6b85e4bbd1db1cda000200000000000000000000",
+              "shares": "1000000000000000000000",
+              "shareDecimals": "18",
+              "shareSymbol": "B-80BAL-20WETH",
+              "poolType": "WeightedPool (factory V4)",
+              "accounting": "exitExactBPTInForTokensOut with getActualSupply"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "NONZERO",
+            "reason": "WEIGHTED_POOLS_ONLY_STAKED_BPT_NOT_CHECKED",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "balancer-v2-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "WEIGHTED_POOLS_ONLY_STAKED_BPT_NOT_CHECKED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "balancer-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "WEIGHTED_POOLS_ONLY_STAKED_BPT_NOT_CHECKED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "aerodrome-v2-8453": {
+        "positions": [
+          {
+            "id": "aerodrome-v2-8453:0x605f1484f1723768c34309126a1dffef701c7db5",
+            "deploymentId": "aerodrome-v2-8453",
+            "positionKey": "0x605f1484f1723768c34309126a1dffef701c7db5",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0x50d04684d3db40a21036733ca0fa3502ae68529fb9a8d87859589d8e9a85bff9",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "8453:0xf30064d600070436bb5af0e904a6af19876a0afa",
+                "299999999",
+                18,
+                "WETH",
+                "lp-component",
+                "2000",
+                "0.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": [
+              "8453:0x605f1484f1723768c34309126a1dffef701c7db5"
+            ],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "0.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "0.000000",
+            "confidence": "PARTIAL",
+            "coverage": "PARTIAL_POSITION",
+            "warnings": ["UNSTAKED_LP_FEES_NOT_INCLUDED"],
+            "details": {
+              "pool": "0x605f1484f1723768c34309126a1dffef701c7db5",
+              "stable": "false",
+              "shares": "3000000000000000000",
+              "walletShares": "3000000000000000000",
+              "stakedShares": "0",
+              "shareDecimals": "18",
+              "shareSymbol": "vAMM-WETH/USDC",
+              "accounting": "burn share of pool token balances (no protocol-fee mint)"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "aerodrome-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "NONZERO",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "velodrome-v2-10": {
+        "positions": [
+          {
+            "id": "velodrome-v2-10:0x20072115698d064c9c66286d2e14bc9b6b9ae321",
+            "deploymentId": "velodrome-v2-10",
+            "positionKey": "0x20072115698d064c9c66286d2e14bc9b6b9ae321",
+            "adapterVersion": "1.1.0",
+            "sourceBlock": "21000000",
+            "sourceBlockHash": "0x9bfa8cef8a6cbcbe8f2f64e4e310f47e84f40680064ac5b756979f785fa76b9b",
+            "supplied": [],
+            "collateral": [],
+            "borrowed": [],
+            "underlying": [
+              [
+                "10:0x0919679ce4f1562141b2b2033a90cb75c797b7d9",
+                "299999999",
+                18,
+                "WETH",
+                "lp-component",
+                "2000",
+                "0.000000"
+              ]
+            ],
+            "fees": [],
+            "rewards": [],
+            "rewardsStatus": "NOT_CHECKED",
+            "representations": [
+              "10:0x20072115698d064c9c66286d2e14bc9b6b9ae321"
+            ],
+            "risk": {
+              "kind": "not-available",
+              "reason": "NOT_APPLICABLE"
+            },
+            "grossAssetsUsd": "0.000000",
+            "debtUsd": "0.000000",
+            "knownNetUsd": "0.000000",
+            "confidence": "PARTIAL",
+            "coverage": "PARTIAL_POSITION",
+            "warnings": ["UNSTAKED_LP_FEES_NOT_INCLUDED"],
+            "details": {
+              "pool": "0x20072115698d064c9c66286d2e14bc9b6b9ae321",
+              "stable": "false",
+              "shares": "3000000000000000000",
+              "walletShares": "3000000000000000000",
+              "stakedShares": "0",
+              "shareDecimals": "18",
+              "shareSymbol": "vAMM-WETH/USDC",
+              "accounting": "burn share of pool token balances (no protocol-fee mint)"
+            }
+          }
+        ],
+        "coverage": [
+          {
+            "deploymentId": "velodrome-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "NONZERO",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NONZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "sushiswap-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sushiswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "sushiswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sushiswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "UNKNOWN",
+            "reason": "RECEIPT_DISCOVERY_ONLY",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v3-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "ZERO",
+            "reason": "STAKED_POSITIONS_NOT_CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "ZERO",
+            "reason": "STAKED_POSITIONS_NOT_CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      }
+    },
+    "zero": {
+      "aave-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "aave-v3-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "aave-v3-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aave-v3-10",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-aero": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-aero",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usdbc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usdbc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usdc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-usds": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-usds",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-8453-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-8453-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usdc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usds": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usds",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-usdt": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-usdt",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-wbtc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-wbtc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-1-wsteth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-1-wsteth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-usdc": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-usdc",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-usdt": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-usdt",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "compound-10-weth": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "compound-10-weth",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-10",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "uniswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "uniswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-sdai-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-sdai-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-8453",
+            "adapterVersion": "1.0.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-blue-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-blue-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "morpho-vault-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "morpho-vault-10",
+            "adapterVersion": "1.0.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lido-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lido-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "sparklend-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sparklend-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-reth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-reth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-cbeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-cbeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-wbeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-wbeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-sweth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-sweth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-weeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-weeth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-meth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-meth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-ethx-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-ethx-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-rseth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-rseth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "lst-oseth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "lst-oseth-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-sfrxeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-sfrxeth-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "erc4626-pufeth-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "erc4626-pufeth-1",
+            "adapterVersion": "1.0.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "eigenlayer-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "eigenlayer-1",
+            "adapterVersion": "1.1.0",
+            "state": "FULL_POSITION",
+            "result": "ZERO",
+            "reason": "CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "curve-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "curve-1",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "curve-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "curve-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "curve-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "curve-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "balancer-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "balancer-v2-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "balancer-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "balancer-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "aerodrome-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "aerodrome-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "velodrome-v2-10": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "velodrome-v2-10",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "NO_RECEIPT_CANDIDATE",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": null
+          }
+        ]
+      },
+      "sushiswap-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sushiswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "sushiswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "sushiswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v2-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v2-1",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v2-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v2-8453",
+            "adapterVersion": "1.1.0",
+            "state": "NOT_CHECKED",
+            "result": "UNKNOWN",
+            "reason": "LOCAL_DISCOVERY_INDEX_REQUIRED",
+            "scanResult": "NOT_CHECKED",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v3-1": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v3-1",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "ZERO",
+            "reason": "STAKED_POSITIONS_NOT_CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      },
+      "pancakeswap-v3-8453": {
+        "positions": [],
+        "coverage": [
+          {
+            "deploymentId": "pancakeswap-v3-8453",
+            "adapterVersion": "1.1.0",
+            "state": "PARTIAL_POSITION",
+            "result": "ZERO",
+            "reason": "STAKED_POSITIONS_NOT_CHECKED",
+            "scanResult": "CHECKED_ZERO",
+            "sourceBlock": "21000000"
+          }
+        ]
+      }
+    }
+  }
+}

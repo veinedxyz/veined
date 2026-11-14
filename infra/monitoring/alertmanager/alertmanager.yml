@@ -1,0 +1,13 @@
+# Local/staging Alertmanager: alerts are grouped and visible in the Alertmanager UI/API only.
+# No external receiver is configured, so no real notification can be sent from this profile.
+route:
+  receiver: "null"
+  group_by: [alertname, chain, severity]
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 4h
+receivers:
+  - name: "null"
+inhibit_rules:
+  - source_matchers: [alertname = "OtherbridgeDatabaseDown"]
+    target_matchers: [area = "data-api"]

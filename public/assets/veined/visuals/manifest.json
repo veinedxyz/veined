@@ -1,0 +1,163 @@
+{
+  "version": "1.19",
+  "origin": "AI-generated original artwork",
+  "provenance": "evidence/otherbridge-v1-19/v119-2026-10-25T09-38-26-191Z/assets/inventory.json",
+  "assets": [
+    {
+      "name": "hero-earth",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/hero-earth-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 26142,
+          "sha256": "cd111d7e52bd04290ae2656027b7826480f6725114ee1242d41d63bbf983b400"
+        },
+        {
+          "src": "/assets/veined/visuals/hero-earth-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 92274,
+          "sha256": "f7a0114501094f8c3189ce76b9c712747192fd44623ed4e9e12af6bca5dfae7c"
+        },
+        {
+          "src": "/assets/veined/visuals/hero-earth-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 152950,
+          "sha256": "b1a76965627af8b242e43132297f6b500ca6d18f3b3d0620a7d8bec23a4f1b11"
+        }
+      ]
+    },
+    {
+      "name": "bridge-dusk",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/bridge-dusk-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 44330,
+          "sha256": "eb5aa3bb710e3bc27bdd4fd124e7a494224f408e00c346765bd208509f50515f"
+        },
+        {
+          "src": "/assets/veined/visuals/bridge-dusk-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 142468,
+          "sha256": "25c4407048f029a68e58426f1f91cd8bf2851b4284f758c1856da9b9f370c2eb"
+        },
+        {
+          "src": "/assets/veined/visuals/bridge-dusk-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 229294,
+          "sha256": "4a1c047145c53ea6be6c4821503abcabd8eb88235cdd229c1483b2a849722d57"
+        }
+      ]
+    },
+    {
+      "name": "liquidity-flow",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/liquidity-flow-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 26056,
+          "sha256": "2f8535ec7ca00f0417d82dd79f74a0e6882186b837e70860b4f7e8e0c66ea555"
+        },
+        {
+          "src": "/assets/veined/visuals/liquidity-flow-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 82966,
+          "sha256": "0d22304ad699bd29a22e68f94dc855fa55012f58b77c58455f4d92e908c3d436"
+        },
+        {
+          "src": "/assets/veined/visuals/liquidity-flow-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 139384,
+          "sha256": "f80bbd5463df40b0b9a9ee35514fb0367c7d166e272056c9b0b1ebce65c36008"
+        }
+      ]
+    },
+    {
+      "name": "network-atlas",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/network-atlas-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 35408,
+          "sha256": "8a85fe1ed64224cdcf8c455c74e51b8edc3c023c6632d02112ad0b4e3854bd1a"
+        },
+        {
+          "src": "/assets/veined/visuals/network-atlas-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 130290,
+          "sha256": "f6fd71d9632424ed9b7d4d0d0123a48f8c5f4ca2a8ed180511db1c07d25efb22"
+        },
+        {
+          "src": "/assets/veined/visuals/network-atlas-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 218164,
+          "sha256": "64e511048d7b6678ce550f7f49de9030eab16a124b256651268e71277f19ce05"
+        }
+      ]
+    },
+    {
+      "name": "safety-architecture",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/safety-architecture-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 29158,
+          "sha256": "a06f89aa32d6db5e7a0519a6496d45d5e2c31944ffb69d6c5696448d60170c49"
+        },
+        {
+          "src": "/assets/veined/visuals/safety-architecture-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 107292,
+          "sha256": "ef2f86e7936d57c8475ee0990a5d3b708d46c90f53088263c058551b8c0b3078"
+        },
+        {
+          "src": "/assets/veined/visuals/safety-architecture-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 187142,
+          "sha256": "5842cd96a69d16f72d86ac896b64d21e0587b4e95d341a95289ce48b617a5da9"
+        }
+      ]
+    },
+    {
+      "name": "portfolio-nodes",
+      "sources": [
+        {
+          "src": "/assets/veined/visuals/portfolio-nodes-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 28222,
+          "sha256": "cb3e3d3b0446f7adef501f6248bfa5e2f02afe12f646a7fe61bd4fc03647c995"
+        },
+        {
+          "src": "/assets/veined/visuals/portfolio-nodes-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 82232,
+          "sha256": "cc2f5b0eb4fcec174d13e42b5e4421f3b737b164253e17f2aecc23c164e752d4"
+        },
+        {
+          "src": "/assets/veined/visuals/portfolio-nodes-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 134878,
+          "sha256": "52f4603bc6ec1bbe026e65a40eb2a0596d38ad9daba3ec13d6d34dd3998faf04"
+        }
+      ]
+    }
+  ]
+}

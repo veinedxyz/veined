@@ -1,0 +1,477 @@
+{
+ "version": "abyssal-1",
+ "origin": "Original procedural artwork rendered for VEINED by the abyssal asset studio (seeded Canvas 2D renderer run in headless Chromium, encoded with Pillow WebP). No photographs, stock imagery, third-party artwork, 3D models, datasets or image-generation services were used.",
+ "license": "Created for the VEINED project in this review run; no third-party rights. Decorative only: never a route, coverage, balance or execution data source.",
+ "themes": {
+  "dark": "midnight zone",
+  "light": "sunlit zone"
+ },
+ "variants": {
+  "l1920": "landscape 1920x1080",
+  "l1280": "landscape 1280x720",
+  "l640": "landscape 640x360 (landing, dark)",
+  "p900": "portrait 900x1600"
+ },
+ "generator": {
+  "render.js": "6325dd550db9fdb1d63589912c882d743ffa2acdc148c570ee26aab3e046773b",
+  "scenes.js": "16024be52e4b8bdec9783a9c90de44e81e70facce94f282a55ae36a7035ed481",
+  "build.mjs": "af467604e2f8e9663a7cdc6fb96ed83b440085f6580b4c2a70878b67d26f9244",
+  "encode.py": "b80e6a583cec43dcad63258baa01c6cf24c34d9ee11ff4504a7c6f2d2d6aa761",
+  "nerves.mjs": "2bdd6ed2a4f312ccbd7995d509608bf916e33da56a154c13244cab6b00fc0e80"
+ },
+ "seeds": {
+  "overview": {
+   "landscape": 11,
+   "portrait": 12
+  },
+  "swap": {
+   "landscape": 21,
+   "portrait": 22
+  },
+  "bridge": {
+   "landscape": 31,
+   "portrait": 32
+  },
+  "portfolio": {
+   "landscape": 41,
+   "portrait": 42
+  },
+  "points": {
+   "landscape": 51,
+   "portrait": 52
+  },
+  "activity": {
+   "landscape": 61,
+   "portrait": 62
+  },
+  "networks": {
+   "landscape": 71,
+   "portrait": 72
+  },
+  "help": {
+   "landscape": 81,
+   "portrait": 82
+  }
+ },
+ "masters": {
+  "activity-landscape-dark.png": "e986fa93ec5338137c5a40370e0492a9e499a03bccf034cd27525b4d24d9d5fe",
+  "activity-landscape-light.png": "97ea5f991c9df32d8ce008533eb2c7a9358b6b4f33b6167df1a44677533ed873",
+  "activity-portrait-dark.png": "301ea58b5df892f0095fb08c173c302bdeff32d48844f4e3eed0502e7827bcd5",
+  "activity-portrait-light.png": "8bee1e44a27f7caebd65d3d956ef74a392bc2c0ea67ad80c4e4171cae706949f",
+  "bridge-landscape-dark.png": "a46d081a7d213afe901b9eb69c6e41e34206fb28698dd45ba43ae867ed2a6eaa",
+  "bridge-landscape-light.png": "d44bff176e939b9d91aabff08b613a6b4fa8759a02ccf6509e617d40c5470591",
+  "bridge-portrait-dark.png": "891d9cd0036b0e517abe24a47ae8e05a8bbfe83a4be21e7cc80e763b58e57951",
+  "bridge-portrait-light.png": "c61756285ec6695cbc9ee96eecf743b52b7d52744bbd4d83f0e5180d89434fe8",
+  "help-landscape-dark.png": "8705593990862b2080808e06dca623c5099fc79f1cf72d0029f8d4f9c54f440b",
+  "help-landscape-light.png": "0eb9fa28e85381c5ec65ebbe4b9011696c52abc0e95078b4a9366f8cc6905286",
+  "help-portrait-dark.png": "9b33f8127ef34f774ee8a7acbe048b8009d114ffe29d1e8e53e1cd63be55820d",
+  "help-portrait-light.png": "fb96c7c40eeb37093e263a568dadcec4eaa2ddc13208854eddde24ce89d639b0",
+  "networks-landscape-dark.png": "2f79f1d03d5ec7d11cfbbd65a88aea21a6c8a670d2578cad2a235b000812107c",
+  "networks-landscape-light.png": "36d7772c09d8e0a4ef3bba8b3d77cf875112406e067dae0a8cbda49cd3461eb4",
+  "networks-portrait-dark.png": "f0262b3a2b05e2be241f4781996ce0d77b7ae1b04915feebc9a7c9680cf402ff",
+  "networks-portrait-light.png": "e16189ed678688f4d7f43ff265ae74fe5f9a8623bfecc4740dee1687e7efc982",
+  "overview-landscape-dark.png": "8af57774a8bfbc7e5b701387951157d88ef21a2e134c4f4aa01b42bcea286215",
+  "overview-landscape-light.png": "c7783bb2f8a70e2d5e5f12a8175c500e424a731a45aa8ad1be08b90a57077e9d",
+  "overview-portrait-dark.png": "1cab2eaacfb352abdb5b721b70a83ccbb47754be8911e5b21f75b9c7af77d4db",
+  "overview-portrait-light.png": "80a4ce1190eec1c3b6d7e92d89cad447f850d3be377b0ae6dbd8f24451123bb4",
+  "points-landscape-dark.png": "303b89a5a241108d04a63de1f5cb80b62dd0656fe6cc73c20f59356f7877e879",
+  "points-landscape-light.png": "cf338874d76ea8eb09c97e95e171621b594757e5da7a9131d314113ede3c0b25",
+  "points-portrait-dark.png": "56c1c99f6fe648e307dea4190d6f93e98e17db8be6901da5ee9a1ab8d103bf97",
+  "points-portrait-light.png": "c887ef724acaf7583563ff2dca2b305698386c5debf8ec7c3c103531f1f82d41",
+  "portfolio-landscape-dark.png": "a61c55835a743acc02ba9599b3417639ef39f8239066aa017ec20e3199baa4db",
+  "portfolio-landscape-light.png": "aca9ef778936bad7bf17111956e4d0148ad8c71a41a0e3a90765683f4b8d3785",
+  "portfolio-portrait-dark.png": "592b49a58b948905696508f3096aa868b249bbd16494f41d2e9a59186efc7504",
+  "portfolio-portrait-light.png": "73967dcb330f23f8ed54b52fefec1714d07aa90d012cc8b923e14e34550b3b94",
+  "swap-landscape-dark.png": "792d12f56f886fdc8bfa452eb9e64ffe4333a6ba2c2f534824271927b37b2254",
+  "swap-landscape-light.png": "b9ec66ffc12aaaf592e8614de4257c24d8e31b29c29142bdf8f2259f8184ba16",
+  "swap-portrait-dark.png": "c3865cdbc6021af3ad7aadcd08b4683d0525bd68d2f944920309b96ecddb6ef4",
+  "swap-portrait-light.png": "52a60bdb4f02965c52897777edefc7d02e98b54b6ba219719de261271513a6d8"
+ },
+ "files": [
+  {
+   "file": "overview-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 12834,
+   "sha256": "864dc645269ce363b3cb93a062deb91c5d904e7eb00829dcba5aec13768dd1d4"
+  },
+  {
+   "file": "overview-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 6942,
+   "sha256": "7954a11a1d3390c92eb89cf2282c31d4c4a3392c35801dae76fb9e6a218d39b6"
+  },
+  {
+   "file": "overview-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 2434,
+   "sha256": "c3267d624fc3e274f5c8b6ec92f9778cc357a24e2f66b3e241a8b84c8dc7d14e"
+  },
+  {
+   "file": "overview-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 8802,
+   "sha256": "312e02cf95b4b0598d1896f0ba4224e21b81a0dbca972fc5b1a3bbb587c8d4a6"
+  },
+  {
+   "file": "overview-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 117476,
+   "sha256": "f2e6019fe49bcd7337a6e5e8c2c5e769f5110575b0d50d85035892324845ec43"
+  },
+  {
+   "file": "overview-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 52968,
+   "sha256": "b5b99495f73a96a56601b9c65a067aa8d8f2f0be2e25dd69d9b63d2c38853f16"
+  },
+  {
+   "file": "overview-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 68468,
+   "sha256": "0d597aebcbd034882c9316dfabe6e538559f161859c0c216fecb06836fdfb035"
+  },
+  {
+   "file": "swap-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 13544,
+   "sha256": "2c064d61b5e634414929fc6453783765ddc22772b347a786851fcf39f60e303f"
+  },
+  {
+   "file": "swap-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 7456,
+   "sha256": "a4120c48a5dc8e1457c1a0af246c5cfdf63ea5213856f876807ac4c3cacf3eeb"
+  },
+  {
+   "file": "swap-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 2598,
+   "sha256": "652d72194dce7dfc05b0110e9ce555e99e39f9b782de4c6a68360b5afc0b17e2"
+  },
+  {
+   "file": "swap-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 7122,
+   "sha256": "36dedd92981ebaafd4505c0156d9f98819d3af01f37b6664868feb993813cf12"
+  },
+  {
+   "file": "swap-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 50672,
+   "sha256": "4ff06b2d0f17f5f4c6d9e7c54081b374030f990abd58b646279ed00997632ce9"
+  },
+  {
+   "file": "swap-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 22992,
+   "sha256": "91cbd2d04b6fd1105c4a6bbdb20cad9db4d12af37a9a56d44e0b0e5bcfade26c"
+  },
+  {
+   "file": "swap-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 12582,
+   "sha256": "41cfcf33ba392910ee5ab0a2894c49daa46abe7ec5f3bddb35e47d8aa9d79875"
+  },
+  {
+   "file": "bridge-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 11560,
+   "sha256": "abe13f322a1f7e6b8f0ba77e50f224bfbfa4cfa32f9bb341025182ad07028da7"
+  },
+  {
+   "file": "bridge-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 6118,
+   "sha256": "959f81b1d39d33da14fea42164e747c6967af53f969462bb812699657ddb6fd2"
+  },
+  {
+   "file": "bridge-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 1944,
+   "sha256": "1bb95f0827650e64ea7cf740e1ab951fabfb7623c05279bf6fe19ccb5ac68a06"
+  },
+  {
+   "file": "bridge-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 7030,
+   "sha256": "e8882a08d8073daba547d8f80a0e6a8fd456cee5fbb6f1dd02ea7ccb1ccc8f48"
+  },
+  {
+   "file": "bridge-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 25678,
+   "sha256": "f5ac21a9a4232cf9e4bb3fd30175b21019f457cc47048a65c4d9fe3fda56ef86"
+  },
+  {
+   "file": "bridge-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 12154,
+   "sha256": "acadbe00a66848b2ad263e143808405b2fe65199565f0b4fd4aa2c605f2e942f"
+  },
+  {
+   "file": "bridge-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 12032,
+   "sha256": "af47ad1d320053da1962455356439890bfcee0960173de1744997660b66c6e42"
+  },
+  {
+   "file": "portfolio-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 9298,
+   "sha256": "d70986879306c5644256eed351dc92073431c74e7dcf01d24a6c6ec41e2c29d3"
+  },
+  {
+   "file": "portfolio-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 4824,
+   "sha256": "f710fca71150e5056dd51ca3a50e315f9dea1fee9331a2c6d470d9869c3da653"
+  },
+  {
+   "file": "portfolio-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 1654,
+   "sha256": "5804b7911621b5c945be1285c9fce694e384475fb2e9fc22ebe0e13f9caeb20e"
+  },
+  {
+   "file": "portfolio-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 6342,
+   "sha256": "2b0f963b4c14a774adcae24d63cf8bebc590011f4d78b54b38963ce8751e31ff"
+  },
+  {
+   "file": "portfolio-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 18386,
+   "sha256": "eab5beefde9352b1d5cb56a82be4a05b175536409a8aa330c7b8b865a7423461"
+  },
+  {
+   "file": "portfolio-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 8860,
+   "sha256": "3080aa1203050b1f7d5a8d14fcd6700c353870dcfc288a6fc4bd3acdc178cc86"
+  },
+  {
+   "file": "portfolio-l640-light.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 1952,
+   "sha256": "2814145b5714d7ceeaf896a1e0483e5bb7bdd9e44447972cf609d64186de7b39"
+  },
+  {
+   "file": "portfolio-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 10070,
+   "sha256": "4577b7b7b2cbe4a75bfaa6db89505b536e3fa96d73c203e63e1da908c4d83957"
+  },
+  {
+   "file": "points-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 9342,
+   "sha256": "eb6eb746075579465ab3b02b2f6117cbd63917d7573b03e4aa0fadbdad9db2f9"
+  },
+  {
+   "file": "points-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 4778,
+   "sha256": "3bff0eca300d4cde6b1c8f97501bc1279a38bf6317e2f97cdd7e1039c5c53151"
+  },
+  {
+   "file": "points-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 6474,
+   "sha256": "23e6b1b9b793577f229adc834914e9d1b46cd5d6b9f02a595fe8cf87f8aac1aa"
+  },
+  {
+   "file": "points-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 12460,
+   "sha256": "1a2782178978b6833a82e8ea90fa371d564c684672ae0df5e3cd4a3dd3f789aa"
+  },
+  {
+   "file": "points-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 6104,
+   "sha256": "6479655840f3f074e985d84a626f2933489f6e86e3cc9ebec57b2491ac1da180"
+  },
+  {
+   "file": "points-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 9076,
+   "sha256": "aa189efafb0de98b8af41a932cba35698771dcfa40bd6f1562636f2cc8342616"
+  },
+  {
+   "file": "activity-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 10810,
+   "sha256": "66a067360ac5e0e8faa5f55011908b0e4efe0c42667f54a42b1c189ad9e80140"
+  },
+  {
+   "file": "activity-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 5136,
+   "sha256": "96b8fe8c059291f873f205fc691161ed69007b5614ad7f77051208ea84892970"
+  },
+  {
+   "file": "activity-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 7206,
+   "sha256": "6f978251aaf9a2ff7e2383daa251b61127f346fbe984b58b2cc15cf675a6c2ad"
+  },
+  {
+   "file": "activity-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 18628,
+   "sha256": "35797f85e0e8fe0288694ed6288a9996729dd95b384c4bf00410241563320c15"
+  },
+  {
+   "file": "activity-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 8652,
+   "sha256": "1e94189e89cfdcdfd93ec77b9b339f258d3bf907d77a3557f41ed2dfddfcb6f4"
+  },
+  {
+   "file": "activity-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 10380,
+   "sha256": "63f3db61ca77b9da6a9ed0545fbb78ee7ee20420ed3559e9b61ca00e3fcfaf65"
+  },
+  {
+   "file": "networks-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 13652,
+   "sha256": "e4561a6a7a9edb90568d6a0273ba8d89a4dece7155046ccddcda29512c90b452"
+  },
+  {
+   "file": "networks-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 6262,
+   "sha256": "dedf05d76a508a54f150cda331a50b2018dd30db2f7e8864f4e9c2dbd42dd421"
+  },
+  {
+   "file": "networks-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 1712,
+   "sha256": "7d1733f92c4982a48790091762e701b50007104425af99326525ba1178033b7a"
+  },
+  {
+   "file": "networks-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 8320,
+   "sha256": "442cfc59d96de12dd11190d783c31c603ae1f28914dd1d8f92ae7b2c2441a8fa"
+  },
+  {
+   "file": "networks-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 21558,
+   "sha256": "ae8a7073dabf84c318d6d33503dad5421264bec2358541d8fc00d8af3042b06f"
+  },
+  {
+   "file": "networks-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 10230,
+   "sha256": "4e575fdbe1b6cb3b5a33fb5724501b7b557cab327c97271f8533d726e1bb11a9"
+  },
+  {
+   "file": "networks-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 11994,
+   "sha256": "336da5c73f502ec71fbf4652e003898e1b227837f8cf9deb68c4d21e95b3482f"
+  },
+  {
+   "file": "help-l1920-dark.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 8696,
+   "sha256": "fc7252c950a566db684b071a4ff270c680a788020bf312cf2f9c6196f40b8769"
+  },
+  {
+   "file": "help-l1280-dark.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 4478,
+   "sha256": "b678d3efbd2164a57a839480ba8e70d4caab21a97fb23025454367e139592aef"
+  },
+  {
+   "file": "help-l640-dark.webp",
+   "width": 640,
+   "height": 360,
+   "bytes": 1470,
+   "sha256": "816ec8d6a89bd5311a827b9a83e7cc6bef167e5208709f41e0c55d50e8553d49"
+  },
+  {
+   "file": "help-p900-dark.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 5884,
+   "sha256": "aea50b005b6f42c5e84408bca3628d0c693e6eb2b65e5864c0f56be6598f4062"
+  },
+  {
+   "file": "help-l1920-light.webp",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 10612,
+   "sha256": "7e61c6e0b4d164e0cfa7ec0b49e8574868c646a4e50948c00b642537f9582ba4"
+  },
+  {
+   "file": "help-l1280-light.webp",
+   "width": 1280,
+   "height": 720,
+   "bytes": 5056,
+   "sha256": "4f98e28b50e4d84f880a07e904502c6e1590e80a73c9228abbbd54ad004ab9d6"
+  },
+  {
+   "file": "help-p900-light.webp",
+   "width": 900,
+   "height": 1600,
+   "bytes": 7224,
+   "sha256": "8e921e6ba6afc81786b574c6c7f40400be58c48dc34a665c9d1207c930663b08"
+  }
+ ]
+}

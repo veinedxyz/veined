@@ -1,0 +1,22 @@
+{
+  "name": "otherbridge-swap-provider-runtime",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@msgpack/msgpack": "3.1.3",
+    "@pancakeswap/pcsx-sdk": "1.7.2",
+    "@pancakeswap/smart-router": "7.8.0",
+    "@pancakeswap/swap-sdk-core": "1.6.1",
+    "@pancakeswap/swap-sdk-evm": "1.3.0",
+    "@solana/web3.js": "1.99.0",
+    "@uniswap/uniswapx-sdk": "3.1.3",
+    "decode-uri-component": "0.5.1",
+    "source-map-js": "1.2.2",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "@titanexchange/sdk-ts": "0.1.6",
+    "@types/ws": "8.18.1"
+  }
+}

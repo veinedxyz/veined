@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <title>G7 pilot · local</title>
+    <link rel="stylesheet" href="/app.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <strong>Otherbridge</strong>
+        <span>G7 controlled pilot · local one-shot</span>
+      </div>
+      <div class="meta">
+        <span id="mode-badge" class="badge">…</span>
+        <span id="session-id" class="mono"></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="banner" class="banner" aria-live="polite">
+        <h1 id="banner-title">Connecting to the local harness…</h1>
+        <p id="banner-text"></p>
+        <ul id="banner-reasons" class="reasons"></ul>
+        <div class="row">
+          <button id="refresh" type="button" class="secondary" hidden>
+            Re-run read-only preflight
+          </button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="review-h">
+        <div class="panel-head">
+          <h2 id="review-h">Transaction you will be asked to confirm</h2>
+          <span id="local-check" class="chip">not verified yet</span>
+        </div>
+        <dl id="review" class="kv"></dl>
+        <details>
+          <summary>Exact calldata and wallet request parameters</summary>
+          <pre id="calldata" class="mono wrap"></pre>
+          <pre id="txparams" class="mono wrap"></pre>
+        </details>
+      </section>
+
+      <section class="panel warn" aria-labelledby="trust-h">
+        <h2 id="trust-h">Trust model — centralized, not trustless</h2>
+        <p id="trust-statement"></p>
+        <dl id="trust" class="kv"></dl>
+      </section>
+
+      <section class="panel" aria-labelledby="wallet-h">
+        <h2 id="wallet-h">Wallet</h2>
+        <p class="hint">
+          Your own injected wallet (EIP-6963 / EIP-1193). This page never asks
+          for a private key or seed phrase and never signs messages.
+        </p>
+        <div class="row">
+          <label for="provider">Provider</label>
+          <select id="provider"></select>
+          <button id="connect" type="button" class="secondary">
+            Connect wallet
+          </button>
+        </div>
+        <dl id="wallet" class="kv"></dl>
+        <div class="row">
+          <button id="switch" type="button" class="secondary" hidden>
+            Switch wallet network to ONEchain (612055)
+          </button>
+          <button id="add-chain" type="button" class="secondary" hidden>
+            Add ONEchain (612055) to the wallet
+          </button>
+        </div>
+        <p id="wallet-msg" class="hint"></p>
+      </section>
+
+      <section class="panel confirm" aria-labelledby="confirm-h">
+        <h2 id="confirm-h">Owner confirmation</h2>
+        <label class="check"
+          ><input id="chk-scope" type="checkbox" />
+          <span id="chk-scope-label"></span
+        ></label>
+        <label class="check"
+          ><input id="chk-trust" type="checkbox" />
+          <span id="chk-trust-label"></span
+        ></label>
+        <label class="phrase" for="phrase"
+          >Type <code id="phrase-hint"></code> to enable the button</label
+        >
+        <input id="phrase" type="text" autocomplete="off" spellcheck="false" />
+        <p class="hint" id="confirm-note">
+          Pressing the button runs a fresh final mainnet preflight. The wallet
+          request is made only if the fresh transaction is byte-identical to the
+          one shown above and its quote is at most 20 s old. Your wallet then
+          asks you to confirm or reject — nothing is confirmed automatically,
+          and there is no second attempt.
+        </p>
+        <button id="send" type="button" class="primary" disabled></button>
+        <p id="send-msg" class="msg" aria-live="assertive"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="track-h" id="track-panel" hidden>
+        <h2 id="track-h">After the wallet request (read-only tracking)</h2>
+        <dl id="track" class="kv"></dl>
+      </section>
+
+      <section class="panel" aria-labelledby="gates-h">
+        <h2 id="gates-h">Fresh mainnet preflight</h2>
+        <dl id="summary" class="kv"></dl>
+        <table class="gates">
+          <thead>
+            <tr>
+              <th>Gate</th>
+              <th>Check</th>
+              <th>Status</th>
+              <th>Reasons</th>
+            </tr>
+          </thead>
+          <tbody id="gates"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

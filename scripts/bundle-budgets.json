@@ -1,0 +1,6 @@
+{
+  "note": "gzip bytes of all JS loaded by a first visit (fresh context, TR, networkidle). The app budget is the unchanged V1.10 budget; landing and docs budgets were set from their first V1.11 measurement plus a fixed margin and may only be raised by an explicit, reviewed change.",
+  "app": 290690,
+  "landing": 150000,
+  "docs": 150000
+}

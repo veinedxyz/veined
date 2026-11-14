@@ -1,0 +1,70 @@
+/* V1.20 candidate identity. No font download, animation or layout observer. */
+:root {
+  --brand-sage: #bdccb9;
+  --brand-ivory: #f1f0ec;
+  --brand-graphite: #0c0d10;
+  --brand-ink: #3e604a;
+}
+.veined-logo {
+  display: inline-block;
+  width: 156.6667px;
+  height: 40px;
+  flex: none;
+  line-height: 0;
+  vertical-align: middle;
+  direction: ltr;
+}
+.veined-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.veined-logo .veined-logo-light {
+  display: none;
+}
+html[data-theme="light"] .veined-logo .veined-logo-dark {
+  display: none;
+}
+html[data-theme="light"] .veined-logo .veined-logo-light {
+  display: block;
+}
+/* Guardian finalization preview: octopus tile + VEINED wordmark inside the same box (same size, same theme switch). */
+.veined-logo.is-octopus {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.veined-logo.is-octopus img {
+  height: 50%;
+  width: auto;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.veined-logo.is-octopus .veined-logo-symbol {
+  display: block;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1;
+  flex: none;
+  border-radius: 22.5%;
+}
+.veined-mark.is-octopus img {
+  border-radius: 22.5%;
+}
+.octopus-symbol {
+  display: block;
+  border-radius: 22.5%;
+  flex: none;
+}
+.mk-footer-brand .veined-logo {
+  width: 188px;
+  height: 48px;
+}
+@media (max-width: 500px) {
+  .mk-brand .veined-logo,
+  .brand .veined-logo {
+    width: 148px;
+    height: 37.7872px;
+  }
+}

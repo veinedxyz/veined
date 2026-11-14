@@ -1,0 +1,230 @@
+{
+  "note": "Real pinned mainnet nonzero proofs (read-only). Full raw records: V1.14 evidence core-nonzero/.",
+  "proofs": [
+    {
+      "id": "aave-v3-borrower",
+      "family": "aave-v3",
+      "deploymentId": "aave-v3-1",
+      "protocolId": "aave-v3",
+      "chainId": "1",
+      "block": "26166706",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "aave-v3-collector",
+      "family": "aave-v3",
+      "deploymentId": "aave-v3-1",
+      "protocolId": "aave-v3",
+      "chainId": "1",
+      "block": "26166704",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "aerodrome-weth-usdc-gauge",
+      "family": "solidly-v2",
+      "deploymentId": "aerodrome-v2-8453",
+      "protocolId": "aerodrome",
+      "chainId": "8453",
+      "block": "52451133",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "balancer-v2-fee-collector",
+      "family": "balancer-v2",
+      "deploymentId": "balancer-v2-1",
+      "protocolId": "balancer-v2",
+      "chainId": "1",
+      "block": "26166713",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "compound-iii-supplier",
+      "family": "compound-iii",
+      "deploymentId": "compound-1-usdc",
+      "protocolId": "compound-iii",
+      "chainId": "1",
+      "block": "26166707",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "curve-3pool-gauge-holder",
+      "family": "curve",
+      "deploymentId": "curve-1",
+      "protocolId": "curve",
+      "chainId": "1",
+      "block": "26166713",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "eigenlayer-staker",
+      "family": "eigenlayer",
+      "deploymentId": "eigenlayer-1",
+      "protocolId": "eigenlayer",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "erc4626-sfrxeth-strategy",
+      "family": "erc4626",
+      "deploymentId": "erc4626-sfrxeth-1",
+      "protocolId": "frax-ether",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lido-treasury-steth",
+      "family": "lido",
+      "deploymentId": "lido-1",
+      "protocolId": "lido",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lido-withdrawal-queue",
+      "family": "lido",
+      "deploymentId": "lido-1",
+      "protocolId": "lido",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lido-wsteth-aave-atoken",
+      "family": "lido",
+      "deploymentId": "lido-1",
+      "protocolId": "lido",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-cbeth",
+      "family": "lst-rate",
+      "deploymentId": "lst-cbeth-1",
+      "protocolId": "coinbase-cbeth",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-ethx",
+      "family": "lst-rate",
+      "deploymentId": "lst-ethx-1",
+      "protocolId": "stader",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-meth",
+      "family": "lst-rate",
+      "deploymentId": "lst-meth-1",
+      "protocolId": "meth-protocol",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-oseth",
+      "family": "lst-rate",
+      "deploymentId": "lst-oseth-1",
+      "protocolId": "stakewise-v3",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-reth",
+      "family": "lst-rate",
+      "deploymentId": "lst-reth-1",
+      "protocolId": "rocket-pool",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-sweth",
+      "family": "lst-rate",
+      "deploymentId": "lst-sweth-1",
+      "protocolId": "swell-sweth",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "lst-wbeth",
+      "family": "lst-rate",
+      "deploymentId": "lst-wbeth-1",
+      "protocolId": "binance-wbeth",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "morpho-blue-metamorpho-supply",
+      "family": "morpho-blue",
+      "deploymentId": "morpho-blue-1",
+      "protocolId": "morpho-blue",
+      "chainId": "1",
+      "block": "26166707",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "morpho-vault-dead-deposit",
+      "family": "morpho-vault",
+      "deploymentId": "morpho-vault-1",
+      "protocolId": "morpho-vault",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "pancakeswap-v3-masterchef",
+      "family": "uniswap-v3",
+      "deploymentId": "pancakeswap-v3-56",
+      "protocolId": "pancakeswap-v3",
+      "chainId": "56",
+      "block": "126952802",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "sparklend-treasury",
+      "family": "aave-v3",
+      "deploymentId": "sparklend-1",
+      "protocolId": "sparklend",
+      "chainId": "1",
+      "block": "26166902",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "sushiswap-v2-weth-usdc",
+      "family": "uniswap-v2",
+      "deploymentId": "sushiswap-v2-1",
+      "protocolId": "sushiswap",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "uniswap-v2-usdc-weth",
+      "family": "uniswap-v2",
+      "deploymentId": "uniswap-v2-1",
+      "protocolId": "uniswap-v2",
+      "chainId": "1",
+      "block": "26166708",
+      "status": "REAL_NONZERO_PROOF"
+    },
+    {
+      "id": "uniswap-v3-contract-owner",
+      "family": "uniswap-v3",
+      "deploymentId": "uniswap-v3-1",
+      "protocolId": "uniswap-v3",
+      "chainId": "1",
+      "block": "26166710",
+      "status": "REAL_NONZERO_PROOF"
+    }
+  ]
+}

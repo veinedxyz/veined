@@ -1,0 +1,36 @@
+# V1.5 staging image context: source, lockfile and public assets only. Never secrets, data or evidence.
+.git
+node_modules
+**/node_modules
+.next
+.next-g7-pilot
+.next-g7-pilot-test
+.env*
+!.env.example
+evidence
+test-results
+playwright-report
+.otherbridge/*
+!.otherbridge/g7-protected-baseline.txt
+otherbridge-review-r1-evidence
+review-bundles
+*.zip
+*.tsbuildinfo
+# The bridge route statically references tests/fixtures/local (local-test mode only; refused in
+# production by localAllowed()), so fixtures must be present for the type-checked build.
+tests/g7-pilot/evidence
+infra/staging/secrets
+infra/monitoring/secrets
+**/secrets
+*.pem
+*.key
+**/*.dump
+**/*.dump.enc
+GOAL_*.md
+!GOAL_OTHERBRIDGE_V1_7_G7_CONTROLLED_PILOT_PREP_ONLY.md
+# Exact accepted protected baseline, without any prior runtime/evidence payload.
+!evidence
+evidence/*
+!evidence/otherbridge-v1-12-1
+evidence/otherbridge-v1-12-1/*
+!evidence/otherbridge-v1-12-1/owner-security-20261014T140240767Z

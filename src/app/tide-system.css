@@ -1,0 +1,364 @@
+/* ==========================================================================================================
+   gf1 G05 — Tide: the VEINED-native visual layer, loaded last.
+   One calmer design language for every destination: page titles sit on the water instead of inside framed bands,
+   depth comes from layered opacity rather than drop shadows, related steps share one surface, and the financial
+   instrument stays the one framed, opaque object on Swap and Bridge (figures never sit on see-through glass, AB9).
+   Reference cues (measurements only, nothing copied; see G05_DESIGN_TRACE_TR.md):
+     T1 open headings ........ app screens are sparse: Hashflow app i4 frameless form (text cover 0.072), Squid app
+                               no visible heading (i0 1x1), Owlto 0.041; deBridge app no heading.
+     T2 one surface per flow . VEINED's own decision (inference, no competitor layout cited): steps share a surface.
+     T3 depth without shadow . shadowed elements: deBridge 0+0, Hashflow 0+0, Owlto 0, Across 1.
+     T4 quiet secondary text . Owlto i1 rgba(255,255,255,0.6), Across i8 /0.7, Across balance i18 /0.5.
+     T5 selective corners .... controls 12px, sheets 20-24px, chips/tabs pill (Squid 9999px, Owlto 68px, Across 12/24).
+   ========================================================================================================== */
+
+/* ---------- T1: page titles on the water (no framed band) ---------- */
+.veined-app .page-heading,
+.veined-app[data-surface="bridge"] .intro {
+  /* The destination still opens with its own stretch of water (accepted AB8: at least 150 px), now unframed. */
+  min-height: clamp(156px, 18vh, 184px);
+  margin-top: 6px;
+  margin-bottom: 18px;
+  padding: 40px 4px 10px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+/* The title reads on a scrim that is deepest where the text starts and fades out towards the inline end, like the
+   accepted band scrim, but with no box: it reaches 56 px past the inline start and fades in there (overflow on that
+   side never scrolls), and its top and bottom fade out (review B1/M1: contrast measured on the film, both themes). */
+.veined-app .page-heading::before,
+.veined-app[data-surface="bridge"] .intro::before,
+.veined-app[data-surface="activity"] .page-heading::before {
+  inset-block: -28px -24px;
+  inset-inline: -56px 0;
+  border-radius: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0) 0,
+    rgb(var(--abyss-rgb) / 0.88) 56px,
+    rgb(var(--abyss-rgb) / 0.6) 42%,
+    rgb(var(--abyss-rgb) / 0) 76%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    #000 28px,
+    #000 calc(100% - 24px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    #000 28px,
+    #000 calc(100% - 24px),
+    transparent 100%
+  );
+}
+[dir="rtl"] .veined-app .page-heading::before,
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro::before,
+[dir="rtl"] .veined-app[data-surface="activity"] .page-heading::before {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--abyss-rgb) / 0) 0,
+    rgb(var(--abyss-rgb) / 0.88) 56px,
+    rgb(var(--abyss-rgb) / 0.6) 42%,
+    rgb(var(--abyss-rgb) / 0) 76%
+  );
+}
+/* Bridge and Activity: the arm crosses the band, so the title keeps the deeper scrim it had. */
+.veined-app[data-surface="bridge"] .intro::before,
+.veined-app[data-surface="activity"] .page-heading::before {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--abyss-rgb) / 0) 0,
+    rgb(var(--abyss-rgb) / 0.95) 56px,
+    rgb(var(--abyss-rgb) / 0.84) 44%,
+    rgb(var(--abyss-rgb) / 0) 78%
+  );
+}
+[dir="rtl"] .veined-app[data-surface="bridge"] .intro::before,
+[dir="rtl"] .veined-app[data-surface="activity"] .page-heading::before {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--abyss-rgb) / 0) 0,
+    rgb(var(--abyss-rgb) / 0.95) 56px,
+    rgb(var(--abyss-rgb) / 0.84) 44%,
+    rgb(var(--abyss-rgb) / 0) 78%
+  );
+}
+/* Help keeps no rule under its title either: the topics below are their own surface. */
+.veined-app[data-surface="help"] .page-heading {
+  border-bottom: 0;
+}
+/* Swap's title stays visually hidden (its accepted rule keeps it clipped). */
+.veined-app .swap-page > .page-heading {
+  overflow: hidden;
+}
+/* The destination's own motif stays as atmosphere at the far side, fainter and unframed. */
+.veined-app .page-heading::after,
+.veined-app[data-surface="bridge"] .intro::after {
+  opacity: 0.55;
+  border-radius: 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 30%,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 30%,
+    #000 82%,
+    transparent 100%
+  );
+}
+.veined-app .page-heading .page-lede {
+  color: rgb(var(--foam-rgb) / 0.74);
+}
+html[data-theme="light"] .veined-app .page-heading .page-lede,
+html[data-theme="light"] .veined-app[data-surface="bridge"] .intro p {
+  color: var(--text);
+}
+/* Light theme: the heading's small pills read on their own pale backing, not on the film (G05 review m-B: 4.1-4.4:1
+   before, 4.5:1 required). */
+html[data-theme="light"]
+  .veined-app
+  .page-heading
+  .page-meta
+  > :is(.pill, .badge) {
+  background-color: rgb(var(--abyss-rgb) / 0.9);
+}
+@media (max-width: 700px) {
+  .veined-app .page-heading,
+  .veined-app[data-surface="bridge"] .intro {
+    min-height: 0;
+    margin-top: 2px;
+    padding: 22px 2px 6px;
+    border-radius: 0;
+  }
+  /* Phones: the text spans the whole width, so the scrim covers the line and only fades in at the inline start. */
+  .veined-app .page-heading::before,
+  .veined-app[data-surface="bridge"] .intro::before,
+  .veined-app[data-surface="activity"] .page-heading::before {
+    inset-block: -14px -12px;
+    inset-inline: -12px 0;
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0,
+      #000 14px,
+      #000 calc(100% - 12px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0,
+      #000 14px,
+      #000 calc(100% - 12px),
+      transparent 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgb(var(--abyss-rgb) / 0) 0,
+      rgb(var(--abyss-rgb) / 0.9) 12px,
+      rgb(var(--abyss-rgb) / 0.82) 88%,
+      rgb(var(--abyss-rgb) / 0.3) 100%
+    );
+  }
+  [dir="rtl"] .veined-app .page-heading::before,
+  [dir="rtl"] .veined-app[data-surface="bridge"] .intro::before,
+  [dir="rtl"] .veined-app[data-surface="activity"] .page-heading::before {
+    background: linear-gradient(
+      270deg,
+      rgb(var(--abyss-rgb) / 0) 0,
+      rgb(var(--abyss-rgb) / 0.9) 12px,
+      rgb(var(--abyss-rgb) / 0.82) 88%,
+      rgb(var(--abyss-rgb) / 0.3) 100%
+    );
+  }
+}
+
+/* ---------- T2: the Overview flow is one surface with four stations ---------- */
+.overview-flow-steps {
+  gap: 0;
+  border: 1px solid var(--deep-edge);
+  border-radius: 22px;
+  background: var(--deep-card);
+  background-color: var(--surface);
+  overflow: hidden;
+}
+.overview-flow-steps > li {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 18px 18px 16px;
+}
+.overview-flow-steps > li + li {
+  border-inline-start: 1px solid var(--deep-edge);
+}
+.overview-flow-steps > li.is-guardian {
+  border-color: var(--deep-edge);
+  background: radial-gradient(
+    120% 90% at 0% 0%,
+    rgb(var(--biolume-rgb) / 0.1),
+    transparent 62%
+  );
+  box-shadow: inset 0 2px 0 rgb(var(--biolume-rgb) / 0.55);
+}
+@media (max-width: 1180px) {
+  .overview-flow-steps > li + li {
+    border-inline-start: 0;
+  }
+  .overview-flow-steps > li:nth-child(even) {
+    border-inline-start: 1px solid var(--deep-edge);
+  }
+  .overview-flow-steps > li:nth-child(n + 3) {
+    border-top: 1px solid var(--deep-edge);
+  }
+}
+@media (max-width: 640px) {
+  .overview-flow-steps > li:nth-child(even) {
+    border-inline-start: 0;
+  }
+  .overview-flow-steps > li + li {
+    border-top: 1px solid var(--deep-edge);
+  }
+}
+
+/* ---------- T3: depth without drop shadows (the instrument keeps its own) ---------- */
+.veined-app :is(.card, .overview-tool, .overview-explore),
+.veined-app .help-steps {
+  box-shadow: var(--deep-light);
+}
+.veined-app .swap-card {
+  box-shadow: var(--deep-shadow);
+}
+/* Light theme too (review M2): content cards keep only the top light; the instrument keeps its shadow. */
+html[data-theme="light"]
+  .veined-app
+  :is(.card, .overview-tool, .overview-explore, .help-steps) {
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.9) inset;
+}
+html[data-theme="light"] .veined-app .swap-card {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 18px 40px -28px rgb(20 44 52 / 0.45);
+}
+
+/* ---------- T4/T5: quieter secondary text; selective corners ---------- */
+.veined-app .card .muted,
+.veined-app .card-top p {
+  color: rgb(var(--foam-rgb) / 0.68);
+}
+html[data-theme="light"] .veined-app .card .muted,
+html[data-theme="light"] .veined-app .card-top p {
+  color: var(--muted);
+}
+
+@media (forced-colors: active) {
+  /* High contrast: each station keeps its own outline (no shared surface to draw; review N2). */
+  .overview-flow-steps {
+    gap: 12px;
+    border: 0;
+  }
+  .overview-flow-steps > li,
+  .overview-flow-steps > li + li,
+  .overview-flow-steps > li:nth-child(n) {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ---------- T2: Help topics are one surface with nine stations ---------- */
+.veined-app .help-topics {
+  gap: 0;
+  border: 1px solid var(--deep-edge);
+  border-radius: 22px;
+  background: var(--deep-card);
+  background-color: var(--surface);
+  overflow: hidden;
+}
+.veined-app .help-topics a {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  /* hairlines between stations (logical, so they mirror in RTL and survive forced colours); the outermost ones sit
+     under the surface's own edge */
+  border-inline-end: 1px solid var(--deep-edge);
+  border-block-end: 1px solid var(--deep-edge);
+  margin-inline-end: -1px;
+  margin-block-end: -1px;
+}
+.veined-app .help-topics a:focus-visible {
+  outline-offset: -3px;
+  border-radius: 18px;
+}
+.veined-app .help-topics a:hover,
+.veined-app .help-topics a:focus-visible {
+  background: rgb(var(--biolume-rgb) / 0.06);
+}
+
+/* ---------- Dock lane on narrow screens (gf1 G04 residual) ---------- */
+/* The tucked assistant tab keeps 24 px at the inline end; a full-width field there stops 12 px short of it. */
+@media (max-width: 1023px) {
+  .veined-app .catalog-tools .search-field {
+    margin-inline-end: 12px;
+  }
+}
+@media (max-width: 600px) {
+  /* main padding is 12 px here, so the field needs 24 px to stay 12 px clear of the 24 px tab (review m4) */
+  .veined-app .catalog-tools .search-field {
+    margin-inline-end: 24px;
+  }
+}
+
+/* ---------- Landing: Guardian's promise first, the reach second ---------- */
+.mk-hero .mk-lede.mk-lede-secondary {
+  margin-top: 4px;
+  font-size: 0.94em;
+  color: rgb(var(--foam-rgb) / 0.66);
+}
+html[data-theme="light"] .mk-hero .mk-lede.mk-lede-secondary {
+  color: var(--muted);
+}
+
+/* ---------- The assistant's lane exists from the first paint (no late shift) ---------- */
+/* gf1 G04 reserved the wide-screen lane for the closed assistant once its button had mounted (`:has(> .gdock)`), so the
+   page narrowed after load (measured layout shift 0.14 on Networks). The lane now follows the server-rendered surface:
+   every app page except Guardian (which has the full conversation and no button) keeps it from the start. */
+@media (min-width: 1024px) {
+  .app-shell .main.veined-app:not([data-surface="guardian"]) {
+    padding-inline-end: max(
+      36px,
+      calc(84px - max(0px, (100vw - var(--rail-w) - var(--content-max)) / 2))
+    );
+  }
+  .app-shell:has(.main.veined-app:not([data-surface="guardian"]))
+    .footer-inner {
+    padding-inline-end: max(
+      32px,
+      calc(84px - max(0px, (100vw - var(--rail-w) - var(--content-max)) / 2))
+    );
+  }
+}
+
+/* ---------- Guardian page: the conversation's place is held before its code arrives ---------- */
+/* The chat loads in the browser after the page; until then its panel is empty and the King Octopus introduction below
+   it jumped down when the chat appeared (measured layout shift 0.49 on a phone). The empty panel keeps the chat's own
+   height, so nothing below it moves. */
+#guardian-panel-chat:empty {
+  min-height: max(460px, min(720px, calc(100dvh - 160px)));
+}
+@media (max-width: 600px) {
+  #guardian-panel-chat:empty {
+    min-height: max(420px, min(640px, calc(100dvh - 140px)));
+  }
+}
+
+/* The footer starts below the first screen of every app page, so content arriving after the first paint cannot push a
+   visible footer down (measured 0.09 on the Guardian page on a phone). */
+.app-shell .main.veined-app {
+  min-height: 100svh;
+}

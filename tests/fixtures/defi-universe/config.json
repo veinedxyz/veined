@@ -1,0 +1,48 @@
+{
+  "chainCoingeckoIds": {
+    "Ethereum": { "chainId": 1, "categories": ["EVM"], "geckoId": "ethereum" },
+    "BSC": { "chainId": 56, "categories": ["EVM"], "geckoId": "binancecoin" },
+    "Binance": {
+      "chainId": 56,
+      "categories": ["EVM"],
+      "geckoId": "binancecoin"
+    },
+    "Base": {
+      "chainId": 8453,
+      "categories": ["EVM", "Rollup"],
+      "geckoId": null
+    },
+    "Gnosis": { "chainId": 100, "categories": ["EVM"], "geckoId": "xdai" },
+    "xDai": { "chainId": 100, "categories": ["EVM"], "geckoId": "xdai" },
+    "Solana": { "categories": ["SVM"], "geckoId": "solana" },
+    "Tron": { "categories": ["EVM"], "geckoId": "tron" },
+    "CosmosHub": { "categories": [], "geckoId": "cosmos" },
+    "Cosmos": { "categories": [], "geckoId": "cosmos" },
+    "Bitcoin": { "categories": [], "geckoId": "bitcoin" },
+    "Data Network": {
+      "chainId": 1514,
+      "categories": ["EVM"],
+      "geckoId": "story-2"
+    },
+    "Story": { "chainId": 1514, "categories": ["EVM"], "geckoId": "story-2" },
+    "NoIdChain": { "categories": ["EVM"] },
+    "Canto": { "categories": ["EVM"], "geckoId": "canto" },
+    "Impostor": {
+      "chainId": 8453,
+      "categories": ["EVM"],
+      "geckoId": "impostor-token"
+    },
+    "Polkadot": { "categories": [] },
+    "OnlyMetadata": { "categories": ["Cosmos"] },
+    "Βase": { "chainId": 8454, "categories": ["EVM"] }
+  },
+  "chainKeyToLabelMap": {
+    "xdai": "Gnosis",
+    "cosmos": "CosmosHub",
+    "bsc": "BSC"
+  },
+  "parentProtocols": [
+    { "id": "parent#aave", "name": "Aave" },
+    { "id": "parent#uniswap", "name": "Uniswap" }
+  ]
+}

@@ -1,4 +1,5 @@
-import { test, expect, type Page } from "@playwright/test";
+import type { Page } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { CROSS, type TransferRecord } from "../../src/core/model";
@@ -96,6 +97,8 @@ async function readOnlyFixture(page: Page, theme: "dark" | "light") {
   };
   await page.addInitScript(
     ({ record, theme }) => {
+      // V1.9: test setup belongs to the app document only, never to third-party/opaque subframes.
+      if (window !== window.top) return;
       localStorage.setItem("otherbridge.language", "tr");
       localStorage.setItem("otherbridge.theme", theme);
       localStorage.setItem("otherbridge.history.v1", JSON.stringify([record]));
@@ -163,6 +166,7 @@ for (const theme of ["dark", "light"] as const) {
   for (const width of [360, 768, 1440]) {
     test(`network identity ${theme} ${width}: bridge, networks, activity and detail`, async ({
       page,
+      baseURL,
     }) => {
       test.setTimeout(60000);
       await mkdir(`${evidence}/screenshots`, { recursive: true });
@@ -175,13 +179,13 @@ for (const theme of ["dark", "light"] as const) {
       page.on("request", (request) => {
         if (
           request.resourceType() === "image" &&
-          new URL(request.url()).origin !== "http://127.0.0.1:3100"
+          new URL(request.url()).origin !== baseURL
         )
           externalImages.push(request.url());
       });
       try {
         for (const [name, path] of [
-          ["bridge", "/"],
+          ["bridge", "/bridge"],
           ["networks", "/networks"],
           ["activity", "/activity"],
           ["detail", "/activity/network-identity-readonly-fixture"],
@@ -218,9 +222,14 @@ for (const theme of ["dark", "light"] as const) {
           if (name === "bridge") {
             const source = main.locator(".network-box[data-network=onechain]");
             const destination = main.locator(".network-box[data-network=bsc]");
-            await expect(source).toContainText("Kaynak ağ");
+            await expect(source).toHaveAttribute("aria-label", "Kaynak ağ seç");
+            await expect(source).toContainText("Gönderen");
             await expect(source).toContainText("612055");
-            await expect(destination).toContainText("Hedef ağ");
+            await expect(destination).toHaveAttribute(
+              "aria-label",
+              "Hedef ağ seç",
+            );
+            await expect(destination).toContainText("Hedef");
             await expect(destination).toContainText("56");
             await expect(destination).toContainText("CROSS");
             await expect(main.locator(".under-button")).toHaveText(

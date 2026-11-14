@@ -1,0 +1,2060 @@
+{
+ "1": [
+  "mainnet",
+  "/networks/catalog/1-bd61892db3cff958.svg",
+  "Ethereum",
+  "https://etherscan.io"
+ ],
+ "9": [
+  "mainnet",
+  "/assets/chains/chain-9-872e541983312077.png",
+  "Quai",
+  "https://quaiscan.io"
+ ],
+ "10": [
+  "mainnet",
+  "/networks/catalog/10-31521544221c055c.svg",
+  "OP",
+  "https://optimistic.etherscan.io"
+ ],
+ "14": [
+  "mainnet",
+  "/networks/catalog/14-d1bc8bf23c50d234.svg",
+  "Flare",
+  "https://flare-explorer.flare.network"
+ ],
+ "19": [
+  "mainnet",
+  "/assets/chains/chain-19-530648fc2000adda.png",
+  "Songbird",
+  "https://songbird-explorer.flare.network"
+ ],
+ "20": [
+  "mainnet",
+  "/assets/chains/chain-20-93d429d8b1d7b46a.png",
+  "Elastos",
+  "https://esc.elastos.io"
+ ],
+ "25": [
+  "mainnet",
+  "/networks/catalog/25-07bde3c6531bfa13.svg",
+  "Cronos",
+  "https://explorer.cronos.org"
+ ],
+ "30": [
+  "mainnet",
+  "/networks/catalog/30-f4edfe9c8aa5232c.svg",
+  "Rootstock",
+  "https://explorer.rsk.co"
+ ],
+ "40": [
+  "mainnet",
+  "/networks/catalog/40-6ef7b77c076abc58.svg",
+  "Telos",
+  "https://teloscan.io"
+ ],
+ "50": [
+  "mainnet",
+  "/networks/catalog/50-b2ed7cefc3e17853.svg",
+  "XDC",
+  "https://xdcscan.com"
+ ],
+ "52": [
+  "mainnet",
+  "/assets/chains/chain-52-3b3e185d93d8edc9.png",
+  "CSC",
+  "https://www.coinex.net"
+ ],
+ "56": [
+  "mainnet",
+  "/networks/bsc.svg",
+  "BSC",
+  "https://bscscan.com"
+ ],
+ "58": [
+  "mainnet",
+  "/assets/chains/chain-58-5ce6d5bd58770774.png",
+  "OntologyEVM",
+  "https://explorer.ont.io"
+ ],
+ "60": [
+  "mainnet",
+  "/assets/chains/chain-60-2c19f1dfd41db17d.png",
+  "GoChain",
+  "https://explorer.gochain.io"
+ ],
+ "61": [
+  "mainnet",
+  "/assets/chains/chain-61-bff368ce6dafdf94.png",
+  "EthereumClassic",
+  "https://etc.blockscout.com"
+ ],
+ "66": [
+  "mainnet",
+  "/assets/chains/chain-66-1e0e0c959c35674e.png",
+  "OKTChain",
+  "https://www.oklink.com/en/okc"
+ ],
+ "81": [
+  "mainnet",
+  "/assets/chains/chain-81-5d0ca24217dd7981.png",
+  "JOC",
+  "https://explorer.japanopenchain.org"
+ ],
+ "82": [
+  "mainnet",
+  "/assets/chains/chain-82-67586ea0ea0238ae.png",
+  "Meter",
+  "https://scan.meter.io"
+ ],
+ "88": [
+  "mainnet",
+  "/networks/catalog/88-c9aa477700e453ee.svg",
+  "Viction",
+  ""
+ ],
+ "96": [
+  "mainnet",
+  "/assets/chains/chain-96-d33b5242ac4cb5c6.png",
+  "KUB",
+  "https://kubscan.com"
+ ],
+ "100": [
+  "mainnet",
+  "/networks/catalog/100-dfdde637dc73a757.svg",
+  "Gnosis",
+  "https://gnosisscan.io"
+ ],
+ "106": [
+  "mainnet",
+  "/assets/chains/chain-106-15601f47a1330fec.png",
+  "Velas",
+  "https://evmexplorer.velas.com"
+ ],
+ "108": [
+  "mainnet",
+  "/assets/chains/chain-108-c8499e31a7f4955e.png",
+  "ThunderCore",
+  "https://viewblock.io/thundercore"
+ ],
+ "122": [
+  "mainnet",
+  "/networks/catalog/122-c736b1946fc11bae.svg",
+  "FUSE",
+  "https://explorer.fuse.io"
+ ],
+ "128": [
+  "mainnet",
+  "/assets/chains/chain-128-3fe803c9b463d7a9.png",
+  "Heco",
+  "https://hecoinfo.com"
+ ],
+ "130": [
+  "mainnet",
+  "/networks/catalog/130-669e1e5bd1f17e50.svg",
+  "Unichain",
+  "https://uniscan.xyz"
+ ],
+ "137": [
+  "mainnet",
+  "/networks/catalog/137-342be777ec4567ce.svg",
+  "Polygon",
+  "https://polygonscan.com"
+ ],
+ "143": [
+  "mainnet",
+  "/networks/catalog/143-395b0ace091fd18f.svg",
+  "Monad",
+  "https://monadvision.com"
+ ],
+ "146": [
+  "mainnet",
+  "/networks/catalog/146-6bd08858e81e4b12.svg",
+  "Sonic",
+  "https://sonicscan.org"
+ ],
+ "148": [
+  "mainnet",
+  "/assets/chains/chain-148-1cbcd2e9d0d7a23d.png",
+  "ShimmerEVM",
+  "https://explorer.evm.shimmer.network"
+ ],
+ "169": [
+  "mainnet",
+  "/assets/chains/chain-169-5404c2cc79d4989a.png",
+  "Manta",
+  "https://pacific-explorer.manta.network"
+ ],
+ "173": [
+  "mainnet",
+  "/assets/chains/chain-173-e22b72e36a5f1afa.png",
+  "ENI",
+  "https://scan.eniac.network"
+ ],
+ "177": [
+  "mainnet",
+  "/assets/chains/chain-177-d3081344ccd21fa6.png",
+  "HashKey",
+  "https://hsk.blockscout.com"
+ ],
+ "196": [
+  "mainnet",
+  "/networks/catalog/196-1cce9d06730bd7ee.svg",
+  "XLayer",
+  "https://www.oklink.com/xlayer"
+ ],
+ "199": [
+  "mainnet",
+  "/assets/chains/chain-199-b49cda78c6e2516d.png",
+  "Bittorrent",
+  "https://bttcscan.com"
+ ],
+ "204": [
+  "mainnet",
+  "/networks/catalog/204-8a253298c617d227.svg",
+  "opBNB",
+  "https://mainnet.opbnbscan.com"
+ ],
+ "207": [
+  "mainnet",
+  "/assets/chains/chain-207-a5f1e765745cc9dd.png",
+  "VinuChain",
+  "https://vinuexplorer.org"
+ ],
+ "225": [
+  "mainnet",
+  "/assets/chains/chain-225-321a2a863b7ddc01.png",
+  "Lachain",
+  "https://scan.lachain.io"
+ ],
+ "232": [
+  "mainnet",
+  "/networks/catalog/232-1be915f78639fc21.svg",
+  "Lens",
+  "https://explorer.lens.xyz"
+ ],
+ "239": [
+  "mainnet",
+  "/assets/chains/chain-239-c069f2a325259660.png",
+  "TAC",
+  "https://explorer.tac.build"
+ ],
+ "246": [
+  "mainnet",
+  "/assets/chains/chain-246-cbc3d0dab191e961.png",
+  "EnergyWeb",
+  "https://explorer.energyweb.org"
+ ],
+ "250": [
+  "mainnet",
+  "/assets/chains/chain-250-d0930b227f21ffe8.png",
+  "Fantom",
+  "https://ftmscan.com"
+ ],
+ "252": [
+  "mainnet",
+  "/networks/catalog/252-6593ec8b260188c0.svg",
+  "Fraxtal",
+  "https://fraxscan.com"
+ ],
+ "254": [
+  "mainnet",
+  "/assets/chains/chain-254-e138026089cbb641.png",
+  "Swan",
+  "https://swanscan.io"
+ ],
+ "274": [
+  "mainnet",
+  "/assets/chains/chain-274-189c750261cf9b0f.png",
+  "LaChain",
+  "https://explorer.lachain.network"
+ ],
+ "277": [
+  "mainnet",
+  "/assets/chains/chain-277-4fdfa5b43a9fe3a4.png",
+  "Prom",
+  ""
+ ],
+ "288": [
+  "mainnet",
+  "/networks/catalog/288-1a042c9e6dab39a2.svg",
+  "Boba",
+  "https://bobascan.com"
+ ],
+ "295": [
+  "mainnet",
+  "/assets/chains/chain-295-bd8497b0c9dc2f3a.png",
+  "Hedera",
+  "https://explorer.arkhia.io"
+ ],
+ "314": [
+  "mainnet",
+  "/assets/chains/chain-314-4ab2b3e6faf86279.png",
+  "Filecoin",
+  "https://filfox.info/en"
+ ],
+ "321": [
+  "mainnet",
+  "/assets/chains/chain-321-f607191c07634fe5.png",
+  "KCC",
+  "https://explorer.kcc.io/en"
+ ],
+ "324": [
+  "mainnet",
+  "/networks/catalog/324-1e29d1153a41a6bd.svg",
+  "zkSync",
+  "https://explorer.zksync.io"
+ ],
+ "329": [
+  "mainnet",
+  "/assets/chains/chain-329-c8d4a27eaacd6fc1.png",
+  "VirBiCoin",
+  "https://explorer.digitalregion.jp"
+ ],
+ "336": [
+  "mainnet",
+  "/assets/chains/chain-336-e25b77097533f988.png",
+  "Shiden",
+  "https://shiden.subscan.io"
+ ],
+ "360": [
+  "mainnet",
+  "/assets/chains/chain-360-e8aea306d98324cc.png",
+  "Shape",
+  "https://shapescan.xyz"
+ ],
+ "361": [
+  "mainnet",
+  "/assets/chains/chain-361-3fd318fbfb8960c3.png",
+  "Theta",
+  "https://explorer.thetatoken.org"
+ ],
+ "388": [
+  "mainnet",
+  "/assets/chains/chain-388-40711dc7ae64f937.png",
+  "Cronos zkEVM",
+  "https://explorer.zkevm.cronos.org"
+ ],
+ "480": [
+  "mainnet",
+  "/networks/catalog/480-cf73618cff6c3418.svg",
+  "World",
+  "https://worldscan.org"
+ ],
+ "484": [
+  "mainnet",
+  "/assets/chains/chain-484-7fa34f739eaedd84.png",
+  "Camp",
+  "https://camp.cloud.blockscout.com"
+ ],
+ "592": [
+  "mainnet",
+  "/assets/chains/chain-592-605d96cc7e73505d.png",
+  "Astar",
+  "https://astar.subscan.io"
+ ],
+ "648": [
+  "mainnet",
+  "/assets/chains/chain-648-39c064a102359a95.png",
+  "Endurance",
+  "https://explorer.endurance.fusionist.io"
+ ],
+ "677": [
+  "mainnet",
+  "/assets/chains/chain-677-c9c0bc7781b7cf6f.png",
+  "BOT",
+  ""
+ ],
+ "698": [
+  "mainnet",
+  "/assets/chains/chain-698-f41b27a6d47b7f17.png",
+  "Matchain",
+  "https://matchscan.io"
+ ],
+ "714": [
+  "mainnet",
+  "/assets/chains/chain-714-536dbb743b8eeca0.png",
+  "Eden",
+  "https://eden.blockscout.com"
+ ],
+ "747": [
+  "mainnet",
+  "/networks/catalog/747-5bcf57bd730f5299.svg",
+  "Flow",
+  "https://evm.flowscan.io"
+ ],
+ "841": [
+  "mainnet",
+  "/assets/chains/chain-841-12301c40cbc6ed84.png",
+  "Taraxa",
+  "https://tara.to"
+ ],
+ "888": [
+  "mainnet",
+  "/assets/chains/chain-888-fabf5ec28ed4f325.png",
+  "Wanchain",
+  "https://wanscan.org"
+ ],
+ "964": [
+  "mainnet",
+  "/assets/chains/chain-964-12c733c788c28b9f.png",
+  "Bittensor EVM",
+  ""
+ ],
+ "988": [
+  "mainnet",
+  "/networks/catalog/988-da831639dc6671ae.svg",
+  "Stable",
+  "https://stablescan.xyz"
+ ],
+ "999": [
+  "mainnet",
+  "/networks/catalog/999-8724be0d4c4020a0.svg",
+  "HyperEVM",
+  "https://testnet.wanscan.org"
+ ],
+ "1088": [
+  "mainnet",
+  "/networks/catalog/1088-ab3a84616a2861a6.svg",
+  "Metis",
+  "https://andromeda-explorer.metis.io"
+ ],
+ "1101": [
+  "mainnet",
+  "/assets/chains/chain-1101-53918c328a931173.png",
+  "Polygon zkEVM",
+  "https://zkevm.polygonscan.com"
+ ],
+ "1110": [
+  "mainnet",
+  "/assets/chains/chain-1110-13a3a71955c4698e.png",
+  "GRX",
+  ""
+ ],
+ "1130": [
+  "mainnet",
+  "/assets/chains/chain-1130-604d3a1eaa1d7e54.png",
+  "DeFiChain EVM",
+  ""
+ ],
+ "1135": [
+  "mainnet",
+  "/networks/catalog/1135-2f215812d47b756b.svg",
+  "Lisk",
+  "https://blockscout.lisk.com"
+ ],
+ "1231": [
+  "mainnet",
+  "/assets/chains/chain-1231-a4782af2f6d65af0.png",
+  "Ultron",
+  "https://ulxscan.com"
+ ],
+ "1284": [
+  "mainnet",
+  "/assets/chains/chain-1284-e47942a5c3d2d256.png",
+  "Moonbeam",
+  "https://moonbeam.subscan.io"
+ ],
+ "1285": [
+  "mainnet",
+  "/assets/chains/chain-1285-979a63d41037ef49.png",
+  "Moonriver",
+  "https://moonriver.subscan.io"
+ ],
+ "1329": [
+  "mainnet",
+  "/networks/catalog/1329-88464578c4287c32.svg",
+  "Sei",
+  "https://seiscan.io"
+ ],
+ "1337": [
+  "mainnet",
+  "/networks/catalog/1337-d84ac225e8466abf.svg",
+  "Hyperliquid",
+  ""
+ ],
+ "1480": [
+  "mainnet",
+  "/networks/catalog/1480-7c9263bf219f54de.svg",
+  "Vana",
+  "https://vanascan.io"
+ ],
+ "1514": [
+  "mainnet",
+  "/assets/chains/chain-1514-d0d0aa6b3b86f224.png",
+  "Data",
+  "https://datanetscan.io"
+ ],
+ "1625": [
+  "mainnet",
+  "/networks/catalog/1625-5bc345cb46db1ac3.svg",
+  "Gravity",
+  "https://explorer.gravity.xyz"
+ ],
+ "1672": [
+  "mainnet",
+  "/networks/catalog/1672-ca1ad214f9472d73.svg",
+  "Pharos",
+  "https://pharosscan.xyz"
+ ],
+ "1729": [
+  "mainnet",
+  "/assets/chains/chain-1729-799ba5c20cfc1fd0.png",
+  "ReyaChain",
+  "https://explorer.reya.network"
+ ],
+ "1776": [
+  "mainnet",
+  "/networks/catalog/1776-eb503dcc77b35caf.svg",
+  "Injective",
+  "https://blockscout.injective.network"
+ ],
+ "1868": [
+  "mainnet",
+  "/networks/catalog/1868-bd7645232b4a682a.svg",
+  "Soneium",
+  "https://soneium.blockscout.com"
+ ],
+ "1890": [
+  "mainnet",
+  "/assets/chains/chain-1890-4d98a1b50c2a4f47.png",
+  "LightLink",
+  "https://phoenix.lightlink.io"
+ ],
+ "1907": [
+  "mainnet",
+  "/assets/chains/chain-1907-4368c60b197e5a17.png",
+  "Bitcichain",
+  "https://bitciexplorer.com"
+ ],
+ "1983": [
+  "mainnet",
+  "/assets/chains/chain-1983-b765e4019c31a7fa.png",
+  "Krown",
+  "https://explorer.krown.network"
+ ],
+ "1990": [
+  "mainnet",
+  "/assets/chains/chain-1990-512b571b0d695354.png",
+  "QIE",
+  ""
+ ],
+ "2001": [
+  "mainnet",
+  "/assets/chains/chain-2001-0440588e0662bb8b.png",
+  "Milkomeda C1",
+  "https://explorer-mainnet-cardano-evm.c1.milkomeda.com"
+ ],
+ "2002": [
+  "mainnet",
+  "/assets/chains/chain-2002-d615aaca0b5c49a8.png",
+  "Milkomeda A1",
+  "https://explorer-mainnet-algorand-rollup.a1.milkomeda.com"
+ ],
+ "2020": [
+  "mainnet",
+  "/networks/catalog/2020-c01e65eadc7c610b.svg",
+  "Ronin",
+  "https://app.roninchain.com"
+ ],
+ "2345": [
+  "mainnet",
+  "/assets/chains/chain-2345-14c0e17b9e55e423.png",
+  "GOAT",
+  "https://explorer.goat.network"
+ ],
+ "2355": [
+  "mainnet",
+  "/assets/chains/chain-2355-ca66cbf1db9574bc.png",
+  "Silicon zkEVM",
+  "https://scope.silicon.network"
+ ],
+ "2372": [
+  "mainnet",
+  "/assets/chains/chain-2372-6693a875050eaa64.png",
+  "BESC Hyperchain",
+  ""
+ ],
+ "2410": [
+  "mainnet",
+  "/assets/chains/chain-2410-a2692482d7fe2e7b.png",
+  "K2",
+  "https://explorer.karak.network"
+ ],
+ "2649": [
+  "mainnet",
+  "/assets/chains/chain-2649-e94dc8cba9d36403.png",
+  "AILayer",
+  "https://mainnet-explorer.ailayer.xyz"
+ ],
+ "2741": [
+  "mainnet",
+  "/networks/catalog/2741-e9e7cb7018fa9791.svg",
+  "Abstract",
+  "https://abscan.org"
+ ],
+ "2818": [
+  "mainnet",
+  "/networks/catalog/2818-0a0b5451cc12ba72.svg",
+  "Morph",
+  "https://explorer.morphl2.io"
+ ],
+ "3030": [
+  "mainnet",
+  "/assets/chains/chain-3030-aeda69345cbbc624.png",
+  "BCHyper",
+  "https://bchscan.io"
+ ],
+ "3073": [
+  "mainnet",
+  "/assets/chains/chain-3073-e68501229e3f0b3d.png",
+  "Movement",
+  "https://explorer.movementlabs.xyz"
+ ],
+ "3338": [
+  "mainnet",
+  "/assets/chains/chain-3338-12fbfa420134c177.png",
+  "Peaq",
+  "https://peaq.subscan.io"
+ ],
+ "3776": [
+  "mainnet",
+  "/assets/chains/chain-3776-5cf5d054b8b25285.png",
+  "Astar zkEVM",
+  "https://astar-zkevm.explorer.startale.com"
+ ],
+ "4048": [
+  "mainnet",
+  "/assets/chains/chain-4048-50060cce4ff9259b.png",
+  "GANchain",
+  "https://ganscan.gpu.net"
+ ],
+ "4114": [
+  "mainnet",
+  "/assets/chains/chain-4114-535ca51024e30621.png",
+  "Citrea",
+  "https://explorer.mainnet.citrea.xyz"
+ ],
+ "4217": [
+  "mainnet",
+  "/networks/catalog/4217-26c56bb71c968e58.svg",
+  "Tempo",
+  "https://explore.tempo.xyz"
+ ],
+ "4326": [
+  "mainnet",
+  "/networks/catalog/4326-702fa89c35f998fa.svg",
+  "MegaETH",
+  "https://mega.etherscan.io"
+ ],
+ "4337": [
+  "mainnet",
+  "/assets/chains/chain-4337-2f45f6b8b9155bb1.png",
+  "Beam",
+  "https://subnets.avax.network/beam"
+ ],
+ "4488": [
+  "mainnet",
+  "/assets/chains/chain-4488-1b374d26afd1c51d.png",
+  "Hydra",
+  "https://skynet.hydrachain.org"
+ ],
+ "4663": [
+  "mainnet",
+  "/networks/catalog/4663-0424c0da8b7f4373.svg",
+  "Robinhood",
+  "https://robinscan.io"
+ ],
+ "4689": [
+  "mainnet",
+  "/assets/chains/chain-4689-b29e19613c3fc12c.png",
+  "IoTeX",
+  "https://iotexscan.io"
+ ],
+ "5000": [
+  "mainnet",
+  "/networks/catalog/5000-b751db6394b8f7ee.svg",
+  "Mantle",
+  "https://mantlescan.xyz"
+ ],
+ "5031": [
+  "mainnet",
+  "/networks/catalog/5031-2b0b22187a2fd150.svg",
+  "Somnia",
+  "https://mainnet.somnia.w3us.site"
+ ],
+ "5042": [
+  "mainnet",
+  "/networks/catalog/5042-9c21da1fc2993729.svg",
+  "Arc",
+  "https://explorer.arc.io"
+ ],
+ "5330": [
+  "mainnet",
+  "/assets/chains/chain-5330-ffda3a352a00a604.png",
+  "Superseed",
+  "https://explorer.superseed.xyz"
+ ],
+ "5887": [
+  "testnet",
+  "/assets/chains/chain-5887-b7b9bdaa4f9a3e2e.png",
+  "MANTRA",
+  "https://mantrascan.io/dukong"
+ ],
+ "6880": [
+  "mainnet",
+  "",
+  "MTT",
+  "https://explorer.mtt.network"
+ ],
+ "6900": [
+  "mainnet",
+  "/assets/chains/chain-6900-39fe1d51766e2af3.png",
+  "Nibiru",
+  ""
+ ],
+ "7000": [
+  "mainnet",
+  "/assets/chains/chain-7000-e96e9c98b2dc0ac0.png",
+  "ZetaChain",
+  "https://zetascan.com"
+ ],
+ "7560": [
+  "mainnet",
+  "/assets/chains/chain-7560-a5894b36da8c9b50.png",
+  "Cyber",
+  "https://cyberscan.co"
+ ],
+ "8008": [
+  "mainnet",
+  "/assets/chains/chain-8008-3f1168a0b4f2194f.png",
+  "Polynomial",
+  "https://polynomialscan.io"
+ ],
+ "8217": [
+  "mainnet",
+  "/networks/catalog/8217-38154b408cc6584a.svg",
+  "Kaia",
+  "https://kaiascan.io"
+ ],
+ "8453": [
+  "mainnet",
+  "/networks/catalog/8453-de343bd68771b135.svg",
+  "Base",
+  "https://basescan.org"
+ ],
+ "8668": [
+  "mainnet",
+  "/assets/chains/chain-8668-5ffae71eff0d3c37.png",
+  "HeLa",
+  "https://mainnet-blockexplorer.helachain.com"
+ ],
+ "8822": [
+  "mainnet",
+  "/assets/chains/chain-8822-faa95bb4f7c100c6.png",
+  "IOTA EVM",
+  "https://explorer.evm.iota.org"
+ ],
+ "9745": [
+  "mainnet",
+  "/networks/catalog/9745-29d1b5431193025b.svg",
+  "Plasma",
+  "https://plasmascan.to"
+ ],
+ "10000": [
+  "mainnet",
+  "/assets/chains/chain-10000-8061eb53b1d9d026.png",
+  "smartBCH",
+  ""
+ ],
+ "10088": [
+  "mainnet",
+  "/assets/chains/chain-10088-46b3499da7241e68.png",
+  "GateLayer",
+  "https://www.gatescan.org/gatelayer"
+ ],
+ "11235": [
+  "mainnet",
+  "/assets/chains/chain-11235-75d5eefc342626fd.png",
+  "HAQQ",
+  "https://explorer.haqq.network"
+ ],
+ "13371": [
+  "mainnet",
+  "/networks/catalog/13371-2b2e334de1a4bb9a.svg",
+  "Immutable zkEVM",
+  "https://explorer.immutable.com"
+ ],
+ "16661": [
+  "mainnet",
+  "/networks/catalog/16661-64da9a9394eb6a69.svg",
+  "0G",
+  "https://chainscan.0g.ai"
+ ],
+ "23294": [
+  "mainnet",
+  "/assets/chains/chain-23294-9890a53fcb44ef98.png",
+  "Oasis Sapphire",
+  "https://explorer.oasis.io/mainnet/sapphire"
+ ],
+ "25363": [
+  "mainnet",
+  "/assets/chains/chain-25363-d4e1174377bec82d.png",
+  "Fluent",
+  "https://fluentscan.xyz"
+ ],
+ "31337": [
+  "local",
+  "",
+  "Local source",
+  ""
+ ],
+ "31338": [
+  "local",
+  "",
+  "Local destination",
+  ""
+ ],
+ "31612": [
+  "mainnet",
+  "/assets/chains/chain-31612-1fec6efe9c2f621d.png",
+  "Mezo",
+  "https://explorer.mezo.org"
+ ],
+ "32520": [
+  "mainnet",
+  "/assets/chains/chain-32520-527db2d735675f94.png",
+  "Bitgert",
+  "https://brisescan.com"
+ ],
+ "33139": [
+  "mainnet",
+  "/networks/catalog/33139-facdc9690c4570b3.svg",
+  "Apechain",
+  "https://apescan.io"
+ ],
+ "34443": [
+  "mainnet",
+  "/networks/catalog/34443-522fd4b81704f7cb.svg",
+  "Mode",
+  "https://explorer.mode.network"
+ ],
+ "35441": [
+  "mainnet",
+  "/assets/chains/chain-35441-e14469709d827c58.png",
+  "Q Protocol",
+  "https://explorer.q.org"
+ ],
+ "36900": [
+  "mainnet",
+  "/assets/chains/chain-36900-85bf4f2d24b4c532.png",
+  "ADI",
+  "https://explorer.adifoundation.ai"
+ ],
+ "38833": [
+  "mainnet",
+  "/assets/chains/chain-38833-862e02142f9dbb44.png",
+  "Igra",
+  "https://explorer.igralabs.com"
+ ],
+ "39797": [
+  "mainnet",
+  "/assets/chains/chain-39797-3bec5ba81690feee.png",
+  "Energi",
+  ""
+ ],
+ "41923": [
+  "mainnet",
+  "/assets/chains/chain-41923-8d2b5e72fc2a2003.png",
+  "EDU",
+  "https://educhain.blockscout.com"
+ ],
+ "42161": [
+  "mainnet",
+  "/networks/catalog/42161-35cebc7f281a5f68.svg",
+  "Arbitrum",
+  "https://arbiscan.io"
+ ],
+ "42170": [
+  "mainnet",
+  "/networks/catalog/42170-814099365f66dfbf.svg",
+  "Arbitrum Nova",
+  "https://nova-explorer.arbitrum.io"
+ ],
+ "42220": [
+  "mainnet",
+  "/networks/catalog/42220-8595d5fd319d553a.svg",
+  "Celo",
+  "https://celoscan.io"
+ ],
+ "42262": [
+  "mainnet",
+  "/assets/chains/chain-42262-9cc68c9407c9ba2d.png",
+  "Oasis Emerald",
+  "https://explorer.oasis.io/mainnet/emerald"
+ ],
+ "42420": [
+  "mainnet",
+  "/assets/chains/chain-42420-d9547baebbc27867.png",
+  "Asset",
+  "https://scan.assetchain.org"
+ ],
+ "42766": [
+  "mainnet",
+  "/assets/chains/chain-42766-27afdb480381f01b.png",
+  "Zkfair",
+  "https://scan.zkfair.io"
+ ],
+ "42793": [
+  "mainnet",
+  "/networks/catalog/42793-5d413bad053e4f32.svg",
+  "Etherlink",
+  "https://explorer.etherlink.com"
+ ],
+ "43111": [
+  "mainnet",
+  "/networks/catalog/43111-9cb89d54a531dcf1.svg",
+  "Hemi",
+  "https://explorer.hemi.xyz"
+ ],
+ "43114": [
+  "mainnet",
+  "/networks/catalog/43114-8da7dbe3aa9e897e.svg",
+  "Avalanche",
+  "https://snowscan.xyz"
+ ],
+ "47763": [
+  "mainnet",
+  "/assets/chains/chain-47763-3c30b4e83c0a1ed8.png",
+  "Neo X",
+  "https://xexplorer.neo.org"
+ ],
+ "48900": [
+  "mainnet",
+  "/assets/chains/chain-48900-c26a63450895d828.png",
+  "Zircuit",
+  "https://explorer.zircuit.com"
+ ],
+ "50104": [
+  "mainnet",
+  "/assets/chains/chain-50104-02a635dd23e14b6c.png",
+  "Sophon",
+  "https://explorer.sophon.xyz"
+ ],
+ "52014": [
+  "mainnet",
+  "/assets/chains/chain-52014-fdd88203f63834ce.png",
+  "Electroneum",
+  "https://blockexplorer.electroneum.com"
+ ],
+ "57073": [
+  "mainnet",
+  "/networks/catalog/57073-76898117420fa7e3.svg",
+  "Ink",
+  "https://explorer.inkonchain.com"
+ ],
+ "59144": [
+  "mainnet",
+  "/networks/catalog/59144-20888c6a13c25b33.svg",
+  "Linea",
+  "https://lineascan.build"
+ ],
+ "60808": [
+  "mainnet",
+  "/networks/catalog/60808-3c4da9a3091c8336.svg",
+  "BOB",
+  "https://explorer.gobob.xyz"
+ ],
+ "61803": [
+  "mainnet",
+  "/assets/chains/chain-61803-11e17495e93ee810.png",
+  "Etica",
+  "https://eticascan.org"
+ ],
+ "72957": [
+  "mainnet",
+  "/assets/chains/chain-72957-5ae047fc5dfaa311.png",
+  "Rayls",
+  "https://explorer.rayls.com"
+ ],
+ "80094": [
+  "mainnet",
+  "/networks/catalog/80094-efdb3bbfafaa9792.svg",
+  "Berachain",
+  "https://berascan.com"
+ ],
+ "81457": [
+  "mainnet",
+  "/networks/catalog/81457-acab32c6de520809.svg",
+  "Blast",
+  "https://blastscan.io"
+ ],
+ "84532": [
+  "testnet",
+  "/networks/catalog/84532-de343bd68771b135.svg",
+  "Base Sepolia",
+  "https://sepolia.basescan.org"
+ ],
+ "88888": [
+  "mainnet",
+  "/assets/chains/chain-88888-8b59590f77edd75c.png",
+  "Chiliz",
+  "https://chiliscan.com"
+ ],
+ "97477": [
+  "mainnet",
+  "/assets/chains/chain-97477-d666dfc86071f58a.png",
+  "Doma",
+  "https://explorer.doma.xyz"
+ ],
+ "97741": [
+  "mainnet",
+  "/assets/chains/chain-97741-09cbc0118368bb98.png",
+  "Pepu",
+  "https://pepuscan.com"
+ ],
+ "98866": [
+  "mainnet",
+  "/networks/catalog/98866-a8b4655c6d272e3e.svg",
+  "Plume",
+  "https://explorer.plume.org"
+ ],
+ "105105": [
+  "mainnet",
+  "/assets/chains/chain-105105-828008c158090727.png",
+  "Stratis",
+  "https://explorer.xertra.com"
+ ],
+ "167000": [
+  "mainnet",
+  "/assets/chains/chain-167000-6b7a4501a495daca.png",
+  "Taiko",
+  "https://taikoscan.io"
+ ],
+ "171717": [
+  "mainnet",
+  "/assets/chains/chain-171717-7c8c863ce9fa5090.png",
+  "W",
+  "https://scan.wadzchain.io"
+ ],
+ "200901": [
+  "mainnet",
+  "/assets/chains/chain-200901-4ba6eb8b88e9e638.png",
+  "Bitlayer",
+  "https://www.btrscan.com"
+ ],
+ "258432": [
+  "mainnet",
+  "/assets/chains/chain-258432-9a2b76d32f3ea05a.png",
+  "Althea",
+  "https://mintscan.io/althea"
+ ],
+ "421614": [
+  "testnet",
+  "/networks/catalog/421614-35cebc7f281a5f68.svg",
+  "Arbitrum Sepolia",
+  "https://sepolia.arbiscan.io"
+ ],
+ "432204": [
+  "mainnet",
+  "/assets/chains/chain-432204-96f23dafc68f12a6.png",
+  "Dexalot",
+  "https://subnets.avax.network/dexalot"
+ ],
+ "534352": [
+  "mainnet",
+  "/networks/catalog/534352-41701f1fab4d98f6.svg",
+  "Scroll",
+  "https://scrollscan.com"
+ ],
+ "612055": [
+  "mainnet",
+  "/networks/onechain.svg",
+  "ONEchain",
+  "https://explorer.onechain.nexus/612055"
+ ],
+ "747474": [
+  "mainnet",
+  "/networks/catalog/747474-4c325ec3e7757385.svg",
+  "Katana",
+  "https://katanascan.com"
+ ],
+ "810180": [
+  "mainnet",
+  "/assets/chains/chain-810180-5a971c4df892df24.png",
+  "zkLink Nova",
+  "https://explorer.zklink.io"
+ ],
+ "1440000": [
+  "mainnet",
+  "/assets/chains/chain-1440000-9c74e29221f02201.png",
+  "XRPL EVM",
+  "https://explorer.xrplevm.org"
+ ],
+ "2121217": [
+  "mainnet",
+  "/assets/chains/chain-2121217-bee9b394dcc51f9d.png",
+  "GGCHAIN",
+  "https://explorer.gghyper.net"
+ ],
+ "3586256": [
+  "mainnet",
+  "/networks/catalog/3586256-bd5c00cdbafbb8b0.svg",
+  "Lighter",
+  ""
+ ],
+ "5042002": [
+  "testnet",
+  "/networks/catalog/5042002-9c21da1fc2993729.svg",
+  "Arc Testnet",
+  "https://testnet.arcscan.app"
+ ],
+ "5064014": [
+  "mainnet",
+  "/assets/chains/chain-5064014-0843871a5f744224.png",
+  "Ethereal",
+  ""
+ ],
+ "7777777": [
+  "mainnet",
+  "/assets/chains/chain-7777777-09e1f73864647f69.png",
+  "Zora",
+  "https://explorer.zora.energy"
+ ],
+ "11155111": [
+  "testnet",
+  "/networks/catalog/11155111-bd61892db3cff958.svg",
+  "Ethereum Sepolia",
+  "https://sepolia.etherscan.io"
+ ],
+ "11155420": [
+  "testnet",
+  "/networks/catalog/11155420-31521544221c055c.svg",
+  "OP Sepolia",
+  "https://sepolia-optimism.etherscan.io"
+ ],
+ "20250217": [
+  "mainnet",
+  "/assets/chains/chain-20250217-b993f11ff4b02e90.png",
+  "Xphere",
+  "https://xp.tamsa.io"
+ ],
+ "245022934": [
+  "mainnet",
+  "/assets/chains/chain-245022934-98da111cf1067a40.png",
+  "Neon",
+  "https://neonscan.org"
+ ],
+ "728126428": [
+  "mainnet",
+  "/networks/catalog/728126428-3756950b9e923e01.svg",
+  "Tron",
+  "https://tronscan.org"
+ ],
+ "1313161554": [
+  "mainnet",
+  "/assets/chains/chain-1313161554-2ec7151ef8aefde9.png",
+  "Aurora",
+  "https://explorer.aurora.dev"
+ ],
+ "1666600000": [
+  "mainnet",
+  "/assets/chains/chain-1666600000-259d413aee294c0e.png",
+  "Harmony",
+  "https://explorer.harmony.one"
+ ],
+ "1151111081099710": [
+  "mainnet",
+  "/networks/catalog/1151111081099710-26b1c40fab6f6947.svg",
+  "Solana",
+  "https://explorer.solana.com"
+ ],
+ "20000000000001": [
+  "mainnet",
+  "/networks/catalog/20000000000001-ffb016338ded87c7.svg",
+  "Bitcoin",
+  "https://mempool.space"
+ ],
+ "9270000000000000": [
+  "mainnet",
+  "/networks/catalog/9270000000000000-7dc6fa5a43aa3db7.svg",
+  "Sui",
+  "https://suiscan.xyz/mainnet"
+ ],
+ "1201081091099710": [
+  "mainnet",
+  "/networks/catalog/1201081091099710-1945280ccd386085.svg",
+  "Stellar",
+  "https://stellar.expert/explorer/public"
+ ],
+ "20000000000005": [
+  "mainnet",
+  "/networks/catalog/20000000000005-dd934d4108291005.svg",
+  "Zcash",
+  "https://mainnet.zcashexplorer.app"
+ ],
+ "catalog:x-layer": [
+  "mainnet",
+  "/assets/chains/chain-catalog-x-layer-dab12444ea2a1672.png",
+  "X Layer",
+  ""
+ ],
+ "catalog:kava": [
+  "mainnet",
+  "/assets/chains/chain-catalog-kava-9e4fa5a1c9bba553.png",
+  "Kava",
+  ""
+ ],
+ "catalog:hyperliquid-l1": [
+  "mainnet",
+  "/assets/chains/chain-catalog-hyperliquid-l1-aa967ab1e866d0b8.png",
+  "Hyperliquid L1",
+  ""
+ ],
+ "catalog:skale-europa": [
+  "mainnet",
+  "/assets/chains/chain-catalog-skale-europa-1b783ebaeb8a65e3.png",
+  "SKALE Europa",
+  ""
+ ],
+ "11297108109": [
+  "mainnet",
+  "/assets/chains/chain-11297108109-bd5c20cdc64422e8.png",
+  "Palm",
+  "https://palm.chainlens.com"
+ ],
+ "catalog:core": [
+  "mainnet",
+  "/assets/chains/chain-catalog-core-ba9f3f06202e7178.png",
+  "CORE",
+  ""
+ ],
+ "catalog:conflux": [
+  "mainnet",
+  "/assets/chains/chain-catalog-conflux-3c4655b9ce6cbc49.png",
+  "Conflux",
+  ""
+ ],
+ "catalog:litecoin": [
+  "mainnet",
+  "/assets/chains/chain-catalog-litecoin-6727ef03555ae56d.png",
+  "Litecoin",
+  ""
+ ],
+ "catalog:doge": [
+  "mainnet",
+  "/assets/chains/chain-catalog-doge-a01575203ba1a19f.png",
+  "Doge",
+  ""
+ ],
+ "catalog:ontology": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ontology-5ce6d5bd58770774.png",
+  "Ontology",
+  ""
+ ],
+ "catalog:aptos": [
+  "mainnet",
+  "/assets/chains/chain-catalog-aptos-6909a43e281746a4.png",
+  "Aptos",
+  ""
+ ],
+ "catalog:bifrost-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bifrost-network-8f9f5b2b68d87f3b.png",
+  "Bifrost",
+  ""
+ ],
+ "catalog:terra-classic": [
+  "mainnet",
+  "/assets/chains/chain-catalog-terra-classic-3a35e117e01de1e0.png",
+  "Terra Classic",
+  ""
+ ],
+ "catalog:eclipse": [
+  "mainnet",
+  "/assets/chains/chain-catalog-eclipse-f197d70bb14f5405.png",
+  "Eclipse",
+  ""
+ ],
+ "catalog:zilliqa": [
+  "mainnet",
+  "/assets/chains/chain-catalog-zilliqa-46c0bfe1c80882ee.png",
+  "Zilliqa",
+  ""
+ ],
+ "catalog:neo": [
+  "mainnet",
+  "/assets/chains/chain-catalog-neo-2496292e327e240c.png",
+  "NEO",
+  ""
+ ],
+ "catalog:secret": [
+  "mainnet",
+  "/assets/chains/chain-catalog-secret-2f580631ef9ffe6e.png",
+  "Secret",
+  ""
+ ],
+ "catalog:osmosis": [
+  "mainnet",
+  "/assets/chains/chain-catalog-osmosis-1a72e76c5aeb7626.png",
+  "Osmosis",
+  ""
+ ],
+ "catalog:shibarium": [
+  "mainnet",
+  "/assets/chains/chain-catalog-shibarium-ad3ac97097b696c1.png",
+  "Shibarium",
+  ""
+ ],
+ "catalog:thorchain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-thorchain-fb31bd785adb67b5.png",
+  "THORChain",
+  ""
+ ],
+ "catalog:bitcoincash": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bitcoincash-32823cc48a869d90.png",
+  "Bitcoincash",
+  ""
+ ],
+ "catalog:cosmoshub": [
+  "mainnet",
+  "/assets/chains/chain-catalog-cosmoshub-66a97b4d4379665c.png",
+  "CosmosHub",
+  ""
+ ],
+ "catalog:xrpl": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xrpl-3a909a240638fc2f.png",
+  "XRPL",
+  ""
+ ],
+ "catalog:archway": [
+  "mainnet",
+  "/assets/chains/chain-catalog-archway-37573fd49292e8d1.png",
+  "Archway",
+  ""
+ ],
+ "catalog:icon": [
+  "mainnet",
+  "/assets/chains/chain-catalog-icon-db9976ed8f3a6380.png",
+  "Icon",
+  ""
+ ],
+ "catalog:karura": [
+  "mainnet",
+  "/assets/chains/chain-catalog-karura-d663aaf637b288db.png",
+  "Karura",
+  ""
+ ],
+ "catalog:tezos": [
+  "mainnet",
+  "/assets/chains/chain-catalog-tezos-3b9578bea253fd3f.png",
+  "Tezos",
+  ""
+ ],
+ "catalog:terra2": [
+  "mainnet",
+  "/assets/chains/chain-catalog-terra2-85fd053d913e1ff7.png",
+  "Terra2",
+  ""
+ ],
+ "catalog:wax": [
+  "mainnet",
+  "/assets/chains/chain-catalog-wax-3b15d36bff3ba027.png",
+  "Wax",
+  ""
+ ],
+ "catalog:vaulta": [
+  "mainnet",
+  "/assets/chains/chain-catalog-vaulta-63eb609d314c0605.png",
+  "Vaulta",
+  ""
+ ],
+ "catalog:near": [
+  "mainnet",
+  "/assets/chains/chain-catalog-near-4ad2bc4d934eaf2f.png",
+  "Near",
+  ""
+ ],
+ "catalog:rollux": [
+  "mainnet",
+  "/assets/chains/chain-catalog-rollux-96caa665334c382d.png",
+  "Rollux",
+  ""
+ ],
+ "catalog:waves": [
+  "mainnet",
+  "/assets/chains/chain-catalog-waves-58503dd11d75b1f1.png",
+  "Waves",
+  ""
+ ],
+ "catalog:unit-zero": [
+  "mainnet",
+  "/assets/chains/chain-catalog-unit-zero-f3956ea3f568269f.png",
+  "Unit Zero",
+  ""
+ ],
+ "catalog:algorand": [
+  "mainnet",
+  "/assets/chains/chain-catalog-algorand-fe20a81df4804f5b.png",
+  "Algorand",
+  ""
+ ],
+ "catalog:sora": [
+  "mainnet",
+  "/assets/chains/chain-catalog-sora-7b65644e03ecb2ca.png",
+  "Sora",
+  ""
+ ],
+ "catalog:radix": [
+  "mainnet",
+  "/assets/chains/chain-catalog-radix-24d8f5cfa8701847.png",
+  "Radix",
+  ""
+ ],
+ "catalog:dogechain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-dogechain-3241833d6b7b68a1.png",
+  "Dogechain",
+  ""
+ ],
+ "catalog:cardano": [
+  "mainnet",
+  "/assets/chains/chain-catalog-cardano-f31b6bb4ac6e389e.png",
+  "Cardano",
+  ""
+ ],
+ "catalog:juno": [
+  "mainnet",
+  "/assets/chains/chain-catalog-juno-49b0918564cee136.png",
+  "Juno",
+  ""
+ ],
+ "catalog:multiversx": [
+  "mainnet",
+  "/assets/chains/chain-catalog-multiversx-171f4faaf1f5a7aa.png",
+  "MultiversX",
+  ""
+ ],
+ "catalog:mixin": [
+  "mainnet",
+  "/assets/chains/chain-catalog-mixin-f2fd8aa19658baec.png",
+  "Mixin",
+  ""
+ ],
+ "catalog:everscale": [
+  "mainnet",
+  "/assets/chains/chain-catalog-everscale-438e36e2990c6cec.png",
+  "Everscale",
+  ""
+ ],
+ "catalog:vechain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-vechain-2b10ca44a6bfdded.png",
+  "VeChain",
+  ""
+ ],
+ "catalog:stacks": [
+  "mainnet",
+  "/assets/chains/chain-catalog-stacks-16fe086b360d7154.png",
+  "Stacks",
+  ""
+ ],
+ "catalog:ergo": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ergo-071d960beea3eece.png",
+  "Ergo",
+  ""
+ ],
+ "catalog:defichain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-defichain-9a9c65322121b8ea.png",
+  "DefiChain",
+  ""
+ ],
+ "catalog:equilibrium": [
+  "mainnet",
+  "/assets/chains/chain-catalog-equilibrium-b63d81ce99221756.png",
+  "Equilibrium",
+  ""
+ ],
+ "catalog:neutron": [
+  "mainnet",
+  "/assets/chains/chain-catalog-neutron-6473c57894e75dbd.png",
+  "Neutron",
+  ""
+ ],
+ "catalog:xpr-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xpr-network-c9cd744dfeafbc53.png",
+  "XPR",
+  ""
+ ],
+ "catalog:vite": [
+  "mainnet",
+  "/assets/chains/chain-catalog-vite-ba378c7ae7404281.png",
+  "Vite",
+  ""
+ ],
+ "catalog:merlin": [
+  "mainnet",
+  "/assets/chains/chain-catalog-merlin-b5940df0ba4e2c49.png",
+  "Merlin",
+  ""
+ ],
+ "catalog:bsquared": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bsquared-4c4f22cd2990666d.png",
+  "BSquared",
+  ""
+ ],
+ "catalog:ton": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ton-1eef21251ad32461.png",
+  "TON",
+  ""
+ ],
+ "catalog:voi-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-voi-network-c543878f1c387feb.png",
+  "Voi",
+  ""
+ ],
+ "catalog:hydra": [
+  "mainnet",
+  "/assets/chains/chain-catalog-hydra-586986cf8b3590bb.png",
+  "Hydra",
+  ""
+ ],
+ "catalog:obyte": [
+  "mainnet",
+  "/assets/chains/chain-catalog-obyte-f6ec89828e07c5d3.png",
+  "Obyte",
+  ""
+ ],
+ "catalog:multivac": [
+  "mainnet",
+  "/assets/chains/chain-catalog-multivac-219ed87856ea2d8f.png",
+  "MultiVAC",
+  ""
+ ],
+ "catalog:acala": [
+  "mainnet",
+  "/assets/chains/chain-catalog-acala-0de023e83197ef2c.png",
+  "Acala",
+  ""
+ ],
+ "catalog:pulsechain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-pulsechain-50b1bc2911e6847c.png",
+  "PulseChain",
+  ""
+ ],
+ "catalog:icp": [
+  "mainnet",
+  "/assets/chains/chain-catalog-icp-d380d2f2f8898749.png",
+  "ICP",
+  ""
+ ],
+ "catalog:wemix3-0": [
+  "mainnet",
+  "/assets/chains/chain-catalog-wemix3-0-9a67728c1ee6ad8b.png",
+  "WEMIX3.0",
+  ""
+ ],
+ "catalog:loop": [
+  "mainnet",
+  "/assets/chains/chain-catalog-loop-f5de72dd538c29d8.png",
+  "Loop",
+  ""
+ ],
+ "catalog:carbon": [
+  "mainnet",
+  "/assets/chains/chain-catalog-carbon-88c71260ff43d103.png",
+  "Carbon",
+  ""
+ ],
+ "catalog:starcoin": [
+  "mainnet",
+  "/assets/chains/chain-catalog-starcoin-8c3b688efc7d38d2.png",
+  "Starcoin",
+  ""
+ ],
+ "catalog:bifrost": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bifrost-d9fe7a0b1d3937da.png",
+  "Bifrost",
+  ""
+ ],
+ "catalog:crescent": [
+  "mainnet",
+  "/assets/chains/chain-catalog-crescent-c19042eb21ba6448.png",
+  "Crescent",
+  ""
+ ],
+ "catalog:pego": [
+  "mainnet",
+  "/assets/chains/chain-catalog-pego-01a17edaec5f066b.png",
+  "Pego",
+  ""
+ ],
+ "catalog:ethereumpow": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ethereumpow-b89622e6e5b46787.png",
+  "EthereumPoW",
+  ""
+ ],
+ "catalog:redbelly": [
+  "mainnet",
+  "/assets/chains/chain-catalog-redbelly-0ea96f5a33626482.png",
+  "Redbelly",
+  ""
+ ],
+ "catalog:xai": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xai-00dc99c447da44cc.png",
+  "Xai",
+  ""
+ ],
+ "catalog:starknet": [
+  "mainnet",
+  "/assets/chains/chain-catalog-starknet-7e72ce3a1032b84e.png",
+  "Starknet",
+  ""
+ ],
+ "catalog:map-protocol": [
+  "mainnet",
+  "/assets/chains/chain-catalog-map-protocol-14b1d13934b904ad.png",
+  "MAP Protocol",
+  ""
+ ],
+ "catalog:comdex": [
+  "mainnet",
+  "/assets/chains/chain-catalog-comdex-c017686d8a3bcfbd.png",
+  "Comdex",
+  ""
+ ],
+ "catalog:libre": [
+  "mainnet",
+  "/assets/chains/chain-catalog-libre-c9b53f5e1a7fad2f.png",
+  "Libre",
+  ""
+ ],
+ "catalog:oraichain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-oraichain-1208b55c7183a77b.png",
+  "Oraichain",
+  ""
+ ],
+ "catalog:darwinia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-darwinia-2c5c8b92468986a1.png",
+  "Darwinia",
+  ""
+ ],
+ "catalog:babylon-genesis": [
+  "mainnet",
+  "/assets/chains/chain-catalog-babylon-genesis-4bed1a980b3fdff5.png",
+  "Babylon Genesis",
+  ""
+ ],
+ "catalog:persistence-one": [
+  "mainnet",
+  "/assets/chains/chain-catalog-persistence-one-b5a5239107e3abef.png",
+  "Persistence One",
+  ""
+ ],
+ "catalog:eos-evm": [
+  "mainnet",
+  "/assets/chains/chain-catalog-eos-evm-b211b67b64ca8b95.png",
+  "EOS EVM",
+  ""
+ ],
+ "catalog:oasys": [
+  "mainnet",
+  "/assets/chains/chain-catalog-oasys-106aa36b20d86327.png",
+  "Oasys",
+  ""
+ ],
+ "catalog:coti": [
+  "mainnet",
+  "/assets/chains/chain-catalog-coti-ac83bae6808a5b24.png",
+  "Coti",
+  ""
+ ],
+ "catalog:xpla": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xpla-868a9ed814b3aaa3.png",
+  "XPLA",
+  ""
+ ],
+ "catalog:concordium": [
+  "mainnet",
+  "/assets/chains/chain-catalog-concordium-f7242985cc21ae11.png",
+  "Concordium",
+  ""
+ ],
+ "catalog:chihuahua": [
+  "mainnet",
+  "/assets/chains/chain-catalog-chihuahua-3f0d29e4ce7851c0.png",
+  "Chihuahua",
+  ""
+ ],
+ "catalog:aura-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-aura-network-9f4a1dfbd29a6c50.png",
+  "Aura",
+  ""
+ ],
+ "catalog:hydration": [
+  "mainnet",
+  "/assets/chains/chain-catalog-hydration-20e173bf953c83a1.png",
+  "Hydration",
+  ""
+ ],
+ "catalog:renec": [
+  "mainnet",
+  "/assets/chains/chain-catalog-renec-fc9fac9b4fa1b9f0.png",
+  "RENEC",
+  ""
+ ],
+ "catalog:nolus": [
+  "mainnet",
+  "/assets/chains/chain-catalog-nolus-a75daf5da9dc3c4d.png",
+  "Nolus",
+  ""
+ ],
+ "catalog:elysium": [
+  "mainnet",
+  "/assets/chains/chain-catalog-elysium-94d5393c5c674f78.png",
+  "Elysium",
+  ""
+ ],
+ "catalog:dash": [
+  "mainnet",
+  "/assets/chains/chain-catalog-dash-cbf40b398a5cb766.png",
+  "Dash",
+  ""
+ ],
+ "catalog:bostrom": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bostrom-0b71ed26cf2d4c4e.png",
+  "Bostrom",
+  ""
+ ],
+ "catalog:alephium": [
+  "mainnet",
+  "/assets/chains/chain-catalog-alephium-965022bdd2cff3f1.png",
+  "Alephium",
+  ""
+ ],
+ "catalog:chainflip": [
+  "mainnet",
+  "/assets/chains/chain-catalog-chainflip-ba94aa0f9fb8df20.png",
+  "Chainflip",
+  ""
+ ],
+ "catalog:supra": [
+  "mainnet",
+  "/assets/chains/chain-catalog-supra-4d137df4dae5ba0d.png",
+  "Supra",
+  ""
+ ],
+ "catalog:ab": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ab-75b48952fbd3b9dc.png",
+  "AB",
+  ""
+ ],
+ "catalog:rise": [
+  "mainnet",
+  "/assets/chains/chain-catalog-rise-ae789b8ee40b6698.png",
+  "RISE",
+  ""
+ ],
+ "catalog:dydx": [
+  "mainnet",
+  "/assets/chains/chain-catalog-dydx-5ec02b4987144422.png",
+  "dYdX",
+  ""
+ ],
+ "catalog:areum-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-areum-network-4133a6cb92a4498b.png",
+  "Areum",
+  ""
+ ],
+ "catalog:naka": [
+  "mainnet",
+  "/assets/chains/chain-catalog-naka-5be641b47cdc4ea0.png",
+  "Naka",
+  ""
+ ],
+ "catalog:echelon-initia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-echelon-initia-23689a5397f8e499.png",
+  "Echelon Initia",
+  ""
+ ],
+ "catalog:venom": [
+  "mainnet",
+  "/assets/chains/chain-catalog-venom-9e09bbf7aae7542c.png",
+  "Venom",
+  ""
+ ],
+ "catalog:polkadex": [
+  "mainnet",
+  "/assets/chains/chain-catalog-polkadex-7e26dce1eacafc2f.png",
+  "Polkadex",
+  ""
+ ],
+ "catalog:aelf": [
+  "mainnet",
+  "/assets/chains/chain-catalog-aelf-49a6a7f2dbf34c6b.png",
+  "aelf",
+  ""
+ ],
+ "catalog:aeternity": [
+  "mainnet",
+  "/assets/chains/chain-catalog-aeternity-54d1c950edb431c5.png",
+  "Aeternity",
+  ""
+ ],
+ "catalog:iota": [
+  "mainnet",
+  "/assets/chains/chain-catalog-iota-e384f7d44b80efe5.png",
+  "IOTA",
+  ""
+ ],
+ "catalog:dymension": [
+  "mainnet",
+  "/assets/chains/chain-catalog-dymension-51b31b491090448c.png",
+  "Dymension",
+  ""
+ ],
+ "catalog:fuel-ignition": [
+  "mainnet",
+  "/assets/chains/chain-catalog-fuel-ignition-2b5231510ef69e2a.png",
+  "Fuel Ignition",
+  ""
+ ],
+ "catalog:shido": [
+  "mainnet",
+  "/assets/chains/chain-catalog-shido-7152c16473a2f5d9.png",
+  "Shido",
+  ""
+ ],
+ "catalog:agoric": [
+  "mainnet",
+  "/assets/chains/chain-catalog-agoric-e6577e6c4e1d9a42.png",
+  "Agoric",
+  ""
+ ],
+ "catalog:verus": [
+  "mainnet",
+  "/assets/chains/chain-catalog-verus-374d57c3a199f994.png",
+  "Verus",
+  ""
+ ],
+ "catalog:penumbra": [
+  "mainnet",
+  "/assets/chains/chain-catalog-penumbra-c8a27a8f0c282b27.png",
+  "Penumbra",
+  ""
+ ],
+ "catalog:qubic": [
+  "mainnet",
+  "/assets/chains/chain-catalog-qubic-e2a6890b1b4bf7f8.png",
+  "Qubic",
+  ""
+ ],
+ "catalog:ao": [
+  "mainnet",
+  "/assets/chains/chain-catalog-ao-b41c4acb834ae95c.png",
+  "AO",
+  ""
+ ],
+ "catalog:initia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-initia-beda94367d3f53bc.png",
+  "Initia",
+  ""
+ ],
+ "catalog:opengpu": [
+  "mainnet",
+  "/assets/chains/chain-catalog-opengpu-e67ceaab4e585d53.png",
+  "OpenGPU",
+  ""
+ ],
+ "catalog:namada": [
+  "mainnet",
+  "/assets/chains/chain-catalog-namada-3cd7821bbed03fa0.png",
+  "Namada",
+  ""
+ ],
+ "catalog:civitia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-civitia-e6c9066c3c6e7dd6.png",
+  "Civitia",
+  ""
+ ],
+ "catalog:inertia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-inertia-bde0db469228a946.png",
+  "Inertia",
+  ""
+ ],
+ "catalog:yominet": [
+  "mainnet",
+  "/assets/chains/chain-catalog-yominet-dc57e92d9c4c0024.png",
+  "Yominet",
+  ""
+ ],
+ "catalog:xion": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xion-98af3f46d1172385.png",
+  "XION",
+  ""
+ ],
+ "catalog:soon-network": [
+  "mainnet",
+  "/assets/chains/chain-catalog-soon-network-4480c441fd484406.png",
+  "Soon",
+  ""
+ ],
+ "catalog:svmbnb": [
+  "mainnet",
+  "/assets/chains/chain-catalog-svmbnb-381381ce3c966257.png",
+  "svmBNB",
+  ""
+ ],
+ "catalog:strat": [
+  "mainnet",
+  "/assets/chains/chain-catalog-strat-58b1acedd74033f5.png",
+  "Strat",
+  ""
+ ],
+ "catalog:cabal": [
+  "mainnet",
+  "/assets/chains/chain-catalog-cabal-55bfee3c314d1312.png",
+  "Cabal",
+  ""
+ ],
+ "catalog:provenance": [
+  "mainnet",
+  "/assets/chains/chain-catalog-provenance-4af4c92eb885965c.png",
+  "Provenance",
+  ""
+ ],
+ "catalog:gala": [
+  "mainnet",
+  "/assets/chains/chain-catalog-gala-0378721575ac8246.png",
+  "Gala",
+  ""
+ ],
+ "catalog:chromia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-chromia-47f54b440d903c8e.png",
+  "Chromia",
+  ""
+ ],
+ "catalog:kasplex": [
+  "mainnet",
+  "/assets/chains/chain-catalog-kasplex-c0536baf099bea32.png",
+  "Kasplex",
+  ""
+ ],
+ "catalog:zigchain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-zigchain-b221491e3de4d04f.png",
+  "ZIGChain",
+  ""
+ ],
+ "catalog:fogo": [
+  "mainnet",
+  "/assets/chains/chain-catalog-fogo-1110ffdb8112c495.png",
+  "Fogo",
+  ""
+ ],
+ "catalog:bittensor": [
+  "mainnet",
+  "/assets/chains/chain-catalog-bittensor-a246993be5370b8d.png",
+  "Bittensor",
+  ""
+ ],
+ "catalog:keeta": [
+  "mainnet",
+  "/assets/chains/chain-catalog-keeta-821fe059aefc9a3d.png",
+  "Keeta",
+  ""
+ ],
+ "catalog:chia": [
+  "mainnet",
+  "/assets/chains/chain-catalog-chia-d98e167a5a120735.png",
+  "Chia",
+  ""
+ ],
+ "catalog:canton": [
+  "mainnet",
+  "/assets/chains/chain-catalog-canton-f0b6011cda7acf7c.png",
+  "Canton",
+  ""
+ ],
+ "catalog:strato-chain": [
+  "mainnet",
+  "",
+  "Strato",
+  ""
+ ],
+ "catalog:cookiechain": [
+  "mainnet",
+  "/assets/chains/chain-catalog-cookiechain-b8481c662ee93b62.png",
+  "CookieChain",
+  ""
+ ],
+ "catalog:xo": [
+  "mainnet",
+  "/assets/chains/chain-catalog-xo-37188a2790dc8b51.png",
+  "XO",
+  ""
+ ],
+ "catalog:anubis": [
+  "mainnet",
+  "/assets/chains/chain-catalog-anubis-c671215ba7bdf785.png",
+  "Anubis",
+  ""
+ ],
+ "catalog:vara": [
+  "mainnet",
+  "/assets/chains/chain-catalog-vara-17afca12f0439ea8.png",
+  "Vara",
+  ""
+ ],
+ "catalog:axiome": [
+  "mainnet",
+  "/assets/chains/chain-catalog-axiome-3f1443e5f76f5351.png",
+  "Axiome",
+  ""
+ ],
+ "catalog:afx-l1": [
+  "mainnet",
+  "/assets/chains/chain-catalog-afx-l1-83e5beed686e7bf1.png",
+  "AFX L1",
+  ""
+ ],
+ "catalog:dungeon": [
+  "mainnet",
+  "/assets/chains/chain-catalog-dungeon-0423f6bae42e2e0a.png",
+  "Dungeon",
+  ""
+ ],
+ "catalog:aleo": [
+  "mainnet",
+  "/assets/chains/chain-catalog-aleo-f5134ebcc3c93182.png",
+  "ALEO",
+  ""
+ ]
+}

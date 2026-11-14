@@ -1,0 +1,92 @@
+{
+ "role": "VEINED Guardian assistant character (King Octopus). Not the VEINED brand icon: the approved octopus logo stays the brand symbol.",
+ "source": {
+  "path": "D:/Projeler/veined/design-assets/guardian/guardian-octopus-v1.png",
+  "sha256": "a00d0558adf1d303bd27a22a0a706da3a6f31ef0676fe53d151c32725da3ead0",
+  "bytes": 1636862,
+  "format": "PNG",
+  "size": [
+   1122,
+   1402
+  ],
+  "mode": "RGBA",
+  "alpha": true,
+  "provenance": {
+   "chunk": "caBX",
+   "bytes": 21881,
+   "claimGenerator": "OpenAI Media Service API",
+   "softwareAgent": "ChatGPT (gpt-image)",
+   "digitalSourceType": "trainedAlgorithmicMedia",
+   "created": "2026-11-08T21:58:06",
+   "signer": "OpenAI OpCo, LLC (Trufo C2PA Claim Signing CA)"
+  }
+ },
+ "method": "Alpha-preserving crop and Lanczos resampling of the source pixels only; no redrawing, tracing, recolouring, added glow or baked background. WebP (quality 88, alpha 100, method 6).",
+ "tool": {
+  "pillow": "12.0.0"
+ },
+ "uses": {
+  "king-hero-400.webp": "Guardian page hero (1x)",
+  "king-hero-800.webp": "Guardian page hero (2x)",
+  "king-avatar-64.webp": "conversation identity and Guardian review panel crest (1x/2x at 30-32 px)",
+  "king-avatar-128.webp": "floating assistant button (2x at 52 px)"
+ },
+ "outputs": {
+  "king-hero-400.webp": {
+   "sha256": "bb083f152fd794862b872a218450ea69d9aa1067259bc122621e5391024aeddd",
+   "bytes": 68270,
+   "size": [
+    400,
+    500
+   ],
+   "crop": [
+    0,
+    0,
+    1122,
+    1402
+   ]
+  },
+  "king-hero-800.webp": {
+   "sha256": "80977538479e2d8bfd1c213fe7180dad60a1e14d1770060d54bc35a5c056ef5a",
+   "bytes": 215190,
+   "size": [
+    800,
+    1000
+   ],
+   "crop": [
+    0,
+    0,
+    1122,
+    1402
+   ]
+  },
+  "king-avatar-64.webp": {
+   "sha256": "8569f1f8e9eff61f2fb4636669a8070f608c1a3eb7e9552b636d4a42ec39f7d2",
+   "bytes": 3958,
+   "size": [
+    64,
+    64
+   ],
+   "crop": [
+    231,
+    150,
+    891,
+    810
+   ]
+  },
+  "king-avatar-128.webp": {
+   "sha256": "e1a2c5ddb827a1e1e74eb6b4a879d4d7be1e6fdef6bedffc6a1b16a162d3dad4",
+   "bytes": 10236,
+   "size": [
+    128,
+    128
+   ],
+   "crop": [
+    231,
+    150,
+    891,
+    810
+   ]
+  }
+ }
+}

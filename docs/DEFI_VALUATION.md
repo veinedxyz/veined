@@ -1,0 +1,7 @@
+# Economic valuation
+
+Known wallet + known DeFi economic assets minus known positive owed debt = known net value. Unpriced assets and debt remain visible and produce incomplete warnings; unchecked coverage never implies zero. Exact raw math uses bigint; USD uses 18-decimal price inputs and micro-USD totals. No floating raw arithmetic. Legacy wallet USD number fallback is display provenance only; new DeFi amounts/prices/totals remain decimal strings.
+
+Ownership graph: exact wrapper asset ID → position ID → economic leaf asset IDs. Each represented wallet wrapper is excluded from wallet total. Independent underlying tokens actually held in the wallet are still counted. Aave collateral duplicates a supplied detail, not a second asset. V2 reserves × wallet LP balance / total supply; V3 official TickMath/LiquidityAmounts integer math. LP reserve manipulation is not treated as a price oracle. Vault convertToAssets is authoritative at the pin; max nesting depth 3 with cycle detection and curated targets only. wstETH uses getStETHByWstETH; stETH is not assumed redeemable 1:1 market-priced ETH.
+
+Portfolio market prices reuse the existing read-only routing token price evidence (short TTL, exact contract). Protocol oracle values are separate and never automatically used as USD market prices. Missing prices never drop debt. Stored V3 fees and unverified reward estimates do not enter gross/net. Fee-on-transfer redemption, noncurated nesting and full fee-growth accounting are explicitly outside exact valuation.

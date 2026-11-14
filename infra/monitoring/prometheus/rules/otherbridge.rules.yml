@@ -1,0 +1,156 @@
+# Otherbridge V1.5 alert rules (self-hosted Prometheus). Thresholds are derived from repository
+# configuration and local measurements, not from an SLA; see docs/MONITORING_ARCHITECTURE.md.
+# Tier A (release-candidate indexed) chains: 42161 Arbitrum, 43114 Avalanche, 57073 Ink, 480 World Chain.
+groups:
+  - name: otherbridge-critical
+    rules:
+      - alert: OtherbridgeExecutionGateOpen
+        expr: max(otherbridge_security_execution_gate_open) > 0
+        labels: { severity: critical, area: security }
+        annotations:
+          summary: Global execution gate reports OPEN in a read-only pre-release.
+          runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - alert: OtherbridgeFeeCollectionEnabled
+        expr: max(otherbridge_security_fee_collection_enabled) > 0
+        labels: { severity: critical, area: security }
+        annotations:
+          summary: Fee collection reports enabled; real fee must be 0 bps.
+          runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - alert: OtherbridgeWriteRegistryPopulated
+        expr: max(otherbridge_security_write_registry_entries) > 0
+        labels: { severity: critical, area: security }
+        annotations:
+          summary: Write/contract registry is populated in a read-only release.
+          runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - alert: OtherbridgeGlobalKillDisabled
+        expr: min(otherbridge_security_global_kill_enabled) < 1
+        labels: { severity: critical, area: security }
+        annotations:
+          summary: Global execution kill switch is not ON.
+          runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - alert: OtherbridgeLogWitnessMismatch
+        # Any disputed window in the last hour: a mismatch, an unresolved dispute, or a 2-of-3 tiebreak
+        # (one endpoint served a wrong log set). Never auto-silenced.
+        expr: sum by (chain) (otherbridge_witness_records_recent{consensus=~"MISMATCH|UNRESOLVED|TIEBREAK_MATCH_PRIMARY|TIEBREAK_MATCH_WITNESS"}) > 0
+        labels: { severity: critical, area: indexer }
+        annotations:
+          summary: "RPC log-set witness disagreement on chain {{ $labels.chain }}."
+          runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - alert: OtherbridgeIndexHalted
+        # LOG_CONSENSUS_UNRESOLVED / STORED_WINDOW_MISMATCH pause trusted advancement.
+        expr: max by (chain) (otherbridge_indexer_halted) > 0
+        labels: { severity: critical, area: indexer }
+        annotations:
+          summary: "Trusted index advancement paused on chain {{ $labels.chain }} (operator resume required)."
+          runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - alert: OtherbridgeIndexCanonicalityUnrecoverable
+        expr: max by (chain) (otherbridge_indexer_last_error{code=~"FINALIZED_CONFLICT|REWIND_DEPTH_EXCEEDED|REORG_LOOP"}) > 0 and on (chain) (max by (chain) (otherbridge_indexer_checkpoint_age_seconds) > 900)
+        for: 5m
+        labels: { severity: critical, area: indexer }
+        annotations:
+          summary: "Chain {{ $labels.chain }} indexer stuck on a canonicality/reorg error."
+          runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - alert: OtherbridgeDatabaseDown
+        expr: max(otherbridge_db_up) == 0
+        for: 1m
+        labels: { severity: critical, area: database }
+        annotations:
+          summary: PostgreSQL is unreachable for the monitor role.
+          runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - alert: OtherbridgeBackupStale
+        # Policy: one verified backup per 24 h; 12 h grace before critical.
+        expr: (time() - max(otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}) > 129600) or (absent(otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}) and on() max(otherbridge_db_up) == 1)
+        for: 15m
+        labels: { severity: critical, area: backup }
+        annotations:
+          summary: No successful backup within 36 h (or none recorded).
+          runbook: docs/RUNBOOK_BACKUP_RESTORE.md
+      - alert: OtherbridgeBackupFailing
+        expr: max(otherbridge_backup_last_failure_timestamp_seconds{kind="BACKUP"}) > max(otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"})
+        labels: { severity: critical, area: backup }
+        annotations:
+          summary: The most recent backup attempt failed.
+          runbook: docs/RUNBOOK_BACKUP_RESTORE.md
+  - name: otherbridge-high
+    rules:
+      - alert: OtherbridgeTierARpcAllUnhealthy
+        expr: max by (chain) (otherbridge_rpc_healthy_log_endpoints{chain=~"42161|43114|57073|480"}) == 0
+        for: 5m
+        labels: { severity: high, area: rpc }
+        annotations:
+          summary: "No healthy log-capable RPC for Tier A chain {{ $labels.chain }}."
+          runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - alert: OtherbridgeIndexerStalled
+        # The API reports an index as not current after 600 s without progress (indexCoverage).
+        expr: max by (chain) (otherbridge_indexer_checkpoint_age_seconds{chain=~"42161|43114|57073|480"}) > 600
+        for: 5m
+        labels: { severity: high, area: indexer }
+        annotations:
+          summary: "Indexer for chain {{ $labels.chain }} has not advanced for more than 10 minutes."
+          runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - alert: OtherbridgeIndexLagHigh
+        # Per-chain tolerance = max(64, 2*finality depth + 16): 42161=496, 43114=64, 57073=256, 480=256 blocks.
+        expr: (max by (chain) (otherbridge_indexer_lag_blocks{chain="42161"}) > 496) or (max by (chain) (otherbridge_indexer_lag_blocks{chain="43114"}) > 64) or (max by (chain) (otherbridge_indexer_lag_blocks{chain="57073"}) > 256) or (max by (chain) (otherbridge_indexer_lag_blocks{chain="480"}) > 256)
+        for: 10m
+        labels: { severity: high, area: indexer }
+        annotations:
+          summary: "Index lag on chain {{ $labels.chain }} exceeds its finality-derived tolerance."
+          runbook: docs/RUNBOOK_INDEXER_INCIDENT.md
+      - alert: OtherbridgeDataApi5xxElevated
+        expr: sum(rate(otherbridge_api_requests_total{status_class="5xx"}[5m])) / clamp_min(sum(rate(otherbridge_api_requests_total[5m])), 1e-9) > 0.05
+        for: 10m
+        labels: { severity: high, area: data-api }
+        annotations:
+          summary: Data API 5xx ratio above 5% for 10 minutes.
+          runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - alert: OtherbridgeDurableLimiterUnavailable
+        expr: sum(increase(otherbridge_api_limiter_unavailable_total[5m])) > 0
+        labels: { severity: high, area: data-api }
+        annotations:
+          summary: Durable PostgreSQL rate limiter unavailable (requests fail closed with 503).
+          runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - alert: OtherbridgeContractRuntimeDrift
+        expr: max(otherbridge_security_contract_registry_drift) > 0
+        labels: { severity: high, area: security }
+        annotations:
+          summary: Contract registry entry drifted from its reviewed runtime.
+          runbook: docs/SECURITY_INCIDENT_RUNBOOK.md
+      - alert: OtherbridgeMetricsTargetDown
+        expr: up{job=~"otherbridge-.*"} == 0
+        for: 2m
+        labels: { severity: high, area: monitoring }
+        annotations:
+          summary: "Metrics target {{ $labels.job }} is down."
+          runbook: docs/RUNBOOK_MONITORING.md
+  - name: otherbridge-warning
+    rules:
+      - alert: OtherbridgeWitnessDegraded
+        # Only chains that have trusted (witnessed) windows; chains without any independent witness are
+        # reported as FULL_INDEXED_DEVELOPMENT instead of paging forever.
+        expr: (max by (chain) (otherbridge_rpc_witness_operators) < 2) and on (chain) (sum by (chain) (otherbridge_indexer_windows{consensus=~"MATCH|TIEBREAK_MATCH_PRIMARY|TIEBREAK_MATCH_WITNESS"}) > 0)
+        for: 10m
+        labels: { severity: warning, area: rpc }
+        annotations:
+          summary: "Chain {{ $labels.chain }} has fewer than two healthy independent witness operators."
+          runbook: docs/RUNBOOK_RPC_INCIDENT.md
+      - alert: OtherbridgeRateLimitSaturation
+        expr: sum(rate(otherbridge_api_rate_limited_total[5m])) / clamp_min(sum(rate(otherbridge_api_requests_total[5m])), 1e-9) > 0.2
+        for: 10m
+        labels: { severity: warning, area: data-api }
+        annotations:
+          summary: More than 20% of Data API requests are rate limited.
+          runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - alert: OtherbridgePortfolioPartialFailures
+        # V1.4 live baseline: 4 FAILED of 150 checked (2.7%); warn above 10%.
+        expr: sum(otherbridge_portfolio_chains_failed_recent) / clamp_min(sum(otherbridge_portfolio_chains_checked_recent) + sum(otherbridge_portfolio_chains_failed_recent), 1) > 0.10
+        for: 15m
+        labels: { severity: warning, area: portfolio }
+        annotations:
+          summary: Portfolio per-chain failure rate above 10% in the last hour.
+          runbook: docs/RUNBOOK_DATA_API_INCIDENT.md
+      - alert: OtherbridgeBackupAgeWarning
+        expr: time() - max(otherbridge_backup_last_success_timestamp_seconds{kind="BACKUP"}) > 93600
+        labels: { severity: warning, area: backup }
+        annotations:
+          summary: Last successful backup is older than 26 h.
+          runbook: docs/RUNBOOK_BACKUP_RESTORE.md

@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "note": "Config-driven promotion CATALOG_ONLY -> NATIVE_ONLY -> ON_DEMAND_FUNGIBLE -> FULL_INDEXED. A configured tier is a ceiling; the effective tier is lowered automatically when vetted RPC capability is missing. FULL_INDEXED members are selected from measured RPC health and Transfer log volume (see evidence rpc-measurement.json); no chain is promoted by code change.",
+  "fullIndexed": ["42161", "43114", "57073", "480"],
+  "fullIndexedStart": {
+    "kind": "recent-window",
+    "blocks": 20000
+  },
+  "finality": {
+    "1": {
+      "kind": "finalized-tag",
+      "depth": 64
+    },
+    "10": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "56": {
+      "kind": "finalized-tag",
+      "depth": 30
+    },
+    "100": {
+      "kind": "finalized-tag",
+      "depth": 30
+    },
+    "130": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "137": {
+      "kind": "finalized-tag",
+      "depth": 256
+    },
+    "146": {
+      "kind": "depth",
+      "depth": 32
+    },
+    "252": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "324": {
+      "kind": "depth",
+      "depth": 64
+    },
+    "480": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "5000": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "8453": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "34443": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "42161": {
+      "kind": "safe-tag",
+      "depth": 240
+    },
+    "42220": {
+      "kind": "finalized-tag",
+      "depth": 64
+    },
+    "43114": {
+      "kind": "depth",
+      "depth": 12
+    },
+    "57073": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "59144": {
+      "kind": "finalized-tag",
+      "depth": 64
+    },
+    "81457": {
+      "kind": "safe-tag",
+      "depth": 120
+    },
+    "534352": {
+      "kind": "finalized-tag",
+      "depth": 64
+    },
+    "default": {
+      "kind": "depth",
+      "depth": 64
+    }
+  },
+  "disabled": [],
+  "nonEvmPortfolio": {
+    "728126428": "CATALOG_ONLY",
+    "1151111081099710": "ON_DEMAND_FUNGIBLE",
+    "20000000000001": "CATALOG_ONLY",
+    "9270000000000000": "CATALOG_ONLY",
+    "1201081091099710": "CATALOG_ONLY"
+  },
+  "selection": {
+    "measuredAt": "2026-10-04T10:15:28.156Z",
+    "evidence": "data/rpc-measurement.json",
+    "criteria": "TVL top 25, routable, >=1 eth_getLogs-capable vetted endpoint with probed range >=1000 blocks, <=30 ERC20 Transfer logs per block measured over 20 recent blocks, verified Multicall3; bounded set that passes locally",
+    "selected": {
+      "42161": "Arbitrum: TVL ~1.41B USD, 12.8 logs/block, probed range 1000",
+      "43114": "Avalanche: TVL ~0.64B USD, 2.5 logs/block, probed range 1000",
+      "57073": "Ink: TVL ~0.21B USD, 0.35 logs/block, probed range 5000, two log endpoints"
+    },
+    "notSelected": {
+      "1": "no vetted endpoint served unfiltered eth_getLogs",
+      "56": "no vetted endpoint served unfiltered eth_getLogs",
+      "137": "311 logs/block",
+      "8453": "307 logs/block and 10-block probe limit"
+    },
+    "v15": {
+      "measuredAt": "2026-10-04T15:45:54Z",
+      "evidence": "witness/tier-a-assessment.json, data/indexer-log.jsonl (chain 480, witnessPolicy required)",
+      "criteria": "V1.5 promotion additionally requires two healthy, operationally independent, witness-eligible log operators (provenance inventory) and a live required-witness run with only MATCH windows; release eligibility remains blocked by RPC terms review",
+      "promoted": {
+        "480": "World Chain: TVL rank 19 of the bounded set, 17.5 logs/block, Alchemy public + Tenderly gateway (independent operators), 12/12 live windows MATCH, OP-stack safe-tag finality depth 120"
+      },
+      "notPromoted": "All other assessed top-25 routable EVM chains lack two independent witness-eligible log operators, a log-capable endpoint, or exceed the log-volume bound (see tier-a-assessment.json)."
+    }
+  }
+}

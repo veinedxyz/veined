@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rcId": {
+      "type": "string",
+      "pattern": "^OTHERBRIDGE_RC_V1_16_[A-Za-z0-9-]+$"
+    },
+    "sourceCheckpoint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceManifest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "buildHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protectedBaseline": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "reportSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reportReference": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "independentReviewer": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "scopeCheckpoint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "verificationReference": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "kind": {
+      "type": "string",
+      "const": "LEGAL_APPROVAL"
+    },
+    "version": {
+      "type": "string",
+      "const": "V1.17"
+    },
+    "documentsReviewed": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "providerTerms": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "approved": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "provider",
+          "reference",
+          "approved"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "rpcTerms": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "operator": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 4000
+          },
+          "approved": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "operator",
+          "reference",
+          "approved"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "jurisdictionPolicy": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "approvalIdentity": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "approvalReference": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 4000
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 4000
+      }
+    }
+  },
+  "required": [
+    "rcId",
+    "sourceCheckpoint",
+    "sourceManifest",
+    "buildHash",
+    "protectedBaseline",
+    "schemaVersion",
+    "issuedAt",
+    "expiresAt",
+    "reportSha256",
+    "reportReference",
+    "independentReviewer",
+    "scopeCheckpoint",
+    "verificationReference",
+    "kind",
+    "version",
+    "documentsReviewed",
+    "providerTerms",
+    "rpcTerms",
+    "jurisdictionPolicy",
+    "approvalIdentity",
+    "approvalReference",
+    "conditions"
+  ],
+  "additionalProperties": false
+}
