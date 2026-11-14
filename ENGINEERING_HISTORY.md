@@ -1,11 +1,14 @@
-# VEINED — engineering history (archived README, verbatim)
+# VEINED — engineering history (archived README, English translation)
 
-> **Archive.** This file preserves, **byte for byte below the line**, the repository README as it was at commit
-> `97736f0623bc0d249e1f2b8a976b162212b1a6e0` (2026-11-14), before the README was rewritten in English for the NEAR
-> Hackathon. It is a historical engineering record: milestone names (Otherbridge V1 … V1.18), statuses and file
-> references are those of their time, several sections are in **Turkish**, and some links point to internal files
-> that are **not part of this public repository** (for example `OTHERBRIDGE_V1_HANDOFF.md`, `release/OWNER_GATE_PACK.md`,
-> `evidence/…`). Nothing below was reinterpreted or edited. The current description is [README.md](README.md).
+> **Archive.** This file is the repository README as it was at commit `97736f0623bc0d249e1f2b8a976b162212b1a6e0`
+> (2026-11-14), before the README was rewritten in English for the NEAR Hackathon. The sections that were written in
+> **Turkish** are given below in a faithful **English translation**. Dates, hashes, identifiers, statuses, commands,
+> paths and results are unchanged, and the English sections are unchanged. The original text is preserved in Git
+> history: [README.md at 97736f06](https://github.com/caiguru/veined/blob/97736f0623bc0d249e1f2b8a976b162212b1a6e0/README.md).
+> It is a historical engineering record: milestone names (Otherbridge V1 … V1.18), statuses and file references are
+> those of their time, and some links point to internal files that are **not part of this public repository** (for
+> example `OTHERBRIDGE_V1_HANDOFF.md`, `release/OWNER_GATE_PACK.md`, `evidence/…`). The current description is
+> [README.md](README.md).
 
 ---
 
@@ -69,64 +72,65 @@ Current candidate: OTHERBRIDGE_RC_V1_16_20261015T133159055Z-16dfa3. Authoritativ
 
 ---
 
-# Otherbridge V1.11 — ürün tamamlama (güncel)
+# Otherbridge V1.11 — product completion (current)
 
-V1.14.1 DeFi tarama performansı ve kapsam sağlamlaştırma (salt okunur): [rapor ve doküman dizini](docs/V1141_DEFI_PERFORMANCE_HARDENING.md) · [performans](docs/DEFI_PERFORMANCE.md) · [istek bütçesi](docs/DEFI_REQUEST_BUDGET.md) · [önbellek politikası](docs/DEFI_CACHE_POLICY.md) · [test matrisi](docs/V1141_TEST_MATRIX.md).
+V1.14.1 DeFi scan performance and coverage hardening (read-only): [report and document index](docs/V1141_DEFI_PERFORMANCE_HARDENING.md) · [performance](docs/DEFI_PERFORMANCE.md) · [request budget](docs/DEFI_REQUEST_BUDGET.md) · [cache policy](docs/DEFI_CACHE_POLICY.md) · [test matrix](docs/V1141_TEST_MATRIX.md).
 
-Ürün akışı: **varlıkları bul → kapsamı anla → bridge → swap**. Yeni rotalar: `/` herkese açık landing, `/docs`
-herkese açık dokümantasyon (EN + TR kanonik), uygulama `/bridge` ile başlar (`/swap`, `/portfolio`, `/activity`,
-`/networks`, `/help` korunur). Ağ ortamları (mainnet/testnet) ayrıldı, kanonik zincir kimlik kaydı ve birleşik varlık
-kaydı (tam ağ + kontrat; sembol asla kimlik değildir) eklendi, portföy bağlı cüzdanı otomatik ve salt okunur tarar
-(küratörlü bakiye taraması doğrulanmış Multicall3 ile), G7 BSC okumaları bağımsız iki operatörün ortak finalized
-pin'ini kullanır. Gönderim kapalıdır; gerçek imza/onay/yayın/deploy/ücret tahsilatı yoktur.
+Product flow: **find assets → understand coverage → bridge → swap**. New routes: `/` public landing page, `/docs`
+public documentation (EN + TR canonical), the application starts at `/bridge` (`/swap`, `/portfolio`, `/activity`,
+`/networks`, `/help` are kept). Network environments (mainnet/testnet) were separated, a canonical chain identity
+registry and a unified asset registry (full network + contract; a symbol is never an identity) were added, the
+portfolio scans the connected wallet automatically and read-only (curated balance scan with verified Multicall3), and
+G7 BSC reads use the shared finalized pin of two independent operators. Sending is closed; there is no real
+signature/approval/broadcast/deploy/fee collection.
 
-Rapor: docs/V111_PRODUCT_COMPLETION.md · test matrisi: docs/V111_TEST_MATRIX.md · G7: docs/G7_RPC_CONSENSUS_RELIABILITY.md ·
-kayıtlar: docs/CHAIN_IDENTITY_COVERAGE.md, docs/ASSET_REGISTRY.md, docs/ASSET_PROVENANCE.md · portföy:
+Report: docs/V111_PRODUCT_COMPLETION.md · test matrix: docs/V111_TEST_MATRIX.md · G7: docs/G7_RPC_CONSENSUS_RELIABILITY.md ·
+registries: docs/CHAIN_IDENTITY_COVERAGE.md, docs/ASSET_REGISTRY.md, docs/ASSET_PROVENANCE.md · portfolio:
 docs/PORTFOLIO_DISCOVERY_COVERAGE.md · landing/docs: docs/LANDING_ARCHITECTURE.md, docs/PUBLIC_DOCS_ARCHITECTURE.md.
 
-Kayıt senkronizasyonu (yalnız okuma, salt sunucu tarafı): `pnpm assets:sync:all` (veya tek tek `assets:sync:chains`,
-`:trustwallet`, `:routing`, `:coingecko`, `:dexscreener`, `:onebridge`), ardından `pnpm assets:build`,
-`pnpm assets:verify`, `pnpm assets:coverage`. Dokümantasyon: `pnpm docs:build` / `pnpm docs:check`. G7 kuru kabul:
-`pnpm g7:dry-acceptance --sessions 10 --pause-ms 45000 --family <evidence-alt-dizini>` (cüzdan gönderimi bastırılır).
-İsteğe bağlı ortam değişkenleri (tanımsızsa gizli/noindex): `OTHERBRIDGE_PUBLIC_ORIGIN`, `OTHERBRIDGE_PUBLIC_INDEXING`,
-`OTHERBRIDGE_SOCIAL_X|GITHUB|TELEGRAM|DISCORD`, `OTHERBRIDGE_DOCS_URL`, `OTHERBRIDGE_STATUS_URL`; senkronizasyon için
-`COINGECKO_API_KEY`/`COINGECKO_API_PLAN` (zorunlu değil). Production ready değildir.
+Registry synchronization (read-only, server-side only): `pnpm assets:sync:all` (or individually `assets:sync:chains`,
+`:trustwallet`, `:routing`, `:coingecko`, `:dexscreener`, `:onebridge`), then `pnpm assets:build`,
+`pnpm assets:verify`, `pnpm assets:coverage`. Documentation: `pnpm docs:build` / `pnpm docs:check`. G7 dry acceptance:
+`pnpm g7:dry-acceptance --sessions 10 --pause-ms 45000 --family <evidence-alt-dizini>` (wallet sending is suppressed).
+Optional environment variables (hidden/noindex when undefined): `OTHERBRIDGE_PUBLIC_ORIGIN`, `OTHERBRIDGE_PUBLIC_INDEXING`,
+`OTHERBRIDGE_SOCIAL_X|GITHUB|TELEGRAM|DISCORD`, `OTHERBRIDGE_DOCS_URL`, `OTHERBRIDGE_STATUS_URL`; for synchronization
+`COINGECKO_API_KEY`/`COINGECKO_API_PLAN` (not required). Not production ready.
 
 ---
 
-# Otherbridge V1.4 — self-hosted data plane (güncel)
+# Otherbridge V1.4 — self-hosted data plane (current)
 
-Portfolio artık Otherbridge'in kendi veri düzlemini kullanır: vetted RPC registry + health, ERC20 indexer (reorg güvenli checkpoint), PostgreSQL store, sürümlü salt-okunur `/v1` Data API (yerel, yayınlanmadı, billing kapalı). Ücretli portfolio anahtarı ve 40 ağ sınırı kaldırıldı; kontrol edilmeyen ağ asla boş sayılmaz. Mimari: docs/DATA_PLANE_ARCHITECTURE.md; kapsam: docs/PORTFOLIO_COVERAGE.md; çalıştırma: docs/RUNBOOK.md; denetim: docs/OPUS_FINAL_AUDIT.md; test matrisi: docs/V14_TEST_MATRIX.md. Veri düzlemi olmadan UI çalışmaya devam eder (DEGRADED/UNAVAILABLE açıkça gösterilir).
+The portfolio now uses Otherbridge's own data plane: vetted RPC registry + health, ERC20 indexer (reorg-safe checkpoint), PostgreSQL store, versioned read-only `/v1` Data API (local, not published, billing closed). The paid portfolio key and the 40-network limit were removed; an unchecked network is never counted as empty. Architecture: docs/DATA_PLANE_ARCHITECTURE.md; coverage: docs/PORTFOLIO_COVERAGE.md; operation: docs/RUNBOOK.md; audit: docs/OPUS_FINAL_AUDIT.md; test matrix: docs/V14_TEST_MATRIX.md. Without the data plane the UI keeps working (DEGRADED/UNAVAILABLE is shown explicitly).
 
 ---
 
-# Güncel multichain incelemesi
+# Current multichain review
 
-Otherbridge multichain foundation salt okunur inceleme kapsamındadır. Gönderim/sign/approve/broadcast/deploy kapalı, ONEbridge G5 BLOCKED. Mevcut V1/R1 uygulaması korunur. Güncel checkpoint ve tüm gerçek sonuçlar OTHERBRIDGE_V1_HANDOFF.md dosyasında; dinamik ağ/route mimarisi docs/MULTICHAIN_ARCHITECTURE.md ve test matrisi docs/MULTICHAIN_TEST_MATRIX.md içindedir.
+The Otherbridge multichain foundation is in read-only review scope. Sending/sign/approve/broadcast/deploy are closed, ONEbridge G5 BLOCKED. The existing V1/R1 application is preserved. The current checkpoint and all real results are in OTHERBRIDGE_V1_HANDOFF.md; the dynamic network/route architecture is in docs/MULTICHAIN_ARCHITECTURE.md and the test matrix in docs/MULTICHAIN_TEST_MATRIX.md.
 
-Kurulum: Node 24 + pnpm 11.25.0, `pnpm install --frozen-lockfile`, `pnpm dev` (127.0.0.1:3100). Production preview `pnpm build`, `pnpm start` (3101); bu deploy değildir. Gerçek .env veya API anahtarı gerekmez. Katalog canlı public chain/tool/connection verisinden gelir; ONE özel adapter olarak korunur. Ağ seçicide arama/son ağlar/gerçek yerel logolar ve VM formatına uygun adreslerle kullanıcı başlatmalı quote okuması bulunur. Bağlantı/quote execution izni değildir.
+Setup: Node 24 + pnpm 11.25.0, `pnpm install --frozen-lockfile`, `pnpm dev` (127.0.0.1:3100). Production preview `pnpm build`, `pnpm start` (3101); this is not a deploy. No real .env or API key is needed. The catalog comes from live public chain/tool/connection data; ONE is kept as a special adapter. The network selector has search/recent networks/real local logos and a user-initiated quote read with addresses matching the VM format. A connection/quote is not execution permission.
 
-Doğrulama: `pnpm verify`, `pnpm test:e2e`; özel üretim smoke/asset sync/live-readonly için docs/RUNBOOK.md içindeki benzersiz evidence dizini talimatını uygulayın. Eski kanıt dosyaları tarihsel checkpoints'e aittir; yeni koşu olarak sunulmaz.
+Verification: `pnpm verify`, `pnpm test:e2e`; for dedicated production smoke/asset sync/live-readonly runs, follow the unique evidence directory instruction in docs/RUNBOOK.md. Old evidence files belong to historical checkpoints; they are not presented as a new run.
 
 ---
 
 # Otherbridge V1
 
-ONEchain native ONE → BSC kanonik CROSS için bağımsız, harici cüzdan odaklı yerel uygulama. **Canlı gönderim kapalı; entegrasyon doğrulaması BLOCKED.** Yerel senaryolar sentetiktir, canlı settlement kanıtı değildir.
+An independent, external-wallet-focused local application for ONEchain native ONE → BSC canonical CROSS. **Live sending is closed; integration verification BLOCKED.** Local scenarios are synthetic, not live settlement evidence.
 
-## Cüzdan bağlantısı (V1.9 — Privy, yalnız harici cüzdan, connect-only)
+## Wallet connection (V1.9 — Privy, external wallets only, connect-only)
 
-"Cüzdan bağla" Privy'nin harici cüzdan modalını açar (MetaMask, Rabby, Phantom EVM, Coinbase Wallet, WalletConnect ve
-diğer EIP-6963 eklentileri). Bağlanırken imza istenmez; e-posta/sosyal giriş ve gömülü cüzdan kapalıdır. Privy yalnız
-bağlantı katmanıdır: rota, tutar, alıcı, firewall, ücret ve yürütme politikası Otherbridge'tedir. Etkinleştirmek için
-`.env.local` içine `NEXT_PUBLIC_PRIVY_APP_ID=<25 karakter>` ekleyin ([PRIVY_SETUP](docs/PRIVY_SETUP.md)); App ID yoksa
-ürün salt okunur çalışır ve "Wallet connection is temporarily unavailable." gösterir — enjekte sağlayıcıya geri dönüş
-yoktur. Mimari: [WALLET_CONNECTION_ARCHITECTURE](docs/WALLET_CONNECTION_ARCHITECTURE.md), veri akışı:
-[PRIVY_DATA_FLOW](docs/PRIVY_DATA_FLOW.md), güvenlik sınırı: [PRIVY_SECURITY_BOUNDARY](docs/PRIVY_SECURITY_BOUNDARY.md).
+"Connect wallet" opens Privy's external wallet modal (MetaMask, Rabby, Phantom EVM, Coinbase Wallet, WalletConnect and
+other EIP-6963 extensions). No signature is requested when connecting; email/social login and the embedded wallet are
+closed. Privy is only the connection layer: route, amount, recipient, firewall, fee and execution policy are
+Otherbridge's. To enable it, add `NEXT_PUBLIC_PRIVY_APP_ID=<25 karakter>` to `.env.local` ([PRIVY_SETUP](docs/PRIVY_SETUP.md)); without an
+App ID the product runs read-only and shows "Wallet connection is temporarily unavailable." — there is no fallback to
+an injected provider. Architecture: [WALLET_CONNECTION_ARCHITECTURE](docs/WALLET_CONNECTION_ARCHITECTURE.md), data flow:
+[PRIVY_DATA_FLOW](docs/PRIVY_DATA_FLOW.md), security boundary: [PRIVY_SECURITY_BOUNDARY](docs/PRIVY_SECURITY_BOUNDARY.md).
 
-## Çalıştırma
+## Running
 
-Node 24.18.0 ve pnpm 11.25.0 ile doğrulandı. Bağımlılıklar tam sürüm ve tek lockfile ile kilitlendi.
+Verified with Node 24.18.0 and pnpm 11.25.0. Dependencies are locked to exact versions with a single lockfile.
 
 ```powershell
 pnpm install --frozen-lockfile
@@ -136,15 +140,15 @@ pnpm dev
 
 ```powershell
 pnpm dev:test
-# Ayrı sentetik local-test modu. Gerçek cüzdan bağlamayın.
+# Separate synthetic local-test mode. Do not connect a real wallet.
 pnpm build
 pnpm start
-# http://127.0.0.1:3101 — production build, yalnızca yerel preview
+# http://127.0.0.1:3101 — production build, local preview only
 ```
 
-Production build her zaman mainnet-readonly kullanır. `OTHERBRIDGE_MODE=local-test` veya enable flag’i production’da fixture/gönderim açmaz. R1 salt okunur quote/simulation, limits/health ve iki zincir gözlemcisini gerçek API yoluna bağlar; gönderim kilidi kapalıdır. Source-build eşleşmesi ve harcanabilir rezerv doğrulanmış sayılmaz. Env toggle tek başına yeterli değildir.
+The production build always uses mainnet-readonly. `OTHERBRIDGE_MODE=local-test` or the enable flag does not open fixtures/sending in production. R1 connects read-only quote/simulation, limits/health and the two-chain observers to the real API path; the sending lock is closed. The source-build match and the spendable reserve are not counted as verified. An env toggle alone is not sufficient.
 
-## Doğrulama
+## Verification
 
 ```powershell
 pnpm verify
@@ -155,17 +159,17 @@ node scripts/production-smoke.mjs
 pnpm verify:live-readonly
 ```
 
-E2E kendi 3100 loopback test sunucusunu başlatıp durdurur. Port başka uygulamada kullanılıyorsa o uygulamayı durdurmayın. Playwright Chromium gerekirse `pnpm exec playwright install chromium` ile kurulabilir. Testler ayrı tarayıcı context’i ve synthetic provider kullanır; kullanıcı profiline erişmez. In-memory EVM testi özel anahtar, signer, RPC veya deployment kullanmaz.
+E2E starts and stops its own 3100 loopback test server. If the port is used by another application, do not stop that application. If needed, Playwright Chromium can be installed with `pnpm exec playwright install chromium`. The tests use a separate browser context and a synthetic provider; they do not access the user profile. The in-memory EVM test uses no private key, signer, RPC or deployment.
 
-`verify:live-readonly` G5 tümü geçmediği için **exit 2** verir ve kanıt üretir. Bu sonuç local suite başarısızlığına çevrilmez, canlı başarı olarak da sunulmaz. `scripts/verify.mjs` her komutu ayrı exit code/log ile kaydeder.
+`verify:live-readonly` returns **exit 2** because G5 does not fully pass, and it produces evidence. This result is not turned into a local suite failure, nor presented as a live success. `scripts/verify.mjs` records every command with a separate exit code/log.
 
-## Uygulanan yüzeyler
+## Implemented surfaces
 
-Bridge, cüzdan seçimi, native miktar/fee/MAX, review, iki zincir takip, Activity/detail, güvenli import/export, Networks, Help, Risk/About ve Settings. TR/EN ve açık/koyu tema. CEX/DEX kullanımı kullanıcıya ait ayrı işlem olarak açıklanır. Keyfi alıcı, reverse bridge, sosyal login, analytics, gas topup ve swap motoru yok.
+Bridge, wallet selection, native amount/fee/MAX, review, two-chain tracking, Activity/detail, safe import/export, Networks, Help, Risk/About and Settings. TR/EN and light/dark theme. CEX/DEX use is explained as a separate transaction belonging to the user. No arbitrary recipient, reverse bridge, social login, analytics, gas top-up or swap engine.
 
-Mainnet completion yalnız ilişkili source calldata/event, canonical receipt/finalized tag ve BSC bridge event + tekil kanonik CROSS Transfer log’u üzerinden gözlenir. Public history API’si yalnız hedef hash için sınırlı ipucu sağlar. Storage/import başarı iddiası taze kanıt olmadan trusted değildir. R1 kanıtları `evidence/otherbridge-v1/repair-r1/` altındadır; kökteki eski 81+4+8 test kanıtları tarihsel koşu olarak korunmuştur. Local test module yalnız geliştirme sunucusunun kontrollü fixture dalında çalışır; production erişimi testle engellenir.
+Mainnet completion is observed only through the related source calldata/event, the canonical receipt/finalized tag and the BSC bridge event + a single canonical CROSS Transfer log. The public history API provides only a limited hint for the destination hash. A storage/import success claim is not trusted without fresh evidence. R1 evidence is under `evidence/otherbridge-v1/repair-r1/`; the old 81+4+8 test evidence at the root is preserved as a historical run. The local test module runs only in the development server's controlled fixture branch; production access is blocked by a test.
 
-Başlangıç noktaları: [handoff](OTHERBRIDGE_V1_HANDOFF.md), [mimari](docs/ARCHITECTURE.md), [kaynaklar](docs/SOURCES.md), [güvenlik](docs/SECURITY.md), [runbook](docs/RUNBOOK.md), [test matrisi](docs/TEST_MATRIX.md). V1 release/mainnet-ready veya audited değildir.
+Starting points: [handoff](OTHERBRIDGE_V1_HANDOFF.md), [architecture](docs/ARCHITECTURE.md), [sources](docs/SOURCES.md), [security](docs/SECURITY.md), [runbook](docs/RUNBOOK.md), [test matrix](docs/TEST_MATRIX.md). V1 is not release/mainnet-ready or audited.
 # V1.3 review milestone
 
 Active TVL catalog, wallet-held Portfolio, balance-priority Bridge/Swap selectors, same-chain Swap, route alternatives, zero-enabled platform fee policy and isolated security foundation are implemented. Financial execution remains disabled. Broad live token portfolio needs a server credential; native fallback and synthetic coverage tests are supplied. See [V1.3 test matrix](docs/V13_TEST_MATRIX.md), [Portfolio coverage](docs/PORTFOLIO_COVERAGE.md), [security release gate](docs/SECURITY_RELEASE_GATE.md) and the current handoff. ONEchain G5 and production release remain blocked. Accepted historical documentation follows.

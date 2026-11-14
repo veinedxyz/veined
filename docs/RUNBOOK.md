@@ -1,74 +1,74 @@
-# V1.14 global DeFi universe — güncel
+# V1.14 global DeFi universe — current
 
-Ayrıntı: `docs/DEFI_UNIVERSE.md`, `docs/V114_TEST_MATRIX.md`. Tümü salt okunurdur; cüzdan, imza, approve/permit, broadcast, deploy ve fee yoktur.
+Details: `docs/DEFI_UNIVERSE.md`, `docs/V114_TEST_MATRIX.md`. Everything is read-only; there is no wallet, signing, approve/permit, broadcast, deploy or fee.
 
-- Katalog senkronu: `pnpm defi:universe:sync` (yalnız izinli hostlar, sınırlı boyut/gzip; parity, alias, anomali kontrolü). Reddedilen senkron son iyi kataloğu değiştirmez; incelenen kodu kabul etmek için `--accept-review=CODE`. Kuru çalıştırma `--dry-run`; fixture `--fixture <dir> --out <dir>`; kanıt `--evidence <dir>`.
-- Raporlar: `pnpm defi:universe:report` (adapter kuyruğu, kapsam, ağlar, kaynak/lisans envanteri).
-- Veritabanı: `pnpm data:db:migrate` (0005, yalnız ileri), `pnpm defi:sync` (incelenmiş deployment registry), `pnpm defi:universe:load` (kabul edilen katalog, idempotent).
-- Registry lane backfill (ör. Morpho): `OTHERBRIDGE_DEFI_LOG_RPC_1=<izinli https log kaynağı> node --env-file=.env.data.local --experimental-transform-types --import ./scripts/ts-hooks.mjs services/defi.ts lane morpho-blue-1 markets` (tekrar çalıştırılabilir, reorg güvenli; `historical_complete` olmadan kayıt tam sayılmaz).
-- Gerçek nonzero kanıtlar: `pnpm defi:proofs --only=<id> --out=<benzersiz kanıt dizini>` (iki bağımsız endpoint, kişi kimliği yok).
-- Yeni adapter yalnız resmi kaynaktaki literal adres veya kayıtlı zincir üstü türetme ile eklenir (`src/defi/sources/`, `scripts/defi-registry.mjs`); katalog değişikliği finansal mantığı açamaz.
-
----
-
-# V1.5 pre-release hardening — güncel
-
-Önce `OTHERBRIDGE_V1_HANDOFF.md`, `docs/V15_TEST_MATRIX.md` ve `docs/SECURITY_RELEASE_GATE.md` okuyun. V1.4 komutları aşağıda geçerlidir; V1.5 ekleri:
-
-- Indexer tanık politikası: `pnpm data:indexer:run --witness required` (release semantiği; bağımsız tanık yoksa commit yok, `WITNESS_UNAVAILABLE`) veya varsayılan `best-effort` (yalnız geliştirme; tanıksız pencereler `NO_INDEPENDENT_WITNESS` olarak işaretlenir ve release-eligible sayılmaz). Geçersiz değer başlangıçta reddedilir.
-- Uzlaşmazlık: zincir `HALTED` (`LOG_CONSENSUS_UNRESOLVED:from-to`) olur; veriyi silmeyin/düzenlemeyin. İnceleme sonrası `pnpm data:indexer:resume --chain <id> --reason "<gerekçe>" --yes`. Ayrıntı: `docs/RUNBOOK_INDEXER_INCIDENT.md`, `docs/RUNBOOK_RPC_INCIDENT.md`.
-- Eski (V1.5 öncesi) pencereleri yeniden doğrulama: `pnpm data:indexer:rewitness --chain <id>`; geriye backfill: `pnpm data:indexer:backfill --chain <id> --max-windows N`.
-- `pnpm data:verify-index` artık integrity/eligibility (FULL_INDEXED_RELEASE_ELIGIBLE / FULL_INDEXED_DEVELOPMENT ve blocker listesi) raporlar; `pnpm data:rpc:provenance` RPC operatör/terms envanterini ve profil kabulünü (`development`/`staging`/`release`) gösterir.
-- İzleme: `pnpm data:ops-exporter` (monitor rolü, iç port, token zorunlu); Prometheus/Alertmanager/Grafana yerel profili `infra/monitoring/` (`docs/RUNBOOK_MONITORING.md`). `/v1/metrics` public API'den kaldırıldı.
-- Yedek: `pnpm data:backup:create|verify|list|prune|restore-test|corruption-test|drill-cleanup` (yedekler repo dışında; restore yalnız yeni izole instance'a; prune varsayılan dry-run). Ayrıntı: `docs/RUNBOOK_BACKUP_RESTORE.md`.
-- Staging-eşdeğeri yerel yığın: `node scripts/staging.mjs init|up|down|status` (`docs/RUNBOOK_STAGING.md`); smoke `node scripts/v15-staging-smoke.mjs`. Bu production deploy değildir; DNS değişmez.
-- CSP kabulü: `pnpm build` sonrası `node scripts/v15-csp.mjs`; güvenlik/adversarial: `node scripts/v15-security.mjs`.
-
-Gerçek imza/approve/permit/broadcast/deploy/fee yoktur; G7 ve production release onaysız kapalıdır; ONEchain G5 BLOCKED_EXTERNAL_EVIDENCE.
+- Catalog sync: `pnpm defi:universe:sync` (allowed hosts only, bounded size/gzip; parity, alias and anomaly checks). A rejected sync does not change the last good catalog; to accept the reviewed code, use `--accept-review=CODE`. Dry run `--dry-run`; fixture `--fixture <dir> --out <dir>`; evidence `--evidence <dir>`.
+- Reports: `pnpm defi:universe:report` (adapter queue, coverage, networks, source/license inventory).
+- Database: `pnpm data:db:migrate` (0005, forward-only), `pnpm defi:sync` (reviewed deployment registry), `pnpm defi:universe:load` (accepted catalog, idempotent).
+- Registry lane backfill (e.g. Morpho): `OTHERBRIDGE_DEFI_LOG_RPC_1=<izinli https log kaynağı> node --env-file=.env.data.local --experimental-transform-types --import ./scripts/ts-hooks.mjs services/defi.ts lane morpho-blue-1 markets` (re-runnable, reorg-safe; a record is not considered complete without `historical_complete`).
+- Real nonzero proofs: `pnpm defi:proofs --only=<id> --out=<benzersiz kanıt dizini>` (two independent endpoints, no personal identity).
+- A new adapter is added only via a literal address from an official source or a recorded on-chain derivation (`src/defi/sources/`, `scripts/defi-registry.mjs`); a catalog change cannot unlock financial logic.
 
 ---
 
-# V1.4 self-hosted veri düzlemi — güncel
+# V1.5 pre-release hardening — current
 
-Ücretli portfolio/indexer API yoktur. Yerel izole PostgreSQL (Docker, yalnız 127.0.0.1:55471): `pnpm data:db:init` (git-ignored `.env.data.local` içine rastgele parolalar üretir; değerleri yazdırmaz), `pnpm data:db:up`, `pnpm data:db:migrate` (up-only, checksum, tekrar güvenli; roller SCRAM doğrulayıcıyla), `pnpm data:chains:sync`, `pnpm data:rpc:sync --write-snapshot` (aday → URL politikası → public DNS → chainId → read-only probe), `pnpm data:rpc:health --measure-logs`, `pnpm data:tokens:sync`, `pnpm data:indexer:once [--chain id]` / `pnpm data:indexer:run --cycles N` (lease + graceful shutdown), `pnpm data:coverage`, `pnpm data:verify-index` (tutarsızlıkta exit≠0), `pnpm data:verify`, `pnpm data:retention`.
+First read `OTHERBRIDGE_V1_HANDOFF.md`, `docs/V15_TEST_MATRIX.md` and `docs/SECURITY_RELEASE_GATE.md`. The V1.4 commands below remain valid; V1.5 additions:
 
-Yerel geliştirici API (yayınlanmadı, billing kapalı): `pnpm data:api:dev` → http://127.0.0.1:3200/v1/docs. Anahtar: `pnpm data:client:create --name ... --plan internal --scopes chains:read,...`, `pnpm data:key:create --client cli_... --yes` (gizli değer yalnız bir kez terminale; yönlendirilmiş stdout için `--stdout-json` gerekir ve hedef repo dışında olmalı), `pnpm data:key:revoke --key ...`, `pnpm data:usage:show --client ...`. Test: `pnpm test:db` (geçici veritabanı oluşturur ve siler). Production smoke: `node --env-file=.env.data.local scripts/production-v14.mjs` (önce `pnpm build`; benzersiz OTHERBRIDGE_EVIDENCE_ROOT). Her koşuya benzersiz evidence dizini verin; `verify-safety` artık varsayılan olarak eski kanıtın üzerine yazmaz. Başka projenin container/port/sürecine dokunmayın; durdurma: `pnpm data:db:stop`.
+- Indexer witness policy: `pnpm data:indexer:run --witness required` (release semantics; if there is no independent witness, no commit, `WITNESS_UNAVAILABLE`) or the default `best-effort` (development only; windows without a witness are marked as `NO_INDEPENDENT_WITNESS` and are not considered release-eligible). An invalid value is rejected at startup.
+- Disagreement: the chain becomes `HALTED` (`LOG_CONSENSUS_UNRESOLVED:from-to`); do not delete/edit the data. After review, `pnpm data:indexer:resume --chain <id> --reason "<gerekçe>" --yes`. Details: `docs/RUNBOOK_INDEXER_INCIDENT.md`, `docs/RUNBOOK_RPC_INCIDENT.md`.
+- Re-verifying old (pre-V1.5) windows: `pnpm data:indexer:rewitness --chain <id>`; backward backfill: `pnpm data:indexer:backfill --chain <id> --max-windows N`.
+- `pnpm data:verify-index` now reports integrity/eligibility (FULL_INDEXED_RELEASE_ELIGIBLE / FULL_INDEXED_DEVELOPMENT and the blocker list); `pnpm data:rpc:provenance` shows the RPC operator/terms inventory and the profile acceptance (`development`/`staging`/`release`).
+- Monitoring: `pnpm data:ops-exporter` (monitor role, internal port, token required); Prometheus/Alertmanager/Grafana local profile `infra/monitoring/` (`docs/RUNBOOK_MONITORING.md`). `/v1/metrics` was removed from the public API.
+- Backup: `pnpm data:backup:create|verify|list|prune|restore-test|corruption-test|drill-cleanup` (backups are outside the repo; restore only to a new isolated instance; prune defaults to dry-run). Details: `docs/RUNBOOK_BACKUP_RESTORE.md`.
+- Staging-equivalent local stack: `node scripts/staging.mjs init|up|down|status` (`docs/RUNBOOK_STAGING.md`); smoke `node scripts/v15-staging-smoke.mjs`. This is not a production deploy; DNS does not change.
+- CSP acceptance: `node scripts/v15-csp.mjs` after `pnpm build`; security/adversarial: `node scripts/v15-security.mjs`.
 
-Gerçek imza/approve/permit/broadcast/deploy/fee yoktur; G7 ve production release onaysız kapalıdır.
-
----
-
-# Multichain salt okunur yerel kontrol — güncel
-
-Önce güncel handoff ve MULTICHAIN_TEST_MATRIX.md dosyasını okuyun. Node 24.18.0, pnpm 11.25.0; `pnpm install --frozen-lockfile`, `pnpm dev` (3100). `pnpm build` / `pnpm start` (3101) yalnız loopback preview'dur. Gerçek .env/anahtar gerekmez; örnek değerler gönderimi kapalı tutar. Başka uygulamanın port sürecini durdurmayın.
-
-Ağ seçicide canlı public katalog okunur. Ethereum/Base veya başka farklı mainnet çiftini, gerçek katalogdaki iki asset'i, pozitif miktarı ve native VM formatında public adresleri seçin. 'Rotayı oku' yalnız API quote gözlemidir; bağlı cüzdan, balance/allowance yeterliliği veya execution izni değildir. Formda context değiştirip eski review'un kapandığını doğrulayın. ONE özel rotaları G5 kapalı; no-route/stale/rate-limit açık hata gösterir. Activity yalnız preview kaydeder; harici hash gözlemi context bağlı güncel provider cevabı ister ve reload'da tamamlanma saklamaz.
-
-Her koşuya benzersiz OTHERBRIDGE_EVIDENCE_ROOT verin. `node scripts/repair-run.mjs check-name ...` source/hash/Git/raw log kaydeder. **Wrapper check-name ile alt komutun yazdığı JSON basename'i aynı olmamalı** (ör. probe için bounded-probe; live-readonly veya reproducibility adı kullanmayın). `pnpm exec vitest run --config scripts/live-routing.vitest.config.ts` en çok yedi public GET yapar; test runner'ın geçmesi M9 PASS demek değildir: live-readonly.json içindeki gate ve gerçek quote kaydını okuyun. API availability anlık değişebilir; otomatik quote retry yoktur.
-
-`pnpm networks:sync` aynı benzersiz evidence şartıyla yeni hash'li asset/source/diff üretir. Mevcut logo veya özel kayıt silmez, commit/deploy yapmaz. SVG metadata arbitrary URL olarak yüklenmez. Normal kabul: verify, test:e2e, production-smoke.mjs, production-multichain.mjs; her production runner kendi loopback child'ını kapatır. reproduce.mjs artık public asset'leri de yeni izole dependency tree'ye kopyalar.
-
-M11 NOT_RUN — USER_APPROVAL_REQUIRED; M12 BLOCKED — RELEASE_APPROVAL_REQUIRED. Bu milestone bitişinde gerçek execution, G7, release, V2/V3 veya yeni faz başlatmayın. Aşağıdaki önceki R1 runbook tarihsel native kabul sınırlarıdır.
+There is no real signing/approve/permit/broadcast/deploy/fee; G7 and production release are closed without approval; ONEchain G5 BLOCKED_EXTERNAL_EVIDENCE.
 
 ---
 
-# Yerel kullanım ve manuel kabul
+# V1.4 self-hosted data plane — current
 
-Önce `OTHERBRIDGE_V1_HANDOFF.md` ve `evidence/otherbridge-v1/repair-r1/acceptance-c/commands.json` dosyalarını oku. Normal mod `pnpm dev` (127.0.0.1:3100), production preview `pnpm build; pnpm start` (127.0.0.1:3101). Bu komut production deploy değildir. Port doluysa başka projeyi öldürme; kendi süreç kimliğini doğrula.
+There is no paid portfolio/indexer API. Local isolated PostgreSQL (Docker, 127.0.0.1:55471 only): `pnpm data:db:init` (generates random passwords into the git-ignored `.env.data.local`; does not print the values), `pnpm data:db:up`, `pnpm data:db:migrate` (up-only, checksum, safe to re-run; roles with a SCRAM verifier), `pnpm data:chains:sync`, `pnpm data:rpc:sync --write-snapshot` (candidate → URL policy → public DNS → chainId → read-only probe), `pnpm data:rpc:health --measure-logs`, `pnpm data:tokens:sync`, `pnpm data:indexer:once [--chain id]` / `pnpm data:indexer:run --cycles N` (lease + graceful shutdown), `pnpm data:coverage`, `pnpm data:verify-index` (exit≠0 on inconsistency), `pnpm data:verify`, `pnpm data:retention`.
 
-Test modu `pnpm dev:test` yalnızca geliştirmede kullanılabilir. Gerçek cüzdan/aktif kullanıcı profiliyle test otomasyonu çalıştırma. Playwright kendi izole context/provider’ını oluşturur. Source balance/quote unavailable ekranı gerçek sıfır değildir. Bilinmeyen rezerv/fee’yi sıfırla doldurma.
+Local developer API (not published, billing off): `pnpm data:api:dev` → http://127.0.0.1:3200/v1/docs. Key: `pnpm data:client:create --name ... --plan internal --scopes chains:read,...`, `pnpm data:key:create --client cli_... --yes` (the secret value goes to the terminal only once; redirected stdout requires `--stdout-json` and the target must be outside the repo), `pnpm data:key:revoke --key ...`, `pnpm data:usage:show --client ...`. Test: `pnpm test:db` (creates and deletes a temporary database). Production smoke: `node --env-file=.env.data.local scripts/production-v14.mjs` (`pnpm build` first; unique OTHERBRIDGE_EVIDENCE_ROOT). Give every run a unique evidence directory; `verify-safety` no longer overwrites old evidence by default. Do not touch another project's container/port/process; to stop: `pnpm data:db:stop`.
 
-Normal hata: diagnose → en küçük onarım → ilgili test → regression → kanıt. Eski kanıtı ezmemek için her koşuda yeni `OTHERBRIDGE_EVIDENCE_ROOT` seç; wrapper `node scripts/repair-run.mjs unique-name ...` HEAD/source SHA-256/command/log/exit code kaydeder. E2E JSON, screenshot ve output dizini aynı unique root’a yönlenir. Eski `pnpm verify:live-readonly` G5 BLOCKED exit2 raporudur. Yeni gerçek okuyucu probe’u `pnpm exec vitest run --config scripts/live-native.vitest.config.ts` yalnız ayrı kanıt diziniyle opt-in çalıştırılır; PASS’i quote/G5 readiness diye yorumlama.
+There is no real signing/approve/permit/broadcast/deploy/fee; G7 and production release are closed without approval.
 
-## Kullanıcı döndüğünde — executor bu adımları uygulamadı
+---
 
-1. Diff/kanıtlar bağımsız incelenir. Güncel native ONE deployment/implementation/ABI, fee/min/max/pause, harcanabilir rezerv, source-event/destination payout ilişkisi ve finality politikası doğrulanır. Generic ABI veya token bakiyesi tek başına yeterli değildir.
-2. Gerekiyorsa kullanıcı kendi public provider/project ID’lerini yapılandırır. Seed/private key paylaşılmaz. SDK ve doğrudan yol arasında doğrulanmış tek entegrasyon korunur.
-3. R1’de bağlı salt okunur native quote/simulation/tracker yolunun source-build ve harcanabilir rezerv kanıtı tamamlanır; bundan sonra kapalı yazma sınırı ayrı güvenlik ve kullanıcı kabul incelemesine hazırlanır. **Mevcut flag’i true yapmak gönderimi açmaz; bu devir canlı transfer hazır değildir.**
-4. Kullanıcı kendi gerçek cüzdanını kendisi bağlar. EOA/smart account desteği, kaynak/aynı BSC alıcı, bakiye ve gas kontrol edilir. CEX adresi alıcı olarak kullanılmaz.
-5. Güncel minimumun üzerindeki küçük miktar için ayrı açık onay verilir; kullanıcı review ve wallet onayını kendisi yapar. Sabit/desteksiz kabul miktarı yoktur.
-6. Kaynak event/index, iki zincir receipt/finality, doğru BSC token/alıcı/tutar birlikte doğrulanır. Pending/held/unknown varsa tekrar otomatik gönderim/refund/claim yok. Büyük bakiye taşınmaz.
-7. Başarılı tek manuel test public release onayı değildir. Hosting/domain/DNS/hukuk/ticari koşullar ve bağımsız inceleme ayrı değerlendirilir.
+# Multichain read-only local check — current
+
+First read the current handoff and the MULTICHAIN_TEST_MATRIX.md file. Node 24.18.0, pnpm 11.25.0; `pnpm install --frozen-lockfile`, `pnpm dev` (3100). `pnpm build` / `pnpm start` (3101) is a loopback preview only. No real .env/key is required; the example values keep submission closed. Do not stop another application's port process.
+
+The network selector reads the live public catalog. Select Ethereum/Base or another distinct mainnet pair, two assets from the real catalog, a positive amount and public addresses in the native VM format. 'Read route' is only an API quote observation; it is not a connected wallet, balance/allowance sufficiency or execution permission. Change the context in the form and verify that the old review is closed. ONE-specific routes are closed under G5; no-route/stale/rate-limit show an explicit error. Activity records previews only; an external hash observation requires a current, context-bound provider response and does not persist completion on reload.
+
+Give every run a unique OTHERBRIDGE_EVIDENCE_ROOT. `node scripts/repair-run.mjs check-name ...` records source/hash/Git/raw log. **The wrapper check-name must not be the same as the JSON basename written by the subcommand** (e.g. bounded-probe for the probe; do not use the name live-readonly or reproducibility). `pnpm exec vitest run --config scripts/live-routing.vitest.config.ts` makes at most seven public GETs; the test runner passing does not mean M9 PASS: read the gate and the real quote record in live-readonly.json. API availability can change at any moment; there is no automatic quote retry.
+
+`pnpm networks:sync`, under the same unique evidence requirement, produces a new hashed asset/source/diff. It does not delete existing logos or custom records and does not commit/deploy. SVG metadata is not loaded as an arbitrary URL. Normal acceptance: verify, test:e2e, production-smoke.mjs, production-multichain.mjs; each production runner shuts down its own loopback child. reproduce.mjs now also copies public assets into the new isolated dependency tree.
+
+M11 NOT_RUN — USER_APPROVAL_REQUIRED; M12 BLOCKED — RELEASE_APPROVAL_REQUIRED. At the end of this milestone, do not start real execution, G7, release, V2/V3 or a new phase. The earlier R1 runbook below represents the historical native acceptance boundaries.
+
+---
+
+# Local use and manual acceptance
+
+First read the `OTHERBRIDGE_V1_HANDOFF.md` and `evidence/otherbridge-v1/repair-r1/acceptance-c/commands.json` files. Normal mode `pnpm dev` (127.0.0.1:3100), production preview `pnpm build; pnpm start` (127.0.0.1:3101). This command is not a production deploy. If the port is in use, do not kill another project; verify your own process identity.
+
+Test mode `pnpm dev:test` may be used only in development. Do not run test automation with a real wallet/active user profile. Playwright creates its own isolated context/provider. The source balance/quote unavailable screen is not a real zero. Do not fill an unknown reserve/fee with zero.
+
+Normal error: diagnose → smallest repair → relevant test → regression → evidence. To avoid overwriting old evidence, choose a new `OTHERBRIDGE_EVIDENCE_ROOT` for every run; the wrapper `node scripts/repair-run.mjs unique-name ...` records HEAD/source SHA-256/command/log/exit code. The E2E JSON, screenshot and output directory are directed to the same unique root. The old `pnpm verify:live-readonly` is a G5 BLOCKED exit2 report. The new real reader probe `pnpm exec vitest run --config scripts/live-native.vitest.config.ts` runs opt-in only with a separate evidence directory; do not interpret its PASS as quote/G5 readiness.
+
+## When the user returns — the executor did not perform these steps
+
+1. The diff/evidence is reviewed independently. The current native ONE deployment/implementation/ABI, fee/min/max/pause, spendable reserve, source-event/destination payout relationship and finality policy are verified. A generic ABI or token balance alone is not sufficient.
+2. If needed, the user configures their own public provider/project IDs. No seed/private key is shared. A single verified integration between the SDK and the direct path is maintained.
+3. The source-build and spendable reserve evidence for the read-only native quote/simulation/tracker path connected in R1 is completed; after that, the closed write boundary is prepared for a separate security and user acceptance review. **Setting the existing flag to true does not open submission; this handover is not ready for live transfer.**
+4. The user connects their own real wallet themselves. EOA/smart account support, source/same BSC recipient, balance and gas are checked. A CEX address is not used as the recipient.
+5. A separate explicit approval is given for a small amount above the current minimum; the user performs the review and wallet approval themselves. There is no fixed/unsupported acceptance amount.
+6. The source event/index, the receipts/finality on both chains, and the correct BSC token/recipient/amount are verified together. If anything is pending/held/unknown, there is no repeated automatic submission/refund/claim. No large balance is moved.
+7. A single successful manual test is not public release approval. Hosting/domain/DNS/legal/commercial conditions and independent review are assessed separately.
 
 `MAINNET_E2E: NOT_RUN — USER_APPROVAL_REQUIRED`. `PUBLIC_RELEASE: BLOCKED — RELEASE_APPROVAL_REQUIRED`.
 
