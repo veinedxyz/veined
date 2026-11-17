@@ -4,6 +4,7 @@ import { Icon } from "./icons";
 import { TokenMark } from "./ocean-marks";
 import { PageHeader, shortAddress } from "./ui";
 import type { ManualWalletViewProps } from "./manual-wallet";
+import { bridgeDisplayCost } from "../manual-wallet/display";
 type Review = NonNullable<ManualWalletViewProps["review"]>;
 type SwapReview = Extract<Review, { quoteOut: string }>;
 type BridgeReview = Extract<Review, { effectiveOutput: string | null }>;
@@ -83,6 +84,7 @@ export default function ManualWalletView(p: ManualWalletViewProps) {
     br = review as BridgeReview | undefined;
   const output = swap ? sr?.quoteOut : br?.effectiveOutput;
   const minimum = swap ? sr?.amountOutMinimum : br?.minimumOut;
+  const bridgeCost = bridgeDisplayCost(br);
   const spender = swap
     ? "0x2626664c2603336e57b271c5c0b26f421741e481"
     : "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae";
@@ -220,14 +222,26 @@ export default function ManualWalletView(p: ManualWalletViewProps) {
                 {units(minimum, swap ? 18 : 6)} {token}
               </bdi>
             </Reading>
-            <Reading label="Estimated total fee">
+            <Reading
+              label={swap ? "Estimated total fee" : "Estimated total cost"}
+            >
               <bdi>
-                {swap ? "0.0005 USDC" : `${units(br?.feeTotal)} USDC`} +{" "}
-                {units(review?.gas?.worstCaseTotalWei, 18)} ETH
+                {swap ? "0.0005 USDC" : `${units(bridgeCost.tokenCost)} USDC`} +{" "}
+                {units(
+                  swap
+                    ? review?.gas?.worstCaseTotalWei
+                    : bridgeCost.networkFeeWei,
+                  18,
+                )}{" "}
+                ETH
               </bdi>
             </Reading>
-            <Reading label="Slippage limit">
-              {percent(swap ? (sr?.slippageBps ?? 50) : 50)}
+            <Reading label={swap ? "Slippage limit" : "Token cost rate"}>
+              {swap
+                ? percent(sr?.slippageBps ?? 50)
+                : bridgeCost.rateBps === undefined
+                  ? "—"
+                  : percent(bridgeCost.rateBps)}
             </Reading>
           </dl>
           {connected && (
@@ -362,7 +376,9 @@ export default function ManualWalletView(p: ManualWalletViewProps) {
                 </bdi>
               </Reading>
               <Reading label="Gas · worst case, incl. L1">
-                {units(review?.gas?.worstCaseTotalWei, 18)} ETH
+                {!swap && bridgeCost.networkFeeWei === undefined
+                  ? "Unavailable until simulation succeeds"
+                  : `${units(swap ? review?.gas?.worstCaseTotalWei : bridgeCost.networkFeeWei, 18)} ETH`}
               </Reading>
               <Reading label="L1 fee estimate">
                 {units(review?.gas?.l1FeeWei, 18)} ETH

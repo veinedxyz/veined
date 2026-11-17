@@ -46,9 +46,9 @@
     },
     {
       "path": "DEVELOPMENT_STATUS.md",
-      "bytes": 9968,
-      "sha256": "885ed125f0913871a3fa72fb9396daa0e74579b0051ca0b3f7e1288876b32278",
-      "gitBlob": "3e4683cc8821db8fb5bbef2d07bcd36b476403df"
+      "bytes": 10428,
+      "sha256": "0a00a471b6a7852f59d0fba5770552b6a3d931cd9c560c781ce987aaae77488d",
+      "gitBlob": "bee6c37fc2b1ded6299f7253005aed726b44b61f"
     },
     {
       "path": "ENGINEERING_HISTORY.md",
@@ -898,9 +898,9 @@
     },
     {
       "path": "docs/POST_HACKATHON_SECURITY_REVIEW.md",
-      "bytes": 2590,
-      "sha256": "761a7bac9dda99b2728af4a425e2fb5ac95eae23e1e5e9b816ceada757d13ad5",
-      "gitBlob": "fca80d256cdcd19db40a3382463edc2cde0de2ad"
+      "bytes": 2730,
+      "sha256": "3b86ea61fd30f96dba12e912056879277b8e7c43f0f18d806298b704cd551656",
+      "gitBlob": "27c0981482ad8ed5f38d47c3604d0ef45f738422"
     },
     {
       "path": "docs/PRE_RELEASE_ARTIFACT_MANIFEST.md",
@@ -1552,9 +1552,9 @@
     },
     {
       "path": "docs/screenshots/bridge-mobile.png",
-      "bytes": 130994,
-      "sha256": "5096f06696cc0c50bb1c79229537f6a50ce7e5b3678c51ce7f1c755604cf184a",
-      "gitBlob": "bae0456afd4ae4b9aceea271cfe1796e8ca5cf1f"
+      "bytes": 130300,
+      "sha256": "0e41cb13eae00afe65b6606f2f1789fa9a151f2f1d93289d8d41de538bcf7d29",
+      "gitBlob": "acfba5dc14008490a70725d5dbedf461480fd458"
     },
     {
       "path": "docs/screenshots/swap-desktop.png",
@@ -7588,9 +7588,9 @@
     },
     {
       "path": "release/manual-wallet-financial-review.json",
-      "bytes": 12748,
-      "sha256": "1e2875a84617f7faaf0e4da9535585fdffdc81b9daca96ce4a76f2155af08497",
-      "gitBlob": "62f31f783fe452281fa3d96ea1bbb449be423376"
+      "bytes": 13595,
+      "sha256": "69e65fa1c71fa03e9d7f3c27d486664cd79c03981721f6c787d74ffa277f3a1b",
+      "gitBlob": "2a601107850a3c86e922e0ce34e827f702208464"
     },
     {
       "path": "release/manual-wallet-protected-baseline.json",
@@ -9700,9 +9700,9 @@
     },
     {
       "path": "src/components/manual-wallet-view.tsx",
-      "bytes": 17718,
-      "sha256": "c3d8efc1284386c419816e199901e6203199ae09554bb79d23d2bc7315817dae",
-      "gitBlob": "c0a9e557138b2f99d02b12091811aea8bbe91ce5"
+      "bytes": 18373,
+      "sha256": "d779cf6fb0bc50b367dbf26f8e345480e3240b233c74f26228e87709c0930bee",
+      "gitBlob": "5d1d696612f48034a32732732615312249b3753d"
     },
     {
       "path": "src/components/manual-wallet.css",
@@ -12037,6 +12037,12 @@
       "bytes": 3960,
       "sha256": "0ecbf2a3218b3f559d0e36323cf62b9dfb1af1b2ab2d461d5ddbd2a33d45b8c5",
       "gitBlob": "ecc5844690b9e0adc29bb73e27b499ab7f7ac3a6"
+    },
+    {
+      "path": "src/manual-wallet/display.ts",
+      "bytes": 1306,
+      "sha256": "8e5e4027d9e5b210f7cddc39f03b4e38652ffca67006ce311373fbe12f43a5cf",
+      "gitBlob": "d531a1e2819c2a328bba4f81d1ac67ceb24e81b8"
     },
     {
       "path": "src/manual-wallet/fastflow.ts",
@@ -14719,6 +14725,12 @@
       "bytes": 8342,
       "sha256": "a22e354056eeeb5bf10d91f63b1c2aabdfae03e810b934d875b0da5a6e2a46e7",
       "gitBlob": "b1940979261556c2c70cedb43beff2c8a79b6108"
+    },
+    {
+      "path": "tests/unit/manual-wallet-display.test.ts",
+      "bytes": 1354,
+      "sha256": "fd163cd0fca50d71413acfea6529cae3438d38c0e2a71dac0b7a3b7d40bc1e5b",
+      "gitBlob": "1b59c1b1e0ff5da4283f0789ed4acf24a9e1db28"
     },
     {
       "path": "tests/unit/manual-wallet-runtime.test.ts",

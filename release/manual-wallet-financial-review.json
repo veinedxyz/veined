@@ -1,13 +1,14 @@
 {
-  "reviewedAt": "2026-11-17T00:10:03.243Z",
+  "reviewedAt": "2026-11-17T00:42:04.489Z",
   "independent": true,
   "reviewer": "Separate Codex financial_review agent; source reviewer, not the implementation executor or an external audit firm",
   "acceptedBaselineCheckpoint": "2bb3d9291224b1e11c067a1c06bd84ebedee9729e41626ae298b88a1df6b3287",
-  "sourceCheckpointAtReview": "e8923fdd6a371a83680ec5840bac1f23351e33d95306b09e50accf9601952cd0",
+  "sourceCheckpointAtReview": "cc9783f5e4e49276fe0ffe0a9136f3c766e3ffb606fe19c4cc8c91a9ec330f28",
   "verdict": "PASS_FOR_DISARMED_SOURCE_PUBLICATION",
   "financialActivation": "NOT_APPROVED_SEPARATE_OWNER_GATE",
   "financialRelease": false,
-  "financialManifestSha256": "9456122d130e669398f36f6e5a2881c9bf5b7f866698eecd592fd488c5ea7aef",
+  "financialManifestSha256": "45a6ad663d153057c5bf7ea662eef45efdd3ba87bcc80a047257bc358fd8796d",
+  "financialManifestParentSha256": "9456122d130e669398f36f6e5a2881c9bf5b7f866698eecd592fd488c5ea7aef",
   "financialManifest": {
     "next.config.ts": "feb0c9bac25d8de5746f49db2955ae102d28b516c493cca071d8a91aa2b8d0f6",
     "package.json": "43ec91825682017097f70a5f42adc1002311be01f80683367bc2bbb494a41699",
@@ -23,6 +24,7 @@
     "src/activity/verify.ts": "ee9730058f14a6c46142b6436ead6299150f91d51b20feb8493956cf250c6ec9",
     "src/app/api/manual-wallet/route.ts": "bb42012e701496ed6701aa5676341d2ff80f7f45f5656c61d78aeca1b47a9cda",
     "src/app/api/scan/route.ts": "4bca84fe7cfde9e9fc1eaf70404356129364503a40fa493466110d639edc91bf",
+    "src/components/manual-wallet-view.tsx": "d779cf6fb0bc50b367dbf26f8e345480e3240b233c74f26228e87709c0930bee",
     "src/execution/binding.ts": "8371a7d7dd9a0f33660f1714694a845210345f0c139541f890b86ab4f2afca95",
     "src/execution/canary/across-decoder.ts": "7f429234325b8f2781a5309ce8058e97b9db8c7837b4487fdff076575ca3ded0",
     "src/execution/canary/chain-reads.ts": "c04a348d4f4fe8261b06a5598aa26505adef382b7dc8dbc706198055abe0d3e5",
@@ -85,6 +87,7 @@
     "src/guardian/support.ts": "e6e327095a7e886552183199d92f3e7b8196521f713a1f8ebed75149e16bd6d7",
     "src/guardian/verdict.ts": "fdb2c86d18182e183e104da93c9657d0e04c9fc5a6be87a8dffa21679fdc889d",
     "src/manual-wallet/client.ts": "0ecbf2a3218b3f559d0e36323cf62b9dfb1af1b2ab2d461d5ddbd2a33d45b8c5",
+    "src/manual-wallet/display.ts": "8e5e4027d9e5b210f7cddc39f03b4e38652ffca67006ce311373fbe12f43a5cf",
     "src/manual-wallet/fastflow.ts": "9ed6d5cc192bf04791db702e6959f0923995b87cbdbfccffdaf3b7c2c5bc1a33",
     "src/manual-wallet/protocol.ts": "489af3ad55ffc6ae5b2faf739a5050313c2f69cecdc870f9c3ead37b9f0067bb",
     "src/manual-wallet/release.ts": "71249fc0ba08ddc007ebec3b8011ddf6031f23e67c3d6295f38153d907a7621a",
@@ -120,7 +123,19 @@
     "swap-providers/package.json": "26d9acfbb2d9396322b3197c78ba01f3ed46e2292f9044627d0a1686e1876740",
     "swap-providers/pnpm-lock.yaml": "2d861ffdff380a7e7817ede62de1302d09bf5d628c336dc8b6e7886e42ed5fbf",
     "swap-providers/pnpm-workspace.yaml": "2ce66ef8ccc5ca79b9aacdf601e778f02252cfd7d934d99a8f4a3d6bb1ba22c6",
-    "swap-providers/uniswapx-runtime.ts": "3f6b5603b3534a1ec5b29d08b0e749253f520a2c03edc5d5bcc56f7b5e5ea337"
+    "swap-providers/uniswapx-runtime.ts": "3f6b5603b3534a1ec5b29d08b0e749253f520a2c03edc5d5bcc56f7b5e5ea337",
+    "tests/unit/manual-wallet-display.test.ts": "fd163cd0fca50d71413acfea6529cae3438d38c0e2a71dac0b7a3b7d40bc1e5b"
+  },
+  "displaySupplement": {
+    "verdict": "DISPLAY_ONLY_REPAIR_APPROVED_FOR_DISARMED_DEVELOPMENT_DRAFT",
+    "independentArithmeticAndRenderCasesPassed": 2,
+    "sourceDisplayTestsPassed": 3,
+    "priorControlHashesUnchanged": 112,
+    "sourceFiles": [
+      "src/manual-wallet/display.ts",
+      "src/components/manual-wallet-view.tsx",
+      "tests/unit/manual-wallet-display.test.ts"
+    ]
   },
   "qualification": "Disarmed development-progress draft only. Full historical failures remain disclosed. Product release returns for repair. Financial activation, hosting and external audit are not approved."
 }
