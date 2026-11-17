@@ -11,6 +11,10 @@ import { BridgeError, CROSS } from "../../core/model";
 import { parseChain, readWallet, requestOnce } from "./provider";
 import { sha256, stringToHex } from "viem";
 import {
+  takeManualAuthority,
+  reportManualResult,
+} from "../../manual-wallet/client";
+import {
   OWNER_CANARY_APPROVAL,
   approvalRecordProblems,
   canaryDispatchProblem,
@@ -402,8 +406,68 @@ export class WalletProviderAdapter {
       },
     ]);
   }
+  /** Candidate manual scope: Base only; a separate owner gesture, never part of sending. */
+  async switchManualBase() {
+    this.#live();
+    await requestOnce(this.#raw, "wallet_switchEthereumChain", [
+      { chainId: "0x2105" },
+    ]);
+  }
+  /** Server-claimed single-use authority. No caller-provided transaction or general execution gate. */
+  async sendManualTransaction(authority: unknown): Promise<string> {
+    const grant = takeManualAuthority(authority, this);
+    const canonical = grant.preparation.transaction;
+    this.#live();
+    if (
+      this.#financialPending ||
+      inFlight.has(this.#raw) ||
+      uncertain.has(this.#raw)
+    )
+      throw new BridgeError("WALLET_REQUEST_PENDING");
+    this.#financialPending = true;
+    inFlight.add(this.#raw);
+    let asked = false;
+    let hash: string | null = null;
+    let outcome: "SENT" | "REFUSED" | "UNCERTAIN" = "UNCERTAIN";
+    try {
+      const live = await this.identity();
+      if (
+        live.chainId !== 8453 ||
+        live.account.toLowerCase() !== canonical.from
+      )
+        throw new BridgeError("IDENTITY_CHANGED");
+      this.#live();
+      grant.check();
+      // No await between the final session/time veto and the connected wallet's request.
+      asked = true;
+      const answer = await this.#raw.request({
+        method: "eth_sendTransaction",
+        params: Object.freeze([canonical]),
+      });
+      if (typeof answer !== "string" || !TX_HASH.test(answer))
+        throw new BridgeError("WALLET_RESULT_UNKNOWN");
+      hash = answer;
+      outcome = "SENT";
+      return answer;
+    } catch (e) {
+      if (!asked || (e as { code?: unknown })?.code === 4001)
+        outcome = "REFUSED";
+      else uncertain.add(this.#raw);
+      throw e;
+    } finally {
+      try {
+        await reportManualResult(grant, outcome, hash);
+      } catch {
+        uncertain.add(this.#raw);
+        throw new BridgeError("WALLET_RESULT_REPORT_UNKNOWN");
+      } finally {
+        this.#financialPending = false;
+        inFlight.delete(this.#raw);
+      }
+    }
+  }
   /**
-   * The only financial wallet call. `canonical` is the server-built transaction the user reviewed; `request` is the
+   * The accepted financial wallet call. `canonical` is the server-built transaction the user reviewed; `request` is the
    * object the caller intends to send. Both must match field by field; the account and chain must be this session's
    * and the live wallet's. The frozen canonical object is what the wallet receives.
    */

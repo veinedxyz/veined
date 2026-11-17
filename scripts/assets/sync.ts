@@ -1154,6 +1154,47 @@ async function buildRegistry() {
         throw new Error("INVALID_REVIEWED_EVM_ISSUER_ASSET");
       assets.set(assetKey(asset.chainId, asset.address), asset);
     }
+  // VEINED-FIN-LIVE-20261115-01: reviewed canonical wrapped native tokens (EVM_WRAPPED_NATIVE below) survive a rebuild
+  // the same way. The file is evidence, not authority: chain + contract + symbol + name + decimals + CoinGecko id are
+  // pinned here, the routing and market snapshots must still agree, the row carries no logo (none was reviewed), and
+  // no other trusted asset on that network may carry the same symbol.
+  const evmWrappedReviewed = join(
+    REPO,
+    "src/assets/sources/evm-wrapped-native-reviewed.generated.json",
+  );
+  if (existsSync(evmWrappedReviewed))
+    for (const asset of read<{ assets: RegistryAsset[] }>(evmWrappedReviewed)
+      .assets) {
+      const pin = EVM_WRAPPED_NATIVE.find(
+        ([chain, address]) =>
+          chain === asset.chainId && address.toLowerCase() === asset.address,
+      );
+      if (
+        !pin ||
+        asset.native ||
+        !isEvmAddress(asset.address) ||
+        asset.level !== "CURATED" ||
+        asset.risk.length ||
+        asset.symbol !== pin[2] ||
+        asset.name !== pin[3] ||
+        asset.decimals !== pin[4] ||
+        asset.coingeckoId !== pin[5] ||
+        asset.routable !== true ||
+        asset.sources.join() !== "otherbridge-curated,routing,coingecko" ||
+        asset.logo !== null ||
+        routingTokens[asset.chainId]?.[asset.address] !== pin[4] ||
+        cg[asset.chainId]?.[asset.address] !== pin[5] ||
+        [...assets.values()].some(
+          (o) =>
+            o.chainId === asset.chainId &&
+            o.address !== asset.address &&
+            (o.level === "CANONICAL" || o.level === "CURATED") &&
+            o.symbol.toUpperCase() === pin[2].toUpperCase(),
+        )
+      )
+        throw new Error("INVALID_REVIEWED_EVM_WRAPPED_NATIVE_ASSET");
+      assets.set(assetKey(asset.chainId, asset.address), asset);
+    }
   const list = flagImpersonation([...assets.values()]).sort(
     (a, b) =>
       Number(a.chainId > b.chainId) - Number(a.chainId < b.chainId) ||
@@ -1724,6 +1765,20 @@ const EVM_ISSUER_USDC = [
   ],
   ["10", "optimism", "OPTIMISM", "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85"],
   ["137", "polygon", "POLYGON", "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"],
+] as const;
+// VEINED-FIN-LIVE-20261115-01: reviewed canonical wrapped native tokens — [chain, contract (checksummed), symbol, name,
+// decimals, CoinGecko id]. Base WETH is the OP-stack predeploy (the swap lane's receive token on Base; the Trust Wallet
+// token-list snapshot omits it, so the CURATED build rule never sees it). Merged by buildRegistry from
+// src/assets/sources/evm-wrapped-native-reviewed.generated.json, which must match these pins exactly.
+const EVM_WRAPPED_NATIVE = [
+  [
+    "8453",
+    "0x4200000000000000000000000000000000000006",
+    "WETH",
+    "Wrapped Ether",
+    18,
+    "l2-standard-bridged-weth-base",
+  ],
 ] as const;
 const EVM_ISSUER_REVIEWED = join(
   REPO,

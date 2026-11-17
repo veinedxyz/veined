@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-15T18:08:52.533Z",
+  "technicalBase": {
+    "rcId": "OTHERBRIDGE_RC_V1_16_20261015T133159055Z-16dfa3",
+    "sourceCheckpoint": "11bea158a16dc3f0528c4b6a9c24950728e1f26a3a3be86c2ca3ba5cabd5fcb9",
+    "sourceManifest": "08d5c3005ef6174e9491d0de9314d5cf53e383127a3f2ac4a5d3a901c95a3b96",
+    "buildHash": "60daa71188eb424bd1a8d84765d78bd9c2f0853b7a46cf4f3192ed60ddf0b052",
+    "protectedBaseline": "cf7025aeeedac022b8ffa08540ed88345e561d23b50f05ae794f3f5dec1991b4"
+  },
+  "domain": {
+    "dns": "NXDOMAIN",
+    "ownerControl": "UNKNOWN"
+  },
+  "privy": {
+    "appIdConfigured": true,
+    "dashboard": "OWNER_DASHBOARD_VERIFICATION_REQUIRED"
+  },
+  "rpc": {
+    "productionApproved": 0,
+    "arbitrumWitness": "PERSONAL_TOKEN_REQUIRED",
+    "avalancheWitness": "READ_ONLY_MATCH",
+    "terms": "LEGAL_REVIEW_REQUIRED"
+  },
+  "whirlpool": "UNVERIFIED_UPSTREAM_CHANGE",
+  "execution": "CLOSED"
+}

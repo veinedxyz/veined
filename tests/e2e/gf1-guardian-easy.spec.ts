@@ -18,8 +18,9 @@ import { wallet } from "../fixtures/swap";
 
 const ORIGIN = process.env.OTHERBRIDGE_E2E_ORIGIN ?? "http://127.0.0.1:3126";
 const BURN = "0x000000000000000000000000000000000000dEaD";
-// G12 H01 (F1): Circle's native USDC on Base is registered now; WETH on Base (a real predeploy) is not.
-const WETH_BASE = "0x4200000000000000000000000000000000000006";
+// G12 H01 (F1): Circle's native USDC on Base is registered; since VEINED-FIN-LIVE-20261115-01 so is WETH on Base (the
+// reviewed predeploy row). LINK on Base (a real token contract) is not: it is the unregistered-contract case.
+const LINK_BASE = "0x88fb150bdc53a65fe94dea0c9ba0a6daf8c6e196";
 const LOCALES = [
   "tr",
   "en",
@@ -334,11 +335,11 @@ test("GF1-G3-E4 WARN, ESCALATE and BLOCK are understandable and still enforced: 
   await page.goto("/guardian");
   const chat = page.getByTestId("guardian-chat");
   // WARN with an unregistered contract: no "you can still open it" — the card says why it cannot be opened here.
-  await ask(chat, "send 10 WETH from Base to Ethereum");
+  await ask(chat, "send 10 LINK from Base to Ethereum");
   await expect(lastReply(chat)).toContainText(
-    "VEINED's verified registry has no token called WETH on Base.",
+    "VEINED's verified registry has no token called LINK on Base.",
   );
-  await ask(chat, WETH_BASE);
+  await ask(chat, LINK_BASE);
   let card = chat.getByTestId("guardian-draft").last();
   await expect(card).toHaveAttribute("data-decision", "WARN");
   let plain = card.getByTestId("guardian-plain");

@@ -1,0 +1,81 @@
+.manual-wallet {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 16px 80px;
+}
+.manual-card {
+  border: 1px solid var(--border, #25434b);
+  background: var(--surface, #071b24);
+  border-radius: 20px;
+  padding: 28px;
+}
+.manual-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.manual-fields label {
+  display: grid;
+  gap: 8px;
+}
+.manual-fields select,
+.manual-fields input {
+  color: inherit;
+  background: #102b36;
+  border: 1px solid #38606c;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  opacity: 1;
+}
+.manual-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+.manual-review {
+  border-top: 1px solid #31505a;
+  margin-top: 24px;
+  padding-top: 20px;
+}
+.manual-review dl {
+  display: grid;
+  gap: 10px;
+}
+.manual-review dt {
+  opacity: 0.7;
+}
+.manual-review dd {
+  margin: 0 0 10px;
+}
+.manual-bytes,
+.manual-account {
+  overflow-wrap: anywhere;
+}
+.manual-bytes {
+  font-family: monospace;
+  font-size: 12px;
+  max-height: 160px;
+  overflow: auto;
+}
+.manual-confirm {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  align-items: start;
+}
+.manual-card pre {
+  max-height: 500px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .manual-fields {
+    grid-template-columns: 1fr;
+  }
+  .manual-card {
+    padding: 16px;
+  }
+}

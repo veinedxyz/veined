@@ -13,3 +13,7 @@ test-results/
 .otherbridge/research-r1/
 infra/staging/secrets/
 infra/monitoring/secrets/
+# Private manual execution and Scan journals never belong in source publication.
+.manual-wallet/
+.scan/
+*.log

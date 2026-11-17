@@ -22,13 +22,6 @@ sha256 digest, and the same input always produces the same digest.
 |---|---|
 | **Judged (new, NEAR integration)** | `src/guardian/**`, `src/app/api/guardian/route.ts`, `src/components/guardian-*.tsx`, `src/app/guardian-system.css`, Guardian hooks in Swap / Bridge / Portfolio, `/guardian` console, `guardian.*` copy in 24 locales, tests `tests/unit/guardian.test.ts`, `tests/integration/guardian-api.test.ts`, `tests/e2e/guardian.spec.ts`, docs in `docs/guardian/`. **"To NEAR" route in Swap and Bridge:** `src/guardian/near-route.ts`, `src/components/near-route.tsx`, `src/components/route-kind.tsx`, `src/app/near-route.css`, `g12.nr.*` copy in 24 locales, tests `tests/unit/g12-near-route.test.ts`, `tests/integration/g12-near-route-api.test.ts`, `tests/e2e/g12-near-route.spec.ts`. |
 | **Baseline (pre-existing, not judged)** | The VEINED interface: read-only multichain portfolio, swap quote comparison and bridge route discovery. Execution is **closed** in this build: nothing is signed, approved or broadcast. |
-| **Owner-armed canary (not NEAR work, not judged)** | A single-use Base → Arbitrum USDC route through LI.FI / Across with server-side quote checks, an attested Guardian verdict, two-operator simulation and on-chain settlement checks (`src/execution/**`, `src/security/canary-approval.ts`, `src/features/wallet/adapter.ts`, `src/features/bridge/submission.ts`). It ships **disarmed** (`OWNER_CANARY_APPROVAL = null`, `CANARY_LIVE_WIRING = false`); see [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md). It is not a NEAR Intents transfer. |
-
-**Git history of this repository.** Two commits, both made on 2026-11-14 (nothing is backdated):
-- tag `pre-hackathon`: the tree of the private development repository's last commit before the announcement (`8973a3d3`, 2026-10-02), with internal-only files (agent instructions, hand-offs, raw evidence) removed;
-- tag `hackathon-submission`: the submitted tree (source checkpoint `4a5043781120d1394655ebea04f53fbf6c4ae11f567c627bc4870dd6598b2e49`).
-
-Diff: https://github.com/caiguru/veined/compare/pre-hackathon...hackathon-submission. Work after 2026-10-02 that is not the NEAR integration listed above (UI redesigns, the closed EVM execution base, the canary) is baseline / not judged.
 
 ## Run it
 
@@ -36,7 +29,6 @@ Requirements: Node 24 and pnpm 11. You do not need a wallet, keys or funds.
 
 ```bash
 pnpm install --frozen-lockfile
-pnpm swap:deps   # installs swap-providers/ (its own lockfile); the app does not start without it
 OTHERBRIDGE_APP_ORIGINS=http://127.0.0.1:3100 node scripts/next-pinned.mjs dev --hostname 127.0.0.1 --port 3100
 ```
 

@@ -28,6 +28,9 @@ import type { ViewKit } from "./product-views";
 // heading, address form and artwork arrive with HTML, while retaining the route's
 // separate client chunk. Scans and wallet effects still start only on the client.
 const Portfolio = dynamic(() => import("./portfolio"));
+const VerifiedActivity = dynamic(() => import("./wallet-activity"), {
+  ssr: false,
+});
 const AppOverview = dynamic(() => import("./app-overview"));
 // V1.10: Help and the non-Bridge views are code-split (server-rendered, but not part of the Bridge first-load bundle).
 const HelpView = dynamic(() => import("./help-view"));
@@ -50,6 +53,9 @@ const SettingsView = dynamic(() =>
   import("./product-views").then((m) => m.SettingsView),
 );
 const Swap = dynamic(() => import("./swap"), { ssr: false });
+const ManualWallet = dynamic(() => import("./manual-wallet"), { ssr: false });
+// Isolated manual-wallet candidate: only the two verified Base routes are presented for execution.
+const manualWalletCandidate = true;
 const NetworkSelector = dynamic(() => import("./network-selector"), {
   ssr: false,
 });
@@ -63,7 +69,7 @@ const RoutingActivity = dynamic(() => import("./routing-activity"), {
   ssr: false,
 });
 // G12 H06 VEINED Scan: client-only (it reads this browser's own previews).
-const ScanView = dynamic(() => import("./scan-view"), { ssr: false });
+const ScanView = dynamic(() => import("./scan-center"), { ssr: false });
 // V1.22 weekly points: client-only, so no points data can ever be embedded in server-rendered HTML.
 const PointsView = dynamic(() => import("./points-view"), { ssr: false });
 // VEINED Guardian: the console and the Bridge side review are code-split (never in the first-load shell).
@@ -579,8 +585,14 @@ export function Product({
     [invalidate],
   );
   useEffect(() => {
-    if (!account) return;
     const request = ++balanceGeneration.current;
+    // The legacy ONEchain balance request has no role in the manual routes or address-based read-only views.
+    if (
+      !account ||
+      (manualWalletCandidate &&
+        ["/swap", "/bridge", "/portfolio", "/activity", "/scan"].includes(path))
+    )
+      return;
     api({ action: "balance", account })
       .then((data) => {
         if (request === balanceGeneration.current) {
@@ -593,7 +605,7 @@ export function Product({
       .catch((e) => {
         if (request === balanceGeneration.current) setError(errorCode(e));
       });
-  }, [account, chain, mode]);
+  }, [account, chain, mode, path]);
   const activeRecord = path.startsWith("/activity/")
     ? records.find((r) => r.id === path.split("/")[2])
     : undefined;
@@ -1280,19 +1292,30 @@ export function Product({
             onConnect={openWallet}
           />
         )}
-        {error && (
-          <div className="notice error" role="alert">
-            {explain(error)}
-            <button
-              className="icon-button notice-close"
-              aria-label={t("close")}
-              onClick={() => setError("")}
-            >
-              <Icon name="close" size={16} />
-            </button>
-          </div>
+        {error &&
+          !(
+            manualWalletCandidate &&
+            (path === "/swap" || path === "/bridge")
+          ) && (
+            <div className="notice error" role="alert">
+              {explain(error)}
+              <button
+                className="icon-button notice-close"
+                aria-label={t("close")}
+                onClick={() => setError("")}
+              >
+                <Icon name="close" size={16} />
+              </button>
+            </div>
+          )}
+        {path === "/bridge" && manualWalletCandidate && (
+          <ManualWallet
+            key={`BRIDGE:${session.epoch}`}
+            lane="BRIDGE"
+            onConnect={openWallet}
+          />
         )}
-        {path === "/bridge" && (
+        {path === "/bridge" && !manualWalletCandidate && (
           <>
             <div className="intro">
               <h1>
@@ -1779,14 +1802,27 @@ export function Product({
           </>
         )}
         {path === "/activity" && (
-          <ActivityView
-            kit={kit}
-            records={records}
-            filter={filter}
-            onFilter={setFilter}
-            onExport={() => download("otherbridge-history.json", records)}
-            onImport={importFile}
+          <VerifiedActivity
+            key={`activity:${session.epoch}`}
+            account={account}
+            onConnect={openWallet}
           />
+        )}
+        {path === "/activity" && (
+          <details className="va-legacy">
+            <summary>
+              Saved app records · local previews and test records
+            </summary>
+            <ActivityView
+              kit={kit}
+              records={records}
+              filter={filter}
+              onFilter={setFilter}
+              onExport={() => download("otherbridge-history.json", records)}
+              onImport={importFile}
+            />
+            <RoutingActivity lang={lang} />
+          </details>
         )}
         {path.startsWith("/activity/") &&
           (activeRecord ? (
@@ -1824,7 +1860,14 @@ export function Product({
             catalog={<MultichainCatalog lang={lang} portfolio={portfolio} />}
           />
         )}
-        {path === "/swap" && (
+        {path === "/swap" && manualWalletCandidate && (
+          <ManualWallet
+            key={`SWAP:${session.epoch}`}
+            lane="SWAP"
+            onConnect={openWallet}
+          />
+        )}
+        {path === "/swap" && !manualWalletCandidate && (
           <Swap
             key={guardianPrefill?.id ?? "swap"}
             guardianDraft={
@@ -1861,8 +1904,14 @@ export function Product({
         {path === "/points" && (
           <PointsView account={account} onConnect={openWallet} />
         )}
-        {path === "/activity" && <RoutingActivity lang={lang} />}
-        {path === "/scan" && <ScanView lang={lang} />}
+        {path === "/scan" && (
+          <ScanView
+            key={`scan:${session.epoch}`}
+            lang={lang}
+            account={account}
+            onConnect={openWallet}
+          />
+        )}
         {path === "/help" && <HelpView />}
         {path === "/guardian" && (
           <GuardianView

@@ -9018,6 +9018,24 @@
   },
   {
    "chainId": "8453",
+   "address": "0x4200000000000000000000000000000000000006",
+   "native": false,
+   "symbol": "WETH",
+   "name": "Wrapped Ether",
+   "decimals": 18,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "routing",
+    "coingecko"
+   ],
+   "logo": null,
+   "coingeckoId": "l2-standard-bridged-weth-base",
+   "risk": [],
+   "routable": true
+  },
+  {
+   "chainId": "8453",
    "address": "0x50c5725949a6f0c72e6c4a641f24049a917db0cb",
    "native": false,
    "symbol": "DAI",

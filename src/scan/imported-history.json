@@ -1,0 +1,178 @@
+{
+  "at": "2026-11-16T22:02:24.258Z",
+  "address": "0xb6Ded1B18464aED61DB794dFC5cb031B45a7cA2c",
+  "results": [
+    {
+      "verified": true,
+      "transaction": {
+        "address": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "chainId": "8453",
+        "hash": "0x556980061d955e7426c29c95ca14ce83e6aa00b34b544d4e12b7da352232c90e",
+        "block": "57864551",
+        "blockHash": "0xd053fcc2ee4c692e7a648684ec7eb5a416ad958d9b086aa9ec8855b17b093d07",
+        "timestamp": 1794763285000,
+        "verifiedAt": 1794866542780,
+        "confirmations": "516284",
+        "status": "CONFIRMED",
+        "kind": "Swap",
+        "from": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "to": "0x2626664c2603336e57b271c5c0b26f421741e481",
+        "explorer": "https://basescan.org/tx/0x556980061d955e7426c29c95ca14ce83e6aa00b34b544d4e12b7da352232c90e",
+        "operators": ["allnodes-publicnode", "base-coinbase"],
+        "amounts": [
+          {
+            "symbol": "WETH",
+            "amount": "0.000551076565643201",
+            "direction": "in"
+          },
+          {
+            "symbol": "USDC",
+            "amount": "1",
+            "direction": "out"
+          }
+        ],
+        "coverage": "Imported hash only; no indexed history"
+      }
+    },
+    {
+      "verified": true,
+      "transaction": {
+        "address": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "chainId": "8453",
+        "hash": "0x8f828b066f924e6154101bba490bd6d29d42bd06ad3808675f1f46ab7ebde45b",
+        "block": "57840464",
+        "blockHash": "0xb423ff71f53f627e1a2af70a88df79b6e2a176247436d21da3b08414b1e027ed",
+        "timestamp": 1794758468000,
+        "verifiedAt": 1794866543115,
+        "confirmations": "540373",
+        "status": "CONFIRMED",
+        "kind": "Bridge",
+        "from": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "to": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+        "explorer": "https://basescan.org/tx/0x8f828b066f924e6154101bba490bd6d29d42bd06ad3808675f1f46ab7ebde45b",
+        "operators": ["allnodes-publicnode", "base-coinbase"],
+        "amounts": [
+          {
+            "symbol": "USDC",
+            "amount": "5",
+            "direction": "out"
+          }
+        ],
+        "deposit": {
+          "id": "6460753",
+          "origin": "8453",
+          "destination": "42161",
+          "recipient": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+          "inputAmount": "4987500",
+          "outputAmount": "4980490",
+          "inputToken": "0x000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "outputToken": "0x000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831",
+          "depositor": "0x000000000000000000000000b6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+          "messageHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "fillDeadline": 1794767463,
+          "exclusivityDeadline": 0,
+          "exclusiveRelayer": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "coverage": "Imported hash only; no indexed history"
+      }
+    },
+    {
+      "verified": true,
+      "transaction": {
+        "address": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "chainId": "42161",
+        "hash": "0x7b28bc8f945fcf7188177178791ec373afee4933b41353f50fe29927f9d1199a",
+        "block": "524505130",
+        "blockHash": "0x1befca0fda102a330c7415367a6ee80d918fa733b6291c541b9092da569ce390",
+        "timestamp": 1794758468000,
+        "verifiedAt": 1794866543628,
+        "confirmations": "361576",
+        "status": "CONFIRMED",
+        "kind": "Destination settlement",
+        "from": "0xcad97616f91872c02ba3553db315db4015cbe850",
+        "to": "0xfd03abcadaf3f930fa4e37eb2f6ea3a44a41b7f0",
+        "explorer": "https://arbiscan.io/tx/0x7b28bc8f945fcf7188177178791ec373afee4933b41353f50fe29927f9d1199a",
+        "operators": ["arbitrum-offchain-labs", "drpc"],
+        "amounts": [
+          {
+            "symbol": "USDC",
+            "amount": "4.98049",
+            "direction": "in"
+          }
+        ],
+        "deposit": {
+          "id": "6460753",
+          "origin": "8453",
+          "destination": "42161",
+          "recipient": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+          "inputAmount": "4987500",
+          "outputAmount": "4980490",
+          "inputToken": "0x000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "outputToken": "0x000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831",
+          "depositor": "0x000000000000000000000000b6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+          "messageHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "fillDeadline": 1794767463,
+          "exclusivityDeadline": 0,
+          "exclusiveRelayer": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "coverage": "Imported hash only; no indexed history"
+      }
+    },
+    {
+      "verified": true,
+      "transaction": {
+        "address": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "chainId": "8453",
+        "hash": "0x2c08e019681554c6c9fe2c86f342732416514d489ef7ca5d5bb8681ad32dc7f8",
+        "block": "57840416",
+        "blockHash": "0x67eddef74724ae31b329aa2a92e57aefa57fc47ec08dec4266e1ab7ee99f8e0d",
+        "timestamp": 1794758458000,
+        "verifiedAt": 1794866543941,
+        "confirmations": "540425",
+        "status": "CONFIRMED",
+        "kind": "Approval",
+        "from": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "to": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "explorer": "https://basescan.org/tx/0x2c08e019681554c6c9fe2c86f342732416514d489ef7ca5d5bb8681ad32dc7f8",
+        "operators": ["allnodes-publicnode", "base-coinbase"],
+        "amounts": [
+          {
+            "symbol": "USDC",
+            "amount": "5",
+            "direction": "permission"
+          }
+        ],
+        "spender": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+        "coverage": "Imported hash only; no indexed history"
+      }
+    },
+    {
+      "verified": true,
+      "transaction": {
+        "address": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "chainId": "8453",
+        "hash": "0xbf8a3253b032e55b53241d61fc0e061c145d5c0cce6bf95ed9885278f93f21a6",
+        "block": "57864345",
+        "blockHash": "0x4a75d2a16a5bb166743b011a646941e56f84d5bc8b13eab7ee128b5daff18687",
+        "timestamp": 1794763244000,
+        "verifiedAt": 1794866544258,
+        "confirmations": "516497",
+        "status": "CONFIRMED",
+        "kind": "Approval",
+        "from": "0xb6ded1b18464aed61db794dfc5cb031b45a7ca2c",
+        "to": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "explorer": "https://basescan.org/tx/0xbf8a3253b032e55b53241d61fc0e061c145d5c0cce6bf95ed9885278f93f21a6",
+        "operators": ["allnodes-publicnode", "base-coinbase"],
+        "amounts": [
+          {
+            "symbol": "USDC",
+            "amount": "1",
+            "direction": "permission"
+          }
+        ],
+        "spender": "0x2626664c2603336e57b271c5c0b26f421741e481",
+        "coverage": "Imported hash only; no indexed history"
+      }
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import {
   type EndpointHealth,
 } from "./health";
 import type { CallPolicy, RpcCall } from "./methods";
+import { logEvent } from "../observability/log";
 import {
   RpcError,
   rpcBatch,
@@ -81,12 +82,15 @@ export class RpcPool {
     return new Map(this.health);
   }
   markSuccess(id: string, latency: number, block?: bigint) {
+    if (this.state(id).consecutiveFailures > 0)
+      logEvent("rpc.recovered", { chainId: this.chainId, source: id });
     this.health.set(
       id,
       recordSuccess(this.state(id), latency, this.now(), block),
     );
   }
   markFailure(id: string, code: string) {
+    logEvent("rpc.read_failure", { chainId: this.chainId, source: id, code });
     this.health.set(id, recordFailure(this.state(id), code, this.now()));
   }
   // Bounded failover across ranked healthy endpoints (default three attempts).

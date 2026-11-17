@@ -1,49 +1,52 @@
 allowBuilds:
   # V1.9: install-time scripts of the Privy dependency graph are denied (no lifecycle execution).
   # bufferutil/utf-8-validate/keccak have pure-JS fallbacks; @reown/appkit's postinstall is not needed.
-  '@reown/appkit': false
+  "@reown/appkit": false
   bufferutil: false
   keccak: false
   unrs-resolver: false
   utf-8-validate: false
 overrides:
-  'follow-redirects@<1.16.2': '1.16.2'
+  "vite@>=8.3.0 <8.3.3": "8.3.3"
+  "hono@>=4.0.0 <4.13.16": "4.13.16"
+  "@typescript-eslint/typescript-estree>minimatch": "11.0.1"
+  "follow-redirects@<1.16.2": "1.16.2"
   # PROPOSED V1.15.1 security update; not applied to the protected root lock.
-  'decode-uri-component@<0.5.1': '0.5.1'
-  'source-map-js@<1.2.2': '1.2.2'
-  'solc>tmp': '0.2.7'
+  "decode-uri-component@<0.5.1": "0.5.1"
+  "source-map-js@<1.2.2": "1.2.2"
+  "solc>tmp": "0.2.7"
   # V1.4 R4: dev-only lint plugin uses fast-glob solely for globSync(rootDir, {onlyDirectories}).
   # tinyglobby (already in the graph) is API-compatible for that call and removes micromatch>braces
   # (GHSA-vfj7-8cjw-p6xm, no fixed release). Evidence: docs/INTERNAL/DEPENDENCY_HIGH_REPAIR.md.
-  '@next/eslint-plugin-next>fast-glob': 'npm:tinyglobby@0.2.17'
+  "@next/eslint-plugin-next>fast-glob": "npm:tinyglobby@0.2.17"
   # V1.9: Privy -> WalletConnect -> nested viem pulls ws 8.18.x (GHSA-96hv-2xvq-fx4p high,
   # GHSA-58qx-3vcg-4xpx moderate). 8.21.3 is a semver-compatible patched 8.x release.
   # Evidence: docs/INTERNAL/DEPENDENCY_V19_PRIVY.md.
-  'ws@>=8.0.0 <8.21.0': '8.21.3'
+  "ws@>=8.0.0 <8.21.0": "8.21.3"
   # V1.9: x402 -> wagmi -> @wagmi/connectors -> @metamask/sdk / eth-block-tracker pull uuid 8.3.2 / 9.0.1
   # (GHSA-w5hq-g745-h8pq moderate). Callers use only the named v4 export, which uuid 11.1.1 keeps (CJS + ESM).
-  'uuid@<11.1.1': '11.1.1'
+  "uuid@<11.1.1": "11.1.1"
   # V1.21.1 ZOD3: GHSA-mrhx-c7xc-m3w5 (high) covers every zod 3.x release; first patched 4.6.6, no 3.x fix exists.
   # Scoped to the four production zod-3 consumers under Privy (not a global zod override); each was
   # differentially tested against zod 4.6.6, the root's accepted direct zod. Evidence: V1.21.1 ZOD3 record.
-  '@privy-io/api-base>zod': '4.6.6'
-  'x402>zod': '4.6.6'
-  '@coinbase/cdp-sdk>zod': '4.6.6'
-  '@reown/appkit-wallet>zod': '4.6.6'
+  "@privy-io/api-base>zod": "4.6.6"
+  "x402>zod": "4.6.6"
+  "@coinbase/cdp-sdk>zod": "4.6.6"
+  "@reown/appkit-wallet>zod": "4.6.6"
 minimumReleaseAgeExclude:
-  - '@next/env@16.4.1'
-  - '@next/swc-darwin-arm64@16.4.1'
-  - '@next/swc-darwin-x64@16.4.1'
-  - '@next/swc-linux-arm64-gnu@16.4.1'
-  - '@next/swc-linux-arm64-musl@16.4.1'
-  - '@next/swc-linux-x64-gnu@16.4.1'
-  - '@next/swc-linux-x64-musl@16.4.1'
-  - '@next/swc-win32-arm64-msvc@16.4.1'
-  - '@next/swc-win32-x64-msvc@16.4.1'
+  - "@next/env@16.4.1"
+  - "@next/swc-darwin-arm64@16.4.1"
+  - "@next/swc-darwin-x64@16.4.1"
+  - "@next/swc-linux-arm64-gnu@16.4.1"
+  - "@next/swc-linux-arm64-musl@16.4.1"
+  - "@next/swc-linux-x64-gnu@16.4.1"
+  - "@next/swc-linux-x64-musl@16.4.1"
+  - "@next/swc-win32-arm64-msvc@16.4.1"
+  - "@next/swc-win32-x64-msvc@16.4.1"
   - next@16.4.1
   - viem@2.57.2
-  - '@next/eslint-plugin-next@16.4.1'
-  - '@vitest/mocker@5.0.3'
-  - '@vitest/spy@5.0.3'
+  - "@next/eslint-plugin-next@16.4.1"
+  - "@vitest/mocker@5.0.3"
+  - "@vitest/spy@5.0.3"
   - eslint-config-next@16.4.1
   - vitest@5.0.3
