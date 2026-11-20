@@ -64,6 +64,8 @@ Details: [docs/guardian/ARCHITECTURE.md](docs/guardian/ARCHITECTURE.md).
   - It ships **disarmed** (`OWNER_CANARY_APPROVAL = null`, `CANARY_LIVE_WIRING = false`).
   - It is not NEAR work and not a NEAR Intents transfer.
   - No live transaction is claimed. See [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md).
+  - Later development (2026-11-21): one owner-run Bridge was verified on mainnet with a later, separate local
+    source. This repository's source did not run it. See [Verified Mainnet Bridge Canary](#verified-mainnet-bridge-canary).
 
 ## Run it
 
@@ -75,7 +77,7 @@ pnpm swap:deps   # installs swap-providers/ (its own lockfile); the app does not
 OTHERBRIDGE_APP_ORIGINS=http://127.0.0.1:3100 node scripts/next-pinned.mjs dev --hostname 127.0.0.1 --port 3100
 ```
 
-On Windows, clone with LF line endings (`git -c core.autocrlf=false clone https://github.com/caiguru/veined.git`):
+On Windows, clone with LF line endings (`git -c core.autocrlf=false clone https://github.com/veinedxyz/veined.git`):
 the generated docs module is checked byte for byte (`node scripts/docs-build.mjs --check`), and a CRLF checkout reports
 it as out of date. Then, in PowerShell, set the variable first:
 
@@ -131,7 +133,27 @@ Browser end-to-end tests (Playwright):
 - **Git tags:**
   - `pre-hackathon`: the tree of the last private commit before the 2026-10-19 announcement;
   - `hackathon-submission`: the submitted tree.
-- Diff: https://github.com/caiguru/veined/compare/pre-hackathon...hackathon-submission. Nothing is backdated.
+- Diff: https://github.com/veinedxyz/veined/compare/pre-hackathon...hackathon-submission. Nothing is backdated.
+
+## Verified Mainnet Bridge Canary
+
+**Added 2026-11-21, after the hackathon submission.**
+
+- **What ran:** one owner-controlled, single-use Bridge of **5 USDC** from Base to Arbitrum One. The owner ran it from
+  their own wallet, on a local copy of a later VEINED source (checkpoint `50cfa4e1…`, not published here).
+- **Result:** **4.981152 USDC** was delivered to the same account, at a route cost of 37.70 bps.
+- **Guardian:** the verdict was CLEAR, and the signed calldata is exactly the reviewed calldata.
+- **Approval:** the exact approval is fully consumed (allowance 0).
+
+Links:
+- Base source: [`0x38be4b80…6c16`](https://basescan.org/tx/0x38be4b805b0f7e37ea22ce3157140acb24e66df9df0e2cd00880d27fea8e6c16).
+- Arbitrum fill: [`0xa5bb811b…dde8`](https://arbiscan.io/tx/0xa5bb811bc30f6072dc75a953afb18263d4d1485fcb4abd47b5d8167f69d0dde8).
+- Evidence (two RPC operators per chain), method and limits: [docs/MAINNET_BRIDGE_PROOF_2026-11-21.md](docs/MAINNET_BRIDGE_PROOF_2026-11-21.md).
+
+What this does not change or prove:
+- This repository's source (the submission, `4a504378…`) did not perform it. Its execution gate stays closed and its
+  canary stays disarmed.
+- It does not prove same-chain Swap execution, general multichain execution, or any NEAR transfer.
 
 ## Status and limits
 
