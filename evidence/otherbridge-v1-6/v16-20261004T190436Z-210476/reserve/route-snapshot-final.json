@@ -1,0 +1,733 @@
+{
+ "at": "2026-10-04T21:06:13.084Z",
+ "label": "final",
+ "chains": {
+  "bsc": {
+   "chainId": 56,
+   "block": 125745332,
+   "blockHex": "0x77eb8b4",
+   "blockHash": "0x6d4be11cddd8dead290638a265eb6a6f354be9a3d9fb7829d9755eef9f6d05a3",
+   "timestamp": 1791147973,
+   "sources": [
+    {
+     "url": "https://bsc-dataseed.bnbchain.org",
+     "operator": "BNB Chain official",
+     "blockHash": "0x6d4be11cddd8dead290638a265eb6a6f354be9a3d9fb7829d9755eef9f6d05a3",
+     "state": {
+      "implementationSlot": "0x000000000000000000000000ac7b8ffed19d670930b8caa0693189b33454e8d8",
+      "implementationCodeHash": "0x47b60de2375276f3ead49ea41f35c58d068d6bd57625d3553db4257476f91f22",
+      "proxyCodeHash": "0x25b30cfa97d56a7b846443ce92558cf31d86e95966c5afa22dacb0213c52ff9b",
+      "paused": false,
+      "threshold": 2,
+      "bridgeVerifier": "0xF4dC7Ff0BA7dD24060f5B4fc6c9133b6b4925D67",
+      "bridgeExecutor": "0x0000000000000000000000000000000000000000",
+      "dev": "0x90583A8f272C7782646e58e6Bfc49933678FFFb0",
+      "maxExtraDataLength": "1024",
+      "postCallGasReserve": "150000",
+      "initializedAt": "48753627",
+      "domainSeparator": "0xd243e82e0a5891571c30d55ab16c423697872969ed50492c0c8c4addd2d6bf06",
+      "chains": {
+       "612055": {
+        "pairs": [
+         {
+          "localToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+          "remoteToken": "0x0000000000000000000000000000000000000001",
+          "isOrigin": true,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "913929997889002214383750352",
+          "minted": "0"
+         },
+         {
+          "localToken": "0x55d398326f99059fF775485246999027B3197955",
+          "remoteToken": "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C",
+          "isOrigin": true,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "112511902047388265770362",
+          "minted": "0"
+         }
+        ],
+        "nextInitiateIndex": "40817",
+        "nextFinalizeIndex": "98731",
+        "pendingIndexCount": 1,
+        "pending": [
+         {
+          "index": "20",
+          "args": {
+           "fromChainID": "612055",
+           "index": "20",
+           "toToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+           "to": "0x179B7aF5dB07648bcbff3570F68D764C7471952d",
+           "value": "0",
+           "extraData": "0x"
+          },
+          "status": 0,
+          "delayExpiration": "0"
+         }
+        ],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x8e8214a653d19357dbe078e79513f6905d85fff23f6d8420a46dfab24cb54e7c",
+        "finalizePaused": {
+         "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510": false,
+         "0x55d398326f99059fF775485246999027B3197955": false
+        }
+       }
+      },
+      "routePairRawStorage": {
+       "base": "0xe1e3ac93e094e2397a242d57e22305fbece923fce0d7d25521e45aad571bb8c4",
+       "slots": [
+        "0x0000000000000000000000006bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "0x0000000000000000000000010000000000000000000000000000000000000001",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x000000000000000000000000000000000000000002f3fc3475e65f00c4f50cd0",
+        "0x0000000000000000000000000000000000000000000000000000000000000000"
+       ],
+       "decoded": {
+        "localToken": "0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "remoteToken": "0x0000000000000000000000000000000000000001",
+        "isOrigin": true,
+        "paused": false,
+        "pendingAmount": "0",
+        "deposited": "913929997889002214383750352",
+        "minted": "0"
+       }
+      },
+      "roles": {
+       "DEFAULT_ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "VALIDATOR_ROLE": [
+        "0xa43AAc00FD108d3a1FA195b0bb1403EcD57cCE99",
+        "0xDd89b36e3E81c881b62358C3ce2594054fd7c002",
+        "0x2aF7f8fe5cd8e604b4767Ed9EBB66768Eec140Dc"
+       ],
+       "EDITOR_ROLE": [
+        "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+       ],
+       "OPERATOR_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "PRICER_ROLE": [],
+       "VERIFIER_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "BRIDGE_ROLE": [],
+       "MINTER_ROLE": [],
+       "EXECUTOR_ROLE": [],
+       "INITIATOR_ROLE": [
+        "0xb8aC56BCDd60348f6B6f78469eB5F54242347892"
+       ]
+      },
+      "verifier": {
+       "address": "0xF4dC7Ff0BA7dD24060f5B4fc6c9133b6b4925D67",
+       "codeHash": "0x4d8c535dc98d27aa50e223becfca3acc31ab2f8bf7e03d5e43d0bd39cd932e9f",
+       "roles": {
+        "DEFAULT_ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "VALIDATOR_ROLE": [],
+        "EDITOR_ROLE": [
+         "0xe199de5198B8358a613a1B04308df1268191C056"
+        ],
+        "OPERATOR_ROLE": [],
+        "PRICER_ROLE": [
+         "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+        ],
+        "VERIFIER_ROLE": [],
+        "BRIDGE_ROLE": [
+         "0xa6a1a0c1e6ABa5FC6C84E856dCF81506e2bE06c5"
+        ],
+        "MINTER_ROLE": [],
+        "EXECUTOR_ROLE": [],
+        "INITIATOR_ROLE": []
+       },
+       "getVerificationAmountThreshold": "0",
+       "getPeriodTotalValueThreshold": "0",
+       "getTimeWindow": "21600",
+       "getMinimumTokenValue": "5000000",
+       "priceFeed": "0xf90d3aF823D8aCCc91C36c29B2691977f8171423",
+       "denominator": "10000",
+       "dollarDecimals": "6",
+       "tokenCurrentScore": "1031844830000",
+       "priceOfOneToken": [
+        true,
+        "1000000"
+       ],
+       "tokenConfigToRemote": [
+        "5000000000000000000",
+        "0",
+        "0"
+       ],
+       "gasPriceRemote": "0"
+      },
+      "cross": {
+       "balanceOfBridge": "913930007889002214383750352",
+       "totalSupply": "1000000000000000000000000000",
+       "decimals": 18,
+       "symbol": "CROSS",
+       "name": "Cross",
+       "codeHash": "0x94153b8b4d47e9794e833801f13d52ad780ed0d18ae41a7f741b5149fa671825"
+      }
+     }
+    },
+    {
+     "url": "https://bsc-rpc.publicnode.com",
+     "operator": "Allnodes PublicNode",
+     "blockHash": "0x6d4be11cddd8dead290638a265eb6a6f354be9a3d9fb7829d9755eef9f6d05a3",
+     "state": {
+      "implementationSlot": "0x000000000000000000000000ac7b8ffed19d670930b8caa0693189b33454e8d8",
+      "implementationCodeHash": "0x47b60de2375276f3ead49ea41f35c58d068d6bd57625d3553db4257476f91f22",
+      "proxyCodeHash": "0x25b30cfa97d56a7b846443ce92558cf31d86e95966c5afa22dacb0213c52ff9b",
+      "paused": false,
+      "threshold": 2,
+      "bridgeVerifier": "0xF4dC7Ff0BA7dD24060f5B4fc6c9133b6b4925D67",
+      "bridgeExecutor": "0x0000000000000000000000000000000000000000",
+      "dev": "0x90583A8f272C7782646e58e6Bfc49933678FFFb0",
+      "maxExtraDataLength": "1024",
+      "postCallGasReserve": "150000",
+      "initializedAt": "48753627",
+      "domainSeparator": "0xd243e82e0a5891571c30d55ab16c423697872969ed50492c0c8c4addd2d6bf06",
+      "chains": {
+       "612055": {
+        "pairs": [
+         {
+          "localToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+          "remoteToken": "0x0000000000000000000000000000000000000001",
+          "isOrigin": true,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "913929997889002214383750352",
+          "minted": "0"
+         },
+         {
+          "localToken": "0x55d398326f99059fF775485246999027B3197955",
+          "remoteToken": "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C",
+          "isOrigin": true,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "112511902047388265770362",
+          "minted": "0"
+         }
+        ],
+        "nextInitiateIndex": "40817",
+        "nextFinalizeIndex": "98731",
+        "pendingIndexCount": 1,
+        "pending": [
+         {
+          "index": "20",
+          "args": {
+           "fromChainID": "612055",
+           "index": "20",
+           "toToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+           "to": "0x179B7aF5dB07648bcbff3570F68D764C7471952d",
+           "value": "0",
+           "extraData": "0x"
+          },
+          "status": 0,
+          "delayExpiration": "0"
+         }
+        ],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x8e8214a653d19357dbe078e79513f6905d85fff23f6d8420a46dfab24cb54e7c",
+        "finalizePaused": {
+         "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510": false,
+         "0x55d398326f99059fF775485246999027B3197955": false
+        }
+       }
+      },
+      "routePairRawStorage": {
+       "base": "0xe1e3ac93e094e2397a242d57e22305fbece923fce0d7d25521e45aad571bb8c4",
+       "slots": [
+        "0x0000000000000000000000006bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "0x0000000000000000000000010000000000000000000000000000000000000001",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x000000000000000000000000000000000000000002f3fc3475e65f00c4f50cd0",
+        "0x0000000000000000000000000000000000000000000000000000000000000000"
+       ],
+       "decoded": {
+        "localToken": "0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "remoteToken": "0x0000000000000000000000000000000000000001",
+        "isOrigin": true,
+        "paused": false,
+        "pendingAmount": "0",
+        "deposited": "913929997889002214383750352",
+        "minted": "0"
+       }
+      },
+      "roles": {
+       "DEFAULT_ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "VALIDATOR_ROLE": [
+        "0xa43AAc00FD108d3a1FA195b0bb1403EcD57cCE99",
+        "0xDd89b36e3E81c881b62358C3ce2594054fd7c002",
+        "0x2aF7f8fe5cd8e604b4767Ed9EBB66768Eec140Dc"
+       ],
+       "EDITOR_ROLE": [
+        "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+       ],
+       "OPERATOR_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "PRICER_ROLE": [],
+       "VERIFIER_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "BRIDGE_ROLE": [],
+       "MINTER_ROLE": [],
+       "EXECUTOR_ROLE": [],
+       "INITIATOR_ROLE": [
+        "0xb8aC56BCDd60348f6B6f78469eB5F54242347892"
+       ]
+      },
+      "verifier": {
+       "address": "0xF4dC7Ff0BA7dD24060f5B4fc6c9133b6b4925D67",
+       "codeHash": "0x4d8c535dc98d27aa50e223becfca3acc31ab2f8bf7e03d5e43d0bd39cd932e9f",
+       "roles": {
+        "DEFAULT_ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "VALIDATOR_ROLE": [],
+        "EDITOR_ROLE": [
+         "0xe199de5198B8358a613a1B04308df1268191C056"
+        ],
+        "OPERATOR_ROLE": [],
+        "PRICER_ROLE": [
+         "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+        ],
+        "VERIFIER_ROLE": [],
+        "BRIDGE_ROLE": [
+         "0xa6a1a0c1e6ABa5FC6C84E856dCF81506e2bE06c5"
+        ],
+        "MINTER_ROLE": [],
+        "EXECUTOR_ROLE": [],
+        "INITIATOR_ROLE": []
+       },
+       "getVerificationAmountThreshold": "0",
+       "getPeriodTotalValueThreshold": "0",
+       "getTimeWindow": "21600",
+       "getMinimumTokenValue": "5000000",
+       "priceFeed": "0xf90d3aF823D8aCCc91C36c29B2691977f8171423",
+       "denominator": "10000",
+       "dollarDecimals": "6",
+       "tokenCurrentScore": "1031844830000",
+       "priceOfOneToken": [
+        true,
+        "1000000"
+       ],
+       "tokenConfigToRemote": [
+        "5000000000000000000",
+        "0",
+        "0"
+       ],
+       "gasPriceRemote": "0"
+      },
+      "cross": {
+       "balanceOfBridge": "913930007889002214383750352",
+       "totalSupply": "1000000000000000000000000000",
+       "decimals": 18,
+       "symbol": "CROSS",
+       "name": "Cross",
+       "codeHash": "0x94153b8b4d47e9794e833801f13d52ad780ed0d18ae41a7f741b5149fa671825"
+      }
+     }
+    },
+    {
+     "url": "https://bsc.drpc.org",
+     "operator": "dRPC",
+     "error": "RPC_ERROR https://bsc.drpc.org eth_getStorageAt: {\"message\":\"You reached Public endpoint rate limit, please upgrade to paid plan\",\"code\":15}"
+    }
+   ],
+   "consensus": {
+    "ok": 2,
+    "identicalState": true,
+    "blockHashAgrees": true
+   }
+  },
+  "one": {
+   "chainId": 612055,
+   "block": 45673482,
+   "blockHex": "0x2b8ec0a",
+   "blockHash": "0x6b00899d541bcf042814d288795bae681f49b32f1c1dc1914648cad80e4ff9d1",
+   "timestamp": 1791148011,
+   "sources": [
+    {
+     "url": "https://mainnet.crosstoken.io:22001",
+     "operator": "to-nexus official (chain-info API)",
+     "blockHash": "0x6b00899d541bcf042814d288795bae681f49b32f1c1dc1914648cad80e4ff9d1",
+     "state": {
+      "implementationSlot": "0x0000000000000000000000002827865ad5330faf855af8b743c701ae9c818034",
+      "implementationCodeHash": "0x8bb2e9361035520a62a806cf78ff6f325d32c578a63f35ad49263524361e04bc",
+      "proxyCodeHash": "0x0dac1e1deb9381d1139c43a9d49d022a4786242e90744abd0f77bf85375b548b",
+      "paused": false,
+      "threshold": 2,
+      "bridgeVerifier": "0x4a508A3dde9EBE1A6b3C347fE4aCed78500d2818",
+      "bridgeExecutor": "0x99028D75a83A21b59e239C9af23aa938277465b0",
+      "dev": "0x90583A8f272C7782646e58e6Bfc49933678FFFb0",
+      "maxExtraDataLength": "1024",
+      "postCallGasReserve": "150000",
+      "initializedAt": "452398",
+      "domainSeparator": "0xda5c398ed6b436e25823894e43064ebe56eda4453d1c7bfc6815c38ea8d696a6",
+      "crossSupply": "928707107889002214383750352",
+      "crossSupplyLimit": "1000000000000000000000000000",
+      "chains": {
+       "56": {
+        "pairs": [
+         {
+          "localToken": "0x0000000000000000000000000000000000000001",
+          "remoteToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+          "isOrigin": false,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "928707107889002214383750352"
+         },
+         {
+          "localToken": "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C",
+          "remoteToken": "0x55d398326f99059fF775485246999027B3197955",
+          "isOrigin": false,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "112511902047388265770362"
+         }
+        ],
+        "nextInitiateIndex": "98731",
+        "nextFinalizeIndex": "40817",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x34db2c2506a14ae3565d22daf9fb04f13bcfe9437628061d7d65cec98630673f",
+        "finalizePaused": {
+         "0x0000000000000000000000000000000000000001": false,
+         "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C": false
+        }
+       },
+       "1000": {
+        "pairs": [],
+        "nextInitiateIndex": "1",
+        "nextFinalizeIndex": "1",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x290f3bb17f303edd0f106ab04bdb0515d193106e8c2b48d993115d216da01cb4",
+        "finalizePaused": {}
+       },
+       "8217": {
+        "pairs": [
+         {
+          "localToken": "0xB506d82CA638548a597Ac8143217534C524b81dA",
+          "remoteToken": "0x4836cC1f355bB2A61c210EAA0CD3f729160CD95E",
+          "isOrigin": false,
+          "paused": true,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "10000000000000000000000000"
+         }
+        ],
+        "nextInitiateIndex": "1",
+        "nextFinalizeIndex": "4",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0xc5e598b2706eebceb2723d884fdc1d75489aec56082faf45a400454e562e989a",
+        "finalizePaused": {
+         "0xB506d82CA638548a597Ac8143217534C524b81dA": false
+        }
+       }
+      },
+      "routePairRawStorage": {
+       "base": "0x18b192f1eb405373a08b721bb0df146fcf56dd1771fbcb3b6882cf6a4c4f0529",
+       "slots": [
+        "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "0x0000000000000000000000006bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000000000000000000000300356132e482c2338d0cd0"
+       ],
+       "decoded": {
+        "localToken": "0x0000000000000000000000000000000000000001",
+        "remoteToken": "0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "isOrigin": false,
+        "paused": false,
+        "pendingAmount": "0",
+        "deposited": "0",
+        "minted": "928707107889002214383750352"
+       }
+      },
+      "roles": {
+       "DEFAULT_ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "VALIDATOR_ROLE": [
+        "0xa43AAc00FD108d3a1FA195b0bb1403EcD57cCE99",
+        "0xDd89b36e3E81c881b62358C3ce2594054fd7c002",
+        "0x2aF7f8fe5cd8e604b4767Ed9EBB66768Eec140Dc"
+       ],
+       "EDITOR_ROLE": [
+        "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+       ],
+       "OPERATOR_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "PRICER_ROLE": [],
+       "VERIFIER_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "BRIDGE_ROLE": [],
+       "MINTER_ROLE": [],
+       "EXECUTOR_ROLE": [],
+       "INITIATOR_ROLE": []
+      },
+      "verifier": {
+       "address": "0x4a508A3dde9EBE1A6b3C347fE4aCed78500d2818",
+       "codeHash": "0x4d8c535dc98d27aa50e223becfca3acc31ab2f8bf7e03d5e43d0bd39cd932e9f",
+       "roles": {
+        "DEFAULT_ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "VALIDATOR_ROLE": [],
+        "EDITOR_ROLE": [
+         "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+        ],
+        "OPERATOR_ROLE": [],
+        "PRICER_ROLE": [
+         "0xe199de5198B8358a613a1B04308df1268191C056"
+        ],
+        "VERIFIER_ROLE": [],
+        "BRIDGE_ROLE": [
+         "0xb81d6e000000000000000000000000000000C0de"
+        ],
+        "MINTER_ROLE": [],
+        "EXECUTOR_ROLE": [],
+        "INITIATOR_ROLE": []
+       },
+       "getVerificationAmountThreshold": "0",
+       "getPeriodTotalValueThreshold": "0",
+       "getTimeWindow": "21600",
+       "getMinimumTokenValue": "5000000",
+       "priceFeed": "0xf90d3aF823D8aCCc91C36c29B2691977f8171423",
+       "denominator": "10000",
+       "dollarDecimals": "6",
+       "tokenCurrentScore": "29966642009",
+       "priceOfOneToken": [
+        true,
+        "1000000"
+       ],
+       "tokenConfigToRemote": [
+        "5000000000000000000",
+        "180000000000000000",
+        "0"
+       ],
+       "gasPriceRemote": "1000000000"
+      },
+      "nativeBalanceOfBridge": "71292892110997785616249648"
+     }
+    },
+    {
+     "url": "https://mainnet.onechain.nexus:22001",
+     "operator": "to-nexus official (chainid.network registry; same organisation)",
+     "blockHash": "0x6b00899d541bcf042814d288795bae681f49b32f1c1dc1914648cad80e4ff9d1",
+     "state": {
+      "implementationSlot": "0x0000000000000000000000002827865ad5330faf855af8b743c701ae9c818034",
+      "implementationCodeHash": "0x8bb2e9361035520a62a806cf78ff6f325d32c578a63f35ad49263524361e04bc",
+      "proxyCodeHash": "0x0dac1e1deb9381d1139c43a9d49d022a4786242e90744abd0f77bf85375b548b",
+      "paused": false,
+      "threshold": 2,
+      "bridgeVerifier": "0x4a508A3dde9EBE1A6b3C347fE4aCed78500d2818",
+      "bridgeExecutor": "0x99028D75a83A21b59e239C9af23aa938277465b0",
+      "dev": "0x90583A8f272C7782646e58e6Bfc49933678FFFb0",
+      "maxExtraDataLength": "1024",
+      "postCallGasReserve": "150000",
+      "initializedAt": "452398",
+      "domainSeparator": "0xda5c398ed6b436e25823894e43064ebe56eda4453d1c7bfc6815c38ea8d696a6",
+      "crossSupply": "928707107889002214383750352",
+      "crossSupplyLimit": "1000000000000000000000000000",
+      "chains": {
+       "56": {
+        "pairs": [
+         {
+          "localToken": "0x0000000000000000000000000000000000000001",
+          "remoteToken": "0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510",
+          "isOrigin": false,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "928707107889002214383750352"
+         },
+         {
+          "localToken": "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C",
+          "remoteToken": "0x55d398326f99059fF775485246999027B3197955",
+          "isOrigin": false,
+          "paused": false,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "112511902047388265770362"
+         }
+        ],
+        "nextInitiateIndex": "98731",
+        "nextFinalizeIndex": "40817",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x34db2c2506a14ae3565d22daf9fb04f13bcfe9437628061d7d65cec98630673f",
+        "finalizePaused": {
+         "0x0000000000000000000000000000000000000001": false,
+         "0x1c37d4F44ed3eC86d96868001CfA89e97112a85C": false
+        }
+       },
+       "1000": {
+        "pairs": [],
+        "nextInitiateIndex": "1",
+        "nextFinalizeIndex": "1",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0x290f3bb17f303edd0f106ab04bdb0515d193106e8c2b48d993115d216da01cb4",
+        "finalizePaused": {}
+       },
+       "8217": {
+        "pairs": [
+         {
+          "localToken": "0xB506d82CA638548a597Ac8143217534C524b81dA",
+          "remoteToken": "0x4836cC1f355bB2A61c210EAA0CD3f729160CD95E",
+          "isOrigin": false,
+          "paused": true,
+          "pendingAmount": "0",
+          "deposited": "0",
+          "minted": "10000000000000000000000000"
+         }
+        ],
+        "nextInitiateIndex": "1",
+        "nextFinalizeIndex": "4",
+        "pendingIndexCount": 0,
+        "pending": [],
+        "chainPaused": false,
+        "chainPausedRawSlot": "0xc5e598b2706eebceb2723d884fdc1d75489aec56082faf45a400454e562e989a",
+        "finalizePaused": {
+         "0xB506d82CA638548a597Ac8143217534C524b81dA": false
+        }
+       }
+      },
+      "routePairRawStorage": {
+       "base": "0x18b192f1eb405373a08b721bb0df146fcf56dd1771fbcb3b6882cf6a4c4f0529",
+       "slots": [
+        "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "0x0000000000000000000000006bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000000000000000000000300356132e482c2338d0cd0"
+       ],
+       "decoded": {
+        "localToken": "0x0000000000000000000000000000000000000001",
+        "remoteToken": "0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+        "isOrigin": false,
+        "paused": false,
+        "pendingAmount": "0",
+        "deposited": "0",
+        "minted": "928707107889002214383750352"
+       }
+      },
+      "roles": {
+       "DEFAULT_ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "ADMIN_ROLE": [
+        "0x22C1522276855B028c31a731BA10D125811Af37c"
+       ],
+       "VALIDATOR_ROLE": [
+        "0xa43AAc00FD108d3a1FA195b0bb1403EcD57cCE99",
+        "0xDd89b36e3E81c881b62358C3ce2594054fd7c002",
+        "0x2aF7f8fe5cd8e604b4767Ed9EBB66768Eec140Dc"
+       ],
+       "EDITOR_ROLE": [
+        "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+       ],
+       "OPERATOR_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "PRICER_ROLE": [],
+       "VERIFIER_ROLE": [
+        "0xe7BA9776763C83810B9b227145277ebEfA023F5B"
+       ],
+       "BRIDGE_ROLE": [],
+       "MINTER_ROLE": [],
+       "EXECUTOR_ROLE": [],
+       "INITIATOR_ROLE": []
+      },
+      "verifier": {
+       "address": "0x4a508A3dde9EBE1A6b3C347fE4aCed78500d2818",
+       "codeHash": "0x4d8c535dc98d27aa50e223becfca3acc31ab2f8bf7e03d5e43d0bd39cd932e9f",
+       "roles": {
+        "DEFAULT_ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "ADMIN_ROLE": [
+         "0x22C1522276855B028c31a731BA10D125811Af37c"
+        ],
+        "VALIDATOR_ROLE": [],
+        "EDITOR_ROLE": [
+         "0x833591E90F3f9146Bb036a290f5a58ea77aA022D"
+        ],
+        "OPERATOR_ROLE": [],
+        "PRICER_ROLE": [
+         "0xe199de5198B8358a613a1B04308df1268191C056"
+        ],
+        "VERIFIER_ROLE": [],
+        "BRIDGE_ROLE": [
+         "0xb81d6e000000000000000000000000000000C0de"
+        ],
+        "MINTER_ROLE": [],
+        "EXECUTOR_ROLE": [],
+        "INITIATOR_ROLE": []
+       },
+       "getVerificationAmountThreshold": "0",
+       "getPeriodTotalValueThreshold": "0",
+       "getTimeWindow": "21600",
+       "getMinimumTokenValue": "5000000",
+       "priceFeed": "0xf90d3aF823D8aCCc91C36c29B2691977f8171423",
+       "denominator": "10000",
+       "dollarDecimals": "6",
+       "tokenCurrentScore": "29966642009",
+       "priceOfOneToken": [
+        true,
+        "1000000"
+       ],
+       "tokenConfigToRemote": [
+        "5000000000000000000",
+        "180000000000000000",
+        "0"
+       ],
+       "gasPriceRemote": "1000000000"
+      },
+      "nativeBalanceOfBridge": "71292892110997785616249648"
+     }
+    }
+   ],
+   "consensus": {
+    "ok": 2,
+    "identicalState": true,
+    "blockHashAgrees": true
+   }
+  }
+ }
+}

@@ -15,6 +15,7 @@
 // user presses the observation button, the hash with that preview's details to VEINED's own server (which forwards the
 // hash and the two networks to the route source). Nothing goes from the browser to a third party.
 import Link from "next/link";
+import VerifiedActivity from "./verified-activity";
 import { useEffect, useMemo, useState } from "react";
 import { useI18n } from "../i18n/provider";
 import type { Locale } from "../i18n/config";
@@ -39,7 +40,15 @@ const SYNTHETIC = [
 ] as const;
 type Resolved = { symbol: string; decimals: number };
 
-export default function ScanView({ lang }: { lang: Locale }) {
+export default function ScanView({
+  lang,
+  account,
+  onConnect,
+}: {
+  lang: Locale;
+  account?: string;
+  onConnect?: () => void;
+}) {
   const { t } = useI18n();
   const [records, setRecords] = useState<RoutePreview[]>(() => readPreviews()),
     [catalog, setCatalog] = useState<Catalog>(),
@@ -147,6 +156,7 @@ export default function ScanView({ lang }: { lang: Locale }) {
   return (
     <div className="scan-view" data-testid="scan-view">
       <PageHeader title="VEINED Scan" lede={t("g12.scan.lede")} />
+      <VerifiedActivity account={account} onConnect={onConnect} embedded />
       <section
         className="catalog-section scan-section"
         aria-labelledby="scan-veined"

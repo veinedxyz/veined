@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   Fragment,
   useEffect,
@@ -253,7 +254,8 @@ export default function Portfolio({
         ),
     ),
     [now, setNow] = useState(() => Date.now()),
-    // V1.11: the connected wallet is scanned automatically; any other address is an explicit watch-only scan.
+    // Address disclosure is opt-in, including the connected wallet's background refresh.
+    [autoScan, setAutoScan] = useState(false),
     [mode, setMode] = useState<"wallet" | "watch">(() =>
       account ? "wallet" : "watch",
     ),
@@ -273,6 +275,7 @@ export default function Portfolio({
   // effect, so the auto-scan below sees the new mode in the same pass).
   if (modeAccount !== account) {
     setModeAccount(account);
+    setAutoScan(false);
     setMode(account ? "wallet" : "watch");
   }
   const busyRef = useRef(false);
@@ -427,7 +430,12 @@ export default function Portfolio({
           }),
           signal: AbortSignal.any([c.signal, AbortSignal.timeout(25000)]),
         });
-        if (!r.ok) throw Error("UNAVAILABLE");
+        if (!r.ok) {
+          const failure = await r.json().catch(() => ({}));
+          throw Error(
+            `${failure.error ?? "PROVIDER_UNAVAILABLE"} · request ${failure.requestId ?? "unknown"}`,
+          );
+        }
         // Progressive round: lines are coalesced into one render per window; milestones render at once.
         const base = cursor ? current : undefined;
         let progress: WalletProgress = emptyProgress();
@@ -512,8 +520,11 @@ export default function Portfolio({
         )
           setDefiEpoch((n) => n + 1);
       }
-    } catch {
-      if (live()) setError(t("errors.UPSTREAM_UNAVAILABLE"));
+    } catch (e) {
+      if (live())
+        setError(
+          `${t("errors.UPSTREAM_UNAVAILABLE")} ${e instanceof Error ? e.message : "PROVIDER_UNAVAILABLE"}`,
+        );
     } finally {
       if (attempt === sequence.current) {
         setBusy(false);
@@ -525,7 +536,8 @@ export default function Portfolio({
   };
   // Auto scan: once per connected account (read-only; no signature, no transaction), then a periodic refresh
   // while the page is visible. Account change/disconnect aborts it (effect above).
-  const autoKey = mode === "wallet" && account ? account.toLowerCase() : "";
+  const autoKey =
+    autoScan && mode === "wallet" && account ? account.toLowerCase() : "";
   const hasResult = !!result;
   useEffect(() => {
     if (!autoKey || scannedFor === autoKey || hasResult || busyRef.current)
@@ -940,7 +952,24 @@ export default function Portfolio({
                 <code dir="ltr" title={account}>
                   {shortAddress(account)}
                 </code>
-                <small>{t("v111.autoScanNote")}</small>
+                <label className="va-consent">
+                  <input
+                    type="checkbox"
+                    checked={autoScan}
+                    onChange={(e) => {
+                      setAutoScan(e.target.checked);
+                      if (!e.target.checked) {
+                        request.current?.abort();
+                        sequence.current++;
+                        setBusy(false);
+                        busyRef.current = false;
+                        resetProgress();
+                      }
+                    }}
+                  />
+                  Automatically scan and refresh this address while Portfolio is
+                  open
+                </label>
               </span>
               {scanButton}
             </div>
@@ -1664,6 +1693,15 @@ export default function Portfolio({
                                   : h.symbol)}{" "}
                               · {chainName(h.chainId)}
                             </small>
+                            {["8453", "42161"].includes(h.chainId) &&
+                              identity.evm && (
+                                <Link
+                                  className="micro"
+                                  href={`/scan?chain=${h.chainId}&q=${identity.evm}&asset=${encodeURIComponent(h.symbol)}`}
+                                >
+                                  View network transactions in Scan →
+                                </Link>
+                              )}
                             {h.position && (
                               <span
                                 className={`pill level-badge tone-${h.position.role === "debt" ? "warn" : "info"}`}

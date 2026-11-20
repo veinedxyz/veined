@@ -1,0 +1,56 @@
+{
+  "schema": "otherbridge.protected-baseline.acceptance.v1",
+  "status": "ACCEPTED",
+  "proposalId": "VEINED-GF-G02-RAINBOWKIT-LOCK-20261109",
+  "proposedAt": "2026-11-09T10:37:52.509Z",
+  "scope": "ISOLATED CANDIDATE ONLY: C:/vnd/gf1/w (guardian-first G02). Canonical D:/Projeler/veined/repo, its pointer and every historical baseline stay unchanged.",
+  "ownerApproval": "Explicit human owner approval VEINED-GF-G02-RAINBOWKIT-LOCK-20261109 (scoped, conditional; OWNER_G02_DECISION_TR.md §6) and VEINED-GF-G02-RAINBOWKIT-LOCK-20261109 / MONITOR-PIN (D1, isolated candidate only: one constant in src/release/monitor.ts 874ec8b7… -> 621555523…); isolated candidate C:/vnd/gf1/w only; canonical, G01, fp1, gc1 and every historical G7 record unchanged; no production, release identity or startup change",
+  "previousAccepted": "evidence/otherbridge-v1-12-1/owner-rebaseline-v1211-20261104/preflight/protected-hashes.json",
+  "previousAcceptedSha256": "874ec8b7e85c1e814a0ecacee53dfddbf260697550175932b929aa2fe72a5d43",
+  "candidateSha256": "621555523eb3a3e150de49ef3fd3efc23b99de1c492453d9a4d9dc406adc1959",
+  "protectedMembership": 107,
+  "membershipChanged": false,
+  "changed": [
+    {
+      "file": "pnpm-lock.yaml",
+      "before": "0955335307c5a84759b16a8a8fa70b47633ba1b0640be221222f8362b7a6092e",
+      "after": "28e844da6361d3085fb469a7d33546227e44680b85e9d01f94babad9c8f36bb7"
+    }
+  ],
+  "lockLineage": [
+    {
+      "from": "0955335307c5a84759b16a8a8fa70b47633ba1b0640be221222f8362b7a6092e",
+      "to": "28e844da6361d3085fb469a7d33546227e44680b85e9d01f94babad9c8f36bb7",
+      "at": "2026-11-09",
+      "approval": "owner approval VEINED-GF-G02-RAINBOWKIT-LOCK-20261109 (+ / MONITOR-PIN), additive-only narrow lock, isolated candidate only",
+      "rejectedVariant": {
+        "lockSha256": "368d5fd62cc03099f0f88ce6ff2fd33ea4efe1f00194dc210f9e9204fe4d9252",
+        "reason": "pnpm add also re-resolved three unrelated existing edges (engine.io-client>ws 8.21.0->8.21.3, ox@0.6.7/ox@0.9.1>@noble/curves 1.9.1->1.9.7); not required"
+      }
+    }
+  ],
+  "reason": "Additive-only root lock change for the optional, explicitly selected RainbowKit EVM connect layer; 23 packages added, 0 removed, 0 integrity changes, 0 existing snapshot edges changed; all other 106 protected files byte-identical",
+  "auditAtProposal": {
+    "rootProduction": {
+      "info": 0,
+      "low": 1,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "providerProduction": {
+      "info": 0,
+      "low": 1,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    }
+  },
+  "activationPrecondition": "Owner approval text recorded; then every retest in OWNER_G02_DECISION_TR.md PASS; canonical pointer unchanged",
+  "productionExecution": "CLOSED",
+  "realTransactionAuthorized": false,
+  "walletConfirmationAuthorized": false,
+  "previousAcceptedPreserved": true,
+  "acceptedAt": "2026-11-09T11:29:21.438Z",
+  "draftSha256": "38736be8036c519ec0e7b1be415f5b6017a7aa7365fd25f61588373a5c06fe5e"
+}

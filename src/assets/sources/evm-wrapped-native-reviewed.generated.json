@@ -1,0 +1,25 @@
+{
+ "issuer": "OP-stack predeploy WETH9 (0x4200000000000000000000000000000000000006) on Base",
+ "rule": "exact chain + contract + symbol + name + decimals pinned in scripts/assets/sync.ts EVM_WRAPPED_NATIVE + routing provider contract and decimals + CoinGecko exact listing + on-chain code equal on two operators (swap-lane pin set fl1-swap-lane-pins.2026-11-15.1, codehash 0x8a3a1f6a9f9dce633117adee5b458245835a8645a8c8726a26382a4622508b1c); no logo reviewed",
+ "reviewedAt": "2026-11-15T21:30:00.000Z",
+ "assets": [
+  {
+   "chainId": "8453",
+   "address": "0x4200000000000000000000000000000000000006",
+   "native": false,
+   "symbol": "WETH",
+   "name": "Wrapped Ether",
+   "decimals": 18,
+   "level": "CURATED",
+   "sources": [
+    "otherbridge-curated",
+    "routing",
+    "coingecko"
+   ],
+   "logo": null,
+   "coingeckoId": "l2-standard-bridged-weth-base",
+   "risk": [],
+   "routable": true
+  }
+ ]
+}

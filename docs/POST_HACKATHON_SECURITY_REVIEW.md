@@ -1,0 +1,13 @@
+# Independent financial review
+
+17 November 2026. A separate Codex review agent assessed the final financial differences, independently of the implementation executor. This is an engineering source review, not certification by an external audit firm.
+
+**PASS FOR DISARMED DEVELOPMENT-PROGRESS DRAFT PUBLICATION ONLY. PRODUCT_RELEASE: RETURN_FOR_REPAIR. Financial activation is not approved.**
+
+The reviewer independently ran 10 adversarial cases (including real quote arithmetic and rendered fee/gas states) and 70 source security/display tests, all passing. The fee-display supplement preserves all 112 prior control hashes and extends the reviewed manifest to 115 files. The review covered single-use authority, record-specific pending receipts, repeated settled sessions, retained historical authority, replay/crash/UNKNOWN recovery, cumulative nonce identity, destination settlement, account/archive caps, rate limits, exact origin/CSRF and mandatory Guardian checks. 137 protected paths matched expected hashes. The [financial review manifest](../release/manual-wallet-financial-review.json) binds exact reviewed file bytes.
+
+The full historical suite is not green: 522 of 6,007 tests failed in the initial wide attempt. Scanner mutation suites are masked by the earlier, intentionally closed default scanner; later checks are consequently unvalidated in this composition. Preserved historical G7 baselines reject newer, documented source differences. These conditions block product/financial activation readiness. They must not be represented as passed or waived. The independently probed real worker guard refused worker-thread writes; its broad-suite failure was Windows harness quoting. A stale dependency audit binding was repaired with fresh production audits and current lock/raw hashes. See [the complete development status](../DEVELOPMENT_STATUS.md) for exact counts and remaining UI/historical compatibility failures.
+
+The review found no unknown source drift or signing bypass that blocks publishing this explicitly disarmed draft with the failures disclosed. The root audit has no findings. The quote-provider graph retains a LOW unpatched elliptic advisory related to ECDSA signing; this manual route composition has no private key and delegates signing to the owner's wallet. This residual remains disclosed.
+
+The real owner's Rabby extension, account/chain identity, wallet prompts, bounded canary and prompt latency remain untested. Never open the release flag based on this report. Any armed candidate requires separate owner approval and renewed independent review. Production packaging, dynamic filesystem tracing, HTTPS origins, durable distributed limits, external audit and legal gates remain separate.

@@ -4,7 +4,7 @@
 > (2026-11-14), before the README was rewritten in English for the NEAR Hackathon. The sections that were written in
 > **Turkish** are given below in a faithful **English translation**. Dates, hashes, identifiers, statuses, commands,
 > paths and results are unchanged, and the English sections are unchanged. The original text is preserved in Git
-> history: [README.md at 97736f06](https://github.com/caiguru/veined/blob/97736f0623bc0d249e1f2b8a976b162212b1a6e0/README.md).
+> history: [README.md at 97736f06](https://github.com/veinedxyz/veined/blob/97736f0623bc0d249e1f2b8a976b162212b1a6e0/README.md).
 > It is a historical engineering record: milestone names (Otherbridge V1 … V1.18), statuses and file references are
 > those of their time, and some links point to internal files that are **not part of this public repository** (for
 > example `OTHERBRIDGE_V1_HANDOFF.md`, `release/OWNER_GATE_PACK.md`, `evidence/…`). The current description is
@@ -22,6 +22,7 @@ NEP-366 meta transactions, NEP-413 messages and AI-agent proposals. Verdicts com
 carry a reproducible digest.
 
 Built on NEAR:
+
 - NEAR Intents: dry quotes toward NEAR
 - NEAR accounts and access keys, with on-chain checks
 - Chain Signatures: a request is prepared only after Guardian allows the action
@@ -53,6 +54,7 @@ The following original README is preserved verbatim for release continuity. Its 
 product name and capability descriptions are historical; use the V1.18 documents for the current candidate.
 
 <!-- BEGIN V117 CURRENT -->
+
 # Otherbridge V1.17 external gate closure — EXECUTION_CLOSED
 
 Current owner packet: release/OWNER_GATE_PACK.md and release/EXTERNAL_GATES.json. See docs/V117_EXTERNAL_GATE_CLOSURE.md for provider, domain/Privy/hosting/RPC/Whirlpool and independent audit/pentest/legal handoffs. All16 V1.16 blocker IDs are preserved; no external approval or production release is self-certified. Final acceptance/checkpoint/test/ZIP results are generated in evidence/otherbridge-v1-17/20261015T175758204Z-8120f0/final/FINAL_REPORT_TR.md after verification. Commands: pnpm release:credentials:check and pnpm release:external-gates (expected incomplete exit2).
@@ -63,6 +65,7 @@ The immutable V1.16 audit base and packages remain referenced by hash. Protected
 ---
 
 <!-- BEGIN V116 CURRENT -->
+
 # Otherbridge V1.16 release candidate — EXECUTION_CLOSED
 
 Current candidate: OTHERBRIDGE_RC_V1_16_20261015T133159055Z-16dfa3. Authoritative status is generated after complete verification in evidence/otherbridge-v1-16/20261015T133159055Z-16dfa3/final/FINAL_REPORT_TR.md and release/FINAL_GATE_STATUS.json. See docs/V116_RELEASE_CANDIDATE.md, audit/AUDITOR_REPRODUCTION.md and OWNER_RELEASE_ACTIONS.md. Neither this source document nor prior milestone status constitutes production permission. Final source/build and archive manifests bind the exact candidate. Historical records below remain preserved.
@@ -170,10 +173,10 @@ Bridge, wallet selection, native amount/fee/MAX, review, two-chain tracking, Act
 Mainnet completion is observed only through the related source calldata/event, the canonical receipt/finalized tag and the BSC bridge event + a single canonical CROSS Transfer log. The public history API provides only a limited hint for the destination hash. A storage/import success claim is not trusted without fresh evidence. R1 evidence is under `evidence/otherbridge-v1/repair-r1/`; the old 81+4+8 test evidence at the root is preserved as a historical run. The local test module runs only in the development server's controlled fixture branch; production access is blocked by a test.
 
 Starting points: [handoff](OTHERBRIDGE_V1_HANDOFF.md), [architecture](docs/ARCHITECTURE.md), [sources](docs/SOURCES.md), [security](docs/SECURITY.md), [runbook](docs/RUNBOOK.md), [test matrix](docs/TEST_MATRIX.md). V1 is not release/mainnet-ready or audited.
+
 # V1.3 review milestone
 
 Active TVL catalog, wallet-held Portfolio, balance-priority Bridge/Swap selectors, same-chain Swap, route alternatives, zero-enabled platform fee policy and isolated security foundation are implemented. Financial execution remains disabled. Broad live token portfolio needs a server credential; native fallback and synthetic coverage tests are supplied. See [V1.3 test matrix](docs/V13_TEST_MATRIX.md), [Portfolio coverage](docs/PORTFOLIO_COVERAGE.md), [security release gate](docs/SECURITY_RELEASE_GATE.md) and the current handoff. ONEchain G5 and production release remain blocked. Accepted historical documentation follows.
-
 
 ## V1.15.1 Swap completion / repair
 

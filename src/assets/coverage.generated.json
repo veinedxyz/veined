@@ -21,12 +21,12 @@
   "withExplorer": 184
  },
  "assets": {
-  "total": 422,
+  "total": 423,
   "canonical": 75,
-  "curated": 345,
+  "curated": 346,
   "marketListedInRegistry": 2,
   "withLogo": 421,
-  "logoPercent": 99.8,
+  "logoPercent": 99.5,
   "chains": 72,
   "coingeckoExactListings": 7673,
   "coingeckoChains": 59

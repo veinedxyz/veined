@@ -29,11 +29,13 @@ const T0 = 1_800_000_000_000;
 const USDC_ETH = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48";
 const USDT_ETH = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 const USDBC_BASE = "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca";
-// G12 H01 (F1): Circle's native USDC on Base (issuer-reviewed registry entry); WMATIC on Polygon; WETH on Base is a
-// real predeploy that VEINED's registry does not list.
+// G12 H01 (F1): Circle's native USDC on Base (issuer-reviewed registry entry); WMATIC on Polygon. WETH on Base (the
+// OP-stack predeploy) is a reviewed registry row since VEINED-FIN-LIVE-20261115-01 (evm-wrapped-native-reviewed); LINK on
+// Base is a real token contract that VEINED's registry does not list (the unregistered-contract case).
 const USDC_BASE = "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913";
 const WMATIC_POLYGON = "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270";
 const WETH_BASE = "0x4200000000000000000000000000000000000006";
+const LINK_BASE = "0x88fb150bdc53a65fe94dea0c9ba0a6daf8c6e196";
 const FAKE = "0x1234567890123456789012345678901234567890";
 const BURN = "0x000000000000000000000000000000000000dEaD";
 const WALLET = "0x8a1f3c9b2d4e5f60718293a4b5c6d7e8f9a0b1c2";
@@ -192,15 +194,23 @@ describe("Guardian chat: drafts from conversation", () => {
     });
   });
   it("GC1-04 pasting the exact contract keeps the claimed name; an unregistered contract is reviewed as unverified (WARN)", () => {
-    // G12 H01 (F1): Circle's native USDC on Base is registered now; WETH on Base (0x4200…0006) is not.
-    const { s } = talk([
-      "Base'ten Ethereum'a 10 WETH gönder.",
-      "0x4200000000000000000000000000000000000006",
-    ]);
-    const d = lastDraft(s);
-    expect(d.draft.pay).toMatchObject({
+    // G12 H01 (F1): Circle's native USDC on Base is registered; VEINED-FIN-LIVE-20261115-01: so is WETH on Base
+    // (0x4200…0006, reviewed row). LINK on Base is not: it stays the unregistered contract.
+    const weth = talk(["Base'ten Ethereum'a 10 WETH gönder."]);
+    expect(lastDraft(weth.s).draft.pay).toMatchObject({
       address: WETH_BASE,
       symbol: "WETH",
+      level: "CURATED",
+      decimals: 18,
+    });
+    expect(lastDraft(weth.s).verdict.findings.map((f) => f.code)).not.toContain(
+      "ASSET_UNVERIFIED",
+    );
+    const { s } = talk(["Base'ten Ethereum'a 10 LINK gönder.", LINK_BASE]);
+    const d = lastDraft(s);
+    expect(d.draft.pay).toMatchObject({
+      address: LINK_BASE,
+      symbol: "LINK",
       level: null,
       decimals: null,
     });

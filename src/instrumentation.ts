@@ -4,6 +4,8 @@ export async function register() {
   if (process.env.NEXT_RUNTIME !== "nodejs") return;
   const { assertReleaseStartup } = await import("./release/startup");
   assertReleaseStartup();
+  const { startScanWorker } = await import("./scan/server");
+  startScanWorker();
   // V1.14.1: opt-in DeFi metadata prewarm (static deployment facts only, never wallet state), in the background so the
   // server never waits for it and a failure only leaves those facts to be proven by the first scan.
   if (process.env.OTHERBRIDGE_DEFI_PREWARM === "1")

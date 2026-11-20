@@ -305,7 +305,9 @@ describe("V1.9 single provider adapter", () => {
         "revoke",
         "revoked",
         "sendCanonicalTransaction",
+        "sendManualTransaction",
         "switchChain",
+        "switchManualBase",
         "watchCanonicalCross",
       ].sort(),
     );
