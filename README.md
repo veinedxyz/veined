@@ -63,9 +63,12 @@ Details: [docs/guardian/ARCHITECTURE.md](docs/guardian/ARCHITECTURE.md).
   through LI.FI / Across, behind an attested Guardian verdict, two-operator simulation and on-chain settlement checks.
   - It ships **disarmed** (`OWNER_CANARY_APPROVAL = null`, `CANARY_LIVE_WIRING = false`).
   - It is not NEAR work and not a NEAR Intents transfer.
-  - No live transaction is claimed. See [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md).
-  - Later development (2026-11-21): one owner-run Bridge was verified on mainnet with a later, separate local
-    source. This repository's source did not run it. See [Verified Mainnet Bridge Canary](#verified-mainnet-bridge-canary).
+  - As published, it sends nothing. The later armed runs are documented in [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md).
+  - Later development (2026-11-21): two Bridges were verified on mainnet.
+    - On 2026-11-15, a local owner-armed copy of this repository (the two files in
+      [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md)) ran one. A restricted local signer signed it.
+    - On 2026-11-20, the owner ran one from their own wallet with a later, separate local source. This repository's
+      source did not run it. See [Verified Mainnet Bridge Canary](#verified-mainnet-bridge-canary).
 
 ## Run it
 
@@ -158,6 +161,8 @@ What this does not change or prove:
 ## Status and limits
 
 - Read-only preview. No live transaction, no same-chain Swap execution and no NEAR transfer is part of this submission.
+  Later local armed runs are documented separately: see [Verified Mainnet Bridge Canary](#verified-mainnet-bridge-canary)
+  and [docs/LIVE_CANARY.md](docs/LIVE_CANARY.md).
 - The owner-armed canary is disarmed in this repository.
 - Not audited and not production-ready. Early-access sign-up is not open.
 
