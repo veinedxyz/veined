@@ -2,9 +2,12 @@
 
 This repository is published **disarmed**. Nothing in it can sign, approve or send by default.
 
-> **Update 2026-11-21:** one owner-run mainnet Bridge has since been verified. It ran on a later, separate local VEINED
-> source, **not** on the two-file owner-armed copy described below. See [Live evidence](#live-evidence) and
-> [MAINNET_BRIDGE_PROOF_2026-11-21.md](MAINNET_BRIDGE_PROOF_2026-11-21.md).
+> **Update 2026-11-21:** two Base → Arbitrum mainnet Bridges have since been verified.
+> - **2026-11-15:** a local copy of this repository ran the first. It was armed with exactly the two files described
+>   below and operated by an automated run under the owner's authorization. A policy-restricted local signer signed it.
+> - **2026-11-20:** the owner ran the second from their own wallet, on a later, separate local VEINED source.
+>
+> See [Live evidence](#live-evidence) and [MAINNET_BRIDGE_PROOF_2026-11-21.md](MAINNET_BRIDGE_PROOF_2026-11-21.md).
 
 A real transaction can only run on a local, owner-armed copy of the same source. That copy differs from this repository in exactly two files and three constants:
 
@@ -50,10 +53,37 @@ Everything else in the copy is byte-identical: source checkpoint `4a5043781120d1
 ## Live evidence
 **Status at publication (2026-11-14T19:07Z): no live transaction yet.** The owner-armed run had not taken place when this commit was made, so this repository makes no live-transaction claim. If a run takes place, a later commit adds its on-chain evidence here: the Base source transaction, the Across deposit id, the Arbitrum fill transaction and the reconciliation, each with explorer links built from the real hashes and verified by independent read-only RPC reads from two operators per chain. Same-chain Swap execution is **not** part of this submission.
 
-### Update 2026-11-21: verified mainnet Bridge (a later source, not this repository)
+### Update 2026-11-21: verified mainnet Bridges
 
-The owner-armed two-file copy of this repository described above was **never run**. Instead, the owner ran one
-single-use Bridge from their own wallet on a later local VEINED source (FastFlow, source checkpoint
+> **Correction:** the first version of this update said that the owner-armed two-file copy of this repository "was
+> never run". That was wrong. It ran the 2026-11-15 Bridge below.
+
+#### 2026-11-15: this repository, owner-armed (the two files above)
+
+**Which code ran it.** A local copy of this repository's source (checkpoint
+`4a5043781120d1394655ebea04f53fbf6c4ae11f567c627bc4870dd6598b2e49`) ran one single-use 5 USDC Bridge. The copy was changed in
+exactly the two files above:
+- `src/security/canary-approval.ts` held the record for an owner-funded test account;
+- `src/execution/server/gate.ts` had the wiring flag on.
+
+**Who signed it.** No person signed it in a wallet. An automated headless-browser run operated it, under the owner's
+authorization, and a local signer signed it through an injected wallet. That signer was restricted to hard-coded limits: at most 6 USDC in total, and one approval plus one
+execution per route.
+
+| | |
+|---|---|
+| Exact approval (Base) | [`0x2c08e019681554c6c9fe2c86f342732416514d489ef7ca5d5bb8681ad32dc7f8`](https://basescan.org/tx/0x2c08e019681554c6c9fe2c86f342732416514d489ef7ca5d5bb8681ad32dc7f8), block 57,840,416, nonce 2 |
+| Base source transaction | [`0x8f828b066f924e6154101bba490bd6d29d42bd06ad3808675f1f46ab7ebde45b`](https://basescan.org/tx/0x8f828b066f924e6154101bba490bd6d29d42bd06ad3808675f1f46ab7ebde45b), block 57,840,464, 2026-11-15 16:01:08 UTC, success |
+| Across deposit id | `6460753` |
+| Arbitrum fill transaction | [`0x7b28bc8f945fcf7188177178791ec373afee4933b41353f50fe29927f9d1199a`](https://arbiscan.io/tx/0x7b28bc8f945fcf7188177178791ec373afee4933b41353f50fe29927f9d1199a), block 524,505,130, success |
+| Amounts | 5.000000 USDC in, **4.980490 USDC** delivered to the same account (cost 39 bps; bounds: ≥ 4.900000 USDC, ≤ 300 bps); allowance 5,000,000 → 0 |
+
+Both chains were re-read on two RPC operators each. The step-9 promise of this document ("the owner signs in their own
+wallet") did not apply to this run, because the restricted signer signed instead.
+
+#### 2026-11-20: a later source, owner-signed
+
+The owner ran one single-use Bridge from their own wallet on a later local VEINED source (FastFlow, source checkpoint
 `50cfa4e13162c9a8a25ba56ad471e8dfa737f7f4a614daeae3a1a6d727ad2512`, not published here). That source differs from this
 repository well beyond the two constants above.
 
